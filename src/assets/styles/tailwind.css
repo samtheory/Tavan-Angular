@@ -3521,6 +3521,9 @@ video {
   .lg\:mr-4 {
     margin-right: 1rem;
   }
+  .md\:mr-16 {
+    margin-right: 16rem;
+  }
 
   .lg\:mt-16 {
     margin-top: 4rem;

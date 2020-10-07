@@ -28,7 +28,7 @@ const routes: Routes = [
   // admin views
   {
     path: 'admin',
-    component: AdminComponent,
+    component: PanelComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'settings', component: SettingsComponent },

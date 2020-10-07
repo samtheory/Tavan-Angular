@@ -20,9 +20,11 @@ import { IndexComponent } from './views/index/index.component';
 import { LandingComponent } from './views/landing/landing.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { MainIndexComponent } from './views/main/main-index/main-index.component';
+import { PanelComponent } from './layouts/panel/panel.component';
 
 const routes: Routes = [
   {path: 'main' , component : MainIndexComponent},
+  {path: 'panel' , component : PanelComponent},
   // admin views
   {
     path: 'admin',

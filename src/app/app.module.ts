@@ -48,6 +48,7 @@ import { NotificationDropdownComponent } from "./components/dropdowns/notificati
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { MainIndexComponent } from './views/main/main-index/main-index.component';
+import { PanelComponent } from './layouts/panel/panel.component';
 
 
 @NgModule({
@@ -87,6 +88,7 @@ import { MainIndexComponent } from './views/main/main-index/main-index.component
     LandingComponent,
     ProfileComponent,
     MainIndexComponent,
+    PanelComponent,
   
   ],
   imports: [BrowserModule, AppRoutingModule],

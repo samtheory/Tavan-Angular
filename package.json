@@ -6,8 +6,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "prestart": "ngtw build",
+    "start": "ng serve & ngtw watch",
+    "build": "ngtw build && ng build",
+    
+    "p-": "ngtw build --purge && ng build -c production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -29,9 +32,10 @@
     "bootstrap": "^4.5.2",
     "chart.js": "2.9.3",
     "jquery": "^3.5.1",
+    "ng-tailwindcss": "^2.3.1",
     "popper.js": "^1.16.1",
     "rxjs": "6.6.3",
-    "tailwindcss": "1.8.10",
+    "tailwindcss": "^1.8.12",
     "tslib": "2.0.1",
     "zone.js": "0.10.3"
   },

@@ -24,8 +24,7 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
@@ -33,8 +32,8 @@
               "src/assets/styles/tailwind.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/jquery/dist/jquery.min.js"
+             
             ]
           },
           "configurations": {
@@ -133,3 +132,5 @@
   },
   "defaultProject": "tailwind-webapp-angular"
 }
+
+

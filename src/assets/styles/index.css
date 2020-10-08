@@ -3,3 +3,14 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@import "Vazir-FD.css";
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Vazir-FD", sans-serif;
+}
+
+.fa-vazir{
+   font-family: "Vazir-FD", sans-serif;
+}

@@ -20063,6 +20063,18 @@ video {
           animation: bounce 1s infinite;
 }
 
+@import url("Vazir-FD.css");
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Vazir-FD", sans-serif;
+}
+
+.fa-vazir{
+  font-family: "Vazir-FD", sans-serif;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

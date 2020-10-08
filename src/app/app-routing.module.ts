@@ -21,10 +21,21 @@ import { LandingComponent } from './views/landing/landing.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { MainIndexComponent } from './views/main/main-index/main-index.component';
 import { PanelComponent } from './layouts/panel/panel.component';
+import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
+import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
+import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
 
 const routes: Routes = [
-  {path: 'main' , component : MainIndexComponent},
-  {path: 'panel' , component : PanelComponent},
+  { path: 'main', component: MainIndexComponent },
+  {
+    path: 'panel',
+    component: PanelComponent,
+    children: [
+      { path: 'newCourse', component: PANewCourseComponent },
+      { path: 'allCourses', component: PAAllCoursesComponent }, 
+      {path: 'editCourse', component: PAEditCourseComponent},
+    ],
+  },
   // admin views
   {
     path: 'admin',
@@ -58,4 +69,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

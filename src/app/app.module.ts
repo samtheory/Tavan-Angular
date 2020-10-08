@@ -50,6 +50,11 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
 import { MainIndexComponent } from './views/main/main-index/main-index.component';
 import { PanelComponent } from './layouts/panel/panel.component';
 
+// panel views
+import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
+import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
+import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
+
 
 @NgModule({
   declarations: [
@@ -89,6 +94,9 @@ import { PanelComponent } from './layouts/panel/panel.component';
     ProfileComponent,
     MainIndexComponent,
     PanelComponent,
+    PAAllCoursesComponent,
+    PANewCourseComponent,
+    PAEditCourseComponent,
   
   ],
   imports: [BrowserModule, AppRoutingModule],

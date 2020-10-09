@@ -1,5 +1,5 @@
 <nav
-  class="text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-72 z-10 py-4 px-6"
+  class=" md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative z-10 py-4 px-6"
 >
   <div
     class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between mx-auto"
@@ -80,7 +80,7 @@
         <li class="items-center">
           <a
             [routerLink]="['/admin/dashboard']"
-            class="px-4 text-xs uppercase py-3 font-bold block text-right"
+            class="px-4 text-sm  uppercase py-3 font-bold block text-right"
             routerLinkActive
             #adminDashboard="routerLinkActive"
             [ngClass]="
@@ -90,7 +90,7 @@
             "
           >
             <i
-              class="fas fa-tv mr-2 text-sm"
+              class="fas fa-tv mr-2 text-sm ml-2"
               [ngClass]="
                 adminDashboard.isActive ? 'opacity-75' : 'text-gray-400'
               "
@@ -102,7 +102,7 @@
         <li class="items-center">
           <a
             [routerLink]="['/admin/settings']"
-            class="px-4 text-xs uppercase py-3 font-bold block"
+            class="px-4 text-sm  uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
             [ngClass]="
@@ -112,7 +112,7 @@
             "
           >
             <i
-              class="fas fa-tools mr-2 text-sm"
+              class="ml-2 fas fa-tools mr-2 text-sm"
               [ngClass]="
                 adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
               "
@@ -123,7 +123,7 @@
         <li class="items-center">
           <a
             [routerLink]="['/admin/settings']"
-            class="px-4 text-xs uppercase py-3 font-bold block"
+            class="px-4 text-sm uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
             [ngClass]="
@@ -133,7 +133,7 @@
             "
           >
             <i
-              class="fas fa-tools mr-2 text-sm"
+              class="fas fa-tools mr-2 text-sm ml-2"
               [ngClass]="
                 adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
               "
@@ -157,65 +157,78 @@
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
-          <a [routerLink]="['/panel/newCourse']" class="px-4 text-xs uppercase py-3 font-bold block" routerLinkActive
-            #adminSettings="routerLinkActive" [ngClass]="
-                      adminSettings.isActive
+          <a [routerLink]="['/panel/newCourse']" class="px-4  text-sm uppercase py-3 font-bold block" routerLinkActive
+            #PANewCourseComponent="routerLinkActive" [ngClass]="
+                       PANewCourseComponent.isActive
                         ? 'text-red-600 hover:text-red-700'
                         : 'text-gray-800 hover:text-gray-600'
                     ">
-            <i class="fas fa-tools mr-2 text-sm" [ngClass]="
+            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                         adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
                       "></i>
              دوره جدید
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/settings']" class="px-4 text-xs uppercase py-3 font-bold block" routerLinkActive
+          <a [routerLink]="['/panel/editCourse']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
+            #edit="routerLinkActive" [ngClass]="
+                      edit.isActive
+                        ? 'text-red-600 hover:text-red-700'
+                        : 'text-gray-800 hover:text-gray-600'
+                    ">
+            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
+                        adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
+                      "></i>
+              ادیت دوره
+          </a>
+        </li>
+        <li class="items-center">
+          <a [routerLink]="['/admin/settings']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
             #adminSettings="routerLinkActive" [ngClass]="
                       adminSettings.isActive
                         ? 'text-red-600 hover:text-red-700'
                         : 'text-gray-800 hover:text-gray-600'
                     ">
-            <i class="fas fa-tools mr-2 text-sm" [ngClass]="
+            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                         adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
                       "></i>
           مشاهده همه دوره ها
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/settings']" class="px-4 text-xs uppercase py-3 font-bold block" routerLinkActive
+          <a [routerLink]="['/admin/settings']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
             #adminSettings="routerLinkActive" [ngClass]="
                       adminSettings.isActive
                         ? 'text-red-600 hover:text-red-700'
                         : 'text-gray-800 hover:text-gray-600'
                     ">
-            <i class="fas fa-tools mr-2 text-sm" [ngClass]="
+            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                         adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
                       "></i>
              مشاهده دوره های برگزار شده
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/settings']" class="px-4 text-xs uppercase py-3 font-bold block" routerLinkActive
+          <a [routerLink]="['/admin/settings']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
             #adminSettings="routerLinkActive" [ngClass]="
                       adminSettings.isActive
                         ? 'text-red-600 hover:text-red-700'
                         : 'text-gray-800 hover:text-gray-600'
                     ">
-            <i class="fas fa-tools mr-2 text-sm" [ngClass]="
+            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                         adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
                       "></i>
              مشاهده دوره های درحال برگزاری
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/settings']" class="px-4 text-xs uppercase py-3 font-bold block" routerLinkActive
+          <a [routerLink]="['/admin/settings']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
             #adminSettings="routerLinkActive" [ngClass]="
                       adminSettings.isActive
                         ? 'text-red-600 hover:text-red-700'
                         : 'text-gray-800 hover:text-gray-600'
                     ">
-            <i class="fas fa-tools mr-2 text-sm" [ngClass]="
+            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                         adminSettings.isActive ? 'opacity-75' : 'text-gray-400' "></i>
                   ایجاد کد تخفیف
           </a>

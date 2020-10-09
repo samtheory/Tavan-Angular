@@ -54,6 +54,9 @@ import { PanelComponent } from './layouts/panel/panel.component';
 import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
 import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
+import { AllCourseTableComponent } from './components/myCard/Tables/all-course-table/all-course-table.component';
+import { UsersTableComponent } from './components/myCard/Tables/users-table/users-table.component';
+import { DiscountTableComponent } from './components/myCard/Tables/discount-table/discount-table.component';
 
 
 @NgModule({
@@ -97,10 +100,13 @@ import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-e
     PAAllCoursesComponent,
     PANewCourseComponent,
     PAEditCourseComponent,
-  
+    AllCourseTableComponent,
+    UsersTableComponent,
+    DiscountTableComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

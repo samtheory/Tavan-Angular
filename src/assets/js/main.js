@@ -1,7 +1,10 @@
-﻿(function($){
-	"use strict";
-	jQuery(document).on('ready', function () {
-
+﻿
+function main() {
+  
+   
+        "use strict";
+  
+        
         // Mean Menu
 		$('.mean-menu').meanmenu({
 			meanScreenWidth: "991"
@@ -956,10 +959,12 @@
             $(".gym-banner-content .default-btn").addClass("animated fadeInLeft").css("opacity", "1");
         });
 		
-    });
+    
 
     // Preloader JS
-	$(window).on('load', function() {
+
 		$('.preloader').addClass('preloader-deactivate');
-	});
-}(jQuery));
+	
+
+
+}

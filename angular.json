@@ -97,11 +97,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/Vazir-FD.css",
-              "src/tailwind.css"
+              "src/assets/styles/styles.css",
+              "src/assets/styles/Vazir-FD.css",
+              "src/assets/styles/tailwind.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/main.js"
+            ]
           }
         },
         "lint": {

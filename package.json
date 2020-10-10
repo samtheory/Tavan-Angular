@@ -9,7 +9,6 @@
     "prestart": "ngtw build",
     "start": "ng serve & ngtw watch",
     "build": "ngtw build && ng build",
-    
     "p-": "ngtw build --purge && ng build -c production",
     "test": "ng test",
     "lint": "ng lint",
@@ -27,6 +26,7 @@
     "@angular/platform-browser-dynamic": "10.1.2",
     "@angular/router": "10.1.2",
     "@fortawesome/fontawesome-free": "5.14.0",
+    "@ngbmodule/material-carousel": "^0.7.1",
     "@popperjs/core": "2.5.1",
     "@tailwindcss/custom-forms": "0.2.1",
     "bootstrap": "^4.5.2",

@@ -57,6 +57,8 @@ import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-e
 import { AllCourseTableComponent } from './components/myCard/Tables/all-course-table/all-course-table.component';
 import { UsersTableComponent } from './components/myCard/Tables/users-table/users-table.component';
 import { DiscountTableComponent } from './components/myCard/Tables/discount-table/discount-table.component';
+import { SlidShowComponent } from './components/slid-show/slid-show.component';
+import { TestComponentViewComponent } from './views/test-component-view/test-component-view.component';
 
 
 @NgModule({
@@ -103,6 +105,8 @@ import { DiscountTableComponent } from './components/myCard/Tables/discount-tabl
     AllCourseTableComponent,
     UsersTableComponent,
     DiscountTableComponent,
+    SlidShowComponent,
+    TestComponentViewComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule],

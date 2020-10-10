@@ -11,10 +11,10 @@ export class MainIndexComponent implements OnInit {
   }
   ngAfterContentInit(){
     
-    main();
     
   }
   ngOnInit() {
+    main();
 
   }
 

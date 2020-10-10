@@ -24,9 +24,11 @@ import { PanelComponent } from './layouts/panel/panel.component';
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
 import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
 import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
+import { TestComponentViewComponent } from './views/test-component-view/test-component-view.component';
 
 const routes: Routes = [
-  { path: 'main', component: MainIndexComponent },
+  { path: 'main', component: TestComponentViewComponent },
+  { path: 'test', component: TestComponentViewComponent },
   {
     path: 'panel',
     component: PanelComponent,

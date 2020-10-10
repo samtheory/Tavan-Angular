@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-component-view.component.css']
 })
 export class TestComponentViewComponent implements OnInit {
-
-  constructor() { }
+// items: Array<any > = [];
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

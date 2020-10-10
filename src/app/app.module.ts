@@ -4,6 +4,9 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+
+
+
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
 import { AuthComponent } from "./layouts/auth/auth.component";
@@ -50,6 +53,7 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
 import { MainIndexComponent } from './views/main/main-index/main-index.component';
 import { PanelComponent } from './layouts/panel/panel.component';
 
+
 // panel views
 import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
@@ -57,10 +61,12 @@ import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-e
 import { AllCourseTableComponent } from './components/myCard/Tables/all-course-table/all-course-table.component';
 import { UsersTableComponent } from './components/myCard/Tables/users-table/users-table.component';
 import { DiscountTableComponent } from './components/myCard/Tables/discount-table/discount-table.component';
-import { SlidShowComponent } from './components/slid-show/slid-show.component';
+import { SlidShowComponent } from './components/slide-show/slid-show.component';
 import { TestComponentViewComponent } from './views/test-component-view/test-component-view.component';
 
-
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
+import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,9 +113,11 @@ import { TestComponentViewComponent } from './views/test-component-view/test-com
     DiscountTableComponent,
     SlidShowComponent,
     TestComponentViewComponent,
+    LandingNavbarComponent,
+    LandingFooterComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
   providers: [],
   bootstrap: [AppComponent],
 })

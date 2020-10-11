@@ -17,7 +17,7 @@ import { RegisterComponent } from './views/auth/register/register.component';
 
 // no layouts views
 import { IndexComponent } from './views/index/index.component';
-import { LandingComponent } from './views/landing/landing.component';
+import { LandingComponent } from './views/demo-landing/landing.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { MainIndexComponent } from './views/main/main-index/main-index.component';
 import { PanelComponent } from './layouts/panel/panel.component';

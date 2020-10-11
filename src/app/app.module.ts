@@ -23,7 +23,7 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
-import { LandingComponent } from "./views/landing/landing.component";
+import { LandingComponent } from "./views/demo-landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 
 // components for views and layouts
@@ -67,6 +67,7 @@ import { TestComponentViewComponent } from './views/test-component-view/test-com
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
 import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
+import { CardProduct1Component } from './components/cards/card-product1/card-product1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -115,6 +116,7 @@ import { LandingFooterComponent } from './components/landing-footer/landing-foot
     TestComponentViewComponent,
     LandingNavbarComponent,
     LandingFooterComponent,
+    CardProduct1Component,
 
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],

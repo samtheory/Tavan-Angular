@@ -26,7 +26,7 @@
 
                         <div class="col-lg-4">
                             <div class="top-header-btn">
-                                <a href="login.html" class="default-btn"><i class='bx bx-log-in icon-arrow before'></i><span class="label">ورود</span><i class="bx bx-log-in icon-arrow 
+                                <a  href="login.html" class="default-btn"><i class='bx bx-log-in icon-arrow before'></i><span class="label">ورود</span><i class="bx bx-log-in icon-arrow 
 
                                     after"></i></a>
                             </div>
@@ -61,7 +61,12 @@
                                     <li class="nav-item">
                                         <a href="#" class="nav-link active">خانه  </a>
                                     </li>
-                                    <li class="nav-item"><a href="#" class="nav-link">محصولات</a>
+                                    <li class="nav-item"><a [routerLink]="['/main/products']" routerLinkActive
+            #landingProducts="routerLinkActive" [ngClass]="
+                      landingProducts.isActive
+                        ? 'text-red-600 hover:text-red-700'
+                        : 'text-gray-800 hover:text-gray-600'
+                    " class="nav-link">محصولات</a>
                                     <li class="nav-item"><a href="#" class="nav-link">آموزش سایت </a>
 
                                

@@ -68,6 +68,10 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
 import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
 import { CardProduct1Component } from './components/cards/card-product1/card-product1.component';
+import { LandingHomeComponent } from './landing/landing-home/landing-home.component';
+import { LandingProductsAllComponent } from './landing/landing-products-all/landing-products-all.component';
+import { LandingIntroComponent } from './landing/landing-intro/landing-intro.component';
+import { LandingAboutComponent } from './landing/landing-about/landing-about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,6 +121,10 @@ import { CardProduct1Component } from './components/cards/card-product1/card-pro
     LandingNavbarComponent,
     LandingFooterComponent,
     CardProduct1Component,
+    LandingHomeComponent,
+    LandingProductsAllComponent,
+    LandingIntroComponent,
+    LandingAboutComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],

@@ -1,0 +1,69 @@
+<app-landing-navbar></app-landing-navbar>
+<!-- slide-show Area -->
+<div class="relative" style="z-index: 1">
+  <app-slid-show class="relative" style="top: -90px"></app-slid-show>
+</div>
+<!--End slide-show Area -->
+
+  <!-- Start Courses Area -->
+        <section class="courses-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title text-left">
+                   
+                    <h2>دوره های درحال برگزاری</h2>
+                    <a href="courses-2-columns-style-1.html" class="default-btn"><i class='bx bx-show-alt icon-arrow before'></i><span class="label">همه دوره ها</span><i class="bx bx-show-alt icon-arrow after"></i></a>
+                </div>
+
+                <div class="shorting-menu">
+                    <button class="filter" data-filter="all">همه (06)</button>
+                    <button class="filter" data-filter=".business">تجاری (02)</button>
+                    <button class="filter" data-filter=".design">طراحی (05)</button>
+                    <button class="filter" data-filter=".development">توسعه دهنده (04)</button>
+                    <button class="filter" data-filter=".language">زبان خارجه (02)</button>
+                    <button class="filter" data-filter=".management">مدیریت (03)</button>
+                    <button class="filter" data-filter=".photography">عکاسی (04)</button>
+                </div>
+
+                <div class="">
+                    <div class="row">
+                        
+                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="courses-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title text-left">
+                   
+                    <h2>دوره های برگذار شده</h2>
+                    <a href="courses-2-columns-style-1.html" class="default-btn"><i class='bx bx-show-alt icon-arrow before'></i><span class="label">همه دوره ها</span><i class="bx bx-show-alt icon-arrow after"></i></a>
+                </div>
+
+                <div class="shorting-menu">
+                    <button class="filter" data-filter="all">همه (06)</button>
+                    <button class="filter" data-filter=".business">تجاری (02)</button>
+                    <button class="filter" data-filter=".design">طراحی (05)</button>
+                    <button class="filter" data-filter=".development">توسعه دهنده (04)</button>
+                    <button class="filter" data-filter=".language">زبان خارجه (02)</button>
+                    <button class="filter" data-filter=".management">مدیریت (03)</button>
+                    <button class="filter" data-filter=".photography">عکاسی (04)</button>
+                </div>
+
+                <div class="">
+                    <div class="row">
+                        
+                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Courses Area -->
+
+
+<router-outlet></router-outlet>
+<app-landing-footer></app-landing-footer>

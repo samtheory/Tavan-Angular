@@ -25,9 +25,21 @@ import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newC
 import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
 import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
 import { TestComponentViewComponent } from './views/test-component-view/test-component-view.component';
+import { LandingAboutComponent } from './landing/landing-about/landing-about.component';
+import { LandingProductsAllComponent } from './landing/landing-products-all/landing-products-all.component';
+import { LandingIntroComponent } from './landing/landing-intro/landing-intro.component';
+import { LandingHomeComponent } from './landing/landing-home/landing-home.component';
 
 const routes: Routes = [
-  { path: 'main', component: TestComponentViewComponent },
+  { path: 'main', 
+    component: TestComponentViewComponent ,
+  },
+    
+    {path:'home', component: LandingHomeComponent},
+    {path:'about', component: LandingAboutComponent},
+    {path:'intro', component: LandingIntroComponent},
+    {path:'products', component: LandingProductsAllComponent},
+   
   { path: 'test', component: TestComponentViewComponent },
   {
     path: 'panel',

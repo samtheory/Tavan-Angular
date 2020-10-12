@@ -68,12 +68,17 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
 import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
 import { CardProduct1Component } from './components/cards/card-product1/card-product1.component';
-import { LandingHomeComponent } from './landing/landing-home/landing-home.component';
-import { LandingProductsAllComponent } from './landing/landing-products-all/landing-products-all.component';
-import { LandingIntroComponent } from './landing/landing-intro/landing-intro.component';
-import { LandingAboutComponent } from './landing/landing-about/landing-about.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
+
+// Landing page view
+import { LandingHomeComponent } from './views/landing/landing-home/landing-home.component';
+import { LandingIntroComponent } from './views/landing/landing-intro/landing-intro.component';
+import { LandingProductsAllComponent } from './views/landing/landing-products-all/landing-products-all.component';
+import { LandingAboutComponent } from './views/landing/landing-about/landing-about.component';
+
+//other
+
 @NgModule({
   declarations: [
     AppComponent,

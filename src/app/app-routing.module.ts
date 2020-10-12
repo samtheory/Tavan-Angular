@@ -29,16 +29,24 @@ import { LandingAboutComponent } from './landing/landing-about/landing-about.com
 import { LandingProductsAllComponent } from './landing/landing-products-all/landing-products-all.component';
 import { LandingIntroComponent } from './landing/landing-intro/landing-intro.component';
 import { LandingHomeComponent } from './landing/landing-home/landing-home.component';
+import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 
 const routes: Routes = [
-  { path: 'main', 
-    component: TestComponentViewComponent ,
+  {path:'Test', component: TestComponentViewComponent},
+
+  {
+    path: 'index', 
+    component: LandingLayoutComponent ,
+    children:[  
+      {path:'home', component: LandingHomeComponent},
+      {path:'about', component: LandingAboutComponent},
+      {path:'intro', component: LandingIntroComponent},
+      {path:'products', component: LandingProductsAllComponent},
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    ]
   },
     
     {path:'home', component: LandingHomeComponent},
-    {path:'about', component: LandingAboutComponent},
-    {path:'intro', component: LandingIntroComponent},
-    {path:'products', component: LandingProductsAllComponent},
    
   { path: 'test', component: TestComponentViewComponent },
   {

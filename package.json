@@ -9,7 +9,7 @@
     "prestart": "ngtw build",
     "start": "ng serve & ngtw watch",
     "build": "ngtw build && ng build",
-    "p-": "ngtw build --purge && ng build -c production",
+    "pBuild": "ngtw build --purge && ng build -c production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

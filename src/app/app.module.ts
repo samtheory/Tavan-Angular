@@ -72,6 +72,7 @@ import { LandingHomeComponent } from './landing/landing-home/landing-home.compon
 import { LandingProductsAllComponent } from './landing/landing-products-all/landing-products-all.component';
 import { LandingIntroComponent } from './landing/landing-intro/landing-intro.component';
 import { LandingAboutComponent } from './landing/landing-about/landing-about.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -128,7 +129,7 @@ import { LandingAboutComponent } from './landing/landing-about/landing-about.com
 
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
-  providers: [],
+  providers: [{provide :LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

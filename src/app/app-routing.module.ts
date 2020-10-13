@@ -73,15 +73,11 @@ const routes: Routes = [
     ],
   },
   // auth views
-  {
-    path: 'auth',
-    component: AuthComponent,
-    children: [
+
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-    ],
-  },
+    
+   
   // no layout views
   { path: 'profile', component: ProfileComponent },
   { path: 'landing', component: LandingComponent },

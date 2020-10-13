@@ -76,6 +76,7 @@ import { LandingHomeComponent } from './views/landing/landing-home/landing-home.
 import { LandingIntroComponent } from './views/landing/landing-intro/landing-intro.component';
 import { LandingProductsAllComponent } from './views/landing/landing-products-all/landing-products-all.component';
 import { LandingAboutComponent } from './views/landing/landing-about/landing-about.component';
+import { LandingSingleProductComponent } from './views/landing/landing-single-product/landing-single-product.component';
 
 //other
 
@@ -133,6 +134,7 @@ import { LandingAboutComponent } from './views/landing/landing-about/landing-abo
     LandingIntroComponent,
     LandingAboutComponent,
     LandingLayoutComponent,
+    LandingSingleProductComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],

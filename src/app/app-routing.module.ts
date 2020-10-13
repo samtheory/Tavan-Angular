@@ -30,6 +30,7 @@ import { LandingProductsAllComponent } from './views/landing/landing-products-al
 import { LandingIntroComponent } from './views/landing/landing-intro/landing-intro.component';
 import { LandingHomeComponent } from './views/landing/landing-home/landing-home.component';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
+import { LandingSingleProductComponent } from './views/landing/landing-single-product/landing-single-product.component';
 
 const routes: Routes = [
   {path:'Test', component: TestComponentViewComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
     component: LandingLayoutComponent ,
     children:[  
       {path:'home', component: LandingHomeComponent},
+      {path:'products/Single', component: LandingSingleProductComponent},
       {path:'about', component: LandingAboutComponent},
       {path:'intro', component: LandingIntroComponent},
       {path:'products', component: LandingProductsAllComponent},

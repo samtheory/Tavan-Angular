@@ -50,7 +50,7 @@ import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pa
 import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
-import { MainIndexComponent } from './views/main/main-index/main-index.component';
+
 import { PanelComponent } from './layouts/panel/panel.component';
 
 
@@ -77,6 +77,15 @@ import { LandingIntroComponent } from './views/landing/landing-intro/landing-int
 import { LandingProductsAllComponent } from './views/landing/landing-products-all/landing-products-all.component';
 import { LandingAboutComponent } from './views/landing/landing-about/landing-about.component';
 import { LandingSingleProductComponent } from './views/landing/landing-single-product/landing-single-product.component';
+import { PASlideShowComponent } from './views/panel-Admin/p-a-slide-show/p-a-slide-show.component';
+import { PADiscountComponent } from './views/panel-Admin/p-a-discount/p-a-discount.component';
+import { PAAllUserComponent } from './views/panel-Admin/p-a-all-user/p-a-all-user.component';
+import { PANewUserComponent } from './views/panel-Admin/p-a-new-user/p-a-new-user.component';
+import { PAEditUserComponent } from './views/panel-Admin/p-a-edit-user/p-a-edit-user.component';
+import { SlideShowManageAdminComponent } from './components/cards-panel/slide-show-manage-admin/slide-show-manage-admin.component';
+import { SlideShowPicAdminComponent } from './components/cards-panel/slide-show-pic-admin/slide-show-pic-admin.component';
+import { PADashboardComponent } from './views/panel-Admin/p-a-dashboard/p-a-dashboard.component';
+import { CardDiscountTableComponent } from './components/cards-panel/card-discount-table/card-discount-table.component';
 
 //other
 
@@ -116,7 +125,7 @@ import { LandingSingleProductComponent } from './views/landing/landing-single-pr
     IndexComponent,
     LandingComponent,
     ProfileComponent,
-    MainIndexComponent,
+    
     PanelComponent,
     PAAllCoursesComponent,
     PANewCourseComponent,
@@ -135,6 +144,15 @@ import { LandingSingleProductComponent } from './views/landing/landing-single-pr
     LandingAboutComponent,
     LandingLayoutComponent,
     LandingSingleProductComponent,
+    PASlideShowComponent,
+    PADiscountComponent,
+    PAAllUserComponent,
+    PANewUserComponent,
+    PAEditUserComponent,
+    SlideShowManageAdminComponent,
+    SlideShowPicAdminComponent,
+    PADashboardComponent,
+    CardDiscountTableComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],

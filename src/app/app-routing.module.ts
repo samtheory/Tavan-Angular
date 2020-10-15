@@ -19,7 +19,7 @@ import { RegisterComponent } from './views/auth/register/register.component';
 import { IndexComponent } from './views/index/index.component';
 import { LandingComponent } from './views/demo-landing/landing.component';
 import { ProfileComponent } from './views/profile/profile.component';
-import { MainIndexComponent } from './views/main/main-index/main-index.component';
+
 import { PanelComponent } from './layouts/panel/panel.component';
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
 import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
@@ -31,6 +31,11 @@ import { LandingIntroComponent } from './views/landing/landing-intro/landing-int
 import { LandingHomeComponent } from './views/landing/landing-home/landing-home.component';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 import { LandingSingleProductComponent } from './views/landing/landing-single-product/landing-single-product.component';
+import { PAAllUserComponent } from './views/panel-Admin/p-a-all-user/p-a-all-user.component';
+import { PANewUserComponent } from './views/panel-Admin/p-a-new-user/p-a-new-user.component';
+import { PASlideShowComponent } from './views/panel-Admin/p-a-slide-show/p-a-slide-show.component';
+import { PADiscountComponent } from './views/panel-Admin/p-a-discount/p-a-discount.component';
+import { PADashboardComponent } from './views/panel-Admin/p-a-dashboard/p-a-dashboard.component';
 
 const routes: Routes = [
   {path:'Test', component: TestComponentViewComponent},
@@ -65,7 +70,14 @@ const routes: Routes = [
     path: 'admin',
     component: PanelComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'newCourse', component: PANewCourseComponent },
+      { path: 'AllUsers', component: PAAllUserComponent },
+      { path: 'newUser', component: PANewUserComponent },
+      { path: 'slideShow', component: PASlideShowComponent },
+      { path: 'discount', component: PADiscountComponent },
+      { path: 'allCourses', component: PAAllCoursesComponent }, 
+      {path: 'editCourse', component: PAEditCourseComponent},
+      { path: 'dashboard', component: PADashboardComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'tables', component: TablesComponent },
       { path: 'maps', component: MapsComponent },

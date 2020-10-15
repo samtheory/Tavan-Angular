@@ -1,13 +1,13 @@
 <!-- Navbar -->
 <nav
-  class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-no-wrap md:justify-start flex items-center p-4 " style="z-index: 1;"
+  class="absolute  left-0 w-full z-10 bg-transparent md:flex-row md:flex-no-wrap md:justify-start flex items-center p-4 " style="z-index: 1;top: -5px;"
 >
   <div
     class="w-full mx-autp items-center flex justify-between md:flex-no-wrap flex-wrap md:px-10 px-4 " 
   >
     <!-- Brand -->
     <a
-      class="text-black text-sm uppercase hidden lg:inline-block font-semibold "
+      class="text-mesh-300 text-sm uppercase hidden lg:inline-block  text-base"
       href="#pablo"
       >پنل مدیریت</a
     >
@@ -28,7 +28,10 @@
       </div>
     </form> -->
     <!-- User -->
-    <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+    <ul class="flex-col md:flex-row list-none items-center hidden md:flex ">
+    
+       <i class="far fa-bell md:mx-10 text-mesh-200 hover:text-red-700 duration-500"></i>
+     
       <app-user-dropdown class="block"></app-user-dropdown>
     </ul>
   </div>

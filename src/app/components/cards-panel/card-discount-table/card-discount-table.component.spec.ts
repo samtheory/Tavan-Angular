@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainIndexComponent } from './main-index.component';
+import { CardDiscountTableComponent } from './card-discount-table.component';
 
-describe('MainIndexComponent', () => {
-  let component: MainIndexComponent;
-  let fixture: ComponentFixture<MainIndexComponent>;
+describe('CardDiscountTableComponent', () => {
+  let component: CardDiscountTableComponent;
+  let fixture: ComponentFixture<CardDiscountTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainIndexComponent ]
+      declarations: [ CardDiscountTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainIndexComponent);
+    fixture = TestBed.createComponent(CardDiscountTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

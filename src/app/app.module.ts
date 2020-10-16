@@ -86,6 +86,8 @@ import { SlideShowManageAdminComponent } from './components/cards-panel/slide-sh
 import { SlideShowPicAdminComponent } from './components/cards-panel/slide-show-pic-admin/slide-show-pic-admin.component';
 import { PADashboardComponent } from './views/panel-Admin/p-a-dashboard/p-a-dashboard.component';
 import { CardDiscountTableComponent } from './components/cards-panel/card-discount-table/card-discount-table.component';
+import { CardNewUserInfoComponent } from './components/cards-panel/card-new-user-info/card-new-user-info.component';
+import { CardNewUserPicComponent } from './components/cards-panel/card-new-user-pic/card-new-user-pic.component';
 
 //other
 
@@ -153,6 +155,8 @@ import { CardDiscountTableComponent } from './components/cards-panel/card-discou
     SlideShowPicAdminComponent,
     PADashboardComponent,
     CardDiscountTableComponent,
+    CardNewUserInfoComponent,
+    CardNewUserPicComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],

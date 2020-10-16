@@ -101,12 +101,12 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/settings']"
+            [routerLink]="['/admin/newUser']"
             class="px-4 text-sm  uppercase py-3 font-bold block "
             routerLinkActive
-            #adminAllUsers="routerLinkActive"
+            #adminNewUser="routerLinkActive"
             [ngClass]="
-              adminAllUsers.isActive
+              adminNewUser.isActive
                 ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200 '
                 : 'text-gray-800 hover:text-gray-600'
             "
@@ -114,10 +114,10 @@
             <i
               class="ml-2 fas fa-tools mr-2 text-sm"
               [ngClass]="
-                adminAllUsers.isActive ? 'opacity-75' : 'text-gray-400'
+                adminNewUser.isActive ? 'opacity-75' : 'text-gray-400'
               "
             ></i>
-            مشاهده کاربران
+            کاربر جدید
           </a>
         </li>
         <li class="items-center">

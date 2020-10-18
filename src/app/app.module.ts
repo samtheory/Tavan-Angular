@@ -90,7 +90,7 @@ import { CardNewUserInfoComponent } from './components/cards-panel/card-new-user
 import { CardNewUserPicComponent } from './components/cards-panel/card-new-user-pic/card-new-user-pic.component';
 
 //other
-
+import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -159,7 +159,7 @@ import { CardNewUserPicComponent } from './components/cards-panel/card-new-user-
     CardNewUserPicComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
+  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule,NgPersianDatepickerModule,],
   providers: [{provide :LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
 })

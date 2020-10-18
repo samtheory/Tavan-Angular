@@ -1,5 +1,15 @@
-<app-landing-navbar></app-landing-navbar>
-
-
-<router-outlet></router-outlet>
-<app-landing-footer></app-landing-footer>
+<div
+  style="height: 50vh; width: 50vw; padding: 50px; background-color: chartreuse"
+>
+  <input type="text" #datepickerInput />
+  <ng-persian-datepicker
+  [dateValue]="'1398-12-15'"
+  [timeEnable]='false'
+ [uiAutoPosition]='true'
+    [input]="datepickerInput"
+    [uiTheme]="'dark'"
+    [uiHideAfterSelectDate]="true"
+  
+    [uiContainerWidth]='10'
+  ></ng-persian-datepicker>
+</div>

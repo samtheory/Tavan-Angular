@@ -6,7 +6,7 @@ import * as $ from 'jquery';
   styleUrls: ['./p-a-edit-course.component.css']
 })
 export class PAEditCourseComponent implements OnInit {
-
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {

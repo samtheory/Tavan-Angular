@@ -94,6 +94,8 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DpDatePickerModule } from 'ng2-jalali-date-picker';
+import { WCProductComponent } from './widgets/cards/w-c-product/w-c-product.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -160,9 +162,18 @@ import { DpDatePickerModule } from 'ng2-jalali-date-picker';
     CardDiscountTableComponent,
     CardNewUserInfoComponent,
     CardNewUserPicComponent,
+    WCProductComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule,NgPersianDatepickerModule, NoopAnimationsModule,MatDialogModule ,DpDatePickerModule],
+  imports: [BrowserModule,
+    AppRoutingModule,
+    IvyCarouselModule,
+    NgPersianDatepickerModule,
+    NoopAnimationsModule,
+    MatDialogModule ,
+    DpDatePickerModule,
+    MatExpansionModule
+  ],
   providers: [{provide :LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
 })

@@ -92,15 +92,15 @@
                   تاریخ پایان
                 </label>
                 <input
-                  type="text"
+                  type="text" (input)='FinishDateChange($event.target.value)'
                   #datepickerInput
                   class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                 />
                 <ng-persian-datepicker
                   [dateValue]="'1398-12-15'"
-                  [timeEnable]="false"
+                   [timeMeridian]='true'
                   [input]="datepickerInput"
-                  [uiTheme]="'dark'"
+                
                   [uiHideAfterSelectDate]="true"
                 ></ng-persian-datepicker>
               </div>

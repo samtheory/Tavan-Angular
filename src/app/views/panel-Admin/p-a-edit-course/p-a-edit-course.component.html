@@ -1,46 +1,83 @@
 <div class="flex flex-wrap">
-   <div class="w-full px-4 text-right">
-      <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
-         <div class="rounded-t bg-teal-200 mb-0 px-6 py-6">
-            <div class="text-center flex justify-start">
-            <div class="w-full flex sm:border-b sm:border-gray-300 relative flex-col sm:flex-row">
-               <div id="info" class="flex-1  sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 tab bg-white text-red-600 border-b-4 border-blue-300">
-                  information
-               </div>
-               <div id="pic" class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false">
-                  picture
-               </div>
-               <div id="video" class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400  false" >
-                  video
-               </div>
-               <div id="des" class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false">
-                  description
-               </div>
-              
+  <div class="w-full px-4 text-right">
+    <div
+      class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
+    >
+      <div class="rounded-t bg-teal-200 mb-0 px-6 py-6">
+        <div class="text-center flex justify-start">
+          <div
+            class="w-full flex sm:border-b sm:border-gray-300 relative flex-col sm:flex-row"
+          >
+            <div
+              id="info"
+              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 tab bg-white text-red-600 border-b-4 border-blue-300"
+            >
+              information
             </div>
+            <div
+              id="pic"
+              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false"
+            >
+              picture
             </div>
-         </div>
-         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-            <form>
-               <div class="information-tab my-5">
-                  <p>information</p>
-                 
-               </div>
-               <div class="picture-tab my-5 hidden">
-                  <p>picture</p>
-                  
-               </div>
-               <div class="video-tab my-5 hidden">
-                  <p >video</p>
-                  
-               </div>
-               <div class="description-tab my-5 hidden">
-                  <p>description</p>
-                  
-               </div>
-            </form>
-         </div>
+            <div
+              id="video"
+              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false"
+            >
+              video
+            </div>
+            <div
+              id="des"
+              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false"
+            >
+              description
+            </div>
+          </div>
+        </div>
       </div>
-   </div>
-</div>
+      <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+        <form>
+          <div class="information-tab my-5">
+            <p>information</p>
+          </div>
+          <div class="picture-tab my-5 hidden">
+            <p>picture</p>
+          </div>
+          <div class="video-tab my-5 hidden">
+            <p>video</p>
 
+            <mat-accordion>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    This is the expansion title
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    This is a summary of the content
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>This is the primary content of the panel.</p>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                class="border-gray-800"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header class="after:border-black">
+                  <mat-panel-title> Self aware panel </mat-panel-title>
+                  <mat-panel-description>
+                    Currently I am {{ panelOpenState ? "open" : "closed" }}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>I'm visible because I am open</p>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+          <div class="description-tab my-5 hidden">
+            <p>description</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

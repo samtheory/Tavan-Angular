@@ -10,7 +10,7 @@ import * as moment from 'jalali-moment';
 export class TestComponentViewComponent implements OnInit {
   // dateObject = "";
   constructor(public dialog: MatDialog) {}
-  
+  panelOpenState = false;
   dateObject = moment('1395-11-22','jYYYY,jMM,jDD');
   
   //OR if you have initial value you could use following code

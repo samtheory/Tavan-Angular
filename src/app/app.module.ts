@@ -91,6 +91,9 @@ import { CardNewUserPicComponent } from './components/cards-panel/card-new-user-
 
 //other
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -159,7 +162,7 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
     CardNewUserPicComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule,NgPersianDatepickerModule,],
+  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule,NgPersianDatepickerModule, NoopAnimationsModule,MatDialogModule ,DpDatePickerModule],
   providers: [{provide :LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
 })

@@ -1,15 +1,17 @@
-<div
-  style="height: 50vh; width: 50vw; padding: 50px; background-color: chartreuse"
->
-  <input type="text" #datepickerInput />
-  <ng-persian-datepicker
-  [dateValue]="'1398-12-15'"
-  [timeEnable]='false'
- [uiAutoPosition]='true'
-    [input]="datepickerInput"
-    [uiTheme]="'dark'"
-    [uiHideAfterSelectDate]="true"
-  
-    [uiContainerWidth]='10'
-  ></ng-persian-datepicker>
-</div>
+<button mat-button (click)="openDialog()">Launch dialog</button>
+
+
+<style>
+   .dp-material{
+   
+      
+   }
+</style>
+  <dp-date-picker 
+  dir="rtl"
+    [config]="dateObject"
+   
+   mode="day"
+   placeholder="تاریخ"
+   theme="dp-material">
+ </dp-date-picker>

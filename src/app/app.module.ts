@@ -96,6 +96,16 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { WCProductComponent } from './widgets/cards/w-c-product/w-c-product.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+
+
+
+
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {ToastrModule} from 'ngx-toastr';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -165,14 +175,20 @@ import {MatExpansionModule} from '@angular/material/expansion';
     WCProductComponent,
 
   ],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     AppRoutingModule,
     IvyCarouselModule,
     NgPersianDatepickerModule,
     NoopAnimationsModule,
     MatDialogModule ,
     DpDatePickerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [{provide :LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],

@@ -19,13 +19,13 @@
                                     <h3>خوش آمدید</h3>
                                     <p>کاربر جدید راک؟ <a [routerLink]="['/register']">ثبت نام</a></p>
 
-                                    <form>
+                                    <form #loginForm="ngForm" (ngSubmit)="login()" >
                                         <div class="form-group">
-                                            <input type="email" placeholder="آدرس ایمیل" class="form-control">
+                                            <input [(ngModel)]="model.userName" name="userName"  type="text" placeholder="نام کاربری" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="password" placeholder="رمز عبور" class="form-control">
+                                            <input [(ngModel)]="model.password" name="userName"  type="password" placeholder="رمز عبور" class="form-control">
                                         </div>
 
                                         <button type="submit">ورود</button>

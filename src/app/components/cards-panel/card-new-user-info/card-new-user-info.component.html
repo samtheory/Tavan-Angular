@@ -1,176 +1,124 @@
-<div
-  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0"
->
-  <div class="rounded-t bg-white mb-0 px-6 py-6">
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0">
+  <div class="rounded-t bg-white mb-0 px-6 py-6 border-r-8 border-teal-200">
     <div class="text-center flex justify-between">
       <h6 class="text-gray-800 text-xl font-bold">کاربر جدید</h6>
       <button
-        class="bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-        type="button"
-      >
+        class="hover:border-red-500 hover:bg-white hover:text-red-600 border-2 border-transparent bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+        type="button">
         ایجاد کاربر جدید
       </button>
     </div>
   </div>
   <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
     <form>
-      <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+      <!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
         User Information
-      </h6>
+      </h6> -->
       <div class="flex flex-wrap">
         <div class="w-full lg:w-6/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Username
+            <label class=" block uppercase text-gray-700 text-xs font-bold mb-2 mt-2" htmlFor="grid-password">
+              نام و نام خانوادگی
             </label>
-            <input
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="lucky.jesse"
-            />
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="lucky.jesse" />
           </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Email address
+            <label class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+              آدرس ایمیل
             </label>
-            <input
-              type="email"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="jesse@example.com"
-            />
+            <input type="email"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="jesse@example.com" />
           </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              First Name
+            <label class="mt-2 mt-2 block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+              نام کاربری
             </label>
-            <input
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="Lucky"
-            />
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="Lucky" />
           </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Last Name
+            <label class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+              کد ملی
             </label>
-            <input
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="Jesse"
-            />
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="Jesse" />
           </div>
         </div>
       </div>
 
       <hr class="mt-6 border-b-1 border-gray-400" />
-
+      <!-- 
       <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
-        Contact Information
-      </h6>
+        آدرس
+      </h6> -->
       <div class="flex flex-wrap">
         <div class="w-full lg:w-12/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Address
+            <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2" htmlFor="grid-password">
+              آدرس
             </label>
-            <input
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-            />
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" />
           </div>
         </div>
         <div class="w-full lg:w-4/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              City
+            <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2" htmlFor="grid-password">
+              رمز عبور
             </label>
-            <input
-              type="email"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="New York"
-            />
+            <input type="email"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="New York" />
           </div>
         </div>
         <div class="w-full lg:w-4/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Country
+            <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2" htmlFor="grid-password">
+              تکرار رمز عبور
             </label>
-            <input
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="United States"
-            />
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="United States" />
           </div>
         </div>
-        <div class="w-full lg:w-4/12 px-4">
+        <!-- <div class="w-full lg:w-4/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
+            <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
               Postal Code
             </label>
-            <input
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="Postal Code"
-            />
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="Postal Code" />
           </div>
-        </div>
+        </div> -->
       </div>
 
       <hr class="mt-6 border-b-1 border-gray-400" />
 
-      <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+      <!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
         About Me
-      </h6>
+      </h6> -->
       <div class="flex flex-wrap">
         <div class="w-full lg:w-12/12 px-4">
           <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              About me
+            <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2" htmlFor="grid-password">
+              درباره من
             </label>
-            <textarea
-              type="text"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              rows="4"
-            >
-                  A beautiful Dashboard for Angular & Tailwind CSS. It is Free
-                  and Open Source.
-                </textarea
-            >
+            <textarea type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              rows="4">A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</textarea>
           </div>
         </div>
       </div>

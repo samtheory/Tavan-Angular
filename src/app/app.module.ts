@@ -113,6 +113,7 @@ import { PCEditProfileComponent } from './views/panel-Customer/p-c-edit-profile/
 import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course-single-detail/p-c-course-single-detail.component';
 import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w-c-customer-course.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
+import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
 
 
 
@@ -193,6 +194,7 @@ import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-
     PCCourseSingleDetailComponent,
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
+    CustomerPanelComponent,
 
   ],
   imports: [

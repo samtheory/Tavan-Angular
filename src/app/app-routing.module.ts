@@ -45,6 +45,7 @@ import { PCActiveCoursesComponent } from './views/panel-Customer/p-c-active-cour
 import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course-single-detail/p-c-course-single-detail.component';
 import { PCFinnishedCoursesComponent } from './views/panel-Customer/p-c-finnished-courses/p-c-finnished-courses.component';
 import { PCEditProfileComponent } from './views/panel-Customer/p-c-edit-profile/p-c-edit-profile.component';
+import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
 
 const routes: Routes = [
 
@@ -89,7 +90,7 @@ const routes: Routes = [
   // Customer Panel views
   {
     path: 'Customer',
-    component: PanelComponent,
+    component: CustomerPanelComponent,
     children: [
       { path: 'dashboard', component: PCDashboardComponent },
       { path: 'activeCourses', component: PCActiveCoursesComponent },

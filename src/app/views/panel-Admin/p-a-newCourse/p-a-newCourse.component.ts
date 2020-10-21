@@ -12,13 +12,10 @@ import { CourseService } from 'src/app/_services/course.service';
   styleUrls: ['./p-a-newCourse.component.css']
 })
 export class PANewCourseComponent implements OnInit {
-  categoryForm: FormGroup;
+  courseForm: FormGroup;
   submitted = false;
-
-
-
-  
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService, private router: Router, private courseService: CourseService ) { }
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService
+    , private router: Router, private courseService: CourseService ) { }
 
   ngOnInit() {
   }
@@ -26,43 +23,48 @@ export class PANewCourseComponent implements OnInit {
 
 
   createCategoryFrom(){
-    this.categoryForm = this.formBuilder.group({
-      name_fa: ['', Validators.required],
-      name_en: ['', Validators.required],
-      description_fa: ['', Validators.required],
-      description_en: ['', Validators.required],
-      categoryId: [''],
-      categoryLevel: [''],
+    this.courseForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      cost: ['', Validators.required],
+      url: ['', Validators.required],
+      off: ['', Validators.required],
+      videoUrl: [''],
+      videoId: [''],
+      courseDays: [''],
+      isActive: [''],
+      teacher: [''],
+      titres: [''],
+      description: [''],
+      started: [''],
+      ended: [''],
       file: ['',Validators.required],
       fileSource: ['',Validators.required],
-      
-
     });
   }
   onFileChange(event) {
   
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.categoryForm.patchValue({
+      this.courseForm.patchValue({
         fileSource: file
       });
     }
   }
 
   createCategory(){
-    console.log(this.categoryForm);
+    console.log(this.courseForm);
     const formData = new FormData();
-    formData.append('file', this.categoryForm.get('fileSource').value);
-    formData.append('name_en', this.categoryForm.get('name_en').value);
-    formData.append('name_fa', this.categoryForm.get('name_fa').value);
-    formData.append('description_fa', this.categoryForm.get('description_fa').value);
-    formData.append('description_en', this.categoryForm.get('description_en').value);
-    formData.append('categoryLevel', this.categoryForm.get('categoryLevel').value);
-    formData.append('categoryId', this.categoryForm.get('categoryId').value);
+    formData.append('file', this.courseForm.get('fileSource').value);
+    formData.append('name_en', this.courseForm.get('name_en').value);
+    formData.append('name_fa', this.courseForm.get('name_fa').value);
+    formData.append('description_fa', this.courseForm.get('description_fa').value);
+    formData.append('description_en', this.courseForm.get('description_en').value);
+    formData.append('categoryLevel', this.courseForm.get('categoryLevel').value);
+    formData.append('categoryId', this.courseForm.get('categoryId').value);
 
 
       this.courseService.createCourse(formData).subscribe(() => {
-        this.toastr.success("success fully created");
+        this.toastr.success('success fully created');
         this.router.navigate(['/categories']);
 
       }, error => {
@@ -75,18 +77,18 @@ export class PANewCourseComponent implements OnInit {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.categoryForm.invalid) {
+    if (this.courseForm.invalid) {
         return;
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.categoryForm.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.courseForm.value, null, 4));
 }
 
 onReset() {
     // reset whole form back to initial state
     this.submitted = false;
-    this.categoryForm.reset();
+    this.courseForm.reset();
 }
 
 

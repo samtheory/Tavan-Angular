@@ -103,6 +103,16 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
+import { PAAddVideoComponent } from './views/panel-admin/p-a-add-video/p-a-add-video.component';
+import { PADiscountEditComponent } from './views/panel-admin/p-a-discount-edit/p-a-discount-edit.component';
+import { PADiscountNewComponent } from './views/panel-admin/p-a-discount-new/p-a-discount-new.component';
+import { PCDashboardComponent } from './views/panel-Customer/p-c-dashboard/p-c-dashboard.component';
+import { PCActiveCoursesComponent } from './views/panel-Customer/p-c-active-courses/p-c-active-courses.component';
+import { PCFinnishedCoursesComponent } from './views/panel-Customer/p-c-finnished-courses/p-c-finnished-courses.component';
+import { PCEditProfileComponent } from './views/panel-Customer/p-c-edit-profile/p-c-edit-profile.component';
+import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course-single-detail/p-c-course-single-detail.component';
+import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w-c-customer-course.component';
+import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 
 
 
@@ -173,6 +183,16 @@ import {ToastrModule} from 'ngx-toastr';
     CardNewUserInfoComponent,
     CardNewUserPicComponent,
     WCProductComponent,
+    PAAddVideoComponent,
+    PADiscountEditComponent,
+    PADiscountNewComponent,
+    PCDashboardComponent,
+    PCActiveCoursesComponent,
+    PCFinnishedCoursesComponent,
+    PCEditProfileComponent,
+    PCCourseSingleDetailComponent,
+    WCCustomerCourseComponent,
+    SidebarCustomerComponent,
 
   ],
   imports: [

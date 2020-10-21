@@ -1,5 +1,5 @@
 <nav
-  class=" md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-mesh-900 flex flex-wrap items-center justify-between relative z-10 py-4 px-6"
+  class="md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-mesh-900 flex flex-wrap items-center justify-between relative z-10 py-4 px-6"
 >
   <div
     class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between mx-auto"
@@ -15,10 +15,11 @@
     <!-- Brand -->
     <a
       [routerLink]="['/']"
-      class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-lg uppercase font-bold p-4 px-0 md:mr-18 " style="text-align: center;"
+      class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-lg uppercase font-bold p-4 px-0 md:mr-18"
+      style="text-align: center"
     >
-      <span class="block sm:hidden"> Tavan  </span>
-      <span class="hidden sm:block  text-mesh-300"> Tavan </span>
+      <span class="block sm:hidden"> Tavan </span>
+      <span class="hidden sm:block text-mesh-300"> Tavan </span>
     </a>
     <!-- User -->
     <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -33,7 +34,7 @@
     <div
       class="md:flex md:flex-col md:items-stretch md:opacity-100 md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
       [ngClass]="collapseShow"
-      style="box-shadow: none !important;"
+      style="box-shadow: none !important"
     >
       <!-- Collapse header -->
       <div
@@ -61,11 +62,18 @@
       </div>
 
       <!-- Divider -->
-      <div style="margin-top: 15px; margin-bottom: 25px;margin-left: 10px;margin-right: 10px;">
+      <div
+        style="
+          margin-top: 15px;
+          margin-bottom: 25px;
+          margin-left: 10px;
+          margin-right: 10px;
+        "
+      >
         <hr
-          class="my-4 md:min-w-full hidden md:block border-mesh-200  border-2 rounded-md border-dashed"
+          class="my-4 md:min-w-full hidden md:block border-mesh-200 border-2 rounded-md border-dashed"
           style="margin-top: 50px"
-        /> 
+        />
       </div>
 
       <!-- Heading -->
@@ -80,7 +88,7 @@
         <li class="items-center">
           <a
             [routerLink]="['/admin/dashboard']"
-            class="px-4 text-sm  uppercase py-3 font-bold block text-right "
+            class="px-4 text-sm uppercase py-3 font-bold block text-right"
             routerLinkActive
             #adminDashboard="routerLinkActive"
             [ngClass]="
@@ -102,7 +110,7 @@
         <li class="items-center">
           <a
             [routerLink]="['/admin/newUser']"
-            class="px-4 text-sm  uppercase py-3 font-bold block "
+            class="px-4 text-sm uppercase py-3 font-bold block"
             routerLinkActive
             #adminNewUser="routerLinkActive"
             [ngClass]="
@@ -113,9 +121,7 @@
           >
             <i
               class="ml-2 fas fa-tools mr-2 text-sm"
-              [ngClass]="
-                adminNewUser.isActive ? 'opacity-75' : 'text-gray-400'
-              "
+              [ngClass]="adminNewUser.isActive ? 'opacity-75' : 'text-gray-400'"
             ></i>
             کاربر جدید
           </a>
@@ -138,14 +144,14 @@
                 adminSlidShow.isActive ? 'opacity-75' : 'text-gray-400'
               "
             ></i>
-             مدیریت بنر  
+            مدیریت بنر
           </a>
         </li>
       </ul>
 
       <!-- Divider -->
       <div style="margin-left: 10px; margin-right: 10px">
-        <hr class="my-4 md:min-w-full border-mesh-200  border-1 rounded-md" />
+        <hr class="my-4 md:min-w-full border-mesh-200 border-1 rounded-md" />
       </div>
       <!-- Heading -->
       <h6
@@ -157,85 +163,112 @@
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
-          <a [routerLink]="['/admin/newCourse']" class="px-4  text-sm uppercase py-3 font-bold block" routerLinkActive
-            #PANewCourseComponent="routerLinkActive" [ngClass]="
-                       PANewCourseComponent.isActive
-                        ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
-                        : 'text-gray-800 hover:text-gray-600'
-                    ">
-            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
-                        adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
-                      "></i>
-             دوره جدید
+          <a
+            [routerLink]="['/admin/newCourse']"
+            class="px-4 text-sm uppercase py-3 font-bold block"
+            routerLinkActive
+            #PANewCourseComponent="routerLinkActive"
+            [ngClass]="
+              PANewCourseComponent.isActive
+                ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
+                : 'text-gray-800 hover:text-gray-600'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm ml-2"
+              [ngClass]="
+                PANewCourseComponent.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+            ></i>
+            دوره جدید
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/editCourse']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
-            #edit="routerLinkActive" [ngClass]="
-                      edit.isActive
-                        ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
-                        : 'text-gray-800 hover:text-gray-600'
-                    ">
-            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
-                        adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
-                      "></i>
-              ادیت دوره
+          <a
+            [routerLink]="['/admin/editCourse']"
+            class="px-4 text-sm uppercase py-3 font-bold block"
+            routerLinkActive
+            #edit="routerLinkActive"
+            [ngClass]="
+              edit.isActive
+                ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
+                : 'text-gray-800 hover:text-gray-600'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm ml-2"
+              [ngClass]="
+                edit.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+            ></i>
+            ادیت دوره
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/allCourses']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
-            #AllCourses="routerLinkActive" [ngClass]="
-                      AllCourses.isActive
-                        ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
-                        : 'text-gray-800 hover:text-gray-600'
-                    ">
-            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
-                        adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
-                      "></i>
-          مشاهده همه دوره ها
+          <a
+            [routerLink]="['/admin/allCourses']"
+            class="px-4 text-sm uppercase py-3 font-bold block"
+            routerLinkActive
+            #AllCourses="routerLinkActive"
+            [ngClass]="
+              AllCourses.isActive
+                ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
+                : 'text-gray-800 hover:text-gray-600'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm ml-2"
+              [ngClass]="
+                AllCourses.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+            ></i>
+            مشاهده همه دوره ها
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/addVideo']"
+            class="px-4 text-sm uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminAddVideo="routerLinkActive"
+            [ngClass]="
+              adminAddVideo.isActive
+                ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
+                : 'text-gray-800 hover:text-gray-600'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm ml-2"
+              [ngClass]="
+                adminAddVideo.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+            ></i>
+            آپلود ویدیو
           </a>
         </li>
         <li class="items-center">
-          <a [routerLink]="['/admin/1']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
-            #adminSettings="routerLinkActive" [ngClass]="
-                      adminSettings.isActive
-                        ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
-                        : 'text-gray-800 hover:text-gray-600'
-                    ">
-            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
-                        adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
-                      "></i>
-             مشاهده دوره های برگزار شده
-          </a>
-        </li>
-        <li class="items-center">
-          <a [routerLink]="['/admin/2/aa']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
-            #adminSettings="routerLinkActive" [ngClass]="
-                      adminSettings.isActive
-                        ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
-                        : 'text-gray-800 hover:text-gray-600'
-                    ">
-            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
-                        adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
-                      "></i>
-             مشاهده دوره های درحال برگزاری
-          </a>
-        </li>
-        <li class="items-center">
-          <a [routerLink]="['/admin/discount']" class="px-4 text-sm uppercase py-3 font-bold block" routerLinkActive
-            #adminDiscountTable="routerLinkActive" [ngClass]="
-                      adminDiscountTable.isActive
-                        ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
-                        : 'text-gray-800 hover:text-gray-600'
-                    ">
-            <i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
-                        adminDiscountTable.isActive ? 'opacity-75' : 'text-gray-400' "></i>
-                  ایجاد کد تخفیف
+          <a
+            [routerLink]="['/admin/discount']"
+            class="px-4 text-sm uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDiscountTable="routerLinkActive"
+            [ngClass]="
+              adminDiscountTable.isActive
+                ? 'text-red-600 hover:text-red-700  bg-mesh-800 border-l-2 border-mesh-200'
+                : 'text-gray-800 hover:text-gray-600'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm ml-2"
+              [ngClass]="
+                adminDiscountTable.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+            ></i>
+            ایجاد کد تخفیف
           </a>
         </li>
       </ul>
-
-     
     </div>
   </div>
 </nav>

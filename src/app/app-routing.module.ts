@@ -36,60 +36,80 @@ import { PANewUserComponent } from './views/panel-Admin/p-a-new-user/p-a-new-use
 import { PASlideShowComponent } from './views/panel-Admin/p-a-slide-show/p-a-slide-show.component';
 import { PADiscountComponent } from './views/panel-Admin/p-a-discount/p-a-discount.component';
 import { PADashboardComponent } from './views/panel-Admin/p-a-dashboard/p-a-dashboard.component';
+import { PAAddVideoComponent } from './views/panel-admin/p-a-add-video/p-a-add-video.component';
+import { PAEditUserComponent } from './views/panel-Admin/p-a-edit-user/p-a-edit-user.component';
+import { PADiscountEditComponent } from './views/panel-admin/p-a-discount-edit/p-a-discount-edit.component';
+import { PADiscountNewComponent } from './views/panel-admin/p-a-discount-new/p-a-discount-new.component';
+import { PCDashboardComponent } from './views/panel-Customer/p-c-dashboard/p-c-dashboard.component';
+import { PCActiveCoursesComponent } from './views/panel-Customer/p-c-active-courses/p-c-active-courses.component';
+import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course-single-detail/p-c-course-single-detail.component';
+import { PCFinnishedCoursesComponent } from './views/panel-Customer/p-c-finnished-courses/p-c-finnished-courses.component';
+import { PCEditProfileComponent } from './views/panel-Customer/p-c-edit-profile/p-c-edit-profile.component';
 
 const routes: Routes = [
-  {path:'Test', component: TestComponentViewComponent},
 
+  
+  // landing Page views
   {
-    path: 'index', 
-    component: LandingLayoutComponent ,
-    children:[  
-      {path:'home', component: LandingHomeComponent},
-      {path:'products/Single', component: LandingSingleProductComponent},
-      {path:'about', component: LandingAboutComponent},
-      {path:'intro', component: LandingIntroComponent},
-      {path:'products', component: LandingProductsAllComponent},
+    path: 'index',
+    component: LandingLayoutComponent,
+    children: [
+      { path: 'home', component: LandingHomeComponent },
+      { path: 'products/Single', component: LandingSingleProductComponent },
+      { path: 'about', component: LandingAboutComponent },
+      { path: 'intro', component: LandingIntroComponent },
+      { path: 'products', component: LandingProductsAllComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
-  },
-    
-    {path:'home', component: LandingHomeComponent},
-   
-  { path: 'test', component: TestComponentViewComponent },
-  {
-    path: 'panel',
-    component: PanelComponent,
-    children: [
-      { path: 'newCourse', component: PANewCourseComponent },
-      { path: 'allCourses', component: PAAllCoursesComponent }, 
-      {path: 'editCourse', component: PAEditCourseComponent},
-    ],
   },
   // admin views
   {
     path: 'admin',
     component: PanelComponent,
     children: [
+      { path: 'dashboard', component: PADashboardComponent },
+      { path: 'addVideo', component: PAAddVideoComponent },
+      { path: 'allCourses', component: PAAllCoursesComponent },
       { path: 'newCourse', component: PANewCourseComponent },
+      { path: 'editCourse', component: PAEditCourseComponent },
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },
+      { path: 'EditUser', component: PAEditUserComponent },
       { path: 'slideShow', component: PASlideShowComponent },
       { path: 'discount', component: PADiscountComponent },
-      { path: 'allCourses', component: PAAllCoursesComponent }, 
-      {path: 'editCourse', component: PAEditCourseComponent},
-      { path: 'dashboard', component: PADashboardComponent },
+      { path: 'EditDiscount', component: PADiscountEditComponent },
+      { path: 'NewDiscount', component: PADiscountNewComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'tables', component: TablesComponent },
       { path: 'maps', component: MapsComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
+  
+  // Customer Panel views
+  {
+    path: 'Customer',
+    component: PanelComponent,
+    children: [
+      { path: 'dashboard', component: PCDashboardComponent },
+      { path: 'activeCourses', component: PCActiveCoursesComponent },
+      { path: 'SingleCourseDetails', component: PCCourseSingleDetailComponent },
+      { path: 'FinnishCourses', component: PCFinnishedCoursesComponent },
+      { path: 'Profile', component: PCEditProfileComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    ],
+  },
+  
+  
+  
+  
+  // :::::::::::::::::::::::::::::::::::::::::::::::::::: 
+  //! -----> Here are some old Route USelesssss 
+  // Just for dev testing 
+  { path: 'Test', component: TestComponentViewComponent },
   // auth views
-
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-    
-   
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   // no layout views
   { path: 'profile', component: ProfileComponent },
   { path: 'landing', component: LandingComponent },

@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { PaginatedResult } from '../_models/pagination';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -10,10 +11,11 @@ import { User } from '../_models/user';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+constructor(private http: HttpClient) { }
 baseUrl = environment.apiUrl +   'auth/';
 private currentUser = new ReplaySubject<User>(1);
 currentUser$ = this.currentUser.asObservable();
+paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
 decodeToken: any;
 
 login(model: any) {
@@ -22,7 +24,6 @@ login(model: any) {
     const user = response;
 
     if (user) {
-      localStorage.setItem('token', user.token);
       localStorage.setItem('user', JSON.stringify(user));
       this.currentUser.next(user);
       console.log(this.decodeToken);
@@ -46,4 +47,34 @@ logout(){
   localStorage.removeItem('user');
   this.currentUser.next(null);
 }
+
+updateProfile(user: FormData) {
+  return this.http.post(this.baseUrl + 'update', user);
+}
+
+AdminRegister(user: FormData) {
+  return this.http.post(this.baseUrl + 'adminregister', user);
+}
+
+
+
+getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<User[]>>{
+  let params = new HttpParams();
+
+  if (page != null && itemsPerPage != null){
+    params = params.append('pageNumber' , page);
+    params = params.append('pageSize' , itemsPerPage);
+   }
+  return this.http.get<User[]>(this.baseUrl + 'some', {observe: 'response', params}).pipe(
+    map(response => {
+      this.paginatedResult.result = response.body;
+      console.log(response.headers.get('Pagination'));
+      if(response.headers.get('Pagination') != null){
+        this.paginatedResult.pag = JSON.parse(response.headers.get('Pagination'));
+      }
+      return this.paginatedResult;
+    })
+  );
+}
+
 }

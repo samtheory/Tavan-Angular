@@ -101,7 +101,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import { PAAddVideoComponent } from './views/panel-admin/p-a-add-video/p-a-add-video.component';
 import { PADiscountEditComponent } from './views/panel-admin/p-a-discount-edit/p-a-discount-edit.component';
@@ -114,6 +114,9 @@ import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course
 import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w-c-customer-course.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
+import { JwtInterceptor } from './_intercepters/jwt.interceptor';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -195,7 +198,7 @@ import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
     CustomerPanelComponent,
-
+    MatPaginatorModule
   ],
   imports: [
     BrowserModule,
@@ -212,7 +215,10 @@ import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.
       positionClass: 'toast-bottom-right'
     })
   ],
-  providers: [{provide :LocationStrategy,useClass:HashLocationStrategy}],
+  providers: [
+    {provide :LocationStrategy,useClass:HashLocationStrategy},
+    {provide : HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

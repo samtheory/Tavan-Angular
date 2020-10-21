@@ -1,1 +1,11 @@
-<p>customer-panel works!</p>
+<div>
+	<app-sidebar-customer></app-sidebar-customer>
+	<div class="md:mr-56 relative bg-gray-400">
+		<app-admin-navbar></app-admin-navbar>
+		<app-header-stats></app-header-stats>
+		<div class="px-4 md:px-10 mx-auto w-full">
+			<router-outlet></router-outlet>
+			<app-footer-admin></app-footer-admin>
+		</div>
+	</div>
+</div>

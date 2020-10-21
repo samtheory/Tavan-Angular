@@ -49,7 +49,7 @@ import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.
 
 const routes: Routes = [
 
-  
+
   // landing Page views
   {
     path: 'index',
@@ -86,7 +86,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
-  
+
   // Customer Panel views
   {
     path: 'Customer',
@@ -100,10 +100,10 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
-  
-  
-  
-  
+
+
+
+
   // :::::::::::::::::::::::::::::::::::::::::::::::::::: 
   //! -----> Here are some old Route USelesssss 
   // Just for dev testing 

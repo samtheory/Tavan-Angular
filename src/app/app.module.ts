@@ -116,7 +116,6 @@ import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
 import { JwtInterceptor } from './_intercepters/jwt.interceptor';
 
-import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -197,8 +196,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PCCourseSingleDetailComponent,
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
-    CustomerPanelComponent,
-    MatPaginatorModule
+    CustomerPanelComponent
   ],
   imports: [
     BrowserModule,

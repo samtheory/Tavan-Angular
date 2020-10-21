@@ -100,7 +100,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import { PAAddVideoComponent } from './views/panel-admin/p-a-add-video/p-a-add-video.component';
@@ -209,6 +209,7 @@ import { JwtInterceptor } from './_intercepters/jwt.interceptor';
     MatExpansionModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
     })

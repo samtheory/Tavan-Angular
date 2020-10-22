@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 
 
@@ -18,11 +18,12 @@ export class PANewCourseComponent implements OnInit {
     , private router: Router, private courseService: CourseService ) { }
 
   ngOnInit() {
+    this.createCourseFrom();
   }
 
 
 
-  createCategoryFrom(){
+  createCourseFrom(){
     this.courseForm = this.formBuilder.group({
       title: ['', Validators.required],
       cost: ['', Validators.required],
@@ -51,21 +52,25 @@ export class PANewCourseComponent implements OnInit {
     }
   }
 
-  createCategory(){
+  createCourse(){
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
-    formData.append('name_en', this.courseForm.get('name_en').value);
-    formData.append('name_fa', this.courseForm.get('name_fa').value);
-    formData.append('description_fa', this.courseForm.get('description_fa').value);
-    formData.append('description_en', this.courseForm.get('description_en').value);
-    formData.append('categoryLevel', this.courseForm.get('categoryLevel').value);
-    formData.append('categoryId', this.courseForm.get('categoryId').value);
+    formData.append('title', this.courseForm.get('title').value);
+    formData.append('cost', this.courseForm.get('cost').value);
+    formData.append('off', this.courseForm.get('off').value);
+    formData.append('description', this.courseForm.get('description').value);
+    formData.append('titres', this.courseForm.get('titres').value);
+    formData.append('teacher', this.courseForm.get('teacher').value);
+    formData.append('started', this.courseForm.get('started').value);
+    formData.append('ended', this.courseForm.get('ended').value);
+    formData.append('videoUrl', this.courseForm.get('videoUrl').value);
+    formData.append('videoId', this.courseForm.get('videoId').value);
 
 
       this.courseService.createCourse(formData).subscribe(() => {
         this.toastr.success('success fully created');
-        this.router.navigate(['/categories']);
+        this.router.navigate(['/index/home']);
 
       }, error => {
           this.toastr.error(error);

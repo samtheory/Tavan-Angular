@@ -3,9 +3,9 @@ import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 
 
-import jalaali from 'jalaali-js';
 import { Router } from '@angular/router';
 import { CourseService } from 'src/app/_services/course.service';
+import jalaali from 'jalaali-js';
 @Component({
   selector: 'app-p-a-newCourse',
   templateUrl: './p-a-newCourse.component.html',

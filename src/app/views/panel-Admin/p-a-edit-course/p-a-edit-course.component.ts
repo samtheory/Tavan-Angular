@@ -123,7 +123,6 @@ export class PAEditCourseComponent implements OnInit {
       }, error => {
           this.toastr.error(error);
       })
-      
   }
 
   onSubmit() {
@@ -157,7 +156,7 @@ FinishDateChange(value: String) {
   let mm: Number = Number(value.slice(5, 7)) ;
   let dd: Number = Number(value.slice(8, 10)) ;
 
- let g = jalaali.toGregorian(yyyy, mm, dd)
+ let g = jalaali.toGregorian(yyyy, mm, dd);
   console.log(g.gy+'-'+g.gm+'-'+g.gd);
 
 }

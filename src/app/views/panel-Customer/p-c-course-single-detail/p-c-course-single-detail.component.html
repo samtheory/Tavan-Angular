@@ -41,582 +41,118 @@
                                  type="button"> ورود به کلاس آنلاین</button></div>
 
                            <h3>ویدئو دوره ها</h3>
-                           <div class="courses-accordion">
-                              <ul class="accordion">
-                                 <li class="accordion-item">
-                                    <a class="accordion-title active" href="javascript:void(0)">
-                                       <i class='bx bx-chevron-down'></i>
+                           
+                           <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+                           <!-- speace  -->
+                           <div style="margin-top: 50px;"></div>
+                           <!-- speace  -->
+
+
+
+                           <mat-accordion class="duration-500 ">
+
+                              <mat-expansion-panel class="duration-500" (opened)="panelOpenState1 = true"
+                                 (closed)="panelOpenState1 = false">
+                                 <mat-expansion-panel-header>
+                                    <mat-panel-title class="font-bold text-black fa-vazir vazir">
                                        بخش 1: ری اکت جی اس - شروع کار
-                                    </a>
-
-                                    <div class="accordion-content show">
-                                       <ul class="courses-lessons">
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">01.</span>
-
-                                                <a href="#" class="lessons-title">مقدمه</a>
-
-                                                <span class="preview">پیش نمایش</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 5 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">02.</span>
-
-                                                <a href="#" class="lessons-title">چرا ری اکت جی اس؟</a>
-
-                                                <span class="preview">پیش نمایش</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 10 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">03.</span>
-
-                                                <a href="#" class="lessons-title">برنامه وب ری اکت جی اس</a>
-
-                                                <span class="preview">پیش نمایش</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 15 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">04.</span>
-
-                                                <a href="#" class="lessons-title">دنیای واقعی</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 50 دقیقه پیش</span>
-
-                                                <a href="#" class="attrachment-video" data-toggle="tooltip"
-                                                   data-placement="top" title="Download Video"><i
-                                                      class='bx bx-file'></i> فایل</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">05.</span>
-
-                                                <a href="#" class="lessons-title">اضافه کردن نسخه مناسب ری اکت</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 58 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </li>
-
-                                 <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                       <i class='bx bx-chevron-down'></i>
-                                       بخش 2: تازه کردن نسل بعدی جاوا اسکریپت
-                                    </a>
-
-                                    <div class="accordion-content">
-                                       <ul class="courses-lessons">
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">01.</span>
-
-                                                <a href="#" class="lessons-title">مقدمه</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 5 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">02.</span>
-
-                                                <a href="#" class="lessons-title">چرا ری اکت جی اس؟</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 10 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">03.</span>
-
-                                                <a href="#" class="lessons-title">برنامه وب ری اکت جی اس</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 15 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">04.</span>
-
-                                                <a href="#" class="lessons-title">دنیای واقعی</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 50 دقیقه پیش</span>
-
-                                                <a href="#" class="attrachment-video" data-toggle="tooltip"
-                                                   data-placement="top" title="Download Video"><i
-                                                      class='bx bx-file'></i> فایل</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">05.</span>
-
-                                                <a href="#" class="lessons-title">اضافه کردن نسخه مناسب ری اکت</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 58 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </li>
-
-                                 <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                       <i class='bx bx-chevron-down'></i>
-                                       بخش 3: درک ویژگی های اصلی و نحوه
-                                    </a>
-
-                                    <div class="accordion-content">
-                                       <ul class="courses-lessons">
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">01.</span>
-
-                                                <a href="#" class="lessons-title">مقدمه</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 5 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">02.</span>
-
-                                                <a href="#" class="lessons-title">چرا ری اکت جی اس؟</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 10 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">03.</span>
-
-                                                <a href="#" class="lessons-title">برنامه وب ری اکت جی اس</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 15 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">04.</span>
-
-                                                <a href="#" class="lessons-title">دنیای واقعی</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 50 دقیقه پیش</span>
-
-                                                <a href="#" class="attrachment-video" data-toggle="tooltip"
-                                                   data-placement="top" title="Download Video"><i
-                                                      class='bx bx-file'></i> فایل</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">05.</span>
-
-                                                <a href="#" class="lessons-title">اضافه کردن نسخه مناسب ری اکت</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 58 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </li>
-
-                                 <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                       <i class='bx bx-chevron-down'></i>
-                                       بخش 4: یک برنامه جدید واکنش ایجاد کنید
-                                    </a>
-
-                                    <div class="accordion-content">
-                                       <ul class="courses-lessons">
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">01.</span>
-
-                                                <a href="#" class="lessons-title">مقدمه</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 5 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">02.</span>
-
-                                                <a href="#" class="lessons-title">چرا ری اکت جی اس؟</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 10 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">03.</span>
-
-                                                <a href="#" class="lessons-title">برنامه وب ری اکت جی اس</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 15 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">04.</span>
-
-                                                <a href="#" class="lessons-title">دنیای واقعی</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 50 دقیقه پیش</span>
-
-                                                <a href="#" class="attrachment-video" data-toggle="tooltip"
-                                                   data-placement="top" title="Download Video"><i
-                                                      class='bx bx-file'></i> فایل</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">05.</span>
-
-                                                <a href="#" class="lessons-title">اضافه کردن نسخه مناسب ری اکت</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 58 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </li>
-
-                                 <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                       <i class='bx bx-chevron-down'></i>
-                                       بخش 5: ادغام با سایر کتابخانه ها
-                                    </a>
-
-                                    <div class="accordion-content">
-                                       <ul class="courses-lessons">
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">01.</span>
-
-                                                <a href="#" class="lessons-title">مقدمه</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 5 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">02.</span>
-
-                                                <a href="#" class="lessons-title">چرا ری اکت جی اس؟</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 10 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">03.</span>
-
-                                                <a href="#" class="lessons-title">برنامه وب ری اکت جی اس</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 15 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">04.</span>
-
-                                                <a href="#" class="lessons-title">دنیای واقعی</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 50 دقیقه پیش</span>
-
-                                                <a href="#" class="attrachment-video" data-toggle="tooltip"
-                                                   data-placement="top" title="Download Video"><i
-                                                      class='bx bx-file'></i> فایل</a>
-                                             </div>
-                                          </li>
-
-                                          <li class="single-lessons">
-                                             <div class="d-md-flex d-lg-flex align-items-center">
-                                                <span class="number">05.</span>
-
-                                                <a href="#" class="lessons-title">اضافه کردن نسخه مناسب ری اکت</a>
-
-                                                <span class="locked">قفل شده</span>
-                                             </div>
-
-                                             <div class="lessons-info">
-                                                <span class="duration" data-toggle="tooltip" data-placement="top"
-                                                   title="Duration"><i class='bx bx-time'></i> 58 دقیقه پیش</span>
-
-                                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                                   class="attrachment-video popup-youtube" data-toggle="tooltip"
-                                                   data-placement="top" title="Play Video"><i
-                                                      class='bx bx-play-circle'></i>
-                                                   ویدئو</a>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </li>
-                              </ul>
-                           </div>
-
-
-
+                                    </mat-panel-title>
+                                    <mat-panel-description class=" duration-200" [ngClass]="
+                                       panelOpenState1
+                                          ? 'text-red-600 font-bold'
+                                          : 'text-gray-300 hover:text-red-300'
+                                       ">
+                                       {{panelOpenState1 ? 'open' : 'closed'}}
+                                    </mat-panel-description>
+                                 </mat-expansion-panel-header>
+                                 <div class="lessons-info">
+                                    <span class="duration" data-toggle="tooltip" data-placement="top"
+                                       title="Duration"><i class='bx bx-time'></i> 58
+                                       دقیقه پیش</span>
+
+                                 <div style="margin-top: 15px; display: block;"></div>
+                                 
+                                 
+                                 
+                                 <div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe
+                                       src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame" allowFullScreen="true"
+                                       webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+
+                                 </div>
+                              </mat-expansion-panel>
+
+
+
+                              <mat-expansion-panel class="duration-500" (opened)="panelOpenState2 = true"
+                                 (closed)="panelOpenState2 = false">
+                                 <mat-expansion-panel-header>
+                                    <mat-panel-title class="font-bold text-black fa-vazir vazir">
+                                       بخش 1: ری اکت جی اس - شروع کار
+                                    </mat-panel-title>
+                                    <mat-panel-description class=" duration-200" [ngClass]="
+                                       panelOpenState2
+                                          ? 'text-red-600 font-bold'
+                                          : 'text-gray-300 hover:text-red-300'
+                                       ">
+                                       {{panelOpenState2 ? 'open' : 'closed'}}
+                                    </mat-panel-description>
+                                 </mat-expansion-panel-header>
+                                 <div class="lessons-info">
+                                    <span class="duration" data-toggle="tooltip" data-placement="top"
+                                       title="Duration"><i class='bx bx-time'></i> 58
+                                       دقیقه پیش</span>
+
+                                 <div style="margin-top: 15px; display: block;"></div>
+                                 
+                                 
+                                 
+                                 <div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe
+                                       src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame" allowFullScreen="true"
+                                       webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+
+                                 </div>
+                              </mat-expansion-panel>
+
+
+
+                              <mat-expansion-panel class="duration-500" (opened)="panelOpenState3 = true"
+                                 (closed)="panelOpenState3 = false">
+                                 <mat-expansion-panel-header>
+                                    <mat-panel-title class="font-bold text-black fa-vazir vazir">
+                                       بخش 1: ری اکت جی اس - شروع کار
+                                    </mat-panel-title>
+                                    <mat-panel-description class=" duration-200" [ngClass]="
+                                    panelOpenState3
+                                       ? 'text-red-600 font-bold'
+                                       : 'text-gray-300 hover:text-red-300'
+                                    ">
+                                       {{panelOpenState3 ? 'open' : 'closed'}}
+                                    </mat-panel-description>
+                                 </mat-expansion-panel-header>
+                                 <div class="lessons-info">
+                                    <span class="duration" data-toggle="tooltip" data-placement="top"
+                                       title="Duration"><i class='bx bx-time'></i> 58
+                                       دقیقه پیش</span>
+
+
+                                 </div>
+                                 <div style="margin-top: 15px; display: block;"></div>
+
+
+
+                                 <div class="h_iframe-aparat_embed_frame"><span
+                                       style="display: block;padding-top: 57%"></span><iframe
+                                       src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
+                                       allowFullScreen="true" webkitallowfullscreen="true"
+                                       mozallowfullscreen="true"></iframe></div>
+
+
+
+
+                              </mat-expansion-panel>
+                           </mat-accordion>
+                           <!-- end akardeon :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  -->
 
 
 
@@ -671,9 +207,9 @@
                            </ul>
                         </div>
 
-                        
 
-                        
+
+
                      </div>
                   </div>
                </div>

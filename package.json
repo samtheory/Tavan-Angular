@@ -46,6 +46,7 @@
     "rxjs": "6.6.3",
     "tailwindcss": "^1.8.12",
     "tslib": "2.0.1",
+    "tus-js-client": "^2.2.0",
     "url-polyfill": "^1.1.11",
     "zone.js": "0.10.3"
   },

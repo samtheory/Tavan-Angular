@@ -117,6 +117,7 @@ import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.
 import { JwtInterceptor } from './_intercepters/jwt.interceptor';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
+import * as tus from "tus-js-client";
 
 export function tokenGeter(){
   return localStorage.getItem('token');

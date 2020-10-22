@@ -1,36 +1,79 @@
-<form action="">
-  <div class="form-group">
-      <label for="file">Video upload</label>
-      <input 
-          id="file" 
-          type="file" 
-          class="form-control"
-          (change)="onFileChange($event)">
+<div class="w-full px-4 text-right">
+  <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
+    <div class="rounded-t bg-teal-200 mb-0 px-6 py-6">
+      <div class="text-center flex justify-start">
+        <h3 class="text-gray-800 font-bold">
+          آپلود ویدیو
+        </h3>
+        <!-- <button
+                  class="bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                  type="button">
+                  Settings
+                </button> -->
+      </div>
     </div>
 
-</form>
 
-<br>
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-5">
+      <form action="">
+        <div class="form-group">
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2" for="file">Video upload</label>
+          <input id="file" type="file"
+            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+            (change)="onFileChange($event)">
+        </div>
 
-<form #editForm="ngForm" (ngSubmit)="createVideo()">
-  <div class="form-group mt-3">
-      <strong> <small><sup>(EN)</sup></small></strong>
-      <textarea name="title" rows="1" class="form-control" [(ngModel)]="model.title"></textarea>
+      </form>
+
+      <br>
+
+      <form #editForm="ngForm" (ngSubmit)="createVideo()">
+        <div class="form-group mt-3">
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">ds
+            <small><sup>(EN)</sup></small></label>
+          <textarea name="title" rows="1"
+            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+            [(ngModel)]="model.title"></textarea>
+        </div>
+        <div class="form-group mt-3">
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">desc
+            <small><sup>(FA)</sup></small></label>
+          <textarea name="description" rows="1"
+            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+            [(ngModel)]="model.description"></textarea>
+        </div>
+        <div class="form-group mt-3">
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">file id
+            <small><sup>(EN)</sup></small></label>
+          <textarea name="file_id" rows="4"
+            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+            [(ngModel)]="model.file_id"></textarea>
+        </div>
+        <div class="form-group mt-3">
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">convert mode
+            <small><sup>(FA)</sup></small></label>
+          <textarea name="convert_mode" rows="4"
+            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+            value="auto" [(ngModel)]="model.convert_mode"></textarea>
+        </div>
+        <button
+          class="bg-mesh-800 text-blue-100 hover:bg-white border-2 border-transparent hover:border-mesh-300  hover:text-mesh-700 hover:font-bold active:bg-teal-600  uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="submit">Save video</button>
+      </form>
+      <button
+        class="bg-mesh-800 text-blue-100 hover:bg-white border-2 border-transparent hover:border-mesh-300  hover:text-mesh-700 hover:font-bold active:bg-teal-600  uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        (click)="getVideo()" type="button">get video</button>
     </div>
-    <div class="form-group mt-3">
-      <strong>desc <small><sup>(FA)</sup></small></strong>
-      <textarea name="description" rows="1" class="form-control" [(ngModel)]="model.description"></textarea>
-    </div>
-    <div class="form-group mt-3">
-      <strong>file id <small><sup>(EN)</sup></small></strong>
-      <textarea name="file_id" rows="4" class="form-control" [(ngModel)]="model.file_id"></textarea>
-    </div>
-    <div class="form-group mt-3">
-      <strong>convert mode <small><sup>(FA)</sup></small></strong>
-      <textarea name="convert_mode" rows="4" class="form-control" value="auto" [(ngModel)]="model.convert_mode"></textarea>
-    </div>
-    <button class="btn btn-success mr-1"  type="submit">Save video</button>
-</form>
 
 
-<button class="btn btn-success mr-1" (click)="getVideo()"  type="button">get video</button>
+    <div class="text-base text-mesh-700 m-5 ">
+      progress : {{pro}} 
+    </div>
+    <div class="text-base text-mesh-700 m-5 ">
+      player url : {{palayerUrl}} 
+    </div>
+    <div class="text-base text-mesh-700 m-5 ">
+      video id : {{videoId}} 
+    </div>
+  </div>
+</div>

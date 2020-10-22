@@ -89,7 +89,7 @@ import { CardDiscountTableComponent } from './components/cards-panel/card-discou
 import { CardNewUserInfoComponent } from './components/cards-panel/card-new-user-info/card-new-user-info.component';
 import { CardNewUserPicComponent } from './components/cards-panel/card-new-user-pic/card-new-user-pic.component';
 
-//other
+// other
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -161,7 +161,6 @@ export function tokenGeter(){
     IndexComponent,
     LandingComponent,
     ProfileComponent,
-    
     PanelComponent,
     PAAllCoursesComponent,
     PANewCourseComponent,

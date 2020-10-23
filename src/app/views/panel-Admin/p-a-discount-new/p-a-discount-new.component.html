@@ -1,6 +1,6 @@
 <div
 	class="relative flex flex-col break-words bg-white mb-6 shadow-lg rounded"
-	style="margin: auto 20rem; height: 500px; margin-bottom: 5rem;"
+	style="margin: auto 10rem; height: 500px; margin-bottom: 5rem;"
 >
 	<div class="rounded-t mb-0 px-4 py-3 border-0 bg-teal-200 mb-6">
 		<div class="flex flex-wrap items-center">
@@ -62,16 +62,15 @@
 						تاریخ انقضا
 					</label>
 					<input
-						#startDate
-						formControlName="started"
+						#DiscountDate
 						type="text"
 						class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 						value=""
 					/>
 					<ng-persian-datepicker
-						[dateValue]="'1398-12-15'"
+						
 						[timeMeridian]="true"
-						[input]="startDate"
+						[input]="DiscountDate"
 						[uiHideAfterSelectDate]="true"
 					></ng-persian-datepicker>
 				</div>

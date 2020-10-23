@@ -1,1 +1,442 @@
-<p>p-a-all-user works!</p>
+<div class="flex flex-wrap mt-4">
+  <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
+   <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+	<div class="rounded-t mb-0 px-4 py-3 border-0">
+		<div class="flex flex-wrap items-center">
+			<div class="relative w-full px-4 max-w-full flex-grow flex-1">
+				<h3 class="font-semibold text-base text-gray-800">ایجاد کد تخفیف</h3>
+			</div>
+			<div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: left;">
+				<button
+					[routerLink]="['/admin/NewUser']"
+					class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-mesh-700 border-2 border-transparent hover:border-mesh-600"
+					type="button"
+				>
+					Add new one
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="block w-full overflow-x-auto">
+		<!-- Projects table -->
+		<table class="items-center w-full bg-transparent border-collapse">
+			<thead>
+				<tr>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						ردیف
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						نام
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+					نام کاربری
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+					ایمیل
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						تعداد مجاز استفاده
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						1
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
+						krb198
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20%
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						1398-12-2
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+						20
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="flex flex-row">
+							<span
+								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i class="fas fa-trash text-base"></i>
+							</span>
+
+							<a [routerLink]="['/admin/EditDiscount']">
+								<span
+									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300"
+								>
+									<i class="fas fa-edit text-base"></i>
+								</span>
+							</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+  </div>
+</div>

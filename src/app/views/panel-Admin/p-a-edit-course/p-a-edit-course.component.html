@@ -115,6 +115,7 @@
 											<input
 												type="text"
 												formControlName="ended"
+												value=""
 												(input)="FinishDateChange($event.target.value)"
 												#endDate
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
@@ -165,6 +166,7 @@
 												formControlName="description"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 												rows="4"
+												value=""
 											></textarea>
 										</div>
 									</div>
@@ -243,7 +245,7 @@
 											/>
 											<h1 class="py-3">progress bar</h1>
 											<button
-												(click)="createCourse()"
+												(click)="updateCourse()"
 												class="bg-green-600 text-white active:bg-green-800 hover:bg-green-300 hover:text-green-900 uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
 												type="button"
 											>

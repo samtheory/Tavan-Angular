@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { CourseService } from 'src/app/_services/course.service';
 
 import jalaali from 'jalaali-js';
+import { Course } from 'src/app/_models/course';
 @Component({
   selector: 'app-p-a-edit-course',
   templateUrl: './p-a-edit-course.component.html',
@@ -13,6 +14,7 @@ import jalaali from 'jalaali-js';
 })
 export class PAEditCourseComponent implements OnInit {
 
+  course: Course;
   ////* Akarderon open and close boool 
   panelOpenState1 = false;
   panelOpenState2 = false;
@@ -22,13 +24,14 @@ export class PAEditCourseComponent implements OnInit {
 
   panelOpenState = false;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
-    , private router: Router, private courseService: CourseService) { }
+    , private router: Router, private courseService: CourseService, private route: ActivatedRoute) { }
 
   courseForm: FormGroup;
   submitted = false;
 
   ngOnInit(): void {
 
+    this.getCourse();
     //  -- I N F O --    
     $('#info').click(function () {
       $('#info').removeClass('border-teal-300 bg-teal-200');
@@ -54,19 +57,19 @@ export class PAEditCourseComponent implements OnInit {
   
   createCourseFrom() {
     this.courseForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      cost: ['', Validators.required],
-      url: ['', Validators.required],
-      off: ['', Validators.required],
-      videoUrl: [''],
-      videoId: [''],
-      courseDays: [''],
+      title: [this.course.title, Validators.required],
+      cost: [this.course.cost, Validators.required],
+      url: [this.course.url, Validators.required],
+      off: [this.course.off, Validators.required],
+      videoUrl: [this.course.media.videoUrl],
+      videoId: [this.course.media.videoUrl],
+      courseDays: [this.course.courseDays],
       isActive: [''],
-      teacher: [''],
-      titres: [''],
-      description: [''],
-      started: [''],
-      ended: [''],
+      teacher: [this.course.teacher],
+      titres: [this.course.titres],
+      description: [this.course.description],
+      started: [this.course.started],
+      ended: [this.course.ended],
       file: ['', Validators.required],
       fileSource: ['', Validators.required],
     });
@@ -81,7 +84,13 @@ export class PAEditCourseComponent implements OnInit {
     }
   }
 
-  createCourse() {
+  getCourse(){
+    this.courseService.getCourse(this.route.snapshot.params['id']).subscribe(course => {
+      this.course = course;
+    });
+  }
+
+  updateCourse() {
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
@@ -97,7 +106,7 @@ export class PAEditCourseComponent implements OnInit {
     formData.append('videoId', this.courseForm.get('videoId').value);
 
 
-    this.courseService.createCourse(formData).subscribe(() => {
+    this.courseService.updateCourse(this.route.params['id'] , formData).subscribe(() => {
       this.toastr.success('success fully created');
       this.router.navigate(['/index/home']);
 

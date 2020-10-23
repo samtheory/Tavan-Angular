@@ -53,11 +53,14 @@ export class PANewCourseComponent implements OnInit {
   }
 
   createCourse(){
+    this.FinishDateChange(this.courseForm.get('started').value);
+    this.FinishDateChange(this.courseForm.get('ended').value);
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
+    formData.append('url', this.courseForm.get('url').value);
     formData.append('off', this.courseForm.get('off').value);
     formData.append('description', this.courseForm.get('description').value);
     formData.append('titres', this.courseForm.get('titres').value);
@@ -109,9 +112,8 @@ FinishDateChange(value: String) {
   let mm: Number = Number(value.slice(5, 7)) ;
   let dd: Number = Number(value.slice(8, 10)) ;
 
- let g = jalaali.toGregorian(yyyy, mm, dd)
-  console.log(g.gy+'-'+g.gm+'-'+g.gd);
-
+ let g = jalaali.toGregorian(yyyy, mm, dd);
+  value =  g.gy+'-'+g.gm+'-'+g.gd;
 }
 
 }

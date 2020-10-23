@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 /* width */
 
+@import "./assets/styles/Vazir-FD.css";
+
+* {
+	font-family: "Vazir-FD", sans-serif;
+}
+
+
+
 ::-webkit-scrollbar {
     width: 12px;
 }

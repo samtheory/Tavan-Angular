@@ -41,7 +41,6 @@
     "ng-persian-datepicker": "^2.3.6",
     "ng-tailwindcss": "^2.3.1",
     "ng2-jalali-date-picker": "^2.4.2",
-    "ngx-bootstrap": "^6.1.0",
     "ngx-toastr": "^13.1.0",
     "popper.js": "^1.16.1",
     "rxjs": "6.6.3",

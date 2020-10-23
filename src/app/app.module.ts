@@ -118,7 +118,7 @@ import { JwtInterceptor } from './_intercepters/jwt.interceptor';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
 import * as tus from "tus-js-client";
-import { TabsModule } from 'ngx-bootstrap/tabs';
+
 
 export function tokenGeter(){
   return localStorage.getItem('token');
@@ -214,7 +214,7 @@ export function tokenGeter(){
     MatDialogModule ,
     DpDatePickerModule,
     MatExpansionModule,
-    TabsModule.forRoot(),
+
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

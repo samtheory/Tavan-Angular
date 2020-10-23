@@ -12,66 +12,47 @@ import jalaali from 'jalaali-js';
   styleUrls: ['./p-a-edit-course.component.css']
 })
 export class PAEditCourseComponent implements OnInit {
+
+  ////* Akarderon open and close boool 
+  panelOpenState1 = false;
+  panelOpenState2 = false;
+  panelOpenState3 = false;
+  // .......................................
+
+
   panelOpenState = false;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
-    , private router: Router, private courseService: CourseService ) { }
+    , private router: Router, private courseService: CourseService) { }
 
   courseForm: FormGroup;
   submitted = false;
 
   ngOnInit(): void {
+
+    //  -- I N F O --    
     $('#info').click(function () {
-      $('#info').addClass('text-red-600 bg-white border-b-4 border-blue-300 ');
-      $('#pic').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#video').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#des').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-
+      $('#info').removeClass('border-teal-300 bg-teal-200');
+      $('#info').addClass('text-red-600 bg-white  border-blue-300 ');
+      $('#video').removeClass('text-red-600 bg-white  border-blue-300');
+      $('#video').addClass('bg-teal-200  border-teal-300');
+      // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.information-tab').removeClass(' hidden');
-      $('.picture-tab').addClass(' hidden');
       $('.video-tab').addClass('  hidden');
-      $('.description-tab').addClass('hidden');
-    });
-
-    $('#pic').click(function () {
-      $('#info').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#pic').addClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#video').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#des').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-
-      $('.information-tab').addClass('hidden');
-      $('.picture-tab').removeClass('hidden');
-      $('.video-tab').addClass('hidden');
-      $('.description-tab').addClass('hidden');
-    });
-
-    $('#video').click(function () {
-      $('#info').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#pic').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#video').addClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#des').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-
-      $('.information-tab').addClass('hidden');
-      $('.picture-tab').addClass('hidden');
-      $('.video-tab').removeClass('hidden');
-      $('.description-tab').addClass('hidden');
-    });
-
-    $('#des').click(function () {
-      $('#info').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#pic').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#video').removeClass('text-red-600 bg-white border-b-4 border-blue-300');
-      $('#des').addClass('text-red-600 bg-white border-b-4 border-blue-300');
-
-      $('.information-tab').addClass('hidden');
-      $('.picture-tab').addClass('hidden');
-      $('.video-tab').addClass('hidden');
-      $('.description-tab').removeClass('hidden');
-
       this.createCourseFrom();
     });
-  }
-
-  createCourseFrom(){
+    //  -- V I D E O --    
+    $('#video').click(function () {
+      $('#video').removeClass('border-teal-300 bg-teal-200');
+      $('#video').addClass('text-red-600 bg-white  border-blue-300');
+      $('#info').removeClass('text-red-600 bg-white  border-blue-300');
+      $('#info').addClass('bg-teal-200  border-teal-300');
+      // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
+      $('.information-tab').addClass('hidden');
+      $('.video-tab').removeClass('hidden');
+    });
+  }  
+  
+  createCourseFrom() {
     this.courseForm = this.formBuilder.group({
       title: ['', Validators.required],
       cost: ['', Validators.required],
@@ -86,12 +67,12 @@ export class PAEditCourseComponent implements OnInit {
       description: [''],
       started: [''],
       ended: [''],
-      file: ['',Validators.required],
-      fileSource: ['',Validators.required],
+      file: ['', Validators.required],
+      fileSource: ['', Validators.required],
     });
   }
   onFileChange(event) {
-  
+
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.courseForm.patchValue({
@@ -100,7 +81,7 @@ export class PAEditCourseComponent implements OnInit {
     }
   }
 
-  createCourse(){
+  createCourse() {
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
@@ -116,13 +97,13 @@ export class PAEditCourseComponent implements OnInit {
     formData.append('videoId', this.courseForm.get('videoId').value);
 
 
-      this.courseService.createCourse(formData).subscribe(() => {
-        this.toastr.success('success fully created');
-        this.router.navigate(['/index/home']);
+    this.courseService.createCourse(formData).subscribe(() => {
+      this.toastr.success('success fully created');
+      this.router.navigate(['/index/home']);
 
-      }, error => {
-          this.toastr.error(error);
-      })
+    }, error => {
+      this.toastr.error(error);
+    })
   }
 
   onSubmit() {
@@ -130,36 +111,36 @@ export class PAEditCourseComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.courseForm.invalid) {
-        return;
+      return;
     }
 
     // display form values on success
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.courseForm.value, null, 4));
-}
+  }
 
-onReset() {
+  onReset() {
     // reset whole form back to initial state
     this.submitted = false;
     this.courseForm.reset();
-}
+  }
 
 
 
-onClear() {
+  onClear() {
     // clear errors and reset ticket fields
     this.submitted = false;
-}
+  }
 
-FinishDateChange(value: String) {
-  var m = jalaali.toGregorian(1395, 1, 23);
-  let yyyy: Number = Number(value.slice(0, 4));
-  let mm: Number = Number(value.slice(5, 7)) ;
-  let dd: Number = Number(value.slice(8, 10)) ;
+  FinishDateChange(value: String) {
+    var m = jalaali.toGregorian(1395, 1, 23);
+    let yyyy: Number = Number(value.slice(0, 4));
+    let mm: Number = Number(value.slice(5, 7));
+    let dd: Number = Number(value.slice(8, 10));
 
- let g = jalaali.toGregorian(yyyy, mm, dd);
-  console.log(g.gy+'-'+g.gm+'-'+g.gd);
+    let g = jalaali.toGregorian(yyyy, mm, dd);
+    console.log(g.gy + '-' + g.gm + '-' + g.gd);
 
-}
+  }
 
 
 

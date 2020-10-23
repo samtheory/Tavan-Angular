@@ -1,253 +1,436 @@
 <div class="flex flex-wrap">
-  <div class="w-full px-4 text-right">
-    <div
-      class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
-    >
-      <div class="rounded-t bg-teal-200 mb-0 px-6 py-6">
-        <div class="text-center flex justify-start">
-          <div
-            class="w-full flex sm:border-b sm:border-gray-300 relative flex-col sm:flex-row"
-          >
-            <div
-              id="info"
-              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 tab bg-white text-red-600 border-b-4 border-blue-300"
-            >
-              information
-            </div>
-            <div
-              id="pic"
-              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false"
-            >
-              picture
-            </div>
-            <div
-              id="video"
-              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false"
-            >
-              video
-            </div>
-            <div
-              id="des"
-              class="flex-1 sm:text-center font-medium py-3 cursor-pointer hover:text-blue-400 false"
-            >
-              description
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-        <form>
-          <div class="information-tab my-5">
-            <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
-                <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-                  اطلاعات دوره
-                </h6>
-                <div class="flex flex-wrap">
-                  <div class="w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        نام دوره
-                      </label>
-                      <input type="text" formControlName="title"
-                        class="form-control px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-            
-                  <div class="w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        مدرس دوره
-                      </label>
-                      <input formControlName="teacher" type="email"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-            
-                  <div class="form-group w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        قیمت دوره
-                      </label>
-                      <input formControlName="cost" type="text"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-                  <div class="w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        تاریخ برگذاری
-                      </label>
-                      <input #startDate formControlName="started" type="text"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                      <ng-persian-datepicker [dateValue]="'1398-12-15'" [timeMeridian]='true' [input]="startDate"
-                        [uiHideAfterSelectDate]="true"></ng-persian-datepicker>
-                    </div>
-                  </div>
-                  <div class="w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        تاریخ پایان
-                      </label>
-                      <input type="text" formControlName="ended" (input)='FinishDateChange($event.target.value)' #endDate
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
-                      <ng-persian-datepicker [dateValue]="'1398-12-15'" [timeMeridian]='true' [input]="endDate"
-                        [uiHideAfterSelectDate]="true"></ng-persian-datepicker>
-                    </div>
-                  </div>
-            
-                  <div class="w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        تخفیف
-                      </label>
-                      <input formControlName="off" type="text"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-                </div>
-            
-                <hr class="mt-6 border-b-1 border-gray-400" />
-            
-                <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-                  توضیحات دوره
-                </h6>
-                <div class="flex flex-wrap">
-                  <div class="w-full lg:w-12/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        توضیحات دوره
-                      </label>
-                      <textarea type="text" formControlName="description"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        rows="4"></textarea>
-                    </div>
-                  </div>
-            
-                  <div class="w-full lg:w-12/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        سرفصل ها
-                      </label>
-                      <input type="text" formControlName="titres"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-            
-                  <div class="w-full lg:w-12/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        آدرس ویدیو
-                      </label>
-                      <input type="text" formControlName="videoUrl"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-                  <div class="w-full lg:w-12/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        ایدی ویدیو
-                      </label>
-                      <input type="text" formControlName="videoId"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="" />
-                    </div>
-                  </div>
-                </div>
-            
-            
-            
-                <hr class="mt-6 border-b-1 border-gray-400" />
-            
-                <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-                  تایید نهایی
-                </h6>
-                <div class="flex flex-wrap justify-between">
-                  <div class="w-full lg:w-6/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        عکس دوره
-                      </label>
-                      <input type="file" formControlName="file" (change)="onFileChange($event)"
-                        class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                        value="عکس دوره را انتخاب کنید" />
-                      <h1 class="py-3">progress bar</h1>
-                      <button (click)="createCourse()"
-                        class="bg-green-600 text-white active:bg-green-800 hover:bg-green-300 hover:text-green-900 uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                        type="button">
-                        ایجاد دوره جدید
-                      </button>
-                    </div>
-                  </div>
-                  <div class="w-full lg:w-6/12 px-4">
-                    <div class="relative w-full mb-3">
-                      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                      </label>
-                      <img style="height: 18rem; width: 18rem; margin: auto"
-                        src="data:image/png;base64,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"
-                        alt="Image placeHolder" />
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="picture-tab my-5 hidden">
-            <p>picture</p>
-          </div>
-          <div class="video-tab my-5 hidden">
-            <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-              ایدی ویدیو
-            </label>
-            <input type="text" formControlName="videoId"
-              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-              value="" />
-              <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                ایدی ویدیو
-              </label>
-              <input type="text" formControlName="videoId"
-                class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                value="" />
+	<div class="px-4 text-right w-full mx-12">
+		<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
+			<div class="rounded-t bg-teal-300 mb-0 px-6 py-6">
+				<div class="text-center flex justify-start">
+					<div
+						class="w-full flex sm:border-b sm:border-gray-300 relative flex-col sm:flex-row"
+						style="border: transparent;"
+					>
+						<div
+							id="info"
+							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 tab bg-white text-red-600 border-b-4 border-blue-300 duration-500"
+						>
+							اطلاعات دوره
+						</div>
+						<div
+							id="video"
+							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500"
+						>
+							ویدیو های دوره
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+				<form>
+					<div class="information-tab my-5">
+						<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+							<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+								<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+									اطلاعات دوره
+								</h6>
+								<div class="flex flex-wrap">
+									<div class="w-full lg:w-4/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												نام دوره
+											</label>
+											<input
+												type="text"
+												formControlName="title"
+												class="form-control px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
 
-            <mat-accordion>
-              <mat-expansion-panel hideToggle>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    This is the expansion title
-                  </mat-panel-title>
-                  <mat-panel-description>
-                    This is a summary of the content
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>This is the primary content of the panel.</p>
-              </mat-expansion-panel>
-              <mat-expansion-panel
-                (opened)="panelOpenState = true"
-                class="border-gray-800"
-                (closed)="panelOpenState = false"
-              >
-                <mat-expansion-panel-header class="after:border-black">
-                  <mat-panel-title> Self aware panel </mat-panel-title>
-                  <mat-panel-description>
-                    Currently I am {{ panelOpenState ? "open" : "closed" }}
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>I'm visible because I am open</p>
-              </mat-expansion-panel>
-            </mat-accordion>
-          </div>
-          <div class="description-tab my-5 hidden">
-            <p>description</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+									<div class="w-full lg:w-4/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												مدرس دوره
+											</label>
+											<input
+												formControlName="teacher"
+												type="email"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
+
+									<div class="form-group w-full lg:w-4/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												قیمت دوره
+											</label>
+											<input
+												formControlName="cost"
+												type="text"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
+									<div class="w-full lg:w-4/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												تاریخ برگذاری
+											</label>
+											<input
+												#startDate
+												formControlName="started"
+												type="text"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+											<ng-persian-datepicker
+												[dateValue]="'1398-12-15'"
+												[timeMeridian]="true"
+												[input]="startDate"
+												[uiHideAfterSelectDate]="true"
+											></ng-persian-datepicker>
+										</div>
+									</div>
+									<div class="w-full lg:w-4/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												تاریخ پایان
+											</label>
+											<input
+												type="text"
+												formControlName="ended"
+												(input)="FinishDateChange($event.target.value)"
+												#endDate
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											/>
+											<ng-persian-datepicker
+												[dateValue]="'1398-12-15'"
+												[timeMeridian]="true"
+												[input]="endDate"
+												[uiHideAfterSelectDate]="true"
+											></ng-persian-datepicker>
+										</div>
+									</div>
+
+									<div class="w-full lg:w-4/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												تخفیف
+											</label>
+											<input
+												formControlName="off"
+												type="text"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
+								</div>
+
+								<hr class="mt-6 border-b-1 border-gray-400" />
+
+								<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+									توضیحات دوره
+								</h6>
+								<div class="flex flex-wrap">
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												توضیحات دوره
+											</label>
+											<textarea
+												type="text"
+												formControlName="description"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												rows="4"
+											></textarea>
+										</div>
+									</div>
+
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												سرفصل ها
+											</label>
+											<input
+												type="text"
+												formControlName="titres"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
+
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												آدرس ویدیو
+											</label>
+											<input
+												type="text"
+												formControlName="videoUrl"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												ایدی ویدیو
+											</label>
+											<input
+												type="text"
+												formControlName="videoId"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value=""
+											/>
+										</div>
+									</div>
+								</div>
+
+								<hr class="mt-6 border-b-1 border-gray-400" />
+
+								<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+									تایید نهایی
+								</h6>
+								<div class="flex flex-wrap justify-between">
+									<div class="w-full lg:w-6/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												عکس دوره
+											</label>
+											<input
+												type="file"
+												formControlName="file"
+												(change)="onFileChange($event)"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												value="عکس دوره را انتخاب کنید"
+											/>
+											<h1 class="py-3">progress bar</h1>
+											<button
+												(click)="createCourse()"
+												class="bg-green-600 text-white active:bg-green-800 hover:bg-green-300 hover:text-green-900 uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+												type="button"
+											>
+												ایجاد دوره جدید
+											</button>
+										</div>
+									</div>
+									<div class="w-full lg:w-6/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+											</label>
+											<img
+												style="height: 18rem; width: 18rem; margin: auto;"
+												src="data:image/png;base64,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"
+												alt="Image placeHolder"
+											/>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="video-tab my-5 hidden w-full flex flex-wrap">
+						<div class="w-6/12">
+							<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+								ایدی ویدیو
+							</label>
+							<input
+								type="text"
+								formControlName="videoId"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+								value=""
+							/>
+							<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+								ایدی ویدیو
+							</label>
+							<input
+								type="text"
+								formControlName="videoId"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+								value=""
+							/>
+						</div>
+						<div class="w-4/12 text-center" style="align-self: center;">
+							<button
+								class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
+								type="button"
+							>
+								<i class="fa fa-plus-square"></i>
+								Add Video
+							</button>
+						</div>
+						<div class="my-10 align-self-center text-center w-full">
+							<!--? :: :: :: A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: -->
+							<mat-accordion class="duration-500">
+								<mat-expansion-panel
+									class="duration-500"
+									(opened)="panelOpenState1 = true"
+									(closed)="panelOpenState1 = false"
+								>
+									<mat-expansion-panel-header>
+										<mat-panel-title class="font-bold text-black fa-vazir vazir">
+											بخش 1: ری اکت جی اس - شروع کار
+										</mat-panel-title>
+										<mat-panel-description
+											class="duration-200"
+											[ngClass]="
+                      panelOpenState1
+                          ? 'text-red-600 font-bold'
+                          : 'text-gray-300 hover:text-red-300'
+                      "
+										>
+											{{panelOpenState1 ? 'open' : 'closed'}}
+										</mat-panel-description>
+									</mat-expansion-panel-header>
+									<div class="lessons-info">
+										<span
+											class="duration"
+											data-toggle="tooltip"
+											data-placement="top"
+											title="Duration"
+											><i class="bx bx-time"></i> 58 دقیقه پیش</span
+										>
+										<div style="margin-top: 15px; display: block;"></div>
+										<div class="h_iframe-aparat_embed_frame">
+											<span style="display: block; padding-top: 57%;"></span
+											><iframe
+												src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
+												allowfullscreen="true"
+												webkitallowfullscreen="true"
+												mozallowfullscreen="true"
+											></iframe>
+										</div>
+									</div>
+								</mat-expansion-panel>
+								<mat-expansion-panel
+									class="duration-500"
+									(opened)="panelOpenState2 = true"
+									(closed)="panelOpenState2 = false"
+								>
+									<mat-expansion-panel-header>
+										<mat-panel-title class="font-bold text-black fa-vazir vazir">
+											بخش 1: ری اکت جی اس - شروع کار
+										</mat-panel-title>
+										<mat-panel-description
+											class="duration-200"
+											[ngClass]="panelOpenState2
+                        ? 'text-red-600 font-bold'
+                        : 'text-gray-300 hover:text-red-300'
+                      "
+										>
+											{{panelOpenState2 ? 'open' : 'closed'}}
+										</mat-panel-description>
+									</mat-expansion-panel-header>
+									<div class="lessons-info">
+										<span
+											class="duration"
+											data-toggle="tooltip"
+											data-placement="top"
+											title="Duration"
+											><i class="bx bx-time"></i> 58 دقیقه پیش</span
+										>
+
+										<div style="margin-top: 15px; display: block;"></div>
+										<div class="h_iframe-aparat_embed_frame">
+											<span style="display: block; padding-top: 57%;"></span
+											><iframe
+												src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
+												allowfullscreen="true"
+												webkitallowfullscreen="true"
+												mozallowfullscreen="true"
+											></iframe>
+										</div>
+									</div>
+								</mat-expansion-panel>
+								<mat-expansion-panel
+									class="duration-500"
+									(opened)="panelOpenState3 = true"
+									(closed)="panelOpenState3 = false"
+								>
+									<mat-expansion-panel-header>
+										<mat-panel-title class="font-bold text-black fa-vazir vazir">
+											بخش 1: ری اکت جی اس - شروع کار
+										</mat-panel-title>
+										<mat-panel-description
+											class="duration-200"
+											[ngClass]="
+                      panelOpenState3
+                        ? 'text-red-600 font-bold'
+                        : 'text-gray-300 hover:text-red-300'
+                      "
+										>
+											{{panelOpenState3 ? 'open' : 'closed'}}
+										</mat-panel-description>
+									</mat-expansion-panel-header>
+									<div class="lessons-info">
+										<span
+											class="duration"
+											data-toggle="tooltip"
+											data-placement="top"
+											title="Duration"
+											><i class="bx bx-time"></i> 58 دقیقه پیش</span
+										>
+									</div>
+									<div style="margin-top: 15px; display: block;"></div>
+
+									<div class="h_iframe-aparat_embed_frame">
+										<span style="display: block; padding-top: 57%;"></span
+										><iframe
+											src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
+											allowfullscreen="true"
+											webkitallowfullscreen="true"
+											mozallowfullscreen="true"
+										></iframe>
+									</div>
+								</mat-expansion-panel>
+							</mat-accordion>
+
+							<!--? end of A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: : :: :: :: :: :: :: :: :: :: :: :: :: ::  -->
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>

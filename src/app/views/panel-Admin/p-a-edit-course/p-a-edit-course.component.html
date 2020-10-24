@@ -28,7 +28,7 @@
 						<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
 							<form *ngIf="course" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
 								<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-									اطلاعات دوره
+									اطلاعات دوره {{course.started}}
 								</h6>
 								<div class="flex flex-wrap">
 									<div class="w-full lg:w-4/12 px-4">

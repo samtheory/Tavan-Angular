@@ -7,6 +7,8 @@ import { CourseService } from 'src/app/_services/course.service';
 
 import jalaali from 'jalaali-js';
 import { Course } from 'src/app/_models/course';
+import { Video } from 'src/app/_models/video';
+import { VideoService } from 'src/app/_services/video.service';
 @Component({
   selector: 'app-p-a-edit-course',
   templateUrl: './p-a-edit-course.component.html',
@@ -15,6 +17,7 @@ import { Course } from 'src/app/_models/course';
 export class PAEditCourseComponent implements OnInit {
 
   course: Course;
+  video: any = {};
   ////* Akarderon open and close boool 
   panelOpenState1 = false;
   panelOpenState2 = false;
@@ -24,7 +27,7 @@ export class PAEditCourseComponent implements OnInit {
 
   panelOpenState = false;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
-    , private router: Router, private courseService: CourseService, private route: ActivatedRoute) { }
+    , private router: Router, private courseService: CourseService, private route: ActivatedRoute , private videoService: VideoService) { }
 
   courseForm: FormGroup;
   submitted = false;
@@ -73,6 +76,8 @@ export class PAEditCourseComponent implements OnInit {
       fileSource: ['', Validators.required],
     });
   }
+
+  
   onFileChange(event) {
 
     if (event.target.files.length > 0) {
@@ -139,6 +144,23 @@ export class PAEditCourseComponent implements OnInit {
   onClear() {
     // clear errors and reset ticket fields
     this.submitted = false;
+  }
+
+  addVideo(courseId: number)
+  {
+    this.videoService.createVideo(courseId , this.video).subscribe(next => {
+      if(next){
+        const vid = JSON.stringify(next); 
+        const res: Video = JSON.parse(vid);
+        const video = {
+          url : res.url,
+          title: res.title,
+          videoId: res.videoId
+        };
+        this.course.videos.push(video);
+      }
+      this.toastr.success('با موفقیت اضافه شد');
+    });
   }
 
   FinishDateChange(value: String) {

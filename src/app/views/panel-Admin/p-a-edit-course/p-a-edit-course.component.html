@@ -28,7 +28,7 @@
 						<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
 							<form *ngIf="course" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
 								<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-									اطلاعات دوره {{course.started}}
+									اطلاعات دوره
 								</h6>
 								<div class="flex flex-wrap">
 									<div class="w-full lg:w-4/12 px-4">
@@ -328,51 +328,68 @@
 					</div>
 
 					<div class="video-tab my-5 hidden w-full flex flex-wrap">
-						<div class="w-6/12">
-							<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-								ایدی ویدیو
-							</label>
-							<input
-								type="text"
-								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-								value=""
-							/>
-							<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-								ایدی ویدیو
-							</label>
-							<input
-								type="text"
-								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-								value=""
-							/>
-						</div>
-						<div class="w-4/12 text-center" style="align-self: center;">
-							<button
-								class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
-								type="button"
-							>
-								<i class="fa fa-plus-square"></i>
-								Add Video
-							</button>
-						</div>
+							<form #videoForm="ngForm" (ngSubmit)="addVideo(course.id)">
+								<div class="w-6/12">
+									<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+										نام ویدیو
+									</label>
+									<input
+										name="title"
+										[(ngModel)]="video.title"
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+									/>
+									<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+										ایدی ویدیو
+									</label>
+									<input
+										name="videoId"
+										[(ngModel)]="video.videoId"
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+									/>
+									<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+										لینک ویدیو
+									</label>
+									<input
+										name="videoUrl"
+										[(ngModel)]="video.url"
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+									/>
+								</div>
+	
+	
+								<div class="w-4/12 text-center" style="align-self: center;">
+									<button
+										class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
+										type="submit"
+									>
+										<i class="fa fa-plus-square"></i>
+										Add Video
+									</button>
+								</div>
+							</form>
+						
 						<div class="my-10 align-self-center text-center w-full">
 							<!--? :: :: :: A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: -->
 							<mat-accordion class="duration-500">
 								<mat-expansion-panel
+									*ngFor="let video of course.videos"
 									class="duration-500"
 									(opened)="panelOpenState1 = true"
 									(closed)="panelOpenState1 = false"
 								>
 									<mat-expansion-panel-header>
 										<mat-panel-title class="font-bold text-black fa-vazir vazir">
-											بخش 1: ری اکت جی اس - شروع کار
+											{{video.title}}
 										</mat-panel-title>
 										<mat-panel-description
 											class="duration-200"
 											[ngClass]="
-                      panelOpenState1
-                          ? 'text-red-600 font-bold'
-                          : 'text-gray-300 hover:text-red-300'
+											panelOpenState1
+												? 'text-red-600 font-bold'
+												: 'text-gray-300 hover:text-red-300'
                       "
 										>
 											{{panelOpenState1 ? 'open' : 'closed'}}
@@ -384,99 +401,13 @@
 											data-toggle="tooltip"
 											data-placement="top"
 											title="Duration"
-											><i class="bx bx-time"></i> 58 دقیقه پیش</span
+											><i class="bx bx-time"></i></span
 										>
 										<div style="margin-top: 15px; display: block;"></div>
 										<div class="h_iframe-aparat_embed_frame">
 											<span style="display: block; padding-top: 57%;"></span
-											><iframe
-												src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
-												allowfullscreen="true"
-												webkitallowfullscreen="true"
-												mozallowfullscreen="true"
-											></iframe>
+											><style> .r1_iframe_embed { position: relative; overflow: hidden; width: 100%; height: auto; padding-top: 56.25%; } .r1_iframe_embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } </style> <div class="r1_iframe_embed"> <iframe [src]='video.url | arvan' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe> </div>
 										</div>
-									</div>
-								</mat-expansion-panel>
-								<mat-expansion-panel
-									class="duration-500"
-									(opened)="panelOpenState2 = true"
-									(closed)="panelOpenState2 = false"
-								>
-									<mat-expansion-panel-header>
-										<mat-panel-title class="font-bold text-black fa-vazir vazir">
-											بخش 1: ری اکت جی اس - شروع کار
-										</mat-panel-title>
-										<mat-panel-description
-											class="duration-200"
-											[ngClass]="panelOpenState2
-                        ? 'text-red-600 font-bold'
-                        : 'text-gray-300 hover:text-red-300'
-                      "
-										>
-											{{panelOpenState2 ? 'open' : 'closed'}}
-										</mat-panel-description>
-									</mat-expansion-panel-header>
-									<div class="lessons-info">
-										<span
-											class="duration"
-											data-toggle="tooltip"
-											data-placement="top"
-											title="Duration"
-											><i class="bx bx-time"></i> 58 دقیقه پیش</span
-										>
-
-										<div style="margin-top: 15px; display: block;"></div>
-										<div class="h_iframe-aparat_embed_frame">
-											<span style="display: block; padding-top: 57%;"></span
-											><iframe
-												src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
-												allowfullscreen="true"
-												webkitallowfullscreen="true"
-												mozallowfullscreen="true"
-											></iframe>
-										</div>
-									</div>
-								</mat-expansion-panel>
-								<mat-expansion-panel
-									class="duration-500"
-									(opened)="panelOpenState3 = true"
-									(closed)="panelOpenState3 = false"
-								>
-									<mat-expansion-panel-header>
-										<mat-panel-title class="font-bold text-black fa-vazir vazir">
-											بخش 1: ری اکت جی اس - شروع کار
-										</mat-panel-title>
-										<mat-panel-description
-											class="duration-200"
-											[ngClass]="
-                      panelOpenState3
-                        ? 'text-red-600 font-bold'
-                        : 'text-gray-300 hover:text-red-300'
-                      "
-										>
-											{{panelOpenState3 ? 'open' : 'closed'}}
-										</mat-panel-description>
-									</mat-expansion-panel-header>
-									<div class="lessons-info">
-										<span
-											class="duration"
-											data-toggle="tooltip"
-											data-placement="top"
-											title="Duration"
-											><i class="bx bx-time"></i> 58 دقیقه پیش</span
-										>
-									</div>
-									<div style="margin-top: 15px; display: block;"></div>
-
-									<div class="h_iframe-aparat_embed_frame">
-										<span style="display: block; padding-top: 57%;"></span
-										><iframe
-											src="https://www.aparat.com/video/video/embed/videohash/oWzkB/vt/frame"
-											allowfullscreen="true"
-											webkitallowfullscreen="true"
-											mozallowfullscreen="true"
-										></iframe>
 									</div>
 								</mat-expansion-panel>
 							</mat-accordion>

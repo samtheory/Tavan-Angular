@@ -119,6 +119,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
 import * as tus from "tus-js-client";
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
+import { ArvanPipe } from './arvan.pipe';
 
 
 export function tokenGeter(){
@@ -204,7 +205,8 @@ export function tokenGeter(){
     PCCourseSingleDetailComponent,
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
-    CustomerPanelComponent
+    CustomerPanelComponent,
+    ArvanPipe
   ],
   imports: [
     BrowserModule,

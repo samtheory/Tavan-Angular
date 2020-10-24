@@ -59,7 +59,7 @@
                 <input #startDate formControlName="started" type="text"
                   class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                   value="" />
-                <ng-persian-datepicker [dateValue]="'1398-12-15'" [timeMeridian]='true' [input]="startDate"
+                <ng-persian-datepicker  [timeMeridian]='true' [input]="startDate"
                   [uiHideAfterSelectDate]="true"></ng-persian-datepicker>
               </div>
             </div>
@@ -70,7 +70,7 @@
                 </label>
                 <input type="text" formControlName="ended" (input)='FinishDateChange($event.target.value)' #endDate
                   class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
-                <ng-persian-datepicker [dateValue]="'1398-12-15'" [timeMeridian]='true' [input]="endDate"
+                <ng-persian-datepicker  [timeMeridian]='true' [input]="endDate"
                   [uiHideAfterSelectDate]="true"></ng-persian-datepicker>
               </div>
             </div>
@@ -123,6 +123,38 @@
                 <input type="text" formControlName="url"
                   class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                   value="" />
+              </div>
+            </div>
+
+            <div class="w-full lg:w-12/12 px-4">
+              <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-password"
+                >
+                  روز های دوره
+                </label>
+                <input
+                  type="text"
+                  formControlName="courseDays"
+                  class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                />
+              </div>
+            </div>
+
+
+            <div class="w-full lg:w-12/12 px-4">
+              <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-password"
+                >
+                  وضعیت دوره
+                </label>
+                <select formControlName="isActive">
+                  <option  value="true">در حال برگزاری</option>
+                  <option value="false">برگزار شده</option>
+                </select>
               </div>
             </div>
 

@@ -118,6 +118,7 @@ import { JwtInterceptor } from './_intercepters/jwt.interceptor';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
 import * as tus from "tus-js-client";
+import { ErrorInterceptor } from './_intercepters/error.interceptor';
 
 
 export function tokenGeter(){
@@ -232,6 +233,7 @@ export function tokenGeter(){
   ],
   providers: [
     {provide :LocationStrategy,useClass:HashLocationStrategy},
+    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true},
     {provide : HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],

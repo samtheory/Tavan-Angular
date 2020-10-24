@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { CourseService } from 'src/app/_services/course.service';
 
 import jalaali from 'jalaali-js';
+import { Course } from 'src/app/_models/course';
 @Component({
   selector: 'app-p-a-edit-course',
   templateUrl: './p-a-edit-course.component.html',
@@ -13,6 +14,7 @@ import jalaali from 'jalaali-js';
 })
 export class PAEditCourseComponent implements OnInit {
 
+  course: Course;
   ////* Akarderon open and close boool 
   panelOpenState1 = false;
   panelOpenState2 = false;
@@ -22,13 +24,14 @@ export class PAEditCourseComponent implements OnInit {
 
   panelOpenState = false;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
-    , private router: Router, private courseService: CourseService) { }
+    , private router: Router, private courseService: CourseService, private route: ActivatedRoute) { }
 
   courseForm: FormGroup;
   submitted = false;
 
   ngOnInit(): void {
-
+    this.createCourseFrom();
+    this.getCourse();
     //  -- I N F O --    
     $('#info').click(function () {
       $('#info').removeClass('border-teal-300 bg-teal-200');
@@ -38,7 +41,6 @@ export class PAEditCourseComponent implements OnInit {
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.information-tab').removeClass(' hidden');
       $('.video-tab').addClass('  hidden');
-      this.createCourseFrom();
     });
     //  -- V I D E O --    
     $('#video').click(function () {
@@ -81,13 +83,21 @@ export class PAEditCourseComponent implements OnInit {
     }
   }
 
-  createCourse() {
+  getCourse(){
+    this.courseService.getCourse(this.route.snapshot.params['id']).subscribe(course => {
+      this.course = course;
+    });
+  }
+
+  updateCourse() {
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
-    formData.append('off', this.courseForm.get('off').value);
+    formData.append('title', this.courseForm.get('title').value);
+    formData.append('isActive', this.courseForm.get('isActive').value);
+    formData.append('courseDays', this.courseForm.get('courseDays').value);
     formData.append('description', this.courseForm.get('description').value);
     formData.append('titres', this.courseForm.get('titres').value);
     formData.append('teacher', this.courseForm.get('teacher').value);
@@ -97,7 +107,7 @@ export class PAEditCourseComponent implements OnInit {
     formData.append('videoId', this.courseForm.get('videoId').value);
 
 
-    this.courseService.createCourse(formData).subscribe(() => {
+    this.courseService.updateCourse(this.route.params['id'] , formData).subscribe(() => {
       this.toastr.success('success fully created');
       this.router.navigate(['/index/home']);
 
@@ -138,6 +148,7 @@ export class PAEditCourseComponent implements OnInit {
     let dd: Number = Number(value.slice(8, 10));
 
     let g = jalaali.toGregorian(yyyy, mm, dd);
+    value =  g.gy+'-'+g.gm+'-'+g.gd;
     console.log(g.gy + '-' + g.gm + '-' + g.gd);
 
   }

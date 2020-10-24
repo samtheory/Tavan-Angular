@@ -26,7 +26,7 @@
 				<form>
 					<div class="information-tab my-5">
 						<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-							<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+							<form *ngIf="course" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
 								<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
 									اطلاعات دوره
 								</h6>
@@ -41,9 +41,10 @@
 											</label>
 											<input
 												type="text"
+												name="title"
+												[(ngModel)]="course.title"
 												formControlName="title"
 												class="form-control px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
 											/>
 										</div>
 									</div>
@@ -60,7 +61,8 @@
 												formControlName="teacher"
 												type="email"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="teacher"
+												[(ngModel)]="course.teacher"
 											/>
 										</div>
 									</div>
@@ -77,7 +79,8 @@
 												formControlName="cost"
 												type="text"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="cost"
+												[(ngModel)]="course.cost"
 											/>
 										</div>
 									</div>
@@ -94,7 +97,8 @@
 												formControlName="started"
 												type="text"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="started"
+												[(ngModel)]="course.started"
 											/>
 											<ng-persian-datepicker
 												[dateValue]="'1398-12-15'"
@@ -115,7 +119,8 @@
 											<input
 												type="text"
 												formControlName="ended"
-												value=""
+												name="ended"
+												[(ngModel)]="course.ended"
 												(input)="FinishDateChange($event.target.value)"
 												#endDate
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
@@ -124,6 +129,7 @@
 												[dateValue]="'1398-12-15'"
 												[timeMeridian]="true"
 												[input]="endDate"
+												(input)="FinishDateChange($event.target.value)"
 												[uiHideAfterSelectDate]="true"
 											></ng-persian-datepicker>
 										</div>
@@ -141,7 +147,8 @@
 												formControlName="off"
 												type="text"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="off"
+												[(ngModel)]="course.off"
 											/>
 										</div>
 									</div>
@@ -166,7 +173,8 @@
 												formControlName="description"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 												rows="4"
-												value=""
+												name="description"
+												[(ngModel)]="course.description"
 											></textarea>
 										</div>
 									</div>
@@ -183,7 +191,8 @@
 												type="text"
 												formControlName="titres"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="titres"
+												[(ngModel)]="course.titres"
 											/>
 										</div>
 									</div>
@@ -200,7 +209,8 @@
 												type="text"
 												formControlName="videoUrl"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="videoUrl"
+												[(ngModel)]="course.media.videoUrl"
 											/>
 										</div>
 									</div>
@@ -216,7 +226,8 @@
 												type="text"
 												formControlName="videoId"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												value=""
+												name="videoId"
+												[(ngModel)]="course.media.videoId"
 											/>
 										</div>
 									</div>

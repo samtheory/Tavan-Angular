@@ -57,19 +57,19 @@ export class PAEditCourseComponent implements OnInit {
   
   createCourseFrom() {
     this.courseForm = this.formBuilder.group({
-      title: [this.course.title, Validators.required],
-      cost: [this.course.cost, Validators.required],
-      url: [this.course.url, Validators.required],
-      off: [this.course.off, Validators.required],
-      videoUrl: [this.course.media.videoUrl],
-      videoId: [this.course.media.videoUrl],
-      courseDays: [this.course.courseDays],
+      title: ['', Validators.required],
+      cost: ['', Validators.required],
+      url: ['', Validators.required],
+      off: ['', Validators.required],
+      videoUrl: [''],
+      videoId: [''],
+      courseDays: [''],
       isActive: [''],
-      teacher: [this.course.teacher],
-      titres: [this.course.titres],
-      description: [this.course.description],
-      started: [this.course.started],
-      ended: [this.course.ended],
+      teacher: [''],
+      titres: [''],
+      description: [''],
+      started: [''],
+      ended: [''],
       file: ['', Validators.required],
       fileSource: ['', Validators.required],
     });
@@ -147,6 +147,7 @@ export class PAEditCourseComponent implements OnInit {
     let dd: Number = Number(value.slice(8, 10));
 
     let g = jalaali.toGregorian(yyyy, mm, dd);
+    value =  g.gy+'-'+g.gm+'-'+g.gd;
     console.log(g.gy + '-' + g.gm + '-' + g.gd);
 
   }

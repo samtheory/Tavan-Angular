@@ -59,7 +59,7 @@
 											</label>
 											<input
 												formControlName="teacher"
-												type="email"
+												type="text"
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 												name="teacher"
 												[(ngModel)]="course.teacher"
@@ -96,13 +96,11 @@
 												#startDate
 												formControlName="started"
 												type="text"
-												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 												name="started"
-												[(ngModel)]="course.started"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 											/>
 											<ng-persian-datepicker
-												[dateValue]="'1398-12-15'"
-												[timeMeridian]="true"
+												[timeMeridian]="false"
 												[input]="startDate"
 												[uiHideAfterSelectDate]="true"
 											></ng-persian-datepicker>
@@ -119,14 +117,13 @@
 											<input
 												type="text"
 												formControlName="ended"
-												name="ended"
-												[(ngModel)]="course.ended"
 												(input)="FinishDateChange($event.target.value)"
+												name="ended"
 												#endDate
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 											/>
 											<ng-persian-datepicker
-												[dateValue]="'1398-12-15'"
+											    [dateValue]="course.ended"
 												[timeMeridian]="true"
 												[input]="endDate"
 												(input)="FinishDateChange($event.target.value)"
@@ -203,6 +200,40 @@
 												class="block uppercase text-gray-700 text-xs font-bold mb-2"
 												htmlFor="grid-password"
 											>
+												روز های دوره
+											</label>
+											<input
+												type="text"
+												formControlName="courseDays"
+												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+												name="courseDays"
+												[(ngModel)]="course.courseDays"
+											/>
+										</div>
+									</div>
+
+
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
+												وضعیت دوره
+											</label>
+											<select name="isActive" formControlName="isActive" [(ngModel)]="course.isActive">
+												<option value="true">در حال برگزاری</option>
+												<option value="false">برگزار شده</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+											<label
+												class="block uppercase text-gray-700 text-xs font-bold mb-2"
+												htmlFor="grid-password"
+											>
 												آدرس ویدیو
 											</label>
 											<input
@@ -231,6 +262,19 @@
 											/>
 										</div>
 									</div>
+
+
+									<div class="w-full lg:w-12/12 px-4">
+										<div class="relative w-full mb-3">
+										  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+											لینک دوره
+										  </label>
+										  <input type="text" formControlName="url"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											name="url"
+											[(ngModel)]="course.url"/>
+										</div>
+									  </div>
 								</div>
 
 								<hr class="mt-6 border-b-1 border-gray-400" />
@@ -290,7 +334,6 @@
 							</label>
 							<input
 								type="text"
-								formControlName="videoId"
 								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 								value=""
 							/>
@@ -299,7 +342,6 @@
 							</label>
 							<input
 								type="text"
-								formControlName="videoId"
 								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 								value=""
 							/>

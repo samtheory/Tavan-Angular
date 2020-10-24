@@ -30,7 +30,7 @@ export class PAEditCourseComponent implements OnInit {
   submitted = false;
 
   ngOnInit(): void {
-
+    this.createCourseFrom();
     this.getCourse();
     //  -- I N F O --    
     $('#info').click(function () {
@@ -41,7 +41,6 @@ export class PAEditCourseComponent implements OnInit {
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.information-tab').removeClass(' hidden');
       $('.video-tab').addClass('  hidden');
-      this.createCourseFrom();
     });
     //  -- V I D E O --    
     $('#video').click(function () {
@@ -96,7 +95,9 @@ export class PAEditCourseComponent implements OnInit {
     formData.append('file', this.courseForm.get('fileSource').value);
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
-    formData.append('off', this.courseForm.get('off').value);
+    formData.append('title', this.courseForm.get('title').value);
+    formData.append('isActive', this.courseForm.get('isActive').value);
+    formData.append('courseDays', this.courseForm.get('courseDays').value);
     formData.append('description', this.courseForm.get('description').value);
     formData.append('titres', this.courseForm.get('titres').value);
     formData.append('teacher', this.courseForm.get('teacher').value);

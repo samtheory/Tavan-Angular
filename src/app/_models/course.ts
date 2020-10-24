@@ -7,6 +7,7 @@ export interface Course {
     cost: string;
     url: string;
     off: number;
+    isActive: boolean;
     courseDays: string;
     teacher: string;
     titres: string;

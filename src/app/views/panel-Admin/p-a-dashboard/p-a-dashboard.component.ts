@@ -30,7 +30,7 @@ userParams: any = {};
 
 
   pageChanged(event: any): void{
-    this.pag.currentPage = event.page;
+    this.pag.currentPage = event.pageIndex + 1;
     this.loadCourses();
   }
 

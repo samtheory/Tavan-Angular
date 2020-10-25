@@ -590,7 +590,7 @@ Header CSS
 }
 
 .top-header {
-  background-color: #ff1949;
+  background-color: #0044b1;
   padding-top: 15px;
   padding-bottom: 25px;
 }
@@ -645,24 +645,24 @@ Header CSS
 
 .top-header-btn .default-btn {
   background-color: #ffffff;
-  color: #ff1949;
+  color: #0044b1;
   border-color: #ffffff;
 }
 
 .top-header-btn .default-btn .icon-arrow {
-  color: #ff1949;
+  color: #0044b1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .top-header-btn .default-btn:hover, .top-header-btn .default-btn:focus {
   background-color: #252525;
-  color: #ffffff;
+  color: #cbfae8;
   border-color: #252525;
 }
 
 .top-header-btn .default-btn:hover .icon-arrow, .top-header-btn .default-btn:focus .icon-arrow {
-  color: #ffffff;
+  color: #cbfae8;
 }
 
 .top-header-style-two {
@@ -868,8 +868,8 @@ Header CSS
   color: #252525;
   font-size: 16.5px;
   font-weight: 500;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 7px;
+  padding-right: 7px;
   padding-top: 30px;
   padding-bottom: 30px;
   margin-left: 13px;

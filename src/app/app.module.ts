@@ -122,7 +122,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import * as tus from "tus-js-client";
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
 import { ArvanPipe } from './arvan.pipe';
-import { PaginatorComponent } from './views/panel-Admin/p-a-dashboard/paginator/paginator.component';
+
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 
@@ -211,7 +211,7 @@ export function tokenGeter(){
     SidebarCustomerComponent,
     CustomerPanelComponent,
     ArvanPipe,
-    PaginatorComponent
+    
   ],
   imports: [
     BrowserModule,

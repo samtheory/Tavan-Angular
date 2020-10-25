@@ -1,60 +1,42 @@
-<div
-  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0 "
->
-  <!-- Start Courses Area -->
-  <section class="courses-area ptb-100">
-    <div class="container">
-      <div class="row">
-        <div *ngIf="courses" class="col-lg-4 col-md-6">
-          <div *ngFor="let course of courses" class="single-courses-item mb-30">
-            <div class="courses-image">
-              <a   [routerLink]="['/admin/editCourse']" class="d-block"
-                ><img src="assets/img/courses/1.jpg" alt="image"
-              /></a>
-            </div>
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
+	<!-- Start Courses Area -->
+	<section class="courses-area ptb-100">
+		<div class="container">
+			<div *ngIf="courses" class="row">
+				<div *ngFor="let course of courses" class="col-lg-4 col-md-6">
 
-            <div class="courses-content" >
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="course-author d-flex align-items-center">
-                  <img src="assets/img/user1.jpg" class="shadow" alt="image" />
-                  <span>استیون اسمیت</span>
-                </div>
 
-                <div class="courses-rating">
-                  <div class="review-stars-rated">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                  </div>
-
-                  <div class="rating-total">4.5 (2)</div>
-                </div>
-              </div>
-
-              <h3>
-                <a   [routerLink]="['/admin/editCourse']" class="d-inline-block"
-                  >دوره گواهینامه فناوری اطلاعات تخصصی راک</a
-                >
-              </h3>
-              <p>آموزش شامل آموزش و یادگیری دانش است.</p>
-            </div>
-
-            
-          </div>
-        </div>
-
-        <mat-paginator *ngIf="courses" style="margin: 0 auto; direction: ltr;"
-        [length]="pag.totalItems"
-        [pageSize]="pag.itemsPerPage"
-        [(ngModel)]="pag.currentPage"
-        (ngModelChange)="pageChanged($event)"
-
-        >
-      </mat-paginator>
-      </div>
-    </div>
-  </section>
-  <!-- End Courses Area -->
+					<!-- :: ::  Just Add your Details Hear :: :: -->
+					<app-w-c-product
+						[title]="'دوره آموزشی یک'"
+						[isDiscount]="true"
+						[imageProduct]=" 'assets/img/courses/2.jpg' "
+						[imageTeacher]=" 'assets/img/user4.jpg'"
+						[teacherName]=" 'khar '"
+						[description]=" 'alo alo '"
+						[price]="100"
+						[prePrice]="200"
+						[courseNumbers]="10"
+						[StudentsNum]="2"
+					></app-w-c-product>
+          <!-- :: ::  End of your Details Hear :: :: -->
+          
+          
+				</div>
+				<div class="col-lg-12 col-md-12 flex justify-center">
+					<mat-paginator
+						style="width: 100px;"
+						*ngIf="courses"
+						style="direction: ltr;"
+						[length]="pag.totalItems"
+						[pageSize]="pag.itemsPerPage"
+						[(ngModel)]="pag.currentPage"
+						(ngModelChange)="pageChanged($event)"
+					>
+					</mat-paginator>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Courses Area -->
 </div>

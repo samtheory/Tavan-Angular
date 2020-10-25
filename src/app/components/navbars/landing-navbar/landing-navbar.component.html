@@ -65,13 +65,12 @@
 								<a
 									[routerLink]="['/index/home']"
 									class="nav-link"
-									[routerLink]="['/index/home']"
 									routerLinkActive
 									#landingHome="routerLinkActive"
 									[ngClass]="
                     landingHome.isActive
-                      ? ' text-blue-600  hover:text-blue-800'
-                      : 'text-gray-300 hover:text-gray-600'
+                      ? 'active'
+                      : ''
                   "
 									>خانه
 								</a>
@@ -79,28 +78,60 @@
 							<li class="nav-item">
 								<a
 									[routerLink]="['/index/products']"
+									class="nav-link"
 									routerLinkActive
 									#landingProducts="routerLinkActive"
 									[ngClass]="
                     landingProducts.isActive
-                      ? ''
+                      ? 'active'
                       : ''
                   "
-									class="nav-link"
 									>محصولات</a
 								>
 							</li>
 
 							<li class="nav-item">
-								<a [routerLink]="['/index/intro']" class="nav-link">آموزش سایت </a>
+								<a
+									[routerLink]="['/index/intro']"
+									class="nav-link"
+									routerLinkActive
+									#landingSiteInterview="routerLinkActive"
+									[ngClass]="
+                    landingSiteInterview.isActive
+                      ? 'active'
+                      : ''
+                  "
+									>آموزش سایت
+								</a>
 							</li>
 
 							<li class="nav-item">
-								<a [routerLink]="['/index/about']" class="nav-link">درباره ما </a>
+								<a
+									[routerLink]="['/index/about']"
+									class="nav-link"
+									routerLinkActive
+									#landingAboutUs="routerLinkActive"
+									[ngClass]="
+                    landingAboutUs.isActive
+                      ? 'active'
+                      : ''
+                  "
+									>درباره ما
+								</a>
 							</li>
 
 							<li class="nav-item">
-								<a [routerLink]="['/index/products/Single']" class="nav-link">جزییات محصول تکی</a>
+								<a
+									[routerLink]="['/index/products/Single']"
+									class="nav-link"
+									routerLinkActive
+									#landingSingleProduct="routerLinkActive"
+									[ngClass]="
+                    landingSingleProduct.isActive
+                      ? 'active'
+                      : ''"
+									>جزییات محصول تکی</a
+								>
 							</li>
 						</ul>
 

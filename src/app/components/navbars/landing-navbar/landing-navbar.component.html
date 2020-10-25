@@ -125,9 +125,9 @@
 									[routerLink]="['/index/products/Single']"
 									class="nav-link"
 									routerLinkActive
-									#landingSingleProduct="routerLinkActive"
+									#landingProductDetails="routerLinkActive"
 									[ngClass]="
-                    landingSingleProduct.isActive
+                    landingProductDetails.isActive
                       ? 'active'
                       : ''"
 									>جزییات محصول تکی</a
@@ -167,7 +167,7 @@
 
 							<a href="cart.html" class="cart-wrapper-btn d-inline-block">
 								<i class="bx bx-cart-alt"></i>
-								<span>01</span>
+								<span class="">01</span>
 							</a>
 
 							<div class="search-box d-inline-block">
@@ -195,33 +195,76 @@
 					<div class="collapse navbar-collapse">
 						<ul class="navbar-nav">
 							<li class="nav-item">
-								<a [routerLink]="['/index/home']" class="nav-link active">خانه </a>
+								<a
+									[routerLink]="['/index/home']"
+									class="nav-link"
+									routerLinkActive
+									#landingHome="routerLinkActive"
+									[ngClass]="
+                    landingHome.isActive
+                      ? 'active'
+                      : ''
+                  "
+									>خانه
+								</a>
 							</li>
 							<li class="nav-item">
 								<a
 									[routerLink]="['/index/products']"
+									class="nav-link"
 									routerLinkActive
 									#landingProducts="routerLinkActive"
 									[ngClass]="
                     landingProducts.isActive
-                      ? 'text-red-600 hover:text-red-700'
-                      : 'text-gray-800 hover:text-gray-600'
+                      ? 'active'
+                      : ''
                   "
-									class="nav-link"
 									>محصولات</a
 								>
 							</li>
 
 							<li class="nav-item">
-								<a [routerLink]="['/index/intro']" class="nav-link">آموزش سایت </a>
+								<a
+									[routerLink]="['/index/intro']"
+									class="nav-link"
+									routerLinkActive
+									#landingSiteInterview="routerLinkActive"
+									[ngClass]="
+                    landingSiteInterview.isActive
+                      ? 'active'
+                      : ''
+                  "
+									>آموزش سایت
+								</a>
 							</li>
 
 							<li class="nav-item">
-								<a [routerLink]="['/index/about']" class="nav-link">درباره ما </a>
+								<a
+									[routerLink]="['/index/about']"
+									class="nav-link"
+									routerLinkActive
+									#landingAboutUs="routerLinkActive"
+									[ngClass]="
+                    landingAboutUs.isActive
+                      ? 'active'
+                      : ''
+                  "
+									>درباره ما
+								</a>
 							</li>
 
 							<li class="nav-item">
-								<a [routerLink]="['/index/products/Single']" class="nav-link">جزییات محصول تکی</a>
+								<a
+									[routerLink]="['/index/products/Single']"
+									class="nav-link"
+									routerLinkActive
+									#landingProductDetails="routerLinkActive"
+									[ngClass]="
+                    landingProductDetails.isActive
+                      ? 'active'
+                      : ''"
+									>جزییات محصول تکی</a
+								>
 							</li>
 						</ul>
 

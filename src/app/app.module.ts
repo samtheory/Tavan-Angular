@@ -123,6 +123,7 @@ import * as tus from "tus-js-client";
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
 import { ArvanPipe } from './arvan.pipe';
 import { PaginatorComponent } from './views/panel-Admin/p-a-dashboard/paginator/paginator.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 export function tokenGeter(){
@@ -221,7 +222,7 @@ export function tokenGeter(){
     MatDialogModule ,
     DpDatePickerModule,
     MatExpansionModule,
-
+    MatPaginatorModule,
     HttpClientModule,
     FormsModule,
     PaginationModule.forRoot(),

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Course } from 'src/app/_models/course';
+import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
@@ -7,10 +11,38 @@ import { CourseService } from 'src/app/_services/course.service';
   styleUrls: ['./p-a-dashboard.component.css']
 })
 export class PADashboardComponent implements OnInit {
-
-  constructor(private courseService: CourseService) { }
+courses: Course[];
+pag: Pagination;
+userParams: any = {};
+  constructor(private courseService: CourseService , private toastr: ToastrService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getfirstPage();
+  }
+
+
+  getfirstPage(){
+    this.courseService.getCourses(1 , 4).subscribe((res: PaginatedResult<Course[]>) => {
+      this.courses = res.result;
+      this.pag = res.pag;
+    });
+  }
+
+
+  pageChanged(event: any): void{
+    this.pag.currentPage = event.page;
+    this.loadCourses();
+  }
+
+
+  loadCourses(){
+    this.courseService.getCourses(this.pag.currentPage , this.pag.itemsPerPage , this.userParams)
+    .subscribe((res: PaginatedResult<Course[]>) => {
+      this.courses = res.result;
+      this.pag = res.pag;
+    }, error => {
+      this.toastr.error(error);
+    });
   }
 
 }

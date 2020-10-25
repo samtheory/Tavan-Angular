@@ -97,6 +97,8 @@ import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { WCProductComponent } from './widgets/cards/w-c-product/w-c-product.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 
 
 
@@ -119,6 +121,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
 import * as tus from "tus-js-client";
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
+import { ArvanPipe } from './arvan.pipe';
 
 
 export function tokenGeter(){
@@ -204,7 +207,8 @@ export function tokenGeter(){
     PCCourseSingleDetailComponent,
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
-    CustomerPanelComponent
+    CustomerPanelComponent,
+    ArvanPipe
   ],
   imports: [
     BrowserModule,
@@ -218,6 +222,7 @@ export function tokenGeter(){
 
     HttpClientModule,
     FormsModule,
+    PaginationModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'

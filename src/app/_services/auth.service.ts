@@ -59,6 +59,10 @@ AdminRegister(user: FormData) {
   return this.http.post(this.baseUrl + 'adminregister', user);
 }
 
+deleteUser(id: number) {
+  return this.http.post(this.baseUrl + 'delete/' + id , {});
+}
+
 
 
 getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<User[]>>{
@@ -68,7 +72,7 @@ getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<Paginat
     params = params.append('pageNumber' , page);
     params = params.append('pageSize' , itemsPerPage);
    }
-  return this.http.get<User[]>(this.baseUrl + 'some', {observe: 'response', params}).pipe(
+  return this.http.get<User[]>(this.baseUrl, {observe: 'response', params}).pipe(
     map(response => {
       this.paginatedResult.result = response.body;
       console.log(response.headers.get('Pagination'));

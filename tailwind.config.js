@@ -144,6 +144,16 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+      swatch: {
+        dark:       '#1d212c',
+        blue:       '#0044b1',
+        lightBlue:  '#008ac3',
+        green:      '#4aba96',
+        lightGreen: '#cbfae8',
+        bright:     '#f0f0e4',
+        ice:        '#ecf4f6',
+        
+      },
     },
     spacing: {
       px: '1px',

@@ -4,7 +4,8 @@ import { Video } from './video';
 export interface Course {
     id: number;
     title: string;
-    cost: string;
+    cost: number;
+    realCost: number;
     url: string;
     off: number;
     isActive: boolean;

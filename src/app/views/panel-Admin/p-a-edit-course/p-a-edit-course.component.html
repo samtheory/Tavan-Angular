@@ -373,7 +373,7 @@
 						
 						<div class="my-10 align-self-center text-center w-full">
 							<!--? :: :: :: A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: -->
-							<mat-accordion class="duration-500">
+							<mat-accordion *ngIf="course.videos" class="duration-500">
 								<mat-expansion-panel
 									*ngFor="let video of course.videos"
 									class="duration-500"

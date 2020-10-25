@@ -19,27 +19,27 @@
                                     <h3>اکنون حساب خود را بسازید</h3>
                                     <p>ثبت نام کرده اید؟ <a [routerLink]="['/login']">ورود</a></p>
 
-                                    <form>
+                                    <form #registerForm="ngForm" (ngSubmit)="registerUser()">
                                         <div class="form-group">
-                                            <input type="email" name="email" id="email" placeholder="آدرس ایمیل" class="form-control">
+                                            <input type="email" name="email" [(ngModel)]="user.email" id="email" placeholder="آدرس ایمیل" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="user-name" id="username" placeholder="نام کاربری" class="form-control">
+                                            <input type="text" name="username" [(ngModel)]="user.username" id="username" placeholder="نام کاربری" class="form-control">
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="password" name="password" id="password" placeholder="رمز عبور جدید" class="form-control">
+                                            <input type="password" name="password" [(ngModel)]="user.password" id="password" placeholder="رمز عبور جدید" class="form-control">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <input type="password" name="password" id="re-password" placeholder="تکرار رمز عبور" class="form-control">
-                                        </div>
+                                        </div> -->
 
                                         <button type="submit">ثبت نام</button>
 
                                         <div class="connect-with-social">
-                                            <span>یا</span>
-                                            <button type="submit" class="facebook"><i class='bx bxl-facebook'></i> اتصال با فیسبوک</button>
-                                            <button type="submit" class="twitter"><i class='bx bxl-twitter'></i> اتصال با توئیتر</button>
+                                            <!-- <span>یا</span> -->
+                                            <!-- <button type="submit" class="facebook"><i class='bx bxl-facebook'></i> اتصال با فیسبوک</button>
+                                            <button type="submit" class="twitter"><i class='bx bxl-twitter'></i> اتصال با توئیتر</button> -->
                                         </div>
                                     </form>
                                 </div>

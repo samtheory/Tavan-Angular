@@ -25,7 +25,8 @@ export class PANewUserComponent implements OnInit {
       password: ['', Validators.required],
       email: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      isActive: [''],
+      lastName: [''],
+      isActive:[null],
       nezam: ['',Validators.required],
       nezamSource: ['',Validators.required],
       meli: ['',Validators.required],
@@ -64,17 +65,18 @@ export class PANewUserComponent implements OnInit {
     }
   }
 
-  createCourse(){
+  createUser(){
     console.log(this.userForm);
     const formData = new FormData();
+    formData.append('isActive', this.userForm.get('isActive').value);
     formData.append('meli', this.userForm.get('meliSource').value);
     formData.append('avatar', this.userForm.get('avatarSource').value);
     formData.append('nezam', this.userForm.get('nezamSource').value);
     formData.append('username', this.userForm.get('username').value);
     formData.append('password', this.userForm.get('password').value);
-    formData.append('isActive', this.userForm.get('isActive').value);
     formData.append('phoneNumber', this.userForm.get('phoneNumber').value);
     formData.append('email', this.userForm.get('email').value);
+    formData.append('lastName', this.userForm.get('lastName').value);
 
       this.userService.AdminRegister(formData).subscribe(() => {
         this.toastr.success('success fully created');

@@ -1,5 +1,5 @@
 <div class="flex flex-wrap">
-	<form action="">
+	<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 		<div class="w-full lg:w-8/12 px-4">
 			<!-- user Info  -->
 			<div
@@ -9,15 +9,15 @@
 					<div class="text-center flex justify-between">
 						<h6 class="text-gray-800 text-xl font-bold">کاربر جدید</h6>
 						<button
+						(click)="createUser()"
 							class="hover:border-red-500 hover:bg-white hover:text-red-600 border-2 border-transparent bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-							type="button"
+							type="submit"
 						>
 							ایجاد کاربر جدید
 						</button>
 					</div>
 				</div>
 				<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-					<form>
 						<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
         User Information
       </h6> -->
@@ -31,6 +31,7 @@
 										نام و نام خانوادگی
 									</label>
 									<input
+										formControlName="lastName"
 										type="text"
 										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
 										value="lucky.jesse"
@@ -46,6 +47,7 @@
 										آدرس ایمیل
 									</label>
 									<input
+										formControlName="email"
 										type="email"
 										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
 										value="jesse@example.com"
@@ -61,25 +63,27 @@
 										نام کاربری
 									</label>
 									<input
+										formControlName="username"
 										type="text"
 										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-										value="Lucky"
 									/>
 								</div>
 							</div>
 							<div class="w-full lg:w-6/12 px-4">
 								<div class="relative w-full mb-3">
-									<label
-										class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
-										htmlFor="grid-password"
-									>
-										کد ملی
-									</label>
-									<input
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-										value="Jesse"
-									/>
+									<div class="relative w-full mb-3">
+										<label
+											class="mt-2 mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password"
+										>
+											شماره تلفن
+										</label>
+										<input
+											formControlName="phoneNumber"
+											type="text"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										/>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -92,17 +96,7 @@
 						<div class="flex flex-wrap">
 							<div class="w-full lg:w-12/12 px-4">
 								<div class="relative w-full mb-3">
-									<label
-										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-										htmlFor="grid-password"
-									>
-										آدرس
-									</label>
-									<input
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-										value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-									/>
+								
 								</div>
 							</div>
 							<div class="w-full lg:w-4/12 px-4">
@@ -114,7 +108,8 @@
 										رمز عبور
 									</label>
 									<input
-										type="email"
+										formControlName="password"
+										type="password"
 										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
 										value="New York"
 									/>
@@ -123,16 +118,15 @@
 							<div class="w-full lg:w-4/12 px-4">
 								<div class="relative w-full mb-3">
 									<label
-										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-										htmlFor="grid-password"
-									>
-										تکرار رمز عبور
-									</label>
-									<input
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-										value="United States"
-									/>
+									class="block uppercase text-gray-700 text-xs font-bold mb-2"
+									htmlFor="grid-password"
+								  >
+									وضعیت 
+								  </label>
+								  <select formControlName="isActive">
+									<option value="true">فعال</option>
+									<option value="false">غیر فعال</option>
+								  </select>
 								</div>
 							</div>
 							<!-- <div class="w-full lg:w-4/12 px-4">
@@ -155,7 +149,7 @@
 						<div class="flex flex-wrap">
 							<div class="w-full lg:w-12/12 px-4">
 								<div class="relative w-full mb-3">
-									<label
+									<!-- <label
 										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
 										htmlFor="grid-password"
 									>
@@ -167,11 +161,10 @@
 										rows="4"
 									>
 A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</textarea
-									>
+									> -->
 								</div>
 							</div>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>
@@ -207,7 +200,7 @@ A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</te
 							/>
 						</svg>
 						<span class="mt-2 text-base leading-normal">Select a file</span>
-						<input type="file" class="hidden" />
+						<input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
 					</label>
 				</div>
 				<hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
@@ -215,7 +208,7 @@ A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</te
 				<!-- secend  -->
 				<div class="my-4 mr-4">
 					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
-						مدرک
+						 مدرک نظام پزشکی
 					</h3>
 				</div>
 				<div
@@ -241,7 +234,7 @@ A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</te
 							/>
 						</svg>
 						<span class="mt-2 text-base leading-normal">Select a file</span>
-						<input type="file" class="hidden" />
+						<input formControlName="nezam" (change)="onFile1Change($event)" type="file" class="hidden" />
 					</label>
 				</div>
 				<hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
@@ -275,7 +268,7 @@ A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</te
 							/>
 						</svg>
 						<span class="mt-2 text-base leading-normal">Select a file</span>
-						<input type="file" class="hidden" />
+						<input formControlName="avatar" (change)="onFile2Change($event)" type="file" class="hidden" />
 					</label>
 				</div>
 			</div>

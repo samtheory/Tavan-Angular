@@ -1,9 +1,284 @@
-
 <div class="flex flex-wrap">
-  <div class="w-full lg:w-8/12 px-4">
-    <app-card-new-user-info></app-card-new-user-info>
-  </div>
-  <div class="w-full lg:w-4/12 px-4">
-    <app-card-new-user-pic></app-card-new-user-pic>
-  </div>
+	<form action="">
+		<div class="w-full lg:w-8/12 px-4">
+			<!-- user Info  -->
+			<div
+				class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0"
+			>
+				<div class="rounded-t bg-white mb-0 px-6 py-6 border-r-8 border-teal-200">
+					<div class="text-center flex justify-between">
+						<h6 class="text-gray-800 text-xl font-bold">کاربر جدید</h6>
+						<button
+							class="hover:border-red-500 hover:bg-white hover:text-red-600 border-2 border-transparent bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+							type="button"
+						>
+							ایجاد کاربر جدید
+						</button>
+					</div>
+				</div>
+				<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+					<form>
+						<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+        User Information
+      </h6> -->
+						<div class="flex flex-wrap">
+							<div class="w-full lg:w-6/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+										htmlFor="grid-password"
+									>
+										نام و نام خانوادگی
+									</label>
+									<input
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="lucky.jesse"
+									/>
+								</div>
+							</div>
+							<div class="w-full lg:w-6/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+										htmlFor="grid-password"
+									>
+										آدرس ایمیل
+									</label>
+									<input
+										type="email"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="jesse@example.com"
+									/>
+								</div>
+							</div>
+							<div class="w-full lg:w-6/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="mt-2 mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+										htmlFor="grid-password"
+									>
+										نام کاربری
+									</label>
+									<input
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="Lucky"
+									/>
+								</div>
+							</div>
+							<div class="w-full lg:w-6/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+										htmlFor="grid-password"
+									>
+										کد ملی
+									</label>
+									<input
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="Jesse"
+									/>
+								</div>
+							</div>
+						</div>
+
+						<hr class="mt-6 border-b-1 border-gray-400" />
+						<!-- 
+      <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+        آدرس
+      </h6> -->
+						<div class="flex flex-wrap">
+							<div class="w-full lg:w-12/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+										htmlFor="grid-password"
+									>
+										آدرس
+									</label>
+									<input
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+									/>
+								</div>
+							</div>
+							<div class="w-full lg:w-4/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+										htmlFor="grid-password"
+									>
+										رمز عبور
+									</label>
+									<input
+										type="email"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="New York"
+									/>
+								</div>
+							</div>
+							<div class="w-full lg:w-4/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+										htmlFor="grid-password"
+									>
+										تکرار رمز عبور
+									</label>
+									<input
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										value="United States"
+									/>
+								</div>
+							</div>
+							<!-- <div class="w-full lg:w-4/12 px-4">
+          <div class="relative w-full mb-3">
+            <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+              Postal Code
+            </label>
+            <input type="text"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+              value="Postal Code" />
+          </div>
+        </div> -->
+						</div>
+
+						<hr class="mt-6 border-b-1 border-gray-400" />
+
+						<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+        About Me
+      </h6> -->
+						<div class="flex flex-wrap">
+							<div class="w-full lg:w-12/12 px-4">
+								<div class="relative w-full mb-3">
+									<label
+										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+										htmlFor="grid-password"
+									>
+										درباره من
+									</label>
+									<textarea
+										type="text"
+										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+										rows="4"
+									>
+A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</textarea
+									>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="w-full lg:w-4/12 px-4">
+			<!-- picturs Uploader -->
+			<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg">
+				<!-- first  -->
+				<div class="my-4 mr-4">
+					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 last:mr-0 inline">
+						کارت ملی
+					</h3>
+				</div>
+				<div
+					style="
+						width: 300px;
+						height: 300px;
+						align-self: flex-end;
+						margin: 0 0 15px 15px;
+						border-radius: 5px;
+						background-image: url(https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png);
+						background-size: contain;
+						background-position: center;
+						position: relative;
+					"
+				>
+					<label
+						class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+						style="top: 33%; right: 26%;"
+					>
+						<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path
+								d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
+							/>
+						</svg>
+						<span class="mt-2 text-base leading-normal">Select a file</span>
+						<input type="file" class="hidden" />
+					</label>
+				</div>
+				<hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
+
+				<!-- secend  -->
+				<div class="my-4 mr-4">
+					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
+						مدرک
+					</h3>
+				</div>
+				<div
+					style="
+						width: 300px;
+						height: 300px;
+						align-self: flex-end;
+						margin: 0 0 15px 15px;
+						border-radius: 5px;
+						background-image: url(https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png);
+						background-size: contain;
+						background-position: center;
+						position: relative;
+					"
+				>
+					<label
+						class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+						style="top: 33%; right: 26%;"
+					>
+						<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path
+								d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
+							/>
+						</svg>
+						<span class="mt-2 text-base leading-normal">Select a file</span>
+						<input type="file" class="hidden" />
+					</label>
+				</div>
+				<hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
+
+				<!-- third  -->
+				<div class="my-4 mr-4">
+					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
+						عکس پروفایل
+					</h3>
+				</div>
+				<div
+					style="
+						width: 300px;
+						height: 300px;
+						align-self: flex-end;
+						margin: 0 0 15px 15px;
+						border-radius: 5px;
+						background-image: url(https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png);
+						background-size: contain;
+						background-position: center;
+						position: relative;
+					"
+				>
+					<label
+						class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+						style="top: 33%; right: 26%;"
+					>
+						<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path
+								d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
+							/>
+						</svg>
+						<span class="mt-2 text-base leading-normal">Select a file</span>
+						<input type="file" class="hidden" />
+					</label>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>

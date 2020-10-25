@@ -1,332 +1,277 @@
-<div
-  class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
->
-  <div class="rounded-t mb-0 px-4 py-3 border-0">
-    <div class="flex flex-wrap items-center">
-      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-        <h3 class="font-semibold text-base text-gray-800">
-          مدیریت بنر صفحه اصلی
-        </h3>
-      </div>
-      <div
-        class="relative w-full px-4 max-w-full flex-grow flex-1"
-        style="text-align: left"
-      >
-        <button
-          class="bg-red-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-mesh-700 border-2 border-transparent hover:border-red-600"
-          type="button"
-        >
-          Modify
-        </button>
-        <button
-          class="bg-green-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-mesh-700 border-2 border-transparent hover:border-green-500"
-          type="button"
-        >
-          save
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="block w-full overflow-x-auto">
-    <!-- Projects table -->
-    <table class="items-center w-full bg-transparent border-collapse">
-      <thead>
-        <tr>
-          <th
-            class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-          >
-            لینک
-          </th>
-          <th
-            class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-          >
-            عنوان
-          </th>
+<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+	<div class="rounded-t mb-0 px-4 py-3 border-0">
+		<div class="flex flex-wrap items-center">
+			<div class="relative w-full px-4 max-w-full flex-grow flex-1">
+				<h3 class="font-semibold text-base text-gray-800">
+					مدیریت بنر صفحه اصلی
+				</h3>
+			</div>
+			<div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: left;">
+				<button
+					class="bg-red-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-mesh-700 border-2 border-transparent hover:border-red-600"
+					type="button"
+				>
+					Modify
+				</button>
+				<button
+					class="bg-green-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-mesh-700 border-2 border-transparent hover:border-green-500"
+					type="button"
+				>
+					save
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="block w-full overflow-x-auto">
+		<!-- Projects table -->
+		<table class="items-center w-full bg-transparent border-collapse">
+			<thead>
+				<tr>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						لینک
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						عنوان
+					</th>
 
-          <th
-            class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-          >
-            نمایش
-          </th>
-          <th
-            class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-          >
-            عکس
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="Link"
-                class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-link"></i>
-              </span>
-            </div>
-          </th>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="title"
-              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-heading"></i>
-              </span>
-            </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <input type="checkbox" name="" id=""  class="mt-4" style="width: 20px ;height: 20px;"/>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 "
-          >
-            <span
-              class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300 uppercase last:mr-0 mr-1 cursor-pointer mt-4"
-            >
-              انتخاب
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="Link"
-                class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-link"></i>
-              </span>
-            </div>
-          </th>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="title"
-              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-heading"></i>
-              </span>
-            </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <input type="checkbox" name="" id=""  class="" style="width: 20px ;height: 20px;"/>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <span
-              class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300 uppercase last:mr-0 mr-1 cursor-pointer"
-            >
-              انتخاب
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="Link"
-                class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-link"></i>
-              </span>
-            </div>
-          </th>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="title"
-              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-heading"></i>
-              </span>
-            </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <input type="checkbox" name="" id=""  class="" style="width: 20px ;height: 20px;"/>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <span
-              class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300 uppercase last:mr-0 mr-1 cursor-pointer"
-            >
-              انتخاب
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="Link"
-                class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-link"></i>
-              </span>
-            </div>
-          </th>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="title"
-              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-heading"></i>
-              </span>
-            </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <input type="checkbox" name="" id=""  class="" style="width: 20px ;height: 20px;"/>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <span
-              class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300 uppercase last:mr-0 mr-1 cursor-pointer"
-            >
-              انتخاب
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <th
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="Link"
-                class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-link"></i>
-              </span>
-            </div>
-          </th>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <div
-              class="relative flex w-full flex-wrap items-stretch justify-center align-items-center"
-            >
-              <input
-                type="text"
-                placeholder="title"
-              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
-                style="padding-top: 13px"
-              />
-              <span
-                class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
-              >
-                <i class="fas fa-heading"></i>
-              </span>
-            </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <input type="checkbox" name="" id=""  class="" style="width: 20px ;height: 20px;"/>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2"
-          >
-            <span
-              class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300 uppercase last:mr-0 mr-1 cursor-pointer"
-            >
-              انتخاب
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						نمایش
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
+						عکس
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
+					>
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="Link"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-link"></i>
+							</span>
+						</div>
+					</th>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="title"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-heading"></i>
+							</span>
+						</div>
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<input type="checkbox" name="" id="" class="mt-4" style="width: 20px; height: 20px;" />
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<span
+							class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300  last:mr-0 mr-1 cursor-pointer mt-4"
+						>
+							انتخاب
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
+					>
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="Link"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-link"></i>
+							</span>
+						</div>
+					</th>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="title"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-heading"></i>
+							</span>
+						</div>
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<input type="checkbox" name="" id="" class="" style="width: 20px; height: 20px;" />
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<span
+							class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300  last:mr-0 mr-1 cursor-pointer"
+						>
+							انتخاب
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
+					>
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="Link"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-link"></i>
+							</span>
+						</div>
+					</th>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="title"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-heading"></i>
+							</span>
+						</div>
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<input type="checkbox" name="" id="" class="" style="width: 20px; height: 20px;" />
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<span
+							class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300  last:mr-0 mr-1 cursor-pointer"
+						>
+							انتخاب
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
+					>
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="Link"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-link"></i>
+							</span>
+						</div>
+					</th>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="title"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-heading"></i>
+							</span>
+						</div>
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<input type="checkbox" name="" id="" class="" style="width: 20px; height: 20px;" />
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<span
+							class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300  last:mr-0 mr-1 cursor-pointer"
+						>
+							انتخاب
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<th
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2 text-left"
+					>
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="Link"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-link"></i>
+							</span>
+						</div>
+					</th>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+							<input
+								type="text"
+								placeholder="title"
+								class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10"
+								style="padding-top: 13px;"
+							/>
+							<span
+								class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1 flex"
+							>
+								<i class="fas fa-heading"></i>
+							</span>
+						</div>
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<input type="checkbox" name="" id="" class="" style="width: 20px; height: 20px;" />
+					</td>
+					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
+						<span
+							class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-mesh-600 bg-teal-300  last:mr-0 mr-1 cursor-pointer"
+						>
+							انتخاب
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

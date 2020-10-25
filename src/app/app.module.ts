@@ -97,7 +97,7 @@ import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { WCProductComponent } from './widgets/cards/w-c-product/w-c-product.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 
-import { PaginationModule } from 'ngx-bootstrap/pagination';
+// import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 
@@ -222,7 +222,7 @@ export function tokenGeter(){
 
     HttpClientModule,
     FormsModule,
-    PaginationModule.forRoot(),
+    // PaginationModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'

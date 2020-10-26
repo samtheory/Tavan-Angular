@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Course } from 'src/app/_models/course';
 
 @Component({
   selector: 'app-w-c-customer-course',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./w-c-customer-course.component.css']
 })
 export class WCCustomerCourseComponent implements OnInit {
+  @Input() course: Course;
+  @Input() imageTeacher: String = 'assets/img/user4.jpg';
 
   constructor() { }
 

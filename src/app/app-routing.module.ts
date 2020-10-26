@@ -94,7 +94,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: PCDashboardComponent },
       { path: 'activeCourses', component: PCActiveCoursesComponent },
-      { path: 'SingleCourseDetails', component: PCCourseSingleDetailComponent },
+      { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent },
       { path: 'FinnishCourses', component: PCFinnishedCoursesComponent },
       { path: 'Profile', component: PCEditProfileComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -104,8 +104,8 @@ const routes: Routes = [
 
 
 
-  // :::::::::::::::::::::::::::::::::::::::::::::::::::: 
-  //! -----> Here are some old Route USelesssss 
+  // ::::::::::::::::::::::::::::::::::::::::::::::::::::
+  //! -----> Here are some old Route USelesssss
   // Just for dev testing 
   { path: 'Test', component: TestComponentViewComponent },
   // auth views

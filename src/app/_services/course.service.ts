@@ -78,5 +78,9 @@ export class CourseService {
  deleteCourse(id: number){
    return this.http.post(this.baseUrl + 'delete/' + id , {});
  }
+
+ addcourseToUser(id: number){
+  return this.http.post(this.baseUrl + 'add/' + id , {});
+ }
  
 }

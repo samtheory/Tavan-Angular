@@ -1,1 +1,46 @@
-<p>w-c-customer-course works!</p>
+<div class="single-courses-item mb-30 shadow-2xl">
+	<div class="courses-image">
+		<a [routerLink]="['/Customer/SingleCourseDetails/', course.id]" class="d-block"
+			><img [src]="course.media.photoUrl" alt="image" 
+		/></a>
+	</div>
+
+	<div class="courses-content">
+		<div class="d-flex justify-content-between align-items-center">
+			<div class="course-author d-flex align-items-center">
+				<img [src]="imageTeacher" class="shadow" alt="image" />
+				<span> مدرس: {{ course.teacher }} </span>
+			</div>
+
+		
+		</div>
+
+		<h3>
+			<a [routerLink]="['/Customer/SingleCourseDetails/', course.id]" class="d-inline-block">{{ course.title }}</a>
+		</h3>
+		<p>{{ course.description }}</p>
+	</div>
+
+	<div class="courses-box-footer">
+		<ul>
+			<li *ngIf="course.isActive" class="students-number" style="color: rgb(71, 190, 71);">
+				<i class="far fa-play-circle ml-1" style="color: rgb(71, 190, 71);"></i> درحال برگزاری
+			</li>
+			<li *ngIf="!course.isActive" class="students-number" style="color: rgb(212, 61, 50);">
+				<i class="far fa-play-circle ml-1" style="color: rgb(212, 61, 50);"></i>برگزار شده
+			</li>
+
+			<li class="courses-lesson"><i class="bx bxs-discount text-swatch-lightBlue"></i> {{course.off}} تخفیف</li>
+
+			<li class="courses-price flex flex-col">
+				<div class="mt-2">{{course.realCost}}</div>
+				<span *ngIf="course.realCost !== course.cost" class="">{{course.cost}} </span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!--? just for refrence  -->
+<!-- <div *ngFor='let item of list; index as i'>
+   <h1>{{item}}</h1>
+</div> -->

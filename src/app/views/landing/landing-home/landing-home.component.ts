@@ -13,6 +13,8 @@ import { CourseService } from 'src/app/_services/course.service';
 export class LandingHomeComponent implements OnInit {
   aCourses: Course[];
   dCourses: Course[];
+  useraParams: any = {};
+  userdParams: any = {};
   pag: Pagination;
   constructor(private courseService: CourseService, private toastr: ToastrService) { }
   
@@ -23,14 +25,16 @@ export class LandingHomeComponent implements OnInit {
 
 
   getafirstPage(){
-    this.courseService.getCourses(1 , 3).subscribe((res: PaginatedResult<Course[]>) => {
+    this.useraParams.isActive = true;
+    this.courseService.getCourses(1 , 3, this.useraParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.aCourses = res.result;
       this.pag = res.pag;
     });
   }
 
   getdfirstPage(){
-    this.courseService.getCourses(1 , 3).subscribe((res: PaginatedResult<Course[]>) => {
+    this.userdParams.isActive = false;
+    this.courseService.getCourses(1 , 3, this.userdParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.dCourses = res.result;
       this.pag = res.pag;
     });

@@ -24,11 +24,11 @@
 				</div>
 				<div *ngIf="loggedIn()" class="col-lg-4">
 					<div  class="top-header-btn">
-						<a *ngIf="role()" [routerLink]="['/admin/dashboared']" class="default-btn rounded-md"
+						<a *ngIf="role()" [routerLink]="['/admin/dashboard']" class="default-btn rounded-md"
 							><i class="bx bx-log-in icon-arrow before"></i><span class="label">ورود پنل</span
 							><i class="bx bx-log-in icon-arrow after"></i
 						></a>
-						<a *ngIf="role()=== false" [routerLink]="['/Customer/dashboared']" class="default-btn rounded-md"
+						<a *ngIf="role()=== false" [routerLink]="['/Customer/dashboard']" class="default-btn rounded-md"
 							><i class="bx bx-log-in icon-arrow before"></i><span class="label">ورود پنل</span
 							><i class="bx bx-log-in icon-arrow after"></i
 						></a>

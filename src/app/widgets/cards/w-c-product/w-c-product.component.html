@@ -1,53 +1,51 @@
+<div class="single-courses-item mb-30">
+	<div class="courses-image">
+		<a [routerLink]="['/admin/editCourse/', course.id]" class="d-block"
+			><img [src]="course.media.photoUrl" alt="image"
+		/></a>
+	</div>
 
-    <div class="single-courses-item mb-30">
-      <div class="courses-image">
-        <a [routerLink]="['/admin/editCourse/', course.id]" class="d-block"
-          ><img [src]="course.media.photoUrl" alt="image"
-        /></a>
-      </div>
+	<div class="courses-content">
+		<div class="d-flex justify-content-between align-items-center">
+			<div class="course-author d-flex align-items-center">
+				<img [src]="course.media.photoUrl" class="shadow" alt="image" />
+				<span> {{ course.teacher }} </span>
+			</div>
 
-      <div class="courses-content">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="course-author d-flex align-items-center">
-            <img [src]="course.media.photoUrl" class="shadow" alt="image" />
-            <span> {{ course.teacher }} </span>
-          </div>
+			<!--? start Rating Stars -->
+			<div class="courses-rating">
+				<div class="review-stars-rated">
+					<i class="bx bxs-star"></i>
+					<i class="bx bxs-star"></i>
+					<i class="bx bxs-star"></i>
+					<i class="bx bxs-star"></i>
+					<i class="bx bx-star"></i>
+				</div>
+				<div class="rating-total">4.0 (1)</div>
+			</div>
 
-          <!--? start Rating Stars -->
-          <div class="courses-rating">
-            <div class="review-stars-rated">
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bxs-star"></i>
-              <i class="bx bx-star"></i>
-            </div>
-            <div class="rating-total">4.0 (1)</div>
-          </div>
+			<!--::End Rating Stars -->
+		</div>
 
-          <!--::End Rating Stars -->
-        </div>
+		<h3>
+			<a [routerLink]="['/admin/editCourse/', course.id]" class="d-inline-block">{{ course.title }}</a>
+		</h3>
+		<p>{{ course.description }}</p>
+	</div>
 
-        <h3>
-          <a [routerLink]="['/admin/editCourse/', course.id]"  class="d-inline-block">{{ course.title }}</a>
-        </h3>
-        <p>{{ course.description }}</p>
-      </div>
+	<div class="courses-box-footer">
+		<ul>
+			<li class="students-number"><i class="bx bx-user"></i></li>
 
-      <div class="courses-box-footer">
-        <ul>
-          <li class="students-number"><i class="bx bx-user"></i> </li>
+			<li class="courses-lesson"><i class="bx bxs-discount bg-swatch-lightBlue"></i> {{course.off}} تخفیف</li>
 
-          <li class="courses-lesson"><i class="bx bx-book-open"></i> {{course.off}} تخفیف</li>
-
-          <li class="courses-price">
-            <span *ngIf="course.realCost !== course.cost">{{course.cost}} </span>
-            {{course.realCost}}
-          </li>
-        </ul>
-      </div>
-    </div>
-
+			<li class="courses-price flex flex-col">
+				<div class="mt-2">{{course.realCost}}</div>
+				<span *ngIf="course.realCost !== course.cost" class="">{{course.cost}} </span>
+			</li>
+		</ul>
+	</div>
+</div>
 
 <!--? just for refrence  -->
 <!-- <div *ngFor='let item of list; index as i'>

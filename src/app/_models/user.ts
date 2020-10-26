@@ -3,7 +3,8 @@ import { UserPhoto } from './userPhoto';
 
 export interface User {
     id: number;
-    userName: string;
+    lastName: string;
+    username: string;
     email: string;
     token: string;
     userPhoto: UserPhoto;

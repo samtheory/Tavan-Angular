@@ -33,8 +33,9 @@ export class PAEditCourseComponent implements OnInit {
   submitted = false;
 
   ngOnInit(): void {
-    this.createCourseFrom();
     this.getCourse();
+    this.createCourseFrom();
+    
     //  -- I N F O --    
     $('#info').click(function () {
       $('#info').removeClass('border-teal-300 bg-teal-200');
@@ -100,7 +101,8 @@ export class PAEditCourseComponent implements OnInit {
     formData.append('file', this.courseForm.get('fileSource').value);
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
-    formData.append('title', this.courseForm.get('title').value);
+    formData.append('off', this.courseForm.get('off').value);
+    formData.append('url', this.courseForm.get('url').value);
     formData.append('isActive', this.courseForm.get('isActive').value);
     formData.append('courseDays', this.courseForm.get('courseDays').value);
     formData.append('description', this.courseForm.get('description').value);
@@ -112,9 +114,9 @@ export class PAEditCourseComponent implements OnInit {
     formData.append('videoId', this.courseForm.get('videoId').value);
 
 
-    this.courseService.updateCourse(this.route.params['id'] , formData).subscribe(() => {
+    this.courseService.updateCourse(this.route.snapshot.params['id'] , formData).subscribe(() => {
       this.toastr.success('success fully created');
-      this.router.navigate(['/index/home']);
+      this.router.navigate(['/admin/dashboard']);
 
     }, error => {
       this.toastr.error(error);

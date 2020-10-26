@@ -54,6 +54,10 @@ logout(){
 updateProfile(user: FormData) {
   return this.http.post(this.baseUrl + 'update', user);
 }
+updateUserAdmin(user: FormData, id: number) {
+  return this.http.post(this.baseUrl + 'update/' + id, user);
+}
+
 
 AdminRegister(user: FormData) {
   return this.http.post(this.baseUrl + 'adminregister', user);
@@ -63,7 +67,9 @@ deleteUser(id: number) {
   return this.http.post(this.baseUrl + 'delete/' + id , {});
 }
 
-
+getUser(id: number): Observable<User>{
+  return this.http.get<User>(this.baseUrl + id);
+}
 
 getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<User[]>>{
   let params = new HttpParams();

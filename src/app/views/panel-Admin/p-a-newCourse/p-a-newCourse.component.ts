@@ -75,7 +75,7 @@ export class PANewCourseComponent implements OnInit {
 
       this.courseService.createCourse(formData).subscribe(() => {
         this.toastr.success('success fully created');
-        this.router.navigate(['/index/home']);
+        this.router.navigate(['/admin/dashboard']);
 
       }, error => {
           this.toastr.error(error);

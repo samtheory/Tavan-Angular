@@ -25,11 +25,8 @@
                 </div>
 
                 <div class="">
-                    <div class="row">
-                        
-                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
-                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
-                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                    <div *ngIf="aCourses" class="row">
+                      <app-card-product1 *ngFor="let course of aCourses" [course]="course" class="col-lg-4 col-md-6"></app-card-product1>
                     </div>
                 </div>
             </div>
@@ -53,11 +50,8 @@
                 </div>
 
                 <div class="">
-                    <div class="row">
-                        
-                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
-                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
-                      <app-card-product1 class="col-lg-4 col-md-6"></app-card-product1>
+                    <div *ngIf="dCourses" class="row">
+                      <app-card-product1 *ngFor="let course of dCourses" [course]="course" class="col-lg-4 col-md-6"></app-card-product1>
                     </div>
                 </div>
             </div>

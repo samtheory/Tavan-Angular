@@ -1,30 +1,18 @@
-<div class="single-courses-item mb-30">
+<div class="single-courses-item mb-30 shadow-2xl">
 	<div class="courses-image">
 		<a [routerLink]="['/admin/editCourse/', course.id]" class="d-block"
-			><img [src]="course.media.photoUrl" alt="image"
+			><img [src]="course.media.photoUrl" alt="image" style="height: 18rem;"
 		/></a>
 	</div>
 
 	<div class="courses-content">
 		<div class="d-flex justify-content-between align-items-center">
 			<div class="course-author d-flex align-items-center">
-				<img [src]="course.media.photoUrl" class="shadow" alt="image" />
-				<span> {{ course.teacher }} </span>
+				<img [src]="imageTeacher" class="shadow" alt="image" />
+				<span> مدرس: {{ course.teacher }} </span>
 			</div>
 
-			<!--? start Rating Stars -->
-			<div class="courses-rating">
-				<div class="review-stars-rated">
-					<i class="bx bxs-star"></i>
-					<i class="bx bxs-star"></i>
-					<i class="bx bxs-star"></i>
-					<i class="bx bxs-star"></i>
-					<i class="bx bx-star"></i>
-				</div>
-				<div class="rating-total">4.0 (1)</div>
-			</div>
-
-			<!--::End Rating Stars -->
+		
 		</div>
 
 		<h3>
@@ -35,9 +23,14 @@
 
 	<div class="courses-box-footer">
 		<ul>
-			<li class="students-number"><i class="bx bx-user"></i></li>
+			<li *ngIf="course.isActive" class="students-number" style="color: rgb(71, 190, 71);">
+				<i class="far fa-play-circle ml-1" style="color: rgb(71, 190, 71);"></i> درحال برگزاری
+			</li>
+			<li *ngIf="!course.isActive" class="students-number" style="color: rgb(212, 61, 50);">
+				<i class="far fa-play-circle ml-1" style="color: rgb(212, 61, 50);"></i>برگزار شده
+			</li>
 
-			<li class="courses-lesson"><i class="bx bxs-discount bg-swatch-lightBlue"></i> {{course.off}} تخفیف</li>
+			<li class="courses-lesson"><i class="bx bxs-discount text-swatch-lightBlue"></i> {{course.off}} تخفیف</li>
 
 			<li class="courses-price flex flex-col">
 				<div class="mt-2">{{course.realCost}}</div>

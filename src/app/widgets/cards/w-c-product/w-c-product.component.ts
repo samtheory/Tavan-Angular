@@ -8,7 +8,7 @@ import { Course } from 'src/app/_models/course';
 })
 export class WCProductComponent implements OnInit {
   @Input() course: Course;
-
+  @Input() imageTeacher: String = 'assets/img/user4.jpg';
 
 
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/_models/course';
+import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
   selector: 'app-landing-single-product',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-single-product.component.css']
 })
 export class LandingSingleProductComponent implements OnInit {
-
-  constructor() { }
+  course: Course;
+  constructor(private courseService: CourseService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getCourse();
+  }
+
+
+  getCourse(){
+    this.courseService.getCourse(this.route.snapshot.params['id']).subscribe(course => {
+      this.course = course;
+    });
   }
 
 }

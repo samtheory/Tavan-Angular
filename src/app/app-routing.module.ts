@@ -56,10 +56,10 @@ const routes: Routes = [
     component: LandingLayoutComponent,
     children: [
       { path: 'home', component: LandingHomeComponent },
-      { path: 'products/Single', component: LandingSingleProductComponent },
+      { path: 'products/Single/:id', component: LandingSingleProductComponent },
       { path: 'about', component: LandingAboutComponent },
       { path: 'intro', component: LandingIntroComponent },
-      { path: 'products', component: LandingProductsAllComponent },
+      { path: 'products/:isActive', component: LandingProductsAllComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
   },

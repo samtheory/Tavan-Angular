@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-					<form>
+					
 						<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
         User Information
       </h6> -->
@@ -131,17 +131,16 @@
 							</div>
 							<div class="w-full lg:w-4/12 px-4">
 								<div class="relative w-full mb-3">
-									<!-- <label
-										class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-										htmlFor="grid-password"
-									>
-										تکرار رمز عبور
-									</label>
-									<input
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-										value="United States"
-									/> -->
+								<label
+								class="block uppercase text-gray-700 text-xs font-bold mb-2"
+								htmlFor="grid-password"
+							>
+								وضعیت
+							</label>
+							<select formControlName="isActive" [(ngModel)]="user.isActive" name="isActive" class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white">
+								<option value="true">فعال</option>
+								<option value="false">غیر فعال</option>
+							</select>
 								</div>
 							</div>
 							<!-- <div class="w-full lg:w-4/12 px-4">
@@ -180,7 +179,6 @@ A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</te
 								</div>
 							</div>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>

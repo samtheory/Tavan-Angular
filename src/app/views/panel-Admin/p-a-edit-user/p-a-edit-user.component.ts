@@ -25,6 +25,7 @@ export class PAEditUserComponent implements OnInit {
   getUser(){
   this.userService.getUser(this.route.snapshot.params['id']).subscribe(user => {
     this.user = user;
+    console.log(this.user);
   });
 
   }

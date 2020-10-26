@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import Popper from "popper.js";
 
 @Component({
@@ -9,20 +11,16 @@ export class UserDropdownComponent implements OnInit {
   dropdownPopoverShow = false;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
   popper = document.createElement("div");
+  /**
+   *
+   */
+  constructor() {
+    
+  }
   ngOnInit() {
     this.popper.innerHTML = `<div class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width:12rem" #popoverDropdownRef>
-  <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent  text-gray-800">
-    Action
-  </a>
-  <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent  text-gray-800">
-    Another action
-  </a>
-  <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent  text-gray-800">
-    Something else here
-  </a>
-  <div class="h-0 my-2 border border-solid border-gray-200"></div>
-  <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent  text-gray-800">
-    Seprated link
+  <a  href="#pablo"  class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent  text-gray-800">
+    EditProfile
   </a>
 </div>`;
   }
@@ -48,4 +46,6 @@ export class UserDropdownComponent implements OnInit {
       this.btnDropdownRef.nativeElement.nextSibling
     );
   }
+
+ 
 }

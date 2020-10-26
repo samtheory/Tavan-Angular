@@ -15,10 +15,9 @@ export class AuthService {
 constructor(private http: HttpClient) { }
 jwtHelper = new JwtHelperService();
 baseUrl = environment.apiUrl +   'auth/';
-private currentUser = new ReplaySubject<User>(1);
-currentUser$ = this.currentUser.asObservable();
-paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
 decodeToken: any;
+paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
+
 
 login(model: any) {
   return this.http.post(this.baseUrl + 'login', model).pipe(
@@ -33,11 +32,6 @@ login(model: any) {
   })
   );
 }
-
-setCurrentUser(user: User)
-{
-  this.currentUser.next(user);
-}
 register(model: any) {
   return this.http.post(this.baseUrl + 'register', model);
 }
@@ -47,8 +41,7 @@ logedIn(){
 }
 
 logout(){
-  localStorage.removeItem('user');
-  this.currentUser.next(null);
+  localStorage.removeItem('token');
 }
 
 updateProfile(user: FormData) {

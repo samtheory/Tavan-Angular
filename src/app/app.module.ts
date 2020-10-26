@@ -116,8 +116,6 @@ import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course
 import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w-c-customer-course.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
-import { JwtInterceptor } from './_intercepters/jwt.interceptor';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
 import * as tus from "tus-js-client";
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
@@ -241,8 +239,7 @@ export function tokenGeter(){
   ],
   providers: [
     {provide :LocationStrategy,useClass:HashLocationStrategy},
-    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true},
-    {provide : HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true}
+    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true}
   ],
   bootstrap: [AppComponent],
 })

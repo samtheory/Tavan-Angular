@@ -24,7 +24,11 @@ export class LoginComponent implements OnInit {
   login(){
     this.authService.login(this.model).subscribe(response =>{
       console.log(response);
-      this.router.navigate(['/admin/dashboard']);
+      if(this.authService.decodeToken.role === 'admin'){
+        this.router.navigate(['/admin/dashboard']);
+      } else {
+        this.router.navigate(['/Customer/dashboard']);
+      }
     },error => {
       this.toastr.error(error);
     })

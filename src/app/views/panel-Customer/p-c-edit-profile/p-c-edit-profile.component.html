@@ -116,7 +116,7 @@
 						<div class="w-full lg:w-4/12 px-4">
 							<div class="relative w-full mb-3">
 								<label
-									class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+									class="block uppercase text-gray-700 text-xs font-bold my-2"
 									htmlFor="grid-password"
 								>
 									رمز عبور جدید
@@ -129,56 +129,34 @@
 							</div>
 						</div>
 						<div class="w-full lg:w-4/12 px-4">
-							<div class="relative w-full mb-3">
+							<div class="relative w-full mb-3 ">
 								<label
-									class="block uppercase text-gray-700 text-xs font-bold mb-2"
+									class="block uppercase text-gray-700 text-xs font-bold my-2 "
 									htmlFor="grid-password"
 								>
 									وضعیت
                         </label>
-                        <div *ngIf="user.isActive">
-                           تایید شده توسظ ادمین
+                        <div *ngIf="user.isActive" class=" bg-swatch-green rounded-lg py-1 px-2 mt-5">
+                           <i class="fas fa-check text-swatch-lightGreen pl-2" ></i>
+                           تایید شده توسط ادمین
                         </div>
 
-                        <div *ngIf="!user.isActive">
-                           توسط ادمین تایید نشده  
+                        <div *ngIf="!user.isActive" class=" bg-red-500 rounded-lg py-1 px-2 mt-5">
+                           <i class="fas fa-times text-red-300 pl-2"></i>
+                             تایید نشده  
                         </div>
 								
 							</div>
 						</div>
-						<!-- <div class="w-full lg:w-4/12 px-4">
-             <div class="relative w-full mb-3">
-               <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                 Postal Code
-               </label>
-               <input type="text"
-                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                 value="Postal Code" />
-             </div>
-           </div> -->
+				
 					</div>
 
 					<hr class="mt-6 border-b-1 border-gray-400" />
 
-					<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
-           About Me
-         </h6> -->
 					<div class="flex flex-wrap">
 						<div class="w-full lg:w-12/12 px-4">
 							<div class="relative w-full mb-3">
-								<!-- <label
-                                 class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-                                 htmlFor="grid-password"
-                              >
-                                 درباره من
-                              </label>
-                              <textarea
-                                 type="text"
-                                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                                 rows="4"
-                              >
-   A beautiful Dashboard for Angular & Tailwind CSS. It is Freeand Open Source.</textarea
-                              > -->
+			
                            </div>
                         </div>
                      </div>
@@ -186,7 +164,15 @@
             </div>
          </div>
          <div class="w-full lg:w-4/12 px-4">
-            <!-- picturs Uploader -->
+
+
+
+
+
+
+<!-- ========================================================================================================================================================= -->
+<!-- ============================================================>> photo Upload section <<=================================================================== -->
+<!-- ========================================================================================================================================================= -->
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg">
                <!-- first  -->
                <div  class="my-4 mr-4">

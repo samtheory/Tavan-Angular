@@ -13,6 +13,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class PCEditProfileComponent implements OnInit {
   userForm: FormGroup;
   submitted = false;
+  flag: boolean =  true;
   user: User;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
     , private router: Router, private userService: AuthService, private route: ActivatedRoute) { }

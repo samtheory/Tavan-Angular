@@ -316,7 +316,7 @@
 											ذخیره تغییرات
 											</button>
 											<button
-												(click)="updateCourse()"
+												(click)="deleteCourse(video.id)"
 												class="bg-red-600 text-white active:bg-red-800 hover:bg-red-300 hover:text-white uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
 												type="button"
 											>
@@ -428,6 +428,7 @@
 											title="Duration"
 											><div class="w-full flex flex-wrap justify-end mt-3">
 												<button
+												(click)="deleteVideo(video.id)"
 													class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300"
 												>
 													Delete video

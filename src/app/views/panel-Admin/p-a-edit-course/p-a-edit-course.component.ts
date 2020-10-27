@@ -178,7 +178,18 @@ export class PAEditCourseComponent implements OnInit {
   }
 
 
+deleteVideo(id: number) {
+  this.videoService.deleteVideo(id).subscribe(next => {
+    this.toastr.success('successfully deleted');
+  });
+}
 
+
+deleteCourse(id: number) {
+  this.videoService.deleteVideo(id).subscribe(next => {
+    this.toastr.success('successfully deleted');
+  });
+}
 
 
 }

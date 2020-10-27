@@ -1,3 +1,4 @@
+<form #editForm="ngForm" *ngIf="off" (ngSubmit)="this.updateOff()">
 <div
 	class="relative flex flex-col break-words bg-white mb-6 shadow-lg rounded"
 	style="margin: auto 20rem; height: 500px; margin-bottom: 5rem;"
@@ -26,11 +27,9 @@
 						کد تخفیف
 					</label>
 					<input
-						required
-						formControlName="teacher"
+						name="code"
+						[(ngModel)]="off.code"
 						type="email"
-						class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-						value=""
 					/>
 				</div>
 				<div class="relative w-full mb-3">
@@ -38,11 +37,9 @@
 						درصد تخفیف
 					</label>
 					<input
-						required
-						formControlName="teacher"
+						name="offPercent"
+						[(ngModel)]="off.offPercent"
 						type="email"
-						class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-						value=""
 					/>
 				</div>
 				<div class="relative w-full mb-3">
@@ -50,11 +47,9 @@
 						تعداد استفاده
 					</label>
 					<input
-						required
-						formControlName="teacher"
+						name="usemax"
+						[(ngModel)]="off.usemax"
 						type="email"
-						class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-						value=""
 					/>
 				</div>
 			</div>
@@ -65,17 +60,12 @@
 						تاریخ انقضا
 					</label>
 					<input
-						required
-						#startDate
-						formControlName="started"
+						name="expired_at"
 						type="text"
-						class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-						value=""
 					/>
 					<ng-persian-datepicker
-						[dateValue]="'1398-12-15'"
+						[dateValue]="off.expired_at"
 						[timeMeridian]="true"
-						[input]="startDate"
 						[uiHideAfterSelectDate]="true"
 					></ng-persian-datepicker>
 				</div>
@@ -83,3 +73,4 @@
 		</div>
 	</div>
 </div>
+</form>

@@ -17,14 +17,15 @@
 				<div class="col-lg-12 col-md-12 flex justify-center">
 					<mat-paginator
 						style="width: 100px;"
-						name="paginator"
-				 		ngDefaultControl
+						type="number"
 						*ngIf="courses"
+						name="paginator"
+						ngDefaultControl
 						style="direction: ltr;"
 						[length]="pag.totalItems"
 						[pageSize]="pag.itemsPerPage"
 						[(ngModel)]="pag.currentPage"
-						(ngModelChange)="pageChanged($event)"
+						(page)="pageEvent = pageChanged($event)"
 					>
 					</mat-paginator>
 				</div>

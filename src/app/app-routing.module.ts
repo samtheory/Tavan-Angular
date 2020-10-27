@@ -52,7 +52,7 @@ const routes: Routes = [
 
   // landing Page views
   {
-    path: 'index',
+    path: '',
     component: LandingLayoutComponent,
     children: [
       { path: 'home', component: LandingHomeComponent },
@@ -107,14 +107,14 @@ const routes: Routes = [
   // ::::::::::::::::::::::::::::::::::::::::::::::::::::
   //! -----> Here are some old Route USelesssss
   // Just for dev testing 
-  { path: 'Test', component: TestComponentViewComponent },
+  // { path: 'Test', component: TestComponentViewComponent },
   // auth views
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   // no layout views
-  { path: 'profile', component: ProfileComponent },
-  { path: 'landing', component: LandingComponent },
-  { path: '', component: IndexComponent },
+  // { path: 'profile', component: ProfileComponent },
+  // { path: 'landing', component: LandingComponent },
+  // { path: '', component: IndexComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

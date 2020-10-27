@@ -8,31 +8,18 @@
     <!-- Brand -->
     <a
       class="text-swatch-green hover:text-swatch-lightBlue  uppercase hidden lg:inline-block  text-base"
-      href="#pablo"
-      >پنل مدیریت</a
+     [routerLink]= "['/index/home']"
+      >صفحه اصلی</a
     >
-    <!-- Form -->
-    <!-- <form
-      class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
-    >
-      <div class="relative flex w-full flex-wrap items-stretch">
-        <span
-          class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
-          ><i class="fas fa-search"></i
-        ></span>
-        <input
-          type="text"
-          placeholder="Search here..."
-          class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white  rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
-        />
-      </div>
-    </form> -->
+    
     <!-- User -->
-  
-    <button class="btn-btn danger" (click)="logout()">log out</button>
-       <i class="far fa-bell md:mx-10 text-swatch-green hover:text-swatch-lightBlue duration-500"></i>
-     
-      <app-user-dropdown class="block"></app-user-dropdown>
+    <div >
+
+      <!-- <i class="far fa-bell md:mx-10 text-swatch-green hover:text-swatch-lightBlue duration-500"></i> -->
+      <button class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded" (click)="logout()">log out</button>
+       
+    </div>
+    <app-user-dropdown class="block"></app-user-dropdown>
       
 
   </div>

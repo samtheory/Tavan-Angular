@@ -52,13 +52,19 @@
 
 				<div class="col-lg-4">
 					<div class="courses-price">
-						
-						<div class="price text-black">{{course.realCost}}</div>
+						<div class="">
+							<div
+								class="pl-2 inline text-red-600 opacity-50 text-xl"
+								style="text-decoration: line-through;"
+							>
+								{{course.cost}}
+							</div>
+							<div class="price text-green-600">{{course.realCost}}</div>
+						</div>
 						<a (click)="addCourseToUser(course.id)" class="default-btn"
 							><i class="bx bx-paper-plane icon-arrow before"></i><span class="label">خرید دوره</span
 							><i class="bx bx-paper-plane icon-arrow after"></i
-                        ></a>
-                       
+						></a>
 					</div>
 				</div>
 			</div>
@@ -82,7 +88,6 @@
 
 					<h3>ویدئو معرفی دوره ها</h3>
 					<div class="courses-accordion">
-					
 						<div class="r1_iframe_embed">
 							<iframe
 								[src]="course.media.videoUrl | arvan"
@@ -102,7 +107,7 @@
 					<ul>
 						<li>
 							<span><i class="bx bx-group"></i> دانشجویان:</span>
-							{{course.isActive}}  
+							{{course.isActive}}
 						</li>
 						<li>
 							<span><i class="bx bx-time"></i> مدت:</span>
@@ -199,8 +204,6 @@
 						</ul>
 					</div>
 				</div>
-
-			
 			</div>
 		</div>
 	</div>

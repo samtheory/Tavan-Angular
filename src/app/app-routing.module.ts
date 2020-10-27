@@ -78,7 +78,7 @@ const routes: Routes = [
       { path: 'EditUser/:id', component: PAEditUserComponent },
       { path: 'slideShow', component: PASlideShowComponent },
       { path: 'discount', component: PADiscountComponent },
-      { path: 'EditDiscount/:', component: PADiscountEditComponent },
+      { path: 'EditDiscount/:id', component: PADiscountEditComponent },
       { path: 'NewDiscount', component: PADiscountNewComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'tables', component: TablesComponent },

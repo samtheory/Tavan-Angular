@@ -1,66 +1,71 @@
-<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
-  <div
-    class="rounded-t-lg mb-0 px-4 py-3 border-0 bg-teal-200 text-mesh-700 border-t-1 border-b-1 border-solid border-mesh-200 mb-5">
-    <div class="flex flex-wrap items-center">
-      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-        <h3 class="font-semibold text-base text-gray-800">
-    {{header}}
-        </h3>
-      </div>
-      <div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: left">
-        <button
-          class=" hover:shadow-md bg-red-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-white hover:text-mesh-700 border-2 border-transparent hover:border-red-600"
-          type="button">
-          Modify
-        </button>
-        <!-- <button
-          class="bg-green-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-white hover:text-mesh-700 border-2 border-transparent hover:border-green-500  hover:shadow-md"
-          type="button">
-          save
-        </button> -->
-      </div>
-    </div>
-  </div>
-  <div class="block w-full overflow-x-auto">
-    <div class="flex flex-wrap mb-5">
-
-      <div class="w-full  xl:w-5/12 mr-6">
-        <div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
-          <input type="text" placeholder="Link"
-            class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
-            style="padding-top: 13px" [value]='link_navigation' />
-          <span
-            class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
-            style="top: 7px;">
-            <i class="fas fa-link"></i>
-          </span>
-        </div>
-      </div>
-      <div class="w-full  xl:w-5/12 mr-6">
-        <div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
-          <input type="text" placeholder="Title"
-            class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
-            style="padding-top: 13px" [value]='title' />
-          <span
-            class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
-            style="top: 7px;">
-            <i class="fas  fa-heading"></i>
-          </span>
-        </div>
-      </div>
-    </div>
+<form *ngIf="photo != null" [formGroup]="PhotoForm" (ngSubmit)="onSubmit()">
+  <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
     <div
-      style="background-image: url('{{imagUrl}}'); height: 600px ; width: auto; background-position: center; margin: 0 20px 20px 20px; background-size: cover; border-radius: 10px;">
+      class="rounded-t-lg mb-0 px-4 py-3 border-0 bg-teal-200 text-mesh-700 border-t-1 border-b-1 border-solid border-mesh-200 mb-5">
+      <div class="flex flex-wrap items-center">
+        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+          <h3 class="font-semibold text-base text-gray-800">
+      {{photo.name}}
+          </h3>
+        </div>
+        <div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: left">
+          <button
+            (click)="updatePhoto(photo.id)"
+            class=" hover:shadow-md bg-red-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-white hover:text-mesh-700 border-2 border-transparent hover:border-red-600"
+            type="button">
+            Modify
+          </button>
+          <!-- <button
+            class="bg-green-600 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all font-bold duration-150 hover:bg-white hover:text-mesh-700 border-2 border-transparent hover:border-green-500  hover:shadow-md"
+            type="button">
+            save
+          </button> -->
+        </div>
+      </div>
     </div>
-    <label
-      class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase cursor-pointer   absolute opacity-25 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300 "
-      style="top: 50%;right: 39%;">
-      <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-        <path
-          d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-      </svg>
-      <span class="mt-2 text-base leading-normal">Select a file</span>
-      <input type='file' class="hidden"  />
-    </label>
+    <div class="block w-full overflow-x-auto">
+      <div class="flex flex-wrap mb-5">
+  
+        <div class="w-full  xl:w-5/12 mr-6">
+          <div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+            <input type="text" placeholder="Link"
+            formControlName="link"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
+              style="padding-top: 13px" [value]='photo.link' />
+            <span
+              class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
+              style="top: 7px;">
+              <i class="fas fa-link"></i>
+            </span>
+          </div>
+        </div>
+        <div class="w-full  xl:w-5/12 mr-6">
+          <div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
+            <input type="text" placeholder="Title"
+              formControlName="name"
+              class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
+              style="padding-top: 13px" [value]='photo.name' />
+            <span
+              class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
+              style="top: 7px;">
+              <i class="fas  fa-heading"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="background-image: url('{{photo.url}}'); height: 600px ; width: auto; background-position: center; margin: 0 20px 20px 20px; background-size: cover; border-radius: 10px;">
+      </div>
+      <label
+        class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase cursor-pointer   absolute opacity-25 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300 "
+        style="top: 50%;right: 39%;">
+        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path
+            d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+        </svg>
+        <span class="mt-2 text-base leading-normal">Select a file</span>
+        <input  formControlName="file" (change)="onFileChange($event)"  type='file' class="hidden"  />
+      </label>
+    </div>
   </div>
-</div>
+</form>

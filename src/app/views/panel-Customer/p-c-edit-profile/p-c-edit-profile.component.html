@@ -1,107 +1,106 @@
-<form *ngIf="user != null" [formGroup]="userForm" (ngSubmit)="onSubmit()" >
-   <div class="flex flex-wrap">
-         <div class="w-full lg:w-8/12 px-4">
-            <!-- user Info  -->
-            <div
-               class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0"
-            >
-               <div class="rounded-t bg-white mb-0 px-6 py-6 border-r-8 border-teal-200">
-                  <div class="text-center flex justify-between">
-                     <h6 class="text-gray-800 text-xl font-bold">ویرایش کاربر</h6>
-                     <button
-                     (click)="updateUser()"
-                        class="hover:border-red-500 hover:bg-white hover:text-red-600 border-2 border-transparent bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                        type="button"
-                     >
-                        ویرایش 
-                     </button>
-                  </div>
-               </div>
-               <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                  
-                     <!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+<form *ngIf="user != null" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+	<div class="flex flex-wrap">
+		<div class="w-full lg:w-8/12 px-4">
+			<!-- user Info  -->
+			<div
+				class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0"
+			>
+				<div class="rounded-t bg-white mb-0 px-6 py-6 border-r-8 border-teal-200">
+					<div class="text-center flex justify-between">
+						<h6 class="text-gray-800 text-xl font-bold">ویرایش کاربر</h6>
+						<button
+							(click)="updateUser()"
+							class="hover:border-red-500 hover:bg-white hover:text-red-600 border-2 border-transparent bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+							type="button"
+						>
+							ویرایش
+						</button>
+					</div>
+				</div>
+				<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+					<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
            User Information
          </h6> -->
-                     <div class="flex flex-wrap">
-                        <div class="w-full lg:w-6/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <label
-                                 class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-                                 htmlFor="grid-password"
-                              >
-                                 نام و نام خانوادگی
-                              </label>
-                              <input
-                                 name="lastName"
-                                 [(ngModel)]="user.lastName"
-                                 formControlName="lastName"
-                                 type="text"
-                                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                              />
-                           </div>
-                        </div>
-                        <div class="w-full lg:w-6/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <label
-                                 class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
-                                 htmlFor="grid-password"
-                              >
-                                 آدرس ایمیل
-                              </label>
-                              <input
-                                 name="email"
-                                [(ngModel)]="user.email"
-                              formControlName="email"
-                                 type="email"
-                                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                              />
-                           </div>
-                        </div>
-                        <div class="w-full lg:w-6/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <label
-                                 class="mt-2  block uppercase text-gray-700 text-xs font-bold mb-2"
-                                 htmlFor="grid-password"
-                              >
-                                 نام کاربری
-                              </label>
-                              <input
-                                 name="username"
-                                 [(ngModel)]="user.username"
-                                 formControlName="username"
-                                 type="text"
-                                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                              />
-                           </div>
-                        </div>
-                        <div class="w-full lg:w-6/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <label
-                                 class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
-                                 htmlFor="grid-password"
-                              >
-                                 شماره همراه
-                              </label>
-                              <input
-                                name="phoneNumber"
-                                [(ngModel)]="user.phoneNumber"
-                                formControlName="phoneNumber"
-                                 type="text"
-                                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                              />
-                           </div>
-                        </div>
-                     </div>
-   
-                     <hr class="mt-6 border-b-1 border-gray-400" />
-                     <!-- 
+					<div class="flex flex-wrap">
+						<div class="w-full lg:w-6/12 px-4">
+							<div class="relative w-full mb-3">
+								<label
+									class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+									htmlFor="grid-password"
+								>
+									نام و نام خانوادگی
+								</label>
+								<input
+									name="lastName"
+									[(ngModel)]="user.lastName"
+									formControlName="lastName"
+									type="text"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+								/>
+							</div>
+						</div>
+						<div class="w-full lg:w-6/12 px-4">
+							<div class="relative w-full mb-3">
+								<label
+									class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+									htmlFor="grid-password"
+								>
+									آدرس ایمیل
+								</label>
+								<input
+									name="email"
+									[(ngModel)]="user.email"
+									formControlName="email"
+									type="email"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+								/>
+							</div>
+						</div>
+						<div class="w-full lg:w-6/12 px-4">
+							<div class="relative w-full mb-3">
+								<label
+									class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+									htmlFor="grid-password"
+								>
+									نام کاربری
+								</label>
+								<input
+									name="username"
+									[(ngModel)]="user.username"
+									formControlName="username"
+									type="text"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+								/>
+							</div>
+						</div>
+						<div class="w-full lg:w-6/12 px-4">
+							<div class="relative w-full mb-3">
+								<label
+									class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+									htmlFor="grid-password"
+								>
+									شماره همراه
+								</label>
+								<input
+									name="phoneNumber"
+									[(ngModel)]="user.phoneNumber"
+									formControlName="phoneNumber"
+									type="text"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<hr class="mt-6 border-b-1 border-gray-400" />
+					<!-- 
          <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
            آدرس
          </h6> -->
-                     <div class="flex flex-wrap">
-                        <div class="w-full lg:w-12/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <!-- <label
+					<div class="flex flex-wrap">
+						<div class="w-full lg:w-12/12 px-4">
+							<div class="relative w-full mb-3">
+								<!-- <label
                                  class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
                                  htmlFor="grid-password"
                               >
@@ -112,35 +111,35 @@
                                  class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
                                  value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                               /> -->
-                           </div>
-                        </div>
-                        <div class="w-full lg:w-4/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <label
-                                 class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-                                 htmlFor="grid-password"
-                              >
-                                 رمز عبور جدید
-                              </label>
-                              <input
-                                  formControlName="newPassword"
-                                 type="email"
-                                 class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-                              />
-                           </div>
-                        </div>
-                        <div class="w-full lg:w-4/12 px-4">
-                           <div class="relative w-full mb-3">
-                           <label
-                           class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                           htmlFor="grid-password"
-                        >
-                           وضعیت
-                        </label>
-                           {{user.isActive}}
-                           </div>
-                        </div>
-                        <!-- <div class="w-full lg:w-4/12 px-4">
+							</div>
+						</div>
+						<div class="w-full lg:w-4/12 px-4">
+							<div class="relative w-full mb-3">
+								<label
+									class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
+									htmlFor="grid-password"
+								>
+									رمز عبور جدید
+								</label>
+								<input
+									formControlName="newPassword"
+									type="email"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+								/>
+							</div>
+						</div>
+						<div class="w-full lg:w-4/12 px-4">
+							<div class="relative w-full mb-3">
+								<label
+									class="block uppercase text-gray-700 text-xs font-bold mb-2"
+									htmlFor="grid-password"
+								>
+									وضعیت
+								</label>
+								{{user.isActive}}
+							</div>
+						</div>
+						<!-- <div class="w-full lg:w-4/12 px-4">
              <div class="relative w-full mb-3">
                <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                  Postal Code
@@ -150,17 +149,17 @@
                  value="Postal Code" />
              </div>
            </div> -->
-                     </div>
-   
-                     <hr class="mt-6 border-b-1 border-gray-400" />
-   
-                     <!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+					</div>
+
+					<hr class="mt-6 border-b-1 border-gray-400" />
+
+					<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
            About Me
          </h6> -->
-                     <div class="flex flex-wrap">
-                        <div class="w-full lg:w-12/12 px-4">
-                           <div class="relative w-full mb-3">
-                              <!-- <label
+					<div class="flex flex-wrap">
+						<div class="w-full lg:w-12/12 px-4">
+							<div class="relative w-full mb-3">
+								<!-- <label
                                  class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
                                  htmlFor="grid-password"
                               >
@@ -190,6 +189,7 @@
                </div>
                <div 
                   style="
+
                      width: 300px;
                      height: 300px;
                      align-self: flex-end;
@@ -200,6 +200,7 @@
                      background-position: center;
                      position: relative;
                   "
+
                >
                   <label
                      class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
@@ -260,6 +261,8 @@
                </div>
                <div
                   style="
+
+				
                      width: 300px;
                      height: 300px;
                      align-self: flex-end;
@@ -270,6 +273,7 @@
                      background-position: center;
                      position: relative;
                   "
+
                >
                   <label
                      class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
@@ -328,6 +332,8 @@
                </div>
                <div
                   style="
+
+				
                      width: 300px;
                      height: 300px;
                      align-self: flex-end;

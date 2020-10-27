@@ -11,7 +11,7 @@ import { OffService } from 'src/app/_services/off.service';
   styleUrls: ['./p-a-discount-new.component.css']
 })
 export class PADiscountNewComponent implements OnInit {
-  off: Off;
+  off: any = {};
   constructor(private offService: OffService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {

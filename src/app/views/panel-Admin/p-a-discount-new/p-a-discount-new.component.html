@@ -62,18 +62,22 @@
 						<label class="block uppercase text-gray-700 text-xs font-bold mb-2">
 							تاریخ انقضا
 						</label>
-						<input class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+						<input
 							name="expired_at"
 							[(ngModel)]="off.expired_at"
+							(input)="FinishDateChange($event.target.value); "
+							class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 							type="text"
 							#expireDate
 						/>
 						<ng-persian-datepicker
-							[input]="expireDate" 
+							[input]="expireDate"
 							[dateValue]=""
 							[timeMeridian]="true"
 							[uiHideAfterSelectDate]="true"
 						></ng-persian-datepicker>
+
+						<!-- <input type="text" [value]="dateOfExpire" /> -->
 					</div>
 				</div>
 			</div>

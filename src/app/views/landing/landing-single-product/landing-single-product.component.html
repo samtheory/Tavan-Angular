@@ -1,235 +1,222 @@
-  <!-- Start Page Title Area -->
-        <div class="page-title-area item-bg2 jarallax" data-jarallax='{"speed": 0.3}'>
-            <div class="container">
-                <div class="page-title-content">
-                    <ul>
-                        <li><a href="index.html">صفحه اصلی</a></li>
-                        <li><a href="courses-2-columns-style-1.html">جزئیات دوره ها</a></li>
-                        <li>طراحی گرافیک معتبر با دوره پروژه رایگان</li>
-                    </ul>
-                    <h2>دوره ها</h2>
-                </div>
-            </div>
-        </div>
-        <!-- End Page Title Area -->
+<!-- Start Page Title Area -->
+<div class="page-title-area item-bg2 jarallax" data-jarallax='{"speed": 0.3}'>
+	<div class="container">
+		<div class="page-title-content">
+			<ul>
+				<li><a href="index.html">صفحه اصلی</a></li>
+				<li><a href="courses-2-columns-style-1.html">جزئیات دوره ها</a></li>
+				<li>طراحی گرافیک معتبر با دوره پروژه رایگان</li>
+			</ul>
+			<h2>دوره ها</h2>
+		</div>
+	</div>
+</div>
+<!-- End Page Title Area -->
 
-        <!-- Start Courses Details Area -->
-        <section *ngIf="course" class="courses-details-area pt-100 pb-70">
-            <div class="container">
-                <div class="courses-details-header">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <div class="courses-title">
-                                <h2>{{course.title}}</h2>
-                                <p>برای ثبت نام در آموزش ها اول ثبت نام کنید</p>
-                            </div>
+<!-- Start Courses Details Area -->
+<section *ngIf="course" class="courses-details-area pt-100 pb-70">
+	<div class="container">
+		<div class="courses-details-header">
+			<div class="row align-items-center">
+				<div class="col-lg-8">
+					<div class="courses-title">
+						<h2>{{course.title}}</h2>
+						<p>برای ثبت نام در آموزش ها اول ثبت نام کنید</p>
+					</div>
 
-                            <div class="courses-meta">
-                                <ul>
-                                    <li>
-                                        <i class='bx bx-folder-open'></i>
-                                        <span>نام استاد</span>
-                                        <a href="#">{{course.teacher}}</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-group'></i>
-                                        <span>تخفیف دوره</span>
-                                        <a href="#">{{course.off}}</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-calendar'></i>
-                                        <span>تاریخ شروع </span>
-                                        <a href="#">{{course.started}}</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-calendar'></i>
-                                        <span>تاریخ پایان</span>
-                                        <a href="#">{{course.ended}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+					<div class="courses-meta">
+						<ul>
+							<li>
+								<i class="bx bx-folder-open"></i>
+								<span>نام استاد</span>
+								<a href="#">{{course.teacher}}</a>
+							</li>
+							<li>
+								<i class="bx bx-group"></i>
+								<span>تخفیف دوره</span>
+								<a href="#">{{course.off}}</a>
+							</li>
+							<li>
+								<i class="bx bx-calendar"></i>
+								<span>تاریخ شروع </span>
+								<a href="#">{{course.started}}</a>
+							</li>
+							<li>
+								<i class="bx bx-calendar"></i>
+								<span>تاریخ پایان</span>
+								<a href="#">{{course.ended}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
-                        <div class="col-lg-4">
-                            <div class="courses-price">
-                                <div class="courses-review">
-                                    <div class="review-stars">
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                    </div>
-                                    <span class="reviews-total d-inline-block">(2 بازدید)</span>
-                                </div>
-                                <div class="price">{{course.realCost}}</div>
-                                <a (click)="addCourseToUser(course.id)"  class="default-btn"><i class='bx bx-paper-plane icon-arrow before'></i><span class="label">خرید دوره</span><i class="bx bx-paper-plane icon-arrow after"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div class="col-lg-4">
+					<div class="courses-price">
+						<div class="courses-review">
+							<div class="review-stars">
+								<i class="bx bxs-star"></i>
+								<i class="bx bxs-star"></i>
+								<i class="bx bxs-star"></i>
+								<i class="bx bxs-star"></i>
+								<i class="bx bxs-star"></i>
+							</div>
+							<span class="reviews-total d-inline-block">(2 بازدید)</span>
+						</div>
+						<div class="price">{{course.realCost}}</div>
+						<a (click)="addCourseToUser(course.id)" class="default-btn"
+							><i class="bx bx-paper-plane icon-arrow before"></i><span class="label">خرید دوره</span
+							><i class="bx bx-paper-plane icon-arrow after"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="courses-details-image text-center">
-                            <img src="{{course.media.photoUrl}}" alt="image">
-                        </div>
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="courses-details-image text-center">
+					<img src="{{course.media.photoUrl}}" alt="image" />
+				</div>
 
-                        <div class="courses-details-desc">
-                            <h3>شرح</h3>
-                            <p><strong>{{course.description}}</strong></p>
+				<div class="courses-details-desc">
+					<h3>شرح</h3>
+					<p><strong>{{course.description}}</strong></p>
 
-                            <p>در اینجا جزئیات بیشتری درباره آنچه با دوره تحلیلگر کسب و کار کسب می کنید آورده شده است:</p>
+					<p>در اینجا جزئیات بیشتری درباره آنچه با دوره تحلیلگر کسب و کار کسب می کنید آورده شده است:</p>
 
-                            <ul class="description-features-list">
-                                <li><strong>درباره ی آموزش</strong>{{course.description}}</li>
-                            </ul>
+					<ul class="description-features-list">
+						<li><strong>درباره ی آموزش</strong>{{course.description}}</li>
+					</ul>
 
-                            <h3>ویدئو معرفی دوره ها</h3>
-                            <div class="courses-accordion">
-                                
-                                            
-                                         
-                                <style> .r1_iframe_embed { position: relative; overflow: hidden; width: 100%; height: auto; padding-top: 56.25%; } .r1_iframe_embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } </style> <div class="r1_iframe_embed"> <iframe  [src]="course.media.videoUrl | arvan" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe> </div>
+					<h3>ویدئو معرفی دوره ها</h3>
+					<div class="courses-accordion">
+					
+						<div class="r1_iframe_embed">
+							<iframe
+								[src]="course.media.videoUrl | arvan"
+								frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen="true"
+								webkitallowfullscreen="true"
+								mozallowfullscreen="true"
+							></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
 
+			<div class="col-lg-4">
+				<div class="courses-sidebar-information">
+					<ul>
+						<li>
+							<span><i class="bx bx-group"></i> دانشجویان:</span>
+							{{course.isActive}}
+						</li>
+						<li>
+							<span><i class="bx bx-time"></i> مدت:</span>
+							{{course.courseDays}}
+						</li>
+						<li>
+							<span><i class="bx bx-tachometer"></i> وضعیت:</span>
+							{{course.isActive}}
+						</li>
+						<li>
+							<span><i class="bx bxs-institution"></i>تاریخ شروع</span>
+							<a href="#" class="d-inline-block">{{course.started}}</a>
+						</li>
+						<li>
+							<span><i class="bx bxs-institution"></i>تاریخ پایان</span>
+							<a href="#" class="d-inline-block">{{course.ended}}</a>
+						</li>
+						<li>
+							<span><i class="bx bxs-graduation"></i> موضوع:</span>
+							طراحی
+						</li>
+						<li>
+							<span><i class="bx bx-atom"></i> آزمونها:</span>
+							بله
+						</li>
+						<li>
+							<span><i class="bx bxs-badge-check"></i> سطح:</span>
+							صنعت
+						</li>
+						<li>
+							<span><i class="bx bx-support"></i> زبان:</span>
+							انگلیسی
+						</li>
+						<li>
+							<span><i class="bx bx-text"></i> زیرنویس ویدئو:</span>
+							انگلیسی
+						</li>
+						<li>
+							<span><i class="bx bx-certification"></i> تایید شده:</span>
+							بله
+						</li>
+					</ul>
+				</div>
 
-                                   
+				<div class="courses-sidebar-syllabus">
+					<h3>برنامه درسی دوره</h3>
+					<span class="chapter">فصل 1</span>
+					<h4>درس</h4>
 
-                            </div>           
+					<div class="courses-list">
+						<ul>
+							<li>
+								مقدمه
+							</li>
+							<li>
+								<a href="#"> <span class="number">1.</span> راز 1: فروش مشکل ، نه راه حل (14:37) </a>
+							</li>
+							<li>
+								مسابقه - راز 1: فروش مسئله ، نه راه حل
+							</li>
+							<li><span class="number">2.</span> راز 2: مثل یک مجله فکر کنید ، نه یک فروشنده (4:30)</li>
+							<li>
+								مسابقه - راز 2: مثل یک مجله فکر کنید ، نه یک فروشنده
+							</li>
+							<li><span class="number">3.</span> راز 3: محتوا پادشاه است ، اما قوام ملکه است (3:56)</li>
+							<li>
+								مسابقه - راز 3: محتوای پادشاه است ، اما قوام ملکه است
+							</li>
+							<li><span class="number">4.</span> راز 4: پانچ بالای کلاس وزن خود (11:00)</li>
+							<li>
+								<span class="number">5.</span> راز 5: از نظر اخلاقی مشتری های رقبا را سرقت کنید (8:12)
+							</li>
+							<li><span class="number">6.</span> راز 6: با استقراض مخاطبان ایجاد کنید (10:25)</li>
+							<li>
+								مسابقه - راز 6: با استقراض مخاطبان ایجاد کنید
+							</li>
+							<li><span class="number">7.</span> راز 7: یک سایه باشید ، نه یک روح (5:19)</li>
+							<li><span class="number">8.</span> جایزه: نکاتی برای یک فریلنسر 5 ستاره (16:07)</li>
+							<li><span class="number">9.</span> افکار پایانی (3:15)</li>
+							<li>
+								مسابقه - راز 7: سایه باشید ، نه یک شبح
+							</li>
+						</ul>
+					</div>
 
-                           
-                        </div>
+					<span class="chapter">فصل 2</span>
+					<h4>مسابقه نهایی</h4>
 
-                    </div>
+					<div class="courses-list">
+						<ul>
+							<li>
+								مسابقه نهایی
+							</li>
+						</ul>
+					</div>
+				</div>
 
-                    <div class="col-lg-4">
-                        <div class="courses-sidebar-information">
-                            <ul>
-                                <li>
-                                    <span><i class='bx bx-group'></i> دانشجویان:</span>
-                                    {{course.isActive}}
-                                </li>
-                                <li>
-                                    <span><i class='bx bx-time'></i> مدت:</span>
-                                    {{course.courseDays}}
-                                </li>
-                                <li>
-                                    <span><i class='bx bx-tachometer'></i> وضعیت:</span>
-                                    {{course.isActive}}
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-institution'></i>تاریخ شروع</span>
-                                    <a href="#" class="d-inline-block">{{course.started}}</a>
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-institution'></i>تاریخ پایان</span>
-                                    <a href="#" class="d-inline-block">{{course.ended}}</a>
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-graduation'></i> موضوع:</span>
-                                    طراحی
-                                </li>
-                                <li>
-                                    <span><i class='bx bx-atom'></i> آزمونها:</span>
-                                    بله
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-badge-check'></i> سطح:</span>
-                                    صنعت
-                                </li>
-                                <li>
-                                    <span><i class='bx bx-support'></i> زبان:</span>
-                                    انگلیسی
-                                </li>
-                                <li>
-                                    <span><i class='bx bx-text'></i> زیرنویس ویدئو:</span>
-                                    انگلیسی
-                                </li>
-                                <li>
-                                    <span><i class='bx bx-certification'></i> تایید شده:</span>
-                                    بله
-                                </li>
-                            </ul>
-                        </div>
+				<div class="courses-purchase-info">
+					<h4>آیا در این دوره برای کسب و کار یا تیم خود علاقه مند هستید؟</h4>
+					<p>برای تجارت ، کارمندان خود را در بیشترین درخواست ها آموزش دهید.</p>
 
-                        <div class="courses-sidebar-syllabus">
-                            <h3>برنامه درسی دوره</h3>
-                            <span class="chapter">فصل 1</span>
-                            <h4>درس</h4>
-
-                            <div class="courses-list">
-                                <ul>
-                                    <li>
-                                        مقدمه
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="number">1.</span> راز 1: فروش مشکل ، نه راه حل (14:37) 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        مسابقه - راز 1: فروش مسئله ، نه راه حل
-                                    </li>
-                                    <li>
-                                        <span class="number">2.</span> راز 2: مثل یک مجله فکر کنید ، نه یک فروشنده (4:30)
-                                    </li>
-                                    <li>
-                                        مسابقه - راز 2: مثل یک مجله فکر کنید ، نه یک فروشنده
-                                    </li>
-                                    <li>
-                                        <span class="number">3.</span> راز 3: محتوا پادشاه است ، اما قوام ملکه است (3:56)
-                                    </li>
-                                    <li>
-                                        مسابقه - راز 3: محتوای پادشاه است ، اما قوام ملکه است
-                                    </li>
-                                    <li>
-                                        <span class="number">4.</span> راز 4: پانچ بالای کلاس وزن خود (11:00)
-                                    </li>
-                                    <li>
-                                        <span class="number">5.</span> راز 5: از نظر اخلاقی مشتری های رقبا را سرقت کنید (8:12)
-                                    </li>
-                                    <li>
-                                        <span class="number">6.</span> راز 6: با استقراض مخاطبان ایجاد کنید (10:25)
-                                    </li>
-                                    <li>
-                                        مسابقه - راز 6: با استقراض مخاطبان ایجاد کنید
-                                    </li>
-                                    <li>
-                                        <span class="number">7.</span> راز 7: یک سایه باشید ، نه یک روح (5:19)
-                                    </li>
-                                    <li>
-                                        <span class="number">8.</span> جایزه: نکاتی برای یک فریلنسر 5 ستاره (16:07)
-                                    </li>
-                                    <li>
-                                        <span class="number">9.</span> افکار پایانی (3:15)
-                                    </li>
-                                    <li>
-                                        مسابقه - راز 7: سایه باشید ، نه یک شبح
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <span class="chapter">فصل 2</span>
-                            <h4>مسابقه نهایی</h4>
-
-                            <div class="courses-list">
-                                <ul>
-                                    <li>
-                                        مسابقه نهایی
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="courses-purchase-info">
-                            <h4>آیا در این دوره برای کسب و کار یا تیم خود علاقه مند هستید؟</h4>
-                            <p>برای تجارت ، کارمندان خود را در بیشترین درخواست ها آموزش دهید.</p>
-
-                            <a href="#" class="d-inline-block">اکنون خرید کنید</a>
-                            <a href="#" class="d-inline-block">درخواست اطلاعات</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Courses Details Area -->
+					<a href="#" class="d-inline-block">اکنون خرید کنید</a>
+					<a href="#" class="d-inline-block">درخواست اطلاعات</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Courses Details Area -->

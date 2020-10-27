@@ -1,9 +1,9 @@
 <form #editForm="ngForm" (ngSubmit)="this.createOff()">
 	<div
 		class="relative flex flex-col break-words bg-white mb-6 shadow-lg rounded"
-		style=" height: 500px; margin-bottom: 5rem;"
+		style="height: 500px; margin-bottom: 5rem;"
 	>
-		<div class="rounded-t  px-4 py-3 border-0 bg-teal-200 mb-6">
+		<div class="rounded-t px-4 py-3 border-0 bg-teal-200 mb-6">
 			<div class="flex flex-wrap items-center">
 				<div class="relative w-full px-4 max-w-full flex-grow flex-1">
 					<h3 class="font-semibold text-base text-gray-800">ویرایش کد تخفیف</h3>
@@ -27,6 +27,7 @@
 							کد تخفیف
 						</label>
 						<input
+							class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 							name="code"
 							[(ngModel)]="off.code"
 							type="email"
@@ -37,6 +38,7 @@
 							درصد تخفیف
 						</label>
 						<input
+							class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 							name="offPercent"
 							[(ngModel)]="off.offPercent"
 							type="email"
@@ -47,32 +49,35 @@
 							تعداد استفاده
 						</label>
 						<input
+							class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 							name="usemax"
 							[(ngModel)]="off.usemax"
 							type="email"
 						/>
 					</div>
 				</div>
-	
+
 				<div class="w-full lg:w-4/12 px-4">
 					<div class="relative w-full mb-3 mr-12">
 						<label class="block uppercase text-gray-700 text-xs font-bold mb-2">
 							تاریخ انقضا
 						</label>
-						<input
+						<input class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 							name="expired_at"
-							[(ngModel)]="off.expired_at"
+						
 							type="text"
+							#expireDate
 						/>
 						<ng-persian-datepicker
+							[input]="expireDate" 
 							[dateValue]=""
 							[timeMeridian]="true"
 							[uiHideAfterSelectDate]="true"
 						></ng-persian-datepicker>
+					
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</form>
-	
+</form>

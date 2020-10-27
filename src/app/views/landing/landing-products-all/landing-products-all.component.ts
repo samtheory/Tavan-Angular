@@ -23,7 +23,7 @@ export class LandingProductsAllComponent implements OnInit {
   
     getfirstPage(){
       this.userParams.isActive = this.route.snapshot.params['isActive'];
-      this.courseService.getCourses(1 , 12, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
+      this.courseService.getCourses(1 , 9, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
         this.courses = res.result;
         this.pag = res.pag;
       });

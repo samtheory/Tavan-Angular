@@ -58,17 +58,18 @@
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<div class="pagination-area text-center">
 					<mat-paginator
-					style="width: 100px;"
-					name="paginator"
-					 ngDefaultControl
-					*ngIf="courses"
-					style="direction: ltr;"
-					[length]="pag.totalItems"
-					[pageSize]="pag.itemsPerPage"
-					[(ngModel)]="pag.currentPage"
-					(ngModelChange)="pageChanged($event)"
-				>
-				</mat-paginator>
+						style="width: 100px;"
+						type="number"
+						*ngIf="courses"
+						name="paginator"
+						ngDefaultControl
+						style="direction: ltr;"
+						[length]="pag.totalItems"
+						[pageSize]="pag.itemsPerPage"
+						[(ngModel)]="pag.currentPage"
+						(page)="pageEvent = pageChanged($event)"
+					>
+					</mat-paginator>
 				</div>
 			</div>
 		</div>

@@ -36,7 +36,7 @@ userParams: any = {};
 
 
   loadCourses(){
-    this.courseService.getCourses(this.pag.currentPage , this.pag.itemsPerPage , this.userParams)
+    this.courseService.getCourses(this.pag.currentPage , this.pag.itemsPerPage)
     .subscribe((res: PaginatedResult<Course[]>) => {
       this.courses = res.result;
       this.pag = res.pag;

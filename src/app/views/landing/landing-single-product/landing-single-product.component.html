@@ -54,16 +54,16 @@
 					<div class="courses-price">
 						<div class="">
 							<div
-								class="pl-2 inline text-red-600 opacity-50 text-xl"
+								class="pl-2 inline text-red-600 opacity-50 text-xl cursor-default"
 								style="text-decoration: line-through;"
 							>
 								{{course.cost}}
 							</div>
-							<div class="price text-green-600">{{course.realCost}}</div>
+							<div class="price text-green-600 cursor-default">{{course.realCost}}</div>
 						</div>
 						<a (click)="addCourseToUser(course.id)" class="default-btn"
-							><i class="bx bx-paper-plane icon-arrow before"></i><span class="label">خرید دوره</span
-							><i class="bx bx-paper-plane icon-arrow after"></i
+							><i class="bx bx-paper-plane icon-arrow before "></i><span class="label cursor-pointer">خرید دوره</span
+							><i class="bx bx-paper-plane icon-arrow after  cursor-pointer"></i
 						></a>
 					</div>
 				</div>

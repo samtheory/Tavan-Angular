@@ -152,9 +152,10 @@ export class PAEditCourseComponent implements OnInit {
   {
     this.videoService.createVideo(courseId , this.video).subscribe(next => {
       if(next){
-        const vid = JSON.stringify(next); 
+        const vid = JSON.stringify(next);
         const res: Video = JSON.parse(vid);
         const video = {
+          id: res.id,
           url : res.url,
           title: res.title,
           videoId: res.videoId

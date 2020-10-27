@@ -26,7 +26,6 @@ export class SlideShowPicAdminComponent implements OnInit {
   createPhotoFrom(){
     this.PhotoForm = this.formBuilder.group({
       name: ['', Validators.required],
-      url: ['', Validators.required],
       link: [null],
       file: ['',Validators.required],
       fileSource: ['',Validators.required],
@@ -50,7 +49,7 @@ export class SlideShowPicAdminComponent implements OnInit {
     formData.append('name', this.PhotoForm.get('name').value);
     formData.append('file', this.PhotoForm.get('fileSource').value);
     formData.append('link', this.PhotoForm.get('link').value);
-    
+
       this.photoService.updatePhoto(id ,formData).subscribe(() => {
         this.toastr.success('success fully created');
         this.router.navigate(['/admin/AllPhotos']);

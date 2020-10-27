@@ -31,15 +31,15 @@
 								<span>نام استاد</span>
 								<a href="#">{{course.teacher}}</a>
 							</li>
-							<li>
+							<!-- <li>
 								<i class="bx bx-group"></i>
 								<span>تخفیف دوره</span>
 								<a href="#">{{course.off}}</a>
-							</li>
+							</li> -->
 							<li>
 								<i class="bx bx-calendar"></i>
 								<span>تاریخ شروع </span>
-								<a href="#">{{course.started}}</a>
+								<a href="#">{{course.started}} </a>
 							</li>
 							<li>
 								<i class="bx bx-calendar"></i>
@@ -52,21 +52,13 @@
 
 				<div class="col-lg-4">
 					<div class="courses-price">
-						<div class="courses-review">
-							<div class="review-stars">
-								<i class="bx bxs-star"></i>
-								<i class="bx bxs-star"></i>
-								<i class="bx bxs-star"></i>
-								<i class="bx bxs-star"></i>
-								<i class="bx bxs-star"></i>
-							</div>
-							<span class="reviews-total d-inline-block">(2 بازدید)</span>
-						</div>
-						<div class="price">{{course.realCost}}</div>
+						
+						<div class="price text-black">{{course.realCost}}</div>
 						<a (click)="addCourseToUser(course.id)" class="default-btn"
 							><i class="bx bx-paper-plane icon-arrow before"></i><span class="label">خرید دوره</span
 							><i class="bx bx-paper-plane icon-arrow after"></i
-						></a>
+                        ></a>
+                       
 					</div>
 				</div>
 			</div>
@@ -110,7 +102,7 @@
 					<ul>
 						<li>
 							<span><i class="bx bx-group"></i> دانشجویان:</span>
-							{{course.isActive}}
+							{{course.isActive}}  
 						</li>
 						<li>
 							<span><i class="bx bx-time"></i> مدت:</span>
@@ -208,13 +200,7 @@
 					</div>
 				</div>
 
-				<div class="courses-purchase-info">
-					<h4>آیا در این دوره برای کسب و کار یا تیم خود علاقه مند هستید؟</h4>
-					<p>برای تجارت ، کارمندان خود را در بیشترین درخواست ها آموزش دهید.</p>
-
-					<a href="#" class="d-inline-block">اکنون خرید کنید</a>
-					<a href="#" class="d-inline-block">درخواست اطلاعات</a>
-				</div>
+			
 			</div>
 		</div>
 	</div>

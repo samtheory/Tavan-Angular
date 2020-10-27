@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
+import { Photo } from 'src/app/_models/photo';
 import { AuthService } from 'src/app/_services/auth.service';
 import { CourseService } from 'src/app/_services/course.service';
+import { PhotoService } from 'src/app/_services/photo.service';
 
 @Component({
   selector: 'app-landing-home',
@@ -13,14 +15,23 @@ import { CourseService } from 'src/app/_services/course.service';
 export class LandingHomeComponent implements OnInit {
   aCourses: Course[];
   dCourses: Course[];
+  photos: Photo[];
   useraParams: any = {};
   userdParams: any = {};
   pag: Pagination;
-  constructor(private courseService: CourseService, private toastr: ToastrService) { }
+  constructor(private courseService: CourseService, private toastr: ToastrService, private photoService: PhotoService) { }
   
   ngOnInit(): void {
     this.getafirstPage();
     this.getdfirstPage();
+    this.getphotos();
+  }
+
+
+  getphotos(){
+    this.photoService.getPhotos().subscribe(photos => {
+      this.photos = photos;
+    });
   }
 
 

@@ -1,7 +1,7 @@
 <app-landing-navbar></app-landing-navbar>
 <!-- slide-show Area -->
-<div class="relative" style="z-index: 1">
-  <app-slid-show class="relative" style="top: -90px"></app-slid-show>
+<div *ngIf="photos" class="relative" style="z-index: 1">
+  <app-slid-show  [photos]="photos" class="relative" style="top: -90px"></app-slid-show>
 </div>
 <!--End slide-show Area -->
 

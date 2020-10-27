@@ -135,8 +135,15 @@
 									htmlFor="grid-password"
 								>
 									وضعیت
-								</label>
-								{{user.isActive}}
+                        </label>
+                        <div *ngIf="user.isActive">
+                           تایید شده توسظ ادمین
+                        </div>
+
+                        <div *ngIf="!user.isActive">
+                           توسط ادمین تایید نشده  
+                        </div>
+								
 							</div>
 						</div>
 						<!-- <div class="w-full lg:w-4/12 px-4">
@@ -182,12 +189,13 @@
             <!-- picturs Uploader -->
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg">
                <!-- first  -->
-               <div *ngIf="user.userPhoto.meliUrl" class="my-4 mr-4">
+               <div  class="my-4 mr-4">
                   <h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 last:mr-0 inline">
                      کارت ملی
                   </h3>
                </div>
                <div 
+               *ngIf="user.userPhoto.meliUrl"
                   style="
 
                      width: 300px;
@@ -218,12 +226,9 @@
 
 
 
-               <div  *ngIf="!user.userPhoto.meliUrl" class="my-4 mr-4">
-                  <h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 last:mr-0 inline">
-                     کارت ملی
-                  </h3>
-               </div>
+             
                <div 
+               *ngIf="!user.userPhoto.meliUrl"
                   style="
                      width: 300px;
                      height: 300px;
@@ -254,12 +259,13 @@
                <hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
    
                <!-- secend  -->
-               <div *ngIf="user.userPhoto.meliUrl" class="my-4 mr-4">
+               <div  class="my-4 mr-4">
                   <h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
                      مدرک نظام پزشکی
                   </h3>
                </div>
                <div
+               *ngIf="user.userPhoto.meliUrl"
                   style="
 
 				
@@ -291,12 +297,9 @@
 
 
 
-               <div *ngIf="!user.userPhoto.meliUrl" class="my-4 mr-4">
-                  <h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
-                     مدرک نظام پزشکی
-                  </h3>
-               </div>
+              
                <div
+               *ngIf="!user.userPhoto.meliUrl"
                   style="
                      width: 300px;
                      height: 300px;
@@ -325,12 +328,13 @@
                <hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
    
                <!-- third  -->
-               <div *ngIf="user.userPhoto.avatarUrl" class="my-4 mr-4">
+               <div  class="my-4 mr-4">
                   <h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
                      عکس پروفایل
                   </h3>
                </div>
                <div
+               *ngIf="user.userPhoto.avatarUrl"
                   style="
 
 				
@@ -360,12 +364,9 @@
                </div>
 
 
-               <div *ngIf="!user.userPhoto.avatarUrl" class="my-4 mr-4">
-                  <h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
-                     عکس پروفایل
-                  </h3>
-               </div>
+              
                <div
+               *ngIf="!user.userPhoto.avatarUrl"
                   style="
                      width: 300px;
                      height: 300px;

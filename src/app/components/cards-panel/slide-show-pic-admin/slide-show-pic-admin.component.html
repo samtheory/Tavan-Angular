@@ -29,6 +29,8 @@
         <div class="w-full  xl:w-5/12 mr-6">
           <div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
             <input type="text" placeholder="Link"
+            name="link"
+            [(ngModel)]="photo.link"
             formControlName="link"
               class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
               style="padding-top: 13px" [value]='photo.link' />
@@ -43,6 +45,8 @@
           <div class="relative flex w-full flex-wrap items-stretch justify-center align-items-center">
             <input type="text" placeholder="Title"
               formControlName="name"
+              name="name"
+            [(ngModel)]="photo.name"
               class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
               style="padding-top: 13px" [value]='photo.name' />
             <span

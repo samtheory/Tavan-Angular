@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Photo } from 'src/app/_models/photo';
+import { PhotoService } from 'src/app/_services/photo.service';
 
 @Component({
   selector: 'app-p-a-slide-show',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./p-a-slide-show.component.css']
 })
 export class PASlideShowComponent implements OnInit {
-
-  constructor() { }
+  photos: Photo[];
+  constructor(private photoService: PhotoService) { }
 
   ngOnInit(): void {
+    this.getPhotos();
+  }
+
+  getPhotos() {
+    this.photoService.getPhotos().subscribe(photos => {
+      this.photos = photos;
+    })
   }
 
 }

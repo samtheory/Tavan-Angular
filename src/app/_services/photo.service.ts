@@ -25,7 +25,7 @@ export class PhotoService {
   }
 
   updatePhoto(id: number , mainPhoto: FormData): Observable<Photo>{
-    return this.http.post<Photo>(this.baseUrl + 'update/' + id , mainPhoto);
+    return this.http.put<Photo>(this.baseUrl + 'update/' + id , mainPhoto);
   }
 
   deletePhoto(id: number){

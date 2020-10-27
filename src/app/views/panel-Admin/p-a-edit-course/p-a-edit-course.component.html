@@ -337,8 +337,8 @@
 					</div>
 
 					<div class="video-tab my-5 hidden">
+						<form #videoForm="ngForm" (ngSubmit)="addVideo(course.id)">
 						<div class="w-full flex flex-wrap">
-							<form #videoForm="ngForm" (ngSubmit)="addVideo(course.id)">
 								<div class="w-6/12">
 									<label
 										class="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -387,8 +387,8 @@
 										Add Video
 									</button>
 								</div>
-							</form>
-						</div>
+							</div>
+						</form>
 						<div class="my-10 align-self-center text-center w-full">
 							<!--? :: :: :: A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: -->
 							<mat-accordion *ngIf="course.videos" class="duration-500">
@@ -419,28 +419,16 @@
 											data-toggle="tooltip"
 											data-placement="top"
 											title="Duration"
-											><i class="bx bx-time"></i
-										></span>
+											><div class="w-full flex flex-wrap justify-end mt-3">
+												<button
+													class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300"
+												>
+													Delete video
+												</button>
+											</div>
+										</span>
 										<div style="margin-top: 15px; display: block;"></div>
 										<div class="h_iframe-aparat_embed_frame">
-											<span style="display: block; padding-top: 57%;"></span
-											><style>
-												.r1_iframe_embed {
-													position: relative;
-													overflow: hidden;
-													width: 100%;
-													height: auto;
-													padding-top: 56.25%;
-												}
-												.r1_iframe_embed iframe {
-													position: absolute;
-													top: 0;
-													left: 0;
-													width: 100%;
-													height: 100%;
-													border: 0;
-												}
-											</style>
 											<div class="r1_iframe_embed">
 												<iframe
 													[src]="video.url | arvan"

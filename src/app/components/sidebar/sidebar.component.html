@@ -172,48 +172,8 @@
 						دوره جدید
 					</a>
 				</li>
-				<li class="items-center">
-					<a
-						[routerLink]="['/admin/editCourse/9']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
-						routerLinkActive
-						#edit="routerLinkActive"
-						[ngClass]="
-              edit.isActive
-                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
-                : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
-                edit.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
-						ادیت دوره
-					</a>
-				</li>
-				<li class="items-center">
-					<a 
-						[routerLink]="['/admin/allCourses']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
-						routerLinkActive
-						#AllCourses="routerLinkActive"
-						[ngClass]="
-              AllCourses.isActive
-           ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
-                : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
-                AllCourses.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
-						مشاهده همه دوره ها
-					</a>
-				</li>
+				
+				
 
 				<li class="items-center">
 					<a

@@ -49,7 +49,7 @@ import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.
 
 const routes: Routes = [
 
-
+  
   // landing Page views
   {
     path: '',

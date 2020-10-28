@@ -181,14 +181,18 @@ export class PAEditCourseComponent implements OnInit {
 
 deleteVideo(id: number) {
   this.videoService.deleteVideo(id).subscribe(next => {
-    this.toastr.success('successfully deleted');
+    this.toastr.success('با موفقیت حذف شد');
+  }, error => {
+    this.toastr.error(error);
   });
 }
 
 
 deleteCourse(id: number) {
-  this.videoService.deleteVideo(id).subscribe(next => {
-    this.toastr.success('successfully deleted');
+  this.courseService.deleteCourse(id).subscribe(next => {
+    this.toastr.success('با موفقیت حذف شد');
+  }, error => {
+    this.toastr.error(error);
   });
 }
 

@@ -1,3 +1,27 @@
 @import '../../../../assets/styles/bootstrap..min.css';
 @import '../../../../assets/styles/style.css';
 @import '../../../../assets/styles/tailwind.css';
+
+
+
+@media screen and (max-width: 1024px) {
+   .display-none-1024{
+      display: none;
+   }
+   .display-flex-1024{
+      display: flex;
+   }
+
+   
+}
+
+.small-btn-1024{
+   color: #0044b1;
+   background-color: white;
+   
+}
+.small-btn-1024:hover{
+   color: #cbfae8;
+   background-color: #1d212c;
+}
+

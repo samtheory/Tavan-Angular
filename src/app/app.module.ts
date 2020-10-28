@@ -122,6 +122,8 @@ import { ErrorInterceptor } from './_intercepters/error.interceptor';
 import { ArvanPipe } from './arvan.pipe';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_intercepters/loading.interceptor';
 
 
 export function tokenGeter(){
@@ -235,11 +237,13 @@ export function tokenGeter(){
          disallowedRoutes: ['tavan.liara.run/auth']
 
       }
-   })
+   }),
+    NgxSpinnerModule
   ],
   providers: [
     {provide :LocationStrategy,useClass:HashLocationStrategy},
-    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true}
+    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true},
+    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor , multi: true}
   ],
   bootstrap: [AppComponent],
 })

@@ -1,13 +1,13 @@
 
-<div class="flex flex-wrap justify-start text-right flex-col">
+<div   class="flex flex-wrap justify-start text-right flex-col">
    
-   <button class="text-right" mat-button mat-dialog-close (click)="closeDialog()"><i class="fas fa-times"></i></button>
+   <a  class="text-right" mat-button mat-dialog-close (click)="closeDialog()"><i class="fas fa-times"></i></a>
    <div mat-dialog-content class="my-6">لطفا جهت خریداری دوره وارد حساب کاربری خود شوید یا اگر هنوز ثبت نام نکردید ، ابتدا ثبت نام کنید.</div>
    <div  class="flex flex-wrap justify-end  mt-2">
       
       
-      <a class="bg-swatch-green opacity-75 text-gray-300 hover:opacity-100 hover:text-white  duration-200 py-2 px-4 rounded ">ثبت نام</a>
-      <a class="bg-swatch-blue opacity-75 text-gray-300 hover:opacity-100 hover:text-white  duration-200 py-2 px-4 rounded mx-2">ورود</a>
+      <a  [routerLink]="['/register']"  class="bg-swatch-green opacity-75 text-gray-300 hover:opacity-100 hover:text-white  duration-200 py-2 px-4 rounded cursor-pointer">ثبت نام</a>
+      <a [routerLink]="['/login']" class="bg-swatch-blue opacity-75 text-gray-300 hover:opacity-100 hover:text-white  duration-200 py-2 px-4 rounded mx-2 cursor-pointer">ورود</a>
    </div>
 
 </div>

@@ -92,27 +92,14 @@
 								</div>
 								<div>
 									<!-- coundition 1 -->
-									<div *ngIf="true">
-										<a *ngIf="true" (click)="addCourseToUser(course.id)" class="default-btn"
+									<div >
+										<a  (click)="addCourseToUser(course.id)" class="default-btn"
 										><i class="bx bx-paper-plane icon-arrow before"></i
 											><span class="label cursor-pointer">خرید دوره</span
 												><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
 											</a>
 										</div>
-										
-										<!-- coundition 2 -->
-										<button *ngIf="true" class="default-btn my-2" mat-button (click)="openDialogNotLogin()">
-										<i class="bx bx-paper-plane icon-arrow before"></i
-											><span class="label cursor-pointer">هنوز وارد نشدم</span
-												><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
-										</button>
-										
-										<!-- coundition 3 -->
-									<div *ngIf="true" class="my-2">
-										<button *ngIf="true" class="default-btn"  mat-button (click)="openDialogNotVerify()">
-											اکانت من تایید نشده
-										</button>
-									</div>
+								
 
 								</div>
 							</div>

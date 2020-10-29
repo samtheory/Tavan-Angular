@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Course } from '../_models/course';
@@ -11,12 +11,13 @@ import { PaginatedResult } from '../_models/pagination';
 })
 export class CourseService {
   baseUrl = environment.apiUrl + 'course/';
+  courses: Course[];
   constructor(private http: HttpClient) { }
   paginatedResult: PaginatedResult<Course[]> = new PaginatedResult<Course[]>();
 
   getCourses(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<Course[]>>{
     let params = new HttpParams();
- 
+
     if (page != null && itemsPerPage != null){
       params = params.append('pageNumber' , page);
       params = params.append('pageSize' , itemsPerPage);
@@ -38,7 +39,6 @@ export class CourseService {
 
   getUserCourses(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<Course[]>>{
     let params = new HttpParams();
- 
     if (page != null && itemsPerPage != null){
       params = params.append('pageNumber' , page);
       params = params.append('pageSize' , itemsPerPage);
@@ -57,7 +57,7 @@ export class CourseService {
       })
     );
   }
- 
+
   getCourse(id: number): Observable<Course>{
    return this.http.get<Course>(this.baseUrl + id);
  }

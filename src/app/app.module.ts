@@ -210,8 +210,7 @@ export function tokenGeter(){
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
     CustomerPanelComponent,
-    ArvanPipe,
-    
+    ArvanPipe
   ],
   imports: [
     BrowserModule,
@@ -233,8 +232,8 @@ export function tokenGeter(){
     JwtModule.forRoot({
       config: {
          tokenGetter: tokenGeter,
-         allowedDomains: ['tavan.liara.run'],
-         disallowedRoutes: ['tavan.liara.run/auth']
+         allowedDomains: ['tavan.iran.liara.run'],
+         disallowedRoutes: ['tavan.iran.liara.run/auth']
 
       }
    }),

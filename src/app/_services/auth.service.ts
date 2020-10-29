@@ -16,6 +16,8 @@ constructor(private http: HttpClient) { }
 jwtHelper = new JwtHelperService();
 baseUrl = environment.apiUrl +   'auth/';
 decodeToken: any;
+private currentUserSource = new ReplaySubject<User>(1);
+currentUser$ = this.currentUserSource.asObservable();
 paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
 
 
@@ -26,6 +28,8 @@ login(model: any) {
 
     if (user) {
       localStorage.setItem('token', user.token);
+      localStorage.setItem('token', user.user);
+      this.currentUserSource.next(user);
       this.decodeToken = this.jwtHelper.decodeToken(user.token);
       console.log(this.decodeToken);
     }
@@ -39,9 +43,14 @@ logedIn(){
   const token = localStorage.getItem('token');
   return !this.jwtHelper.isTokenExpired(token);
 }
+isActive(){
+  const user = localStorage.getItem('user');
+}
 
 logout(){
   localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  this.currentUserSource.next(null);
 }
 
 updateProfile(user: FormData) {

@@ -22,10 +22,10 @@
 							<form #loginForm="ngForm" (ngSubmit)="login()">
 								<div class="form-group">
 									<input
-										[(ngModel)]="model.userName"
-										name="userName"
+										[(ngModel)]="model.email"
+										name="email"
 										type="text"
-										placeholder="نام کاربری"
+										placeholder="ایمیل"
 										class="form-control"
 									/>
 								</div>
@@ -33,7 +33,7 @@
 								<div class="form-group">
 									<input
 										[(ngModel)]="model.password"
-										name="userName"
+										name="password"
 										type="password"
 										placeholder="رمز عبور"
 										class="form-control"

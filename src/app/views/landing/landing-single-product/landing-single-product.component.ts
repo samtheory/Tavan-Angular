@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { CourseService } from 'src/app/_services/course.service';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from 'src/app/_services/auth.service';
+import { User } from 'src/app/_models/user';
 @Component({
   selector: 'app-landing-single-product',
   templateUrl: './landing-single-product.component.html',
@@ -11,10 +13,14 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class LandingSingleProductComponent implements OnInit {
   course: Course;
-  constructor(private courseService: CourseService, private route: ActivatedRoute, private toastr: ToastrService, private router: Router, public dialog: MatDialog) { }
+  isActive: boolean = false;
+  user: User;
+  constructor(private courseService: CourseService, private route: ActivatedRoute,
+     private toastr: ToastrService, private router: Router, public dialog: MatDialog,private authService: AuthService) { }
 
   ngOnInit(): void {
     this.getCourse();
+    this.isActiveUser();
   }
 
 
@@ -24,11 +30,31 @@ export class LandingSingleProductComponent implements OnInit {
     });
   }
 
+  logedIn() {
+    return this.authService.logedIn();
+  }
+
+  isActiveUser() {
+    this.user =JSON.parse(localStorage.getItem('user'));
+    if(this.user.isActive === true) {
+      this.isActive = true;
+    }
+  }
+
   addCourseToUser(id: number){
-      this.courseService.addcourseToUser(id).subscribe(next => {
-        this.toastr.success('با موفقیت ثبت نام شد');
-        this.router.navigate(['/Customer/dashboard']);
-      })
+      if(this.logedIn()) {
+        if(this.isActive) {
+          this.courseService.addcourseToUser(id).subscribe(next => {
+            this.toastr.success('با موفقیت ثبت نام شد');
+            this.router.navigate(['/Customer/dashboard']);
+          });
+        } else {
+          this.openDialogNotVerify();
+        }
+      } else {
+        this.openDialogNotLogin();
+      }
+      
   }
   openDialogNotLogin() {
     this.dialog.open(YouAreNotLoginDialog);

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://tavan.liara.run/'
+  apiUrl: 'https://tavan.iran.liara.run/'
 };
 
 /*

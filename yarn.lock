@@ -6478,6 +6478,13 @@ ngx-bootstrap@^6.1.0:
   resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-6.1.0.tgz#f1f923c7d3879b80b9501a45b3d21f2589967fff"
   integrity sha512-IDHPO3WE7YYhLZ7jnrH1wmMORhthoyHn6Gbl27FvXksG0OlTm5x8CyK5+EQfnDfxBEElju8n4Tfb8ga3aJYFTA==
 
+ngx-spinner@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-spinner/-/ngx-spinner-10.0.1.tgz#f08932a34bf98b302488a9c475584970ed386d23"
+  integrity sha512-3fkzS4t+oKg1jobUmWxeGD3zLymdIOMijib517tgrDnW4Q2fKKwZPVCfTR5ztm9G0/l9G/DRoOoBcHPPupUBdg==
+  dependencies:
+    tslib "^2.0.0"
+
 ngx-toastr@^13.1.0:
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-13.1.0.tgz#1ab4c03b1042ca51c41b8e2722d6f9056a7b0582"

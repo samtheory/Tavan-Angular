@@ -37,7 +37,7 @@ export class PAEditUserComponent implements OnInit {
       email: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       lastName: [''],
-      isActive:[null],
+      isActive:[''],
       nezam: ['',Validators.required],
       nezamSource: ['',Validators.required],
       meli: ['',Validators.required],

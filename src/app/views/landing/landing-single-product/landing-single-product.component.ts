@@ -6,6 +6,7 @@ import { CourseService } from 'src/app/_services/course.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/_services/auth.service';
 import { User } from 'src/app/_models/user';
+import { combineAll } from 'rxjs/operators';
 @Component({
   selector: 'app-landing-single-product',
   templateUrl: './landing-single-product.component.html',
@@ -43,7 +44,7 @@ export class LandingSingleProductComponent implements OnInit {
 
   addCourseToUser(id: number){
       if(this.logedIn()) {
-        if(this.isActive) {
+        if(this.isActive === true) {
           this.courseService.addcourseToUser(id).subscribe(next => {
             this.toastr.success('با موفقیت ثبت نام شد');
             this.router.navigate(['/Customer/dashboard']);

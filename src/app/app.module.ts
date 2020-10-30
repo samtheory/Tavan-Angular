@@ -132,6 +132,8 @@ import { CourseListAllUserResolver } from './_resolvers/course-list-user-all.res
 import { CourseListMainResolver } from './_resolvers/course-list-user-dactive.resolver';
 import { CourseListMainActiveResolver } from './_resolvers/course-list-user-active.resolver';
 import { PhotoListResolver } from './_resolvers/photo-list.resolver';
+import { IsAdminGuard } from './_guards/is-admin.guard';
+import { IsClientGuard } from './_guards/is-client.guard';
 
 
 export function tokenGeter(){
@@ -247,6 +249,8 @@ export function tokenGeter(){
     NgxSpinnerModule
   ],
   providers: [
+    IsAdminGuard,
+    IsClientGuard,
     PhotoListResolver,
     CourseDetailResolver,
     CourseListResolver,

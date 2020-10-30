@@ -54,6 +54,8 @@ import { CourseListAllUserResolver } from './_resolvers/course-list-user-all.res
 import { CourseListMainActiveResolver } from './_resolvers/course-list-user-active.resolver';
 import { CourseListMainResolver } from './_resolvers/course-list-user-dactive.resolver';
 import { PhotoListResolver } from './_resolvers/photo-list.resolver';
+import { IsAdminGuard } from './_guards/is-admin.guard';
+import { IsClientGuard } from './_guards/is-client.guard';
 
 const routes: Routes = [
 
@@ -74,6 +76,8 @@ const routes: Routes = [
   // admin views
   {
     path: 'admin',
+    runGuardsAndResolvers: "always",
+    canActivate: [IsAdminGuard],
     component: PanelComponent,
     children: [
       { path: 'dashboard', component: PADashboardComponent , resolve: {courses : CourseListAllResolver}},
@@ -98,6 +102,8 @@ const routes: Routes = [
   // Customer Panel views
   {
     path: 'Customer',
+    runGuardsAndResolvers: "always",
+    canActivate: [IsClientGuard],
     component: CustomerPanelComponent,
     children: [
       { path: 'dashboard', component: PCDashboardComponent , resolve: {courses : CourseListAllUserResolver}},

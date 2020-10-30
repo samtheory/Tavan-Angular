@@ -1,20 +1,20 @@
 <app-landing-navbar></app-landing-navbar>
 <!-- slide-show Area -->
 <div *ngIf="photos" class="relative" style="z-index: 1">
-  <app-slid-show  [photos]="photos" class="relative" style="top: -90px"></app-slid-show>
+  <app-slid-show  [photos]="photos" class="relative" style="top: 80px ; "></app-slid-show>
 </div>
 <!--End slide-show Area -->
 
   <!-- Start Courses Area -->
-        <section class="courses-area pt-100 pb-70">
+        <section class="courses-area  pb-70" style="margin-top: 13rem;">
             <div class="container">
                 <div class="section-title text-left">
-                   
+                
                     <h2>دوره های درحال برگزاری</h2>
                     <a [routerLink]='["/products/true"]' class="default-btn"><i class='bx bx-show-alt icon-arrow before'></i><span class="label">همه دوره ها</span><i class="bx bx-show-alt icon-arrow after"></i></a>
                 </div>
 
-                <div class="shorting-menu">
+                <!-- <div class="shorting-menu">
                     <button class="filter" data-filter="all">همه (06)</button>
                     <button class="filter" data-filter=".business">تجاری (02)</button>
                     <button class="filter" data-filter=".design">طراحی (05)</button>
@@ -22,7 +22,7 @@
                     <button class="filter" data-filter=".language">زبان خارجه (02)</button>
                     <button class="filter" data-filter=".management">مدیریت (03)</button>
                     <button class="filter" data-filter=".photography">عکاسی (04)</button>
-                </div>
+                </div> -->
 
                 <div class="">
                     <div *ngIf="aCourses" class="row">
@@ -38,7 +38,7 @@
                     <h2>دوره های برگذار شده</h2>
                     <a [routerLink]='["/products/false"]' class="default-btn"><i class='bx bx-show-alt icon-arrow before'></i><span class="label">همه دوره ها</span><i class="bx bx-show-alt icon-arrow after"></i></a>
                 </div>
-
+<!-- 
                 <div class="shorting-menu">
                     <button class="filter" data-filter="all">همه (06)</button>
                     <button class="filter" data-filter=".business">تجاری (02)</button>
@@ -47,7 +47,7 @@
                     <button class="filter" data-filter=".language">زبان خارجه (02)</button>
                     <button class="filter" data-filter=".management">مدیریت (03)</button>
                     <button class="filter" data-filter=".photography">عکاسی (04)</button>
-                </div>
+                </div> -->
 
                 <div class="">
                     <div *ngIf="dCourses" class="row">

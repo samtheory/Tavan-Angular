@@ -8,9 +8,9 @@
 		<button
 			class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 			type="button"
-			(click)="toggleCollapseShow('bg-white m-2 py-3 px-6')"
+			(click)="toggleCollapseShow('bg-swatch-dark m-2 py-3 px-6')"
 		>
-			<i class="fas fa-bars"></i>
+			<i class="fas fa-bars text-white"></i>
 		</button>
 		<!-- Brand -->
 		<a
@@ -18,18 +18,41 @@
 			class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-lg uppercase font-bold p-4 px-0 md:mr-18"
 			style="text-align: center;"
 		>
-			<span class="block sm:hidden"> tavan Customer </span>
-			<span class="hidden sm:block text-swatch-green"> Tavan </span>
+			<span class="block sm:hidden">
+				<a class="navbar-brand" href="/">
+					<img
+						src="assets/img/logo.png"
+						alt="logo"
+						style="height: 60px; margin: 0 20px; margin-bottom: 16px;"
+					/>
+				</a>
+			</span>
+			<span class="hidden sm:block text-swatch-green">
+				<a class="navbar-brand" href="/">
+					<img
+						src="assets/img/logo.png"
+						alt="logo"
+						style="
+							height: 60px;
+							margin: 0 20px;
+							margin-bottom: 16px;
+							position: absolute;
+							top: 10px;
+							right: 60px;
+						"
+					/>
+				</a>
+			</span>
 		</a>
 		<!-- User -->
-		<ul class="md:hidden items-center flex flex-wrap list-none">
+		<!-- <ul class="md:hidden items-center flex flex-wrap list-none">
 			<li class="inline-block relative">
 				<app-notification-dropdown class="block"></app-notification-dropdown>
 			</li>
 			<li class="inline-block relative">
 				<app-user-dropdown class="block"></app-user-dropdown>
 			</li>
-		</ul>
+		</ul> -->
 		<!-- Collapse -->
 		<div
 			class="md:flex md:flex-col md:items-stretch md:opacity-100 md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
@@ -44,7 +67,7 @@
 							[routerLink]="['/']"
 							class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
 						>
-							Tailwind WebApp Angular
+						
 						</a>
 					</div>
 					<div class="w-6/12 flex justify-end">
@@ -53,7 +76,7 @@
 							class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 							(click)="toggleCollapseShow('hidden')"
 						>
-							<i class="fas fa-times"></i>
+							<i class="fas fa-times text-white"></i>
 						</button>
 					</div>
 				</div>

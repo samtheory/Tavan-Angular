@@ -76,12 +76,33 @@
 			<ul class="md:flex-col md:min-w-full flex flex-col list-none">
 				<li class="items-center">
 					<a
+						[routerLink]="['/home']"
+						routerLinkActive
+						#home="routerLinkActive"
+						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
+						[ngClass]="
+              home.isActive
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
+                : 'text-gray-500 hover:text-swatch-lightBlue'
+            "
+					>
+						<i
+							class="fas fa-tv mr-2 text-sm ml-2"
+							[ngClass]="
+                home.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+						></i>
+						بازگشت به صفحه اصلی
+					</a>
+				</li>
+				<li class="items-center">
+					<a
 						[routerLink]="['/Customer/dashboard']"
 						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
 						routerLinkActive
 						#CustomerDashboard="routerLinkActive"
 						[ngClass]="CustomerDashboard.isActive
-               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
 				"
 					>
@@ -102,7 +123,7 @@
 						#adminNewUser="routerLinkActive"
 						[ngClass]="
 				adminNewUser.isActive
-               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -121,7 +142,7 @@
 						#adminSlidShow="routerLinkActive"
 						[ngClass]="
               adminSlidShow.isActive
-               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -134,27 +155,7 @@
 						دوره های برگزار شده
 					</a>
 				</li>
-				<li class="items-center">
-					<a
-						[routerLink]="['/Customer/SingleCourseDetails']"
-						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
-						routerLinkActive
-						#CustomerSingleProductDetails="routerLinkActive"
-						[ngClass]="
-              CustomerSingleProductDetails.isActive
-               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
-                : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
-                CustomerSingleProductDetails.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
-						محتوای دوره تکی
-					</a>
-				</li>
+				
 			</ul>
 
 			<!-- Divider -->
@@ -176,7 +177,7 @@
 						#PANewCourseComponent="routerLinkActive"
 						[ngClass]="
               PANewCourseComponent.isActive
-                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -190,7 +191,7 @@
 					</a>
 				</li>
 				<li class="items-center">
-									<button class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded " style="margin-right: 15px;" (click)="logout()">log out</button> 
+									<button class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded " style="margin-right: 15px; margin-top: 10px;" (click)="logout()">log out</button> 
 				</li>
 			</ul>
 		</div>

@@ -8,9 +8,9 @@
 		<button
 			class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 			type="button"
-			(click)="toggleCollapseShow('bg-white m-2 py-3 px-6')"
+			(click)="toggleCollapseShow('bg-swatch-dark m-2 py-3 px-6')"
 		>
-			<i class="fas fa-bars"></i>
+			<i class="fas fa-bars text-white"></i>
 		</button>
 		<!-- Brand -->
 		<a
@@ -20,12 +20,27 @@
 		>
 			<span class="block sm:hidden">
 				<a class="navbar-brand" href="/">
-					<img src="assets/img/black-logo.png" alt="logo" />
+					<img
+						src="assets/img/logo.png"
+						alt="logo"
+						style="height: 60px; margin: 0 20px; margin-bottom: 16px;"
+					/>
 				</a>
 			</span>
 			<span class="hidden sm:block text-swatch-green">
 				<a class="navbar-brand" href="/">
-					<img src="assets/img/black-logo.png" alt="logo" />
+					<img
+						src="assets/img/logo.png"
+						alt="logo"
+						style="
+							height: 60px;
+							margin: 0 20px;
+							margin-bottom: 16px;
+							position: absolute;
+							top: 10px;
+							right: 60px;
+						"
+					/>
 				</a>
 			</span>
 		</a>
@@ -52,7 +67,6 @@
 							[routerLink]="['/']"
 							class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
 						>
-							Tailwind WebApp Angular
 						</a>
 					</div>
 					<div class="w-6/12 flex justify-end">
@@ -61,7 +75,7 @@
 							class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 							(click)="toggleCollapseShow('hidden')"
 						>
-							<i class="fas fa-times"></i>
+							<i class="fas fa-times text-white"></i>
 						</button>
 					</div>
 				</div>
@@ -86,13 +100,34 @@
 			<ul class="md:flex-col md:min-w-full flex flex-col list-none">
 				<li class="items-center">
 					<a
+						[routerLink]="['/home']"
+						routerLinkActive
+						#home="routerLinkActive"
+						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
+						[ngClass]="
+              home.isActive
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
+                : 'text-gray-500 hover:text-swatch-lightBlue'
+            "
+					>
+						<i
+							class="fas fa-tv mr-2 text-sm ml-2"
+							[ngClass]="
+                home.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+						></i>
+						بازگشت به صفحه اصلی
+					</a>
+				</li>
+				<li class="items-center">
+					<a
 						[routerLink]="['/admin/dashboard']"
 						routerLinkActive
 						#adminDashboard="routerLinkActive"
 						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
 						[ngClass]="
               adminDashboard.isActive
-                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -114,7 +149,7 @@
 						#adminNewUser="routerLinkActive"
 						[ngClass]="
               adminNewUser.isActive
-                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -133,7 +168,7 @@
 						#adminSlidShow="routerLinkActive"
 						[ngClass]="
               adminSlidShow.isActive
-              ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+              ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -169,7 +204,7 @@
 						#PANewCourseComponent="routerLinkActive"
 						[ngClass]="
               PANewCourseComponent.isActive
-               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -191,7 +226,7 @@
 						#adminAddVideo="routerLinkActive"
 						[ngClass]="
               adminAddVideo.isActive
-                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -212,7 +247,7 @@
 						#adminDiscountTable="routerLinkActive"
 						[ngClass]="
               adminDiscountTable.isActive
-                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue bg-mesh-700 '
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
 					>
@@ -228,7 +263,7 @@
 				<li class="items-center">
 					<button
 						class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded"
-						style="margin-right: 15px;"
+						style="margin-right: 15px; margin-top: 10px;"
 						(click)="logout()"
 					>
 						log out

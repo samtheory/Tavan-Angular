@@ -84,7 +84,7 @@
 										{{course.realCost}} تومان
 									</div>
 									<div
-										class="pl-3 inline text-red-600 opacity-50  cursor-default"
+										class="pl-3 inline text-red-600 opacity-50 cursor-default"
 										style="text-decoration: line-through;"
 									>
 										{{course.cost}} تومان
@@ -92,19 +92,47 @@
 								</div>
 								<div>
 									<!-- coundition 1 -->
-									<div >
-										<a  (click)="addCourseToUser(course.id)" class="default-btn"
-										><i class="bx bx-paper-plane icon-arrow before"></i
+									<div>
+										<a (click)="addCourseToUser(course.id)" class="default-btn"
+											><i class="bx bx-paper-plane icon-arrow before"></i
 											><span class="label cursor-pointer">خرید دوره</span
-												><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
-											</a>
-										</div>
-								
-
+											><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="courses-sidebar-information">
+					<ul>
+						<li>
+							<span><i class="bx bx-group"></i> وضعیت دوره</span>
+							
+							<p  *ngIf="course.isActive">
+								درحال برگزاری
+							</p>
+							<p  *ngIf="!course.isActive">
+						برگزارشده
+							</p>
+						</li>
+						<li>
+							<span><i class="bx bx-time"></i> روز های دوره</span>
+							{{course.courseDays}}
+						</li>
+						
+						<li>
+							<span><i class="bx bxs-institution"></i>تاریخ شروع</span>
+							<a href="#" class="d-inline-block">{{course.started}}</a>
+						</li>
+						<li>
+							<span><i class="bx bxs-institution"></i>تاریخ پایان</span>
+							<a href="#" class="d-inline-block">{{course.ended}}</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

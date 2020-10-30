@@ -1,7 +1,7 @@
 <form *ngIf="photo != null" [formGroup]="PhotoForm" (ngSubmit)="onSubmit()">
   <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
     <div
-      class="rounded-t-lg mb-0 px-4 py-3 border-0 bg-teal-200 text-mesh-700 border-t-1 border-b-1 border-solid border-mesh-200 mb-5">
+      class="rounded-t-lg  px-4 py-3 border-0 bg-teal-200 text-mesh-700 border-t-1 border-b-1 border-solid border-mesh-200 mb-5">
       <div class="flex flex-wrap items-center">
         <div class="relative w-full px-4 max-w-full flex-grow flex-1">
           <h3 class="font-semibold text-base text-gray-800">
@@ -35,7 +35,7 @@
               class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
               style="padding-top: 13px" [value]='photo.link' />
             <span
-              class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
+              class=" h-full leading-snug font-normal  text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
               style="top: 7px;">
               <i class="fas fa-link"></i>
             </span>
@@ -50,7 +50,7 @@
               class="px-3 py-3 border-2 border-gray-700 placeholder-mesh-400 text-mesh-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 pr-10 mt-4"
               style="padding-top: 13px" [value]='photo.name' />
             <span
-              class="z-10 h-full leading-snug font-normal absolute text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
+              class=" h-full leading-snug font-normal  text-center text-mesh-800 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0  pr-2 py-1 flex"
               style="top: 7px;">
               <i class="fas  fa-heading"></i>
             </span>

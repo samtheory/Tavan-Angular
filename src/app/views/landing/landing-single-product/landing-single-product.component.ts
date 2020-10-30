@@ -20,7 +20,9 @@ export class LandingSingleProductComponent implements OnInit {
      private toastr: ToastrService, private router: Router, public dialog: MatDialog,private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.getCourse();
+    this.route.data.subscribe(data => {
+      this.course = data['course'];
+    });
     this.isActiveUser();
   }
 

@@ -124,6 +124,14 @@ import { ArvanPipe } from './arvan.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_intercepters/loading.interceptor';
+import { CourseDetailResolver } from './_resolvers/course-detail.resolver';
+import { CourseListResolver } from './_resolvers/course-list-all.resolver';
+import { CourseListUserResolver } from './_resolvers/course-list-user.resolver';
+import { CourseListAllResolver } from './_resolvers/course-list.resolver';
+import { CourseListAllUserResolver } from './_resolvers/course-list-user-all.resolver';
+import { CourseListMainResolver } from './_resolvers/course-list-user-dactive.resolver';
+import { CourseListMainActiveResolver } from './_resolvers/course-list-user-active.resolver';
+import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 
 
 export function tokenGeter(){
@@ -234,12 +242,19 @@ export function tokenGeter(){
          tokenGetter: tokenGeter,
          allowedDomains: ['tavan.iran.liara.run'],
          disallowedRoutes: ['tavan.iran.liara.run/auth']
-
       }
    }),
     NgxSpinnerModule
   ],
   providers: [
+    PhotoListResolver,
+    CourseDetailResolver,
+    CourseListResolver,
+    CourseListUserResolver,
+    CourseListAllResolver,
+    CourseListAllUserResolver,
+    CourseListMainActiveResolver,
+    CourseListMainResolver,
     {provide :LocationStrategy,useClass:HashLocationStrategy},
     {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true},
     {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor , multi: true}

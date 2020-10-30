@@ -17,6 +17,7 @@ jwtHelper = new JwtHelperService();
 baseUrl = environment.apiUrl +   'auth/';
 decodeToken: any;
 paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
+memberCache = new Map();
 
 
 login(model: any) {

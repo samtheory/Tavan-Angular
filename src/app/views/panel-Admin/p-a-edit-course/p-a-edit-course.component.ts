@@ -33,7 +33,9 @@ export class PAEditCourseComponent implements OnInit {
   submitted = false;
 
   ngOnInit(): void {
-    this.getCourse();
+    this.getCourse();this.route.data.subscribe(data => {
+      this.course = data['course'];
+    });
     this.createCourseFrom();
     
     //  -- I N F O --    

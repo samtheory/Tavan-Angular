@@ -46,6 +46,14 @@ import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course
 import { PCFinnishedCoursesComponent } from './views/panel-Customer/p-c-finnished-courses/p-c-finnished-courses.component';
 import { PCEditProfileComponent } from './views/panel-Customer/p-c-edit-profile/p-c-edit-profile.component';
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
+import { CourseDetailResolver } from './_resolvers/course-detail.resolver';
+import { CourseListResolver } from './_resolvers/course-list-all.resolver';
+import { CourseListUserResolver } from './_resolvers/course-list-user.resolver';
+import { CourseListAllResolver } from './_resolvers/course-list.resolver';
+import { CourseListAllUserResolver } from './_resolvers/course-list-user-all.resolver';
+import { CourseListMainActiveResolver } from './_resolvers/course-list-user-active.resolver';
+import { CourseListMainResolver } from './_resolvers/course-list-user-dactive.resolver';
+import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 
 const routes: Routes = [
 
@@ -55,11 +63,11 @@ const routes: Routes = [
     path: '',
     component: LandingLayoutComponent,
     children: [
-      { path: 'home', component: LandingHomeComponent },
-      { path: 'products/Single/:id', component: LandingSingleProductComponent },
+      { path: 'home', component: LandingHomeComponent , resolve: { photos: PhotoListResolver} },
+      { path: 'products/Single/:id', component: LandingSingleProductComponent , resolve: {course : CourseDetailResolver}},
       { path: 'about', component: LandingAboutComponent },
       { path: 'intro', component: LandingIntroComponent },
-      { path: 'products/:isActive', component: LandingProductsAllComponent },
+      { path: 'products/:isActive', component: LandingProductsAllComponent , resolve: {courses : CourseListResolver}},
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
   },
@@ -68,11 +76,11 @@ const routes: Routes = [
     path: 'admin',
     component: PanelComponent,
     children: [
-      { path: 'dashboard', component: PADashboardComponent },
+      { path: 'dashboard', component: PADashboardComponent , resolve: {courses : CourseListAllResolver}},
       { path: 'addVideo', component: PAAddVideoComponent },
       { path: 'allCourses', component: PAAllCoursesComponent },
       { path: 'newCourse', component: PANewCourseComponent },
-      { path: 'editCourse/:id', component: PAEditCourseComponent },
+      { path: 'editCourse/:id', component: PAEditCourseComponent , resolve: {course : CourseDetailResolver}},
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },
       { path: 'EditUser/:id', component: PAEditUserComponent },
@@ -92,10 +100,10 @@ const routes: Routes = [
     path: 'Customer',
     component: CustomerPanelComponent,
     children: [
-      { path: 'dashboard', component: PCDashboardComponent },
-      { path: 'activeCourses', component: PCActiveCoursesComponent },
-      { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent },
-      { path: 'FinnishCourses', component: PCFinnishedCoursesComponent },
+      { path: 'dashboard', component: PCDashboardComponent , resolve: {courses : CourseListAllUserResolver}},
+      { path: 'activeCourses/:isActive', component: PCActiveCoursesComponent, resolve: {courses : CourseListUserResolver}},
+      { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent, resolve: {course : CourseDetailResolver}},
+      { path: 'FinnishCourses/:isActive', component: PCFinnishedCoursesComponent , resolve: {courses : CourseListUserResolver}},
       { path: 'Profile', component: PCEditProfileComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],

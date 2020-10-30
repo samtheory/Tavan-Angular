@@ -18,7 +18,9 @@ export class PCCourseSingleDetailComponent implements OnInit {
   constructor(private courseService: CourseService, private toastr: ToastrService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getCourse();
+    this.getCourse();this.route.data.subscribe(data => {
+      this.course = data['course'];
+    });
   }
 
   getCourse(){

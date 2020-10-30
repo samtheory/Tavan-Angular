@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
@@ -19,12 +20,16 @@ export class LandingHomeComponent implements OnInit {
   useraParams: any = {};
   userdParams: any = {};
   pag: Pagination;
-  constructor(private courseService: CourseService, private toastr: ToastrService, private photoService: PhotoService) { }
+  constructor(private courseService: CourseService, private toastr: ToastrService, private photoService: PhotoService,
+     private route: ActivatedRoute) { }
   
   ngOnInit(): void {
-    this.getafirstPage();
-    this.getdfirstPage();
-    this.getphotos();
+   this.getafirstPage();
+   this.getdfirstPage();
+
+    this.route.data.subscribe(data => {
+      this.photos = data['photos'];
+    });
   }
 
 

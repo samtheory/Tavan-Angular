@@ -17,7 +17,10 @@ userParams: any = {};
   constructor(private courseService: CourseService , private toastr: ToastrService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getfirstPage();
+    this.route.data.subscribe(data => {
+      this.courses = data['courses'].result;
+      this.pag = data['courses'].pag;
+    });
   }
 
 

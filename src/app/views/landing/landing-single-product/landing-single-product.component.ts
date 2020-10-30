@@ -72,10 +72,20 @@ export class LandingSingleProductComponent implements OnInit {
   templateUrl: 'you-are-not-login-dialog.html',
 })
 export class YouAreNotLoginDialog { 
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog, private router: Router){}
   
   
   closeDialog() {
+    this.dialog.closeAll();
+  }
+
+  register() {
+    this.router.navigate(['/register']);
+    this.dialog.closeAll();
+  }
+
+  login() {
+    this.router.navigate(['/login']);
     this.dialog.closeAll();
   }
 }

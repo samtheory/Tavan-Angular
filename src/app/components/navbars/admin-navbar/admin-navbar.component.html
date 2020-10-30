@@ -1,26 +1,21 @@
 <!-- Navbar -->
 <nav
-  class="absolute  left-0 w-full z-10 bg-transparent md:flex-row md:flex-no-wrap md:justify-start flex items-center p-4  " style="z-index: 1;top: -5px;"
+	class="absolute left-0 w-full z-10 bg-transparent md:flex-row md:flex-no-wrap md:justify-start flex items-center p-4"
+	style="z-index: 1; top: -5px;"
 >
-  <div
-    class="w-full mx-autp items-center flex justify-between md:flex-no-wrap flex-wrap md:px-10 px-4 " 
-  >
-    <!-- Brand -->
-    <a
-      class="text-swatch-green hover:text-swatch-lightBlue  uppercase hidden lg:inline-block  text-base"
-     [routerLink]= "['/home']"
-      >صفحه اصلی</a
-    >
-    
-    <!-- User -->
-    <div >
+	<div class="w-full mx-autp items-center flex justify-between md:flex-no-wrap flex-wrap md:px-10 px-4">
+		<!-- Brand -->
+		<p
+			class="text-swatch-green  uppercase hidden lg:inline-block text-base mt-3"
+			[routerLink]="['/home']"
+			>پنل کاربری
+		</p>
 
-      <!-- <i class="far fa-bell md:mx-10 text-swatch-green hover:text-swatch-lightBlue duration-500"></i> -->
-      <button class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded" (click)="logout()">log out</button>
-       
-    </div>
-    <app-user-dropdown class="block"></app-user-dropdown>
-      
-
-  </div>
-</nav>
+		<!-- User -->
+		<div>
+			<!-- <i class="far fa-bell md:mx-10 text-swatch-green hover:text-swatch-lightBlue duration-500"></i> -->
+			<!-- <button class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded" (click)="logout()">log out</button> -->
+		</div>
+		<!-- <app-user-dropdown class="block"></app-user-dropdown> -->
+	</div>
+</nav> 

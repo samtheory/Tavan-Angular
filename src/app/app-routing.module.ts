@@ -56,6 +56,7 @@ import { CourseListMainResolver } from './_resolvers/course-list-user-dactive.re
 import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
+import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
 
 const routes: Routes = [
 
@@ -70,6 +71,7 @@ const routes: Routes = [
       { path: 'about', component: LandingAboutComponent },
       { path: 'intro', component: LandingIntroComponent },
       { path: 'products/:isActive', component: LandingProductsAllComponent , resolve: {courses : CourseListResolver}},
+      { path: 'checkpayment/:id', component: PayChechComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
   },

@@ -4,9 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
-
-
 // layouts
 import { AdminComponent } from './layouts/admin/admin.component';
 import { AuthComponent } from './layouts/auth/auth.component';
@@ -53,7 +50,6 @@ import { UserDropdownComponent } from './components/dropdowns/user-dropdown/user
 
 import { PanelComponent } from './layouts/panel/panel.component';
 
-
 // panel views
 import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
@@ -64,7 +60,7 @@ import { DiscountTableComponent } from './components/myCard/Tables/discount-tabl
 import { SlidShowComponent } from './components/slide-show/slid-show.component';
 import { TestComponentViewComponent } from './views/test-component-view/test-component-view.component';
 
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
 import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
 import { CardProduct1Component } from './components/cards/card-product1/card-product1.component';
@@ -92,19 +88,16 @@ import { CardNewUserPicComponent } from './components/cards-panel/card-new-user-
 // other
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { WCProductComponent } from './widgets/cards/w-c-product/w-c-product.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
-
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {ToastrModule} from 'ngx-toastr';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 import { PAAddVideoComponent } from './views/panel-admin/p-a-add-video/p-a-add-video.component';
 import { PADiscountEditComponent } from './views/panel-admin/p-a-discount-edit/p-a-discount-edit.component';
 import { PADiscountNewComponent } from './views/panel-admin/p-a-discount-new/p-a-discount-new.component';
@@ -117,11 +110,11 @@ import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import * as tus from "tus-js-client";
+import * as tus from 'tus-js-client';
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
 import { ArvanPipe } from './arvan.pipe';
 
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_intercepters/loading.interceptor';
 import { CourseDetailResolver } from './_resolvers/course-detail.resolver';
@@ -134,14 +127,11 @@ import { CourseListMainActiveResolver } from './_resolvers/course-list-user-acti
 import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
+import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
 
-
-export function tokenGeter(){
+export function tokenGeter() {
   return localStorage.getItem('token');
 }
-
-
-
 
 @NgModule({
   declarations: [
@@ -220,7 +210,8 @@ export function tokenGeter(){
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
     CustomerPanelComponent,
-    ArvanPipe
+    ArvanPipe,
+    PayChechComponent,
   ],
   imports: [
     BrowserModule,
@@ -228,7 +219,7 @@ export function tokenGeter(){
     IvyCarouselModule,
     NgPersianDatepickerModule,
     NoopAnimationsModule,
-    MatDialogModule ,
+    MatDialogModule,
     DpDatePickerModule,
     MatExpansionModule,
     MatPaginatorModule,
@@ -237,16 +228,16 @@ export function tokenGeter(){
     PaginationModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
+      positionClass: 'toast-bottom-right',
     }),
     JwtModule.forRoot({
       config: {
-         tokenGetter: tokenGeter,
-         allowedDomains: ['tavan.iran.liara.run'],
-         disallowedRoutes: ['tavan.iran.liara.run/auth']
-      }
-   }),
-    NgxSpinnerModule
+        tokenGetter: tokenGeter,
+        allowedDomains: ['localhost:5000'],
+        disallowedRoutes: ['localhost:5000/auth'],
+      },
+    }),
+    NgxSpinnerModule,
   ],
   providers: [
     IsAdminGuard,
@@ -259,10 +250,10 @@ export function tokenGeter(){
     CourseListAllUserResolver,
     CourseListMainActiveResolver,
     CourseListMainResolver,
-    {provide :LocationStrategy,useClass:HashLocationStrategy},
-    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor , multi: true},
-    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor , multi: true}
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

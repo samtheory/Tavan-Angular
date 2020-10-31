@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://tavan.iran.liara.run/'
+  apiUrl: "http://localhost:5000/",
 };
 
 /*

@@ -1,6 +1,5 @@
 
-<app-landing-navbar></app-landing-navbar>
-
-<div class="container">
-    <h1>با موفقیت پرداخت شد</h1>
+<div  class="container">
+    <h1 *ngIf="this.Ok">با موفقیت پرداخت شد</h1>
+    <h1 *ngIf="!this.Ok">پرداخت ناموفق</h1>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PaymentParams } from 'src/app/_models/paymentParams';
+import { PaymentService } from 'src/app/_services/payment.service';
 
 @Component({
   selector: 'app-pay-chech',
@@ -7,8 +9,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./pay-chech.component.css']
 })
 export class PayChechComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
+  payParams: any = {};
+  Ok: boolean;
+  constructor(private route: ActivatedRoute, private payService: PaymentService) { }
 
   ngOnInit(): void {
     this.getParams();
@@ -16,10 +19,20 @@ export class PayChechComponent implements OnInit {
 
    getParams()
     {
-      const status = this.route.snapshot.paramMap.get('Status')
-      console.log(status);
-      const authority = this.route.snapshot.paramMap.get('Authority');
-      console.log(authority);
+      const id = this.route.snapshot.params['id'];
+      this.route.queryParams.subscribe(params => {
+       this.payParams.status = params['Status'];
+       this.payParams.authority = params['Authority'];
+      });
+
+      console.log(this.payParams);
+
+      this.payService.verifyPayment(this.payParams , id).subscribe(next => {
+        this.Ok = true;
+      }, error => {
+        this.Ok = false;
+      })
+
     }
 
 }

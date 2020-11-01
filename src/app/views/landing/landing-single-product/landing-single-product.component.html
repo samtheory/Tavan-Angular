@@ -62,8 +62,8 @@
 					<h3 style="margin-bottom: 10px;">شرح</h3>
 					<p>{{course.description}}</p>
 
-					<br>
-					<br>
+					<br />
+					<br />
 
 					<h3 style="margin-bottom: 10px;">مباحث دوره</h3>
 					<p>{{course.titres}}</p>
@@ -81,15 +81,24 @@
 							></iframe>
 						</div>
 					</div>
+					<div class="form-group">
+						<input name="discont" type="text" placeholder="کد تخفیف" class="form-control" />
+					</div>
 					<div class="text-center">
 						<div class="courses-price">
 							<hr class="mt-4" />
 							<div class="row mt-6" style="justify-content: center; align-items: center;">
 								<div>
-									<div *ngIf="course.realCost !== 0" class="price text-green-600 text-xl px-3 cursor-default">
+									<div
+										*ngIf="course.realCost !== 0"
+										class="price text-green-600 text-xl px-3 cursor-default"
+									>
 										قیمت دوره : {{course.realCost}} تومان
 									</div>
-									<div *ngIf="course.realCost === 0" class="price text-green-600 text-xl px-3 cursor-default">
+									<div
+										*ngIf="course.realCost === 0"
+										class="price text-green-600 text-xl px-3 cursor-default"
+									>
 										قیمت دوره : رایگان
 									</div>
 									<div
@@ -102,12 +111,18 @@
 								<div>
 									<!-- coundition 1 -->
 									<div>
-										<a *ngIf="course.realCost !== 0" (click)="buyCourse(course.id)" class="default-btn"
+										<a
+											*ngIf="course.realCost !== 0"
+											(click)="buyCourse(course.id)"
+											class="default-btn"
 											><i class="bx bx-paper-plane icon-arrow before"></i
 											><span class="label cursor-pointer">خرید دوره</span
 											><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
 										</a>
-										<a *ngIf="course.realCost === 0" (click)="addCourseToUser(course.id)" class="default-btn"
+										<a
+											*ngIf="course.realCost === 0"
+											(click)="addCourseToUser(course.id)"
+											class="default-btn"
 											><i class="bx bx-paper-plane icon-arrow before"></i
 											><span class="label cursor-pointer">خرید دوره</span
 											><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
@@ -125,19 +140,19 @@
 					<ul>
 						<li>
 							<span><i class="bx bx-group"></i> وضعیت دوره</span>
-							
-							<p  *ngIf="course.isActive">
+
+							<p *ngIf="course.isActive">
 								درحال برگزاری
 							</p>
-							<p  *ngIf="!course.isActive">
-						برگزارشده
+							<p *ngIf="!course.isActive">
+								برگزارشده
 							</p>
 						</li>
 						<li>
 							<span><i class="bx bx-time"></i> روز های دوره</span>
 							{{course.courseDays}}
 						</li>
-						
+
 						<li>
 							<span><i class="bx bxs-institution"></i>تاریخ شروع</span>
 							<a href="#" class="d-inline-block">{{course.started}}</a>

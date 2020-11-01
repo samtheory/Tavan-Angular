@@ -57,6 +57,7 @@ import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
 import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
+import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
 
 const routes: Routes = [
 
@@ -67,7 +68,7 @@ const routes: Routes = [
     component: LandingLayoutComponent,
     children: [
       { path: 'home', component: LandingHomeComponent , resolve: { photos: PhotoListResolver} },
-      { path: 'products/Single/:id', component: LandingSingleProductComponent , resolve: {course : CourseDetailResolver}},
+      { path: 'products/Single/:id', component: LandingSingleProductComponent , resolve: {course : CourseDetailMainResolver}},
       { path: 'about', component: LandingAboutComponent },
       { path: 'intro', component: LandingIntroComponent },
       { path: 'products/:isActive', component: LandingProductsAllComponent , resolve: {courses : CourseListResolver}},

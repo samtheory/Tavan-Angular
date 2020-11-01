@@ -86,8 +86,11 @@
 							<hr class="mt-4" />
 							<div class="row mt-6" style="justify-content: center; align-items: center;">
 								<div>
-									<div class="price text-green-600 text-xl px-3 cursor-default">
+									<div *ngIf="course.realCost !== 0" class="price text-green-600 text-xl px-3 cursor-default">
 										قیمت دوره : {{course.realCost}} تومان
+									</div>
+									<div *ngIf="course.realCost === 0" class="price text-green-600 text-xl px-3 cursor-default">
+										قیمت دوره : رایگان
 									</div>
 									<div
 										class="pl-3 inline text-red-600 opacity-50 cursor-default"
@@ -99,7 +102,12 @@
 								<div>
 									<!-- coundition 1 -->
 									<div>
-										<a (click)="addCourseToUser(course.id)" class="default-btn"
+										<a *ngIf="course.realCost !== 0" (click)="buyCourse(course.id)" class="default-btn"
+											><i class="bx bx-paper-plane icon-arrow before"></i
+											><span class="label cursor-pointer">خرید دوره</span
+											><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>
+										</a>
+										<a *ngIf="course.realCost === 0" (click)="addCourseToUser(course.id)" class="default-btn"
 											><i class="bx bx-paper-plane icon-arrow before"></i
 											><span class="label cursor-pointer">خرید دوره</span
 											><i class="bx bx-paper-plane icon-arrow after cursor-pointer"></i>

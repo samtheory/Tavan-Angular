@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/_services/auth.service';
 import { User } from 'src/app/_models/user';
 import { combineAll } from 'rxjs/operators';
+import { PaymentService } from 'src/app/_services/payment.service';
 @Component({
   selector: 'app-landing-single-product',
   templateUrl: './landing-single-product.component.html',
@@ -16,8 +17,10 @@ export class LandingSingleProductComponent implements OnInit {
   course: Course;
   isActive: boolean = false;
   user: User;
+  off: any = {};
   constructor(private courseService: CourseService, private route: ActivatedRoute,
-     private toastr: ToastrService, private router: Router, public dialog: MatDialog,private authService: AuthService) { }
+     private toastr: ToastrService, private router: Router, public dialog: MatDialog,private authService: AuthService
+     , private paymentService: PaymentService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
@@ -44,12 +47,14 @@ export class LandingSingleProductComponent implements OnInit {
     }
   }
 
-  addCourseToUser(id: number){
+  buyCourse(id: number){
       if(this.logedIn()) {
         if(this.isActive === true) {
-          this.courseService.addcourseToUser(id).subscribe(next => {
-            this.toastr.success('با موفقیت ثبت نام شد');
-            this.router.navigate(['/Customer/dashboard']);
+          this.paymentService.buyCourse(this.off , id).subscribe(link => {
+            const url = link.url;
+            window.location.href = url;
+          }, error => {
+            this.toastr.error(error);
           });
         } else {
           this.openDialogNotVerify();
@@ -59,6 +64,24 @@ export class LandingSingleProductComponent implements OnInit {
       }
       
   }
+
+
+
+  addCourseToUser(id: number){
+    if(this.logedIn()) {
+      if(this.isActive === true) {
+        this.courseService.addcourseToUser(id).subscribe(next => {
+          this.toastr.success('با موفقیت ثبت نام شد');
+          this.router.navigate(['/Customer/dashboard']);
+        });
+      } else {
+        this.openDialogNotVerify();
+      }
+    } else {
+      this.openDialogNotLogin();
+    }
+    
+}
   openDialogNotLogin() {
     this.dialog.open(YouAreNotLoginDialog);
   }

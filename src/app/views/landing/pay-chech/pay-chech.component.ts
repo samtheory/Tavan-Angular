@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PaymentParams } from 'src/app/_models/paymentParams';
 import { PaymentService } from 'src/app/_services/payment.service';
 
@@ -11,7 +11,7 @@ import { PaymentService } from 'src/app/_services/payment.service';
 export class PayChechComponent implements OnInit {
   payParams: any = {};
   Ok: boolean;
-  constructor(private route: ActivatedRoute, private payService: PaymentService) { }
+  constructor(private route: ActivatedRoute, private payService: PaymentService, private router: Router) { }
 
   ngOnInit(): void {
     this.getParams();
@@ -29,6 +29,9 @@ export class PayChechComponent implements OnInit {
 
       this.payService.verifyPayment(this.payParams , id).subscribe(next => {
         this.Ok = true;
+        setTimeout(() => {
+          this.router.navigate(['Customer/dashboard']);
+      }, 10000);
       }, error => {
         this.Ok = false;
       })

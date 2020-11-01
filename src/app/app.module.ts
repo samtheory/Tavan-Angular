@@ -128,6 +128,7 @@ import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
 import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
+import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -244,6 +245,7 @@ export function tokenGeter() {
     IsClientGuard,
     PhotoListResolver,
     CourseDetailResolver,
+    CourseDetailMainResolver,
     CourseListResolver,
     CourseListUserResolver,
     CourseListAllResolver,

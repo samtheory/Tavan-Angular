@@ -28,6 +28,6 @@ export class OffService {
   }
   
   deleteOff(id: number){
-    return this.http.put(this.baseUrl + 'delete/' + id , {});
+    return this.http.post(this.baseUrl + 'delete/' + id , {});
   }
 }

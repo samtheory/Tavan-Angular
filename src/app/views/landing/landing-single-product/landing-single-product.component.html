@@ -83,12 +83,12 @@
 					</div>
 
 					<!-- the form for discount and buy button  -->
-					<form action="">
+					<form #byform="ngForm" (ngSubmit)="buyCourse(course.id)">
 						<div class="text-center">
 							<div class="courses-price">
 								<hr class="mt-4" />
 								<div class="form-group col-4"  style="margin: 0 auto;">
-									<input name="discont" type="text" placeholder="کد تخفیف" class="form-control" />
+									<input name="off" [(ngModel)]="off.code" type="text" placeholder="کد تخفیف" class="form-control" />
 								</div>
 								<div class="row mt-6" style="justify-content: center; align-items: center;">
 									<div>

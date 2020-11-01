@@ -8,6 +8,7 @@ import { Course } from 'src/app/_models/course';
 })
 export class CardProduct1Component implements OnInit {
   @Input() course: Course;
+  @Input() imageTeacher: String = 'assets/img/user4.jpg';
   constructor() { }
 
   ngOnInit(): void {

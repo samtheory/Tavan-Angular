@@ -24,27 +24,29 @@ export class ErrorInterceptor implements HttpInterceptor {
             case 400:
           if(error.error.errors) {
             const modalStateErrors = [];
+            let modalState = '';
             for(const key in error.error.errors) {
               if(error.error.errors[key]) {
-                modalStateErrors.push(error.error.errors[key])
+                modalState += error.error.errors[key] + '\n';
+                modalStateErrors.push(error.error.errors[key]);
               }
             }
-            throw modalStateErrors;
+            throw modalState;
           } else {
-            this.toastr.error(error.statusText, error.status);
+            this.toastr.error(error.error, error.status);
           }
             break;
             case 401:
-              this.toastr.error(error.statusText, error.status);
+              this.toastr.error('شما مجاز نمی باشید', error.status);
               break;
             case 403:
-              this.toastr.error(error.statusText, error.status);
+              this.toastr.error('دسترسی برای شما وجود ندارد', error.status);
               break;
             case 404:
-              this.toastr.error(error.statusText, error.status);
+              this.toastr.error('این صفحه موجود نیست', error.status);
               break;
             case 500:
-              this.toastr.error(error.statusText, error.status);
+              this.toastr.error('خطای سرور', error.status);
               break;
 
 

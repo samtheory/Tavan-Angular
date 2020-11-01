@@ -50,6 +50,7 @@ export class LandingSingleProductComponent implements OnInit {
   buyCourse(id: number){
       if(this.logedIn()) {
         if(this.isActive === true) {
+          console.log(this.off);
           this.paymentService.buyCourse(this.off , id).subscribe(link => {
             const url = link.url;
             window.location.href = url;

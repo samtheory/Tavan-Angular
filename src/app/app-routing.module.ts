@@ -79,7 +79,7 @@ const routes: Routes = [
   // admin views
   {
     path: 'admin',
-    runGuardsAndResolvers: "always",
+    runGuardsAndResolvers: 'always',
     canActivate: [IsAdminGuard],
     component: PanelComponent,
     children: [
@@ -105,7 +105,7 @@ const routes: Routes = [
   // Customer Panel views
   {
     path: 'Customer',
-    runGuardsAndResolvers: "always",
+    runGuardsAndResolvers: 'always',
     canActivate: [IsClientGuard],
     component: CustomerPanelComponent,
     children: [

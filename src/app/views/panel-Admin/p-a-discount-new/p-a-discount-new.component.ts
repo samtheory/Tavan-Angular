@@ -20,6 +20,7 @@ export class PADiscountNewComponent implements OnInit {
 
 
   createOff() {
+    this.off.expired_at = this.FinishDateChange(this.off.expired_at);
     this.offService.createOff(this.off).subscribe(next => {
       this.toastr.success('باموفقیت ایجاد شد');
       this.router.navigate(['/admin/discount']);
@@ -36,6 +37,7 @@ export class PADiscountNewComponent implements OnInit {
     value = g.gy + '-' + g.gm + '-' + g.gd;
     this.dateOfExpire = value;
     console.log(value);
+    return value;
   }
 
 }

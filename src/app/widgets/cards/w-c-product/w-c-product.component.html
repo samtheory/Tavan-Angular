@@ -32,9 +32,9 @@
 
 			<li class="courses-lesson"><i class="bx bxs-discount text-swatch-lightBlue"></i> {{course.off}} تخفیف</li>
 
-			<li class="courses-price flex flex-col">
-				<div class="mt-2">{{course.realCost}}</div>
-				<span *ngIf="course.realCost !== course.cost" class="">{{course.cost}} </span>
+			<li class="courses-price flex flex-col border-2 border-gray-400 rounded-lg">
+				<div class="mt-2">{{course.realCost}} تومان</div>
+				<span *ngIf="course.realCost !== course.cost" class="">{{course.cost}} تومان</span>
 			</li>
 		</ul>
 	</div>

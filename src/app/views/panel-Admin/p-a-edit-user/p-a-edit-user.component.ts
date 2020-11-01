@@ -32,7 +32,7 @@ export class PAEditUserComponent implements OnInit {
 
   createUserFrom(){
     this.userForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      firstName: ['', Validators.required],
       newPassword: [''],
       email: ['', Validators.required],
       phoneNumber: ['', Validators.required],
@@ -83,7 +83,7 @@ export class PAEditUserComponent implements OnInit {
     formData.append('meli', this.userForm.get('meliSource').value);
     formData.append('avatar', this.userForm.get('avatarSource').value);
     formData.append('nezam', this.userForm.get('nezamSource').value);
-    formData.append('username', this.userForm.get('username').value);
+    formData.append('firstName', this.userForm.get('firstName').value);
     if(this.userForm.get('newPassword').value){
       formData.append('newPassword', this.userForm.get('newPassword').value);
     }

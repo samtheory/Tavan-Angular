@@ -18,11 +18,15 @@ export class RegisterComponent implements OnInit {
 
 
   registerUser() {
-    this.authService.register(this.user).subscribe(next => {
-      this.toastr.success('ثبت نام با موفقیت انجام شد');
-      this.router.navigateByUrl('/login');
-    }, error => {
+    this.authService.register(this.user).subscribe(response =>{
+      console.log(response);
+      if(this.authService.decodeToken.role === 'admin'){
+        this.router.navigate(['/admin/dashboard']);
+      } else {
+        this.router.navigate(['/Customer/dashboard']);
+      }
+    },error => {
       this.toastr.error(error);
-    });
+    })
   }
 }

@@ -21,7 +21,7 @@ export class PANewUserComponent implements OnInit {
 
   createUserFrom(){
     this.userForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      firstName: ['', Validators.required],
       password: ['', Validators.required],
       email: ['', Validators.required],
       phoneNumber: ['', Validators.required],
@@ -72,7 +72,7 @@ export class PANewUserComponent implements OnInit {
     formData.append('meli', this.userForm.get('meliSource').value);
     formData.append('avatar', this.userForm.get('avatarSource').value);
     formData.append('nezam', this.userForm.get('nezamSource').value);
-    formData.append('username', this.userForm.get('username').value);
+    formData.append('firstName', this.userForm.get('firstName').value);
     formData.append('password', this.userForm.get('password').value);
     formData.append('phoneNumber', this.userForm.get('phoneNumber').value);
     formData.append('email', this.userForm.get('email').value);

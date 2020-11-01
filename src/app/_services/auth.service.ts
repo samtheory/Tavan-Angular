@@ -34,7 +34,17 @@ login(model: any) {
   );
 }
 register(model: any) {
-  return this.http.post(this.baseUrl + 'register', model);
+  return this.http.post(this.baseUrl + 'register', model).pipe(
+    map((response: any) => {
+    const user = response;
+    if (user) {
+      localStorage.setItem('token', user.token);
+      localStorage.setItem('user', JSON.stringify(user.user));
+      this.decodeToken = this.jwtHelper.decodeToken(user.token);
+      console.log(this.decodeToken);
+    }
+  })
+  );
 }
 logedIn(){
   const token = localStorage.getItem('token');

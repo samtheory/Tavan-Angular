@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
 import * as $ from 'jquery';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing-navbar',
   templateUrl: './landing-navbar.component.html',
   styleUrls: ['./landing-navbar.component.css']
 })
 export class LandingNavbarComponent implements OnInit {
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private toastr: ToastrService, private router: Router) {
 
 
   }
@@ -39,6 +41,12 @@ console.log(toggle)
 
   loggedIn() {
     return this.authService.logedIn();
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.toastr.success('loged out successfully');
+    this.router.navigate(['/index/home']);
   }
 
 

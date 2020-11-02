@@ -16,7 +16,7 @@
             "allowedCommonJsDependencies": [
               "chart.js"
             ],
-            "outputPath": "dist/tailwind-webapp-angular",
+            "outputPath": "../TavanP/wwwroot",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

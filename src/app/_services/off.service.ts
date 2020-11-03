@@ -10,11 +10,11 @@ import { Off } from '../_models/off';
 export class OffService {
   baseUrl = environment.apiUrl + 'off/';
   constructor(private http: HttpClient) { }
-  
+
   getOffs(): Observable<Off[]>{
     return this.http.get<Off[]>(this.baseUrl);
   }
-  
+
   getOff(id: number): Observable<Off>{
     return this.http.get<Off>(this.baseUrl + id);
   }
@@ -22,15 +22,15 @@ export class OffService {
   getOffCode(code: string): Observable<Off>{
     return this.http.get<Off>(this.baseUrl + 'code/' + code);
   }
-  
+
   createOff(off: Off): Observable<Off>{
     return this.http.post<Off>(this.baseUrl + 'create' , off);
   }
-  
+
   updateOff(id: number , off: Off): Observable<Off>{
     return this.http.put<Off>(this.baseUrl + 'update/' + id , off);
   }
-  
+
   deleteOff(id: number){
     return this.http.post(this.baseUrl + 'delete/' + id , {});
   }

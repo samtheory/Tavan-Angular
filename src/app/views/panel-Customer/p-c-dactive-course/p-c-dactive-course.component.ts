@@ -6,11 +6,11 @@ import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
-  selector: 'app-p-c-active-courses',
-  templateUrl: './p-c-active-courses.component.html',
-  styleUrls: ['./p-c-active-courses.component.css']
+  selector: 'app-p-c-dactive-course',
+  templateUrl: './p-c-dactive-course.component.html',
+  styleUrls: ['./p-c-dactive-course.component.css']
 })
-export class PCActiveCoursesComponent implements OnInit {
+export class PCDactiveCourseComponent implements OnInit {
   courses: Course[];
   pag: Pagination;
   userParams: any = {};
@@ -26,7 +26,7 @@ export class PCActiveCoursesComponent implements OnInit {
   
   
     getfirstPage(){
-      this.userParams.isActive = true;
+      this.userParams.isActive = false;
         this.courseService.getUserCourses(1 , 9, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
         this.courses = res.result;
         this.pag = res.pag;

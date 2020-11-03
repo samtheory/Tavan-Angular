@@ -58,6 +58,7 @@ import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
 import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
 import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
+import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-course/p-c-dactive-course.component';
 
 const routes: Routes = [
 
@@ -110,7 +111,8 @@ const routes: Routes = [
     component: CustomerPanelComponent,
     children: [
       { path: 'dashboard', component: PCDashboardComponent , resolve: {courses : CourseListAllUserResolver}},
-      { path: 'activeCourses/:isActive', component: PCActiveCoursesComponent, resolve: {courses : CourseListUserResolver}},
+      { path: 'activeCourses', component: PCActiveCoursesComponent},
+      { path: 'dactiveCourses', component: PCDactiveCourseComponent},
       { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent, resolve: {course : CourseDetailResolver}},
       { path: 'FinnishCourses/:isActive', component: PCFinnishedCoursesComponent , resolve: {courses : CourseListUserResolver}},
       { path: 'Profile', component: PCEditProfileComponent },

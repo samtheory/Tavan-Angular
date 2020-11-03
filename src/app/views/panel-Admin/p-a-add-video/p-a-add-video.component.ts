@@ -133,6 +133,7 @@ export class PAAddVideoComponent implements OnInit {
       },
       onSuccess(): void {
         console.log(file.name, upload.url);
+        this.fileId = upload.url;
 
       },
       onAfterResponse(req, res): void {

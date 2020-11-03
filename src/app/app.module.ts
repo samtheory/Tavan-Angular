@@ -129,6 +129,7 @@ import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
 import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
 import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
+import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-course/p-c-dactive-course.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -213,6 +214,7 @@ export function tokenGeter() {
     CustomerPanelComponent,
     ArvanPipe,
     PayChechComponent,
+    PCDactiveCourseComponent,
   ],
   imports: [
     BrowserModule,

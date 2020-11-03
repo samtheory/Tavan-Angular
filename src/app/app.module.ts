@@ -234,8 +234,8 @@ export function tokenGeter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGeter,
-        allowedDomains: ['tavan.iran.liara.run'],
-        disallowedRoutes: ['tavan.iran.liara.run/auth'],
+        allowedDomains: ['tavanplus.co','tavan.iran.liara.run','localhost:5000'],
+        disallowedRoutes: ['tavanplus.co/auth'],
       },
     }),
     NgxSpinnerModule,

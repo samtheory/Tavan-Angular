@@ -39,12 +39,12 @@
 							<li>
 								<i class="bx bx-calendar"></i>
 								<span>تاریخ شروع </span>
-								<a href="#">{{course.started}} </a>
+								<a href="#">{{course.started | date: 'y-M-d'}} </a>
 							</li>
 							<li>
 								<i class="bx bx-calendar"></i>
 								<span>تاریخ پایان</span>
-								<a href="#">{{course.ended}}</a>
+								<a href="#">{{course.ended | date: 'y-M-d'}}</a>
 							</li>
 						</ul>
 					</div>
@@ -82,7 +82,7 @@
 						</div>
 
 						<div *ngIf="!course.media.videoUrl" class="r1_iframe_embed">
-							<img src="asset/img/logo.png" alt="">
+							<img src="assets/img/logo.png" alt="">
 						</div>
 					</div>
 
@@ -163,11 +163,11 @@
 
 						<li>
 							<span><i class="bx bxs-institution"></i>تاریخ شروع</span>
-							<a href="#" class="d-inline-block">{{course.started}}</a>
+							<a href="#" class="d-inline-block">{{course.started | date: 'y-M-d'}}</a>
 						</li>
 						<li>
 							<span><i class="bx bxs-institution"></i>تاریخ پایان</span>
-							<a href="#" class="d-inline-block">{{course.ended}}</a>
+							<a href="#" class="d-inline-block">{{course.ended | date: 'y-M-d' }} </a>
 						</li>
 					</ul>
 				</div>

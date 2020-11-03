@@ -86,14 +86,27 @@
 						</div>
 					</div>
 
-					<!-- the form for discount and buy button  -->
-					<form #byform="ngForm" (ngSubmit)="buyCourse(course.id)">
+					
 						<div class="text-center">
 							<div class="courses-price">
 								<hr class="mt-4" />
-								<div class="form-group col-4"  style="margin: 0 auto;">
-									<input name="off" [(ngModel)]="off.code" type="text" placeholder="کد تخفیف" class="form-control" />
+								<form action="">
+								<div class="row mt-6" style="justify-content: center; align-items: center;">
+									<input
+										name="off"
+										[(ngModel)]="off.code"
+										type="text"
+										placeholder="کد تخفیف"
+										class="form-control"
+										style="width: 12rem; margin: 0 20px;"
+									/>
+									<button class="p-2 bg-mesh-700 text-white hover:bg-mesh-500 rounded">
+										اعمال کد تخفیف
+									</button>
 								</div>
+								</form>
+								<!-- the form for discount and buy button  -->
+								<form #byform="ngForm" (ngSubmit)="buyCourse(course.id)">
 								<div class="row mt-6" style="justify-content: center; align-items: center;">
 									<div>
 										<div
@@ -137,9 +150,9 @@
 										</div>
 									</div>
 								</div>
+							</form>
 							</div>
 						</div>
-					</form>
 				</div>
 			</div>
 

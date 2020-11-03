@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { AuthService } from 'src/app/_services/auth.service';
 import { CourseService } from 'src/app/_services/course.service';
+import { OffService } from 'src/app/_services/off.service';
 
 @Component({
   selector: 'app-p-c-course-single-detail',
@@ -28,5 +29,6 @@ export class PCCourseSingleDetailComponent implements OnInit {
     this.course = course;
   });
 }
+
 
 }

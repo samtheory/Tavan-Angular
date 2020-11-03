@@ -68,7 +68,7 @@
 					<h3 style="margin-bottom: 10px;">مباحث دوره</h3>
 					<p>{{course.titres}}</p>
 
-					<h3>ویدئو معرفی دوره ها</h3>
+					<h3 *ngIf="course.media.videoUrl">ویدئو معرفی دوره ها</h3>
 					<div class="courses-accordion">
 						<div *ngIf="course.media.videoUrl" class="r1_iframe_embed">
 							<iframe 
@@ -90,7 +90,7 @@
 						<div class="text-center">
 							<div class="courses-price">
 								<hr class="mt-4" />
-								<form action="">
+								<form #offForm="ngForm" (ngSubmit)="getOff()">
 								<div class="row mt-6" style="justify-content: center; align-items: center;">
 									<input
 										name="off"
@@ -100,7 +100,7 @@
 										class="form-control"
 										style="width: 12rem; margin: 0 20px;"
 									/>
-									<button class="p-2 bg-mesh-700 text-white hover:bg-mesh-500 rounded">
+									<button type="submit" class="p-2 bg-mesh-700 text-white hover:bg-mesh-500 rounded">
 										اعمال کد تخفیف
 									</button>
 								</div>

@@ -40,7 +40,7 @@
 									/>
 								</div>
 
-								<p class="text-red-600 p-2">!ایمیل یا رمز عبور اشتباه است</p>
+								<p class="text-red-600 p-2" (change)="error($event)">{{this.errorToShow}}</p>
 
 								<button type="submit">ورود</button>
 

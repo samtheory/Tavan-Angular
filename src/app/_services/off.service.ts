@@ -18,6 +18,10 @@ export class OffService {
   getOff(id: number): Observable<Off>{
     return this.http.get<Off>(this.baseUrl + id);
   }
+
+  getOffCode(code: string): Observable<Off>{
+    return this.http.get<Off>(this.baseUrl + 'code/' + code);
+  }
   
   createOff(off: Off): Observable<Off>{
     return this.http.post<Off>(this.baseUrl + 'create' , off);

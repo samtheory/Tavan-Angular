@@ -17,8 +17,14 @@ export class LoginComponent implements OnInit {
   jwtHelper = new JwtHelperService();
   token: any;
   decodedToken: any;
+  errorToShow: string = 'hi';
+  
   constructor(private authService: AuthService,private toastr: ToastrService, private router: Router) {}
   ngOnInit(): void {}
+
+  error(error: any) {
+    this.errorToShow = error;
+  }
 
 
   login(){
@@ -30,6 +36,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/Customer/dashboard']);
       }
     },error => {
+      console.log(error);
       this.toastr.error(error);
     })
   }

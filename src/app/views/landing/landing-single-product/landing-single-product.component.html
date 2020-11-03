@@ -70,8 +70,8 @@
 
 					<h3>ویدئو معرفی دوره ها</h3>
 					<div class="courses-accordion">
-						<div class="r1_iframe_embed">
-							<iframe
+						<div *ngIf="course.media.videoUrl" class="r1_iframe_embed">
+							<iframe 
 								[src]="course.media.videoUrl | arvan"
 								frameborder="0"
 								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -79,6 +79,10 @@
 								webkitallowfullscreen="true"
 								mozallowfullscreen="true"
 							></iframe>
+						</div>
+
+						<div *ngIf="!course.media.videoUrl" class="r1_iframe_embed">
+							<img src="asset/img/logo.png" alt="">
 						</div>
 					</div>
 

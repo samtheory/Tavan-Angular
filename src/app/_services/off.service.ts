@@ -28,7 +28,7 @@ export class OffService {
   }
 
   updateOff(id: number , off: Off): Observable<Off>{
-    return this.http.put<Off>(this.baseUrl + 'update/' + id , off);
+    return this.http.post<Off>(this.baseUrl + 'update/' + id , off);
   }
 
   deleteOff(id: number){

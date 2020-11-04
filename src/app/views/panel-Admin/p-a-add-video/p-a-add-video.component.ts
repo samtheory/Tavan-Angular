@@ -49,7 +49,7 @@ export class PAAddVideoComponent implements OnInit {
   }
 
   createVideo() {
-    console.log('khar');
+    // console.log('khar');
     this.model.convert = 'auto';
     this.model.parallel_convert = false;
     return this.http.post('https://napi.arvancloud.com/vod/2.0/channels/c1914c18-3737-44be-90c5-3ab7d760136f/videos'

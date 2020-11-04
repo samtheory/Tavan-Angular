@@ -37,7 +37,7 @@ export class ErrorInterceptor implements HttpInterceptor {
           }
             break;
             case 401:
-              this.toastr.error('شما مجاز نمی باشید', error.status);
+              this.toastr.error('شما مجاز نمی باشید نام کاربری یا رمزعبور اشتباه است', error.status);
               break;
             case 403:
               this.toastr.error('دسترسی برای شما وجود ندارد', error.status);
@@ -51,7 +51,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 
 
             default:
-              this.toastr.error("یه مشکلی وجود دارد");
+              this.toastr.error('یه مشکلی وجود دارد');
               console.log(error);
             break;
           }

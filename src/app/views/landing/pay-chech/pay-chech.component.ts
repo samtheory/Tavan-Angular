@@ -17,6 +17,12 @@ export class PayChechComponent implements OnInit {
     this.getParams();
   }
 
+
+  gotoProduct()
+  {
+    this.router.navigate(['/Customer/SingleCourseDetails']);
+  }
+
    getParams()
     {
       const id = this.route.snapshot.params['id'];
@@ -31,7 +37,7 @@ export class PayChechComponent implements OnInit {
         this.Ok = true;
         setTimeout(() => {
           this.router.navigate(['Customer/dashboard']);
-      }, 10000);
+      }, 7000);
       }, error => {
         this.Ok = false;
       })

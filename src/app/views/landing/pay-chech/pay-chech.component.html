@@ -14,9 +14,11 @@
 			<div class="flex flex-wrap align-items-center justify-center">
 				<div class="col-lg-12">
 					<div class="courses-title">
-						<div class="container">
-							<h1 class="text-green-500" *ngIf="this.Ok">با موفقیت پرداخت شد تا چند لحظه دیگه به صفحه  داشبورد پنل خود هدایت میشوید</h1>
-							<h1 class="text-red-500" *ngIf="!this.Ok">پرداخت ناموفق</h1>
+						<div *ngIf="this.Ok" class="container">
+							<h1 class="text-green-500" >با موفقیت پرداخت شد تا چند لحظه دیگه به صفحه  داشبورد پنل خود هدایت میشوید تا بتوانید ازدوره خود استفاده منید</h1>
+						</div>
+						<div *ngIf="!this.Ok" class="container">
+							<h1 class="text-red-500" >پرداخت ناموفق</h1>
 						</div>
 					</div>
 				</div>

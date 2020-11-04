@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { error } from 'protractor';
 
 
 @Component({
@@ -17,14 +18,10 @@ export class LoginComponent implements OnInit {
   jwtHelper = new JwtHelperService();
   token: any;
   decodedToken: any;
-  errorToShow: string = 'hi';
   
   constructor(private authService: AuthService,private toastr: ToastrService, private router: Router) {}
   ngOnInit(): void {}
 
-  error(error: any) {
-    this.errorToShow = error;
-  }
 
 
   login(){
@@ -35,9 +32,6 @@ export class LoginComponent implements OnInit {
       } else {
         this.router.navigate(['/Customer/dashboard']);
       }
-    },error => {
-      console.log(error);
-      this.toastr.error(error);
-    })
+    });
   }
 }

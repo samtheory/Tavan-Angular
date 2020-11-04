@@ -108,7 +108,7 @@
 								<!-- the form for discount and buy button  -->
 								<form #byform="ngForm" (ngSubmit)="buyCourse(course.id)">
 								<div class="row mt-6" style="justify-content: center; align-items: center;">
-									<div>
+									<div *ngIf="course.realCost !== course.cost">
 										<div
 											*ngIf="course.realCost !== 0"
 											class="price text-green-600 text-xl px-3 cursor-default"
@@ -126,6 +126,26 @@
 											style="text-decoration: line-through;"
 										>
 											{{course.cost}} تومان
+										</div>
+									</div>
+									<div *ngIf="course.realCost === course.cost">
+										<div
+											*ngIf="course.realCost !== 0"
+											class="price text-green-600 text-xl px-3 cursor-default"
+										>
+											قیمت دوره : {{course.realCost}} تومان
+										</div>
+										<div
+											*ngIf="course.realCost === 0"
+											class="price text-green-600 text-xl px-3 cursor-default"
+										>
+											قیمت دوره : رایگان
+										</div>
+										<div
+											class="pl-3 inline text-red-600 opacity-50 cursor-default"
+											style="text-decoration: line-through;"
+										>
+											
 										</div>
 									</div>
 									<div>

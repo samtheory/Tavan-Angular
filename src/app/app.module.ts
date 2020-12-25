@@ -131,6 +131,12 @@ import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component
 import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
 import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-course/p-c-dactive-course.component';
 
+
+// .:: Updated View  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+import { HomeUComponent } from './views/Updated_views/home-u/home-u.component';
+import { LoginUComponent } from './views/Updated_views/login-u/login-u.component';
+import { RegisterUComponent } from './views/Updated_views/register-u/register-u.component';
+
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -215,6 +221,9 @@ export function tokenGeter() {
     ArvanPipe,
     PayChechComponent,
     PCDactiveCourseComponent,
+    HomeUComponent,
+    LoginUComponent,
+    RegisterUComponent,
   ],
   imports: [
     BrowserModule,

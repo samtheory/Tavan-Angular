@@ -1,0 +1,61 @@
+<mxfile host="65bd71144e" modified="2020-12-25T07:22:23.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="wlm3M_rk7ft1bUj4LkiM" type="embed">
+    <diagram id="q6gydfvFbe3XEelCTSRz" name="Page-1">
+        <mxGraphModel dx="1374" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="/ about" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry y="240" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="About us" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="2">
+                    <mxGeometry x="20" y="45" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Updated Views" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="40" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="/ login" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="80" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Login" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="6">
+                    <mxGeometry x="30" y="45" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="/ register" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="80" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Register" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="8">
+                    <mxGeometry x="20" y="45" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="/ ' '" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="80" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Home" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="20">
+                    <mxGeometry x="30" y="45" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="/ contact" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="240" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Contact Us" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="22">
+                    <mxGeometry x="10" y="45" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="/ rules" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="240" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="Rules" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="24">
+                    <mxGeometry x="30" y="45" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="/ 404" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="240" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="404" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="26">
+                    <mxGeometry x="40" y="45" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="/ faq" style="swimlane;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="240" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="FAQ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=17;" vertex="1" parent="28">
+                    <mxGeometry x="35" y="45" width="50" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

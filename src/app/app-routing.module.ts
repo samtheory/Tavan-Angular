@@ -59,24 +59,41 @@ import { IsClientGuard } from './_guards/is-client.guard';
 import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
 import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
 import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-course/p-c-dactive-course.component';
+import { HomeUComponent } from './views/Updated_views/home-u/home-u.component';
+import { LoginUComponent } from './views/Updated_views/login-u/login-u.component';
+import { RegisterUComponent } from './views/Updated_views/register-u/register-u.component';
 
 const routes: Routes = [
 
-  
-  // landing Page views
+  //.:: Development Routes ::.
   {
-    path: '',
-    component: LandingLayoutComponent,
-    children: [
-      { path: 'home', component: LandingHomeComponent , resolve: { photos: PhotoListResolver} },
-      { path: 'products/Single/:id', component: LandingSingleProductComponent , resolve: {course : CourseDetailMainResolver}},
-      { path: 'about', component: LandingAboutComponent },
-      { path: 'intro', component: LandingIntroComponent },
-      { path: 'products/:isActive', component: LandingProductsAllComponent , resolve: {courses : CourseListResolver}},
-      { path: 'checkpayment/:id', component: PayChechComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    path: '', component: HomeUComponent, children: [
+
+      {
+        path: 'login', component: LoginUComponent
+      },
+      {
+        path: 'register', component: RegisterUComponent
+      }
     ]
   },
+
+  // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
+  // {
+  //   path: '',
+  //   component: LandingLayoutComponent,
+  //   children: [
+  //     { path: 'home', component: LandingHomeComponent , resolve: { photos: PhotoListResolver} },
+  //     { path: 'products/Single/:id', component: LandingSingleProductComponent , resolve: {course : CourseDetailMainResolver}},
+  //     { path: 'about', component: LandingAboutComponent },
+  //     { path: 'intro', component: LandingIntroComponent },
+  //     { path: 'products/:isActive', component: LandingProductsAllComponent , resolve: {courses : CourseListResolver}},
+  //     { path: 'checkpayment/:id', component: PayChechComponent },
+  //     { path: '', redirectTo: 'home', pathMatch: 'full' },
+  //   ]
+  // },
+
+
   // admin views
   {
     path: 'admin',
@@ -84,11 +101,11 @@ const routes: Routes = [
     canActivate: [IsAdminGuard],
     component: PanelComponent,
     children: [
-      { path: 'dashboard', component: PADashboardComponent , resolve: {courses : CourseListAllResolver}},
+      { path: 'dashboard', component: PADashboardComponent, resolve: { courses: CourseListAllResolver } },
       { path: 'addVideo', component: PAAddVideoComponent },
       { path: 'allCourses', component: PAAllCoursesComponent },
       { path: 'newCourse', component: PANewCourseComponent },
-      { path: 'editCourse/:id', component: PAEditCourseComponent , resolve: {course : CourseDetailResolver}},
+      { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver } },
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },
       { path: 'EditUser/:id', component: PAEditUserComponent },
@@ -110,11 +127,11 @@ const routes: Routes = [
     canActivate: [IsClientGuard],
     component: CustomerPanelComponent,
     children: [
-      { path: 'dashboard', component: PCDashboardComponent , resolve: {courses : CourseListAllUserResolver}},
-      { path: 'activeCourses', component: PCActiveCoursesComponent},
-      { path: 'dactiveCourses', component: PCDactiveCourseComponent},
-      { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent, resolve: {course : CourseDetailResolver}},
-      { path: 'FinnishCourses/:isActive', component: PCFinnishedCoursesComponent , resolve: {courses : CourseListUserResolver}},
+      { path: 'dashboard', component: PCDashboardComponent, resolve: { courses: CourseListAllUserResolver } },
+      { path: 'activeCourses', component: PCActiveCoursesComponent },
+      { path: 'dactiveCourses', component: PCDactiveCourseComponent },
+      { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent, resolve: { course: CourseDetailResolver } },
+      { path: 'FinnishCourses/:isActive', component: PCFinnishedCoursesComponent, resolve: { courses: CourseListUserResolver } },
       { path: 'Profile', component: PCEditProfileComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],

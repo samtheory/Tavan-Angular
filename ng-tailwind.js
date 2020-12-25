@@ -3,6 +3,8 @@ module.exports = {
   configJS: './tailwind.config.js',
   sourceCSS: './src/assets/styles/index.css',
   outputCSS: './src/assets/styles/tailwind.css',
+
+
   watchRelatedFiles: [],
   // Sass
   sass: false,

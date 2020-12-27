@@ -62,6 +62,7 @@ import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-cou
 import { HomeUComponent } from './views/Updated_views/home-u/home-u.component';
 import { LoginUComponent } from './views/Updated_views/login-u/login-u.component';
 import { RegisterUComponent } from './views/Updated_views/register-u/register-u.component';
+import { MainTemplateComponent } from './layouts/_updated/main-template/main-template.component';
 
 const routes: Routes = [
 
@@ -74,9 +75,10 @@ const routes: Routes = [
       },
       {
         path: 'register', component: RegisterUComponent
-      }
+      },
     ]
   },
+  { path: 'template', component: MainTemplateComponent},
 
   // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
   // {

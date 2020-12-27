@@ -1,0 +1,78 @@
+<main class="flex flex-col justify-between ">
+   <div class="alert bg-gray-100 flex-row flex justify-center items-center py-2 sticky top-0 z-50">
+		<p class="text-gray-500 text-sm">
+			برای مشاهده بیش از 300 ویدیو
+
+			<span class="text-blue-500">اینجا</span>
+			را کلیک کنید
+		</p>
+		<button class="mx-16"><i class="fas fa-times text-gray-500 text-sm"></i></button>
+   </div>
+	<section name="header" class=" ">
+		<app-main-header></app-main-header>
+   </section>
+   <div class="sticky-menu sticky top-10  z-50 ">
+
+      <div class="navbar bg-blue-500  ">
+         <section class="m-auto max-w-1400  ">
+            <nav class="mx-10 py-4">
+               <ul class="flex flex-row">
+                  <li>
+                     <a class="text-white hover:text-white duration-300 py-4 pl-8" href="">خانه</a>
+                  </li>
+                  <li>
+                     <a class="text-white hover:text-white duration-300 py-4 px-8" href="">کارگاه آنلاین</a>
+                  </li>
+                  <li>
+                     <a class="text-white hover:text-white duration-300 py-4 px-8" href="">ویدیو ها </a>
+                  </li>
+                  <li class="relative">
+                     <a
+                        class="text-white hover:text-white duration-300 py-4 px-8"
+                    
+                        (click)="megaMenu=!megaMenu"
+                        
+                        >دسته بندی
+                        
+                        <i class="fas fa-chevron-down text-xs"
+                        
+                        ></i>
+                     </a
+                     >
+                     <div class="mega-menu absolute bg-gray-100 py-4 pk-megaMenuClipper w-36  shadow rounded" *ngIf="megaMenu"  
+                        >
+                        <ul  >
+                           <li><a class="m-2" href=""></a>منو 1</li>
+                           <li><a class="m-2" href=""></a>منو 2</li>
+   
+                           <li><a class="m-2" href=""></a>منو 3</li>
+                           <li><a class="m-2" href=""></a>منو 4</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li>
+                     <a class="text-white hover:text-white duration-300 py-4 px-8" href="">درباره ما</a>
+                  </li>
+                  <li>
+                     <a class="text-white hover:text-white duration-300 py-4 px-8" href="">سوالات رایج</a>
+                  </li>
+               </ul>
+            </nav>
+         </section>
+      </div>
+   </div>
+
+	<section name="body" class="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+		<img src="assets/img/page-title/1.jpg" alt="">
+
+   </section>
+
+	<section name="footer" class=" bg-blue-500"><app-main-footer></app-main-footer></section>
+</main>

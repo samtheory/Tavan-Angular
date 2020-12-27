@@ -136,6 +136,10 @@ import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-cou
 import { HomeUComponent } from './views/Updated_views/home-u/home-u.component';
 import { LoginUComponent } from './views/Updated_views/login-u/login-u.component';
 import { RegisterUComponent } from './views/Updated_views/register-u/register-u.component';
+import { SvgLogoComponent } from './_svg/svg-logo/svg-logo.component';
+import { MainTemplateComponent } from './layouts/_updated/main-template/main-template.component';
+import { MainHeaderComponent } from './components/_Updated/main-header/main-header.component';
+import { MainFooterComponent } from './components/_Updated/main-footer/main-footer.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -224,6 +228,10 @@ export function tokenGeter() {
     HomeUComponent,
     LoginUComponent,
     RegisterUComponent,
+    SvgLogoComponent,
+    MainTemplateComponent,
+    MainHeaderComponent,
+    MainFooterComponent,
   ],
   imports: [
     BrowserModule,

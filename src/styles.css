@@ -7,71 +7,41 @@
 	font-family: "Vazir-FD", sans-serif;
 }
 
-
-
-::-webkit-scrollbar {
-    width: 12px;
+body {
+	direction: rtl;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+/*#      menu      */
 
-/* Track */
-
-::-webkit-scrollbar-track {
-    background: rgb(31, 32, 32);
-    box-shadow: inset 0 0 5px rgb(87, 138, 138);
-    border-radius: 1px;
-}
-
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-    background: rgb(104, 173, 165);
-    border-radius: 10px;
-}
-
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-    
-    background: rgb(138, 214, 205);
+.pk-megaMenuClipper {
+	clip-path: polygon(0 100%, 100% 100%, 100% 8%, 64% 8%, 50% 0, 36% 8%, 0 8%);
+	top: 30px;
+	-webkit-box-shadow: 6px 12px 8px -8px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 6px 12px 8px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 12px 8px -8px rgba(0, 0, 0, 0.75);
     
 }
-
-
-/* Buttons */
-::-webkit-scrollbar-button:single-button {
-  background-color: #0a1213;
-  
-  display: block;
-  border-style: solid;
-  height: 16px;
-  width: 16px;
-}
-::-webkit-scrollbar-button{
-    border: 2px #e0eaeb  solid;
-}
-/* Up */
-::-webkit-scrollbar-button:single-button:vertical:decrement {
-   
-  border-width: 2px 8px 12px 8px;
-  border-color: transparent transparent #9fe8f1 transparent;
+a:active {
+	color: white;
+	text-decoration: none;
 }
 
-::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-  border-color: transparent transparent #70dfd9 transparent;
+a:focusa {
+	color: white;
+	text-decoration: none;
 }
-/* Down */
-::-webkit-scrollbar-button:single-button:vertical:increment {
-  border-width: 12px 8px 0 8px;
-  border-color: #9fe8f1 transparent transparent transparent;
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-  border-color: #6cd8db transparent transparent transparent;
-}
-body{
-    direction: rtl;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

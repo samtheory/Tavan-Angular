@@ -1,16 +1,93 @@
-<section class="header">
-	<div class="alert bg-gray-100 flex-row flex justify-center items-center py-2 sticky">
-		<p class="text-gray-500 text-xs">
+
+<div class="header ">
+	<div class="alert bg-gray-100 flex-row flex justify-center items-center py-2 sticky top-0 z-50">
+		<p class="text-gray-500 text-sm">
 			برای مشاهده بیش از 300 ویدیو
 
 			<span class="text-blue-500">اینجا</span>
 			را کلیک کنید
 		</p>
-		<button class="mx-16"><i class="fas fa-times text-gray-500 text-xs"></i></button>
+		<button class="mx-16"><i class="fas fa-times text-gray-500 text-sm"></i></button>
 	</div>
-	<div class="action-status">
+	<div class="action-status max-w-1400 flex m-auto my-1">
+		<div class="flex flex-row justify-between w-full items-center mx-10">
+			<section class="logo flex flex-col justify-items-center items-center">
+				<svg-logo></svg-logo>
+				<p class="title text-sm">شرکت فیزیوتراپی توان</p>
+				<p class="description text-xs text-gray-800">با ما بهتر آموختن را تجربه کنید</p>
+			</section>
+			<div class="action">
+				<button
+					class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
+				>
+					ورود
+				</button>
+				<button
+					class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
+				>
+					عضویت
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="sticky-navbar bg-blue-500 ">
+		<section class="m-auto max-w-1400">
+			<nav class="mx-10 py-4">
+				<ul class="flex flex-row">
+					<li>
+						<a class="text-white hover:text-white duration-300 py-4 pl-8" href="">خانه</a>
+					</li>
+					<li>
+						<a class="text-white hover:text-white duration-300 py-4 px-8" href="">کارگاه آنلاین</a>
+					</li>
+					<li>
+						<a class="text-white hover:text-white duration-300 py-4 px-8" href="">ویدیو ها </a>
+					</li>
+					<li class="relative">
+						<a
+							class="text-white hover:text-white duration-300 py-4 px-8"
+							href="#"
+							(click)="megaMenu=!megaMenu"
+							
+							>دسته بندی
+							
+							<i class="fas fa-chevron-down text-xs"
+							
+							></i>
+							</a
+						>
+						<div class="mega-menu absolute bg-gray-100 py-4 pk-megaMenuClipper w-36 " *ngIf="megaMenu"  
+							>
+							<ul  >
+								<li><a class="m-2" href=""></a>منو 1</li>
+								<li><a class="m-2" href=""></a>منو 2</li>
 
-      
-   </div>
-	<div class="sticky-navbar"></div>
-</section>
+								<li><a class="m-2" href=""></a>منو 3</li>
+								<li><a class="m-2" href=""></a>منو 4</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a class="text-white hover:text-white duration-300 py-4 px-8" href="">درباره ما</a>
+					</li>
+					<li>
+						<a class="text-white hover:text-white duration-300 py-4 px-8" href="">سوالات رایج</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	</div>
+</div>
+<div class="slide-hero w-full relative">
+	<div class="absolute"></div>
+		<img src="assets/img/page-title/1.jpg" alt="">
+		
+		<p class="absolute text-white centered" style="top: 35%;">دنبال هر آموزشی هستی همین جا همین الان سرچ کن </p>
+		<div class="absolute text-white centered "><input class="py-4 px-5  rounded rounded-tl-none rounded-bl-none pl-96" placeholder="همین الان جستجو کن" type="text"><button class="py-4 px-5 bg-blue-500 rounded rounded-tr-none rounded-br-none"><i class="fas fa-search text-white "></i></button></div>
+
+	
+</div>
+
+
+
+<div style="height: 1000px;"></div>

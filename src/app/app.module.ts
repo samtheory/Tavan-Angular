@@ -140,6 +140,14 @@ import { SvgLogoComponent } from './_svg/svg-logo/svg-logo.component';
 import { MainTemplateComponent } from './layouts/_updated/main-template/main-template.component';
 import { MainHeaderComponent } from './components/_Updated/main-header/main-header.component';
 import { MainFooterComponent } from './components/_Updated/main-footer/main-footer.component';
+import { SvgWalletComponent } from './_svg/svg-wallet/svg-wallet.component';
+import { SvgSkillsComponent } from './_svg/svg-skills/svg-skills.component';
+import { SvgUniversalityComponent } from './_svg/svg-universality/svg-universality.component';
+import { SvgClockComponent } from './_svg/svg-clock/svg-clock.component';
+import { SvgCourseComponent } from './_svg/svg-course/svg-course.component';
+import { SvgInternsComponent } from './_svg/svg-interns/svg-interns.component';
+import { SvgTeacherComponent } from './_svg/svg-teacher/svg-teacher.component';
+import { SvgDotsComponent } from './_svg/svg-dots/svg-dots.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -232,6 +240,14 @@ export function tokenGeter() {
     MainTemplateComponent,
     MainHeaderComponent,
     MainFooterComponent,
+    SvgWalletComponent,
+    SvgSkillsComponent,
+    SvgUniversalityComponent,
+    SvgClockComponent,
+    SvgCourseComponent,
+    SvgInternsComponent,
+    SvgTeacherComponent,
+    SvgDotsComponent,
   ],
   imports: [
     BrowserModule,

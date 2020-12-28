@@ -68,17 +68,16 @@ const routes: Routes = [
 
   //.:: Development Routes ::.
   {
-    path: '', component: HomeUComponent, children: [
+    path: '', component: MainTemplateComponent, children: [
 
-      {
-        path: 'login', component: LoginUComponent
-      },
+      { path: 'login', component: LoginUComponent },
+      { path: '', component: HomeUComponent },
       {
         path: 'register', component: RegisterUComponent
       },
     ]
   },
-  { path: 'template', component: MainTemplateComponent},
+  { path: 'template', component: MainTemplateComponent },
 
   // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
   // {

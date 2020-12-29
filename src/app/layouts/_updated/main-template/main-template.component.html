@@ -26,7 +26,9 @@
 							<a class="text-white hover:text-white duration-300 py-4 px-8" href="">ویدیو ها </a>
 						</li>
 						<li class="relative">
-							<a class="text-white hover:text-white duration-300 py-4 px-8 cursor-pointer" (click)="megaMenu=!megaMenu"
+							<a
+								class="text-white hover:text-white duration-300 py-4 px-8 cursor-pointer"
+								(click)="megaMenu=!megaMenu"
 								>دسته بندی
 
 								<i class="fas fa-chevron-down text-xs"></i>
@@ -36,11 +38,11 @@
 								*ngIf="megaMenu"
 							>
 								<ul>
-									<li class="px-2 py-3"><a  href=""></a>منو 1</li>
-									<li class="px-2 py-3"><a  href=""></a>منو 2</li>
+									<li class="px-2 py-3"><a href=""></a>منو 1</li>
+									<li class="px-2 py-3"><a href=""></a>منو 2</li>
 
-									<li class="px-2 py-3"><a  href=""></a>منو 3</li>
-									<li class="px-2 py-3"><a  href=""></a>منو 4</li>
+									<li class="px-2 py-3"><a href=""></a>منو 3</li>
+									<li class="px-2 py-3"><a href=""></a>منو 4</li>
 								</ul>
 							</div>
 						</li>
@@ -60,5 +62,7 @@
 		<router-outlet></router-outlet>
 	</section>
 
-	<section name="footer" class="bg-blue-500"><app-main-footer></app-main-footer></section>
+	<section name="footer" class=""><app-main-footer> 
+
+	</app-main-footer></section>
 </main>

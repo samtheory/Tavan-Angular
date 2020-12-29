@@ -148,6 +148,13 @@ import { SvgCourseComponent } from './_svg/svg-course/svg-course.component';
 import { SvgInternsComponent } from './_svg/svg-interns/svg-interns.component';
 import { SvgTeacherComponent } from './_svg/svg-teacher/svg-teacher.component';
 import { SvgDotsComponent } from './_svg/svg-dots/svg-dots.component';
+import { SvgTransactionMedalComponent } from './_svg/svg-transaction-medal/svg-transaction-medal.component';
+
+import { SvgMedalComponent } from './_svg/svg-medal/svg-medal.component';
+import { SvgAparatComponent } from './_svg/svg-aparat/svg-aparat.component';
+import { SvgInstagramComponent } from './_svg/svg-instagram/svg-instagram.component';
+import { SvgTelegramComponent } from './_svg/svg-telegram/svg-telegram.component';
+import { SvgWhatsappComponent } from './_svg/svg-whatsapp/svg-whatsapp.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -248,6 +255,17 @@ export function tokenGeter() {
     SvgInternsComponent,
     SvgTeacherComponent,
     SvgDotsComponent,
+    SvgTransactionMedalComponent,
+
+    SvgMedalComponent,
+
+    SvgAparatComponent,
+
+    SvgInstagramComponent,
+
+    SvgTelegramComponent,
+
+    SvgWhatsappComponent,
   ],
   imports: [
     BrowserModule,

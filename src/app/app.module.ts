@@ -164,6 +164,7 @@ export function tokenGeter() {
   declarations: [
     AppComponent,
     DashboardComponent,
+
     NotificationDropdownComponent,
     CardBarChartComponent,
     CardLineChartComponent,
@@ -256,15 +257,10 @@ export function tokenGeter() {
     SvgTeacherComponent,
     SvgDotsComponent,
     SvgTransactionMedalComponent,
-
     SvgMedalComponent,
-
     SvgAparatComponent,
-
     SvgInstagramComponent,
-
     SvgTelegramComponent,
-
     SvgWhatsappComponent,
   ],
   imports: [
@@ -287,7 +283,7 @@ export function tokenGeter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGeter,
-        allowedDomains: ['tavanplus.co','tavan.iran.liara.run','localhost:5000'],
+        allowedDomains: ['tavanplus.co', 'tavan.iran.liara.run', 'localhost:5000'],
         disallowedRoutes: ['tavanplus.co/auth'],
       },
     }),
@@ -311,4 +307,4 @@ export function tokenGeter() {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

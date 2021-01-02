@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainTemplateComponent implements OnInit {
   megaMenu = false; 
+  showSideMenu = false;
   constructor() { }
 
   ngOnInit(): void {

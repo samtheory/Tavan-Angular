@@ -1,5 +1,35 @@
 //:: This is constant variable File Imported in other File AS Const_data -> DB_const
 
+export const actionButton = {
+   signIn: "ورود",
+   register: "عضویت",
+   join_telegram_channel: "ورود به کانال",
+   view_all: "مشاهده همه",
+   purchase_course: "خرید دوره",
+}
+
+export const header = {
+   logo_description: {
+      line_one: "شرکت فیزیوتراپی توان",
+      line_two: "با ما بهتر آموختن را تجربه کنید"
+   }
+   ,
+   slider_dec: ""
+}
+
+export const menu = {
+   home: "خانه",
+   online_workshop: "کارگاه های آنلاین",
+   videos: "ویدیو ها",
+   category: "دسته بندی",
+   about_us: "درباره ما",
+   faq: "سوالات رایج",
+   category_child: {
+      one: "مورد 1",
+      two: "مورد 2",
+      three: "مورد 3",
+   }
+}
 
 export const footer = {
    who_we_are: {

@@ -138,7 +138,7 @@ import { LoginUComponent } from './views/Updated_views/login-u/login-u.component
 import { RegisterUComponent } from './views/Updated_views/register-u/register-u.component';
 import { SvgLogoComponent } from './_svg/svg-logo/svg-logo.component';
 import { MainTemplateComponent } from './layouts/_updated/main-template/main-template.component';
-import { MainHeaderComponent } from './components/_Updated/main-header/main-header.component';
+
 import { MainFooterComponent } from './components/_Updated/main-footer/main-footer.component';
 import { SvgWalletComponent } from './_svg/svg-wallet/svg-wallet.component';
 import { SvgSkillsComponent } from './_svg/svg-skills/svg-skills.component';
@@ -246,7 +246,7 @@ export function tokenGeter() {
     RegisterUComponent,
     SvgLogoComponent,
     MainTemplateComponent,
-    MainHeaderComponent,
+  
     MainFooterComponent,
     SvgWalletComponent,
     SvgSkillsComponent,

@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-u.component.css']
 })
 export class HomeUComponent implements OnInit {
-  megaMenu: boolean;
-  constructor() { }
+  
+  
 
+  // scroll to target method 
+  scrollToElement($element): void {
+    // console.log($element);
+    $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
   ngOnInit(): void {
-    this.megaMenu = false ;
+   
   }
 
 }

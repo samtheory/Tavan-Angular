@@ -1,0 +1,15 @@
+
+   svg{
+      transition: 300ms;
+   }
+   svg:hover{
+      transform: rotate(360deg);
+      path{
+         fill: #008ac3 ;
+   
+      }
+   }
+   path{
+      transition: 300ms;
+   }
+   

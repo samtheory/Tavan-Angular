@@ -39,3 +39,7 @@ a:focusa {
 	color: white;
 	text-decoration: none;
 }
+
+	.max-w-1200{
+		max-width: 1200px;
+	}

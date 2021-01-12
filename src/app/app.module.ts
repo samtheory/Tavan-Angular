@@ -155,7 +155,15 @@ import { SvgAparatComponent } from './_svg/svg-aparat/svg-aparat.component';
 import { SvgInstagramComponent } from './_svg/svg-instagram/svg-instagram.component';
 import { SvgTelegramComponent } from './_svg/svg-telegram/svg-telegram.component';
 import { SvgWhatsappComponent } from './_svg/svg-whatsapp/svg-whatsapp.component';
-
+import { SvgLoginComponent } from './_svg/svg-login/svg-login.component';
+import { SvgRegisterComponent } from './_svg/svg-register/svg-register.component';
+import { MatInputModule } from '@angular/material/input';
+import { AboutUsUComponent } from './views/Updated_views/about-us-u/about-us-u.component';
+import { NotFoundComponent } from './views/Updated_views/not-found/not-found.component';
+import { ContactUsUComponent } from './views/Updated_views/contact-us-u/contact-us-u.component';
+import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component';
+import { FAQUComponent } from './views/Updated_views/faq-u/faq-u.component';
+import { SuccsessPurchaseUComponent } from './views/Updated_views/succsess-purchase-u/succsess-purchase-u.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -246,7 +254,7 @@ export function tokenGeter() {
     RegisterUComponent,
     SvgLogoComponent,
     MainTemplateComponent,
-  
+
     MainFooterComponent,
     SvgWalletComponent,
     SvgSkillsComponent,
@@ -262,6 +270,14 @@ export function tokenGeter() {
     SvgInstagramComponent,
     SvgTelegramComponent,
     SvgWhatsappComponent,
+    SvgLoginComponent,
+    SvgRegisterComponent,
+    AboutUsUComponent,
+    NotFoundComponent,
+    ContactUsUComponent,
+    RulesUComponent,
+    FAQUComponent,
+    SuccsessPurchaseUComponent,
   ],
   imports: [
     BrowserModule,
@@ -269,6 +285,8 @@ export function tokenGeter() {
     IvyCarouselModule,
     NgPersianDatepickerModule,
     NoopAnimationsModule,
+    MatInputModule,
+
     MatDialogModule,
     DpDatePickerModule,
     MatExpansionModule,

@@ -1,0 +1,21 @@
+.move-to-register {
+  transition: 250ms;
+  &:hover {
+     background-color: rgb(49, 83, 177);
+     .gray {
+        color: #fff;
+      }
+      .blue {
+         color: rgb(177, 233, 235);
+         font-weight: normal;
+      }
+   }
+}
+.submit-btn{
+   transition: 250ms;
+   &:hover{
+      background-color: rgb(49, 83, 177);
+      color: #fff;
+
+   }
+}

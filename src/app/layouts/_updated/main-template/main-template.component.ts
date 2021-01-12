@@ -14,6 +14,8 @@ export class MainTemplateComponent implements OnInit {
   megaMenu: boolean = false;
   // slider menu toggle 
   showSideMenu: boolean = false;
+  // page text banner toggle 
+  textBannerIsActive: boolean = true;
 
   // this will listen to scroll view of the page 
   @HostListener('window:scroll', ['$event'])

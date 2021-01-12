@@ -65,3 +65,11 @@ export const footer = {
    }
 }
 
+
+export const routeName = {
+   main : {
+      HomePage : "",
+      Register : "/register",
+      Login : "/login",
+   }
+}

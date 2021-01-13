@@ -1,1 +1,96 @@
-<p>about-us-u works!</p>
+<style>
+   .section-body {
+      max-width: 1200px;
+      margin: auto;
+   }
+
+   @media only screen and (min-width : 1280px) {
+      .icons .universal {
+         top: -80px;
+         padding: 0;
+      }
+
+      .icons .skills {
+         top: 80px;
+         left: -120px;
+         padding: 0;
+      }
+
+      .icons .wallet {
+         left: -80px;
+         padding: 0;
+      }
+   }
+</style>
+
+<section class="section-body xl:p-0 px-10">
+   <h1 class="text-gray-400 my-4">{{DB_const.aboutUsPage.nav}}</h1>
+   <div class="m-auto text-center py-20">
+      <h1 class="text-lg font-bold pb-2">{{DB_const.aboutUsPage.titlePage}}</h1>
+      <p>{{DB_const.aboutUsPage.Slogan}}</p>
+   </div>
+   <div class="flex flex-wrap xl:justify-between justify-center  items-center">
+      <div class="content">
+
+         <h1 class="text-xl font-bold pb-4">{{DB_const.aboutUsPage.bio.title}}</h1>
+         <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.bio.paragraph}}</p>
+      </div>
+      <img class="pt-8 xl:p-0" src="assets/img/_usefull/card-2.jpg" alt="">
+   </div>
+   <div class="flex flex-wrap-reverse xl:justify-between justify-center items-center my-20">
+      <div class="icons flex flex-wrap justify-center items-center p-8 xl:p-0">
+         <svg-wallet class="wallet xl:relative p-2"></svg-wallet>
+         <svg-skills class="skills xl:relative p-2"></svg-skills>
+         <svg-universality class="universal xl:relative p-2"></svg-universality>
+      </div>
+      <div class="content">
+
+         <h1 class="text-xl font-bold pb-4">{{DB_const.aboutUsPage.goals.title}}</h1>
+         <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.goals.paragraph}}</p>
+      </div>
+   </div>
+   
+</section>
+<section name="teachers" class="bg-blue-50 py-10 relative">
+   <div class="dots-pattern absolute -top-28 right-2 hidden 2xl:block z-0">
+      <svg-dots></svg-dots>
+   </div>
+   <div class="body max-w-1200 px-5 m-auto">
+      <div class="flex justify-between items-center mb-7">
+         <div class="lg:inline hidden"></div>
+         <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">اساتید ما</h2>
+         <a
+            class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
+            همه</a>
+      </div>
+
+      <div class="flex max-full m-auto items-center justify-between overflow-x-auto">
+         <div class="right-arrow z-10 hidden md:inline">
+            <i class="fas fa-chevron-right text-orange-500 py-4 px-5 bg-gray-100 rounded-full hover:shadow-lg"></i>
+         </div>
+         <div class="teacher-group flex flex-col items-center mx-4">
+            <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-1.png" alt="" />
+            <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
+         </div>
+
+         <div class="teacher-group flex flex-col items-center mx-4">
+            <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-2.png" alt="" />
+            <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
+         </div>
+         <div class="teacher-group flex flex-col items-center mx-4">
+            <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-3.png" alt="" />
+            <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
+         </div>
+         <div class="teacher-group flex flex-col items-center mx-4">
+            <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-4.png" alt="" />
+            <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
+         </div>
+         <div class="left-arrow z-20 hidden md:inline">
+            <i class="fas fa-chevron-left text-orange-500 py-4 px-5 bg-gray-100 rounded-full hover:shadow-lg"></i>
+         </div>
+      </div>
+   </div>
+   <div class="dots-pattern absolute bottom-0 left-2 hidden 2xl:block z-0">
+      <svg-dots></svg-dots>
+   </div>
+</section>

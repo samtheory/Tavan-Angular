@@ -63,6 +63,12 @@ import { HomeUComponent } from './views/Updated_views/home-u/home-u.component';
 import { LoginUComponent } from './views/Updated_views/login-u/login-u.component';
 import { RegisterUComponent } from './views/Updated_views/register-u/register-u.component';
 import { MainTemplateComponent } from './layouts/_updated/main-template/main-template.component';
+import { AboutUsUComponent } from './views/Updated_views/about-us-u/about-us-u.component';
+import { ContactUsUComponent } from './views/Updated_views/contact-us-u/contact-us-u.component';
+import { FAQUComponent } from './views/Updated_views/faq-u/faq-u.component';
+import { NotFoundComponent } from './views/Updated_views/not-found/not-found.component';
+import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component';
+import { SuccessPurchaseUComponent } from './views/Updated_views/success-purchase-u/success-purchase-u.component';
 
 const routes: Routes = [
 
@@ -71,10 +77,17 @@ const routes: Routes = [
     path: '', component: MainTemplateComponent, children: [
 
       { path: 'login', component: LoginUComponent },
+      {path: 'register', component: RegisterUComponent},
+
+      {path: 'about', component: AboutUsUComponent},
+      {path: 'contact', component: ContactUsUComponent}, 
+      {path: 'faq', component: FAQUComponent}, 
+      {path: 'not-found', component: NotFoundComponent}, 
+      {path: 'rules', component: RulesUComponent}, 
+      {path: 'success-purchase', component: SuccessPurchaseUComponent}, 
+
+
       { path: '', component: HomeUComponent },
-      {
-        path: 'register', component: RegisterUComponent
-      },
     ]
   },
   { path: 'template', component: MainTemplateComponent },

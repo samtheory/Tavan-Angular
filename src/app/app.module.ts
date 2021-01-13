@@ -163,7 +163,7 @@ import { NotFoundComponent } from './views/Updated_views/not-found/not-found.com
 import { ContactUsUComponent } from './views/Updated_views/contact-us-u/contact-us-u.component';
 import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component';
 import { FAQUComponent } from './views/Updated_views/faq-u/faq-u.component';
-import { SuccsessPurchaseUComponent } from './views/Updated_views/succsess-purchase-u/succsess-purchase-u.component';
+import { SuccessPurchaseUComponent } from './views/Updated_views/success-purchase-u/success-purchase-u.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -277,7 +277,7 @@ export function tokenGeter() {
     ContactUsUComponent,
     RulesUComponent,
     FAQUComponent,
-    SuccsessPurchaseUComponent,
+    SuccessPurchaseUComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { aboutUsPage } from 'src/app/_Constant/data';
 
 @Component({
   selector: 'app-about-us-u',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-us-u.component.css']
 })
 export class AboutUsUComponent implements OnInit {
-
-  constructor() { }
+  DB_const = { aboutUsPage };
 
   ngOnInit(): void {
   }

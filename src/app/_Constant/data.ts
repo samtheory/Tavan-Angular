@@ -94,3 +94,43 @@ export const notFound = {
    title: "صفحه مورد نظر یافت نشد",
    actionBtn: "   بازگشت به صفحه اصلی"
 }
+
+export const contactUs = {
+   titlePage: "تماس با ما",
+   Slogan: "از طریق راه های ارتباطی زیر هر لحظه و هر جا با توان در تماس باشید ",
+   nav: "خانه > تماس با ما ",
+   form: {
+      title: "صمیمانه پاسخگوی پرسش ها، پیشنهادات و انتقادات شما هستیم"
+      , filedLabel: {
+         name: {
+            lable: "نام",
+            hintText: "نام خود را درج کنید"
+         },
+         email: {
+            lable: "ایمیل",
+            hintText: "پست الکترونیکی خود را درج کنید"
+         },
+         phone: {
+            lable: "تلفن",
+            hintText: "تلفن تماس خود را درج کنید"
+         },
+         massage: {
+            lable: "پیام شما",
+            hintText: "پیام خود را درج کنید"
+         },
+
+      }
+      , submitBtn: "ارسال پیام"
+   },
+   contactInfo: {
+      title: "اطلاعات تماس",
+      telephon: { title: "شماره شرکت ما:", value: "02128422712", },
+      mobile: { title: "شماره واتس اپ ما:", value: "09056919286", },
+      email: { title: "پست الکترونیکی ما:", value: "tavangroupp@gmail.com", },
+      address: { title:"آدرس ما:" , value: "", },
+      postCode: { title:"کد پستی ما:" , value: "", },
+
+
+
+   }
+}

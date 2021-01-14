@@ -165,6 +165,11 @@ import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component
 import { FAQUComponent } from './views/Updated_views/faq-u/faq-u.component';
 import { SuccessPurchaseUComponent } from './views/Updated_views/success-purchase-u/success-purchase-u.component';
 import { SvgNotFoundComponent } from './_svg/svg-not-found/svg-not-found.component';
+import { SvgPhoneComponent } from './_svg/svg-phone/svg-phone.component';
+import { SvgMobileComponent } from './_svg/svg-mobile/svg-mobile.component';
+import { SvgEmailComponent } from './_svg/svg-email/svg-email.component';
+import { SvgLocationComponent } from './_svg/svg-location/svg-location.component';
+import { SvgPostcodeComponent } from './_svg/svg-postcode/svg-postcode.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -280,6 +285,11 @@ export function tokenGeter() {
     FAQUComponent,
     SuccessPurchaseUComponent,
     SvgNotFoundComponent,
+    SvgPhoneComponent,
+    SvgMobileComponent,
+    SvgEmailComponent,
+    SvgLocationComponent,
+    SvgPostcodeComponent,
   ],
   imports: [
     BrowserModule,

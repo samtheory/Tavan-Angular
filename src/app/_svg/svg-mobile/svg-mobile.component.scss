@@ -1,0 +1,16 @@
+
+.anime{
+   transition: 300ms;
+   path{
+      color:#F75714;
+   }
+}
+.anime:hover {
+   transform: translateX(5px);
+   path{
+
+      fill:#008AC3;
+   }
+}
+
+

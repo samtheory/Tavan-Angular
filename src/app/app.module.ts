@@ -164,6 +164,7 @@ import { ContactUsUComponent } from './views/Updated_views/contact-us-u/contact-
 import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component';
 import { FAQUComponent } from './views/Updated_views/faq-u/faq-u.component';
 import { SuccessPurchaseUComponent } from './views/Updated_views/success-purchase-u/success-purchase-u.component';
+import { SvgNotFoundComponent } from './_svg/svg-not-found/svg-not-found.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -278,6 +279,7 @@ export function tokenGeter() {
     RulesUComponent,
     FAQUComponent,
     SuccessPurchaseUComponent,
+    SvgNotFoundComponent,
   ],
   imports: [
     BrowserModule,

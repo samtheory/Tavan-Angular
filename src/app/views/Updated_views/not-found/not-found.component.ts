@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { notFound } from '../../../_Constant/data'
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  DB_const = {
+    notFound
+
+  }
 
   ngOnInit(): void {
   }

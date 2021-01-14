@@ -90,3 +90,7 @@ export const aboutUsPage = {
 }
 
 
+export const notFound = {
+   title: "صفحه مورد نظر یافت نشد",
+   actionBtn: "   بازگشت به صفحه اصلی"
+}

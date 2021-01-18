@@ -111,8 +111,9 @@ const routes: Routes = [
   // admin views
   {
     path: 'admin',
-    runGuardsAndResolvers: 'always',
-    canActivate: [IsAdminGuard],
+    // ! THESE two line MUST BE un comment 
+    // runGuardsAndResolvers: 'always',
+    // canActivate: [IsAdminGuard],   
     component: PanelComponent,
     children: [
       { path: 'dashboard', component: PADashboardComponent, resolve: { courses: CourseListAllResolver } },

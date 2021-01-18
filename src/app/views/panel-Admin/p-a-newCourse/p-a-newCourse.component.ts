@@ -1,19 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
+import { FormControl } from '@angular/forms';
+
 
 
 import { Router } from '@angular/router';
 import { CourseService } from 'src/app/_services/course.service';
 import jalaali from 'jalaali-js';
+import { start } from 'repl';
 @Component({
   selector: 'app-p-a-newCourse',
   templateUrl: './p-a-newCourse.component.html',
   styleUrls: ['./p-a-newCourse.component.css']
 })
 export class PANewCourseComponent implements OnInit {
+  lessons = [];
+ 
+  toppings = new FormControl();
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   courseForm: FormGroup;
   submitted = false;
+  GetlessonsNum (value : number){
+   this.lessons = [];
+    for (let index = 0; index < value; index++) {
+      this.lessons.push(1);
+      
+    }
+  }
+
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
     , private router: Router, private courseService: CourseService ) { }
 
@@ -24,6 +39,7 @@ export class PANewCourseComponent implements OnInit {
 
 
   createCourseFrom(){
+
     this.courseForm = this.formBuilder.group({
       title: ['', Validators.required],
       cost: ['', Validators.required],
@@ -117,5 +133,12 @@ FinishDateChange(value: String) {
  let g = jalaali.toGregorian(yyyy, mm, dd);
   value =  g.gy+'-'+g.gm+'-'+g.gd;
 }
+
+
+
+
+
+
+
 
 }

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Tavan group | this project is private Angular & Tailwinds",
   "repository": "https://github.com/samblize-pk7/Tavan-Angular.git",
-  
   "scripts": {
     "ng": "ng",
     "prestart": "ngtw build",

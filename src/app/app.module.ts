@@ -170,6 +170,7 @@ import { SvgMobileComponent } from './_svg/svg-mobile/svg-mobile.component';
 import { SvgEmailComponent } from './_svg/svg-email/svg-email.component';
 import { SvgLocationComponent } from './_svg/svg-location/svg-location.component';
 import { SvgPostcodeComponent } from './_svg/svg-postcode/svg-postcode.component';
+import { MatSelectModule } from '@angular/material/select';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -298,13 +299,14 @@ export function tokenGeter() {
     NgPersianDatepickerModule,
     NoopAnimationsModule,
     MatInputModule,
-
+    MatSelectModule,
     MatDialogModule,
     DpDatePickerModule,
     MatExpansionModule,
     MatPaginatorModule,
     HttpClientModule,
     FormsModule,
+   
     PaginationModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot({
@@ -325,6 +327,7 @@ export function tokenGeter() {
     PhotoListResolver,
     CourseDetailResolver,
     CourseDetailMainResolver,
+    
     CourseListResolver,
     CourseListUserResolver,
     CourseListAllResolver,

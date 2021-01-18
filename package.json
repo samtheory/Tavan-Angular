@@ -1,9 +1,9 @@
 {
-  "name": "tailwind-webapp-angular",
+  "name": "tavan-group",
   "version": "1.0.0",
-  "description": "Tailwind WebApp Angular - A free Tailwind CSS and Angular WebApp UI Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/tailwind-webapp-angular",
-  "license": "MIT",
+  "description": "Tavan group | this project is private Angular & Tailwinds",
+  "repository": "https://github.com/samblize-pk7/Tavan-Angular.git",
+  
   "scripts": {
     "ng": "ng",
     "prestart": "ngtw build",

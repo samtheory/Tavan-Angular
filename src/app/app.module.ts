@@ -179,6 +179,8 @@ import { PATeachersComponent } from './views/panel-Admin/p-a-teachers/p-a-teache
 import { PATeacherEditeComponent } from './views/panel-Admin/p-a-teacher-edite/p-a-teacher-edite.component';
 import { PATeacherNewComponent } from './views/panel-Admin/p-a-teacher-new/p-a-teacher-new.component';
 import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.component';
+import { ButtonBlueComponent } from './components/_Updated/button-blue/button-blue.component';
+import { CardCourseComponent } from './components/_Updated/card-course/card-course.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -306,6 +308,8 @@ export function tokenGeter() {
     PATeacherEditeComponent,
     PATeacherNewComponent,
     PAOrdersComponent,
+    ButtonBlueComponent,
+    CardCourseComponent,
   ],
   imports: [
     BrowserModule,

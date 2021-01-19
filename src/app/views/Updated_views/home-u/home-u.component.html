@@ -6,14 +6,6 @@
     transform: translate(-50%, -50%);
   }
 
-  .card-body {
-    transition: 300ms;
-    top: 0;
-  }
-
-  .card-body:hover {
-    top: -4px;
-  }
 
   .telegram-box {
     background: linear-gradient(251.4deg, #005e87 12.96%, #3ac5ff 92.39%);
@@ -25,33 +17,24 @@
 
 <section class="slide-hero w-full relative">
   <img src="assets/img/_usefull/hero-banner.jpg " alt="" />
-  <div
-    class="flex flex-col justify-between absolute z-20 centered"
-    style="top: 10%; height: 100%"
-  >
+  <div class="flex flex-col justify-between absolute z-20 centered" style="top: 10%; height: 100%">
     <div class="alaki h-1 w-1"></div>
     <div class="input">
       <p class="text-gray-100 text-center mb-10">
         دنبال هر آموزشی هستی همین جا همین الان سرچ کن
       </p>
       <div class="text-white">
-        <input
-          class="lg:py-4 lg:px-5 px-2 py-2 rounded rounded-tl-none rounded-bl-none 2xl:pl-96 pl-0 md:pl-24"
-          placeholder="همین الان جستجو کن"
-          type="text"
-        /><button
-          class="lg:py-4 lg:px-5 px-2 py-2 bg-blue-500 rounded rounded-tr-none rounded-br-none"
-        >
+        <input class="lg:py-4 lg:px-5 px-2 py-2 rounded rounded-tl-none rounded-bl-none 2xl:pl-96 pl-0 md:pl-24"
+          placeholder="همین الان جستجو کن" type="text" /><button
+          class="lg:py-4 lg:px-5 px-2 py-2 bg-blue-500 rounded rounded-tr-none rounded-br-none">
           <i class="fas fa-search text-white"></i>
         </button>
       </div>
     </div>
   </div>
-  <i
-    (click)="scrollToElement(main)"
-    class="fas fa-chevron-down text-4xl absolute centered text-gray-100 hover:bg-blue-900 duration-300"
-    style="top: 95%"
-  ></i>
+  <i (click)="scrollToElement(main)"
+    class="fas fa-chevron-down text-4xl absolute centered text-gray-100 hover:text-blue-900 rounded-full px-2 py-1 duration-300"
+    style="top: 95%"></i>
 </section>
 <section name="feature">
   <div class="flex flex-wrap justify-evenly items-center sm:flex-row flex-col">
@@ -73,417 +56,71 @@
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-20 px-8">
     <div class="head flex justify-between px-6 mb-4">
       <h2>دوره های درحال برگزاری</h2>
-      <a
-        class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-        >مشاهده همه</a
-      >
+
+      <!-- TODO: Link should be FIX    -->
+      <button-blue Link="">
+        مشاهده همه
+      </button-blue>
+
     </div>
     <div class="items-body flex flex-row overflow-auto">
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div
-                class="pre-price text-gray-300 line-through hidden xl:inline"
-              >
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold hidden xl:inline">
-                16,000 تومان
-              </div>
 
-              <div
-                class="Small-size-price xl:hidden flex flex-col justify-center items-center"
-              >
-                <div class="pre-price text-gray-300 text-xs line-through">
-                  24,000
-                </div>
-                <div class="price text-blue-500 font-bold">16,000 تومان</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- TODO: course data card    -->
+      <!-- .:: THE COURSE WILL BE HERE ___----___---___---___---___---___---  -->
+      <div *ngFor="let course of courseFakeData">
+        <card-course [data]="course"></card-course>
       </div>
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div class="pre-price text-gray-300 line-through">
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold">16,000 تومان</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div class="pre-price text-gray-300 line-through">
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold">16,000 تومان</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- .:: THE COURSE WILL BE HERE ___----___---___---___---___---___---  -->
+
+
     </div>
   </div>
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-20 px-8">
     <div class="head flex justify-between px-6 mb-4">
       <h2>دوره های درحال برگزاری</h2>
-      <a
-        class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-        >مشاهده همه</a
-      >
+      <!-- TODO: Link should be FIX    -->
+      <button-blue Link="">
+        مشاهده همه
+      </button-blue>
     </div>
     <div class="items-body flex flex-row overflow-auto">
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div
-                class="pre-price text-gray-300 line-through hidden xl:inline"
-              >
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold hidden xl:inline">
-                16,000 تومان
-              </div>
 
-              <div
-                class="Small-size-price xl:hidden flex flex-col justify-center items-center"
-              >
-                <div class="pre-price text-gray-300 text-xs line-through">
-                  24,000
-                </div>
-                <div class="price text-blue-500 font-bold">16,000 تومان</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- TODO: course data card    -->
+      <!-- .:: THE COURSE WILL BE HERE ___----___---___---___---___---___---  -->
+      <div *ngFor="let course of courseFakeData">
+        <card-course [data]="course"></card-course>
       </div>
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div class="pre-price text-gray-300 line-through">
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold">16,000 تومان</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div class="pre-price text-gray-300 line-through">
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold">16,000 تومان</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- .:: THE COURSE WILL BE HERE ___----___---___---___---___---___---  -->
+
+
     </div>
   </div>
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-20 px-8">
     <div class="head flex justify-between px-6 mb-4">
       <h2>دوره های درحال برگزاری</h2>
-      <a
-        class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-        >مشاهده همه</a
-      >
+
+      <!-- TODO: Link should be FIX    -->
+      <button-blue Link="">
+        مشاهده همه
+      </button-blue>
     </div>
     <div class="items-body flex flex-row overflow-auto">
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div
-                class="pre-price text-gray-300 line-through hidden xl:inline"
-              >
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold hidden xl:inline">
-                16,000 تومان
-              </div>
 
-              <div
-                class="Small-size-price xl:hidden flex flex-col justify-center items-center"
-              >
-                <div class="pre-price text-gray-300 text-xs line-through">
-                  24,000
-                </div>
-                <div class="price text-blue-500 font-bold">16,000 تومان</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- TODO: course data card    -->
+      <!-- .:: THE COURSE WILL BE HERE ___----___---___---___---___---___---  -->
+      <div *ngFor="let course of courseFakeData">
+        <card-course [data]="course"></card-course>
       </div>
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div class="pre-price text-gray-300 line-through">
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold">16,000 تومان</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
-        <div
-          class="card-body relative rounded-lg flex flex-col bg-white border border-transparent hover:shadow-md hover:border-gray-300"
-        >
-          <img
-            class="rounded-t-lg"
-            src="assets/img/_usefull/card-3.jpg"
-            alt=""
-            style="min-width: 300px"
-          />
-          <div class="content mx-5">
-            <h5 class="text-lg font-bold py-3">دوره آموزش زبان</h5>
-            <p class="py-3"><span class="font-bold">مدرس :</span> احمد اکبری</p>
-            <p class="py-3">
-              <span class="font-bold">مدت دوره :</span> 27 ساعت
-            </p>
-            <p class="py-3">
-              <span class="font-bold"> میزان رضایت مندی :</span>
-              <span class="rounded border border-gray-100 border-solid p-1 mx-2"
-                ><i class="fas fa-star text-yellow-500"></i> 4.5
-              </span>
-            </p>
-            <p class="text-blue-500 py-3">نمونه تدریس</p>
-            <hr class="rounded-full opacity-10 m-auto" />
-            <div class="flex flex-row justify-between my-4 items-center">
-              <a
-                class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-                >خرید دوره</a
-              >
-              <div class="pre-price text-gray-300 line-through">
-                24,000 تومان
-              </div>
-              <div class="price text-blue-500 font-bold">16,000 تومان</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- .:: THE COURSE WILL BE HERE ___----___---___---___---___---___---  -->
+
+
     </div>
   </div>
 </section>
 <section name="info" class="bg-white">
   <div
-    class="flex max-w-1200 flex-wrap items-center py-12 m-auto sm:flew-col lg:flex-row xl:justify-between justify-center"
-  >
-    <div
-      class="info-group border border-gray-100 rounded p-4 m-4"
-      style="min-width: 250px"
-    >
+    class="flex max-w-1200 flex-wrap items-center py-12 m-auto sm:flew-col lg:flex-row xl:justify-between justify-center">
+    <div class="info-group border border-gray-100 rounded p-4 m-4" style="min-width: 250px">
       <div class="flex flex-row">
         <div class="icon">
           <svg-clock></svg-clock>
@@ -494,10 +131,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="info-group border border-gray-100 rounded p-4 m-4"
-      style="min-width: 250px"
-    >
+    <div class="info-group border border-gray-100 rounded p-4 m-4" style="min-width: 250px">
       <div class="flex">
         <div class="icon">
           <svg-course></svg-course>
@@ -508,10 +142,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="info-group border border-gray-100 rounded p-4 m-4"
-      style="min-width: 250px"
-    >
+    <div class="info-group border border-gray-100 rounded p-4 m-4" style="min-width: 250px">
       <div class="flex">
         <div class="icon">
           <svg-interns></svg-interns>
@@ -522,10 +153,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="info-group border border-gray-100 rounded p-4 m-4"
-      style="min-width: 250px"
-    >
+    <div class="info-group border border-gray-100 rounded p-4 m-4" style="min-width: 250px">
       <div class="flex">
         <div class="icon">
           <svg-teacher></svg-teacher>
@@ -547,60 +175,33 @@
       <div class="lg:inline hidden"></div>
       <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">اساتید ما</h2>
       <a
-        class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200"
-        >مشاهده همه</a
-      >
+        class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
+        همه</a>
     </div>
 
-    <div
-      class="flex max-full m-auto items-center justify-between overflow-x-auto"
-    >
+    <div class="flex max-full m-auto items-center justify-between overflow-x-auto">
       <div class="right-arrow z-10 hidden md:inline">
-        <i
-          class="fas fa-chevron-right text-orange-500 py-4 px-5 bg-gray-100 rounded-full hover:shadow-lg"
-        ></i>
+        <i class="fas fa-chevron-right text-orange-500 py-4 px-5 bg-gray-100 rounded-full hover:shadow-lg"></i>
       </div>
       <div class="teacher-group flex flex-col items-center mx-4">
-        <img
-          class="rounded-t-lg"
-          style="min-width: 120px"
-          src="assets/img/_usefull/teacher-1.png"
-          alt=""
-        />
+        <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-1.png" alt="" />
         <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
       </div>
 
       <div class="teacher-group flex flex-col items-center mx-4">
-        <img
-          class="rounded-t-lg"
-          style="min-width: 120px"
-          src="assets/img/_usefull/teacher-2.png"
-          alt=""
-        />
+        <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-2.png" alt="" />
         <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
       </div>
       <div class="teacher-group flex flex-col items-center mx-4">
-        <img
-          class="rounded-t-lg"
-          style="min-width: 120px"
-          src="assets/img/_usefull/teacher-3.png"
-          alt=""
-        />
+        <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-3.png" alt="" />
         <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
       </div>
       <div class="teacher-group flex flex-col items-center mx-4">
-        <img
-          class="rounded-t-lg"
-          style="min-width: 120px"
-          src="assets/img/_usefull/teacher-4.png"
-          alt=""
-        />
+        <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-4.png" alt="" />
         <h2 class="mt-4 font-bold">دکتر صادق اکبری</h2>
       </div>
       <div class="left-arrow z-20 hidden md:inline">
-        <i
-          class="fas fa-chevron-left text-orange-500 py-4 px-5 bg-gray-100 rounded-full hover:shadow-lg"
-        ></i>
+        <i class="fas fa-chevron-left text-orange-500 py-4 px-5 bg-gray-100 rounded-full hover:shadow-lg"></i>
       </div>
     </div>
   </div>
@@ -615,8 +216,7 @@
       <p class="inline text-white">جمله تلگرام</p>
     </div>
     <a
-      class="rounded-md bg-white border-transparent px-4 py-2 border-solid border mx-2 hover:bg-transparent hover:text-white text-blue-500 duration-200 cursor-pointer"
-    >
+      class="rounded-md bg-white border-transparent px-4 py-2 border-solid border mx-2 hover:bg-transparent hover:text-white text-blue-500 duration-200 cursor-pointer">
       ورود به کانال
     </a>
   </div>

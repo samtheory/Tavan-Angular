@@ -1,0 +1,17 @@
+.card-body {
+  transition: 300ms;
+  top: 0;
+}
+
+.card-body:hover {
+  top: -4px;
+}
+.course-card{
+  max-width: 400px;
+}
+@media (max-width: 1400px) {
+  
+  .course-card{
+    min-width: 400px;
+  }
+}

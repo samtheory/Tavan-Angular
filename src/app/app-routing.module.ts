@@ -69,6 +69,8 @@ import { FAQUComponent } from './views/Updated_views/faq-u/faq-u.component';
 import { NotFoundComponent } from './views/Updated_views/not-found/not-found.component';
 import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component';
 import { SuccessPurchaseUComponent } from './views/Updated_views/success-purchase-u/success-purchase-u.component';
+import { PATicketComponent } from './views/panel-Admin/p-a-ticket/p-a-ticket.component';
+import { PATicketSingleComponent } from './views/panel-Admin/p-a-ticket-single/p-a-ticket-single.component';
 
 const routes: Routes = [
 
@@ -120,6 +122,8 @@ const routes: Routes = [
       { path: 'addVideo', component: PAAddVideoComponent },
       { path: 'allCourses', component: PAAllCoursesComponent },
       { path: 'newCourse', component: PANewCourseComponent },
+      { path: 'ticket', component: PATicketComponent },
+      { path: 'ticket-single', component: PATicketSingleComponent },
       { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver } },
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },

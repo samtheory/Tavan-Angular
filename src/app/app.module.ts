@@ -172,6 +172,8 @@ import { SvgLocationComponent } from './_svg/svg-location/svg-location.component
 import { SvgPostcodeComponent } from './_svg/svg-postcode/svg-postcode.component';
 import { MatSelectModule } from '@angular/material/select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { PATicketComponent } from './views/panel-Admin/p-a-ticket/p-a-ticket.component';
+import { PATicketSingleComponent } from './views/panel-Admin/p-a-ticket-single/p-a-ticket-single.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -292,6 +294,8 @@ export function tokenGeter() {
     SvgEmailComponent,
     SvgLocationComponent,
     SvgPostcodeComponent,
+    PATicketComponent,
+    PATicketSingleComponent,
   ],
   imports: [
     BrowserModule,

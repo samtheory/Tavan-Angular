@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./p-a-edit-user.component.css']
 })
 export class PAEditUserComponent implements OnInit {
+  selected = 'option2';
   userForm: FormGroup;
   submitted = false;
   user: User;

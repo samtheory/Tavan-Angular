@@ -71,6 +71,11 @@ import { RulesUComponent } from './views/Updated_views/rules-u/rules-u.component
 import { SuccessPurchaseUComponent } from './views/Updated_views/success-purchase-u/success-purchase-u.component';
 import { PATicketComponent } from './views/panel-Admin/p-a-ticket/p-a-ticket.component';
 import { PATicketSingleComponent } from './views/panel-Admin/p-a-ticket-single/p-a-ticket-single.component';
+import { PATestComponent } from './views/panel-Admin/p-a-test/p-a-test.component';
+import { PATeacherNewComponent } from './views/panel-Admin/p-a-teacher-new/p-a-teacher-new.component';
+import { PATeacherEditeComponent } from './views/panel-Admin/p-a-teacher-edite/p-a-teacher-edite.component';
+import { PATeachersComponent } from './views/panel-Admin/p-a-teachers/p-a-teachers.component';
+import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.component';
 
 const routes: Routes = [
 
@@ -123,6 +128,13 @@ const routes: Routes = [
       { path: 'allCourses', component: PAAllCoursesComponent },
       { path: 'newCourse', component: PANewCourseComponent },
       { path: 'ticket', component: PATicketComponent },
+      // ! DELETE this ---------------------------------\/---
+      { path: 'test', component: PATestComponent },
+      // ! DELETE this ---------------------------------/\---
+      { path: 'teacher', component: PATeachersComponent },
+      { path: 'teacher-edit', component: PATeacherEditeComponent },
+      { path: 'teacher-new', component: PATeacherNewComponent },
+      { path: 'orders', component: PAOrdersComponent },
       { path: 'ticket-single', component: PATicketSingleComponent },
       { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver } },
       { path: 'AllUsers', component: PAAllUserComponent },

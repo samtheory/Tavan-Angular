@@ -174,6 +174,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { PATicketComponent } from './views/panel-Admin/p-a-ticket/p-a-ticket.component';
 import { PATicketSingleComponent } from './views/panel-Admin/p-a-ticket-single/p-a-ticket-single.component';
+import { PATestComponent } from './views/panel-Admin/p-a-test/p-a-test.component';
+import { PATeachersComponent } from './views/panel-Admin/p-a-teachers/p-a-teachers.component';
+import { PATeacherEditeComponent } from './views/panel-Admin/p-a-teacher-edite/p-a-teacher-edite.component';
+import { PATeacherNewComponent } from './views/panel-Admin/p-a-teacher-new/p-a-teacher-new.component';
+import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -296,6 +301,11 @@ export function tokenGeter() {
     SvgPostcodeComponent,
     PATicketComponent,
     PATicketSingleComponent,
+    PATestComponent,
+    PATeachersComponent,
+    PATeacherEditeComponent,
+    PATeacherNewComponent,
+    PAOrdersComponent,
   ],
   imports: [
     BrowserModule,

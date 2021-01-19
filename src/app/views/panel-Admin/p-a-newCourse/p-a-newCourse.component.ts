@@ -4,7 +4,7 @@ import {ToastrService} from 'ngx-toastr';
 import { FormControl } from '@angular/forms';
 
 
-
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Router } from '@angular/router';
 import { CourseService } from 'src/app/_services/course.service';
 import jalaali from 'jalaali-js';
@@ -15,6 +15,7 @@ import { start } from 'repl';
   styleUrls: ['./p-a-newCourse.component.css']
 })
 export class PANewCourseComponent implements OnInit {
+  public Editor = ClassicEditor;
   lessons = [];
  
   toppings = new FormControl();

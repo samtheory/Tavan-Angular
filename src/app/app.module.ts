@@ -171,6 +171,7 @@ import { SvgEmailComponent } from './_svg/svg-email/svg-email.component';
 import { SvgLocationComponent } from './_svg/svg-location/svg-location.component';
 import { SvgPostcodeComponent } from './_svg/svg-postcode/svg-postcode.component';
 import { MatSelectModule } from '@angular/material/select';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -179,7 +180,7 @@ export function tokenGeter() {
   declarations: [
     AppComponent,
     DashboardComponent,
-
+    
     NotificationDropdownComponent,
     CardBarChartComponent,
     CardLineChartComponent,
@@ -301,6 +302,7 @@ export function tokenGeter() {
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
+    CKEditorModule,
     DpDatePickerModule,
     MatExpansionModule,
     MatPaginatorModule,

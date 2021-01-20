@@ -2,19 +2,19 @@
 
 <footer class="max-w-1200 m-auto text-gray-700">
 	<div class="description-section my-14 mx-6 lg:mx-0">
-		<div class="flex flex-wrap flex-row items-center justify-between">
+		<div class="flex flex-wrap flex-row items-center justify-between w-full">
 			<div class="description">
 				<h2 class="font-bold text-lg mb-4">{{DB_const.footer.who_we_are.title}}</h2>
 				<p class=" w-full text-sm">{{DB_const.footer.who_we_are.description}}</p>
 			</div>
-			<div class="medals flex pt-8">
-				<div class="medal-item bg-gray-100 py-2 px-4 rounded-sm mx-4">
+			<div class="medals flex pt-8  justify-between sm:justify-start w-full">
+				<div class="medal-item bg-gray-100 py-2 sm:px-4 px-2 rounded-sm mx-2">
 					<svg-medal></svg-medal>
 				</div>
-				<div class="medal-item bg-gray-100 py-2 px-4 rounded-sm mx-4">
+				<div class="medal-item bg-gray-100 py-2 px-2 rounded-sm mx-2 ">
 					<svg-medal></svg-medal>
 				</div>
-				<div class="medal-item bg-gray-100 py-2 px-4 rounded-sm mx-4">
+				<div class="medal-item bg-gray-100 py-2 px-2 rounded-sm mx-2">
 					<svg-transaction-medal></svg-transaction-medal>
 				</div>
 			</div>
@@ -47,13 +47,13 @@
 			<div class="address m-auto">
 				<h6 class="text-gray-700 font-bold 2xl:text-lg  text-base py-4">{{DB_const.footer.address.title}}</h6>
 				<div class="flex flex-wrap items-center w-full">
-					<i class="fas fa-map-marker-alt pl-4 text-orange-500"></i>
-					<p class="max-w-xs">
+					<i class="fas fa-map-marker-alt pl-4 text-orange-500 pb-2 md:pb-0"></i>
+					<p class="max-w-xs text-sm">
 						{{DB_const.footer.address.address}}
 					</p>
 				</div>
 			</div>
-			<div class="m-auto">
+			<div class="m-auto mt-4 md:mt-0">
 				<svg-logo></svg-logo>
 			</div>
 		</div>

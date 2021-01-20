@@ -181,6 +181,7 @@ import { PATeacherNewComponent } from './views/panel-Admin/p-a-teacher-new/p-a-t
 import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.component';
 import { ButtonBlueComponent } from './components/_Updated/button-blue/button-blue.component';
 import { CardCourseComponent } from './components/_Updated/card-course/card-course.component';
+import { AuthStatusBarComponent } from './components/_Updated/auth-status-bar/auth-status-bar.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -310,6 +311,7 @@ export function tokenGeter() {
     PAOrdersComponent,
     ButtonBlueComponent,
     CardCourseComponent,
+    AuthStatusBarComponent,
   ],
   imports: [
     BrowserModule,

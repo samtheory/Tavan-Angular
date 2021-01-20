@@ -18,10 +18,12 @@
           <p class="text-sm text-gray-500 pt-1">
             ما به حفظ اطلاعات شخصی شما متعهدیم
           </p>
-          <form class="my-4" action="">
+          <form #registeform="ngForm" (ngSubmit)="registerUser()" class="my-4" action="">
             <div class="md:w-5/6   form-item  py-2">
               <label class="block font-bold pb-1">ایمیل</label>
               <input
+              [(ngModel)]="user.email"
+              name="email"
                 class="rounded bg-white border-gray-100 border p-3 w-full shadow-md"
                 matInput
                 placeholder="ایمیل خود را وارد کنید"
@@ -29,35 +31,43 @@
               />
             </div>
             <div class="md:w-5/6   form-item  py-2">
-              <label class="block font-bold pb-1">ایمیل</label>
+              <label class="block font-bold pb-1">نام</label>
               <input
+              [(ngModel)]="user.firstName"
+              name="firstName"
                 class="rounded bg-white border-gray-100 border p-3 w-full shadow-md"
                 matInput
-                placeholder="ایمیل خود را وارد کنید"
+                placeholder="نام خود را وارد کنید"
                 value=""
               />
             </div>
             <div class="md:w-5/6   form-item  py-2">
-              <label class="block font-bold pb-1">ایمیل</label>
+              <label class="block font-bold pb-1">نام خانوادگی</label>
               <input
+              [(ngModel)]="user.lastName"
+              name="lastName"
                 class="rounded bg-white border-gray-100 border p-3 w-full shadow-md"
                 matInput
-                placeholder="ایمیل خود را وارد کنید"
+                placeholder="نام خانوادگی خود را وارد کنید"
                 value=""
               />
             </div>
             <div class="md:w-5/6   form-item  py-2">
-              <label class="block font-bold pb-1">ایمیل</label>
+              <label class="block font-bold pb-1">شماره تماس</label>
               <input
+              [(ngModel)]="user.phoneNumber"
+              name="phoneNumber"
                 class="rounded bg-white border-gray-100 border p-3 w-full shadow-md"
                 matInput
-                placeholder="ایمیل خود را وارد کنید"
+                placeholder="شماره تماس خود را وارد کنید"
                 value=""
               />
             </div>
             <div class="md:w-5/6   form-item  py-2">
               <label class="block font-bold pb-1">رمز عبور</label>
               <input
+              [(ngModel)]="user.password"
+              name="password"
                 class="rounded bg-white border-gray-100 border p-3 w-full shadow-md"
                 matInput
                 placeholder="رمز خود را وارد کنید"

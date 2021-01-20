@@ -91,7 +91,9 @@
 						<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 					</section>
 					<div></div>
-					<div class="action flex items-center z-30">
+
+					<!-- ::. USER IS NOT LOGED-IN -->
+					<div *ngIf="textBannerIsActive" class="action flex items-center z-30">
 						<button-blue [Link]="DB_const.routeName.main.Login">
 							{{DB_const.actionButton.signIn}}
 						</button-blue>
@@ -99,6 +101,13 @@
 							{{DB_const.actionButton.register}}
 						</button-blue>
 					</div>
+					<!-- ::. ------------------------ -->
+
+					<!-- ::. USER IS LOGIN -->
+					<app-auth-status-bar *ngIf="!textBannerIsActive"></app-auth-status-bar>
+					<!-- ::. ------------------------ -->
+
+
 				</div>
 			</div>
 		</div>

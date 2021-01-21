@@ -182,6 +182,7 @@ import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.com
 import { ButtonBlueComponent } from './components/_Updated/button-blue/button-blue.component';
 import { CardCourseComponent } from './components/_Updated/card-course/card-course.component';
 import { AuthStatusBarComponent } from './components/_Updated/auth-status-bar/auth-status-bar.component';
+import { SvgFaqComponent } from './_svg/svg-faq/svg-faq.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -312,6 +313,7 @@ export function tokenGeter() {
     ButtonBlueComponent,
     CardCourseComponent,
     AuthStatusBarComponent,
+    SvgFaqComponent,
   ],
   imports: [
     BrowserModule,

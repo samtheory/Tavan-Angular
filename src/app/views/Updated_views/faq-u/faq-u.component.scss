@@ -1,0 +1,70 @@
+.AKD_anime_open.fa-plus {
+   animation: ADK_open_plus 300ms;
+   animation-fill-mode: forwards;
+}
+.AKD_anime_open.fa-minus {
+   animation: ADK_open_minus 300ms;
+   animation-fill-mode: forwards;
+}
+.AKD_anime_close.fa-minus {
+   animation: ADK_open_minus 300ms;
+   animation-fill-mode: backwards;
+}
+.AKD_anime_close.fa-plus {
+   animation: ADK_open_plus 300ms;
+   animation-fill-mode: backwards;
+}
+
+.AKD_anime_open.answer{
+   
+   
+   animation: ADK_open_answer 300ms;
+   animation-fill-mode: forwards;
+}
+.answer{
+   overflow: hidden;
+   
+}
+.AKD_anime_close.answer{
+   
+   
+   animation: ADK_open_answer 300ms;
+   animation-fill-mode: backwards;
+}
+
+@keyframes ADK_open_plus {
+
+   0%{
+
+      transform: rotate(0deg);
+      opacity: 1;
+   }
+   100%{
+      transform: rotate(180deg);
+      opacity: 0;
+   }
+}
+@keyframes ADK_open_minus {
+
+   0%{
+
+      transform: rotate(180deg);
+      opacity: 0;
+   }
+   100%{
+      transform: rotate(0deg);
+      opacity: 1;
+   }
+}
+@keyframes ADK_open_answer {
+
+   0%{
+   transform: scaleY(0);
+   opacity: 0;
+}
+100%{
+   transform: scaleY(1);
+   opacity: 1;
+
+   }
+}

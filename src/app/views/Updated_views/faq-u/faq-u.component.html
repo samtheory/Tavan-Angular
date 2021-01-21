@@ -1,40 +1,158 @@
-<!-- <style>
+<style>
    .section-body {
       max-width: 1200px;
       margin: auto;
    }
-
-  
 </style>
 
-<section class="section-body xl:p-0 px-10">
-   <h1 class="text-gray-400 my-4">{{DB_const.aboutUsPage.nav}}</h1>
+<section class="section-body xl:p-0 px-0 md:px-10">
+
+   <!-- # Header ______-----________----------________---------_______----------_________  -->
+   <h1 class="text-gray-400 my-4">{{DB_const.faq.nav}}</h1>
    <div class="m-auto text-center pt-5 pb-14">
-      <h1 class="text-lg font-bold pb-2">{{DB_const.aboutUsPage.titlePage}}</h1>
-      <p>{{DB_const.aboutUsPage.Slogan}}</p>
+      <h1 class="text-lg font-bold pb-2">{{DB_const.faq.titlePage}}</h1>
+      <p>{{DB_const.faq.Slogan}}</p>
    </div>
+   <!-- #__ End of Header _____------_____-------________---------_______----------_________  -->
+
+   <!-- .:: Body   _______________________________________________________________________ -->
    <div class="flex flex-wrap xl:justify-between justify-center  items-center">
-      <div class="content">
 
-         <h1 class="text-xl font-bold pb-4">{{DB_const.aboutUsPage.bio.title}}</h1>
-         <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.bio.paragraph}}</p>
-      </div>
-      <img class="pt-8 xl:p-0" src="assets/img/_usefull/card-2.jpg" alt="">
-   </div>
-   <div class="flex flex-wrap-reverse xl:justify-between justify-center items-center my-20">
-      <div class="icons flex flex-wrap justify-center items-center p-8 xl:p-0">
-         <svg-wallet class="wallet xl:relative p-2"></svg-wallet>
-         <svg-skills class="skills xl:relative p-2"></svg-skills>
-         <svg-universality class="universal xl:relative p-2"></svg-universality>
-      </div>
-      <div class="content">
+      <!-- :: The AKD Component ########################################################## -->
+      <div *ngFor="let q of toggle ;let i = index" class="AKD bg-gray-100 px-5 py-7  w-full rounded-md my-4 ">
+         <div class="flex justify-between items-center cursor-pointer " (click)='toggleFN(i)'>
 
-         <h1 class="text-xl font-bold pb-4">{{DB_const.aboutUsPage.goals.title}}</h1>
-         <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.goals.paragraph}}</p>
+            <p>وتس رد هلجم و همانزور هکلب نوتم و اهرگپاچ ،تسا کیفارگ ناحارط زا هدافتسا اب و ،پاچ تعنص زا موهفمان یگداس
+               دیلوت اب یگتخاسنتم موسپیا مرول</p>
+
+            <div class="pl-3 pr-16 relative">
+
+               <i class="fas fa-minus text-blue-500  absolute"
+                  [ngClass]="{'AKD_anime_open block ': q == true, 'AKD_anime_close ': q == false }"></i>
+               <i class="fas fa-plus text-blue-500"
+                  [ngClass]="{'AKD_anime_open': q == true, 'AKD_anime_close': q == false }">
+               </i>
+            </div>
+         </div>
+         <div [ngClass]="{'AKD_anime_close h-0 pt-0': q == false, 'AKD_anime_open h-full pt-10 ': q == true }"
+            class="pt-10 text-gray-400 answer duration-300">
+            <p>این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی
+               است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن
+               ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک
+               متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی
+               است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن
+               ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک
+               متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.
+            </p>
+         </div>
       </div>
+      <!-- ::__ END AKD  ################################################################## -->
+
+      <a href="" class="text-blue-500 text-center w-full hover:text-blue-900 my-8 duration-200">سوالات بیشتر</a>
+
+      <!-- .:: ASK question section  ________________________   -->
+      <section id="ask_question"
+         class="w-full flex xl:flex-row flex-col items-center flex-wrap xl:justify-between my-10 px-4 md:px-0">
+         <div class=" xl:w-1/2 w-full m-auto flex xl:flex-col flex-col-reverse">
+            <p class="xl:mb-14 mb-2 xl:mt-2 mt-0 pl-5 text-center text-sm xl:text-base">
+               {{DB_const.faq.askQuestion.title}}</p>
+            <svg-faq class="xl:mb-0 mb-10"></svg-faq>
+         </div>
+         <div class="xl:w-1/2 w-full m-auto">
+            <div class="form-item  py-3 w-full">
+               <label class="block text-sm font-bold pb-1">نام</label>
+               <input name="email"
+                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                  matInput placeholder="نام خود را وارد کنید" value="" />
+            </div>
+            <div class="form-item  py-3 w-full">
+               <label class="block text-sm font-bold pb-1">ایمیل</label>
+               <input name="email"
+                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                  matInput placeholder="ایمیل خود را وارد کنید" value="" />
+            </div>
+            <div class="form-item  py-3 w-full">
+               <label class="block text-sm font-bold pb-1">تلفن</label>
+               <input name="email"
+                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                  matInput placeholder="تلفن خود را وارد کنید" value="" />
+            </div>
+            <div class="form-item  py-3 w-full">
+               <label class="block text-sm font-bold pb-1">پیام شما</label>
+               <textarea name="email" rows="4"
+                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                  matInput placeholder="پیام خود را وارد کنید" value=""></textarea>
+            </div>
+            <button
+               class="submit-btn w-full rounded border border-blue-500 bg-transparent duration-200 hover:bg-blue-500 py-2 text-blue-500 hover:text-white text-center my-1 "
+               type="submit">
+               ارسال پیام
+            </button>
+         </div>
+      </section>
+      <!-- .::__END ASK question section  ___________________   -->
+
+
+      <section id="video" class="bg-gray-100 px-4 md:px-10">
+         <div class="head mx-4">
+            
+            <h1 class="text-2xl py-4">آموزش های استفاده </h1>
+            <p class="text-gray-500 text-sm py-4">این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن
+               ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی
+               است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این
+               متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن ساختگی است .این متن
+               ساختگی است .این متن ساختگی است .این متن ساختگی است .</p>
+         </div>
+         <div class="flex flex-wrap xl:flex-row flex-col items-center justify-center xl:justify-start">
+        
+            <div class="vodeo w-full  m-auto  p-6 md:w-1/2">
+               <div class="mx-auto">
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
+                  <p class="mx-auto ">عنوان این ویدیو</p>
+
+               </div>
+            </div>
+            <div class="vodeo w-full   p-6 md:w-1/2">
+               <div class="mx-auto">
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
+                  <p class="mx-auto ">عنوان این ویدیو</p>
+
+               </div>
+            </div>
+            <div class="vodeo w-full   p-6 md:w-1/2">
+               <div class="mx-auto">
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
+                  <p class="mx-auto ">عنوان این ویدیو</p>
+
+               </div>
+            </div>
+            <div class="vodeo w-full   p-6 md:w-1/2">
+               <div class="mx-auto">
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
+                  <p class="mx-auto ">عنوان این ویدیو</p>
+
+               </div>
+            </div>
+            <div class="vodeo w-full    p-6 md:w-1/2">
+               <div class="mx-auto">
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
+                  <p class="mx-auto ">عنوان این ویدیو</p>
+
+               </div>
+            </div>
+           
+         </div>
+      </section>
    </div>
+   <!-- .::__ END Body  ____________________________________________________________________ -->
 
 </section>
+
+
+
+
+
+<!-- !this section MUST be in component  -->
 <section name="teachers" class="bg-blue-50 py-10 relative">
    <div class="dots-pattern absolute -top-28 right-2 hidden 2xl:block z-0">
       <svg-dots></svg-dots>
@@ -77,4 +195,4 @@
    <div class="dots-pattern absolute bottom-0 left-2 hidden 2xl:block z-0">
       <svg-dots></svg-dots>
    </div>
-</section> -->
+</section>

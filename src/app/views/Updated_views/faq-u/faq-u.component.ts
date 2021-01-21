@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faq } from 'src/app/_Constant/data';
+
+
+
 @Component({
   selector: 'app-faq-u',
   templateUrl: './faq-u.component.html',
@@ -12,9 +15,12 @@ export class FAQUComponent implements OnInit {
   toggleFN(i: number) {
     this.toggle[i] = !this.toggle[i];
   }
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  
+
+
+ngOnInit() {
+
+}
 
 }

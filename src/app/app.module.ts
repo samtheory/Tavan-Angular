@@ -183,6 +183,9 @@ import { ButtonBlueComponent } from './components/_Updated/button-blue/button-bl
 import { CardCourseComponent } from './components/_Updated/card-course/card-course.component';
 import { AuthStatusBarComponent } from './components/_Updated/auth-status-bar/auth-status-bar.component';
 import { SvgFaqComponent } from './_svg/svg-faq/svg-faq.component';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -319,6 +322,7 @@ export function tokenGeter() {
     BrowserModule,
     AppRoutingModule,
     IvyCarouselModule,
+    CarouselModule,
     NgPersianDatepickerModule,
     NoopAnimationsModule,
     MatInputModule,
@@ -326,6 +330,7 @@ export function tokenGeter() {
     MatDialogModule,
     CKEditorModule,
     DpDatePickerModule,
+    ButtonModule,
     MatExpansionModule,
     MatPaginatorModule,
     HttpClientModule,

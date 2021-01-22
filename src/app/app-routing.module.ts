@@ -76,6 +76,8 @@ import { PATeacherNewComponent } from './views/panel-Admin/p-a-teacher-new/p-a-t
 import { PATeacherEditeComponent } from './views/panel-Admin/p-a-teacher-edite/p-a-teacher-edite.component';
 import { PATeachersComponent } from './views/panel-Admin/p-a-teachers/p-a-teachers.component';
 import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.component';
+import { CategoryListResolver } from './_resolvers/category-list.resolver';
+import { TeacherListResolver } from './_resolvers/teacher-list.resolver';
 
 const routes: Routes = [
 
@@ -126,7 +128,7 @@ const routes: Routes = [
       { path: 'dashboard', component: PADashboardComponent, resolve: { courses: CourseListAllResolver } },
       { path: 'addVideo', component: PAAddVideoComponent },
       { path: 'allCourses', component: PAAllCoursesComponent },
-      { path: 'newCourse', component: PANewCourseComponent },
+      { path: 'newCourse', component: PANewCourseComponent, resolve: { categories: CategoryListResolver, teachers: TeacherListResolver } },
       { path: 'ticket', component: PATicketComponent },
       // ! DELETE this ---------------------------------\/---
       { path: 'test', component: PATestComponent },

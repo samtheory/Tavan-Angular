@@ -79,25 +79,25 @@ import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.com
 
 const routes: Routes = [
 
-  //.:: Development Routes ::.
+  //.:: Main Page Route ::.
   {
     path: '', component: MainTemplateComponent, children: [
 
       { path: 'login', component: LoginUComponent },
       {path: 'register', component: RegisterUComponent},
-
+      
       {path: 'about', component: AboutUsUComponent},
       {path: 'contact', component: ContactUsUComponent}, 
       {path: 'faq', component: FAQUComponent}, 
       {path: 'not-found', component: NotFoundComponent}, 
       {path: 'rules', component: RulesUComponent}, 
       {path: 'success-purchase', component: SuccessPurchaseUComponent}, 
-
-
       { path: '', component: HomeUComponent },
     ]
   },
-  { path: 'template', component: MainTemplateComponent },
+  
+  // .:: Costumer Panel Route --lazy loading 
+  { path: 'cPanel', component: MainTemplateComponent ,loadChildren: () => import('./views/u-c-panel/u-c-panel.module').then(m => m.UCPanelModule) },
 
   // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
   // {
@@ -113,7 +113,7 @@ const routes: Routes = [
   //     { path: '', redirectTo: 'home', pathMatch: 'full' },
   //   ]
   // },
-
+  
 
   // admin views
   {
@@ -178,6 +178,7 @@ const routes: Routes = [
   // auth views
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+
   // no layout views
   // { path: 'profile', component: ProfileComponent },
   // { path: 'landing', component: LandingComponent },

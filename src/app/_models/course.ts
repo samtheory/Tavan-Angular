@@ -1,4 +1,6 @@
+import { Category } from './category';
 import { CourseMedia } from './courseMedia';
+import { TeacherToList } from './teacherToList';
 import { Video } from './video';
 
 export interface Course {
@@ -9,12 +11,12 @@ export interface Course {
     url: string;
     off: number;
     isActive: boolean;
-    courseDays: string;
-    teacher: string;
     titres: string;
     started: Date;
-    ended: Date;
+    sessions: Date[];
     description: string;
     media: CourseMedia;
     videos: Video[];
+    teachers: TeacherToList[];
+    categories: Category[];
 }

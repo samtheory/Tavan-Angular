@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import { FormControl } from '@angular/forms';
 
 
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from 'src/app/_services/course.service';
 import jalaali from 'jalaali-js';
 import { start } from 'repl';
+import { TeacherToList } from 'src/app/_models/teacherToList';
+import { Category } from 'src/app/_models/category';
 @Component({
   selector: 'app-p-a-newCourse',
   templateUrl: './p-a-newCourse.component.html',
@@ -17,25 +19,25 @@ import { start } from 'repl';
 export class PANewCourseComponent implements OnInit {
   public Editor = ClassicEditor;
   lessons = [];
- 
-  toppings = new FormControl();
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  teachers: TeacherToList[];
+  categories: Category[];
   courseForm: FormGroup;
   submitted = false;
-  GetlessonsNum (value : number){
-   this.lessons = [];
-    for (let index = 0; index < value; index++) {
-      this.lessons.push(1);
-      
-    }
-  }
+ 
 
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
-    , private router: Router, private courseService: CourseService ) { }
+    , private router: Router, private courseService: CourseService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.categories = data['categories'];
+      this.teachers = data['teachers'];
+    });
     this.createCourseFrom();
   }
+
+  get f() { return this.courseForm.controls; }
+  get t() { return this.f.sessions as FormArray; }
 
 
 
@@ -46,17 +48,19 @@ export class PANewCourseComponent implements OnInit {
       cost: ['', Validators.required],
       url: ['', Validators.required],
       off: ['', Validators.required],
+      categoriesId: [''],
+      teachersId: [''],
       videoUrl: [''],
       videoId: [''],
-      courseDays: [''],
       isActive: [''],
-      teacher: [''],
       titres: [''],
       description: [''],
       started: [''],
-      ended: [''],
+      sessions: new FormArray([]), 
       file: ['',Validators.required],
       fileSource: ['',Validators.required],
+      spfile:['', Validators.required],
+      spfileSource:['', Validators.required]
     });
   }
   onFileChange(event) {
@@ -68,26 +72,62 @@ export class PANewCourseComponent implements OnInit {
       });
     }
   }
+  onFile1Change(event) {
+    if (event.target.files.length > 0) {
+      const spfile = event.target.files[0];
+      this.courseForm.patchValue({
+        spfileSource: spfile
+      });
+    }
+  }
+
+  GetlessonsNum (value : number){
+    this.lessons = [];
+     for (let index = 0; index < value; index++) {
+       this.lessons.push(1);
+     }
+   }
+
+   onChangeTickets(value : number) {
+    if (this.t.length < value) {
+        for (let i = this.t.length; i < value; i++) {
+            this.t.push(this.formBuilder.group({
+                time: ['', Validators.required],
+            }));
+        }
+    } else {
+        for (let i = this.t.length; i >= value; i--) {
+            this.t.removeAt(i);
+        }
+    }
+}
 
   createCourse(){
     this.FinishDateChange(this.courseForm.get('started').value);
-    this.FinishDateChange(this.courseForm.get('ended').value);
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
+    formData.append('spfile', this.courseForm.get('spfileSource').value);
+    this.courseForm.get('categoriesId').value.forEach(categoryId => {
+      formData.append('categoriesId[]', categoryId);
+    });
+    for (const teacherId of  this.courseForm.get('teachersId').value) {
+      formData.append('teachersId[]', teacherId);
+    }
+      formData.append('sessions', JSON.stringify(this.courseForm.get('sessions').value));
+    
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
     formData.append('isActive', this.courseForm.get('isActive').value);
-    formData.append('courseDays', this.courseForm.get('courseDays').value);
     formData.append('url', this.courseForm.get('url').value);
     formData.append('off', this.courseForm.get('off').value);
     formData.append('description', this.courseForm.get('description').value);
     formData.append('titres', this.courseForm.get('titres').value);
-    formData.append('teacher', this.courseForm.get('teacher').value);
     formData.append('started', this.courseForm.get('started').value);
-    formData.append('ended', this.courseForm.get('ended').value);
     formData.append('videoUrl', this.courseForm.get('videoUrl').value);
     formData.append('videoId', this.courseForm.get('videoId').value);
+
+    
 
 
       this.courseService.createCourse(formData).subscribe(() => {

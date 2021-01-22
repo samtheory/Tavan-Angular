@@ -1,7 +1,7 @@
-<div class="course-card rounded-lg flex flex-col px-6 relative pt-1">
+<div class="course-card rounded-lg flex flex-col px-6 relative pt-1 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
-      <img class="rounded-t-lg" [src]="data.img" alt="" style="min-width: 300px ;max-height: 230px;" />
+      <img class="rounded-t-lg" [src]="data.img" alt="" style="max-height: 230px;" />
       <div class="content mx-5">
          <h5 class="text-lg font-bold py-3">{{data.title}}</h5>
          <p class="py-3"><span class="font-bold">مدرس :</span> {{data.teacher}} </p>
@@ -18,7 +18,7 @@
          <hr class="rounded-full opacity-10 m-auto" />
          <div class="flex flex-row justify-between my-4 items-center">
             <a
-               class="rounded-md border-blue-500 px-4 py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
+               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
                دوره</a>
             <div class="pre-price text-gray-300 line-through hidden xl:inline">
              {{data.realCost}}
@@ -29,9 +29,9 @@
 
             <div class="Small-size-price xl:hidden flex flex-col justify-center items-center">
                <div class="pre-price text-gray-300 text-xs line-through">
-                  24,000
+                  <P>24,000</P>
                </div>
-               <div class="price text-blue-500 font-bold">16,000 تومان</div>
+               <div class="price text-blue-500 font-bold"><p>24,000</p></div>
             </div>
          </div>
       </div>

@@ -100,6 +100,7 @@ const routes: Routes = [
   
   // .:: Costumer Panel Route --lazy loading 
   { path: 'cPanel', component: MainTemplateComponent ,loadChildren: () => import('./views/u-c-panel/u-c-panel.module').then(m => m.UCPanelModule) },
+  
 
   // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
   // {

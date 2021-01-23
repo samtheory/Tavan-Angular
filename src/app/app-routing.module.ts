@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {
+  Routes, RouterModule, PreloadingStrategy,
+  PreloadAllModules
+} from '@angular/router';
 
 // layouts
 import { AdminComponent } from './layouts/admin/admin.component';
@@ -79,6 +82,7 @@ import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.com
 import { CategoryListResolver } from './_resolvers/category-list.resolver';
 import { TeacherListResolver } from './_resolvers/teacher-list.resolver';
 
+
 const routes: Routes = [
 
   //.:: Main Page Route ::.
@@ -86,21 +90,20 @@ const routes: Routes = [
     path: '', component: MainTemplateComponent, children: [
 
       { path: 'login', component: LoginUComponent },
-      {path: 'register', component: RegisterUComponent},
-      
-      {path: 'about', component: AboutUsUComponent},
-      {path: 'contact', component: ContactUsUComponent}, 
-      {path: 'faq', component: FAQUComponent}, 
-      {path: 'not-found', component: NotFoundComponent}, 
-      {path: 'rules', component: RulesUComponent}, 
-      {path: 'success-purchase', component: SuccessPurchaseUComponent}, 
+      { path: 'register', component: RegisterUComponent },
+
+      { path: 'about', component: AboutUsUComponent },
+      { path: 'contact', component: ContactUsUComponent },
+      { path: 'faq', component: FAQUComponent },
+      { path: 'not-found', component: NotFoundComponent },
+      { path: 'rules', component: RulesUComponent },
+      { path: 'success-purchase', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
     ]
   },
-  
   // .:: Costumer Panel Route --lazy loading 
-  { path: 'cPanel', component: MainTemplateComponent ,loadChildren: () => import('./views/u-c-panel/u-c-panel.module').then(m => m.UCPanelModule) },
-  
+  { path: 'cPanel', component: MainTemplateComponent, loadChildren: () => import('./views/u-c-panel/u-c-panel.module').then(m => m.UCPanelModule) },
+
 
   // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
   // {
@@ -116,7 +119,7 @@ const routes: Routes = [
   //     { path: '', redirectTo: 'home', pathMatch: 'full' },
   //   ]
   // },
-  
+
 
   // admin views
   {
@@ -189,8 +192,13 @@ const routes: Routes = [
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules,
+    useHash : true ,
+
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

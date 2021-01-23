@@ -185,6 +185,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
+
+
   // no layout views
   // { path: 'profile', component: ProfileComponent },
   // { path: 'landing', component: LandingComponent },

@@ -64,7 +64,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
 import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
 import { CardProduct1Component } from './components/cards/card-product1/card-product1.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 
 // Landing page view
@@ -185,6 +185,13 @@ import { AuthStatusBarComponent } from './components/_Updated/auth-status-bar/au
 import { SvgFaqComponent } from './_svg/svg-faq/svg-faq.component';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
+import { UPanelCustomerComponent } from './views/upanel-customer/upanel-customer.component';
+import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.component';
+import { PCWorkshopComponent } from './views/upanel-customer/pc-workshop/pc-workshop.component';
+import { PCProfileComponent } from './views/upanel-customer/pc-profile/pc-profile.component';
+import { TeacherComponent } from './views/Updated_views/teacher/teacher.component';
+import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-teachers.component';
+import { SearchComponent } from './views/Updated_views/search/search.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -317,6 +324,13 @@ export function tokenGeter() {
     CardCourseComponent,
     AuthStatusBarComponent,
     SvgFaqComponent,
+    UPanelCustomerComponent,
+    PCVideosComponent,
+    PCWorkshopComponent,
+    PCProfileComponent,
+    TeacherComponent,
+    AllTeachersComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -335,6 +349,7 @@ export function tokenGeter() {
     MatPaginatorModule,
     HttpClientModule,
     FormsModule,
+    CommonModule,
    
     PaginationModule.forRoot(),
     ReactiveFormsModule,

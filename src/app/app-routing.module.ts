@@ -153,10 +153,10 @@ const routes: Routes = [
       { path: 'test', component: PATestComponent },
       // ! DELETE this ---------------------------------/\---
       { path: 'teacher', component: PATeachersComponent },
-      { path: 'teacher-edit', component: PATeacherEditeComponent },
+      { path: 'teacher-edit/:id', component: PATeacherEditeComponent },
       { path: 'teacher-new', component: PATeacherNewComponent },
       { path: 'orders', component: PAOrdersComponent },
-      { path: 'ticket-single', component: PATicketSingleComponent },
+      { path: 'ticket-single/:id', component: PATicketSingleComponent },
       { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver } },
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },

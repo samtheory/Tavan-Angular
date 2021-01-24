@@ -19,7 +19,7 @@ export class PATeacherEditeComponent implements OnInit {
     private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getTeacher(this.route.params['id']);
+    this.getTeacher(this.route.snapshot.params['id']);
   }
 
 

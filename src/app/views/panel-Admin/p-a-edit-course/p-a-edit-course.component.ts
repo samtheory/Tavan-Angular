@@ -91,6 +91,15 @@ export class PAEditCourseComponent implements OnInit {
     }
   }
 
+  onFile1Change(event) {
+    if (event.target.files.length > 0) {
+      const spfile = event.target.files[0];
+      this.courseForm.patchValue({
+        spfileSource: spfile
+      });
+    }
+  }
+
   getCourse(){
     this.courseService.getCourse(this.route.snapshot.params['id']).subscribe(course => {
       this.course = course;
@@ -101,6 +110,7 @@ export class PAEditCourseComponent implements OnInit {
     console.log(this.courseForm);
     const formData = new FormData();
     formData.append('file', this.courseForm.get('fileSource').value);
+    formData.append('spfile', this.courseForm.get('spfileSource').value);
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
     formData.append('off', this.courseForm.get('off').value);

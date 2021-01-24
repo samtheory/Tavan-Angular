@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
    <div class="flex flex-wrap">
       <div class="w-full lg:w-8/12 px-4 pt-20">
          <!-- user Info  -->
@@ -8,7 +8,7 @@
                   <h6 class="text-gray-800 text-xl font-bold"> ویرایش استاد</h6>
                   <button 
                      class="hover:border-blue-900 hover:bg-transparent hover:text-blue-900 border-2 border-transparent bg-blue-900 text-white active:bg-red-700  uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                     type="submit">
+                     type="submit" (click)="createTeacher()">
             ثبت تغییرات
                   </button>
                </div>
@@ -24,7 +24,7 @@
                            htmlFor="grid-password">
                            نام و خانوادگی
                         </label>
-                        <input formControlName="lastName" type="text"
+                        <input name="name" [(ngModel)]="teacher.name" formControlName="lastName" type="text"
                            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
                            value="lucky.jesse" />
                      </div>
@@ -35,7 +35,7 @@
                            htmlFor="grid-password">
                         عنوان
                         </label>
-                        <input formControlName="email" type="email"
+                        <input name="title" [(ngModel)]="teacher.title" formControlName="title" type="text"
                            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
                            value="jesse@example.com" />
                      </div>
@@ -46,7 +46,7 @@
                            htmlFor="grid-password">
                          توضیحات
                         </label>
-                        <textarea formControlName="firstName" type="text" cols="8" rows="4"
+                        <textarea name="description" [(ngModel)]="teacher.description" formControlName="description" type="text" cols="8" rows="4"
                            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white" ></textarea>
                      </div>
                   </div>
@@ -78,7 +78,7 @@
                   عکس استاد
                </h3>
             </div>
-            <div style="
+            <div *ngIf="!teacher.image_path" style="
 						width: 300px;
 						height: 300px;
 						align-self: flex-end;
@@ -97,9 +97,31 @@
                         d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
                   </svg>
                   <span class="mt-2 text-base leading-normal">Select a file</span>
-                  <input formControlName="avatar"  type="file" class="hidden" />
+                  <input  formControlName="file"  type="file" class="hidden" />
                </label>
             </div>
+            <div *ngIf="teacher.image_path" style="
+            width: 300px;
+            height: 300px;
+            align-self: flex-end;
+            margin: 0 0 15px 15px;
+            border-radius: 5px;
+            background-image: url({{teacher.image_path}});
+            background-size: contain;
+            background-position: center;
+            position: relative;
+         ">
+         <label
+            class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+            style="top: 33%; right: 26%;">
+            <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+               <path
+                  d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+            </svg>
+            <span class="mt-2 text-base leading-normal">Select a file</span>
+            <input  formControlName="file"  type="file" class="hidden" />
+         </label>
+      </div>
          </div>
       </div>
    </div>

@@ -19,7 +19,7 @@
          </div>
          <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
-            <table class="items-center w-full bg-transparent border-collapse">
+            <table *ngIf="orders" class="items-center w-full bg-transparent border-collapse">
                <thead>
                   <tr>
                      <th
@@ -33,10 +33,6 @@
                      <th
                         class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                         قیمت سفارش
-                     </th>
-                     <th
-                        class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-                        نام کاربر
                      </th>
                      <th
                         class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
@@ -56,30 +52,27 @@
                </thead>
                <tbody>
 
-                  <tr>
+                  <tr *ngFor="let order of orders">
                      <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left">
-                        1
+                        {{order.id}}
                      </td>
                      <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left">
-                     ویدیو آموزشی
+                        {{order.productName}}
                      </td>
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                      230000 تومان
+                      {{order.price}}تومان
                      </td>
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                        علی رضایی
+                        {{order.userEmail}}
                      </td>
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                    email@gaom.com
+                        {{order.created_at}}
                      </td>
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                  1399/2/2
-                     </td>
-                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                  <p class="text-green-900">ok</p>
-                  <p class="text-warning">not okey</p>
+                  <p *ngIf="order.isfinally" class="text-green-900">ok</p>
+                  <p *ngIf="!order.isfinally" class="text-warning">not okey</p>
                      </td>
 
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
@@ -102,9 +95,19 @@
             <br>
 
             <div class="col-lg-12 col-md-12 flex justify-center">
-               <mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl
-                  style="direction: ltr;" [length]="" [pageSize]="">
-               </mat-paginator>
+               <mat-paginator
+               style="width: 100px;"
+               type="number"
+               *ngIf="orders"
+               name="paginator"
+                ngDefaultControl
+               style="direction: ltr;"
+               [length]="pag.totalItems"
+               [pageSize]="pag.itemsPerPage"
+               [(ngModel)]="pag.currentPage"
+               (page)="pageEvent = pageChanged($event)"
+            >
+            </mat-paginator>
             </div>
          </div>
 

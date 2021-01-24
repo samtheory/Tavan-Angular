@@ -50,21 +50,6 @@
 									</div>
 
 									<div class="w-full lg:w-4/12 px-4">
-										<div class="relative w-full mb-3">
-											<label
-												class="block uppercase text-gray-700 text-xs font-bold mb-2"
-												htmlFor="grid-password"
-											>
-												مدرس دوره
-											</label>
-											<input
-												formControlName="teacher"
-												type="text"
-												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												name="teacher"
-												[(ngModel)]="course.teacher"
-											/>
-										</div>
 									</div>
 
 									<div class="form-group w-full lg:w-4/12 px-4">
@@ -107,29 +92,7 @@
 										</div>
 									</div>
 									<div class="w-full lg:w-4/12 px-4">
-										<div class="relative w-full mb-3">
-											<label
-												class="block uppercase text-gray-700 text-xs font-bold mb-2"
-												htmlFor="grid-password"
-											>
-												تاریخ پایان
-											</label>
-											<input
-												type="text"
-												formControlName="ended"
-												(input)="FinishDateChange($event.target.value)"
-												name="ended"
-												#endDate
-												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-											/>
-											<ng-persian-datepicker
-												[dateValue]="course.ended"
-												[timeMeridian]="true"
-												[input]="endDate"
-												(input)="FinishDateChange($event.target.value)"
-												[uiHideAfterSelectDate]="true"
-											></ng-persian-datepicker>
-										</div>
+										
 									</div>
 
 									<div class="w-full lg:w-4/12 px-4">
@@ -195,21 +158,7 @@
 									</div>
 
 									<div class="w-full lg:w-12/12 px-4">
-										<div class="relative w-full mb-3">
-											<label
-												class="block uppercase text-gray-700 text-xs font-bold mb-2"
-												htmlFor="grid-password"
-											>
-												روز های دوره
-											</label>
-											<input
-												type="text"
-												formControlName="courseDays"
-												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-												name="courseDays"
-												[(ngModel)]="course.courseDays"
-											/>
-										</div>
+	
 									</div>
 
 									<div class="w-full lg:w-12/12 px-4">
@@ -294,6 +243,7 @@
 								<div class="flex flex-wrap justify-between">
 									<div class="w-full lg:w-6/12 px-4">
 										<div class="relative w-full mb-3">
+											<div class="relative w-full mb-3">
 											<label
 												class="block uppercase text-gray-700 text-xs font-bold mb-2"
 												htmlFor="grid-password"
@@ -307,6 +257,19 @@
 												class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 												value="عکس دوره را انتخاب کنید"
 											/>
+											<label
+											class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password"
+										>
+											عکس اسپانسر دوره
+										</label>
+										<input
+											type="file"
+											formControlName="spfile"
+											(change)="onFile1Change($event)"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="عکس دوره را انتخاب کنید"
+										/>
 											<h1 class="py-3">progress bar</h1>
 											<button
 												(click)="updateCourse()"
@@ -323,6 +286,23 @@
 											حذف دوره
 											</button>
 										</div>
+											<h1 class="py-3">progress bar</h1>
+											<button
+												(click)="updateCourse()"
+												class="bg-green-600 text-white active:bg-green-800 hover:bg-green-300 hover:text-green-900 uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+												type="button"
+											>
+											ذخیره تغییرات
+											</button>
+											<button
+												(click)="deleteCourse(course.id)"
+												class="bg-red-600 text-white active:bg-red-800 hover:bg-red-300 hover:text-white uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+												type="button"
+											>
+											حذف دوره
+											</button>
+										</div>
+										
 									</div>
 									<div class="w-full lg:w-6/12 px-4">
 										<div class="relative w-full mb-3">

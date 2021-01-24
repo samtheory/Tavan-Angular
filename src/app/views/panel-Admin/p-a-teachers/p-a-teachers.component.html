@@ -35,7 +35,7 @@
          </div>
          <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
-            <table class="items-center w-full bg-transparent border-collapse">
+            <table *ngIf="teachers" class="items-center w-full bg-transparent border-collapse">
                <thead>
                   <tr>
                      <th
@@ -48,14 +48,6 @@
                      </th>
                      <th
                         class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-                       عنوان
-                     </th>
-                     <th
-                        class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-                       توضیحات
-                     </th>
-                     <th
-                        class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                        
                      </th>
 
@@ -63,26 +55,20 @@
                </thead>
                <tbody>
 
-                  <tr>
+                  <tr *ngFor="let teacher of teachers">
                      <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left">
-                        1
+                        {{teacher.id}}
                      </td>
                      <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left">
-                      علی باهنر
-                     </td>
-                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                        متن عنوان
-                     </td>
-                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
-                       توضیحات این استاد 
+                      {{teacher.name}}
                      </td>
 
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
                         <div class="flex flex-row">
 
-                           <a [routerLink]="['/admin/teacher-edit']">
+                           <a [routerLink]="['/admin/teacher-edit/', teacher.id]">
                               <span
                                  class="text-xs inline-block py-1 shadow border-2 border-transparent hover:border-blue-900 px-2  rounded text-black bg-blue-100 hover:text-blue-900 hover:bg-transparent uppercase last:mr-0 mr-1 cursor-pointer duration-300 mx-3">
 

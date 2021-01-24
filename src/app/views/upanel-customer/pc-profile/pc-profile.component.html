@@ -1,0 +1,151 @@
+<div class="w-full p-6">
+   <!-- :: /: title :/  -->
+   <h1 class="text-xl ">ویرایش پروفایل</h1>
+
+   <form action="">
+      <!-- :: /: profile Image :/  -->
+      <img class="m-auto mt-10  rounded" src="assets/img/_usefull/profile-customer.svg" alt="avatar">
+      <p class="pt-4 m-auto text-center mb-10">برای بارگذاری عکس روی تصویر کلیک کنید</p>
+
+      <!-- .:: the Inputs section ---------------------------------------------- -->
+      <div class="w-full flex flex-wrap justify-center ">
+         <div class="form-item  py-3 w-full px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">نام</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="نام خود را وارد کنید" value="" />
+         </div>
+         <div class="form-item  py-3 w-full  px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">نام خانوادگی</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="نام خانوادگی خود را وارد کنید" value="" />
+         </div>
+         <div class="form-item  py-3 w-full  px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">ایمیل</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="ایمیل خود را وارد کنید" value="" />
+         </div>
+         <div class="form-item  py-3 w-full  px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">موبایل</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="موبایل خود را وارد کنید" value="" />
+         </div>
+         <div class="form-item  py-3 w-full  px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">آدرس</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="آدرس خود را وارد کنید" value="" />
+         </div>
+         <div class="form-item  py-3 w-full  px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">استان</label>
+            <select name="cars" id="cars"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+               <option value="volvo">تهران</option>
+               <option value="saab">قزوین</option>
+               <option value="opel">البرز</option>
+               <option value="audi">اصفهان</option>
+            </select>
+         </div>
+         <div class="form-item  py-3 w-full lg:w-1/2  px-2">
+            <label class="block text-sm font-bold pb-2 pr-2 ">تاریخ تولد</label>
+            <div class="flex items-center flex-col md:flex-row ">
+
+
+               <label class="block text-xs font-bold pb-2 px-2 ">روز</label>
+               <select name="cars" id="cars"
+                  class="rounded-md  bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+                  <option class="my-2" *ngFor="let item of day" [value]="item">{{item}}</option>
+               </select>
+               <label class="block text-xs font-bold pb-2 px-2 ">ماه</label>
+               <select name="cars" id="cars"
+                  class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+                  <option *ngFor="let item of month" [value]="item">{{item}}</option>
+               </select>
+               <label class="block text-xs font-bold pb-2 px-2 ">سال</label>
+               <select name="cars" id="cars"
+                  class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+                  <option *ngFor="let item of year" [value]="item">{{item}}</option>
+               </select>
+            </div>
+         </div>
+         <!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->
+
+
+      </div>
+      <!-- .::--End Input ------ -->
+
+      <!-- .:: Upload section ----------------------------------------- -->
+      <div class="w-full flex flex-wrap justify-center items-center xl:justify-start xl:flex-row flex-col">
+         <div class="form-item  py-3 mx-4  px-2 ">
+            <label class="block text-sm font-bold pb-2 pr-2 ">
+               بارگذاری کارت ملی
+               <i class="pi pi-upload px-3"></i>
+            </label>
+            <div class="rounded bg-gray-300 md:w-96" style=" height:180px"></div>
+         </div>
+         <div class="form-item  py-3 mx-4 px-2">
+            <label class="block text-sm font-bold pb-2 pr-2 ">
+               بارگذاری کارت نظام پزشکی
+               <i class="pi pi-upload px-3"></i>
+            </label>
+            <div class="rounded bg-gray-300 md:w-96" style="  height:180px"></div>
+         </div>
+      </div>
+      <!-- .::--END Upload ------ -->
+      <!-- :: /: Action Button :/  -->
+      <div class="flex flex-wrap justify-center my-5">
+         <div class="px-2">
+            <a [routerLink]=""
+               class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+               ثبت تغییرات
+            </a>
+
+         </div>
+         <div class="px-2">
+            <a [routerLink]=""
+               class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+               لغو
+            </a>
+
+         </div>
+      </div>
+      <!-- :: /: ---------------END----------- :/  -->
+   </form>
+
+
+   <!-- :: /: title :/  -->
+   <h1 class="text-xl my-6 ">ویرایش رمز عبور</h1>
+   <form action="">
+      <div class="w-full flex flex-wrap justify-center ">
+         <div class="form-item  py-3 w-full px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور فعلی</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="رمز عبور فعلی" value="" />
+         </div>
+         <div class="form-item  py-3 w-full px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور جدید</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="رمز عبور جدید" value="" />
+         </div>
+         <div class="form-item  py-3 w-full px-2" style="width:350px;">
+            <label class="block text-sm font-bold pb-2 pr-2 ">تکرار رمز عبور جدید</label>
+            <input name="email"
+               class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+               matInput placeholder="تکرار رمز عبور جدید" value="" />
+         </div>
+      </div>
+      <div class="my-6 flex justify-center">
+         <a [routerLink]="" 
+            class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+            تغییر رمز عبور 
+         </a>
+      </div>
+  
+   </form>
+
+</div>

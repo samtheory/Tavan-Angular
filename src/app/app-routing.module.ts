@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule ,PreloadAllModules } from '@angular/router';
 
 // layouts
 import { AdminComponent } from './layouts/admin/admin.component';
@@ -78,29 +78,48 @@ import { PATeachersComponent } from './views/panel-Admin/p-a-teachers/p-a-teache
 import { PAOrdersComponent } from './views/panel-Admin/p-a-orders/p-a-orders.component';
 import { CategoryListResolver } from './_resolvers/category-list.resolver';
 import { TeacherListResolver } from './_resolvers/teacher-list.resolver';
+import { UPanelCustomerComponent } from './views/upanel-customer/upanel-customer.component';
+import { PCProfileComponent } from './views/upanel-customer/pc-profile/pc-profile.component';
+import { PCWorkshopComponent } from './views/upanel-customer/pc-workshop/pc-workshop.component';
+import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.component';
+import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-teachers.component';
+import { TeacherComponent } from './views/Updated_views/teacher/teacher.component';
+import { SearchComponent } from './views/Updated_views/search/search.component';
+
 
 const routes: Routes = [
 
-  //.:: Development Routes ::.
+  //.:: Main Page Route ::.
   {
     path: '', component: MainTemplateComponent, children: [
 
       { path: 'login', component: LoginUComponent },
-      {path: 'register', component: RegisterUComponent},
+      { path: 'register', component: RegisterUComponent },
 
-      {path: 'about', component: AboutUsUComponent},
-      {path: 'contact', component: ContactUsUComponent}, 
-      {path: 'faq', component: FAQUComponent}, 
-      {path: 'not-found', component: NotFoundComponent}, 
-      {path: 'rules', component: RulesUComponent}, 
-      {path: 'success-purchase', component: SuccessPurchaseUComponent}, 
-
-
+      { path: 'about', component: AboutUsUComponent },
+      { path: 'contact', component: ContactUsUComponent },
+      { path: 'faq', component: FAQUComponent },
+      { path: 'not-found', component: NotFoundComponent },
+      { path: 'rules', component: RulesUComponent },
+      { path: 'teachers', component: AllTeachersComponent },
+      { path: 'teacher', component: TeacherComponent },
+      { path: 'search', component: SearchComponent },
+      { path: 'success-purchase', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
-    ]
-  },
-  { path: 'template', component: MainTemplateComponent },
 
+      {
+        path: 'customer-panel', component: UPanelCustomerComponent,
+         children: [
+    
+          { path: 'profile', component: PCProfileComponent },
+          { path: 'workshop', component: PCWorkshopComponent },
+          { path: 'videos', component: PCVideosComponent },
+          { path: '', redirectTo: 'videos', pathMatch: 'full' }, 
+
+        ]
+      },
+    ],
+  },
   // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
   // {
   //   path: '',
@@ -180,6 +199,9 @@ const routes: Routes = [
   // auth views
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+
+
+
   // no layout views
   // { path: 'profile', component: ProfileComponent },
   // { path: 'landing', component: LandingComponent },
@@ -187,8 +209,9 @@ const routes: Routes = [
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes , {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

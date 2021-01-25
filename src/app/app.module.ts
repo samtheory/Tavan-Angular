@@ -192,6 +192,7 @@ import { PCProfileComponent } from './views/upanel-customer/pc-profile/pc-profil
 import { TeacherComponent } from './views/Updated_views/teacher/teacher.component';
 import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-teachers.component';
 import { SearchComponent } from './views/Updated_views/search/search.component';
+import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -330,7 +331,8 @@ export function tokenGeter() {
     PCProfileComponent,
     TeacherComponent,
     AllTeachersComponent,
-    SearchComponent
+    SearchComponent,
+    WebinarComponent
   ],
   imports: [
     BrowserModule,

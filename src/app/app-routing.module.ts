@@ -85,6 +85,7 @@ import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.c
 import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-teachers.component';
 import { TeacherComponent } from './views/Updated_views/teacher/teacher.component';
 import { SearchComponent } from './views/Updated_views/search/search.component';
+import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
 
 
 const routes: Routes = [
@@ -104,6 +105,7 @@ const routes: Routes = [
       { path: 'teachers', component: AllTeachersComponent },
       { path: 'teacher', component: TeacherComponent },
       { path: 'search', component: SearchComponent },
+      { path: 'webinar', component: WebinarComponent },
       { path: 'success-purchase', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
 

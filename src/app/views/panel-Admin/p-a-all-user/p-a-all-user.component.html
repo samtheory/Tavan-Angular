@@ -69,14 +69,14 @@
 					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap py-2">
 						<div class="flex flex-row">
 							<span
-								class="text-xs inline-block py-1 border-2 border-transparent hover:border-red-300 px-2 uppercase rounded text-white bg-red-700 hover:text-red-700 hover:bg-transparent  last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+								class="text-xs inline-block py-1  px-2 uppercase rounded text-white bg-warning hover:opacity-80 hover:shadow-md  last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
 							>
 								<i (click)="deleteUser(user.id)" class="fas fa-trash text-base"></i>
 							</span>
 
 							<a [routerLink]="['/admin/EditUser/', user.id]">
 								<span
-									class="text-xs inline-block py-1 border-2 border-transparent hover:border-green-300 px-2 uppercase rounded text-white bg-green-700 hover:text-green-700 hover:bg-transparent  last:mr-0 mr-1 cursor-pointer duration-300"
+									class="text-xs inline-block py-1  px-2 uppercase rounded text-white bg-green-900 hover:shadow-md hover:opacity-80   last:mr-0 mr-1 cursor-pointer duration-300"
 								>
 									<i class="fas fa-edit text-base"></i>
 								</span>

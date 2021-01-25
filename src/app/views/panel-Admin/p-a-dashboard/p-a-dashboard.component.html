@@ -2,33 +2,22 @@
 	<!-- Start Courses Area -->
 	<section class="courses-area ptb-100">
 		<div class="container">
-			<div *ngIf="courses" class="row">
+			<div *ngIf="courses" class="flex flex-wrap ">
 				<div *ngFor="let course of courses" class="col-lg-4 col-md-6">
 
 
 					<!-- :: ::  Just Add your Details Hear :: :: -->
-                    <app-w-c-product
-                   [course]="course"
-					></app-w-c-product>
-          <!-- :: ::  End of your Details Hear :: :: -->
-          
-          
+					<card-course [data]="course"></card-course>
+					<!-- :: ::  End of your Details Hear :: :: -->
+
+
 				</div>
-				<div class="col-lg-12 col-md-12 flex justify-center">
-					<mat-paginator
-						style="width: 100px;"
-						type="number"
-						*ngIf="courses"
-						name="paginator"
-						ngDefaultControl
-						style="direction: ltr;"
-						[length]="pag.totalItems"
-						[pageSize]="pag.itemsPerPage"
-						[(ngModel)]="pag.currentPage"
-						(page)="pageEvent = pageChanged($event)"
-					>
-					</mat-paginator>
-				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 flex justify-center my-10">
+				<mat-paginator style="width: 100px;" type="number" *ngIf="courses" name="paginator" ngDefaultControl
+					style="direction: ltr;" [length]="pag.totalItems" [pageSize]="pag.itemsPerPage"
+					[(ngModel)]="pag.currentPage" (page)="pageEvent = pageChanged($event)">
+				</mat-paginator>
 			</div>
 		</div>
 	</section>

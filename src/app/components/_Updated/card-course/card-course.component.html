@@ -1,17 +1,17 @@
 <div class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
-      <img class="rounded-t-lg" [src]="data.img" alt="" style="max-height: 230px;" />
+      <img class="rounded-t-lg" [src]="data.media.photoUrl" alt="" style="max-height: 230px;" />
       <div class="content mx-5">
          <h5 class="text-lg font-bold py-3">{{data.title}}</h5>
-         <p class="py-3"><span class="font-bold">مدرس :</span> {{data.teacher}} </p>
+         <p class="py-3"><span class="font-bold">مدرس :</span> {{data.teachers}} </p>
          <p class="py-3">
-            <span class="font-bold">مدت دوره :</span> {{data.time}}
+            <span class="font-bold">مدت دوره :</span> {{data.description}}
          </p>
          <p class="py-3">
             <span class="font-bold"> میزان رضایت مندی :</span>
             <span class="rounded border border-gray-100 border-solid p-1 mx-2"><i
-                  class="fas fa-star text-yellow-500"></i> {{data.score}}
+                  class="fas fa-star text-yellow-500"></i> {{data.off}}
             </span>
          </p>
          <p class="text-blue-500 py-3">نمونه تدریس</p>
@@ -29,9 +29,9 @@
 
             <div class="Small-size-price xl:hidden flex flex-col justify-center items-center">
                <div class="pre-price text-gray-300 text-xs line-through">
-                  <P>24,000</P>
+                  <P>{{data.realCost}}</P>
                </div>
-               <div class="price text-blue-500 font-bold"><p>24,000</p></div>
+               <div class="price text-blue-500 font-bold"><p>{{data.cost}}</p></div>
             </div>
          </div>
       </div>

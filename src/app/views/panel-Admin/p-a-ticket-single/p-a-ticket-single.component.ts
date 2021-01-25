@@ -21,6 +21,7 @@ ticket: Ticket;
   getTicket(id: number) {
     this.ticketService.getTicket(id).subscribe(ticket => {
       this.ticket = ticket;
+      console.log(this.ticket);
     })
   }
 

@@ -17,6 +17,7 @@ export class PATeacherNewComponent implements OnInit {
     private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    this.createTeacherForm();
   }
 
 

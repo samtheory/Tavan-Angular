@@ -1,5 +1,5 @@
 <nav
-	class="md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-blue-500 flex flex-wrap items-center justify-between relative z-10 py-4 px-6"
+	class=" md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-gray-100 flex flex-wrap items-center justify-between relative z-10 py-4 px-6"
 >
 	<div
 		class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between mx-auto"
@@ -88,7 +88,7 @@
 						[routerLink]="['/home']"
 						routerLinkActive
 						#home="routerLinkActive"
-						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						[ngClass]="
               home.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
@@ -109,7 +109,7 @@
 						[routerLink]="['/admin/dashboard']"
 						routerLinkActive
 						#adminDashboard="routerLinkActive"
-						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						[ngClass]="
               adminDashboard.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
@@ -129,7 +129,7 @@
 				<li class="items-center">
 					<a
 						[routerLink]="['/admin/AllUsers']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive
 						#adminNewUser="routerLinkActive"
 						[ngClass]="
@@ -148,7 +148,7 @@
 				<li class="items-center">
 					<a
 						[routerLink]="['/admin/slideShow']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive
 						#adminSlidShow="routerLinkActive"
 						[ngClass]="
@@ -184,7 +184,7 @@
 				<li class="items-center">
 					<a
 						[routerLink]="['/admin/newCourse']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive
 						#PANewCourseComponent="routerLinkActive"
 						[ngClass]="
@@ -205,11 +205,11 @@
 				<li class="items-center">
 					<a
 						[routerLink]="['/admin/ticket']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive
-						#PANewTicketComponent="routerLinkActive"
+						#ticket="routerLinkActive"
 						[ngClass]="
-              PANewCourseComponent.isActive
+              ticket.isActive
                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
             "
@@ -217,7 +217,7 @@
 						<i
 							class="fas fa-tools mr-2 text-sm ml-2"
 							[ngClass]="
-                PANewCourseComponent.isActive ? 'opacity-75' : 'text-gray-400'
+                ticket.isActive ? 'opacity-75' : 'text-gray-400'
               "
 						></i>
 					تیکت
@@ -227,7 +227,7 @@
 				<li class="items-center">
 					<a
 						[routerLink]="['/admin/addVideo']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive
 						#adminAddVideo="routerLinkActive"
 						[ngClass]="
@@ -248,7 +248,7 @@
 				<li class="items-center">
 					<a
 						[routerLink]="['/admin/discount']"
-						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive
 						#adminDiscountTable="routerLinkActive"
 						[ngClass]="

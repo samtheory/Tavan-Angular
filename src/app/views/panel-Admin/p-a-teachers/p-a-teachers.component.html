@@ -32,6 +32,18 @@
                   </button>
                </div>
             </div>
+               <div class="flex flex-wrap items-center py-2">
+                  <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                     <input placeholder="search" type="text" class="rounded outline-none border border-gray-200">
+                  </div>
+                  <div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: left;">
+                     <button [routerLink]="['/admin/newUser']"
+                        class="bg-green-900 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all  duration-150 hover:bg-transparent hover:text-green-900 border-2 border-transparent hover:border-green-900"
+                        type="button">
+                        جست و جو
+                     </button>
+                  </div>
+               </div>
          </div>
          <div class="block w-full overflow-x-auto">
             <!-- Projects table -->

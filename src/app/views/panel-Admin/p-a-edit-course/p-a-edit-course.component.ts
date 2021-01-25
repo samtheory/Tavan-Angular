@@ -15,7 +15,7 @@ import { VideoService } from 'src/app/_services/video.service';
   styleUrls: ['./p-a-edit-course.component.css']
 })
 export class PAEditCourseComponent implements OnInit {
-
+selected = 'option one';
   course: Course;
   video: any = {};
   ////* Akarderon open and close boool 
@@ -40,23 +40,53 @@ export class PAEditCourseComponent implements OnInit {
     
     //  -- I N F O --    
     $('#info').click(function () {
-      $('#info').removeClass('border-teal-300 bg-teal-200');
-      $('#info').addClass('text-red-600 bg-white  border-blue-300 ');
-      $('#video').removeClass('text-red-600 bg-white  border-blue-300');
-      $('#video').addClass('bg-teal-200  border-teal-300');
+      // $('#info').removeClass('border-teal-300 bg-teal-200');
+      // $('#info').addClass('text-red-600 bg-white  border-blue-300 ');
+      // $('#video').removeClass('text-red-600 bg-white  border-blue-300');
+      // $('#video').addClass('bg-teal-200  border-teal-300');
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.information-tab').removeClass(' hidden');
       $('.video-tab').addClass('  hidden');
+      $('.category-tab').addClass(' hidden');
+      $('.session-tab').addClass(' hidden');
     });
     //  -- V I D E O --    
     $('#video').click(function () {
+      // $('#video').removeClass('border-teal-300 bg-teal-200');
+      // $('#video').addClass('text-red-600 bg-white  border-blue-300');
+      // $('#info').removeClass('text-red-600 bg-white  border-blue-300');
+      // $('#info').addClass('bg-teal-200  border-teal-300');
+      // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
+      $('.video-tab').removeClass('hidden');
+      $('.information-tab').addClass('hidden');
+      $('.category-tab').addClass(' hidden');
+      $('.session-tab').addClass(' hidden');
+    });
+  
+    //  -- CATEGORY --    
+    $('#category').click(function () {
       $('#video').removeClass('border-teal-300 bg-teal-200');
       $('#video').addClass('text-red-600 bg-white  border-blue-300');
       $('#info').removeClass('text-red-600 bg-white  border-blue-300');
       $('#info').addClass('bg-teal-200  border-teal-300');
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
+      $('.category-tab').removeClass(' hidden');
+      $('.video-tab').addClass('hidden');
       $('.information-tab').addClass('hidden');
-      $('.video-tab').removeClass('hidden');
+      $('.session-tab').addClass(' hidden');
+    });
+  
+    //  -- SESSIONS --    
+    $('#session').click(function () {
+      $('#video').removeClass('border-teal-300 bg-teal-200');
+      $('#video').addClass('text-red-600 bg-white  border-blue-300');
+      $('#info').removeClass('text-red-600 bg-white  border-blue-300');
+      $('#info').addClass('bg-teal-200  border-teal-300');
+      // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
+      $('.session-tab').removeClass(' hidden');
+      $('.video-tab').addClass('hidden');
+      $('.information-tab').addClass('hidden');
+      $('.category-tab').addClass(' hidden');
     });
   }  
   

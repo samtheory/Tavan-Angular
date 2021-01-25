@@ -1,248 +1,198 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-	<div class="flex flex-wrap">
-		<div class="w-full lg:w-8/12 px-4">
-			<!-- user Info  -->
-			<div
-				class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0"
-			>
-				<div class="rounded-t bg-white mb-0 px-6 py-6 border-r-8 border-teal-200">
-					<div class="text-center flex justify-between">
-						<h6 class="text-gray-800 text-xl font-bold">کاربر جدید</h6>
-						<button
-							(click)="createUser()"
-							class="hover:border-red-500 hover:bg-white hover:text-red-600 border-2 border-transparent bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-							type="submit"
-						>
-							ایجاد کاربر جدید
-						</button>
+<div class="bg-white my-10 mx-24">
+	<div class="w-full p-6">
+		<!-- :: /: title :/  -->
+		<h1 class="text-xl ">ویرایش پروفایل</h1>
+
+		<form action="">
+			<!-- :: /: profile Image :/  -->
+			<img class="m-auto mt-10  rounded" src="assets/img/_usefull/profile-customer.svg" alt="avatar">
+			<p class="pt-4 m-auto text-center mb-10">برای بارگذاری عکس روی تصویر کلیک کنید</p>
+
+			<!-- .:: the Inputs section ---------------------------------------------- -->
+			<div class="w-full flex flex-wrap justify-center ">
+				<div class="form-item  py-3 w-full px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">نام</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="نام خود را وارد کنید" value="" />
+				</div>
+				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">نام خانوادگی</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="نام خانوادگی خود را وارد کنید" value="" />
+				</div>
+				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">ایمیل</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="ایمیل خود را وارد کنید" value="" />
+				</div>
+				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">موبایل</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="موبایل خود را وارد کنید" value="" />
+				</div>
+				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">آدرس</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="آدرس خود را وارد کنید" value="" />
+				</div>
+				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">استان</label>
+					<select name="cars" id="cars"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+						<option value="volvo">تهران</option>
+						<option value="saab">قزوین</option>
+						<option value="opel">البرز</option>
+						<option value="audi">اصفهان</option>
+					</select>
+				</div>
+				<div class="form-item  py-3 w-full lg:w-1/2  px-2">
+					<label class="block text-sm font-bold pb-2 pr-2 ">تاریخ تولد</label>
+					<div class="flex items-center flex-col md:flex-row ">
+
+
+						<label class="block text-xs font-bold pb-2 px-2 ">روز</label>
+						<select name="cars" id="cars"
+							class="rounded-md  bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+							<option class="my-2" *ngFor="let item of day" [value]="item">{{item}}</option>
+						</select>
+						<label class="block text-xs font-bold pb-2 px-2 ">ماه</label>
+						<select name="cars" id="cars"
+							class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+							<option *ngFor="let item of month" [value]="item">{{item}}</option>
+						</select>
+						<label class="block text-xs font-bold pb-2 px-2 ">سال</label>
+						<select name="cars" id="cars"
+							class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+							<option *ngFor="let item of year" [value]="item">{{item}}</option>
+						</select>
 					</div>
 				</div>
-				<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-					<!-- <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
-        User Information
-      </h6> -->
-					<div class="flex flex-wrap">
-						<div class="w-full lg:w-6/12 px-4">
-							<div class="relative w-full mb-3">
-								<label
-									class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-									htmlFor="grid-password"
-								>
-									 نام خانوادگی
-								</label>
-								<input
-									formControlName="lastName"
-									type="text"
-									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-									value="lucky.jesse"
-								/>
-							</div>
-						</div>
-						<div class="w-full lg:w-6/12 px-4">
-							<div class="relative w-full mb-3">
-								<label
-									class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
-									htmlFor="grid-password"
-								>
-									آدرس ایمیل
-								</label>
-								<input
-									formControlName="email"
-									type="email"
-									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-									value="jesse@example.com"
-								/>
-							</div>
-						</div>
-						<div class="w-full lg:w-6/12 px-4">
-							<div class="relative w-full mb-3">
-								<label
-									class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
-									htmlFor="grid-password"
-								>
-									نام 
-								</label>
-								<input
-									formControlName="firstName"
-									type="text"
-									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-								/>
-							</div>
-						</div>
-						<div class="w-full lg:w-6/12 px-4">
-							<div class="relative w-full mb-3">
-								<div class="relative w-full mb-3">
-									<label
-										class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
-										htmlFor="grid-password"
-									>
-										شماره تلفن
-									</label>
-									<input
-										formControlName="phoneNumber"
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
+				<!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->
 
-					<hr class="mt-6 border-b-1 border-gray-400" />
 
-					<div class="flex flex-wrap">
-						<div class="w-full lg:w-12/12 px-4">
-							<div class="relative w-full mb-3"></div>
-						</div>
-						<div class="w-full lg:w-4/12 px-4">
-							<div class="relative w-full mb-3">
+			</div>
+			<!-- .::--End Input ------ -->
+
+			<!-- .:: Upload section ----------------------------------------- -->
+			<div class="w-full flex flex-wrap justify-center items-center xl:justify-start xl:flex-row flex-col">
+				<div class="form-item  py-3 mx-4  px-2 ">
+					<label class="block text-sm font-bold pb-2 pr-2 ">
+						بارگذاری کارت ملی
+						<i class="pi pi-upload px-3"></i>
+					</label>
+							<div style="
+															
+															                     width: 300px;
+															                     height: 300px;
+															                     align-self: flex-end;
+															                     margin: 0 0 15px 15px;
+															                     border-radius: 5px;
+															                     background-image: url(../../../../assets/img/_usefull/card-2.jpg);
+															                     background-size: contain;
+															                     background-position: center;
+															                     position: relative;
+															                  ">
 								<label
-									class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2"
-									htmlFor="grid-password"
-								>
-									رمز عبور
+									class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+									style="top: 33%; right: 26%;">
+									<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+										<path
+											d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+									</svg>
+									<span class="mt-2 text-base leading-normal">Select a file</span>
+									<input formControlName="meli" type="file" class="hidden" />
 								</label>
-								<input
-									formControlName="password"
-									type="password"
-									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-									value="New York"
-								/>
 							</div>
-						</div>
-						<div class="w-full lg:w-4/12 px-4">
-							<div class="relative w-full mb-3 mt-3">
-							
-								<label
-									class="block uppercase text-gray-700 text-xs font-bold mb-2"
-									htmlFor="grid-password"
-								>
-									وضعیت
-								</label>
-								<select formControlName="isActive" class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white">
-									<option value="true">فعال</option>
-									<option value="false">غیر فعال</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<hr class="mt-6 border-b-1 border-gray-400" />
-
-					<div class="flex flex-wrap">
-						<div class="w-full lg:w-12/12 px-4">
-							<div class="relative w-full mb-3">
-								<!-- !Empty -->
-							</div>
-						</div>
+				</div>
+				<div class="form-item  py-3 mx-4 px-2">
+					<label class="block text-sm font-bold pb-2 pr-2 ">
+						بارگذاری کارت نظام پزشکی
+						<i class="pi pi-upload px-3"></i>
+					</label>
+					<div style="
+								
+								                     width: 300px;
+								                     height: 300px;
+								                     align-self: flex-end;
+								                     margin: 0 0 15px 15px;
+								                     border-radius: 5px;
+								                     background-image: url(../../../../assets/img/_usefull/card-2.jpg);
+								                     background-size: contain;
+								                     background-position: center;
+								                     position: relative;
+								                  ">
+						<label
+							class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+							style="top: 33%; right: 26%;">
+							<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+								<path
+									d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+							</svg>
+							<span class="mt-2 text-base leading-normal">Select a file</span>
+							<input formControlName="meli" type="file" class="hidden" />
+						</label>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="w-full lg:w-4/12 px-4">
-			<!-- picturs Uploader -->
-			<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg">
-				<!-- first  -->
-				<div class="my-4 mr-4">
-					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 last:mr-0 inline">
-						کارت ملی
-					</h3>
-				</div>
-				<div
-					style="
-						width: 300px;
-						height: 300px;
-						align-self: flex-end;
-						margin: 0 0 15px 15px;
-						border-radius: 5px;
-						background-image: url(https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png);
-						background-size: contain;
-						background-position: center;
-						position: relative;
-					"
-				>
-					<label
-						class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-						style="top: 33%; right: 26%;"
-					>
-						<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-							<path
-								d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
-							/>
-						</svg>
-						<span class="mt-2 text-base leading-normal">Select a file</span>
-						<input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
-					</label>
-				</div>
-				<hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
+			<!-- .::--END Upload ------ -->
+			<!-- :: /: Action Button :/  -->
+			<div class="flex flex-wrap justify-center my-5">
+				<div class="px-2">
+					<a [routerLink]=""
+						class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+						ثبت تغییرات
+					</a>
 
-				<!-- secend  -->
-				<div class="my-4 mr-4">
-					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
-						مدرک نظام پزشکی
-					</h3>
 				</div>
-				<div
-					style="
-						width: 300px;
-						height: 300px;
-						align-self: flex-end;
-						margin: 0 0 15px 15px;
-						border-radius: 5px;
-						background-image: url(https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png);
-						background-size: contain;
-						background-position: center;
-						position: relative;
-					"
-				>
-					<label
-						class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-						style="top: 33%; right: 26%;"
-					>
-						<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-							<path
-								d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
-							/>
-						</svg>
-						<span class="mt-2 text-base leading-normal">Select a file</span>
-						<input formControlName="nezam" (change)="onFile1Change($event)" type="file" class="hidden" />
-					</label>
-				</div>
-				<hr class="border-mesh-200 border-1 rounded-md mx-4 opacity-50" />
+				<div class="px-2">
+					<a [routerLink]=""
+						class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+						لغو
+					</a>
 
-				<!-- third  -->
-				<div class="my-4 mr-4">
-					<h3 class="text-xs font-semibold py-2 px-3 rounded text-mesh-800 bg-teal-200 inline">
-						عکس پروفایل
-					</h3>
-				</div>
-				<div
-					style="
-						width: 300px;
-						height: 300px;
-						align-self: flex-end;
-						margin: 0 0 15px 15px;
-						border-radius: 5px;
-						background-image: url(https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png);
-						background-size: contain;
-						background-position: center;
-						position: relative;
-					"
-				>
-					<label
-						class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-						style="top: 33%; right: 26%;"
-					>
-						<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-							<path
-								d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"
-							/>
-						</svg>
-						<span class="mt-2 text-base leading-normal">Select a file</span>
-						<input formControlName="avatar" (change)="onFile2Change($event)" type="file" class="hidden" />
-					</label>
 				</div>
 			</div>
-		</div>
+			<!-- :: /: ---------------END----------- :/  -->
+		</form>
+
+
+		<!-- :: /: title :/  -->
+		<h1 class="text-xl my-6 ">ویرایش رمز عبور</h1>
+		<form action="">
+			<div class="w-full flex flex-wrap justify-center ">
+				<div class="form-item  py-3 w-full px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور فعلی</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="رمز عبور فعلی" value="" />
+				</div>
+				<div class="form-item  py-3 w-full px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور جدید</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="رمز عبور جدید" value="" />
+				</div>
+				<div class="form-item  py-3 w-full px-2" style="width:350px;">
+					<label class="block text-sm font-bold pb-2 pr-2 ">تکرار رمز عبور جدید</label>
+					<input name="email"
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+						matInput placeholder="تکرار رمز عبور جدید" value="" />
+				</div>
+			</div>
+			<div class="my-6 flex justify-center">
+				<a [routerLink]=""
+					class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+					تغییر رمز عبور
+				</a>
+			</div>
+
+		</form>
+
 	</div>
-</form>
+
+</div>

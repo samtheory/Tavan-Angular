@@ -43,3 +43,15 @@ a:focusa {
 	.max-w-1200{
 		max-width: 1200px;
 	}
+
+
+
+	.mat-form-field-flex {
+		border : 1px solid black !important;
+		border-radius : 10px !important;
+		padding : 0 !important;
+	}
+
+	ul{
+		list-style-type: circle;
+	}

@@ -59,6 +59,9 @@
 					<th
 						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
 					></th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -95,9 +98,33 @@
 									<i class="fas fa-edit text-base"></i>
 								</span>
 							</a>
+					
 						</div>
 					</td>
+					<td>
+									<div class="flex">
+										<a [routerLink]="['/admin/EditUser/', user.id]" class="mx-2">
+											<span
+												class="text-xs  py-1 flex items-center  px-2 uppercase rounded text-white bg-green-900 hover:shadow-md hover:opacity-80   last:mr-0 mr-1 cursor-pointer duration-300">
+												اضافه کردن درس
+												<i class="fas fa-plus text-base px-1"></i>
+											</span>
+										</a>
+							
+									
+											<select [(value)]="selected" class="border border-gray-200 ">
+												<option>None</option>
+												<option value="option1">Optionrrrrrrrrrrrrrrrrrrrr 1</option>
+												<option value="option2">Option 2</option>
+												<option value="option3">Option 3</option>
+											</select>
+						
+									</div>
+					</td>
 				</tr>
+		
+		
+				
 			</tbody>
 		</table>
 		<br>

@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./p-a-all-user.component.css']
 })
 export class PAAllUserComponent implements OnInit {
+  selected ="value";
   users: User[];
   pag: Pagination;
 userParams: any = {};

@@ -21,19 +21,19 @@
         <form #registeform="ngForm" (ngSubmit)="registerUser()" class="my-4" action="">
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">ایمیل</label>
-            <input [(ngModel)]="user.email" name="email"
+            <input [(ngModel)]="user.email" name="email" type="email"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               placeholder="ایمیل خود را وارد کنید" value="" />
           </div>
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">نام</label>
-            <input [(ngModel)]="user.firstName" name="firstName"
+            <input [(ngModel)]="user.firstName" name="firstName" type="text"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="نام خود را وارد کنید" value="" />
           </div>
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">نام خانوادگی</label>
-            <input [(ngModel)]="user.lastName" name="lastName"
+            <input [(ngModel)]="user.lastName" name="lastName" type="text"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="نام خانوادگی خود را وارد کنید" value="" />
           </div>
@@ -41,11 +41,11 @@
             <label class="block font-bold pb-1">شماره تماس</label>
             <input [(ngModel)]="user.phoneNumber" name="phoneNumber"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-              matInput placeholder="شماره تماس خود را وارد کنید" value="" />
+              matInput placeholder="شماره تماس خود را وارد کنید" value=""  type="tel"/>
           </div>
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">رمز عبور</label>
-            <input [(ngModel)]="user.password" name="password"
+            <input [(ngModel)]="user.password" name="password" type="password"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="رمز خود را وارد کنید" value="" />
           </div>

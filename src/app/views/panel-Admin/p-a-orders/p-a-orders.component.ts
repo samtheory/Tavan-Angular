@@ -17,7 +17,14 @@ export class PAOrdersComponent implements OnInit {
   constructor(private orderService: OrderService , private toastr: ToastrService, private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.getOrders();
+    this.gerUserFirstPage();
+  }
+
+  gerUserFirstPage(){
+    this.orderService.getOrders(1 , 10).subscribe((res: PaginatedResult<Order[]>) => {
+      this.orders = res.result;
+      this.pag = res.pag;
+    });
   }
 
   getOrders(){

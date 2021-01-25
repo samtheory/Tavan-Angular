@@ -3,6 +3,6 @@ export interface Ticket {
     name: string;
     email: string;
     phoneNumber: string;
-    Message: string;
+    message: string;
     created_at: Date;
 }

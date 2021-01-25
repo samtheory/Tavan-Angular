@@ -16,13 +16,13 @@
             </div>
          </div>
 
-         <div class="shadow rounded-sm p-6 ">
+         <div *ngIf="ticket" class="shadow rounded-sm p-6 ">
             <div class="flex flex-wrap  py-8">
                <div class="border border-gray-200 rounded-sm p-2 mx-4">{{ticket.email}}</div>
                <div class="border border-gray-200 rounded-sm p-2 mx-4">{{ticket.name}}</div>
                <div class="border border-gray-200 rounded-sm p-2 mx-4">{{ticket.phoneNumber}}</div>
             </div>
-            <p>{{ticket.Message}}</p>
+            <p>{{ticket.message}}</p>
          </div>
       </div>
    </div>

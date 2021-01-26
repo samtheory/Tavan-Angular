@@ -193,6 +193,7 @@ import { TeacherComponent } from './views/Updated_views/teacher/teacher.componen
 import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-teachers.component';
 import { SearchComponent } from './views/Updated_views/search/search.component';
 import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -335,6 +336,7 @@ export function tokenGeter() {
     WebinarComponent
   ],
   imports: [
+    DropdownModule,
     BrowserModule,
     AppRoutingModule,
     IvyCarouselModule,

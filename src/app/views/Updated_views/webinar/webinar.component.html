@@ -13,7 +13,7 @@
 
       <div class="flex justify-between  my-10  items-start  ">
 
-         <div class="bg-white rounded-md">
+         <div class="bg-white rounded-md  ">
             <img class="rounded-md" src="assets/img/_usefull/webinar.png" alt="">
             <div class="px-4  ">
 
@@ -37,23 +37,218 @@
                   <p class="px-2">17 ساعت</p>
                </div>
                <div class="flex py-2">
-               
+
                   <p class="font-bold pt-4">تاریخ جلسات :</p>
-                 <div class="flex flex-wrap">
-                    <p class="p-4">17 اردیبهشت 97</p>
-                    <p class="p-4">17 اردیبهشت 97</p>
-                    <p class="p-4">17 اردیبهشت 97</p>
-                    <p class="p-4">17 اردیبهشت 97</p>
-                 </div>
+                  <div class="flex flex-wrap">
+                     <p class="p-4">17 اردیبهشت 97</p>
+                     <p class="p-4">17 اردیبهشت 97</p>
+                     <p class="p-4">17 اردیبهشت 97</p>
+                     <p class="p-4">17 اردیبهشت 97</p>
+                  </div>
                </div>
+               <p class="text-xl">اساتید دوره</p>
+               <div class="flex justify-evenly flex-wrap items-center">
+                  <div class="flex justify-center items-center">
+                     <img src="assets/img/_usefull/teacher-3.png" alt="teacher">
+                     <div class="px-2">
+
+                        <p class="font-bold px-1">اکبر احمدی</p>
+                        <p class="text-sm px-1">مدرس دوره های ویژه</p>
+                     </div>
+                  </div>
+                  <div class="flex justify-center items-center my-10">
+                     <img src="assets/img/_usefull/teacher-3.png" alt="teacher">
+                     <div class="px-2">
+
+                        <p class="font-bold px-1">اکبر احمدی</p>
+                        <p class="text-sm px-1">مدرس دوره های ویژه</p>
+                     </div>
+                  </div>
+               </div>
+               <p class="text-xl">خرید دوره</p>
+               <div class="flex  justify-evenly my-8">
+                  <div class=" w-full flex flex-col items-stretch px-3">
+                     <div class="flex justify-between my-3">
+                        <p>وبینار فروش در اینستاگرام...</p>
+                        <p class="text-blue-500">24,000 تومان</p>
+                     </div>
+                     <a
+                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">تهیه
+                        ویدیو دوره</a>
+                     <div class="flex items-center my-3 w-full">
+                        <input class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r "
+                           type="text" placeholder="کد تخفیف خود را وارد کنید">
+                        <a class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
+                     </div>
+                     <p class="text-sm text-gray-400">مبلغ 20،000 هزار تومان تخفیف اعمال شد</p>
+                     <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
+                     <div class="flex flex-wrap justify-evenly" >
+                        <div class="bg-warning p-1 rounded">حامی اول</div>
+                        <div class="bg-orange-500 p-1 rounded">حامی دوم</div>
+                     </div>
+                  </div>
+                  <div class=" w-full flex flex-col px-3 ">
+                     <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
+                     <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                        <hr class="border border-blue-100 rounded-full opacity-50" />
+                        <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+                     </div>
+
+                     <div class="session">
+                        <ul>
+                           <li>ویژگی های تیم خور</li>
+                           <li>قسمت دوم</li>
+                           <li>مبحث سوم و مهم</li>
+                           <li>انگیزه سازی اعضای تیم</li>
+                           <li>مبحث یکی مونده به اخر</li>
+                           <li>تکمیلی</li>
+                        </ul>
+                     </div>
+                     <div class="py-4 flex flex-wrap items-center">
+
+                        <h1 class="text-xl font-bold m2 p2">دسته بندی</h1>
+                        <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                           بازاریابی 
+                        </div>
+                        <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                           بازاریابی 
+                        </div>
+                        <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                           بازاریابی 
+                        </div>
+                        <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                           بازاریابی 
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="flex justify-end items-center">
+                  <a class="text-orange-500 px-3" href="">دانلود فایل پی دی اف
+                     <i class="pi pi-download px-2"></i>
+                  </a>
+                  <p-dropdown class="bg-blue-100" [options]="videos" optionLabel="name"></p-dropdown>
+               </div>
+               <div class="video rounded-2xl w-full h-80 bg-gray-200 my-6"></div>
+               <h1 class="text-xl font-bold">توضیحات وبینار</h1>
+               <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                  <hr class="border border-blue-100 rounded-full opacity-50" />
+                  <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+               </div>
+               <div class="flex flex-wrap">
+
+                  <p class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;">Lorem ipsum dolor, sit amet consectetur
+                     adipisicing elit. Sit doloremque earum minima esse eum inventore iusto voluptatem exercitationem
+                     delectus vel quis quos, ratione possimus commodi illum aliquam est repellat modi veritatis quasi
+                     expedita. Excepturi possimus maxime minus debitis incidunt eos cupiditate aliquam, laborum
+                     aspernatur consequuntur laboriosam soluta distinctio sed odio veniam ratione corporis laudantium
+                     doloribus vero libero hic dolores. Eveniet non dolorem blanditiis velit adipisci aspernatur vero
+                     qui quas, laboriosam impedit dolore deleniti rerum amet, doloremque iure sint nisi ullam cum omnis,
+                     mollitia temporibus? Aliquam laborum minus praesentium animi totam provident eaque accusamus libero
+                     ab magnam architecto asperiores voluptatibus similique ipsum, earum voluptas error repellendus
+                     dignissimos repudiandae, cumque adipisci odit quidem. Dolorem earum, non eveniet alias nemo minus
+                     nihil. Repudiandae vel rem, eum, dignissimos sunt et ea molestiae soluta explicabo quasi expedita
+                     tempore sint ipsa, nemo adipisci id doloribus! Facilis fugit temporibus veniam accusantium nisi
+                     nesciunt laboriosam fugiat commodi, aut odio cumque veritatis, necessitatibus distinctio accusamus
+                     dignissimos quos in quam repudiandae aperiam ab aliquid similique nostrum iure. Pariatur ea
+                     molestiae repellat consequatur voluptatum totam quibusdam aperiam sapiente culpa consequuntur ipsa
+                     minus vero veritatis cupiditate rerum, delectus ratione expedita amet quos ipsum. Eum aliquid
+                     tempora eligendi nemo fuga enim officia consequatur.</p>
+               </div>
+               <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
+               <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                  <hr class="border border-blue-100 rounded-full opacity-50" />
+                  <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+               </div>
+               <div class="video rounded-2xl w-full h-80 bg-gray-200 my-8"></div>
             </div>
          </div>
 
+         <div class="px-10 w-5/12 flex flex-col items-stretch">
 
-         <div class="bg-white flex flex-col">
-            <p>مدرسین دوره</p>
-            <div class="flex-col flex flex-wrap">
-
+            <div class="bg-white flex flex-col py-5 px-4  rounded-md">
+               <p class="font-bold text-lg py-6 text-center">مدرسین دوره</p>
+               <div class="flex-col flex flex-wrap ">
+                  <div class="flex justify-center items-center py-3">
+                     <img src="assets/img/_usefull/teacher-3.png" alt="teacher" style="width:120px">
+                     <div class="px-2">
+   
+                        <p class="font-bold px-1">اکبر احمدی</p>
+                        <p class="text-sm px-1">مدرس دوره های ویژه</p>
+                     </div>
+                  </div>
+                  <div class="flex justify-center items-center py-3">
+                     <img src="assets/img/_usefull/teacher-3.png" alt="teacher"  style="width:120px">
+                     <div class="px-2">
+   
+                        <p class="font-bold px-1">اکبر احمدی</p>
+                        <p class="text-sm px-1">مدرس دوره های ویژه</p>
+                     </div>
+                  </div>
+   
+              
+               </div>
+            </div>
+            <div class="bg-white flex flex-col py-5 px-10 my-7 rounded-md">
+               <p class="font-bold text-lg py-6">خرید وبینار</p>
+            <div class=" w-full flex flex-col items-stretch px-3">
+               <div class="flex justify-between my-3">
+                  <p>وبینار فروش در اینستاگرام...</p>
+                  <p class="text-blue-500">24,000 تومان</p>
+               </div>
+               <a
+                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">تهیه
+                  ویدیو دوره</a>
+               <div class="flex items-center my-3 w-full">
+                  <input class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r " type="text"
+                     placeholder="کد تخفیف خود را وارد کنید">
+                  <a class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
+               </div>
+               <p class="text-sm text-gray-400">مبلغ 20،000 هزار تومان تخفیف اعمال شد</p>
+               <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
+               <div class="flex flex-wrap justify-evenly">
+                  <div class="bg-warning p-1 rounded">حامی اول</div>
+                  <div class="bg-orange-500 p-1 rounded">حامی دوم</div>
+               </div>
+            </div>
+            </div>
+            <div class="bg-white flex flex-col py-5 px-10 my-7 rounded-md">
+             
+         <div class=" w-full flex flex-col px-3 ">
+            <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
+            <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+               <hr class="border border-blue-100 rounded-full opacity-50" />
+               <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+            </div>
+         
+            <div class="session">
+               <ul>
+                  <li>ویژگی های تیم خور</li>
+                  <li>قسمت دوم</li>
+                  <li>مبحث سوم و مهم</li>
+                  <li>انگیزه سازی اعضای تیم</li>
+                  <li>مبحث یکی مونده به اخر</li>
+                  <li>تکمیلی</li>
+               </ul>
+            </div>
+            <div class="py-4 flex flex-wrap items-center">
+         
+               <h1 class="text-xl font-bold m2 p2">دسته بندی</h1>
+               <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                  بازاریابی
+               </div>
+               <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                  بازاریابی
+               </div>
+               <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                  بازاریابی
+               </div>
+               <div class="p-2 m-2 rounded bg-gray-200 text-sm">
+                  بازاریابی
+               </div>
+            </div>
+         
+         </div>
             </div>
          </div>
 

@@ -16,3 +16,30 @@
   }
 
 }
+
+.darken{
+  transition: 300ms;
+  opacity: 0;
+
+ 
+}
+.dec{
+  transition: 300ms;
+  opacity: 0;
+
+}
+.card-img{
+&:hover{
+
+
+  .darken{
+  opacity: .7;
+  
+}
+.dec{
+    
+    opacity: 1;
+  }
+}
+}
+

@@ -26,92 +26,81 @@ export class HomeUComponent implements OnInit {
   ];
   // ! THIS IS FAKE INFORMATION    
 
-  
-  courseFakeData  = [
-    {
 
+  courseFakeData = [
+    {
       title: "دوره آموزشی کامل",
       cost: 22000,
       realCost: 44000,
-      img: "assets/img/_usefull/card-3.jpg",
+      media: {
+        photoUrl: "assets/img/_usefull/card-3.jpg",
+      },
       teacher: "احمد اکبری",
       time: "27 ساعت",
-      score: 4.2
-
-
-    }, 
+      score: 4.2,
+      description: "این متن توضیح این دوره می باشد برای مشاهده دقیق تر"
+    },
     {
-
       title: "دوره آموزشی کامل",
       cost: 22000,
       realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
+      media: {
+        photoUrl: "assets/img/_usefull/card-3.jpg",
+      },
       teacher: "احمد اکبری",
       time: "27 ساعت",
-      score: 4.2
-
-
-    }, 
+      score: 4.2,
+      description: "این متن توضیح این دوره می باشد برای مشاهده دقیق تر"
+    },
     {
-
       title: "دوره آموزشی کامل",
       cost: 22000,
       realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
+      media: {
+        photoUrl: "assets/img/_usefull/card-3.jpg",
+      },
       teacher: "احمد اکبری",
       time: "27 ساعت",
-      score: 4.2
-
-
-    }, 
+      score: 4.2,
+      description: "این متن توضیح این دوره می باشد برای مشاهده دقیق تر"
+    },
     {
-
       title: "دوره آموزشی کامل",
       cost: 22000,
       realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
+      media: {
+        photoUrl: "assets/img/_usefull/card-3.jpg",
+      },
       teacher: "احمد اکبری",
       time: "27 ساعت",
-      score: 4.2
-
-
-    }, 
+      score: 4.2,
+      description: "این متن توضیح این دوره می باشد برای مشاهده دقیق تر"
+    },
     {
-
       title: "دوره آموزشی کامل",
       cost: 22000,
       realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
+      media: {
+        photoUrl: "assets/img/_usefull/card-3.jpg",
+      },
       teacher: "احمد اکبری",
       time: "27 ساعت",
-      score: 4.2
-
-
-    }, 
+      score: 4.2,
+      description: "این متن توضیح این دوره می باشد برای مشاهده دقیق تر"
+    },
     {
-
       title: "دوره آموزشی کامل",
       cost: 22000,
       realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
+      media: {
+        photoUrl: "assets/img/_usefull/card-3.jpg",
+      },
       teacher: "احمد اکبری",
       time: "27 ساعت",
-      score: 4.2
+      score: 4.2,
+      description: "این متن توضیح این دوره می باشد برای مشاهده دقیق تر"
+    },
 
-
-    }, 
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-3.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    }
   ]
 
 
@@ -121,7 +110,7 @@ export class HomeUComponent implements OnInit {
     $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
   ngOnInit(): void {
-   
+
   }
 
 }

@@ -64,21 +64,17 @@
                <div class="flex items-center flex-col md:flex-row ">
 
 
-                  <label class="block text-xs font-bold pb-2 px-2 ">روز</label>
-                  <select name="cars" id="cars"
-                     class="rounded-md  bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-                     <option class="my-2" *ngFor="let item of day" [value]="item">{{item}}</option>
-                  </select>
-                  <label class="block text-xs font-bold pb-2 px-2 ">ماه</label>
-                  <select name="cars" id="cars"
-                     class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-                     <option *ngFor="let item of month" [value]="item">{{item}}</option>
-                  </select>
-                  <label class="block text-xs font-bold pb-2 px-2 ">سال</label>
-                  <select name="cars" id="cars"
-                     class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-                     <option *ngFor="let item of year" [value]="item">{{item}}</option>
-                  </select>
+                  <label class="block text-xs font-bold pb-3 px-3 ">روز</label>
+                  <input #startDate name="birthday" [(ngModel)]="user.birthday"   type="text" 
+                  (input)="FinishDateChange($event.target.value);" 
+                  class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
+                   placeholder="تاریخ تولد خود را انتخاب کنید" value="" />
+                  <ng-persian-datepicker 
+                   [dateValue]=""
+                   [timeMeridian]='true' 
+                   [input]="startDate" 
+                   [uiHideAfterSelectDate]="true">
+                  </ng-persian-datepicker>
                </div>
             </div>
             <!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->

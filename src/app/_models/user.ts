@@ -12,4 +12,5 @@ export interface User {
     phoneNumber: string;
     address: string;
     city: string;
+    birthday: Date;
 }

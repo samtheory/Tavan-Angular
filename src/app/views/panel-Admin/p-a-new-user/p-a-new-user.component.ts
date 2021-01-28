@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import jalaali from 'jalaali-js';
 import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
@@ -133,6 +134,19 @@ onReset() {
 onClear() {
     // clear errors and reset ticket fields
     this.submitted = false;
+}
+
+
+FinishDateChange(value: String) {
+  var m = jalaali.toGregorian(1395, 1, 23);
+  let yyyy: Number = Number(value.slice(0, 4));
+  let mm: Number = Number(value.slice(5, 7));
+  let dd: Number = Number(value.slice(8, 10));
+
+  let g = jalaali.toGregorian(yyyy, mm, dd);
+  value =  g.gy+'-'+g.gm+'-'+g.gd;
+  console.log(g.gy + '-' + g.gm + '-' + g.gd);
+
 }
 
 

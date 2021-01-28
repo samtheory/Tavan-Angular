@@ -65,16 +65,20 @@
 
 
                   <label class="block text-xs font-bold pb-3 px-3 ">روز</label>
-                  <input #startDate name="birthday" [(ngModel)]="user.birthday"   type="text" 
-                  (input)="FinishDateChange($event.target.value);" 
-                  class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
-                   placeholder="تاریخ تولد خود را انتخاب کنید" value="" />
-                  <ng-persian-datepicker 
-                   [dateValue]=""
-                   [timeMeridian]='true' 
-                   [input]="startDate" 
-                   [uiHideAfterSelectDate]="true">
-                  </ng-persian-datepicker>
+                  <input
+                  name="birthday"
+                  [(ngModel)]="user.birthday"
+                  (input)="FinishDateChange($event.target.value); "
+                  class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                  type="text"
+                  #birthday
+               />
+               <ng-persian-datepicker
+                  [input]="birthday"
+                  [dateValue]=""
+                  [timeMeridian]="true"
+                  [uiHideAfterSelectDate]="true"
+               ></ng-persian-datepicker>
                </div>
             </div>
             <!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->

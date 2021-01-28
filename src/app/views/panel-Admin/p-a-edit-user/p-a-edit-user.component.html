@@ -3,7 +3,7 @@
       <!-- :: /: title :/  -->
       <h1 class="text-xl ">ویرایش پروفایل</h1>
 
-      <form action="">
+      <form [formGroup]="userForm" action="">
          <!-- :: /: profile Image :/  -->
          <img class="m-auto mt-10  rounded" src="assets/img/_usefull/profile-customer.svg" alt="avatar">
          <p class="pt-4 m-auto text-center mb-10">برای بارگذاری عکس روی تصویر کلیک کنید</p>
@@ -12,37 +12,46 @@
          <div class="w-full flex flex-wrap justify-center ">
             <div class="form-item  py-3 w-full px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">نام</label>
-               <input name="email"
+               <input [(ngModel)]="user.firstName" name="firstName"
+               formControlName="firstName"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="نام خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full  px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">نام خانوادگی</label>
-               <input name="email"
+               <input [(ngModel)]="user.lastName" formControlName="lastName"  name="lastName"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="نام خانوادگی خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full  px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">ایمیل</label>
-               <input name="email"
+               <input [(ngModel)]="user.email" formControlName="email" name="email"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="ایمیل خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full  px-2" style="width:350px;">
+               <label class="block text-sm font-bold pb-2 pr-2 ">دسترسی</label>
+               <select name="isActive" [(ngModel)]="user.isActive" formControlName="isActive" id=""
+                  class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+                  <option value="true">فعال</option>
+                  <option value="false">غیرفعال</option>
+               </select>
+               </div>
+            <div class="form-item  py-3 w-full  px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">موبایل</label>
-               <input name="email"
+               <input name="phoneNumber" formControlName="phoneNumber" [(ngModel)]="user.phoneNumber"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="موبایل خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full  px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">آدرس</label>
-               <input name="email"
+               <input [(ngModel)]="user.address" formControlName="address" name="address"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="آدرس خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full  px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">استان</label>
-               <select name="cars" id="cars"
+               <select [(ngModel)]="user.city" formControlName="city" name="city" id="city"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
                   <option value="volvo">تهران</option>
                   <option value="saab">قزوین</option>

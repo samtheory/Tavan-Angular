@@ -5,10 +5,14 @@ import * as $ from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { CourseService } from 'src/app/_services/course.service';
 
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 import jalaali from 'jalaali-js';
 import { Course } from 'src/app/_models/course';
 import { Video } from 'src/app/_models/video';
 import { VideoService } from 'src/app/_services/video.service';
+import { TeacherToList } from 'src/app/_models/teacherToList';
+import { Category } from 'src/app/_models/category';
 @Component({
   selector: 'app-p-a-edit-course',
   templateUrl: './p-a-edit-course.component.html',
@@ -22,6 +26,9 @@ selected = 'option one';
   panelOpenState1 = false;
   panelOpenState2 = false;
   panelOpenState3 = false;
+
+  teachers: TeacherToList[];
+  categories: Category[];
   // .......................................
 
 
@@ -31,10 +38,13 @@ selected = 'option one';
 
   courseForm: FormGroup;
   submitted = false;
+  public Editor = ClassicEditor;
 
   ngOnInit(): void {
     this.getCourse();this.route.data.subscribe(data => {
       this.course = data['course'];
+      this.categories = data['categories'];
+      this.teachers = data['teachers'];
     });
     this.createCourseFrom();
     

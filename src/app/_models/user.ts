@@ -10,4 +10,6 @@ export interface User {
     isActive: boolean;
     userPhoto: UserPhoto;
     phoneNumber: string;
+    address: string;
+    city: string;
 }

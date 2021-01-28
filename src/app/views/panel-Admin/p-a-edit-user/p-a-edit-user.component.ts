@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/_models/user';
 import { AuthService } from 'src/app/_services/auth.service';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-p-a-edit-user',
@@ -59,6 +60,8 @@ export class PAEditUserComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       lastName: [''],
       isActive:[''],
+      address: [''],
+      city: [''],
       nezam: ['',Validators.required],
       nezamSource: ['',Validators.required],
       meli: ['',Validators.required],
@@ -111,6 +114,8 @@ export class PAEditUserComponent implements OnInit {
     formData.append('phoneNumber', this.userForm.get('phoneNumber').value);
     formData.append('email', this.userForm.get('email').value);
     formData.append('lastName', this.userForm.get('lastName').value);
+    formData.append('city', this.userForm.get('city').value);
+    formData.append('address', this.userForm.get('address').value);
 
       this.userService.updateUserAdmin(formData, this.route.snapshot.params['id']).subscribe(() => {
         this.toastr.success('success fully created');

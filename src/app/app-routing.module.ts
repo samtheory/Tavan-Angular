@@ -86,6 +86,7 @@ import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-tea
 import { TeacherComponent } from './views/Updated_views/teacher/teacher.component';
 import { SearchComponent } from './views/Updated_views/search/search.component';
 import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
+import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
 
 
 const routes: Routes = [
@@ -159,7 +160,8 @@ const routes: Routes = [
       { path: 'teacher-new', component: PATeacherNewComponent },
       { path: 'orders', component: PAOrdersComponent },
       { path: 'ticket-single/:id', component: PATicketSingleComponent },
-      { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver } },
+      { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver, categories: CategoryListResolver,
+      teachers: TeacherDetailResolver } },
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },
       { path: 'EditUser/:id', component: PAEditUserComponent },

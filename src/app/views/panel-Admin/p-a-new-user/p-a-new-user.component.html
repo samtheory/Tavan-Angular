@@ -50,28 +50,20 @@
 						<option value="audi">اصفهان</option>
 					</select>
 				</div>
-				<div class="form-item  py-3 w-full lg:w-1/2  px-2">
-					<label class="block text-sm font-bold pb-2 pr-2 ">تاریخ تولد</label>
-					<div class="flex items-center flex-col md:flex-row ">
+			
 
-
-						<label class="block text-xs font-bold pb-2 px-2 ">روز</label>
-						<select name="cars" id="cars"
-							class="rounded-md  bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-							<option class="my-2" *ngFor="let item of day" [value]="item">{{item}}</option>
-						</select>
-						<label class="block text-xs font-bold pb-2 px-2 ">ماه</label>
-						<select name="cars" id="cars"
-							class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-							<option *ngFor="let item of month" [value]="item">{{item}}</option>
-						</select>
-						<label class="block text-xs font-bold pb-2 px-2 ">سال</label>
-						<select name="cars" id="cars"
-							class="rounded-md bg-gray-100  outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-							<option *ngFor="let item of year" [value]="item">{{item}}</option>
-						</select>
-					</div>
-				</div>
+				 <div class="w-full lg:w-4/12 px-4 pt-4">
+               <div class="relative w-full mb-3">
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                     تاریخ تولد
+                  </label>
+                  <input #birthday formControlName="started" type="text"   name="birthday"  (input)="FinishDateChange($event.target.value); "
+                     class="px-3 py-3   placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                     value="" />
+                  <ng-persian-datepicker [timeMeridian]='true' [input]="birthday" [uiHideAfterSelectDate]="true">
+                  </ng-persian-datepicker>
+               </div>
+            </div>
 				<!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->
 
 

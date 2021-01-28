@@ -59,30 +59,19 @@
                   <option value="audi">اصفهان</option>
                </select>
             </div>
-            <div class="form-item  py-3 w-full lg:w-1/2  px-2">
-               <label class="block text-sm font-bold pb-2 pr-2 ">تاریخ تولد</label>
-               <div class="flex items-center flex-col md:flex-row ">
-
-
-                  <label class="block text-xs font-bold pb-3 px-3 ">روز</label>
-                  <input
-                  name="birthday"
-                  [(ngModel)]="user.birthday"
-                  (input)="FinishDateChange($event.target.value); "
-                  class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                  type="text"
-                  #birthday
-               />
-               <ng-persian-datepicker
-                  [input]="birthday"
-                  [dateValue]=""
-                  [timeMeridian]="true"
-                  [uiHideAfterSelectDate]="true"
-               ></ng-persian-datepicker>
+            <div class="w-full lg:w-4/12 px-4 pt-4">
+               <div class="relative w-full mb-3">
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                     تاریخ تولد
+                  </label>
+                  <input #birthday formControlName="started" type="text"  [(ngModel)]="user.birthday" name="birthday"  (input)="FinishDateChange($event.target.value); "
+                     class="px-3 py-3   placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                     value="" />
+                  <ng-persian-datepicker [timeMeridian]='true' [input]="birthday" [uiHideAfterSelectDate]="true">
+                  </ng-persian-datepicker>
                </div>
             </div>
-            <!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->
-
+        
 
          </div>
          <!-- .::--End Input ------ -->

@@ -4,7 +4,20 @@
 
    <form action="">
       <!-- :: /: profile Image :/  -->
-      <img class="m-auto mt-10  rounded" src="assets/img/_usefull/profile-customer.svg" alt="avatar">
+      <div class="relative flex justify-center items-center ">
+
+         <img class="m-auto mt-10  rounded" src="assets/img/_usefull/profile-customer.svg" alt="avatar">
+            <label
+               class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+             style="width:150px ;height: 150px; top:40px"  >
+               <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                     d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+               </svg>
+            
+               <input formControlName="meli" type="file" class="hidden" />
+            </label>
+      </div>
       <p class="pt-4 m-auto text-center mb-10">برای بارگذاری عکس روی تصویر کلیک کنید</p>
 
       <!-- .:: the Inputs section ---------------------------------------------- -->

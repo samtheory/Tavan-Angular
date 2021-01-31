@@ -13,6 +13,7 @@ import { Video } from 'src/app/_models/video';
 import { VideoService } from 'src/app/_services/video.service';
 import { TeacherToList } from 'src/app/_models/teacherToList';
 import { Category } from 'src/app/_models/category';
+import { Session } from 'src/app/_models/session';
 @Component({
   selector: 'app-p-a-edit-course',
   templateUrl: './p-a-edit-course.component.html',
@@ -22,6 +23,9 @@ export class PAEditCourseComponent implements OnInit {
 selected = 'option one';
   course: Course;
   video: any = {};
+  categoryToAdd: any = {};
+  teacherToAdd: any = {};
+  sessionToAdd: any = {};
   ////* Akarderon open and close boool 
   panelOpenState1 = false;
   panelOpenState2 = false;
@@ -108,15 +112,14 @@ selected = 'option one';
       off: ['', Validators.required],
       videoUrl: [''],
       videoId: [''],
-      courseDays: [''],
       isActive: [''],
-      teacher: [''],
       titres: [''],
       description: [''],
       started: [''],
-      ended: [''],
-      file: ['', Validators.required],
-      fileSource: ['', Validators.required],
+      file: ['',Validators.required],
+      fileSource: ['',Validators.required],
+      spfile:['', Validators.required],
+      spfileSource:['', Validators.required]
     });
   }
 
@@ -245,6 +248,52 @@ deleteCourse(id: number) {
     this.toastr.success('با موفقیت حذف شد');
   }, error => {
     this.toastr.error(error);
+  });
+}
+
+deleteCategory(id: number , categoryId: number){
+this.courseService.removeCategoryofCourse(id , categoryId).subscribe(next => {
+  this.toastr.success("با موفقیت حذف شد");
+});
+}
+
+deleteTeacher(id: number , teacherId: number) {
+  this.courseService.removeTeacherofCourse(id , teacherId).subscribe(next => {
+    this.toastr.success("با موفقیت حذف شد");
+  });
+}
+
+addTeacher(id: number) {
+  this.courseService.addTeacherToCourse(id , this.teacherToAdd.id).subscribe(next => {
+    this.toastr.success("با موفقیت حذف شد");
+  });
+}
+
+addCategory(id: number) {
+  this.courseService.addCategoryToCourse(id , this.categoryToAdd.id).subscribe(next => {
+    this.toastr.success("با موفقیت حذف شد");
+  });
+}
+
+addSession(id: number){
+  this.courseService.addSession(this.sessionToAdd , id).subscribe(next => {
+    if(next){
+      const s = JSON.stringify(next);
+      const res: Session = JSON.parse(s);
+
+      const session = {
+        id: res.id,
+        time: res.time
+      }
+
+      this.course.sessions.push(session);
+    }
+    this.toastr.success("با موفقیت اضافه شد");
+  });
+}
+deleteSession(id: number){
+  this.courseService.deleteSession(id).subscribe(next => {
+    this.toastr.success("با موفقیت حذف شد");
   });
 }
 

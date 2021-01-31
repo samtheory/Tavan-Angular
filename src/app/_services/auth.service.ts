@@ -86,6 +86,14 @@ getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<Paginat
     params = params.append('pageNumber' , page);
     params = params.append('pageSize' , itemsPerPage);
    }
+  if(userParams != null)
+  {
+    if(userParams.userName != null)
+    {
+      params = params.append('userName',userParams.userName);
+    }
+    
+  }
   return this.http.get<User[]>(this.baseUrl, {observe: 'response', params}).pipe(
     map(response => {
       this.paginatedResult.result = response.body;

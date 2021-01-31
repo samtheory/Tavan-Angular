@@ -70,6 +70,7 @@ export class PAEditUserComponent implements OnInit {
       meliSource: ['',Validators.required],
       avatar: ['',Validators.required],
       avatarSource: ['',Validators.required],
+      birthday: ['']
     });
   }
   onFileChange(event) {
@@ -118,6 +119,7 @@ export class PAEditUserComponent implements OnInit {
     formData.append('lastName', this.userForm.get('lastName').value);
     formData.append('city', this.userForm.get('city').value);
     formData.append('address', this.userForm.get('address').value);
+    formData.append('birthday' , this.userForm.get('birthday').value);
 
       this.userService.updateUserAdmin(formData, this.route.snapshot.params['id']).subscribe(() => {
         this.toastr.success('success fully created');

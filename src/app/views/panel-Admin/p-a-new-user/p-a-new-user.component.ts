@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import jalaali from 'jalaali-js';
 import { AuthService } from 'src/app/_services/auth.service';
+import { CourseService } from 'src/app/_services/course.service';
+import { Coursenamelist } from 'src/app/_models/coursenamelist';
 
 @Component({
   selector: 'app-p-a-new-user',
@@ -12,7 +14,6 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class PANewUserComponent implements OnInit {
   day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
   month = [
     'فروردین',
     'تردیبهشت',
@@ -34,7 +35,7 @@ export class PANewUserComponent implements OnInit {
   userForm: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
-    , private router: Router, private userService: AuthService ) { }
+    , private router: Router, private userService: AuthService) { }
 
   ngOnInit(): void {
     this.createUserFrom();
@@ -42,6 +43,8 @@ export class PANewUserComponent implements OnInit {
       this.year.push(i);
     }
   }
+
+ 
 
   createUserFrom(){
     this.userForm = this.formBuilder.group({
@@ -57,6 +60,9 @@ export class PANewUserComponent implements OnInit {
       meliSource: ['',Validators.required],
       avatar: ['',Validators.required],
       avatarSource: ['',Validators.required],
+      address: [''],
+      city: [''],
+      birthday: ['']
     });
   }
   onFileChange(event) {
@@ -101,6 +107,10 @@ export class PANewUserComponent implements OnInit {
     formData.append('phoneNumber', this.userForm.get('phoneNumber').value);
     formData.append('email', this.userForm.get('email').value);
     formData.append('lastName', this.userForm.get('lastName').value);
+    formData.append('city', this.userForm.get('city').value);
+    formData.append('address', this.userForm.get('address').value);
+    formData.append('birthday' , this.userForm.get('birthday').value);
+
 
       this.userService.AdminRegister(formData).subscribe(() => {
         this.toastr.success('success fully created');

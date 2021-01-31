@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Coursenamelist } from 'src/app/_models/coursenamelist';
 import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 import { User } from 'src/app/_models/user';
 import { AuthService } from 'src/app/_services/auth.service';
+import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
   selector: 'app-p-a-all-user',
@@ -11,13 +13,16 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class PAAllUserComponent implements OnInit {
   selected ="value";
+  courses: Coursenamelist[];
   users: User[];
+  info: any = {};
   pag: Pagination;
 userParams: any = {};
-  constructor(private authService: AuthService, private toastr: ToastrService) { }
+  constructor(private authService: AuthService, private toastr: ToastrService, private courseService: CourseService) { }
 
   ngOnInit(): void {
     this.gerUserFirstPage();
+    this.getCourses();
   }
 
   gerUserFirstPage(){
@@ -27,10 +32,29 @@ userParams: any = {};
     });
   }
 
+  getCourses(){
+    this.courseService.getCoursesList().subscribe(courses => {
+      this.courses = courses;
+    })
+  }
+
+  addToCourseUser(id: number)
+  {
+    this.courseService.addCourseToUserAdmin(id , this.info.id).subscribe(next => {
+      this.toastr.success("با موفقیت اضافه شد");
+    });
+  }
 
   pageChanged(event: any): void{
     this.pag.currentPage = event.pageIndex + 1;
     this.loadUsers();
+  }
+
+  seaerch(){
+    this.authService.getUsers(1 , 10, this.userParams).subscribe((res: PaginatedResult<User[]>) => {
+      this.users = res.result;
+      this.pag = res.pag;
+    });
   }
 
   deleteUser(id: number)

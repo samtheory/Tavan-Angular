@@ -4,7 +4,9 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Course } from '../_models/course';
+import { Coursenamelist } from '../_models/coursenamelist';
 import { PaginatedResult } from '../_models/pagination';
+import { Session } from '../_models/session';
 
 @Injectable({
   providedIn: 'root'
@@ -61,11 +63,18 @@ export class CourseService {
   getCourse(id: number): Observable<Course>{
    return this.http.get<Course>(this.baseUrl + id);
  }
+ getCoursesList(): Observable<Coursenamelist[]>{
+  return this.http.get<Coursenamelist[]>(this.baseUrl);
+}
  getMainCourse(id: number): Observable<Course>{
   return this.http.get<Course>(this.baseUrl + 'main/' + id);
 }
  createCourse( pro: FormData){
    return this.http.post(this.baseUrl + 'create/', pro);
+ }
+
+ addCourseToUserAdmin(uid: number, courseId: number){
+   return this.http.post(this.baseUrl + 'addcourseToUser/' + uid + '/' + courseId , {});
  }
  
  updateCourse(id: number, pro: FormData){
@@ -85,5 +94,36 @@ export class CourseService {
  addcourseToUser(id: number){
   return this.http.post(this.baseUrl + 'add/' + id , {});
  }
+
+
+
+ // teacher category
+
+ addTeacherToCourse(id: number, teacherId: number){
+   return this.http.post(this.baseUrl + 'addTeacher/' + id + '/' + teacherId , {});
+ }
+
+ addCategoryToCourse(id: number, categoryId: number){
+  return this.http.post(this.baseUrl + 'addCategory/' + id + '/' + categoryId , {});
+}
+
+removeCategoryofCourse(id: number , categoryId: number) {
+  return this.http.post(this.baseUrl + 'removeCategory/' + id + '/' + categoryId , {});
+}
+
+removeTeacherofCourse(id: number , teacherId: number) {
+  return this.http.post(this.baseUrl + 'removeTeacher/' + id + '/' + teacherId , {});
+}
+
+
+//session
+
+addSession(session: any , id: number) {
+  return this.http.post(this.baseUrl + 'addSession/' + id , session);
+}
+
+deleteSession(id: number){
+  return this.http.post(this.baseUrl + 'deleteSession/' + id  , {});
+}
  
 }

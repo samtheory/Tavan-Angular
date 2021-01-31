@@ -161,7 +161,7 @@ const routes: Routes = [
       { path: 'orders', component: PAOrdersComponent },
       { path: 'ticket-single/:id', component: PATicketSingleComponent },
       { path: 'editCourse/:id', component: PAEditCourseComponent, resolve: { course: CourseDetailResolver, categories: CategoryListResolver,
-      teachers: TeacherDetailResolver } },
+      teachers: TeacherListResolver } },
       { path: 'AllUsers', component: PAAllUserComponent },
       { path: 'newUser', component: PANewUserComponent },
       { path: 'EditUser/:id', component: PAEditUserComponent },

@@ -13,9 +13,11 @@ export interface Course {
     realCost: number;
     url: string;
     off: number;
+    rate: number;
     isActive: boolean;
     titres: string;
     started: Date;
+    courseDays: string;
     sessions: Session[];
     description: string;
     media: CourseMedia;

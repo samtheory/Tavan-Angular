@@ -31,4 +31,5 @@ export class TeacherService {
   deleteTeacher(id: number){
     return this.http.post(this.baseUrl + 'delete/' + id, {});
   }
+
 }

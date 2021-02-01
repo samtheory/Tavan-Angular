@@ -2,40 +2,58 @@
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
       <div class=" card-img w-full relative flex justify-center items-center">
-         <img class=" rounded-t-lg" [src]="data.media.photoUrl" alt=""  />
+         <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt=""  />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-70 absolute"></div>
-         <div class="dec absolute text-white px-5"> {{data.description}} </div>
+         <div class="dec absolute text-white px-5"> {{course.description}} </div>
       </div>
       <div class="content mx-5">
-         <h5 class="text-lg font-bold py-3">{{data.title}}</h5>
-         <p class="py-3"><span class="font-bold">مدرس :</span> {{data.teachers}} </p>
+         <h5 class="text-lg font-bold py-3">{{course.title}}</h5>
+         <p class="py-3"><span class="font-bold">مدرس : <p *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}</p></span></p>
          <p class="py-3">
-            <span class="font-bold">مدت دوره :</span> {{data.description}}
+            <span class="font-bold">مدت دوره :</span> {{course.courseDays}}
          </p>
          <p class="py-3">
-            <span class="font-bold"> میزان رضایت مندی :</span>
+            <span class="font-bold"> میزان رضایت مندی : </span>
             <span class="rounded border border-gray-100 border-solid p-1 mx-2"><i
-                  class="fas fa-star text-yellow-500"></i> {{data.off}}
+                  class="fas fa-star text-yellow-500"></i> {{course.rate}}
             </span>
          </p>
          <p class="text-blue-500 py-3">نمونه تدریس</p>
          <hr class="rounded-full opacity-10 m-auto" />
-         <div class="flex flex-row justify-between my-4 items-center">
+         <div *ngIf="course.realCost !== 0" class="flex flex-row justify-between my-4 items-center">
             <a       
                class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
                دوره</a>
-            <div class="pre-price text-gray-300 line-through hidden xl:inline">
-             {{data.realCost}}
+            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
+             {{course.cost}}
             </div>
-            <div class="price text-blue-500 font-bold hidden xl:inline">
-               {{data.cost}}
+            <div   class="price text-blue-500 font-bold hidden xl:inline">
+               {{course.realCost}}
             </div>
 
             <div class="Small-size-price xl:hidden flex flex-col justify-center items-center">
-               <div class="pre-price text-gray-300 text-xs line-through">
-                  <P>{{data.realCost}}</P>
+               <div *ngIf="course.off !== 0" class="pre-price text-gray-300 text-xs line-through">
+                  <P>{{course.cost}}</P>
                </div>
-               <div class="price text-blue-500 font-bold"><p>{{data.cost}}</p></div>
+               <div class="price text-blue-500 font-bold"><p>{{course.realCost}}</p></div>
+            </div>
+         </div>
+         <div *ngIf="course.realCost === 0" class="flex flex-row justify-between my-4 items-center">
+            <a       
+               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
+               دوره</a>
+            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
+             {{course.cost}}
+            </div>
+            <div   class="price text-blue-500 font-bold hidden xl:inline">
+               رایگان
+            </div>
+
+            <div class="Small-size-price xl:hidden flex flex-col justify-center items-center">
+               <div *ngIf="course.off !== 0" class="pre-price text-gray-300 text-xs line-through">
+                  <P>{{course.cost}}</P>
+               </div>
+               <div class="price text-blue-500 font-bold"><p>رایگان</p></div>
             </div>
          </div>
       </div>

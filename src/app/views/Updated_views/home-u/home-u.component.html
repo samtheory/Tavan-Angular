@@ -15,8 +15,8 @@
   }
 </style>
 
-<section class="slide-hero w-full relative flex justify-center items-center">
-  <img src="assets/img/_usefull/hero-banner.jpg " alt="" />
+<section *ngIf="photos" class="slide-hero w-full relative flex justify-center items-center">
+  <img  src="{{photos[0].url}}" alt="" />
   <div class="w-full bg-black opacity-60 absolute top-0 bottom-0  "></div>
   <div class="flex flex-col justify-between absolute z-20 w-full " >
     <div class="input w-full m-auto">
@@ -63,7 +63,7 @@
         همه</a>
 
     </div>
-    <p-carousel [value]="courseFakeData" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+    <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
       [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
@@ -72,7 +72,7 @@
         <div class="product-item">
           <div class="product-item-content">
 
-            <card-course style="direction: rtl;" [data]="product"></card-course>
+            <card-course style="direction: rtl;" [course]="product"></card-course>
           </div>
         </div>
       </ng-template>
@@ -80,13 +80,13 @@
   </div>
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10 ">
     <div class="head flex justify-between items-center px-6 mb-4">
-      <h2 class="text-sm sm:text-base">دوره های درحال برگزاری</h2>
+      <h2 class="text-sm sm:text-base">دوره های برگزار شده</h2>
       <!-- TODO: Link should be FIX    -->
       <a
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
     </div>
-    <p-carousel [value]="courseFakeData" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+    <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
       [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
@@ -95,7 +95,7 @@
         <div class="product-item">
           <div class="product-item-content">
 
-            <card-course style="direction: rtl;" [data]="product"></card-course>
+            <card-course style="direction: rtl;" [course]="product"></card-course>
           </div>
         </div>
       </ng-template>
@@ -103,14 +103,14 @@
   </div>
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10">
     <div class="head flex justify-between px-6 mb-4 items-center">
-      <h2 class="text-sm sm:text-base">دوره های درحال برگزاری</h2>
+      <h2 class="text-sm sm:text-base">پیشنهاد ویژه توان</h2>
 
       <!-- TODO: Link should be FIX    -->
       <a
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
     </div>
-    <p-carousel [value]="courseFakeData" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+    <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
       [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
@@ -119,7 +119,7 @@
         <div class="product-item">
           <div class="product-item-content">
 
-            <card-course style="direction: rtl;" [data]="product"></card-course>
+            <card-course style="direction: rtl;" [course]="product"></card-course>
           </div>
         </div>
       </ng-template>
@@ -127,7 +127,7 @@
   </div>
 
 </section>
-<section name="info" class="bg-white">
+<section *ngIf="localVar" name="info" class="bg-white">
   <div
     class="flex max-w-1200 flex-wrap items-center py-12 m-auto sm:flew-col lg:flex-row xl:justify-between justify-center">
     <div class="info-group border border-gray-100 rounded p-4 m-4" style="min-width: 250px">
@@ -136,7 +136,7 @@
           <svg-clock></svg-clock>
         </div>
         <div class="information px-4">
-          <div class="number font-bold text-xl">103</div>
+          <div class="number font-bold text-xl">{{localVar.totalHours}}</div>
           <div class="title">ساعت آموزش</div>
         </div>
       </div>
@@ -147,7 +147,7 @@
           <svg-course></svg-course>
         </div>
         <div class="information px-4">
-          <div class="number font-bold text-xl">214</div>
+          <div class="number font-bold text-xl">{{localVar.totalCourses}}</div>
           <div class="title">دوره آموزشی</div>
         </div>
       </div>
@@ -158,7 +158,7 @@
           <svg-interns></svg-interns>
         </div>
         <div class="information px-4">
-          <div class="number font-bold text-xl">1050</div>
+          <div class="number font-bold text-xl">{{localVar.totalUsers}}</div>
           <div class="title">نفر ثبت نام دوره</div>
         </div>
       </div>
@@ -169,7 +169,7 @@
           <svg-teacher></svg-teacher>
         </div>
         <div class="information px-4">
-          <div class="number font-bold text-xl">24</div>
+          <div class="number font-bold text-xl">{{localVar.totalTeachers}}</div>
           <div class="title">استاد دوره آموزشی</div>
         </div>
       </div>
@@ -188,24 +188,24 @@
         class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
         همه</a>
     </div>
-    <p-carousel [value]="courseFakeData" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+    <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
       [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
       </ng-template>
-      <ng-template let-product pTemplate="item">
+      <ng-template let-teacher pTemplate="item">
         <div class="product-item">
           <div class="product-item-content">
 
 
             <div class="teacher-group flex flex-col items-center m-6">
               <div class="relative item-t flex items-center justify-center">
-                <img class="rounded-t-lg" style="min-width: 120px" src="assets/img/_usefull/teacher-2.png" alt="" />
+                <img class="rounded-t-lg" style="min-width: 120px" src="{{teacher.image_path}}" alt="" />
                 <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
                 </div>
                 <p class="text-white text-center absolute">مشاهده رزومه</p>
               </div>
-              <h2 class="mt-4 font-bold">{{product.title}}</h2>
+              <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
             </div>
             
 

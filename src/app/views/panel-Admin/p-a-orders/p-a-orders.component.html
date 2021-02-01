@@ -19,6 +19,28 @@
          </div>
          <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
+
+            <form *ngIf="courses" #courseForm="ngForm">
+               <div class="flex flex-wrap  items-center">
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4" htmlFor="grid-password">
+                     محصول
+                  </label>
+               <mat-form-field appearance="fill">
+               
+                  <mat-select name="productId">
+                     <mat-option>None</mat-option>
+                     <mat-option *ngFor="let course of courses" value="{{course.id}}">{{course.title}}</mat-option>
+                  </mat-select>
+               </mat-form-field>
+                     <button
+                        (click)="loadOrders()"
+                        class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
+                        type="submit">
+                        <i class="fa fa-plus-square"></i>
+                        Filter
+                     </button>
+               </div>
+            </form>
             <table *ngIf="orders" class="items-center w-full bg-transparent border-collapse">
                <thead>
                   <tr>

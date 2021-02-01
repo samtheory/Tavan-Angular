@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Coursenamelist } from 'src/app/_models/coursenamelist';
 import { Order } from 'src/app/_models/order';
 import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
 import { CourseService } from 'src/app/_services/course.service';
@@ -12,12 +13,14 @@ import { OrderService } from 'src/app/_services/order.service';
 })
 export class PAOrdersComponent implements OnInit {
   orders: Order[];
+  courses: Coursenamelist[];
   pag: Pagination;
   userParams: any;
   constructor(private orderService: OrderService , private toastr: ToastrService, private courseService: CourseService) { }
 
   ngOnInit(): void {
     this.gerUserFirstPage();
+    this.getCourses();
   }
 
   gerUserFirstPage(){
@@ -25,6 +28,12 @@ export class PAOrdersComponent implements OnInit {
       this.orders = res.result;
       this.pag = res.pag;
     });
+  }
+
+  getCourses(){
+    this.courseService.getCoursesList().subscribe(courses => {
+      this.courses = courses;
+    })
   }
 
   getOrders(){

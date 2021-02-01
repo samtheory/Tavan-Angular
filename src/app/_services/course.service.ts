@@ -39,6 +39,46 @@ export class CourseService {
     );
   }
 
+  getsfCourses(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<Course[]>>{
+    let params = new HttpParams();
+
+    if (page != null && itemsPerPage != null){
+      params = params.append('pageNumber' , page);
+      params = params.append('pageSize' , itemsPerPage);
+     }
+    if (userParams != null){
+      if(userParams.name !== "" ){
+        params = params.append('name', userParams.name);
+      }
+      if(userParams.isActive !== null){
+        params = params.append('isActive', userParams.isActive);
+      }
+      if(userParams.suggest !== null){
+        params = params.append('suggest', userParams.suggest);
+      }
+      if(userParams.isNew !== null){
+        params = params.append('isNew', userParams.isNew);
+      }
+      if(userParams.popular !== null){
+        params = params.append('popular', userParams.popular);
+      }
+      if(userParams.categoryId !== null){
+        params = params.append('categoryId', userParams.categoryId);
+      }
+       
+     }
+    return this.http.get<Course[]>(this.baseUrl + 'sf', {observe: 'response', params}).pipe(
+      map(response => {
+        this.paginatedResult.result = response.body;
+        console.log(response.headers.get('Pagination'));
+        if(response.headers.get('Pagination') != null){
+          this.paginatedResult.pag = JSON.parse(response.headers.get('Pagination'));
+        }
+        return this.paginatedResult;
+      })
+    );
+  }
+
   getUserCourses(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<Course[]>>{
     let params = new HttpParams();
     if (page != null && itemsPerPage != null){
@@ -46,7 +86,9 @@ export class CourseService {
       params = params.append('pageSize' , itemsPerPage);
      }
     if (userParams != null){
-       params = params.append('isActive', userParams.isActive);
+      if(userParams.isActive != null) {
+        params = params.append('isActive', userParams.isActive);
+      }
      }
     return this.http.get<Course[]>(this.baseUrl + 'usercourses', {observe: 'response', params}).pipe(
       map(response => {

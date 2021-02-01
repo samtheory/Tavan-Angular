@@ -247,6 +247,27 @@
 				</li>
 				<li class="items-center">
 					<a
+						[routerLink]="['/admin/orders']"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
+						routerLinkActive
+						#adminOrder="routerLinkActive"
+						[ngClass]="
+              adminOrder.isActive
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
+                : 'text-gray-500 hover:text-swatch-lightBlue'
+            "
+					>
+						<i
+							class="fas fa-tools mr-2 text-sm ml-2"
+							[ngClass]="
+                adminOrder.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+						></i>
+						سفارشات
+					</a>
+				</li>
+				<li class="items-center">
+					<a
 						[routerLink]="['/admin/discount']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						routerLinkActive

@@ -174,3 +174,14 @@
 		class="fas fa-chevron-up text-lg py-2 px-3 ml-4 text-white bg-blue-500 rounded-lg shadow-lg hover:shadow-none duration-200 hover:bg-blue-900"></i>
 </div>
 <!-- ### ENF of Go Up Button -->
+
+
+<!-- :: support phone button -->
+<div *ngIf="goUpButtonScroll" class="support-btn sticky bottom-6  w-full" >
+	<a href="tel:021-12345678">
+
+		<i (click)="scrollToElement(header)"
+			class="fas fa-phone text-lg py-2 px-3 ml-4 text-white mr-8 bg-orange-500 rounded-lg shadow-lg hover:shadow-none duration-200 hover:bg-orange-900"></i>
+	</a>
+</div>
+<!-- ::: ENF of support phone button -->

@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Category } from 'src/app/_models/category';
+import { Course } from 'src/app/_models/course';
+import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
+import { CategoryService } from 'src/app/_services/category.service';
+import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
   templateUrl: './search.component.html',
@@ -23,98 +30,85 @@ export class SearchComponent implements OnInit {
     }
   ];
   // ! THIS IS FAKE INFORMATION    
+courses: Course[];
+categories: Category[];
+pag: Pagination;
+userParams: any = {};
 
-
-  courseFakeData = [
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-3.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-3.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    }
-  ]
-
-  constructor() { }
+  constructor(private courseService: CourseService, private toastr: ToastrService,
+     private route: ActivatedRoute, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.getfirstPage();
+    this.getCategories();
   }
+
+
+  getfirstPage(){
+    if(this.route.snapshot.paramMap.get('isActive') !== null){
+      this.userParams.isActive = this.route.snapshot.paramMap.get('isActive');
+    }
+    if(this.route.snapshot.paramMap.get('suggest') !== null){
+      this.userParams.suggest = this.route.snapshot.paramMap.get('suggest');
+    }
+    if(this.route.snapshot.queryParamMap.get('name') !== null){
+    this.userParams.name = this.route.snapshot.queryParamMap.get('name');
+    }
+    this.courseService.getsfCourses(1 , 3, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
+      this.courses = res.result;
+      this.pag = res.pag;
+    });
+  }
+
+  getCategories(){
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    })
+  }
+
+
+  pageChanged(event: any): void{
+    this.pag.currentPage = event.pageIndex + 1;
+    this.loadCourses();
+  }
+
+
+  loadCourses(){
+    this.courseService.getsfCourses(this.pag.currentPage , this.pag.itemsPerPage , this.userParams)
+    .subscribe((res: PaginatedResult<Course[]>) => {
+      this.courses = res.result;
+      this.pag = res.pag;
+    }, error => {
+      this.toastr.error(error);
+    });
+  }
+
+  new(){
+    this.userParams.isNew = 1;
+    this.loadCourses();
+  }
+
+  popular(){
+    this.userParams.popular = 1;
+    this.loadCourses();
+  }
+
+  suggest(){
+    this.userParams.suggest = true;
+    this.loadCourses();
+  }
+
+  free(){
+    this.userParams.isfree = true;
+    this.loadCourses();
+  }
+
+  categoryId(id: number){
+    this.userParams.categoryId = id;
+    this.loadCourses();
+  }
+
+
+
 
 }

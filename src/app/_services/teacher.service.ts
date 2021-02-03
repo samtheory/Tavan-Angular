@@ -20,6 +20,10 @@ export class TeacherService {
     return this.http.get<Teacher>(this.baseUrl + id);
   }
 
+  getTeacherWithCourse(id: number): Observable<Teacher>{
+    return this.http.get<Teacher>(this.baseUrl + 'getwithCourses/' + id);
+  }
+
   createTeacher(teacher: FormData){
     return this.http.post(this.baseUrl + 'create' , teacher);
   }

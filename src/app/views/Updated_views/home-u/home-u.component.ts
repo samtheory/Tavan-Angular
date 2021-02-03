@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { LocalVar } from 'src/app/_models/localVar';
@@ -53,9 +53,10 @@ export class HomeUComponent implements OnInit {
   useraParams: any = {};
   userdParams: any = {};
   usersParams: any = {};
+  searchP: any = {};
   pag: Pagination;
   constructor(private courseService: CourseService, private toastr: ToastrService, private photoService: PhotoService,
-     private route: ActivatedRoute, private teacherService: TeacherService, private mainService: UserService) { }
+     private route: ActivatedRoute, private teacherService: TeacherService, private mainService: UserService, private router: Router) { }
   
   ngOnInit(): void {
    this.getafirstPage();
@@ -112,6 +113,10 @@ export class HomeUComponent implements OnInit {
       this.pag = res.pag;
       console.log(this.sCourses);
     });
+  }
+
+  search(){
+    this.router.navigate(['/search'], {queryParams: {name: this.searchP.name}});
   }
 
 }

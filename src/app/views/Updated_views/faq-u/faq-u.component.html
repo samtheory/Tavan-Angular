@@ -58,37 +58,40 @@
                {{DB_const.faq.askQuestion.title}}</p>
             <svg-faq class="xl:mb-0 mb-10"></svg-faq>
          </div>
+        <form #ticketForm="ngForm" action="">
          <div class="xl:w-1/2 w-full m-auto">
             <div class="form-item  py-3 w-full">
                <label class="block text-sm font-bold pb-1">نام</label>
-               <input name="email"
+               <input [(ngModel)]="ticket.name" name="name"
                   class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                   matInput placeholder="نام خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full">
                <label class="block text-sm font-bold pb-1">ایمیل</label>
-               <input name="email"
+               <input [(ngModel)]="ticket.email" name="email"
                   class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                   matInput placeholder="ایمیل خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full">
                <label class="block text-sm font-bold pb-1">تلفن</label>
-               <input name="email"
+               <input [(ngModel)]="ticket.phoneNumber" name="phoneNumber"
                   class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                   matInput placeholder="تلفن خود را وارد کنید" value="" />
             </div>
             <div class="form-item  py-3 w-full">
                <label class="block text-sm font-bold pb-1">پیام شما</label>
-               <textarea name="email" rows="4"
+               <textarea [(ngModel)]="ticket.meesage" name="message" rows="4"
                   class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                   matInput placeholder="پیام خود را وارد کنید" value=""></textarea>
             </div>
             <button
+               (click)="sendTicket()"
                class="submit-btn w-full rounded border border-blue-500 bg-transparent duration-200 hover:bg-blue-500 py-2 text-blue-500 hover:text-white text-center my-1 "
                type="submit">
                ارسال پیام
             </button>
          </div>
+        </form>
       </section>
       <!-- .::__END ASK question section  ___________________   -->
 

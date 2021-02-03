@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Teacher } from 'src/app/_models/teacher';
+import { TeacherService } from 'src/app/_services/teacher.service';
 
 @Component({
   templateUrl: './teacher.component.html',
@@ -24,98 +27,22 @@ export class TeacherComponent implements OnInit {
   ];
   // ! THIS IS FAKE INFORMATION    
 
-
-  courseFakeData = [
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-3.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
+teacher: Teacher;
 
 
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-1.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    },
-    {
-
-      title: "دوره آموزشی کامل",
-      cost: 22000,
-      realCost: 44000,
-      img: "assets/img/_usefull/card-3.jpg",
-      teacher: "احمد اکبری",
-      time: "27 ساعت",
-      score: 4.2
-
-
-    }
-  ]
-
-
-  constructor() { }
+  constructor(private teacherService: TeacherService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getTeacher();
+
+  }
+
+  getTeacher(){
+    this.teacherService.getTeacherWithCourse(this.route.snapshot.params['id'])
+    .subscribe(teacher => 
+      {
+        this.teacher = teacher;
+      })
   }
 
 }

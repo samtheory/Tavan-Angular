@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { faq } from 'src/app/_Constant/data';
+import { Ticket } from 'src/app/_models/ticket';
+import { TicketService } from 'src/app/_services/ticket.service';
 
 
 
@@ -16,11 +19,21 @@ export class FAQUComponent implements OnInit {
     this.toggle[i] = !this.toggle[i];
   }
 
+  ticket: any;
+
+  constructor(private ticketService: TicketService, private toastr: ToastrService){}
+
   
 
 
 ngOnInit() {
 
+}
+
+sendTicket(){
+  this.ticketService.createTicket(this.ticket).subscribe(next => {
+    this.toastr.success("تیکت با موفقیت ثبت شد");
+  })
 }
 
 }

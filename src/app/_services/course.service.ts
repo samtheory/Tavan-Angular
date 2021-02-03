@@ -47,27 +47,30 @@ export class CourseService {
       params = params.append('pageSize' , itemsPerPage);
      }
     if (userParams != null){
-      if(userParams.name !== "" ){
+      if(userParams.name !== undefined ){
         params = params.append('name', userParams.name);
       }
-      if(userParams.isActive !== null){
+      if(userParams.isActive !== undefined){
         params = params.append('isActive', userParams.isActive);
       }
-      if(userParams.suggest !== null){
+      if(userParams.suggest !== undefined){
         params = params.append('suggest', userParams.suggest);
       }
-      if(userParams.isNew !== null){
+      if(userParams.isNew !== undefined){
         params = params.append('isNew', userParams.isNew);
       }
-      if(userParams.popular !== null){
+      if(userParams.isfree !== undefined){
+        params = params.append('isfree', userParams.isfree);
+      }
+      if(userParams.popular !== undefined){
         params = params.append('popular', userParams.popular);
       }
-      if(userParams.categoryId !== null){
+      if(userParams.categoryId !== undefined){
         params = params.append('categoryId', userParams.categoryId);
       }
        
      }
-    return this.http.get<Course[]>(this.baseUrl + 'sf', {observe: 'response', params}).pipe(
+    return this.http.get<Course[]>(this.baseUrl + 'sfcourse', {observe: 'response', params}).pipe(
       map(response => {
         this.paginatedResult.result = response.body;
         console.log(response.headers.get('Pagination'));

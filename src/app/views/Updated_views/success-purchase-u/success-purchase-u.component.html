@@ -9,17 +9,30 @@
 
 <section class="success-card">
 
-   <div class="w-full  border  rounded shadow-md border-gray-100 flex flex-col items-center py-8 px-2">
+   <div *ngIf="this.Ok" class="w-full  border  rounded shadow-md border-gray-100 flex flex-col items-center py-8 px-2">
    
       <i class="fas fa-check p-8 bg-green-900 rounded-full text-white inline my-2"></i>
   
       <h1 class="text-green-900 text-lg font-bold my-1">خرید شما با موفقیت انجام شد</h1>
-      <p class="my-1">شناسه پرداخت : 9387493928</p>
-      <p class="my-1">مبلغ پرداخت:  <span class="text-warning">22,000 تومان</span></p>
+      <p class="my-1">شناسه پرداخت : {{payParams.authority}}</p>
+      <p class="my-1">مبلغ پرداخت:  <span class="text-warning">{{this.order.price}} تومان</span></p>
       <div class="flex flex-wrap justify-between my-1">
-         <a class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">inter text</a>
-         <a class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">inter text</a>
-         <a  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">inter text</a>
+         <a [routerLink]="['/']"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">صفحه اصلی</a>
+         <a [routerLink]="['/customer-panel']" class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">پنل</a>
+         <a [routerLink]="['/webinar/', order.productId]"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">وبینار</a>
+      </div>
+   </div>
+
+   <div *ngIf="!this.Ok" class="w-full  border  rounded shadow-md border-gray-100 flex flex-col items-center py-8 px-2">
+   
+      <i class="fas fa-check p-8 bg-green-900 rounded-full text-white inline my-2"></i>
+  
+      <h1 class="text-green-900 text-lg font-bold my-1"> متاسفانه خرید شما با موفقیت انجام نشد </h1>
+      <p class="my-1">شناسه پرداخت : {{payParams.authority}}</p>
+      <p class="my-1">مبلغ پرداخت:  <span class="text-warning">{{this.order.price}} تومان</span></p>
+      <div class="flex flex-wrap justify-between my-1">
+         <a [routerLink]="['/']"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">صفحه اصلی</a>
+         <a [routerLink]="['/customer-panel']" class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">پنل</a>
       </div>
    </div>
 </section>

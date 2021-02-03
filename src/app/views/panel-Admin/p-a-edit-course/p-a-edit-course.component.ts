@@ -163,12 +163,9 @@ selected = 'option one';
     formData.append('isActive', this.courseForm.get('isActive').value);
     formData.append('suggest', this.courseForm.get('suggest').value);
     formData.append('hours', this.courseForm.get('hours').value);
-    formData.append('courseDays', this.courseForm.get('courseDays').value);
     formData.append('description', this.courseForm.get('description').value);
     formData.append('titres', this.courseForm.get('titres').value);
-    formData.append('teacher', this.courseForm.get('teacher').value);
     formData.append('started', this.courseForm.get('started').value);
-    formData.append('ended', this.courseForm.get('ended').value);
     formData.append('videoUrl', this.courseForm.get('videoUrl').value);
     formData.append('videoId', this.courseForm.get('videoId').value);
 

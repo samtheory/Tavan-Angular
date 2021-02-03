@@ -1,4 +1,5 @@
 import { Course } from "./course";
+import { CourseTeacher } from "./courseTeacher";
 
 export interface Teacher {
     id: number;
@@ -6,5 +7,5 @@ export interface Teacher {
     title: string;
     description: string;
     image_path: string;
-    courses: Course[];
+    courseTeachers: CourseTeacher[];
 }

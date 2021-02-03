@@ -87,6 +87,7 @@ import { TeacherComponent } from './views/Updated_views/teacher/teacher.componen
 import { SearchComponent } from './views/Updated_views/search/search.component';
 import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
 import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
+import { CourseMainDetailResolver } from './_resolvers/coursemain-detail.resolver';
 
 
 const routes: Routes = [
@@ -104,10 +105,10 @@ const routes: Routes = [
       { path: 'not-found', component: NotFoundComponent },
       { path: 'rules', component: RulesUComponent },
       { path: 'teachers', component: AllTeachersComponent },
-      { path: 'teacher/:id', component: TeacherComponent , resolve: {course : CourseDetailMainResolver}},
+      { path: 'teacher/:id', component: TeacherComponent , resolve: {course : CourseMainDetailResolver}},
       { path: 'search', component: SearchComponent },
       { path: 'webinar/:id', component: WebinarComponent },
-      { path: 'success-purchase', component: SuccessPurchaseUComponent },
+      { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
 
       {

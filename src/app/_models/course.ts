@@ -26,4 +26,5 @@ export interface Course {
     videos: Video[];
     courseTeachers: CourseTeacher[];
     categoryCourses: CategoryCourse[];
+    isfor: boolean;
 }

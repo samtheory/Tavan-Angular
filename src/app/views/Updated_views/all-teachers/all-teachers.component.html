@@ -18,7 +18,7 @@
          <div *ngFor="let teacher of teachers" class="teacher-group flex flex-col items-center m-6">
           <a [routerLink]="['/teacher' , teacher.id]" >
             <div class="relative item-t flex items-center justify-center">
-               <img class="rounded-t-lg" style="min-width: 120px" src="{{teacher.image_path}}" alt="" />
+               <img class="rounded-full" style="min-width: 120px" src="{{teacher.image_path}}" alt="" />
                <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
                </div>
                <p class="text-white text-center absolute">مشاهده رزومه</p>

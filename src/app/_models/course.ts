@@ -18,6 +18,8 @@ export interface Course {
     titres: string;
     started: Date;
     courseDays: string;
+    hours: number;
+    suggest: boolean;
     sessions: Session[];
     description: string;
     media: CourseMedia;

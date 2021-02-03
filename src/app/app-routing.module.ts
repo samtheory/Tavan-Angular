@@ -104,9 +104,9 @@ const routes: Routes = [
       { path: 'not-found', component: NotFoundComponent },
       { path: 'rules', component: RulesUComponent },
       { path: 'teachers', component: AllTeachersComponent },
-      { path: 'teacher/:id', component: TeacherComponent },
+      { path: 'teacher/:id', component: TeacherComponent , resolve: {course : CourseDetailMainResolver}},
       { path: 'search', component: SearchComponent },
-      { path: 'webinar', component: WebinarComponent },
+      { path: 'webinar/:id', component: WebinarComponent },
       { path: 'success-purchase', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
 

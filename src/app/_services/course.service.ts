@@ -114,6 +114,9 @@ export class CourseService {
  getMainCourse(id: number): Observable<Course>{
   return this.http.get<Course>(this.baseUrl + 'main/' + id);
 }
+gettheMainCourse(id: number): Observable<Course>{
+  return this.http.get<Course>(this.baseUrl + 'themain/' + id);
+}
  createCourse( pro: FormData){
    return this.http.post(this.baseUrl + 'create/', pro);
  }

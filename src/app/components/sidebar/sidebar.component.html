@@ -1,31 +1,25 @@
 <nav
-	class=" md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-gray-100 flex flex-wrap items-center justify-between relative z-10 py-4 px-6"
->
+	class=" md:w-64 text-right md:right-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-gray-100 flex flex-wrap items-center justify-between relative z-10 py-4 px-6">
 	<div
-		class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between mx-auto"
-	>
+		class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between mx-auto">
 		<!-- Toggler -->
 		<button
 			class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
-			type="button"
-			(click)="toggleCollapseShow('bg-swatch-dark m-2 py-3 px-6')"
-		>
+			type="button" (click)="toggleCollapseShow('bg-swatch-dark m-2 py-3 px-6')">
 			<i class="fas fa-bars text-white"></i>
 		</button>
 		<!-- Brand -->
-		<a
-			[routerLink]="['/']"
+		<a [routerLink]="['/']"
 			class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-lg uppercase font-bold p-4 px-0 md:mr-18"
-			style="text-align: center;"
-		>
+			style="text-align: center;">
 			<span class="block sm:hidden">
 				<a class="navbar-brand" href="/">
-				Tavan
+					Tavan
 				</a>
 			</span>
 			<span class="hidden sm:block ">
 				<a class="navbar-brand" href="/">
-			پنل ادمین
+					پنل ادمین
 				</a>
 			</span>
 		</a>
@@ -41,25 +35,19 @@
 		<!-- Collapse -->
 		<div
 			class="md:flex md:flex-col md:items-stretch md:opacity-100 md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
-			[ngClass]="collapseShow"
-			style="box-shadow: none !important;"
-		>
+			[ngClass]="collapseShow" style="box-shadow: none !important;">
 			<!-- Collapse header -->
 			<div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-gray-300">
 				<div class="flex flex-wrap">
 					<div class="w-6/12">
-						<a
-							[routerLink]="['/']"
-							class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
-						>
+						<a [routerLink]="['/']"
+							class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0">
 						</a>
 					</div>
 					<div class="w-6/12 flex justify-end">
-						<button
-							type="button"
+						<button type="button"
 							class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
-							(click)="toggleCollapseShow('hidden')"
-						>
+							(click)="toggleCollapseShow('hidden')">
 							<i class="fas fa-times text-white"></i>
 						</button>
 					</div>
@@ -68,101 +56,71 @@
 
 			<!-- Divider -->
 			<div style="margin-top: 15px; margin-bottom: 25px; margin-left: 10px; margin-right: 10px;">
-				<hr
-					class="my-4 md:min-w-full hidden md:block border-swatch-green border-2 rounded-md border-dashed"
-					style="margin-top: 50px;"
-				/>
+				<hr class="my-4 md:min-w-full hidden md:block border-swatch-green border-2 rounded-md border-dashed"
+					style="margin-top: 50px;" />
 			</div>
 
 			<!-- Heading -->
 			<h6
-				class="px-4 md:min-w-full text-swatch-lightGreen opacity-50 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-			>
+				class="px-4 md:min-w-full text-swatch-lightGreen opacity-50 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
 				مدیریت
 			</h6>
 			<!-- Navigation -->
 
 			<ul class="md:flex-col md:min-w-full flex flex-col list-none">
 				<li class="items-center">
-					<a
-						[routerLink]="['/home']"
-						routerLinkActive
-						#home="routerLinkActive"
+					<a [routerLink]="['/home']" routerLinkActive #home="routerLinkActive"
 						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						[ngClass]="
               home.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tv mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tv mr-2 text-sm ml-2" [ngClass]="
                 home.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						بازگشت به صفحه اصلی
 					</a>
 				</li>
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/dashboard']"
-						routerLinkActive
-						#adminDashboard="routerLinkActive"
+					<a [routerLink]="['/admin/dashboard']" routerLinkActive #adminDashboard="routerLinkActive"
 						class="px-4 text-sm uppercase py-3 font-bold block text-right focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
 						[ngClass]="
               adminDashboard.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tv mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tv mr-2 text-sm ml-2" [ngClass]="
                 adminDashboard.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						داشبورد
 					</a>
 				</li>
 
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/AllUsers']"
+					<a [routerLink]="['/admin/AllUsers']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#adminNewUser="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #adminNewUser="routerLinkActive" [ngClass]="
               adminNewUser.isActive
                  ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="ml-2 fas fa-tools mr-2 text-sm"
-							[ngClass]="adminNewUser.isActive ? 'opacity-75' : 'text-gray-400'"
-						></i>
+            ">
+						<i class="ml-2 fas fa-tools mr-2 text-sm"
+							[ngClass]="adminNewUser.isActive ? 'opacity-75' : 'text-gray-400'"></i>
 						مشاهده کاربران
 					</a>
 				</li>
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/slideShow']"
+					<a [routerLink]="['/admin/slideShow']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#adminSlidShow="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #adminSlidShow="routerLinkActive" [ngClass]="
               adminSlidShow.isActive
               ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                 adminSlidShow.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						مدیریت بنر
 					</a>
 				</li>
@@ -174,125 +132,101 @@
 			</div>
 			<!-- Heading -->
 			<h6
-				class="px-4 md:min-w-full text-swatch-lightGreen opacity-50 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-			>
+				class="px-4 md:min-w-full text-swatch-lightGreen opacity-50 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
 				مدیریت دوره های آموزشی
 			</h6>
 			<!-- Navigation -->
 
 			<ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/newCourse']"
+					<a [routerLink]="['/admin/newCourse']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#PANewCourseComponent="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #PANewCourseComponent="routerLinkActive" [ngClass]="
               PANewCourseComponent.isActive
                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                 PANewCourseComponent.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						دوره جدید
 					</a>
 				</li>
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/ticket']"
+					<a [routerLink]="['/admin/ticket']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#ticket="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #ticket="routerLinkActive" [ngClass]="
               ticket.isActive
                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                 ticket.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
-					تیکت
+              "></i>
+						تیکت
 					</a>
 				</li>
 
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/addVideo']"
+					<a [routerLink]="['/admin/addVideo']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#adminAddVideo="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #adminAddVideo="routerLinkActive" [ngClass]="
               adminAddVideo.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                 adminAddVideo.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						آپلود ویدیو
 					</a>
 				</li>
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/orders']"
+					<a [routerLink]="['/admin/orders']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#adminOrder="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #adminOrder="routerLinkActive" [ngClass]="
               adminOrder.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                 adminOrder.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						سفارشات
 					</a>
 				</li>
 				<li class="items-center">
-					<a
-						[routerLink]="['/admin/discount']"
+					<a [routerLink]="['/admin/discount']"
 						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
-						routerLinkActive
-						#adminDiscountTable="routerLinkActive"
-						[ngClass]="
+						routerLinkActive #adminDiscountTable="routerLinkActive" [ngClass]="
               adminDiscountTable.isActive
                 ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
                 : 'text-gray-500 hover:text-swatch-lightBlue'
-            "
-					>
-						<i
-							class="fas fa-tools mr-2 text-sm ml-2"
-							[ngClass]="
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
                 adminDiscountTable.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-						></i>
+              "></i>
 						ایجاد کد تخفیف
+					</a>
+				</li>
+				<li class="items-center">
+					<a [routerLink]="['/admin/teacher']"
+						class="px-4 text-sm uppercase py-3 font-bold block focus:text-swatch-lightBlue rounded rounded-tl-2xl rounded-bl-2xl"
+						routerLinkActive #teacher="routerLinkActive" [ngClass]="
+              teacher.isActive
+                ? 'text-swatch-lightBlue hover:text-swatch-lightBlue md:bg-mesh-700 '
+                : 'text-gray-500 hover:text-swatch-lightBlue'
+            ">
+						<i class="fas fa-tools mr-2 text-sm ml-2" [ngClass]="
+                teacher.isActive ? 'opacity-75' : 'text-gray-400'
+              "></i>
+						اساتید
 					</a>
 				</li>
 				<li class="items-center">
 					<button
 						class="bg-swatch-green opacity-75 text-white hover:opacity-100 hover:text-black duration-200 py-2 px-4 rounded"
-						style="margin-right: 15px; margin-top: 10px;"
-						(click)="logout()"
-					>
+						style="margin-right: 15px; margin-top: 10px;" (click)="logout()">
 						log out
 					</button>
 				</li>

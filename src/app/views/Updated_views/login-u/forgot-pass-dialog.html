@@ -1,5 +1,5 @@
 
-<div   class="flex bg-gray-100 flex-wrap justify-start text-right flex-col ">
+<div   class="flex  flex-wrap justify-start text-right flex-col ">
    
    <a  class="text-left" mat-button mat-dialog-close (click)="closeDialog()"><i class="fas fa-times"></i></a>
    <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
@@ -11,7 +11,7 @@
       <div class="py-6 px-2 w-96">
          <label class="block font-bold pb-1 text-right">ایمیل</label>
          <input [(ngModel)]="model.email" name="email"
-            class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+            class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
             matInput placeholder="ایمیل خود را وارد کنید" value="" type="email" />
             <button class="submit-btn w-full rounded bg-blue-500 py-3 mt-3 text-white text-center my-1" type="submit">
               بازیابی رمز عبور

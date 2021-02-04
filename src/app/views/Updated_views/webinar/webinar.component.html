@@ -46,7 +46,7 @@
                <p class="text-xl">اساتید دوره</p>
                <div class="flex justify-evenly flex-wrap items-center">
                   <div *ngFor="let courseTeacher of course.courseTeachers" class="flex justify-center items-center">
-                     <img src="{{courseTeacher.teacher.image_path}}" alt="teacher">
+                     <img class="rounded-full" src="{{courseTeacher.teacher.image_path}}" alt="teacher">
                      <div class="px-2">
 
                         <p class="font-bold px-1">{{courseTeacher.teacher.name}}</p>
@@ -54,7 +54,7 @@
                      </div>
                   </div>
                </div>
-               <p class="text-xl">خرید دوره</p>
+               <p class="text-xl py-2">خرید دوره</p>
                <div class="flex  justify-evenly my-8">
                   <div class=" w-full flex flex-col items-stretch px-3">
                      <div class="flex justify-between my-3">
@@ -64,16 +64,16 @@
                      <a
                      *ngIf="!course.isActive && !course.isfor"
                      (click)="buyCourse()"
-                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">تهیه
+                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                         ویدیو دوره </a>
                      <a
                      (click)="buyCourse()"
                      *ngIf="course.isActive && !course.isfor"
-                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">تهیه
+                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                          دوره</a>
                         <a
                      *ngIf="course.isfor && course.isActive"
-                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">
+                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
                          ورود به وبینار</a>
                      <form #offForm="ngForm">
                         <div class="flex items-center my-3 w-full">
@@ -84,9 +84,9 @@
                      </form>
                      <p *ngIf="off.code" class="text-sm text-gray-400">مبلغ {{course.realCost * course.off / 100}} هزار تومان تخفیف اعمال شد</p>
                      <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
-                     <div *ngIf="course.media.spPhotoUrl" class="flex flex-wrap justify-evenly" >
-                        <img src="{{course.media.spPhotoUrl}}" alt="">
-                        <p>حامی اول</p>
+                     <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col" >
+                        <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">
+                        <p class="text-center py-2">حامی اول</p>
                      </div>
                   </div>
                   <div class=" w-full flex flex-col px-3 ">
@@ -96,8 +96,8 @@
                         <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                      </div>
 
-                     <div class="session">
-                       {{course.titres}}
+                     <div class="session"  [innerHTML]="course.titres">
+                    
                      </div>
                      <div class="py-4 flex flex-wrap items-center">
 
@@ -138,7 +138,7 @@
                </div>
                <div class="flex flex-wrap">
 
-                  <p class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;">{{course.description}}</p>
+                  <p class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;"  [innerHTML]="course.description"></p>
                </div>
                <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
                <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
@@ -166,7 +166,7 @@
                <p class="font-bold text-lg py-6 text-center">مدرسین دوره</p>
                <div class="flex-col flex flex-wrap ">
                   <div *ngFor="let courseteacher of course.courseTeachers" class="flex justify-center items-center py-3">
-                     <img src="{{courseteacher.teacher.image_path}}" alt="teacher" style="width:120px">
+                     <img class="rounded-full" src="{{courseteacher.teacher.image_path}}" alt="teacher" style="width:120px">
                      <div class="px-2">
    
                         <p class="font-bold px-1">{{courseteacher.teacher.name}}</p>
@@ -186,14 +186,14 @@
                </div>
                <a *ngIf="!course.isActive && !course.isfor"
                (click)="buyCourse(course.id)"
-                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">تهیه
+                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                   ویدیو دوره</a>
                <a *ngIf="course.isActive && !course.isfor"
                (click)="buyCourse(course.id)"
-                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">تهیه
+                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                    دوره</a>
                <a *ngIf="course.isfor && course.isActive"
-                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center">
+                  class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
                   ورود به وبینار</a>
 
                <form #offForm="ngForm">
@@ -205,12 +205,10 @@
                </form>
                <p class="text-sm text-gray-400">مبلغ {{course.realCost * course.off / 100}} هزار تومان تخفیف اعمال شد</p>
                <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
-               <div *ngIf="course.media.spPhotoUrl" class="flex flex-wrap justify-evenly">
-                  <div class="bg-warning p-1 rounded">
-                     <img src="{{course.media.spPhotoUrl}}" alt="">
-                     <p>حامی اول</p>
-                  </div>
-               </div>
+            <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col">
+               <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">
+               <p class="text-center py-2">حامی اول</p>
+            </div>
             </div>
             </div>
             <div class="bg-white flex flex-col py-5 px-10 my-7 rounded-md">
@@ -222,8 +220,8 @@
                <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
             </div>
          
-            <div class="session">
-               {{course.titres}}
+            <div class="session"  [innerHTML]="course.titres">
+           
             </div>
             <div class="py-4 flex flex-wrap items-center">
          

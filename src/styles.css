@@ -55,3 +55,20 @@ a:focusa {
 	ul{
 		list-style-type: circle;
 	}
+
+
+	
+
+.session ul li::before {
+  content: "\2022";
+  color: red;
+  font-weight: bold;
+  display: inline-block; 
+  font-size: 20px;
+  width: 1em;
+  /* margin-right: -1em; */
+}
+
+.session ul li{
+   color: black;
+}

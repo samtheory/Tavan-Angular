@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { contactUs } from 'src/app/_Constant/data';
 import { TicketService } from 'src/app/_services/ticket.service';
@@ -12,8 +14,9 @@ export class ContactUsUComponent implements OnInit {
   DB_const = { contactUs };
 
   ticket: any;
+ 
 
-  constructor(private ticketService: TicketService, private toastr: ToastrService){}
+  constructor(private ticketService: TicketService, private toastr: ToastrService, public dialog: MatDialog){}
 
   
 
@@ -27,5 +30,35 @@ sendTicket(){
     this.toastr.success("تیکت با موفقیت ثبت شد");
   })
 }
+  openDialogNotVerify() {
+    this.dialog.open(NotLoginDialog);
+  }
+}
 
+
+//------------------------------------------------------------------------------------------------
+// .:: Forgot Password module Class 
+//------------------------------------------------------------------------------------------------
+@Component({
+  // selector: 'dialog-forgot-pass',
+  templateUrl: 'not-login-dialog.html',
+})
+
+export class NotLoginDialog {
+  constructor(public dialog: MatDialog, private router: Router) { }
+
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
+
+  register() {
+    this.router.navigate(['/register']);
+    this.dialog.closeAll();
+  }
+
+  login() {
+    this.router.navigate(['/login']);
+    this.dialog.closeAll();
+  }
 }

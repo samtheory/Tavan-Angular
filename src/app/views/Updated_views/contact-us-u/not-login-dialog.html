@@ -1,0 +1,42 @@
+
+<div   class="flex  flex-wrap justify-start text-right flex-col ">
+   
+   <a  class="text-left" mat-button mat-dialog-close (click)="closeDialog()"><i class="fas fa-times"></i></a>
+   <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
+      <div class="py-4 px-8" >
+
+         <h1 class="text-lg font-bold py-2">ورود / ثبت نام</h1>
+         <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
+      </div>
+      <div class="py-6 px-2 w-96">
+      <form class="my-4" action="">
+         <div class="form-item  py-2">
+            <label class="block font-bold pb-1 text-right">ایمیل</label>
+            <input  name="email"
+               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+               matInput placeholder="ایمیل خود را وارد کنید" value="" type="email" />
+         </div>
+         <div class="form-item  py-2">
+            <label class="block font-bold pb-1 text-right">رمز عبور</label>
+            <input  name="password"
+               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+               matInput placeholder="رمز خود را وارد کنید" value="" type="password" />
+         </div>
+         <div class=" flex items-center flex-col justify-between mt-4">
+            <button class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
+               وارد شوید
+            </button>
+            <!-- <a (click)="openDialogNotLogin()" class="hover:text-blue-500 text-gray-500 my-4 text-sm cursor-pointer">رمز عبور
+               خود را فراموش کردم</a> -->
+            <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1" href="">
+               <span class="gray text-gray-500">حساب کاربری ندارید ؟</span>
+               <span class="blue text-blue-500 font-bold px-2">
+                  عضویت در توان</span>
+            </a>
+         </div>
+      </form>
+      </div>
+   </div>
+  
+
+</div>

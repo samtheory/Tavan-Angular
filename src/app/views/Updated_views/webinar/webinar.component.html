@@ -146,23 +146,26 @@
 
                   <p class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;"  [innerHTML]="course.description"></p>
                </div>
-               <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
-               <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
-                  <hr class="border border-blue-100 rounded-full opacity-50" />
-                  <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
-               </div>
-               <div class="video rounded-2xl w-full h-80 bg-gray-200 my-8">
-                  <div *ngIf="course.media.videoUrl" class="r1_iframe_embed">
-							<iframe 
-								[src]="course.media.videoUrl | arvan"
-								frameborder="0"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen="true"
-								webkitallowfullscreen="true"
-								mozallowfullscreen="true"
-							></iframe>
-						</div>
-               </div>
+               <section id="intro">
+
+                  <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
+                  <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                     <hr class="border border-blue-100 rounded-full opacity-50" />
+                     <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+                  </div>
+                  <div class="video rounded-2xl w-full h-80 bg-gray-200 my-8">
+                     <div *ngIf="course.media.videoUrl" class="r1_iframe_embed">
+                        <iframe 
+                           [src]="course.media.videoUrl | arvan"
+                           frameborder="0"
+                           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                           allowfullscreen="true"
+                           webkitallowfullscreen="true"
+                           mozallowfullscreen="true"
+                        ></iframe>
+                     </div>
+                  </div>
+               </section>
             </div>
          </div>
 

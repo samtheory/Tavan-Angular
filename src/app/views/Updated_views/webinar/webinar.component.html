@@ -269,18 +269,18 @@
             <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
          </div>
          <div class="py-6 px-2 w-96">
-            <form #loginForm="ngForm" class="my-4" action="">
+            <form #login="ngForm" class="my-4" action="">
                <div class="form-item  py-2">
                   <label class="block font-bold pb-1 text-right">ایمیل</label>
                   <input [(ngModel)]="model.email" name="email"
                      class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                     matInput placeholder="ایمیل خود را وارد کنید" value="" type="email" />
+                     matInput placeholder="ایمیل خود را وارد کنید"  type="email" />
                </div>
                <div class="form-item  py-2">
                   <label class="block font-bold pb-1 text-right">رمز عبور</label>
-                  <input [(ngModel)]="model.email" name="password"
+                  <input [(ngModel)]="model.password" name="password"
                      class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                     matInput placeholder="رمز خود را وارد کنید" value="" type="password" />
+                     matInput placeholder="رمز خود را وارد کنید"  type="password" />
                </div>
                <div class=" flex items-center flex-col justify-between mt-4">
                   <button (Click)="loginreal()"

@@ -28,6 +28,8 @@ export class WebinarComponent implements OnInit {
   url: string;
   off: any = {};
   dialog = false; 
+
+  model: any = {};
   
   constructor(private courseService: CourseService, private route: ActivatedRoute,
      private toastr: ToastrService, private router: Router,
@@ -120,9 +122,21 @@ export class WebinarComponent implements OnInit {
         
       }
     } else {
-      this.toastr.error("برای خرید وارد شوید");
+      this.showDialog();
     }
     
+}
+
+loginreal(){
+  this.authService.login(this.model).subscribe(response =>{
+    console.log(response);
+    this.hideDialog();
+    // if(this.authService.decodeToken.role === 'admin'){
+    //   this.router.navigate(['/admin/dashboard']);
+    // } else {
+    //   this.router.navigate(['/customer-panel']);
+    // }
+  });
 }
 
 
@@ -134,7 +148,6 @@ hideDialog(){
   this.dialog = false;
   console.log(this.dialog);
 }
-model: any = {};
 }
 
 
@@ -153,78 +166,14 @@ export class NotLoginDialog {
 
 
   ngOnInit(): void {
-   this.createLoginForm();
   }
 
-  // loginreal(){
-  //   this.authService.login(this.model).subscribe(response =>{
-  //     console.log(response);
-  //     this.closeDialog();
-  //     // if(this.authService.decodeToken.role === 'admin'){
-  //     //   this.router.navigate(['/admin/dashboard']);
-  //     // } else {
-  //     //   this.router.navigate(['/customer-panel']);
-  //     // }
-  //   });
-  // }
+  
 
 
-  createLoginForm(){
+ 
 
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-  }
-
-  loginUser(){
-    console.log(this.loginForm);
-    const formData = new FormData();
-    formData.append('email', this.loginForm.get('email').value);
-    formData.append('password', this.loginForm.get('password').value);
-    
-
-
-      this.authService.login(formData).subscribe(response => {
-        console.log(response);
-
-      if(this.authService.decodeToken.role === 'admin'){
-        this.router.navigate(['/admin/dashboard']);
-      } else {
-        this.router.navigate(['/customer-panel']);
-      }
-
-      }, error => {
-          this.toastr.error(error);
-      })
-      
-  }
-
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.loginForm.invalid) {
-        return;
-    }
-
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
-}
-
-onReset() {
-    // reset whole form back to initial state
-    this.submitted = false;
-    this.loginForm.reset();
-}
-
-
-
-onClear() {
-    // clear errors and reset ticket fields
-    this.submitted = false;
-}
-
+ 
 
   closeDialog() {
     this.dialog.closeAll();

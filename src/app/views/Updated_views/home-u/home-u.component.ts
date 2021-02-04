@@ -34,7 +34,7 @@ export class HomeUComponent implements OnInit {
       numScroll: 1
     }
   ];
-  // ! THIS IS FAKE INFORMATION    
+    
 
   // scroll to target method 
   scrollToElement($element): void {

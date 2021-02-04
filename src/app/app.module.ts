@@ -196,6 +196,7 @@ import { WebinarComponent } from './views/Updated_views/webinar/webinar.componen
 import { DropdownModule } from 'primeng/dropdown';
 import { CourseMainDetailResolver } from './_resolvers/coursemain-detail.resolver';
 import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
+import { SearchSectionComponent } from './components/_Updated/search-section/search-section.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -335,7 +336,8 @@ export function tokenGeter() {
     TeacherComponent,
     AllTeachersComponent,
     SearchComponent,
-    WebinarComponent
+    WebinarComponent,
+    SearchSectionComponent
   ],
   imports: [
     DropdownModule,

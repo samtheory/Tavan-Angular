@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
@@ -25,7 +26,8 @@ export class WebinarComponent implements OnInit {
   user: User;
   url: string;
   off: any = {};
-  constructor(private courseService: CourseService, private route: ActivatedRoute,
+  
+  constructor(private courseService: CourseService, private route: ActivatedRoute,public dialog: MatDialog,
      private toastr: ToastrService, private router: Router,
      private authService: AuthService
      , private paymentService: PaymentService, private offService: OffService) { }
@@ -94,9 +96,10 @@ export class WebinarComponent implements OnInit {
           
         } else {
           this.toastr.error("اکانت شما فعال نیست");
+        
         }
       } else {
-        this.toastr.error("برای خرید وارد شوید");
+       this.openDialogNotVerify();
       }
       
   }
@@ -119,4 +122,34 @@ export class WebinarComponent implements OnInit {
     }
     
 }
+  openDialogNotVerify() {
+    this.dialog.open(NotLoginDialog);
+  }
+}
+
+
+//------------------------------------------------------------------------------------------------
+// .:: Forgot Password module Class 
+//------------------------------------------------------------------------------------------------
+@Component({
+  selector: 'dialog-forgot-pass',
+  templateUrl: 'not-login-dialog.html',
+})
+export class NotLoginDialog {
+  constructor(public dialog: MatDialog, private router: Router) { }
+
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
+
+  register() {
+    this.router.navigate(['/register']);
+    this.dialog.closeAll();
+  }
+
+  login() {
+    this.router.navigate(['/login']);
+    this.dialog.closeAll();
+  }
 }

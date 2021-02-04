@@ -13,7 +13,7 @@ import { TicketService } from 'src/app/_services/ticket.service';
 export class ContactUsUComponent implements OnInit {
   DB_const = { contactUs };
 
-  ticket: any;
+  ticket: any ={};
  
 
   constructor(private ticketService: TicketService, private toastr: ToastrService, public dialog: MatDialog){}

@@ -22,7 +22,7 @@ export class FAQUComponent implements OnInit {
     this.toggle[i] = !this.toggle[i];
   }
 
-  ticket: any;
+  ticket: any = {};
 
   constructor(private ticketService: TicketService, private toastr: ToastrService, public dialog: MatDialog){}
 

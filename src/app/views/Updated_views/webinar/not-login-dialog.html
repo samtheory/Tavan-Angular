@@ -9,21 +9,21 @@
          <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
       </div>
       <div class="py-6 px-2 w-96">
-      <form class="my-4" action="">
+      <form #loginForm="ngForm" class="my-4" action="">
          <div class="form-item  py-2">
             <label class="block font-bold pb-1 text-right">ایمیل</label>
-            <input  name="email"
+            <input [(ngModel)]="model.email"  name="email"
                class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                matInput placeholder="ایمیل خود را وارد کنید" value="" type="email" />
          </div>
          <div class="form-item  py-2">
             <label class="block font-bold pb-1 text-right">رمز عبور</label>
-            <input  name="password"
+            <input [(ngModel)]="model.email"  name="password"
                class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                matInput placeholder="رمز خود را وارد کنید" value="" type="password" />
          </div>
          <div class=" flex items-center flex-col justify-between mt-4">
-            <button class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
+            <button (Click)="loginreal()" class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
                وارد شوید
             </button>
             <!-- <a (click)="openDialogNotLogin()" class="hover:text-blue-500 text-gray-500 my-4 text-sm cursor-pointer">رمز عبور

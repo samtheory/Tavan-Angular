@@ -113,6 +113,7 @@ selected = 'option one';
       videoUrl: [''],
       videoId: [''],
       isActive: [''],
+      pdfUrl: [''],
       hours: [''],
       suggest: [''],
       titres: [''],
@@ -161,6 +162,7 @@ selected = 'option one';
     formData.append('off', this.courseForm.get('off').value);
     formData.append('url', this.courseForm.get('url').value);
     formData.append('isActive', this.courseForm.get('isActive').value);
+    formData.append('pdfUrl', this.courseForm.get('pdfUrl').value);
     formData.append('suggest', this.courseForm.get('suggest').value);
     formData.append('hours', this.courseForm.get('hours').value);
     formData.append('description', this.courseForm.get('description').value);

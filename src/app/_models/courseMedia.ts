@@ -3,5 +3,6 @@ export interface CourseMedia {
     videoId: string;
     photoUrl: string;
     spPhotoUrl: string;
+    pdfUrl: string;
 }
 

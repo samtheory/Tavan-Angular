@@ -136,7 +136,20 @@ export class WebinarComponent implements OnInit {
   templateUrl: 'not-login-dialog.html',
 })
 export class NotLoginDialog {
-  constructor(public dialog: MatDialog, private router: Router) { }
+  model: any = {};
+  constructor(public dialog: MatDialog, private router: Router, private authService: AuthService) { }
+
+  loginreal(){
+    this.authService.login(this.model).subscribe(response =>{
+      console.log(response);
+      this.closeDialog();
+      // if(this.authService.decodeToken.role === 'admin'){
+      //   this.router.navigate(['/admin/dashboard']);
+      // } else {
+      //   this.router.navigate(['/customer-panel']);
+      // }
+    });
+  }
 
 
   closeDialog() {

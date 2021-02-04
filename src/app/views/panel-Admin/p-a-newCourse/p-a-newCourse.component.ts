@@ -55,6 +55,7 @@ export class PANewCourseComponent implements OnInit {
       isActive: [''],
       suggest: [''],
       hours: [''],
+      pdfUrl: [''],
       titres: [''],
       description: [''],
       started: [''],
@@ -121,6 +122,7 @@ export class PANewCourseComponent implements OnInit {
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
     formData.append('isActive', this.courseForm.get('isActive').value);
+    formData.append('pdfUrl', this.courseForm.get('pdfUrl').value);
     formData.append('suggest', this.courseForm.get('suggest').value);
     formData.append('hours', this.courseForm.get('hours').value);
     formData.append('url', this.courseForm.get('url').value);

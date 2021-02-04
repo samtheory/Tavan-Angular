@@ -2,8 +2,10 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/_models/category';
+import { Photo } from 'src/app/_models/photo';
 import { AuthService } from 'src/app/_services/auth.service';
 import { CategoryService } from 'src/app/_services/category.service';
+import { PhotoService } from 'src/app/_services/photo.service';
 import * as DB_const from '../../../_Constant/data'
 @Component({
   selector: 'app-main-template',
@@ -41,13 +43,17 @@ export class MainTemplateComponent implements OnInit {
   }
 
   categories: Category[];
+  photos: Photo[];
 
-  constructor(private categoryService: CategoryService , private authService: AuthService, private toastr: ToastrService, private router: Router){
+  constructor(private categoryService: CategoryService , private authService: AuthService, private toastr: ToastrService,
+     private router: Router, private photoService: PhotoService){
 
   }
 
   ngOnInit(): void {
-    this.getCategories()
+    this.getCategories();
+    this.getphotos();
+
   }
 
 
@@ -55,6 +61,12 @@ export class MainTemplateComponent implements OnInit {
     this.categoryService.getCategories().subscribe(categories => {
       this.categories = categories;
     })
+  }
+
+  getphotos(){
+    this.photoService.getPhotos().subscribe(photos => {
+      this.photos = photos;
+    });
   }
 
 

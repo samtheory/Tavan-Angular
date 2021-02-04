@@ -37,6 +37,7 @@
          <hr class="rounded-full opacity-10 m-auto" />
          <div *ngIf="course.realCost !== 0" class="flex flex-row justify-between my-4 items-center">
             <a
+            [routerLink]="['/webinar', course.id]"
                class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
                دوره</a>
             <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">

@@ -87,7 +87,7 @@
                               <a (click)="getOff()" class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
                            </div>
                         </form>
-                        <p *ngIf="off.code" class="text-sm text-gray-400">مبلغ {{course.realCost * course.off / 100}} هزار تومان تخفیف اعمال شد</p>
+                        <p *ngIf="this.off.offPercent" class="text-sm text-gray-400">مبلغ {{course.realCost * this.off.offPercent / 100}} هزار تومان تخفیف اعمال شد</p>
                         <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
                         <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col" >
                            <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">
@@ -212,7 +212,7 @@
                      <a (click)="this.getOff()" class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
                   </div>
                </form>
-               <p class="text-sm text-gray-400">مبلغ {{course.realCost * course.off / 100}} هزار تومان تخفیف اعمال شد</p>
+               <p *ngIf="this.off.offPercent" class="text-sm text-gray-400">مبلغ {{course.realCost * this.off.offPercent / 100}} هزار تومان تخفیف اعمال شد</p>
                <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
             <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col">
                <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">

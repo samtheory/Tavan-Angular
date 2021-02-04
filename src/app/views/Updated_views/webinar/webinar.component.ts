@@ -27,8 +27,9 @@ export class WebinarComponent implements OnInit {
   user: User;
   url: string;
   off: any = {};
+  dialog = true; 
   
-  constructor(private courseService: CourseService, private route: ActivatedRoute,public dialog: MatDialog,
+  constructor(private courseService: CourseService, private route: ActivatedRoute,
      private toastr: ToastrService, private router: Router,
      private authService: AuthService
      , private paymentService: PaymentService, private offService: OffService) { }
@@ -100,7 +101,7 @@ export class WebinarComponent implements OnInit {
         
         }
       } else {
-       this.openDialogNotVerify();
+      
       }
       
   }
@@ -123,9 +124,17 @@ export class WebinarComponent implements OnInit {
     }
     
 }
-  openDialogNotVerify() {
-    this.dialog.open(NotLoginDialog);
-  }
+
+
+showDialog(){
+  this.dialog = true;
+  console.log(this.dialog);
+}
+hideDialog(){
+  this.dialog = false;
+  console.log(this.dialog);
+}
+model: any = {};
 }
 
 
@@ -137,7 +146,6 @@ export class WebinarComponent implements OnInit {
   templateUrl: 'not-login-dialog.html',
 })
 export class NotLoginDialog {
-  model: any = {};
   loginForm: FormGroup;
   submitted = false;
   constructor(public dialog: MatDialog, private router: Router, private authService: AuthService,private formBuilder: FormBuilder,

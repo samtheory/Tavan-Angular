@@ -47,6 +47,7 @@ selected = 'option one';
   ngOnInit(): void {
     this.getCourse();this.route.data.subscribe(data => {
       this.course = data['course'];
+      console.log(this.course);
       this.categories = data['categories'];
       this.teachers = data['teachers'];
     });
@@ -122,7 +123,7 @@ selected = 'option one';
       file: ['',Validators.required],
       fileSource: ['',Validators.required],
       spfile:['', Validators.required],
-      spfileSource:['', Validators.required]
+      spfileSource:['', Validators.required],
     });
   }
 

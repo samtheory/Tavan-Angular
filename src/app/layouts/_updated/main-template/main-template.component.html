@@ -8,35 +8,38 @@
 				<i class="fas fa-times text-gray-500 text-base px-5"></i>
 			</div>
 		</div>
-		<div [routerLink]="['/']"  class="item text-lg  pr-8 my-4">
+		<div [routerLink]="['/']"  class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.home}}
 		</div>
-		<div [routerLink]="['/search', {isActive: true}]"   class="item text-lg  pr-8 my-4">
+		<div [routerLink]="['/search', {isActive: true}]"   class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.online_workshop}}
 		</div>
-		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4">
+		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.videos}}
 		</div>
-		<div class="item text-lg  pr-8 my-4 cursor-pointer" (click)="megaMenu=!megaMenu">
+		<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu">
 			{{DB_const.menu.category}}
 			<i class="fas fa-chevron-down text-xs inline text-blue-500"></i>
 		</div>
 		<div *ngIf="this.categories" [ngClass]="{'w-0 hidden': megaMenu == false, 'w-full block': megaMenu == true }"
 			class="category-collapse-item py-4 bg-gray-200 duration-200">
-			<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4">
+			<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
 				<i [routerLink]="['/search', {categoryId: category.id}]" class="fas fa-circle inline text-blue-500 text-xs"></i>
 				{{category.name}}
 			</div>
 			
 
 		</div>
-		<div class="item text-lg  pr-8 my-4">
+		<div [routerLink]="['/about']" class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.about_us}}
 		</div>
-		<div class="item text-lg  pr-8 my-4">
+		<div [routerLink]="['/contact']" class="item text-lg  pr-8 my-4 cursor-pointer">
+			تماس با ما
+		</div>
+		<div [routerLink]="['/faq']" class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.faq}}
 		</div>
-		<div class="Tavan-num  border border-blue-500 rounded p-2 mx-4">
+		<div class="Tavan-num  border border-blue-500 rounded p-2 mx-4  cursor-pointer">
 			<i class="fas fa-phone-square text-base inline text-orange-500"></i>
 			<p class="inline text-base pr-1">پشتیبانی توان:239084</p>
 		</div>
@@ -135,11 +138,15 @@
 							</div>
 						</li>
 						<li>
-							<a class="text-white hover:text-white duration-300 py-4 px-8"
+							<a [routerLink]="['/about']" class="text-white hover:text-white duration-300 py-4 px-8"
 								href="">{{DB_const.menu.about_us}}</a>
 						</li>
 						<li>
-							<a class="text-white hover:text-white duration-300 py-4 px-8" href="">{{DB_const.menu.faq}}</a>
+							<a [routerLink]="['/contact']" class="text-white hover:text-white duration-300 py-4 px-8"
+								href="">تماس با ما</a>
+						</li>
+						<li>
+							<a [routerLink]="['/faq']" class="text-white hover:text-white duration-300 py-4 px-8" href="">{{DB_const.menu.faq}}</a>
 						</li>
 					</ul>
 				</nav>

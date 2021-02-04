@@ -28,6 +28,7 @@ login(model: any) {
       localStorage.setItem('token', user.token);
       localStorage.setItem('user', JSON.stringify(user.user));
       this.decodeToken = this.jwtHelper.decodeToken(user.token);
+      localStorage.setItem('userName', this.decodeToken.Name)
       console.log(this.decodeToken);
     }
   })

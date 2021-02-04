@@ -45,10 +45,10 @@ title = 'test';
   }
 
   getUser(){
-  this.userService.getUser(this.route.snapshot.params['id']).subscribe(user => {
-    this.user = user;
-    console.log(this.user);
-  });
+    this.userService.getUser(this.userService.decodeToken.nameid).subscribe(user => {
+      this.user = user;
+      console.log(this.user);
+    });
 
   }
 
@@ -59,7 +59,6 @@ title = 'test';
       email: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       lastName: [''],
-      isActive:[''],
       address: [''],
       city: [''],
       nezam: ['',Validators.required],
@@ -104,7 +103,6 @@ title = 'test';
   updateUser(){
     console.log(this.userForm);
     const formData = new FormData();
-    formData.append('isActive', this.userForm.get('isActive').value);
     formData.append('meli', this.userForm.get('meliSource').value);
     formData.append('avatar', this.userForm.get('avatarSource').value);
     formData.append('nezam', this.userForm.get('nezamSource').value);
@@ -119,9 +117,9 @@ title = 'test';
     formData.append('address', this.userForm.get('address').value);
     formData.append('birthday' , this.userForm.get('birthday').value);
 
-      this.userService.updateUserAdmin(formData, this.route.snapshot.params['id']).subscribe(() => {
+      this.userService.updateProfile(formData).subscribe(() => {
         this.toastr.success('success fully created');
-        this.router.navigate(['/admin/AllUsers']);
+        this.router.navigate(['/customer-panel/videos']);
 
       }, error => {
           this.toastr.error(error);

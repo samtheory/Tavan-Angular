@@ -96,7 +96,7 @@ export class WebinarComponent implements OnInit {
           
         } else {
           this.toastr.error("اکانت شما فعال نیست");
-          this.openDialogNotVerify();
+        
         }
       } else {
        this.openDialogNotVerify();

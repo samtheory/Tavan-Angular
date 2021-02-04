@@ -43,71 +43,77 @@
                      <p *ngFor="let session of course.sessions" class="p-4">{{session.time}}</p>
                   </div>
                </div>
-               <p class="text-xl">اساتید دوره</p>
-               <div class="flex justify-evenly flex-wrap items-center">
-                  <div *ngFor="let courseTeacher of course.courseTeachers" class="flex justify-center items-center">
-                     <img class="rounded-full" src="{{courseTeacher.teacher.image_path}}" alt="teacher">
-                     <div class="px-2">
+               <div class="xl:hidden">
 
-                        <p class="font-bold px-1">{{courseTeacher.teacher.name}}</p>
-                        <p class="text-sm px-1">{{courseTeacher.teacher.name}}</p>
+                  <p class="text-xl">اساتید دوره</p>
+                  <div class="flex justify-evenly flex-wrap items-center">
+                     <div *ngFor="let courseTeacher of course.courseTeachers" class="flex justify-center items-center">
+                        <img class="rounded-full" src="{{courseTeacher.teacher.image_path}}" alt="teacher">
+                        <div class="px-2">
+   
+                           <p class="font-bold px-1">{{courseTeacher.teacher.name}}</p>
+                           <p class="text-sm px-1">{{courseTeacher.teacher.name}}</p>
+                        </div>
                      </div>
                   </div>
                </div>
-               <p class="text-xl py-2">خرید دوره</p>
-               <div class="flex  justify-evenly my-8">
-                  <div class=" w-full flex flex-col items-stretch px-3">
-                     <div class="flex justify-between my-3">
-                        <p>{{course.title}}</p>
-                        <p class="text-blue-500">{{course.realCost}} تومان</p>
-                     </div>
-                     <a
-                     *ngIf="!course.isActive && !course.isfor"
-                     (click)="buyCourse()"
-                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
-                        ویدیو دوره </a>
-                     <a
-                     (click)="buyCourse()"
-                     *ngIf="course.isActive && !course.isfor"
-                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
-                         دوره</a>
+               <div class="xl:hidden">
+
+                  <p class="text-xl pt-2">خرید دوره</p>
+                  <div class="flex  justify-evenly mb-8 mt-2">
+                     <div class=" w-full flex flex-col items-stretch px-3">
+                        <div class="flex justify-between my-3">
+                           <p>{{course.title}}</p>
+                           <p class="text-blue-500">{{course.realCost}} تومان</p>
+                        </div>
                         <a
-                     *ngIf="course.isfor && course.isActive"
-                        class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
-                         ورود به وبینار</a>
-                     <form #offForm="ngForm">
-                        <div class="flex items-center my-3 w-full">
-                           <input name="code" [(ngModel)]="off.code" class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r "
-                              type="text" placeholder="کد تخفیف خود را وارد کنید">
-                           <a (click)="getOff()" class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
+                        *ngIf="!course.isActive && !course.isfor"
+                        (click)="buyCourse()"
+                           class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
+                           ویدیو دوره </a>
+                        <a
+                        (click)="buyCourse()"
+                        *ngIf="course.isActive && !course.isfor"
+                           class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
+                            دوره</a>
+                           <a
+                        *ngIf="course.isfor && course.isActive"
+                           class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
+                            ورود به وبینار</a>
+                        <form #offForm="ngForm">
+                           <div class="flex items-center my-3 w-full">
+                              <input name="code" [(ngModel)]="off.code" class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r "
+                                 type="text" placeholder="کد تخفیف خود را وارد کنید">
+                              <a (click)="getOff()" class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
+                           </div>
+                        </form>
+                        <p *ngIf="off.code" class="text-sm text-gray-400">مبلغ {{course.realCost * course.off / 100}} هزار تومان تخفیف اعمال شد</p>
+                        <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
+                        <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col" >
+                           <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">
+                           <p class="text-center py-2">حامی اول</p>
                         </div>
-                     </form>
-                     <p *ngIf="off.code" class="text-sm text-gray-400">مبلغ {{course.realCost * course.off / 100}} هزار تومان تخفیف اعمال شد</p>
-                     <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
-                     <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col" >
-                        <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">
-                        <p class="text-center py-2">حامی اول</p>
                      </div>
-                  </div>
-                  <div class=" w-full flex flex-col px-3 ">
-                     <h1 class="text-xl font-bold">سرفصل ها</h1>
-                     <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
-                        <hr class="border border-blue-100 rounded-full opacity-50" />
-                        <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
-                     </div>
-
-                     <div class="session"  [innerHTML]="course.titres">
-                    
-                     </div>
-                     <div class="py-4 flex flex-wrap items-center">
-
-                        <h1 class="text-xl font-bold m2 p2">دسته بندی</h1>
-                        <div *ngFor="let categoryCourse of course.categoryCourses" class="p-2 m-2 rounded bg-gray-200 text-sm">
-                           {{categoryCourse.category.name}} 
+                     <div class=" w-full flex flex-col px-3 ">
+                        <h1 class="text-xl font-bold">سرفصل ها</h1>
+                        <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                           <hr class="border border-blue-100 rounded-full opacity-50" />
+                           <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                         </div>
-                        
+   
+                        <div class="session"  [innerHTML]="course.titres">
+                       
+                        </div>
+                        <div class="py-4 flex flex-wrap items-center">
+   
+                           <h1 class="text-xl font-bold m2 p2">دسته بندی</h1>
+                           <div *ngFor="let categoryCourse of course.categoryCourses" class="p-2 m-2 rounded bg-gray-200 text-sm">
+                              {{categoryCourse.category.name}} 
+                           </div>
+                           
+                        </div>
+   
                      </div>
-
                   </div>
                </div>
                <div  class="flex justify-end items-center">
@@ -160,7 +166,7 @@
             </div>
          </div>
 
-         <div class="px-10 w-5/12 flex flex-col items-stretch">
+         <div class="px-10 w-5/12 xl:flex flex-col items-stretch hidden">
 
             <div class="bg-white flex flex-col py-5 px-4  rounded-md">
                <p class="font-bold text-lg py-6 text-center">مدرسین دوره</p>

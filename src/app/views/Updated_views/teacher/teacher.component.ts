@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/_models/course';
+import { PaginatedResult } from 'src/app/_models/pagination';
 import { Teacher } from 'src/app/_models/teacher';
+import { CourseService } from 'src/app/_services/course.service';
 import { TeacherService } from 'src/app/_services/teacher.service';
 
 @Component({
@@ -28,9 +31,11 @@ export class TeacherComponent implements OnInit {
   // ! THIS IS FAKE INFORMATION    
 
 teacher: Teacher;
+courses: Course[];
+userParams: any = {};
 
 
-  constructor(private teacherService: TeacherService, private route: ActivatedRoute) { }
+  constructor(private teacherService: TeacherService, private route: ActivatedRoute, private courseService: CourseService) { }
 
   ngOnInit(): void {
     this.getTeacher();
@@ -42,7 +47,15 @@ teacher: Teacher;
     .subscribe(teacher => 
       {
         this.teacher = teacher;
+        this.getfirstPage(teacher.name);
       })
+  }
+
+  getfirstPage(name: string){
+    this.userParams.name = name;
+    this.courseService.getsfCourses(1 , 9, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
+      this.courses = res.result;
+    });
   }
 
 }

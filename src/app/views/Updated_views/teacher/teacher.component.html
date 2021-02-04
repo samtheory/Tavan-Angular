@@ -25,7 +25,7 @@
 </section>
 
 
-<section  *ngIf="teacher && teacher.courseTeachers" name="course" class=" pt-12 xl:px-0  bg-gray-100">
+<section  *ngIf="this.courses"  class=" pt-12 xl:px-0  bg-gray-100">
 
    <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10 ">
       <div class="head flex justify-between px-6 mb-4 items-center">
@@ -35,7 +35,7 @@
             class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
             همه</a>
       </div>
-      <p-carousel [value]="teacher.courseTeachers" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+      <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
          [responsiveOptions]="responsiveOptions">
          <ng-template pTemplate="header">
    
@@ -43,8 +43,7 @@
          <ng-template let-product pTemplate="item">
             <div class="product-item">
                <div class="product-item-content">
-   
-                  <card-course style="direction: rtl;" [course]="product.course"></card-course>
+                  <card-course style="direction: rtl;" [course]="product"></card-course>
                </div>
             </div>
          </ng-template>

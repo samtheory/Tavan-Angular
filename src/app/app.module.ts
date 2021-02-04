@@ -195,6 +195,7 @@ import { SearchComponent } from './views/Updated_views/search/search.component';
 import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { CourseMainDetailResolver } from './_resolvers/coursemain-detail.resolver';
+import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -377,6 +378,8 @@ export function tokenGeter() {
     CourseDetailResolver,
     CourseMainDetailResolver,
     CourseDetailMainResolver,
+
+    TeacherDetailResolver,
     
     CourseListResolver,
     CourseListUserResolver,

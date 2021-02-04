@@ -1,4 +1,4 @@
-<div class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
+<div  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
       <div class=" card-img w-full relative flex justify-center items-center">
@@ -12,11 +12,13 @@
           {{course.off}}% تخفیف
          </div>
          <h5 class="text-lg font-bold py-3">{{course.title}}</h5>
-         <p class="py-3"><span class="font-bold">مدرس :
-               <p class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}
+         <div *ngIf="course.courseTeachers">
+         <p  class="py-3"><span class="font-bold">مدرس :
+               <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}
                </p>
             </span>
          </p>
+        </div>
          <p class="py-3">
             <span class="font-bold">مدت دوره :</span> {{course.hours}} ساعت
          </p>

@@ -27,7 +27,7 @@ export class WebinarComponent implements OnInit {
   user: User;
   url: string;
   off: any = {};
-  dialog = true; 
+  dialog = false; 
   
   constructor(private courseService: CourseService, private route: ActivatedRoute,
      private toastr: ToastrService, private router: Router,
@@ -101,7 +101,7 @@ export class WebinarComponent implements OnInit {
         
         }
       } else {
-      
+        this.showDialog();
       }
       
   }

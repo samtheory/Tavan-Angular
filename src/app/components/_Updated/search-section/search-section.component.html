@@ -1,5 +1,5 @@
-<section *ngIf="photo" class="slide-hero w-full relative flex justify-center items-center">
-   <img src="{{photo}}" alt="" />
+<section *ngIf="this.photos" class="slide-hero w-full relative flex justify-center items-center">
+   <img src="{{this.photos[0].url}}" alt="" />
    <div class="w-full bg-black opacity-60 absolute top-0 bottom-0  "></div>
    <div class="flex flex-col justify-between absolute z-20 w-full ">
       <form #searchForm="ngForm">

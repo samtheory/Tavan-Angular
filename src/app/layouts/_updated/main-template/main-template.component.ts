@@ -41,7 +41,7 @@ export class MainTemplateComponent implements OnInit {
     // console.log($element);
     $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
-
+ 
   categories: Category[];
   photos: Photo[];
 

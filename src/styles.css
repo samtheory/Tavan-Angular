@@ -72,3 +72,10 @@ a:focusa {
 .session ul li{
    color: black;
 }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

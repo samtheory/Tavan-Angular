@@ -155,8 +155,12 @@ selected = 'option one';
   updateCourse() {
     console.log(this.courseForm);
     const formData = new FormData();
-    formData.append('file', this.courseForm.get('fileSource').value);
-    formData.append('spfile', this.courseForm.get('spfileSource').value);
+    if(this.courseForm.get('fileSource').value){
+      formData.append('file', this.courseForm.get('fileSource').value);
+    }
+    if(this.courseForm.get('spfileSource').value){
+      formData.append('spfile', this.courseForm.get('spfileSource').value);
+    }
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);
     formData.append('off', this.courseForm.get('off').value);

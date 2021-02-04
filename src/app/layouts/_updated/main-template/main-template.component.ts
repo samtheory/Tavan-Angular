@@ -1,4 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Category } from 'src/app/_models/category';
+import { AuthService } from 'src/app/_services/auth.service';
+import { CategoryService } from 'src/app/_services/category.service';
 import * as DB_const from '../../../_Constant/data'
 @Component({
   selector: 'app-main-template',
@@ -35,7 +40,41 @@ export class MainTemplateComponent implements OnInit {
     $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 
+  categories: Category[];
+
+  constructor(private categoryService: CategoryService , private authService: AuthService, private toastr: ToastrService, private router: Router){
+
+  }
+
   ngOnInit(): void {
+    this.getCategories()
+  }
+
+
+  getCategories(){
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    })
+  }
+
+
+  loggedIn() {
+    return this.authService.logedIn();
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.toastr.success('loged out successfully');
+    this.router.navigate(['/']);
+  }
+
+
+  role() {
+    const role = this.authService.decodeToken.role;
+    if (role === 'admin') {
+      return true;
+    }
+    return false;
   }
 
 }

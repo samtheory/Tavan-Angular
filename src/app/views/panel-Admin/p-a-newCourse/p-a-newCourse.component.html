@@ -116,7 +116,7 @@
                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                   توضیحات دوره
                 </label>
-                <ckeditor   formControlName="description" [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor formControlName="description" [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
               </div>
             </div>
 
@@ -125,7 +125,7 @@
                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                   سرفصل ها
                 </label>
-                <ckeditor   formControlName="titres" [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor formControlName="titres" [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
               </div>
             </div>
 
@@ -142,7 +142,7 @@
             <div class="w-full lg:w-6/12 px-4">
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                   مدت دوره
+                  مدت دوره
                 </label>
                 <input type="text" formControlName="hours"
                   class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
@@ -246,18 +246,14 @@
                   class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                   value="عکس اسپانسر دوره را انتخاب کنید" />
 
-                  <!-- <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                <!-- <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                     نام اسپانسر ها
                   </label>
                   <input type="text" formControlName="url"
                     class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                     value="" /> -->
 
-                <button (click)="createCourse()"
-                  class="bg-green-600 text-blue-500  hover:bg-green-900 hover:text-green-900 uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                  type="button">
-                  ایجاد دوره جدید
-                </button>
+
               </div>
               <!-- <div class="relative w-full mb-3">
                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
@@ -280,9 +276,9 @@
               </div>
             </div>
           </div>
-          <hr class="mt-6 border-b-1 border-gray-100" />
+          
 
-          <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+          <!-- <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
             انتخاب تعداد جلسات
           </h6>
           <div class="flex flex-wrap">
@@ -310,8 +306,13 @@
 
 
 
-
-          </div>
+          </div> -->
+          <button (click)="createCourse()"
+            class="bg-blue-500 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all  duration-150 hover:bg-transparent hover:text-blue-900 border-2 border-transparent hover:border-blue-900"
+            type="button">
+            ایجاد دوره جدید
+          </button>
+          <hr class="mt-6 border-b-1 border-gray-100" />
         </form>
       </div>
     </div>

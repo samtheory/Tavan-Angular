@@ -63,26 +63,25 @@
             class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
             همه</a>
       </div>
-      <p-carousel [value]="courseFakeData" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+      <p-carousel [value]="teachers" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
          [responsiveOptions]="responsiveOptions">
          <ng-template pTemplate="header">
 
          </ng-template>
-         <ng-template let-product pTemplate="item">
+         <ng-template let-teacher pTemplate="item">
             <div class="product-item">
                <div class="product-item-content">
 
 
-                  <div class="teacher-group flex flex-col items-center m-6">
+                  <a [routerLink]="['/teacher' , teacher.id]" routerLinkActive="router-link-active"  class="teacher-group flex flex-col items-center m-6">
                      <div class="relative item-t flex items-center justify-center">
-                        <img class="rounded-full" style="min-width: 120px" src="assets/img/_usefull/teacher-2.png"
-                           alt="" />
-                        <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
-                        </div>
-                        <p class="text-white text-center absolute">مشاهده رزومه</p>
+                       <img class="rounded-full" style="min-width: 120px" src="{{teacher.image_path}}" alt="" />
+                       <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
+                       </div>
+                       <p class="text-white text-center absolute">مشاهده رزومه</p>
                      </div>
-                     <h2 class="mt-4 font-bold">{{product.title}}</h2>
-                  </div>
+                     <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
+                   </a>
 
 
 

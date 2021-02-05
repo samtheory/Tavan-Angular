@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { aboutUsPage } from 'src/app/_Constant/data';
+import { TeacherToList } from 'src/app/_models/teacherToList';
+import { TeacherService } from 'src/app/_services/teacher.service';
 
 @Component({
   selector: 'app-about-us-u',
@@ -8,18 +10,6 @@ import { aboutUsPage } from 'src/app/_Constant/data';
 })
 export class AboutUsUComponent implements OnInit {
   DB_const = { aboutUsPage };
-  courseFakeData =[
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-    {title:'استاد'},
-]
   responsiveOptions = [
     {
       breakpoint: '1254px',
@@ -37,7 +27,18 @@ export class AboutUsUComponent implements OnInit {
       numScroll: 1
     }
   ];
+teachers: TeacherToList[];
+  constructor(private teacherService: TeacherService){}
+
   ngOnInit(): void {
+    this.getTeachers();
+  }
+
+
+  getTeachers(){
+    this.teacherService.getTeachers().subscribe(teachers => {
+      this.teachers = teachers;
+    });
   }
 
 }

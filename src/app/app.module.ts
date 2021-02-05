@@ -367,7 +367,7 @@ export function tokenGeter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGeter,
-        allowedDomains: ['tavanplus.co', 'tavan.iran.liara.run', 'localhost:5000'],
+        allowedDomains: ['tavanplus.co', 'tavanplus.iran.liara.run', 'localhost:5000'],
         disallowedRoutes: ['tavanplus.co/auth'],
       },
     }),

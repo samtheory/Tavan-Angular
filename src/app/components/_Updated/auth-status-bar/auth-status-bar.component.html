@@ -1,12 +1,12 @@
 <div *ngIf="!this.role()" class="z-30 flex  items-center" style="transform: translateY(-10px)">
    <img src="assets/img/_usefull/profile-avt.svg" alt="">
-   <p *ngIf="this.authService.decodeToken.nameid" class="px-2">{{this.authService.decodeToken.name}}</p>
+   <p *ngIf="this.authService.decodeToken.nameid" class="px-2">{{this.authService.decodeToken.unique_name}}</p>
    <a class="text-blue-500 p-2 border-l border-r border-gray-100  hover:text-blue-900" [routerLink]="['/customer-panel']" routerLinkActive="router-link-active" >پنل کاربری</a>
    <div class="px-2 hover:text-warning" (click)="logout()">خروج</div>
 </div>
 <div *ngIf="this.role()" class="z-30 flex  items-center" style="transform: translateY(-10px)">
    <img src="assets/img/_usefull/profile-avt.svg" alt="">
-   <p *ngIf="this.authService.decodeToken.nameid" class="px-2">{{this.authService.decodeToken.name}}</p>
+   <p *ngIf="this.authService.decodeToken.nameid" class="px-2">{{this.authService.decodeToken.unique_name}}</p>
    <a class="text-blue-500 p-2 border-l border-r border-gray-100  hover:text-blue-900" [routerLink]="['/admin']">پنل کاربری</a>
    <div class="px-2 hover:text-warning" (click)="logout()">خروج</div>
 </div>

@@ -1,6 +1,4 @@
 <style>
-
-
   .telegram-box {
     background: linear-gradient(251.4deg, #005e87 12.96%, #3ac5ff 92.39%);
     max-width: 1200px;
@@ -10,23 +8,24 @@
 </style>
 
 <section *ngIf="photos" class="slide-hero w-full relative flex justify-center items-center">
-  <img  src="{{photos[0].url}}" alt="" />
+  <img src="{{photos[0].url}}" alt="" />
   <div class="w-full bg-black opacity-60 absolute top-0 bottom-0  "></div>
-  <div class="flex flex-col justify-between absolute z-20 w-full " >
-   <form #searchForm="ngForm">
-    <div class="input w-full m-auto">
-      <p class="text-gray-100 text-center mb-10">
-        دنبال هر آموزشی هستی همین جا همین الان سرچ کن
-      </p>
-      <div class=" m-auto w-10/12  xl:w-6/12 ">
-        <input name="name" [(ngModel)]="searchP.name" class="   lg:py-4  px-2 py-2 rounded  rounded-tl-none rounded-bl-none w-10/12 outline-none border-1 border-white border-l-0 focus:border-swatch-lightBlue"
-          placeholder="همین الان جستجو کن" type="text" /><button (click)="search()"
-          class="lg:py-4 lg:px-5 px-3 py-2 bg-blue-500 rounded rounded-tr-none rounded-br-none outline-none">
-          <i class="fas fa-search text-white"></i>
-        </button>
+  <div class="flex flex-col justify-between absolute z-20 w-full ">
+    <form #searchForm="ngForm">
+      <div class="input w-full m-auto">
+        <p class="text-gray-100 text-center mb-10">
+          دنبال هر آموزشی هستی همین جا همین الان سرچ کن
+        </p>
+        <div class=" m-auto w-10/12  xl:w-6/12 ">
+          <input name="name" [(ngModel)]="searchP.name"
+            class="   lg:py-4  px-2 py-2 rounded  rounded-tl-none rounded-bl-none w-10/12 outline-none border-1 border-white border-l-0 focus:border-swatch-lightBlue"
+            placeholder="همین الان جستجو کن" type="text" /><button (click)="search()"
+            class="lg:py-4 lg:px-5 px-3 py-2 bg-blue-500 rounded rounded-tr-none rounded-br-none outline-none">
+            <i class="fas fa-search text-white"></i>
+          </button>
+        </div>
       </div>
-    </div>
-   </form>
+    </form>
   </div>
   <i (click)="scrollToElement(main)"
     class="fas fa-chevron-down text-4xl absolute centered text-gray-100 hover:text-blue-900 rounded-full px-2 py-1 duration-300"
@@ -55,22 +54,23 @@
       <h2 class="text-sm sm:text-base">دوره های درحال برگزاری</h2>
 
       <!-- TODO: Link should be FIX    -->
-      <a
-      [routerLink]="['/search', {isActive: true}]" 
+      <a [routerLink]="['/search', {isActive: true}]"
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
 
     </div>
-    <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
-      [responsiveOptions]="responsiveOptions">
+    <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="false"
+      style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
       </ng-template>
       <ng-template let-product pTemplate="item">
         <div class="product-item">
           <div class="product-item-content">
+            <a [routerLink]="['webinar/',product.id]">
 
-            <card-course style="direction: rtl;" [course]="product"></card-course>
+              <card-course style="direction: rtl;" [course]="product"></card-course>
+            </a>
           </div>
         </div>
       </ng-template>
@@ -80,13 +80,12 @@
     <div class="head flex justify-between items-center px-6 mb-4">
       <h2 class="text-sm sm:text-base">دوره های برگزار شده</h2>
       <!-- TODO: Link should be FIX    -->
-      <a
-      [routerLink]="['/search', {isActive: false}]"  
+      <a [routerLink]="['/search', {isActive: false}]"
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
     </div>
-    <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
-      [responsiveOptions]="responsiveOptions">
+    <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="false"
+      style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
       </ng-template>
@@ -94,7 +93,10 @@
         <div class="product-item">
           <div class="product-item-content">
 
-            <card-course style="direction: rtl;" [course]="product"></card-course>
+            <a [routerLink]="['webinar/',product.id]">
+
+              <card-course style="direction: rtl;" [course]="product"></card-course>
+            </a>
           </div>
         </div>
       </ng-template>
@@ -105,21 +107,22 @@
       <h2 class="text-sm sm:text-base">پیشنهاد ویژه توان</h2>
 
       <!-- TODO: Link should be FIX    -->
-      <a
-      [routerLink]="['/search', {suggest: true}]" 
+      <a [routerLink]="['/search', {suggest: true}]"
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
     </div>
-    <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
-      [responsiveOptions]="responsiveOptions">
+    <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="false"
+      style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
       </ng-template>
       <ng-template let-product pTemplate="item">
         <div class="product-item">
           <div class="product-item-content">
+            <a [routerLink]="['webinar/',product.id]">
 
-            <card-course style="direction: rtl;" [course]="product"></card-course>
+              <card-course style="direction: rtl;" [course]="product"></card-course>
+            </a>
           </div>
         </div>
       </ng-template>
@@ -184,13 +187,12 @@
     <div class="flex justify-between items-center mb-7">
       <div class="lg:inline hidden"></div>
       <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">اساتید ما</h2>
-      <a
-      [routerLink]="['/teachers']" 
+      <a [routerLink]="['/teachers']"
         class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
         همه</a>
     </div>
-    <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
-      [responsiveOptions]="responsiveOptions">
+    <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="3" [numScroll]="3" [circular]="false"
+      style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
       </ng-template>
@@ -199,7 +201,8 @@
           <div class="product-item-content">
 
 
-            <a [routerLink]="['/teacher' , teacher.id]" routerLinkActive="router-link-active"  class="teacher-group flex flex-col items-center m-6">
+            <a [routerLink]="['/teacher' , teacher.id]" routerLinkActive="router-link-active"
+              class="teacher-group flex flex-col items-center m-6">
               <div class="relative item-t flex items-center justify-center">
                 <img class="rounded-full" style="min-width: 120px" src="{{teacher.image_path}}" alt="" />
                 <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
@@ -208,7 +211,7 @@
               </div>
               <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
             </a>
-            
+
 
 
 
@@ -217,7 +220,7 @@
         </div>
       </ng-template>
     </p-carousel>
-   
+
   </div>
   <div class="dots-pattern absolute bottom-0 left-2 hidden 2xl:block z-0">
     <svg-dots></svg-dots>

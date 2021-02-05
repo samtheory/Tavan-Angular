@@ -23,4 +23,10 @@ export class PATeachersComponent implements OnInit {
     })
   }
 
+  deleteTeacher(id: number){
+    this.teacherService.deleteTeacher(id).subscribe(next => {
+      this.toastr.success('با موفقیت حذف شد');
+    })
+  }
+
 }

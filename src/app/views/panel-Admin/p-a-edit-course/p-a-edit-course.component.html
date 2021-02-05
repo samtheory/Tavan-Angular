@@ -3,264 +3,279 @@
 		<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
 			<div class="rounded-t bg-teal-300 mb-0 px-6 py-6">
 				<div class="text-center flex justify-start">
-					<div
-						class="w-full flex sm:border-b sm:border-gray-300 relative flex-col sm:flex-row"
-						style="border: transparent;"
-					>
-						<div
-							id="info"
-							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 tab bg-white text-red-600 border-b-4 border-blue-300 duration-500"
-						>
+					<div class="w-full flex sm:border-b sm:border-gray-300 relative flex-col sm:flex-row"
+						style="border: transparent;">
+						<div id="info"
+							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 tab bg-white text-red-600 border-b-4 border-blue-300 duration-500">
 							اطلاعات دوره
 						</div>
-						<div
-							id="video"
-							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500"
-						>
+						<div id="video"
+							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500">
 							ویدیو های دوره
 						</div>
-						<div
-							id="session"
-							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500"
-						>
+						<div id="session"
+							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500">
 							مدیریت جلسه ها
 						</div>
-						<div
-							id="category"
-							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500"
-						>
+						<div id="category"
+							class="mx-1 rounded-lg flex-1 sm:text-center font-medium py-3 cursor-pointer hover:opacity-50 false border-b-4 bg-teal-200 border-teal-300 duration-500">
 							دسته بندی و استاد
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-			
-					<div class="information-tab my-5">
-				
-								<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-									<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
-										<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-											اطلاعات دوره
-										</h6>
-										<div class="flex flex-wrap">
-											<div class="w-full lg:w-4/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														نام دوره
-													</label>
-													<input type="text" name="title" [(ngModel)]="course.title" formControlName="title"
-														class="form-control px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-								
-								
-											<div class="form-group w-full lg:w-4/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														قیمت دوره
-													</label>
-													<input name="cost" [(ngModel)]="course.cost" formControlName="cost" type="text"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-											<div class="w-full lg:w-4/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														تاریخ برگذاری
-													</label>
-													<input #startDate name="started" [(ngModel)]="course.started" formControlName="started" type="text"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-													<ng-persian-datepicker [timeMeridian]='true' [input]="startDate" [uiHideAfterSelectDate]="true">
-													</ng-persian-datepicker>
-												</div>
-											</div>
-									
-								
-											<div class="w-full lg:w-4/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														تخفیف
-													</label>
-													<input name="off" [(ngModel)]="course.off" formControlName="off" type="text"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-										</div>
-								
-										<hr class="mt-6 border-b-1 border-gray-100" />
-								
-										<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-											توضیحات دوره
-										</h6>
-										<div class="flex flex-wrap">
-											<div class="w-full lg:w-12/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														توضیحات دوره
-													</label>
-													<ckeditor name="description" [(ngModel)]="course.description" formControlName="description" [editor]="Editor" data="{{course.description}}"></ckeditor>
-												</div>
-											</div>
-								
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														سرفصل ها
-													</label>
-													<ckeditor name="titres" [(ngModel)]="course.titres" formControlName="titres" [editor]="Editor" data="{{course.titres}}"></ckeditor>
-												</div>
-											</div>
-								
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														لینک دوره
-													</label>
-													<input type="text" name="url" [(ngModel)]="course.url" formControlName="url"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
 
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														مدت دوره
-													</label>
-													<input type="text" name="hours" [(ngModel)]="course.hours" formControlName="hours"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-								
-								
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														وضعیت دوره
-													</label>
-													<select formControlName="isActive"
-													name="isActive" [(ngModel)]="course.isActive"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white">
-														<option value="true">در حال برگزاری</option>
-														<option value="false">برگزار شده</option>
-													</select>
-												</div>
-											</div>
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														 پیشنهاد توان
-													</label>
-													<select formControlName="suggest"
-													name="suggest" [(ngModel)]="course.suggest"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white">
-														<option value="true">پیشنهاد</option>
-														<option value="false">عادی</option>
-													</select>
-												</div>
-											</div>
-								
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														آدرس ویدیو
-													</label>
-													<input  type="text" name="videoUrl" [(ngModel)]="course.media.videoUrl" formControlName="videoUrl"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														ایدی ویدیو
-													</label>
-													<input type="text" name="videoId" [(ngModel)]="course.media.videoId" formControlName="videoId"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														لینک pdf
-													</label>
-													<input type="text" name="pdfUrl" [(ngModel)]="course.media.pdfUrl" formControlName="pdfUrl"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														value="" />
-												</div>
-											</div>
-										</div>
-								
-								
-								
-										<hr class="mt-6 border-b-1 border-gray-100" />
-								
-										<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
-											عکس دوره و اسپانسر
-										</h6>
-										<div class="flex flex-wrap justify-between">
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														عکس دوره
-													</label>
-													<input type="file" formControlName="file" (change)="onFileChange($event)"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														 />
-												</div>
-											</div>
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-													</label>
-													<img style="height: 18rem; width: 18rem; margin: auto"
-														src="{{course.media.photoUrl}}"
-														alt="Image placeHolder" />
-												</div>
-											</div>
-										</div>
-										<div class="flex flex-wrap justify-between">
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-														عکس اسپانسر دوره
-													</label>
-													<input type="file" formControlName="spfile" (change)="onFile1Change($event)"
-														class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-														 />
+				<div class="information-tab my-5">
+
+					<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+						<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+							<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+								اطلاعات دوره
+							</h6>
+							<div class="flex flex-wrap">
+								<div class="w-full lg:w-4/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											نام دوره
+										</label>
+										<input type="text" name="title" [(ngModel)]="course.title" formControlName="title"
+											class="form-control px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+
+
+								<div class="form-group w-full lg:w-4/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											قیمت دوره
+										</label>
+										<input name="cost" [(ngModel)]="course.cost" formControlName="cost" type="text"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+								<div class="w-full lg:w-4/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											تاریخ برگذاری
+										</label>
+										<input #startDate name="started" [(ngModel)]="course.started" formControlName="started"
+											type="text"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+										<ng-persian-datepicker [timeMeridian]='true' [input]="startDate"
+											[uiHideAfterSelectDate]="true">
+										</ng-persian-datepicker>
+									</div>
+								</div>
+
+
+								<div class="w-full lg:w-4/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											تخفیف
+										</label>
+										<input name="off" [(ngModel)]="course.off" formControlName="off" type="text"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+							</div>
+
+							<hr class="mt-6 border-b-1 border-gray-100" />
+
+							<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+								توضیحات دوره
+							</h6>
+							<div class="flex flex-wrap">
+								<div class="w-full lg:w-12/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											توضیحات دوره
+										</label>
+										<ckeditor name="description" [(ngModel)]="course.description"
+											formControlName="description" [editor]="Editor" data="{{course.description}}">
+										</ckeditor>
+									</div>
+								</div>
+
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											سرفصل ها
+										</label>
+										<ckeditor name="titres" [(ngModel)]="course.titres" formControlName="titres"
+											[editor]="Editor" data="{{course.titres}}"></ckeditor>
+									</div>
+								</div>
+
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											لینک دوره
+										</label>
+										<input type="text" name="url" [(ngModel)]="course.url" formControlName="url"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											مدت دوره
+										</label>
+										<input type="text" name="hours" [(ngModel)]="course.hours" formControlName="hours"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+
+
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											وضعیت دوره
+										</label>
+										<select formControlName="isActive" name="isActive" [(ngModel)]="course.isActive"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white">
+											<option value="true">در حال برگزاری</option>
+											<option value="false">برگزار شده</option>
+										</select>
+									</div>
+								</div>
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											پیشنهاد توان
+										</label>
+										<select formControlName="suggest" name="suggest" [(ngModel)]="course.suggest"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white">
+											<option value="true">پیشنهاد</option>
+											<option value="false">عادی</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											آدرس ویدیو
+										</label>
+										<input type="text" name="videoUrl" [(ngModel)]="course.media.videoUrl"
+											formControlName="videoUrl"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											ایدی ویدیو
+										</label>
+										<input type="text" name="videoId" [(ngModel)]="course.media.videoId"
+											formControlName="videoId"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											لینک pdf
+										</label>
+										<input type="text" name="pdfUrl" [(ngModel)]="course.media.pdfUrl"
+											formControlName="pdfUrl"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+											value="" />
+									</div>
+								</div>
+							</div>
+
+
+
+							<hr class="mt-6 border-b-1 border-gray-100" />
+
+							<h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+								عکس دوره و اسپانسر
+							</h6>
+							<div class="flex flex-wrap justify-between">
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											عکس دوره
+										</label>
+										<input type="file" formControlName="file" (change)="onFileChange($event)"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+									</div>
+								</div>
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+										</label>
+										<img style="height: 18rem; width: 18rem; margin: auto" src="{{course.media.photoUrl}}"
+											alt="Image placeHolder" />
+									</div>
+								</div>
+							</div>
+							<div class="flex flex-wrap justify-between">
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+											عکس اسپانسر دوره
+										</label>
+										<input type="file" formControlName="spfile" (change)="onFile1Change($event)"
+											class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+
+
+									</div>
+
+
+								</div>
+								<div class="w-full lg:w-6/12 px-4">
+									<div class="relative w-full mb-3">
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+											htmlFor="grid-password">
+										</label>
+										<img style="height: 18rem; width: 18rem; margin: auto" src="{{course.media.spPhotoUrl}}"
+											alt="Image placeHolder" />
+									</div>
+								</div>
+							</div>
+							<hr class="mt-6 border-b-1 border-gray-100" />
+							<button (click)="updateCourse()"
+								class="bg-blue-500 text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all  duration-150 hover:bg-transparent hover:text-blue-900 border-2 border-transparent hover:border-blue-900"
+								type="submit">
+								ایجاد دوره جدید
+							</button>
 							
-								
-													<button (click)="updateCourse()"
-														class="bg-green-600 text-blue-500  hover:bg-green-900 hover:text-green-900 uppercase text-ms px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-														type="button">
-														ایجاد دوره جدید
-													</button>
-												</div>
-							
-											</div>
-											<div class="w-full lg:w-6/12 px-4">
-												<div class="relative w-full mb-3">
-													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-													</label>
-													<img style="height: 18rem; width: 18rem; margin: auto"
-														src="{{course.media.spPhotoUrl}}"
-														alt="Image placeHolder" />
-												</div>
-											</div>
-										</div>
-										<hr class="mt-6 border-b-1 border-gray-100" />
-								
-										<!-- <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
+							<button (click)="deleteCourse(course.id)"
+								class="bg-warning text-white active:bg-indigo-600 text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all  duration-150 hover:bg-transparent hover:text-warning border-2 border-transparent hover:border-warning"
+								type="button">
+								حذف دوره
+							</button>
+							<!-- <h6 class="text-mesh-700 text-sm mt-3 mb-6 font-bold uppercase">
 											انتخاب تعداد جلسات
 										</h6> -->
-										<!-- <div class="flex flex-wrap">
+							<!-- <div class="flex flex-wrap">
 											<label class="block pl-2 uppercase text-gray-700 text-xs font-bold mb-2" for="lesson-num">تعداد جلسه
 												ها</label>
 											<input
@@ -268,10 +283,10 @@
 												id="lesson-num" type="number" (input)="onChangeTickets($event.target.value)">
 								
 										</div> -->
-										<div class="flex flex-wrap">
-								
-								
-											<!-- <div class="w-full lg:w-4/12 px-4" *ngFor="let session of t.controls; let i=index">
+							<div class="flex flex-wrap">
+
+
+								<!-- <div class="w-full lg:w-4/12 px-4" *ngFor="let session of t.controls; let i=index">
 												<div [formGroup]="session" class="relative w-full mb-3">
 													<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
 														جلسه {{i+1}}
@@ -282,178 +297,137 @@
 													</ng-persian-datepicker>
 												</div>
 											</div> -->
-								
-								
-								
-								
-										</div>
-									</form>
-								</div>
-					</div>
 
-					<div class="video-tab my-5 hidden">
-						<form #videoForm="ngForm" (ngSubmit)="addVideo(course.id)">
-						<div class="w-full flex flex-wrap">
-								<div class="w-6/12">
-									<label
-										class="block uppercase text-gray-700 text-xs font-bold mb-2"
-										htmlFor="grid-password"
-									>
-										نام ویدیو
-									</label>
-									<input
-										name="title"
-										[(ngModel)]="video.title"
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-									/>
-									<label
-										class="block uppercase text-gray-700 text-xs font-bold mb-2"
-										htmlFor="grid-password"
-									>
-										ایدی ویدیو
-									</label>
-									<input
-										name="videoId"
-										[(ngModel)]="video.videoId"
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-									/>
-									<label
-										class="block uppercase text-gray-700 text-xs font-bold mb-2"
-										htmlFor="grid-password"
-									>
-										لینک ویدیو
-									</label>
-									<input
-										name="videoUrl"
-										[(ngModel)]="video.url"
-										type="text"
-										class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-									/>
-								</div>
 
-								<div class="w-4/12 text-center" style="align-self: center;">
-									<button
-										class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
-										type="submit"
-									>
-										<i class="fa fa-plus-square"></i>
-										Add Video
-									</button>
-								</div>
+
+
 							</div>
 						</form>
-						<div class="my-10 align-self-center text-center w-full">
-							<!--? :: :: :: A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: -->
-							<mat-accordion *ngIf="course.videos" class="duration-500">
-								<mat-expansion-panel
-									*ngFor="let video of course.videos"
-									class="duration-500"
-									(opened)="panelOpenState1 = true"
-									(closed)="panelOpenState1 = false"
-								>
-									<mat-expansion-panel-header>
-										<mat-panel-title class="font-bold text-black fa-vazir vazir">
-											{{video.title}}
-										</mat-panel-title>
-										<mat-panel-description
-											class="duration-200"
-											[ngClass]="
+					</div>
+				</div>
+
+				<div class="video-tab my-5 hidden">
+					<form #videoForm="ngForm" (ngSubmit)="addVideo(course.id)">
+						<div class="w-full flex flex-wrap">
+							<div class="w-6/12">
+								<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+									نام ویدیو
+								</label>
+								<input name="title" [(ngModel)]="video.title" type="text"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+								<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+									ایدی ویدیو
+								</label>
+								<input name="videoId" [(ngModel)]="video.videoId" type="text"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+								<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+									لینک ویدیو
+								</label>
+								<input name="videoUrl" [(ngModel)]="video.url" type="text"
+									class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+							</div>
+
+							<div class="w-4/12 text-center" style="align-self: center;">
+								<button
+									class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
+									type="submit">
+									<i class="fa fa-plus-square"></i>
+									Add Video
+								</button>
+							</div>
+						</div>
+					</form>
+					<div class="my-10 align-self-center text-center w-full">
+						<!--? :: :: :: A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: -->
+						<mat-accordion *ngIf="course.videos" class="duration-500">
+							<mat-expansion-panel *ngFor="let video of course.videos" class="duration-500"
+								(opened)="panelOpenState1 = true" (closed)="panelOpenState1 = false">
+								<mat-expansion-panel-header>
+									<mat-panel-title class="font-bold text-black fa-vazir vazir">
+										{{video.title}}
+									</mat-panel-title>
+									<mat-panel-description class="duration-200" [ngClass]="
 											panelOpenState1
 												? 'text-red-600 font-bold'
 												: 'text-gray-300 hover:text-red-300'
-                      "
-										>
-											{{panelOpenState1 ? 'open' : 'closed'}}
-										</mat-panel-description>
-									</mat-expansion-panel-header>
-									<div class="lessons-info">
-										<span
-											class="duration"
-											data-toggle="tooltip"
-											data-placement="top"
-											title="Duration"
-											><div class="w-full flex flex-wrap justify-end mt-3">
-												<button
-												(click)="deleteVideo(video.id)"
-													class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300"
-												>
-													Delete video
-												</button>
-											</div>
-										</span>
-										<div style="margin-top: 15px; display: block;"></div>
-										<div class="h_iframe-aparat_embed_frame">
-											<div class="r1_iframe_embed">
-												<iframe
-													[src]="video.url | arvan"
-													frameborder="0"
-													allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-													allowfullscreen="true"
-													webkitallowfullscreen="true"
-													mozallowfullscreen="true"
-												></iframe>
-											</div>
+                      ">
+										{{panelOpenState1 ? 'open' : 'closed'}}
+									</mat-panel-description>
+								</mat-expansion-panel-header>
+								<div class="lessons-info">
+									<span class="duration" data-toggle="tooltip" data-placement="top" title="Duration">
+										<div class="w-full flex flex-wrap justify-end mt-3">
+											<button (click)="deleteVideo(video.id)"
+												class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300">
+												Delete video
+											</button>
+										</div>
+									</span>
+									<div style="margin-top: 15px; display: block;"></div>
+									<div class="h_iframe-aparat_embed_frame">
+										<div class="r1_iframe_embed">
+											<iframe [src]="video.url | arvan" frameborder="0"
+												allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen="true" webkitallowfullscreen="true"
+												mozallowfullscreen="true"></iframe>
 										</div>
 									</div>
-								</mat-expansion-panel>
-							</mat-accordion>
+								</div>
+							</mat-expansion-panel>
+						</mat-accordion>
 
-							<!--? end of A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: : :: :: :: :: :: :: :: :: :: :: :: :: ::  -->
-						</div>
+						<!--? end of A K A R D E O N :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: : :: :: :: :: :: :: :: :: :: :: :: :: ::  -->
 					</div>
-					
-					<div class="category-tab my-5 hidden">
-						<form #categoryForm="ngForm">
-							<div class="flex flex-wrap  items-center">
-								<label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4" htmlFor="grid-password">
-									کتگوری
-								</label>
+				</div>
+
+				<div class="category-tab my-5 hidden">
+					<form #categoryForm="ngForm">
+						<div class="flex flex-wrap  items-center">
+							<label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4" htmlFor="grid-password">
+								کتگوری
+							</label>
 							<mat-form-field appearance="fill">
-							
+
 								<mat-select name="id" [(ngModel)]="categoryToAdd.id" [(value)]="selected">
 									<mat-option>None</mat-option>
-									<mat-option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</mat-option>
+									<mat-option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}
+									</mat-option>
 								</mat-select>
 							</mat-form-field>
-									<button
-										(click)="addCategory(course.id)"
-										class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
-										type="submit">
-										<i class="fa fa-plus-square"></i>
-										Add Category
-									</button>
-							</div>
-						</form>
-						<div class="block w-full overflow-x-auto">
-							<!-- Projects table -->
-							<table *ngIf="course.categoryCourses" class="items-center w-full bg-transparent border-collapse">
-								<thead>
-									<tr *ngFor="let categoryCourse of course.categoryCourses">
-										<th
-											class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-											{{categoryCourse.category.id}}
-										</th>
-										<th
-											class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-											{{categoryCourse.category.name}}
-										</th>
-										<th
-											class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-											<button
-												(click)="deleteCategory(course.id , categoryCourse.category.id)"
-													class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300"
-												>
-													Delete Category
-												</button>
-										</th>
-						
-									</tr>
-								</thead>
-								<tbody>
-						
-									<!-- <tr *ngFor="let teacher of teachers">
+							<button (click)="addCategory(course.id)"
+								class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
+								type="submit">
+								<i class="fa fa-plus-square"></i>
+								Add Category
+							</button>
+						</div>
+					</form>
+					<div class="block w-full overflow-x-auto">
+						<!-- Projects table -->
+						<table *ngIf="course.categoryCourses" class="items-center w-full bg-transparent border-collapse">
+							<thead>
+								<tr *ngFor="let categoryCourse of course.categoryCourses">
+									<th
+										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+										{{categoryCourse.category.id}}
+									</th>
+									<th
+										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+										{{categoryCourse.category.name}}
+									</th>
+									<th
+										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+										<button (click)="deleteCategory(course.id , categoryCourse.category.id)"
+											class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300">
+											Delete Category
+										</button>
+									</th>
+
+								</tr>
+							</thead>
+							<tbody>
+
+								<!-- <tr *ngFor="let teacher of teachers">
 										<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left">
 											{{teacher.id}}
 										</td>
@@ -475,67 +449,65 @@
 											</div>
 										</td>
 									</tr> -->
-								</tbody>
-							</table>
-							<br>
-							<br>
-						
-							<div class="col-lg-12 col-md-12 flex justify-center">
-								<mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl style="direction: ltr;"
-									[length]="" [pageSize]="">
-								</mat-paginator>
-							</div>
-						</div>
-
+							</tbody>
+						</table>
+						<br>
 						<br>
 
-						<form #teacherForm="ngForm">
-							<div class="flex flex-wrap  items-center">
-								<label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4" htmlFor="grid-password">
-									Teacher
-								</label>
+						<div class="col-lg-12 col-md-12 flex justify-center">
+							<mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl
+								style="direction: ltr;" [length]="" [pageSize]="">
+							</mat-paginator>
+						</div>
+					</div>
+
+					<br>
+
+					<form #teacherForm="ngForm">
+						<div class="flex flex-wrap  items-center">
+							<label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4" htmlFor="grid-password">
+								Teacher
+							</label>
 							<mat-form-field appearance="fill">
-							
+
 								<mat-select name="id" [(ngModel)]="teacherToAdd.id" [(value)]="selected">
 									<mat-option>None</mat-option>
-									<mat-option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.name}}</mat-option>
+									<mat-option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.name}}
+									</mat-option>
 								</mat-select>
 							</mat-form-field>
-									<button
-										(click)="addTeacher(course.id)"
-										class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
-										type="submit">
-										<i class="fa fa-plus-square"></i>
-										Add Teacher
-									</button>
-							</div>
-						</form>
-						<div class="block w-full overflow-x-auto">
-							<!-- Projects table -->
-							<table *ngIf="course.courseTeachers" class="items-center w-full bg-transparent border-collapse">
-								<thead>
-									<tr *ngFor="let courseTeacher of course.courseTeachers">
-										<th
-											class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-											{{courseTeacher.teacher.id}}
-										</th>
-										<th
-											class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-											{{courseTeacher.teacher.name}}
-										</th>
-										<th
-											class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-											<button
-												(click)="deleteTeacher(course.id , courseTeacher.teacher.id)"
-													class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300"
-												>
-													Delete Teacher
-												</button>
-										</th>
-						
-									</tr>
-								</thead>
-								<!-- <tbody>
+							<button (click)="addTeacher(course.id)"
+								class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
+								type="submit">
+								<i class="fa fa-plus-square"></i>
+								Add Teacher
+							</button>
+						</div>
+					</form>
+					<div class="block w-full overflow-x-auto">
+						<!-- Projects table -->
+						<table *ngIf="course.courseTeachers" class="items-center w-full bg-transparent border-collapse">
+							<thead>
+								<tr *ngFor="let courseTeacher of course.courseTeachers">
+									<th
+										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+										{{courseTeacher.teacher.id}}
+									</th>
+									<th
+										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+										{{courseTeacher.teacher.name}}
+									</th>
+									<th
+										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+										<button (click)="deleteTeacher(course.id , courseTeacher.teacher.id)"
+											class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300">
+											Delete Teacher
+										</button>
+									</th>
+
+								</tr>
+							</thead>
+							<!-- <tbody>
 						
 									<tr *ngFor="let teacher of teachers">
 										<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left">
@@ -560,24 +532,24 @@
 										</td>
 									</tr>
 								</tbody> -->
-							</table>
-							<br>
-							<br>
-						
-							<div class="col-lg-12 col-md-12 flex justify-center">
-								<mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl style="direction: ltr;"
-									[length]="" [pageSize]="">
-								</mat-paginator>
-							</div>
+						</table>
+						<br>
+						<br>
+
+						<div class="col-lg-12 col-md-12 flex justify-center">
+							<mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl
+								style="direction: ltr;" [length]="" [pageSize]="">
+							</mat-paginator>
 						</div>
 					</div>
-					<div class="session-tab my-5 hidden">
+				</div>
+				<div class="session-tab my-5 hidden">
 					<form #sessionForm="ngForm">
 						<div class="w-6/12">
 							<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-								تاریخ 
+								تاریخ
 							</label>
-							<input #time name="time" [(ngModel)]="sessionToAdd.time"  type="text"
+							<input #time name="time" [(ngModel)]="sessionToAdd.time" type="text"
 								class="px-3 py-3 border-2 border-gray-700 placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
 								value="" />
 							<ng-persian-datepicker [timeMeridian]='true' [input]="time" [uiHideAfterSelectDate]="true">
@@ -587,11 +559,9 @@
 						<div class="w-4/12 text-center" style="align-self: center;">
 							<button
 								class="bg-mesh-600 text-white active:bg-indigo-600 text-xs uppercase px-5 py-3 rounded outline-none focus:outline-none mr-1 ease-linear transition-all font-bold duration-150 hover:bg-transparent hover:text-green-700 border-2 border-transparent hover:border-green-600"
-								type="submit"
-								(click)="addSession(course.id)"
-							>
+								type="submit" (click)="addSession(course.id)">
 								<i class="fa fa-plus-square"></i>
-								Add session 
+								Add session
 							</button>
 						</div>
 					</form>
@@ -602,7 +572,7 @@
 								<tr *ngFor="let session of course.sessions">
 									<th
 										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-										{{session.id}} 
+										{{session.id}}
 									</th>
 									<th
 										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
@@ -610,27 +580,25 @@
 									</th>
 									<th
 										class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
-										<button
-												(click)="deleteSession(session.id)"
-													class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300"
-												>
-													Delete Session
+										<button (click)="deleteSession(session.id)"
+											class="bg-red-400 px-3 py-4 rounded text-black hover:bg-red-600 hover:text-white duration-300">
+											Delete Session
 										</button>
 									</th>
-					
+
 								</tr>
 							</thead>
 						</table>
 						<br>
 						<br>
-					
+
 						<div class="col-lg-12 col-md-12 flex justify-center">
-							<mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl style="direction: ltr;"
-								[length]="" [pageSize]="">
+							<mat-paginator style="width: 100px;" type="number" name="paginator" ngDefaultControl
+								style="direction: ltr;" [length]="" [pageSize]="">
 							</mat-paginator>
 						</div>
 					</div>
-					</div>
+				</div>
 			</div>
 		</div>
 	</div>

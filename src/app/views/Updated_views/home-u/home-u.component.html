@@ -199,7 +199,7 @@
           <div class="product-item-content">
 
 
-            <div [routerLink]="['/teacher' , teacher.id]" routerLinkActive="router-link-active"  class="teacher-group flex flex-col items-center m-6">
+            <a [routerLink]="['/teacher' , teacher.id]" routerLinkActive="router-link-active"  class="teacher-group flex flex-col items-center m-6">
               <div class="relative item-t flex items-center justify-center">
                 <img class="rounded-full" style="min-width: 120px" src="{{teacher.image_path}}" alt="" />
                 <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
@@ -207,7 +207,7 @@
                 <p class="text-white text-center absolute">مشاهده رزومه</p>
               </div>
               <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
-            </div>
+            </a>
             
 
 

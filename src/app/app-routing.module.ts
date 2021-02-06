@@ -35,6 +35,10 @@ import { CategoryListResolver } from './_resolvers/category-list.resolver';
 import { TeacherListResolver } from './_resolvers/teacher-list.resolver';
 
 
+// ::   Guard  ::  --::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::
+import { IsAdminGuard } from './_guards/is-admin.guard';
+
+
 // .::  Landing Page ::.  --::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::
 import { HomeUComponent } from './views/Updated_views/home-u/home-u.component';
 import { LoginUComponent } from './views/Updated_views/login-u/login-u.component';
@@ -64,10 +68,8 @@ const routes: Routes = [
   //.:: Main Page Route ::.
   {
     path: '', component: MainTemplateComponent, children: [
-
       { path: 'login', component: LoginUComponent },
       { path: 'register', component: RegisterUComponent },
-
       { path: 'about', component: AboutUsUComponent },
       { path: 'contact', component: ContactUsUComponent },
       { path: 'faq', component: FAQUComponent },
@@ -79,42 +81,24 @@ const routes: Routes = [
       { path: 'webinar/:id', component: WebinarComponent },
       { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
-
       {
         path: 'customer-panel', component: UPanelCustomerComponent,
          children: [
-    
           { path: 'profile', component: PCProfileComponent },
           { path: 'workshop', component: PCWorkshopComponent },
           { path: 'videos', component: PCVideosComponent },
           { path: '', redirectTo: 'videos', pathMatch: 'full' }, 
-
         ]
       },
     ],
   },
-  // landing Page views  #I COMMENT THESE ROUTE FOR DEVELOP
-  // {
-  //   path: '',
-  //   component: LandingLayoutComponent,
-  //   children: [
-  //     { path: 'home', component: LandingHomeComponent , resolve: { photos: PhotoListResolver} },
-  //     { path: 'products/Single/:id', component: LandingSingleProductComponent , resolve: {course : CourseDetailMainResolver}},
-  //     { path: 'about', component: LandingAboutComponent },
-  //     { path: 'intro', component: LandingIntroComponent },
-  //     { path: 'products/:isActive', component: LandingProductsAllComponent , resolve: {courses : CourseListResolver}},
-  //     { path: 'checkpayment/:id', component: PayChechComponent },
-  //     { path: '', redirectTo: 'home', pathMatch: 'full' },
-  //   ]
-  // },
 
-
-  // admin views
+  // .:: admin views
   {
     path: 'admin',
-    // ! THESE two line MUST BE un comment 
-    // runGuardsAndResolvers: 'always',
-    // canActivate: [IsAdminGuard],   
+    
+    runGuardsAndResolvers: 'always',
+    canActivate: [IsAdminGuard],   
     component: PanelComponent,
     children: [
       { path: 'dashboard', component: PADashboardComponent, resolve: { courses: CourseListAllResolver } },
@@ -122,9 +106,6 @@ const routes: Routes = [
       { path: 'allCourses', component: PAAllCoursesComponent },
       { path: 'newCourse', component: PANewCourseComponent, resolve: { categories: CategoryListResolver, teachers: TeacherListResolver } },
       { path: 'ticket', component: PATicketComponent },
-      // ! DELETE this ---------------------------------\/---
-      { path: 'test', component: PATestComponent },
-      // ! DELETE this ---------------------------------/\---
       { path: 'teacher', component: PATeachersComponent },
       { path: 'teacher-edit/:id', component: PATeacherEditeComponent },
       { path: 'teacher-new', component: PATeacherNewComponent },
@@ -139,44 +120,10 @@ const routes: Routes = [
       { path: 'discount', component: PADiscountComponent },
       { path: 'EditDiscount/:id', component: PADiscountEditComponent },
       { path: 'NewDiscount', component: PADiscountNewComponent },
-   
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
-
-  // Customer Panel views
-  // {
-  //   path: 'Customer',
-  //   runGuardsAndResolvers: 'always',
-  //   canActivate: [IsClientGuard],
-  //   component: CustomerPanelComponent,
-  //   children: [
-  //     { path: 'dashboard', component: PCDashboardComponent, resolve: { courses: CourseListAllUserResolver } },
-  //     { path: 'activeCourses', component: PCActiveCoursesComponent },
-  //     { path: 'dactiveCourses', component: PCDactiveCourseComponent },
-  //     { path: 'SingleCourseDetails/:id', component: PCCourseSingleDetailComponent, resolve: { course: CourseDetailResolver } },
-  //     { path: 'FinnishCourses/:isActive', component: PCFinnishedCoursesComponent, resolve: { courses: CourseListUserResolver } },
-  //     { path: 'Profile', component: PCEditProfileComponent },
-  //     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  //   ],
-  // },
-
-
-
-
-  // ::::::::::::::::::::::::::::::::::::::::::::::::::::
-  //! -----> Here are some old Route USelesssss
-  // Just for dev testing 
-  // { path: 'Test', component: TestComponentViewComponent },
-  // auth views
-
-
-
-  // no layout views
-  // { path: 'profile', component: ProfileComponent },
-  // { path: 'landing', component: LandingComponent },
-  // { path: '', component: IndexComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
 

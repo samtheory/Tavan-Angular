@@ -48,7 +48,7 @@ import { SlidShowComponent } from './components/slide-show/slid-show.component';
 
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
+
 import { LandingFooterComponent } from './components/landing-footer/landing-footer.component';
 import { CardProduct1Component } from './components/cards/card-product1/card-product1.component';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -202,15 +202,12 @@ export function tokenGeter() {
     CardSocialTrafficComponent,
     CardStatsComponent,
     CardTableComponent,
-  
     MapExampleComponent,
     AuthNavbarComponent,
     AdminNavbarComponent,
     IndexNavbarComponent,
     AdminComponent,
     AuthComponent,
-
-
     PanelComponent,
     PAAllCoursesComponent,
     PANewCourseComponent,
@@ -219,13 +216,9 @@ export function tokenGeter() {
     UsersTableComponent,
     DiscountTableComponent,
     SlidShowComponent,
-    
-    LandingNavbarComponent,
     LandingFooterComponent,
     CardProduct1Component,
-
     LandingLayoutComponent,
-  
     PASlideShowComponent,
     PADiscountComponent,
     PAAllUserComponent,
@@ -245,7 +238,6 @@ export function tokenGeter() {
     SidebarCustomerComponent,
     CustomerPanelComponent,
     ArvanPipe,
-    
     HomeUComponent,
     LoginUComponent,
     RegisterUComponent,

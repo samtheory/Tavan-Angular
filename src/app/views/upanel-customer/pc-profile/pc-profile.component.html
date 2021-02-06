@@ -4,26 +4,29 @@
 
    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" action="">
       <!-- :: /: profile Image :/  -->
-      <div class="relative flex justify-center items-center ">
+		<div class="w-full ">
 
-         <img *ngIf="!user.userPhoto || !user.userPhoto.avatarUrl" class="m-auto mt-10  rounded"
-            src="assets/img/_usefull/profile-customer.svg" alt="avatar">
-         <div *ngIf="user.userPhoto">
-            <img *ngIf="user.userPhoto.avatarUrl" class="m-auto mt-10  rounded" src="{{user.userPhoto.avatarUrl}}"
-               alt="avatar">
-         </div>
-
-         <label
-            class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-            style="width:150px ;height: 150px; top:40px">
-            <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-               <path
-                  d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-            </svg>
-
-            <input formControlName="avatar" (change)="onFile2Change($event)" type="file" class="hidden" />
-         </label>
-      </div>
+			<div class="relative flex justify-center items-center m-auto " style="width:130px">
+	
+				<img *ngIf="!user.userPhoto || !user.userPhoto.avatarUrl" class="m-auto mt-10  rounded"
+					src="assets/img/_usefull/profile-customer.svg" alt="avatar" class="m-auto mt-10  rounded">
+				<div *ngIf="user.userPhoto">
+					<img *ngIf="user.userPhoto.avatarUrl" class="m-auto mt-10  rounded" src="{{user.userPhoto.avatarUrl}}"
+						alt="avatar">
+				</div>
+	
+				<label
+					class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+					style="top:40px;bottom:0;left: 0;right: 0;">
+					<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+						<path
+							d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+					</svg>
+	
+					<input formControlName="avatar" (change)="onFile2Change($event)" type="file" class="hidden" />
+				</label>
+			</div>
+		</div>
       <p class="pt-4 m-auto text-center mb-10">برای بارگذاری عکس روی تصویر کلیک کنید</p>
 
       <!-- .:: the Inputs section ---------------------------------------------- -->
@@ -108,8 +111,8 @@
 				background-position: center;
 				position: relative;">
                <label
-                  class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-                  style="top: 33%; right: 26%;">
+                 	class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+                 style="top: 0; right: 0;bottom: 0; left: 0;">
                   <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                      <path
                         d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
@@ -129,20 +132,20 @@
             background-position: center;
             position: relative;">
                <label
-                  class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-                  style="top: 33%; right: 26%;">
+                	class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+                style="top: 0; right: 0;bottom: 0; left: 0;">
                   <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                      <path
                         d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
                   </svg>
-                  <span class="mt-2 text-base leading-normal">Select a file</span>
+                  <span class="mt-2 text-base leading-normal"></span>
                   <input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
                </label>
             </div>
          </div>
          <div class="form-item  py-3 mx-4 px-2">
             <label class="block text-sm font-bold pb-2 pr-2 ">
-               بارگذاری کارت نظام پزشکی
+               بارگذاری کارت نظام پزشکی    
                <i class="pi pi-upload px-3"></i>
             </label>
             <div *ngIf="!user.userPhoto || !user.userPhoto.nezamUrl" style="
@@ -156,13 +159,13 @@
 				background-position: center;
 				position: relative;">
                <label
-                  class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-                  style="top: 33%; right: 26%;">
+                	class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+                  style="top: 0; right: 0;bottom: 0; left: 0;">
                   <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                      <path
                         d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
                   </svg>
-                  <span class="mt-2 text-base leading-normal">Select a file</span>
+                  <span class="mt-2 text-base leading-normal">ppp</span>
                   <input formControlName="nezam" (change)="onFile1Change($event)" type="file" class="hidden" />
                </label>
             </div>
@@ -177,19 +180,22 @@
 				background-position: center;
 				position: relative;">
                <label
-                  class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-                  style="top: 33%; right: 26%;">
+	class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+                 style="top: 0; right: 0;bottom: 0; left: 0;">
                   <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                      <path
                         d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
                   </svg>
-                  <span class="mt-2 text-base leading-normal">Select a file</span>
+                  <span class="mt-2 text-base leading-normal"></span>
                   <input formControlName="nezam" (change)="onFile1Change($event)" type="file" class="hidden" />
                </label>
             </div>
          </div>
       </div>
       <!-- .::--END Upload ------ -->
+
+
+
       <!-- :: /: Action Button :/  -->
       <div class="flex flex-wrap justify-center my-5">
          <div class="px-2">

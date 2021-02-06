@@ -24,8 +24,11 @@
 		<div *ngIf="this.categories" [ngClass]="{'w-0 hidden': megaMenu == false, 'w-full block': megaMenu == true }"
 			class="category-collapse-item py-4 bg-gray-200 duration-200">
 			<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
-				<i [routerLink]="['/search', {categoryId: category.id}]" class="fas fa-circle inline text-blue-500 text-xs"></i>
-				{{category.name}}
+				<a [routerLink]="['/search', {categoryId: category.id}]">
+
+					<i  class="fas fa-circle inline text-blue-500 text-xs"></i>
+					{{category.name}}
+				</a>
 			</div>
 			
 

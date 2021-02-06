@@ -8,20 +8,7 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 
-// admin views
-import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
-import { MapsComponent } from './views/admin/maps/maps.component';
-import { SettingsComponent } from './views/admin/settings/settings.component';
-import { TablesComponent } from './views/admin/tables/tables.component';
 
-// auth views
-import { LoginComponent } from './views/auth/login/login.component';
-import { RegisterComponent } from './views/auth/register/register.component';
-
-// no layouts views
-import { IndexComponent } from './views/index/index.component';
-import { LandingComponent } from './views/demo-landing/landing.component';
-import { ProfileComponent } from './views/profile/profile.component';
 
 // components for views and layouts
 
@@ -58,7 +45,7 @@ import { AllCourseTableComponent } from './components/myCard/Tables/all-course-t
 import { UsersTableComponent } from './components/myCard/Tables/users-table/users-table.component';
 import { DiscountTableComponent } from './components/myCard/Tables/discount-table/discount-table.component';
 import { SlidShowComponent } from './components/slide-show/slid-show.component';
-import { TestComponentViewComponent } from './views/test-component-view/test-component-view.component';
+
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LandingNavbarComponent } from './components/navbars/landing-navbar/landing-navbar.component';
@@ -67,12 +54,8 @@ import { CardProduct1Component } from './components/cards/card-product1/card-pro
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 
-// Landing page view
-import { LandingHomeComponent } from './views/landing/landing-home/landing-home.component';
-import { LandingIntroComponent } from './views/landing/landing-intro/landing-intro.component';
-import { LandingProductsAllComponent } from './views/landing/landing-products-all/landing-products-all.component';
-import { LandingAboutComponent } from './views/landing/landing-about/landing-about.component';
-import { LandingSingleProductComponent } from './views/landing/landing-single-product/landing-single-product.component';
+
+
 import { PASlideShowComponent } from './views/panel-Admin/p-a-slide-show/p-a-slide-show.component';
 import { PADiscountComponent } from './views/panel-Admin/p-a-discount/p-a-discount.component';
 import { PAAllUserComponent } from './views/panel-Admin/p-a-all-user/p-a-all-user.component';
@@ -101,11 +84,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PAAddVideoComponent } from './views/panel-admin/p-a-add-video/p-a-add-video.component';
 import { PADiscountEditComponent } from './views/panel-admin/p-a-discount-edit/p-a-discount-edit.component';
 import { PADiscountNewComponent } from './views/panel-admin/p-a-discount-new/p-a-discount-new.component';
-import { PCDashboardComponent } from './views/panel-Customer/p-c-dashboard/p-c-dashboard.component';
-import { PCActiveCoursesComponent } from './views/panel-Customer/p-c-active-courses/p-c-active-courses.component';
-import { PCFinnishedCoursesComponent } from './views/panel-Customer/p-c-finnished-courses/p-c-finnished-courses.component';
-import { PCEditProfileComponent } from './views/panel-Customer/p-c-edit-profile/p-c-edit-profile.component';
-import { PCCourseSingleDetailComponent } from './views/panel-Customer/p-c-course-single-detail/p-c-course-single-detail.component';
+
 import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w-c-customer-course.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
@@ -127,9 +106,9 @@ import { CourseListMainActiveResolver } from './_resolvers/course-list-user-acti
 import { PhotoListResolver } from './_resolvers/photo-list.resolver';
 import { IsAdminGuard } from './_guards/is-admin.guard';
 import { IsClientGuard } from './_guards/is-client.guard';
-import { PayChechComponent } from './views/landing/pay-chech/pay-chech.component';
+
 import { CourseDetailMainResolver } from './_resolvers/course-detail-main.resolver';
-import { PCDactiveCourseComponent } from './views/panel-Customer/p-c-dactive-course/p-c-dactive-course.component';
+
 
 
 // .:: Updated View  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -205,8 +184,7 @@ export function tokenGeter() {
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    
+   
     NotificationDropdownComponent,
     CardBarChartComponent,
     CardLineChartComponent,
@@ -231,14 +209,8 @@ export function tokenGeter() {
     IndexNavbarComponent,
     AdminComponent,
     AuthComponent,
-    MapsComponent,
-    SettingsComponent,
-    TablesComponent,
-    LoginComponent,
-    RegisterComponent,
-    IndexComponent,
-    LandingComponent,
-    ProfileComponent,
+
+
     PanelComponent,
     PAAllCoursesComponent,
     PANewCourseComponent,
@@ -247,16 +219,13 @@ export function tokenGeter() {
     UsersTableComponent,
     DiscountTableComponent,
     SlidShowComponent,
-    TestComponentViewComponent,
+    
     LandingNavbarComponent,
     LandingFooterComponent,
     CardProduct1Component,
-    LandingHomeComponent,
-    LandingProductsAllComponent,
-    LandingIntroComponent,
-    LandingAboutComponent,
+
     LandingLayoutComponent,
-    LandingSingleProductComponent,
+  
     PASlideShowComponent,
     PADiscountComponent,
     PAAllUserComponent,
@@ -272,23 +241,16 @@ export function tokenGeter() {
     PAAddVideoComponent,
     PADiscountEditComponent,
     PADiscountNewComponent,
-    PCDashboardComponent,
-    PCActiveCoursesComponent,
-    PCFinnishedCoursesComponent,
-    PCEditProfileComponent,
-    PCCourseSingleDetailComponent,
     WCCustomerCourseComponent,
     SidebarCustomerComponent,
     CustomerPanelComponent,
     ArvanPipe,
-    PayChechComponent,
-    PCDactiveCourseComponent,
+    
     HomeUComponent,
     LoginUComponent,
     RegisterUComponent,
     SvgLogoComponent,
     MainTemplateComponent,
-
     MainFooterComponent,
     SvgWalletComponent,
     SvgSkillsComponent,

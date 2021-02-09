@@ -10,7 +10,7 @@ import { CourseService } from 'src/app/_services/course.service';
 import { OffService } from 'src/app/_services/off.service';
 import { PaymentService } from 'src/app/_services/payment.service';
 
-
+import * as $ from 'jquery';
 
 interface Video {
   name : string;
@@ -28,7 +28,7 @@ export class WebinarComponent implements OnInit {
   url: string;
   off: any = {};
   dialog = false; 
-
+  rate = false ;
   model: any = {};
   
   constructor(private courseService: CourseService, private route: ActivatedRoute,
@@ -148,44 +148,7 @@ hideDialog(){
   this.dialog = false;
   console.log(this.dialog);
 }
+
+
 }
 
-
-//------------------------------------------------------------------------------------------------
-// .:: Forgot Password module Class 
-//------------------------------------------------------------------------------------------------
-@Component({
-  selector: 'dialog-forgot-pass',
-  templateUrl: 'not-login-dialog.html',
-})
-export class NotLoginDialog {
-  loginForm: FormGroup;
-  submitted = false;
-  constructor(public dialog: MatDialog, private router: Router, private authService: AuthService,private formBuilder: FormBuilder,
-    private toastr: ToastrService) { }
-
-
-  ngOnInit(): void {
-  }
-
-  
-
-
- 
-
- 
-
-  closeDialog() {
-    this.dialog.closeAll();
-  }
-
-  register() {
-    this.router.navigate(['/register']);
-    this.dialog.closeAll();
-  }
-
-  login() {
-    this.router.navigate(['/login']);
-    this.dialog.closeAll();
-  }
-}

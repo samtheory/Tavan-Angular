@@ -53,6 +53,7 @@ import { AllTeachersComponent } from './views/Updated_views/all-teachers/all-tea
 import { TeacherComponent } from './views/Updated_views/teacher/teacher.component';
 import { SearchComponent } from './views/Updated_views/search/search.component';
 import { WebinarComponent } from './views/Updated_views/webinar/webinar.component';
+import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
 
 
 // .::  CUSTOMER panel ::.  --::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::
@@ -60,9 +61,8 @@ import { UPanelCustomerComponent } from './views/upanel-customer/upanel-customer
 import { PCProfileComponent } from './views/upanel-customer/pc-profile/pc-profile.component';
 import { PCWorkshopComponent } from './views/upanel-customer/pc-workshop/pc-workshop.component';
 import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.component';
-import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
-
 //un organized
+
 
 const routes: Routes = [
 

@@ -20,9 +20,36 @@
 
                <div class="flex justify-between py-4">
                   <p class="text-xl">{{course.title}}</p>
-                  <span class="rounded border border-gray-100 border-solid p-1 mx-2"><i
-                        class="fas fa-star text-yellow-500"></i>
+                  <span (click)="rate = !rate" class="rounded relative border border-gray-100 border-solid p-1 mx-2 cursor-pointer duration-200 hover:scale-110"><i
+                        class="fas fa-star text-yellow-500 relative"></i>
                      4.2
+                     <div class="absolute  border border-gray-100 border-solid p-1 mx-2 flex mt-2" style="left:-7px;" [ngClass]="{'hidden': !rate , 'inline' : rate}">
+                        <div (click)="logg(1)" class="flex px-2">
+
+                           <i class="fas fa-star text-yellow-500 relative"></i>
+                           1
+                        </div>
+                        <div  class="flex px-2">
+
+                           <i class="fas fa-star text-yellow-500 relative"></i>
+                           2
+                        </div>
+                        <div  class="flex px-2">
+
+                           <i class="fas fa-star text-yellow-500 relative"></i>
+                           3
+                        </div>
+                        <div  class="flex px-2">
+
+                           <i class="fas fa-star text-yellow-500 relative"></i>
+                           4
+                        </div>
+                        <div  class="flex px-2">
+
+                           <i class="fas fa-star text-yellow-500 relative"></i>
+                           5
+                        </div>
+                     </div>
                   </span>
                </div>
                <p class="text-blue-500 py-2">نمونه تدریس</p>
@@ -257,11 +284,11 @@
 
 <!-- #  This is the MINI-Mobile slider menu -->
 
-<div class="  duration-200  centered   "
-   [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }" style="z-index: 1000;max-width: 500px;">
+<div class="  duration-200  centered   " [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
+   style="z-index: 1000;max-width: 500px;">
 
-   <div  style=" background: #fff ; ">
-      <a class="text-left" mat-button mat-dialog-close  (click)="hideDialog()"><i class="fas fa-times"></i></a>
+   <div style=" background: #fff ; ">
+      <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
       <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
          <div class="py-4 px-8">
 
@@ -274,13 +301,13 @@
                   <label class="block font-bold pb-1 text-right">ایمیل</label>
                   <input [(ngModel)]="model.email" name="email"
                      class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                     matInput placeholder="ایمیل خود را وارد کنید"  type="email" />
+                     matInput placeholder="ایمیل خود را وارد کنید" type="email" />
                </div>
                <div class="form-item  py-2">
                   <label class="block font-bold pb-1 text-right">رمز عبور</label>
                   <input [(ngModel)]="model.password" name="password"
                      class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                     matInput placeholder="رمز خود را وارد کنید"  type="password" />
+                     matInput placeholder="رمز خود را وارد کنید" type="password" />
                </div>
                <div class=" flex items-center flex-col justify-between mt-4">
                   <button (click)="loginreal()"

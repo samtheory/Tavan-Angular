@@ -80,6 +80,22 @@ getUser(id: number): Observable<User>{
   return this.http.get<User>(this.baseUrl + id);
 }
 
+sendEmailRestPass(model: any) {
+  return this.http.post(this.baseUrl + 'passchanging' , model);
+}
+
+resertPass(model: any, username: string, userId: number) {
+  return this.http.post(this.baseUrl + 'resetPass/' + username + '/' + userId , model);
+}
+
+changePassUser(model: any) {
+  return this.http.post(this.baseUrl + 'updatePasswordUser/', model);
+}
+
+changePassUserAdmin(model: any, id: number) {
+  return this.http.post(this.baseUrl + 'updatePasswordUser/' + id, model);
+}
+
 getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<User[]>>{
   let params = new HttpParams();
 

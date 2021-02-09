@@ -82,7 +82,7 @@ const routes: Routes = [
       { path: 'webinar/:id', component: WebinarComponent },
       { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
-      { path: 'pass', component: PasswordUpdateComponent },
+      { path: 'pass/:username/:id', component: PasswordUpdateComponent },
       {
         path: 'customer-panel', component: UPanelCustomerComponent,
          children: [

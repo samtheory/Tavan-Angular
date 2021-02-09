@@ -51,7 +51,8 @@ export class LoginUComponent implements OnInit {
   templateUrl: 'forgot-pass-dialog.html',
 })
 export class ForgotPassDialog {
-  constructor(public dialog: MatDialog, private router: Router) { }
+  model1: any = {};
+  constructor(public dialog: MatDialog, private router: Router, private authService: AuthService) { }
 
 
   closeDialog() {
@@ -61,6 +62,10 @@ export class ForgotPassDialog {
   register() {
     this.router.navigate(['/register']);
     this.dialog.closeAll();
+  }
+
+  emailResetPass() {
+    this.authService
   }
 
   login() {

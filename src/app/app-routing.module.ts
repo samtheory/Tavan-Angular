@@ -60,8 +60,9 @@ import { UPanelCustomerComponent } from './views/upanel-customer/upanel-customer
 import { PCProfileComponent } from './views/upanel-customer/pc-profile/pc-profile.component';
 import { PCWorkshopComponent } from './views/upanel-customer/pc-workshop/pc-workshop.component';
 import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.component';
+import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
 
-
+//un organized
 
 const routes: Routes = [
 
@@ -81,6 +82,7 @@ const routes: Routes = [
       { path: 'webinar/:id', component: WebinarComponent },
       { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },
+      { path: 'pass', component: PasswordUpdateComponent },
       {
         path: 'customer-panel', component: UPanelCustomerComponent,
          children: [

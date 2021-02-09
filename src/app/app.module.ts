@@ -75,7 +75,7 @@ import { WCCustomerCourseComponent } from './widgets/cards/w-c-customer-course/w
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { CustomerPanelComponent } from './layouts/customer-panel/customer-panel.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import * as tus from 'tus-js-client';
+
 import { ErrorInterceptor } from './_intercepters/error.interceptor';
 import { ArvanPipe } from './arvan.pipe';
 
@@ -162,6 +162,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CourseMainDetailResolver } from './_resolvers/coursemain-detail.resolver';
 import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
 import { SearchSectionComponent } from './components/_Updated/search-section/search-section.component';
+import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
 
 export function tokenGeter() {
   return localStorage.getItem('token');
@@ -170,18 +171,12 @@ export function tokenGeter() {
 @NgModule({
   declarations: [
     AppComponent,
-   
     NotificationDropdownComponent,
-   
     IndexDropdownComponent,
-   
     UserDropdownComponent,
     SidebarComponent,
-
     FooterAdminComponent,
-  
     AdminNavbarComponent,
-   
     AdminComponent,
     AuthComponent,
     PanelComponent,
@@ -192,7 +187,6 @@ export function tokenGeter() {
     UsersTableComponent,
     DiscountTableComponent,
     SlidShowComponent,
-  
     LandingLayoutComponent,
     PASlideShowComponent,
     PADiscountComponent,
@@ -266,7 +260,8 @@ export function tokenGeter() {
     AllTeachersComponent,
     SearchComponent,
     WebinarComponent,
-    SearchSectionComponent
+    SearchSectionComponent,
+    PasswordUpdateComponent
   ],
   imports: [
     DropdownModule,
@@ -287,7 +282,6 @@ export function tokenGeter() {
     HttpClientModule,
     FormsModule,
     CommonModule,
-   
     PaginationModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot({
@@ -309,9 +303,7 @@ export function tokenGeter() {
     CourseDetailResolver,
     CourseMainDetailResolver,
     CourseDetailMainResolver,
-
     TeacherDetailResolver,
-    
     CourseListResolver,
     CourseListUserResolver,
     CourseListAllResolver,

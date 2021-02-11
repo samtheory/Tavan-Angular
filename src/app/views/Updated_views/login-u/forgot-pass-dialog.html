@@ -11,7 +11,7 @@
      <form #resetgo="ngForm" >
       <div class="py-6 px-2 w-96">
          <label class="block font-bold pb-1 text-right">ایمیل</label>
-         <input [(ngModel)]="model1.email" name="email"
+         <input [(ngModel)]="userEmail.email" name="email"
             class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
             matInput placeholder="ایمیل خود را وارد کنید" value="" type="email" />
             <button (click)="emailResetPass()" class="submit-btn w-full rounded bg-blue-500 py-3 mt-3 text-white text-center my-1" type="submit">

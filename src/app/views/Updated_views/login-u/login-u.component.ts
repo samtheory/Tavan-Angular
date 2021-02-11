@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class LoginUComponent implements OnInit {
   model: any = {};
+  userEmail: any = {};
   loggedIn: boolean;
   jwtHelper = new JwtHelperService();
   token: any;
@@ -24,7 +25,7 @@ export class LoginUComponent implements OnInit {
   }
 
 
-  login(){
+  loginReal(){
     this.authService.login(this.model).subscribe(response =>{
       console.log(response);
       if(this.authService.decodeToken.role === 'admin'){
@@ -34,6 +35,13 @@ export class LoginUComponent implements OnInit {
       }
     });
   }
+
+
+  emailResetPass() {
+      this.authService.sendEmailRestPass(this.userEmail).subscribe(next => {
+        this.toastr.success("لینکه تعویض رمز عبور به ایمیل شما ارسال شد");
+      })
+    }
 
 
   openDialogNotLogin() {

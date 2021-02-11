@@ -34,7 +34,29 @@ export class HomeUComponent implements OnInit {
       numScroll: 1
     }
   ];
-    
+  teachersResponsiveOption = [
+  
+    {
+      breakpoint: '1150px',
+      numVisible: 4,
+      numScroll: 4
+    },
+    {
+      breakpoint: '880px',
+      numVisible: 3,
+      numScroll: 3
+    },
+    {
+      breakpoint: '670px',
+      numVisible: 2,
+      numScroll: 2
+    },
+    {
+      breakpoint: '480px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
 
   // scroll to target method 
   scrollToElement($element): void {

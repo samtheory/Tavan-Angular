@@ -59,7 +59,7 @@
         همه</a>
 
     </div>
-    <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="false"
+    <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]='3500' 
       style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
@@ -84,7 +84,7 @@
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
     </div>
-    <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="false"
+    <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]='3500'
       style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
@@ -111,7 +111,7 @@
         class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
         همه</a>
     </div>
-    <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="false"
+    <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]='3500'
       style="direction: ltr;" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
 
@@ -179,7 +179,7 @@
     </div>
   </div>
 </section>
-<section name="teachers" class="bg-blue-50 py-10 relative">
+<section name="teachers" class="bg-blue-50 py-10 relative teach">
   <div class="dots-pattern absolute -top-28 right-2 hidden 2xl:block z-0">
     <svg-dots></svg-dots>
   </div>
@@ -191,8 +191,8 @@
         class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
         همه</a>
     </div>
-    <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="3" [numScroll]="3" [circular]="false"
-      style="direction: ltr;" [responsiveOptions]="responsiveOptions">
+    <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="4" [numScroll]="4" [circular]="true" [autoplayInterval]='3500' 
+      style="direction: ltr;" [responsiveOptions]="teachersResponsiveOption">
       <ng-template pTemplate="header">
 
       </ng-template>

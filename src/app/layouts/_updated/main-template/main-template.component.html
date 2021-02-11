@@ -2,11 +2,17 @@
 <div name="mobile-slider-menu" class="slider-menu bg-white fixed   overflow-y-scroll bottom-0 top-0 duration-200" style="z-index: 1000;"
 	[ngClass]="{'w-0': showSideMenu == false, 'w-60': showSideMenu == true }">
 	<div class="overflow-y-auto" [ngClass]="{' hidden': showSideMenu == false, 'block': showSideMenu == true }">
-		<div class="flex justify-between mt-7 items-center">
-			<svg-logo></svg-logo>
+		<div class="flex w-full justify-end mt-5">
+
 			<div (click)="showSideMenu = false" class=" ">
 				<i class="fas fa-times text-gray-500 text-base px-5"></i>
 			</div>
+		</div>
+		<div class="flex justify-center mt-7 items-center">
+			<a routerLink="/">
+				<img src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;" />
+			</a>
+			
 		</div>
 		<div [routerLink]="['/']"  class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.home}}
@@ -42,9 +48,17 @@
 		<div [routerLink]="['/faq']" class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.faq}}
 		</div>
-		<div class="Tavan-num  border border-blue-500 rounded p-2 mx-4  cursor-pointer">
-			<i class="fas fa-phone-square text-base inline text-orange-500"></i>
-			<p class="inline text-base pr-1">پشتیبانی توان:239084</p>
+		<div class="Tavan-num  border border-blue-500 rounded p-2 mx-4  cursor-pointer flex justify-center items-center">
+			<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M19.8993 6.59241C19.8744 6.71805 19.8733 6.84773 19.8246 6.96642C19.5363 7.66232 18.9973 8.23838 18.5996 8.87987C18.0872 9.69851 13.734 7.93443 14.295 6.84136C14.5063 6.43725 15.3302 5.32103 15.3927 4.87234C15.4495 4.47228 14.9191 4.15849 14.4293 4.11796C13.1377 4.01375 11.4859 4.10812 10.1144 4.1168V4.11796C10.0779 4.11796 10.0374 4.11796 10.0003 4.11738C9.9627 4.11796 9.92217 4.11796 9.88628 4.11796V4.1168C8.51415 4.10812 6.86355 4.01375 5.57132 4.11796C5.08153 4.15849 4.5512 4.47228 4.60794 4.87292C4.66989 5.32161 5.49432 6.43783 5.70564 6.84194C6.26781 7.93501 1.91291 9.69909 1.40053 8.88044C1.00221 8.23954 0.464361 7.6629 0.176041 6.967C0.127409 6.84831 0.125672 6.71805 0.100777 6.59299C-0.537811 3.73874 1.92391 0.826601 5.63038 0.528439C7.0465 0.413227 8.46552 0.348384 9.88628 0.323489V0.315384C9.92449 0.316542 9.96212 0.318858 10.0003 0.319437C10.0385 0.318858 10.0762 0.316542 10.1144 0.315384V0.32291C11.5346 0.348384 12.9536 0.412648 14.3697 0.52786C18.0768 0.826022 20.5385 3.73932 19.8993 6.59241ZM17.3542 16.4404C17.3942 17.1253 16.9472 17.684 16.3567 17.684H3.6434C3.05461 17.684 2.60592 17.1242 2.64644 16.4404L3.01755 10.1976C4.36478 9.88204 6.08659 9.0576 6.71129 8.03401C7.05924 7.46374 7.09629 6.82168 6.81029 6.2653C6.73792 6.12635 6.60244 5.90925 6.4467 5.66724L6.44612 5.66609C6.44149 5.65509 6.44149 5.65509 6.43802 5.64756H13.3583C13.3548 5.6574 13.3536 5.65914 13.3478 5.67303C13.261 5.88204 13.2315 6.04241 13.2477 6.16341C13.228 6.19872 13.2002 6.2433 13.1852 6.27225C12.9026 6.8211 12.9397 7.46374 13.2876 8.03343C13.9123 9.05818 15.633 9.88088 16.9802 10.1964L17.3542 16.4404ZM12.4319 9.96077C11.0992 8.6286 8.93332 8.6286 7.59998 9.96077C6.26781 11.2929 6.26781 13.46 7.59998 14.7922C8.80594 15.9981 10.6945 16.1081 12.0296 15.1314L11.1941 14.2971C10.3245 14.8309 9.17127 14.7267 8.41862 13.9735C7.53803 13.0929 7.53803 11.6606 8.4192 10.7794C9.29979 9.89883 10.7321 9.89883 11.6133 10.7794C12.3625 11.5286 12.4684 12.6738 11.9421 13.5422L12.7787 14.3788C13.7479 13.0437 13.6339 11.1633 12.4319 9.96077Z"
+					fill="#F75714" />
+			</svg>
+
+			<a href="tel:021-28422712">
+
+				<p class="inline text-xs pr-1">پشتیبانی توان : 021 28422712</p>
+			</a>
 		</div>
 	</div>
 </div>
@@ -79,7 +93,11 @@
 	<section #header name="header" class=" ">
 		<div class="header">
 			<div class="flex flex-col justify-center m-auto max-h-full lg:hidden items-center mb-8">
-				<svg-logo></svg-logo>
+				<!-- <svg-logo></svg-logo> -->
+				<a routerLink="/">
+					<img  src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;"/>
+				</a>
+				
 				<p class="title text-sm">{{DB_const.header.logo_description.line_one}}</p>
 				<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 			</div>
@@ -87,7 +105,9 @@
 			<div class="action-status max-w-1400 flex m-auto my-1 lg:mb-0 mb-8">
 				<div class="flex flex-row justify-between w-full items-center mx-10">
 					<section class="logo lg:flex flex-col justify-items-center items-center hidden z-0 mb-4">
-						<svg-logo></svg-logo>
+							<a routerLink="/">
+								<img src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;" />
+							</a>
 						<p class="title text-sm">{{DB_const.header.logo_description.line_one}}</p>
 						<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 					</section>
@@ -173,7 +193,7 @@
 
 <!-- :: support phone button -->
 <div *ngIf="goUpButtonScroll" class="support-btn sticky bottom-6  w-full flex justify-between" >
-	<a href="tel:021-12345678">
+	<a href="tel:021-28422712">
 
 		<i (click)="scrollToElement(header)"
 			class="fas fa-phone text-lg py-2 px-3 ml-4 text-white mr-8 bg-orange-500 rounded-lg shadow-lg hover:shadow-none duration-200 hover:bg-orange-900"></i>

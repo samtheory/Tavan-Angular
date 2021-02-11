@@ -35,7 +35,7 @@
             class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
             همه</a>
       </div>
-      <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
+      <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3"  style="direction: ltr;" [circular]="true" [autoplayInterval]='3500' 
          [responsiveOptions]="responsiveOptions">
          <ng-template pTemplate="header">
 

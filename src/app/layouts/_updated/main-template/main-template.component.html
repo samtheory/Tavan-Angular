@@ -1,6 +1,6 @@
 <!-- #  This is the MINI-Mobile slider menu -->
-<div name="mobile-slider-menu" class="slider-menu bg-white fixed   overflow-y-scroll bottom-0 top-0 duration-200" style="z-index: 1000;"
-	[ngClass]="{'w-0': showSideMenu == false, 'w-60': showSideMenu == true }">
+<div name="mobile-slider-menu" class="slider-menu bg-white fixed   overflow-y-scroll bottom-0 top-0 duration-200"
+	style="z-index: 1000;" [ngClass]="{'w-0': showSideMenu == false, 'w-60': showSideMenu == true }">
 	<div class="overflow-y-auto" [ngClass]="{' hidden': showSideMenu == false, 'block': showSideMenu == true }">
 		<div class="flex w-full justify-end mt-5">
 
@@ -12,12 +12,12 @@
 			<a routerLink="/">
 				<img src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;" />
 			</a>
-			
+
 		</div>
-		<div [routerLink]="['/']"  class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/']" class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.home}}
 		</div>
-		<div [routerLink]="['/search', {isActive: true}]"   class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer">
 			{{DB_const.menu.online_workshop}}
 		</div>
 		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer">
@@ -32,11 +32,11 @@
 			<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
 				<a [routerLink]="['/search', {categoryId: category.id}]">
 
-					<i  class="fas fa-circle inline text-blue-500 text-xs"></i>
+					<i class="fas fa-circle inline text-blue-500 text-xs"></i>
 					{{category.name}}
 				</a>
 			</div>
-			
+
 
 		</div>
 		<div [routerLink]="['/about']" class="item text-lg  pr-8 my-4 cursor-pointer">
@@ -69,7 +69,7 @@
 <!-- ### End Slider menu -->
 
 <!-- # menu bars Icon  -->
-<div name="Mini-nav-btn" [ngClass]="{'translate-bar': textBannerIsActive == false }" 
+<div name="Mini-nav-btn" [ngClass]="{'translate-bar': textBannerIsActive == false }"
 	class="rounded-md border-blue-500 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 lg:hidden block absolute"
 	style="top: 194px; right: 20px;" (click)="showSideMenu = true">
 	<i class="fas fa-bars text-base py-2 px-3"></i>
@@ -77,27 +77,31 @@
 <!-- ### END menu bars -->
 
 <main class="flex flex-col justify-between">
-	<div 
-[ngClass]="{'h-0 opacity-0': textBannerIsActive == false}" 
-		class="alert duration-100 bg-gray-100 flex-row flex justify-center items-center py-2 sticky top-0 z-50">
-		<p class="text-gray-500 text-xs sm:text-sm">
-			{{photos[1].name}}
-			<a href="//{{photos[1].link}}">
-				<span class="text-blue-500">اینجا</span>
-			را کلیک کنید
-			</a>
-		</p>
-		<button class=" md:mx-16  mx-4" (click)="textBannerIsActive = false"><i
-				class="fas fa-times text-gray-500 text-sm"></i></button>
-	</div>
+
+	<!-- # Text banner -->
+	<a href="//{{photos[1].link}}" 	class="alert duration-100  bg-gray-100 flex-row flex justify-center items-center py-3 sticky top-0 z-50" [ngClass]="{'h-0 opacity-0': textBannerIsActive == false}">
+		
+			<p class="text-gray-500 text-xs sm:text-sm">
+				{{photos[1].name}}
+				<!-- <a href="//{{photos[1].link}}">
+					<span class="text-blue-500">اینجا</span>
+					را کلیک کنید
+				</a> -->
+			</p>
+			<!-- <button class=" md:mx-16  mx-4" (click)="textBannerIsActive = false"><i
+				class="fas fa-times text-gray-500 text-sm"></i></button> -->
+
+	</a>
+	<!-- ### END- Text banner -->
+
 	<section #header name="header" class=" ">
 		<div class="header">
 			<div class="flex flex-col justify-center m-auto max-h-full lg:hidden items-center mb-8">
 				<!-- <svg-logo></svg-logo> -->
 				<a routerLink="/">
-					<img  src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;"/>
+					<img src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;" />
 				</a>
-				
+
 				<p class="title text-sm">{{DB_const.header.logo_description.line_one}}</p>
 				<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 			</div>
@@ -105,16 +109,17 @@
 			<div class="action-status max-w-1400 flex m-auto my-1 lg:mb-0 mb-8">
 				<div class="flex flex-row justify-between w-full items-center mx-10">
 					<section class="logo lg:flex flex-col justify-items-center items-center hidden z-0 mb-4">
-							<a routerLink="/">
-								<img src="assets/img/_usefull/logo.png" alt="Tavan" style="height: 100px; padding: 10px 0 5px 0;" />
-							</a>
+						<a routerLink="/">
+							<img src="assets/img/_usefull/logo.png" alt="Tavan"
+								style="height: 100px; padding: 10px 0 5px 0;" />
+						</a>
 						<p class="title text-sm">{{DB_const.header.logo_description.line_one}}</p>
 						<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 					</section>
 					<div></div>
 
 					<!-- ::. USER IS NOT LOGED-IN -->
-					<div *ngIf="!loggedIn()"  class="action flex items-center z-30">
+					<div *ngIf="!loggedIn()" class="action flex items-center z-30">
 						<button-blue [Link]="DB_const.routeName.main.Login">
 							{{DB_const.actionButton.signIn}}
 						</button-blue>
@@ -138,14 +143,16 @@
 				<nav class="mx-10 py-4">
 					<ul class="flex flex-row">
 						<li>
-							<a class="text-white hover:text-white duration-300 py-4 pl-8" [routerLink]="['/']">{{DB_const.menu.home}}</a>
+							<a class="text-white hover:text-white duration-300 py-4 pl-8"
+								[routerLink]="['/']">{{DB_const.menu.home}}</a>
 						</li>
 						<li>
-							<a [routerLink]="['/search',{isActive: true}]" class="text-white hover:text-white duration-300 py-4 px-8"
-							>{{DB_const.menu.online_workshop}}</a>
+							<a [routerLink]="['/search',{isActive: true}]"
+								class="text-white hover:text-white duration-300 py-4 px-8">{{DB_const.menu.online_workshop}}</a>
 						</li>
 						<li>
-							<a [routerLink]="['/search',{isActive: false}]" class="text-white hover:text-white duration-300 py-4 px-8">{{DB_const.menu.videos}}</a>
+							<a [routerLink]="['/search',{isActive: false}]"
+								class="text-white hover:text-white duration-300 py-4 px-8">{{DB_const.menu.videos}}</a>
 						</li>
 						<li class="relative">
 							<a class="text-white hover:text-white duration-300 py-4 px-8 cursor-pointer"
@@ -153,11 +160,13 @@
 
 								<i class="fas fa-chevron-down text-xs"></i>
 							</a>
-							<div class="mega-menu absolute bg-gray-200 py-4 pk-megaMenuClipper w-36 shadow-2xl rounded overflow-y-auto h-52"
+							<div
+								class="mega-menu absolute bg-gray-200 py-4 pk-megaMenuClipper w-36 shadow-2xl rounded overflow-y-auto h-52"
 								*ngIf="megaMenu">
 								<ul *ngIf="this.categories">
-								
-									<li *ngFor="let category of this.categories" class="px-2 py-3 cursor-pointer"><a  [routerLink]="['/search', {categoryId: category.id}]"  >{{category.name}}</a></li>
+
+									<li *ngFor="let category of this.categories" class="px-2 py-3 cursor-pointer"><a
+											[routerLink]="['/search', {categoryId: category.id}]">{{category.name}}</a></li>
 								</ul>
 							</div>
 						</li>
@@ -170,7 +179,8 @@
 								href="">تماس با ما</a>
 						</li>
 						<li>
-							<a [routerLink]="['/faq']" class="text-white hover:text-white duration-300 py-4 px-8" href="">{{DB_const.menu.faq}}</a>
+							<a [routerLink]="['/faq']" class="text-white hover:text-white duration-300 py-4 px-8"
+								href="">{{DB_const.menu.faq}}</a>
 						</li>
 					</ul>
 				</nav>
@@ -192,7 +202,7 @@
 
 
 <!-- :: support phone button -->
-<div *ngIf="goUpButtonScroll" class="support-btn sticky bottom-6  w-full flex justify-between" >
+<div *ngIf="goUpButtonScroll" class="support-btn sticky bottom-6  w-full flex justify-between">
 	<a href="tel:021-28422712">
 
 		<i (click)="scrollToElement(header)"

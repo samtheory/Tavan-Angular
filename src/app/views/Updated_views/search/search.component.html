@@ -39,7 +39,7 @@
  
       <!-- pagination -->
       <div class="col-lg-12 col-md-12 flex justify-center ">
-         <mat-paginator
+         <!-- <mat-paginator
          style="width: 100px;"
          type="number"
          *ngIf="courses"
@@ -51,12 +51,12 @@
          [(ngModel)]="pag.currentPage"
          (page)="pageEvent = pageChanged($event)"
       >
-      </mat-paginator>
+      </mat-paginator> -->
       
       </div>
       <div class="col-lg-12 col-md-12 flex justify-center " style="direction:ltr">
         
-      <p-paginator ngDefaultControl [rows]="12" [totalRecords]="100"></p-paginator>
+      <p-paginator ngDefaultControl [(ngModel)]="pag.currentPage" [rows]="pag.itemsPerPage" [totalRecords]="pag.totalItems"  (onPageChange)="pac=pageChanged($event)"></p-paginator>
       </div>
 
 

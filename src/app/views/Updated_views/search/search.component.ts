@@ -68,7 +68,7 @@ userParams: any = {};
 
 
   pageChanged(event: any): void{
-    this.pag.currentPage = event.pageIndex + 1;
+    this.pag.currentPage = event.page + 1;
     this.loadCourses();
   }
 

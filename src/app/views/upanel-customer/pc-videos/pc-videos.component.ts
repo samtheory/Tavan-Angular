@@ -38,10 +38,10 @@ export class PCVideosComponent implements OnInit {
     }
   
   
-    pageChanged(event: any): void{
-      this.pag.currentPage = event.pageIndex + 1;
-      this.loadCourses();
-    }
+     pageChanged(event: any): void{
+    this.pag.currentPage = event.page + 1;
+    this.loadCourses();
+  }
   
   
     loadCourses(){

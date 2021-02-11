@@ -163,7 +163,7 @@ import { CourseMainDetailResolver } from './_resolvers/coursemain-detail.resolve
 import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
 import { SearchSectionComponent } from './components/_Updated/search-section/search-section.component';
 import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
-
+import { PaginatorModule } from 'primeng/paginator';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -264,6 +264,7 @@ export function tokenGeter() {
     PasswordUpdateComponent
   ],
   imports: [
+    PaginatorModule,
     DropdownModule,
     BrowserModule,
     AppRoutingModule,

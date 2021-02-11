@@ -23,24 +23,24 @@
 	<div class="gray-section bg-gray-100 rounded-sm py-5 px-8  ">
 		<div class="flex flex-wrap justify-between">
 			<ul class="list-disc text-blue-500 pl-24    ">
-				<li class="py-4">
+				<li routerLink='/about' class="py-4" >
 					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.first_col.one}} </span>
 				</li>
-				<li class="py-4">
+				<li routerLink='/contact' class="py-4">
 					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.first_col.two}}</span>
 				</li>
-				<li class="py-4">
+				<!-- <li routerLink='/about' class="py-4">
 					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.first_col.three}}</span>
+				</li> -->
+				<li routerLink='/teachers' class="py-4">
+					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.second_col.one}}</span>
 				</li>
 			</ul>
 			<ul class="list-disc text-blue-500  ">
-				<li class="py-4">
-					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.second_col.one}}</span>
-				</li>
-				<li class="py-4">
+				<li routerLink='/faq' class="py-4">
 					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.second_col.two}}</span>
 				</li>
-				<li class="py-4">
+				<li routerLink='/rules' class="py-4">
 					<span class="text-gray-700 font-bold 2xl:text-lg text-base">{{DB_const.footer.second_col.three}}</span>
 				</li>
 			</ul>

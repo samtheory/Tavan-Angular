@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
       numScroll: 1
     }
   ];
-  // ! THIS IS FAKE INFORMATION    
+   
 courses: Course[];
 categories: Category[];
 pag: Pagination;

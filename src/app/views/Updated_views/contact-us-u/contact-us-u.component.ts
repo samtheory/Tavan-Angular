@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { contactUs } from 'src/app/_Constant/data';
+import { AuthService } from 'src/app/_services/auth.service';
 import { TicketService } from 'src/app/_services/ticket.service';
 
 @Component({
@@ -12,53 +11,48 @@ import { TicketService } from 'src/app/_services/ticket.service';
 })
 export class ContactUsUComponent implements OnInit {
   DB_const = { contactUs };
-
-  ticket: any ={};
- 
-
-  constructor(private ticketService: TicketService, private toastr: ToastrService, public dialog: MatDialog){}
-
-  
+  model: any = {};
+  dialog = false;
+  ticket: any = {};
 
 
-ngOnInit() {
-
-}
-
-sendTicket(){
-  this.ticketService.createTicket(this.ticket).subscribe(next => {
-    this.toastr.success("تیکت با موفقیت ثبت شد");
-  })
-}
-  openDialogNotVerify() {
-    this.dialog.open(NotLoginDialog);
-  }
-}
+  constructor(private ticketService: TicketService, private toastr: ToastrService, private authService: AuthService) { }
 
 
-//------------------------------------------------------------------------------------------------
-// .:: Forgot Password module Class 
-//------------------------------------------------------------------------------------------------
-@Component({
-  // selector: 'dialog-forgot-pass',
-  templateUrl: 'not-login-dialog.html',
-})
+  ngOnInit() { }
 
-export class NotLoginDialog {
-  constructor(public dialog: MatDialog, private router: Router) { }
-
-
-  closeDialog() {
-    this.dialog.closeAll();
+  logedIn() {
+    return this.authService.logedIn();
   }
 
-  register() {
-    this.router.navigate(['/register']);
-    this.dialog.closeAll();
+  sendTicket() {
+    if (this.logedIn() == true) {
+      this.ticketService.createTicket(this.ticket).subscribe(next => {
+        this.toastr.success("تیکت با موفقیت ثبت شد");
+      });
+
+    } else {
+      this.openDialog();
+    }
+  }
+  openDialog() {
+    this.dialog = true;
+  }
+  hideDialog() {
+
+    this.dialog = false;
   }
 
-  login() {
-    this.router.navigate(['/login']);
-    this.dialog.closeAll();
+  loginreal() {
+    this.authService.login(this.model).subscribe(response => {
+      console.log(response);
+      this.hideDialog();
+      // if(this.authService.decodeToken.role === 'admin'){
+      //   this.router.navigate(['/admin/dashboard']);
+      // } else {
+      //   this.router.navigate(['/customer-panel']);
+      // }
+    });
   }
+
 }

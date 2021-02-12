@@ -33,7 +33,7 @@
             <span class=" p-1 mx-2 text-black"> {{course.started | date: 'y-M-d'}}
             </span>
          </p>
-         <p class="text-blue-500 py-3">نمونه تدریس</p>
+         <p (click)="passVideo(course.media.videoUrl)" class="text-blue-500 py-3 hover:underline duration-300 cursor-pointer">نمونه تدریس</p>
          <hr class="rounded-full opacity-10 m-auto" />
          <div *ngIf="course.realCost !== 0" class="flex flex-row justify-between my-4 items-center">
 

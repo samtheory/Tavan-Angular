@@ -28,7 +28,9 @@ export class WebinarComponent implements OnInit {
   off: any = {};
   rate = false ;
   model: any = {};
-  dialog : boolean; 
+  dialog =false; 
+  dialogNotActivated =false;
+  dialogLogin =false ;
   
   constructor(private courseService: CourseService, private route: ActivatedRoute,
     private toastr: ToastrService, private router: Router,
@@ -36,7 +38,7 @@ export class WebinarComponent implements OnInit {
     , private paymentService: PaymentService, private offService: OffService) { }
     
     ngOnInit(): void {
-      this.dialog = false; 
+    
     // this.route.data.subscribe(data => {
     //   this.course = data['course'];
     //   console.log(this.course);
@@ -100,10 +102,13 @@ export class WebinarComponent implements OnInit {
           
         } else {
           this.toastr.error("اکانت شما فعال نیست");
-        
+          this.showDialog();
+          this.dialogNotActivated = true;
         }
       } else {
         this.showDialog();
+        this.dialogLogin = true;
+
       }
       
   }
@@ -118,11 +123,14 @@ export class WebinarComponent implements OnInit {
           this.router.navigate(['/Customer/dashboard']);
         });
       } else {
-        this.toastr.error("اکانت شما فعال نیست");
+      
+        this.showDialog();
+        this.dialogNotActivated = true;
         
       }
     } else {
       this.showDialog();
+      this.dialogLogin = true;
     }
     
 }
@@ -142,11 +150,12 @@ loginreal(){
 
 showDialog(){
   this.dialog = true;
-  console.log(this.dialog);
+
 }
 hideDialog(){
   this.dialog = false;
-  console.log(this.dialog);
+  this.dialogLogin = false ;
+  this.dialogNotActivated  = false ;
 }
 
 

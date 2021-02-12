@@ -70,9 +70,9 @@
                   <div class="flex items-center ">
 
 
-                     <p class="font-bold  pl-3 ">تاریخ جلسات :</p>
+                     <p *ngIf="course.sessions" class="font-bold  pl-3 ">تاریخ جلسات :</p>
                   </div>
-                  <p *ngFor="let session of course.sessions" class="px-4 text-lg  text-blue-500">{{session.time | date:
+                  <p  *ngFor="let session of course.sessions" class="px-4 text-lg  text-blue-500">{{session.time | date:
                      'y/M/d'}}</p>
 
                </div>

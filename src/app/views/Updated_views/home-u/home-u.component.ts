@@ -17,6 +17,19 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./home-u.component.scss']
 })
 export class HomeUComponent implements OnInit {
+  aCourses: Course[];
+  dCourses: Course[];
+  sCourses: Course[];
+  teachers: TeacherToList[];
+  localVar: LocalVar;
+  photos: Photo[];
+  useraParams: any = {};
+  userdParams: any = {};
+  usersParams: any = {};
+  searchP: any = {};
+  dialog = false ;
+  pag: Pagination;
+  dialogVideo_url : string;
   responsiveOptions = [
     {
       breakpoint: '1254px',
@@ -66,17 +79,6 @@ export class HomeUComponent implements OnInit {
   
 
 
-  aCourses: Course[];
-  dCourses: Course[];
-  sCourses: Course[];
-  teachers: TeacherToList[];
-  localVar: LocalVar;
-  photos: Photo[];
-  useraParams: any = {};
-  userdParams: any = {};
-  usersParams: any = {};
-  searchP: any = {};
-  pag: Pagination;
   constructor(private courseService: CourseService, private toastr: ToastrService, private photoService: PhotoService,
      private route: ActivatedRoute, private teacherService: TeacherService, private mainService: UserService, private router: Router) { }
   
@@ -141,4 +143,14 @@ export class HomeUComponent implements OnInit {
     this.router.navigate(['/search'], {queryParams: {name: this.searchP.name}});
   }
 
+  openDialog(url) {
+    this.dialog = true;
+    console.log("heloo");
+    this.dialogVideo_url = url;
+    console.log(this.dialogVideo_url);
+  }
+  hideDialog() {
+
+    this.dialog = false;
+  }
 }

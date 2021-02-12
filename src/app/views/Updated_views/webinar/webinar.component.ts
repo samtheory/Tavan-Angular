@@ -147,6 +147,7 @@ loginreal(){
   this.authService.login(this.model).subscribe(response =>{
     console.log(response);
     this.hideDialog();
+    this.buyCourse(this.route.snapshot.params['id']);
     // if(this.authService.decodeToken.role === 'admin'){
     //   this.router.navigate(['/admin/dashboard']);
     // } else {

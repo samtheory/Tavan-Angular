@@ -120,7 +120,7 @@ export class WebinarComponent implements OnInit {
       if(this.isActive === true) {
         this.courseService.addcourseToUser(id).subscribe(next => {
           this.toastr.success('با موفقیت ثبت نام شد');
-          this.router.navigate(['/Customer/dashboard']);
+          window.location.reload();
         });
       } else {
       
@@ -147,6 +147,7 @@ loginreal(){
   this.authService.login(this.model).subscribe(response =>{
     console.log(response);
     this.hideDialog();
+    this.buyCourse(this.route.snapshot.params['id']);
     // if(this.authService.decodeToken.role === 'admin'){
     //   this.router.navigate(['/admin/dashboard']);
     // } else {

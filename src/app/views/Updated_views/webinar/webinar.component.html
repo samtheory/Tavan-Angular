@@ -127,7 +127,7 @@
                         <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse()"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                            ویدیو دوره </a>
-                        <a (click)="buyCourse()" *ngIf="course.isActive && !course.isfor"
+                        <a  *ngIf="course.isActive && !course.isfor" (click)="buyCourse()"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                            دوره</a>
                         <a *ngIf="course.isfor && course.isActive"

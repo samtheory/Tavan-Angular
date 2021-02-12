@@ -22,6 +22,10 @@ export class SearchSectionComponent implements OnInit {
 
   search() {
     this.router.navigate(['/search'], { queryParams: { name: this.searchP.name } });
+    // .then(() => {
+    //   window.location.reload();
+    // });
+    
   }
   getphotos(){
     this.photoService.getPhotos().subscribe(photos => {

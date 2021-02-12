@@ -14,51 +14,48 @@
     <div class="form-field w-full">
       <div class="mx-auto">
 
-        <h1 class="text-xl">ورود کاربران</h1>
-        <p class="text-sm text-gray-500 pt-1">
+        <h1 class="text-2xl font-bold">ثبت نام</h1>
+        <p class="text-sm text-gray-500 pt-1 pb-8">
           ما به حفظ اطلاعات شخصی شما متعهدیم
         </p>
-        <form #registeform="ngForm" (ngSubmit)="registerUser()" class="my-4" action="">
-          <div class="md:w-5/6   form-item  py-2">
-            <label class="block font-bold pb-1">ایمیل</label>
-            <input [(ngModel)]="user.email" name="email" type="email"
-              class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-              placeholder="ایمیل خود را وارد کنید" value="" />
-          </div>
+        <form #registeform="ngForm" (ngSubmit)="registerUser()" class="my-4 mx-auto" action="" style="max-width : 500px">
+          
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">نام</label>
-            <input [(ngModel)]="user.firstName" name="firstName" type="text"
+            <input [(ngModel)]="user.firstName" name="firstName" type="text" style="max-width:500px"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="نام خود را وارد کنید" value="" />
           </div>
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">نام خانوادگی</label>
-            <input [(ngModel)]="user.lastName" name="lastName" type="text"
+            <input [(ngModel)]="user.lastName" name="lastName" type="text" style="max-width:500px"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="نام خانوادگی خود را وارد کنید" value="" />
           </div>
           <div class="md:w-5/6   form-item  py-2">
+            <label class="block font-bold pb-1">ایمیل</label>
+            <input [(ngModel)]="user.email" name="email" type="email" style="max-width:500px"
+              class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+              placeholder="ایمیل خود را وارد کنید" value="" />
+          </div>
+          <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">شماره تماس</label>
-            <input [(ngModel)]="user.phoneNumber" name="phoneNumber"
+            <input [(ngModel)]="user.phoneNumber" name="phoneNumber" style="max-width:500px"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="شماره تماس خود را وارد کنید" value=""  type="tel"/>
           </div>
           <div class="md:w-5/6   form-item  py-2">
             <label class="block font-bold pb-1">رمز عبور</label>
-            <input [(ngModel)]="user.password" name="password" type="password"
+            <input [(ngModel)]="user.password" name="password" type="password" style="max-width:500px"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
               matInput placeholder="رمز خود را وارد کنید" value="" />
           </div>
           <div class="md:w-5/6    flex items-center flex-col justify-between mt-4">
-            <button class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
-              وارد شوید
+            <button class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit" style="max-width:500px">
+      عضویت در توان
             </button>
-            <a class="hover:text-blue-500 text-gray-500 my-4 text-sm" href="">رمز عبور خود را فراموش کردم</a>
-            <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1" href="">
-              <span class="gray text-gray-500">حساب کاربری ندارید ؟</span>
-              <span class="blue text-blue-500 font-bold px-2">
-                عضویت در توان</span>
-            </a>
+           
+            
           </div>
         </form>
       </div>

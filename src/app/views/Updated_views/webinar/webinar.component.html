@@ -7,7 +7,7 @@
 <div *ngIf="course" class="bg-gray-100 pt-4 pb-14">
 
    <section class="section-body xl:p-0 lg:px-10 ">
-      <h1 class="text-gray-400 my-4">خانه > کارگاه های آنلاین</h1>
+      <h1 class="text-gray-400 my-4 pr-2 lg:pr-0">خانه > کارگاه های آنلاین</h1>
 
 
 
@@ -19,32 +19,34 @@
 
 
                <div class="flex justify-between py-4">
-                  <p class="text-xl">{{course.title}}</p>
-                  <span (click)="rate = !rate" class="rounded relative border border-gray-100 border-solid p-1 mx-2 cursor-pointer duration-200 hover:scale-110"><i
+                  <p class="text-xl font-bold">{{course.title}}</p>
+                  <span (click)="rate = !rate"
+                     class="rounded relative border border-gray-100 border-solid p-1 mx-2 cursor-pointer duration-200 hover:scale-110"><i
                         class="fas fa-star text-yellow-500 relative"></i>
                      4.2
-                     <div class="absolute  border border-gray-100 border-solid p-1 mx-2 flex mt-2" style="left:-7px;" [ngClass]="{'hidden': !rate , 'inline' : rate}">
-                        <div  class="flex px-2">
+                     <div class="absolute  border border-gray-100 border-solid p-1 mx-2 flex mt-2" style="left:-7px;"
+                        [ngClass]="{'hidden': !rate , 'inline' : rate}">
+                        <div class="flex px-2">
 
                            <i class="fas fa-star text-yellow-500 relative"></i>
                            1
                         </div>
-                        <div  class="flex px-2">
+                        <div class="flex px-2">
 
                            <i class="fas fa-star text-yellow-500 relative"></i>
                            2
                         </div>
-                        <div  class="flex px-2">
+                        <div class="flex px-2">
 
                            <i class="fas fa-star text-yellow-500 relative"></i>
                            3
                         </div>
-                        <div  class="flex px-2">
+                        <div class="flex px-2">
 
                            <i class="fas fa-star text-yellow-500 relative"></i>
                            4
                         </div>
-                        <div  class="flex px-2">
+                        <div class="flex px-2">
 
                            <i class="fas fa-star text-yellow-500 relative"></i>
                            5
@@ -52,7 +54,7 @@
                      </div>
                   </span>
                </div>
-               <p class="text-blue-500 py-2">نمونه تدریس</p>
+
                <div class="flex py-2">
                   <i class="pi  pi-calendar text-orange-500 pl-1"></i>
                   <p class="font-bold">شروع وبینار :</p>
@@ -61,39 +63,66 @@
                <div class="flex py-2 items-start">
                   <i class="pi  pi-calendar text-orange-500 pl-1"></i>
                   <p class="font-bold ">مدت زمان آموزش :</p>
-                  <p class="px-2">{{course.hours}}</p>
-               </div>
-               <div class="flex py-2">
 
-                  <p class="font-bold pt-4">تاریخ جلسات :</p>
-                  <div class="flex flex-wrap">
-                     <p *ngFor="let session of course.sessions" class="p-4">{{session.time | date: 'y-M-d'}}</p>
+                  <p class="px-2">{{course.hours}} ساعت</p>
+               </div>
+               <div class="flex py-2 flex-wrap items-center ">
+                  <div class="flex items-center ">
+
+                     <i class="pi  pi-calendar text-orange-500 pl-1  "></i>
+
+                     <p class="font-bold  pl-3 ">تاریخ جلسات :</p>
                   </div>
+                  <p *ngFor="let session of course.sessions" class="px-4 text-lg  text-blue-500">{{session.time | date:
+                     'y/M/d'}}</p>
+
                </div>
                <div class="xl:hidden">
 
-                  <p class="text-xl">اساتید دوره</p>
+                  <div class="flex items-center my-4">
+
+                     <i class="fas fa-users text-orange-500 pl-1"></i>
+                     <p class="font-bold ">اساتید دوره</p>
+                  </div>
                   <div class="flex justify-evenly flex-wrap items-center">
                      <div *ngFor="let courseTeacher of course.courseTeachers"
                         class="flex justify-center items-center py-2">
-                        <img class="rounded-full w-14 sm:w-full" src="{{courseTeacher.teacher.image_path}}"
+                        <!-- ! old one  -->
+                        <!-- <img class="rounded-full w-14 sm:w-full" src="{{courseTeacher.teacher.image_path}}"
                            alt="teacher">
-                        <div class="px-2">
-
+                           <div class="px-2 ">
                            <p class="font-bold px-1">{{courseTeacher.teacher.name}}</p>
                            <p class="text-sm px-1">{{courseTeacher.teacher.name}}</p>
-                        </div>
+                        </div> -->
+                        <!-- ! old one  -->
+                        <!-- ? new one  -->
+                        <a class="flex flex-col items-center" [routerLink]="['/teacher' , courseTeacher.teacher.id]">
+                           <div class="relative item-t flex items-center justify-center">
+                              <img class="rounded-full" style="max-width: 120px; max-height: 120px;"
+                                 src="{{courseTeacher.teacher.image_path}}" alt="" />
+                              <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
+                              </div>
+                              <p class="text-white text-center absolute">مشاهده رزومه</p>
+                           </div>
+                           <h2 class="mt-4 font-bold">{{courseTeacher.teacher.name}}</h2>
+                        </a>
+                        <!-- ? new one  -->
                      </div>
                   </div>
                </div>
                <div class="xl:hidden">
 
-                  <p class="text-xl pt-2">خرید دوره</p>
                   <div class="flex  justify-evenly mb-8 mt-2 flex-wrap sm:flex-nowrap">
                      <div class=" w-full flex flex-col items-stretch px-3">
+                        <h1 class="text-xl font-bold">خرید دوره</h1>
+                        <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                           <hr class="border border-blue-100 rounded-full opacity-50" />
+                           <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+                        </div>
                         <div class="flex justify-between my-3">
-                           <p>{{course.title}}</p>
-                           <p class="text-blue-500">{{course.realCost}} تومان</p>
+                           <p class="font-bold">{{course.title}}</p>
+                           <p *ngIf=" course.realCost !== 0 " class="text-blue-500">{{course.realCost}} تومان</p>
+                           <p *ngIf=" course.realCost === 0 " class="text-blue-500">رایگان</p>
                         </div>
                         <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse()"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
@@ -104,10 +133,10 @@
                         <a *ngIf="course.isfor && course.isActive"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
                            ورود به وبینار</a>
-                        <form #offForm="ngForm">
+                        <form #offForm="ngForm" class="w-full">
                            <div class="flex items-center my-3 w-full">
                               <input name="code" [(ngModel)]="off.code"
-                                 class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r "
+                                 class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r  w-full"
                                  type="text" placeholder="کد تخفیف خود را وارد کنید">
                               <a (click)="getOff()"
                                  class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
@@ -115,6 +144,7 @@
                         </form>
                         <p *ngIf="this.off.offPercent" class="text-sm text-gray-400">مبلغ {{course.realCost *
                            this.off.offPercent / 100}} هزار تومان تخفیف اعمال شد</p>
+
                         <h1 class="text-lg text-center pt-6 pb-3 font-bold ">حامیان دوره</h1>
                         <div *ngIf="course.media.spPhotoUrl" class="flex items-center justify-center flex-col">
                            <img class="rounded-full w-36" src="{{course.media.spPhotoUrl}}" alt="اسپانسر">
@@ -144,12 +174,12 @@
                      </div>
                   </div>
                </div>
-               <div class="flex justify-end items-center">
-                  <a class="text-orange-500 px-3" href="//{{course.media.pdfUrl}}">دانلود فایل پی دی اف
+               <div  class="flex justify-end items-center">
+                  <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="//{{course.media.pdfUrl}}">دانلود فایل پی دی اف
                      <i class="pi pi-download px-2"></i>
                   </a>
                   <!-- <p-dropdown *ngIf="course.videos" class="bg-blue-100" [options]="course.videos" optionLabel="title"></p-dropdown> -->
-                  <select (change)="getUrl($event)" style="width: 80px;">
+                  <select *ngIf="course.videos" (change)="getUrl($event)" style="width: 80px;">
                      <option *ngFor="let video of course.videos" value="{{video.url}}">{{video.title}}</option>
                   </select>
                </div>
@@ -192,15 +222,29 @@
             <div class="bg-white flex flex-col py-5 px-4  rounded-md">
                <p class="font-bold text-lg py-6 text-center">مدرسین دوره</p>
                <div class="flex-col flex flex-wrap ">
-                  <div *ngFor="let courseteacher of course.courseTeachers"
+                  <div *ngFor="let courseTeacher of course.courseTeachers"
                      class="flex justify-center items-center py-3">
-                     <img class="rounded-full" src="{{courseteacher.teacher.image_path}}" alt="teacher"
+                     <!-- ! old one   -->
+                     <!-- <img class="rounded-full" src="{{courseteacher.teacher.image_path}}" alt="teacher"
                         style="width:120px">
                      <div class="px-2">
-
+                        
                         <p class="font-bold px-1">{{courseteacher.teacher.name}}</p>
                         <p class="text-sm px-1">{{courseteacher.teacher.name}}</p>
-                     </div>
+                     </div> -->
+                     <!-- ! old one   -->
+                     <!-- ? new one  -->
+                     <a class="flex flex-col items-center" [routerLink]="['/teacher' , courseTeacher.teacher.id]">
+                        <div class="relative item-t flex items-center justify-center">
+                           <img class="rounded-full" style="max-width: 120px; max-height: 120px;"
+                              src="{{courseTeacher.teacher.image_path}}" alt="" />
+                           <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
+                           </div>
+                           <p class="text-white text-center absolute">مشاهده رزومه</p>
+                        </div>
+                        <h2 class="mt-4 font-bold">{{courseTeacher.teacher.name}}</h2>
+                     </a>
+                     <!-- ? new one  -->
                   </div>
 
 
@@ -211,7 +255,8 @@
                <div class=" w-full flex flex-col items-stretch px-3">
                   <div class="flex justify-between my-3">
                      <p>{{course.title}}</p>
-                     <p class="text-blue-500">{{course.realCost}} تومان</p>
+                     <p *ngIf="course.realCost !== 0 " class="text-blue-500">{{course.realCost}} تومان</p>
+                     <p *ngIf="course.realCost === 0 " class="text-blue-500">رایگان</p>
                   </div>
                   <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
@@ -282,52 +327,75 @@
 
 
 
-<!-- #  Dialog Box  -->
+<!-- #  Dialog Box  PLEASE *-login-*   -->
+<div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white"
+   [ngClass]="{'hidden': dialogLogin == false, 'w-screen fixed': dialogLogin == true }" style="z-index: 1000;max-width: 500px;">
 
-<div class="  duration-200  centered   " [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
-   style="z-index: 1000;max-width: 500px;">
 
-   <div style=" background: #fff ; ">
-      <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
-      <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
-         <div class="py-4 px-8">
+   <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
+   <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
+      <div class="py-4 px-8">
 
-            <h1 class="text-lg font-bold py-2">ورود / ثبت نام</h1>
-            <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
-         </div>
-         <div class="py-6 px-2 w-96">
-            <form #login="ngForm" class="my-4" action="">
-               <div class="form-item  py-2">
-                  <label class="block font-bold pb-1 text-right">ایمیل</label>
-                  <input [(ngModel)]="model.email" name="email"
-                     class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                     matInput placeholder="ایمیل خود را وارد کنید" type="email" />
-               </div>
-               <div class="form-item  py-2">
-                  <label class="block font-bold pb-1 text-right">رمز عبور</label>
-                  <input [(ngModel)]="model.password" name="password"
-                     class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                     matInput placeholder="رمز خود را وارد کنید" type="password" />
-               </div>
-               <div class=" flex items-center flex-col justify-between mt-4">
-                  <button (click)="loginreal()"
-                     class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
-                     وارد شوید
-                  </button>
-                  <!-- <a (click)="openDialogNotLogin()" class="hover:text-blue-500 text-gray-500 my-4 text-sm cursor-pointer">رمز عبور
+         <h1 class="text-lg font-bold py-2">ورود / ثبت نام</h1>
+         <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
+      </div>
+      <div class="py-6 px-2 w-96">
+         <form #login="ngForm" class="my-4" action="">
+            <div class="form-item  py-2">
+               <label class="block font-bold pb-1 text-right">ایمیل</label>
+               <input [(ngModel)]="model.email" name="email"
+                  class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                  matInput placeholder="ایمیل خود را وارد کنید" type="email" />
+            </div>
+            <div class="form-item  py-2">
+               <label class="block font-bold pb-1 text-right">رمز عبور</label>
+               <input [(ngModel)]="model.password" name="password"
+                  class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                  matInput placeholder="رمز خود را وارد کنید" type="password" />
+            </div>
+            <div class=" flex items-center flex-col justify-between mt-4">
+               <button (click)="loginreal()"
+                  class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
+                  وارد شوید
+               </button>
+               <!-- <a (click)="openDialogNotLogin()" class="hover:text-blue-500 text-gray-500 my-4 text-sm cursor-pointer">رمز عبور
                خود را فراموش کردم</a> -->
-                  <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1" href="">
-                     <span class="gray text-gray-500">حساب کاربری ندارید ؟</span>
-                     <span class="blue text-blue-500 font-bold px-2">
-                        عضویت در توان</span>
-                  </a>
-               </div>
-            </form>
-         </div>
+               <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1"
+                  routerLink="/register">
+                  <span class="gray text-gray-500">حساب کاربری ندارید ؟</span>
+                  <span class="blue text-blue-500 font-bold px-2">
+                     عضویت در توان</span>
+               </a>
+            </div>
+         </form>
       </div>
    </div>
+
 </div>
 <!-- ### End Dialog box-->
+
+<!-- :: NOT ACTIVATED Dialog Box  -->
+<div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white"
+   [ngClass]="{'hidden': dialogNotActivated == false, 'w-screen fixed': dialogNotActivated == true }" style="z-index: 1000;max-width: 500px;">
+   <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
+   <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
+      <div class="py-4 px-8">
+
+         <h1 class="text-right  py-2">متاسفانه اکانت شما هنوز فعال نیست. جهت فعال شدن اکانت لطفا پروفایل خود را تکمیل کنید و یا در صورت بروز مشکل با پشتیبانی توان هماهنگ کنید</h1>
+         <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
+      </div>
+      <div class="py-6 px-2 w-96">
+
+         <a routerLink="/customer-panel/profile"
+            class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
+           ورود به پروفایل کاربری
+      </a>
+      </div>
+   </div>
+
+</div>
+<!-- ::--END  NOT ACTIVATED Dialog Box  -->
+
 
 <!-- .:: The Dark screen -->
 <div (click)="hideDialog()" class="fixed h-screen top-0 duration-200 bg-gray-700 opacity-30 w-screen"

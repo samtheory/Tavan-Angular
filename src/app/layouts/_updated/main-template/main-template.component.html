@@ -79,7 +79,7 @@
 <main class="flex flex-col justify-between">
 
 	<!-- # Text banner -->
-	<a href="//{{photos[1].link}}" 	class="alert duration-100  bg-gray-100 flex-row flex justify-center items-center py-3 sticky top-0 z-50" [ngClass]="{'h-0 opacity-0': textBannerIsActive == false}">
+	<a *ngIf="photos" href="//{{photos[1].link}}" 	class="alert duration-100  bg-gray-100 flex-row flex justify-center items-center py-3 sticky top-0 z-50" [ngClass]="{'h-0 opacity-0': textBannerIsActive == false}">
 		
 			<p class="text-gray-500 text-xs sm:text-sm">
 				{{photos[1].name}}

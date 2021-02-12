@@ -13,11 +13,11 @@
     <div class="form-field w-full">
        <div class="mx-auto">
 
-          <h1 class="text-xl">ورود کاربران</h1>
-          <p class="text-sm text-gray-500 pt-1">
-            ما به حفظ اطلاعات شخصی شما متعهدیم
-          </p>
-          <form #loginForm="ngForm" (ngSubmit)="loginReal()" On class="my-4" action="">
+        <h1 class="text-2xl font-bold">ورود کاربر</h1>
+        <p class="text-sm text-gray-500 pt-1 pb-8">
+          ما به حفظ اطلاعات شخصی شما متعهدیم
+        </p>
+          <form #loginForm="ngForm" (ngSubmit)="loginReal()" On class="my-4 mx-auto" action="" style="max-width:500px">
             <div class="form-item  py-2">
               <label class="block font-bold pb-1">ایمیل</label>
               <input
@@ -54,7 +54,7 @@
               >
               <a
                 class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1"
-                href=""
+            routerLink="/register"
               >
                 <span class="gray text-gray-500">حساب کاربری ندارید ؟</span>
                 <span class="blue text-blue-500 font-bold px-2">
@@ -71,10 +71,10 @@
 
 <!-- #  Dialog Box  -->
 
-<div class="  duration-200  centered   " [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
+<div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white  " [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
   style="z-index: 1000;max-width: 500px;">
 
-  <div style=" background: #fff ; ">
+
     <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
     <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
       <div class="py-4 px-8">
@@ -102,7 +102,7 @@
         </form>
       </div>
     </div>
-  </div>
+
 </div>
 <!-- ### End Dialog box-->
 

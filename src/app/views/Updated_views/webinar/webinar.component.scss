@@ -1,0 +1,41 @@
+.p-dropdown,
+.p-component {
+  border: 1px solid rgb(110, 184, 255) !important;
+  background-color: rgb(110, 184, 255) !important;
+}
+
+.r1_iframe_embed {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%;
+}
+.r1_iframe_embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.item-t {
+  transition: 350ms;
+  .dark-b {
+    opacity: 0;
+    transition: 350ms;
+  }
+  p {
+    transition: 350ms;
+    opacity: 0;
+  }
+  &:hover {
+    .dark-b {
+      opacity: 80%;
+    }
+    p {
+      opacity: 100%;
+    }
+  }
+}

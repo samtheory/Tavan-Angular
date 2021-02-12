@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
@@ -10,7 +9,7 @@ import { CourseService } from 'src/app/_services/course.service';
 import { OffService } from 'src/app/_services/off.service';
 import { PaymentService } from 'src/app/_services/payment.service';
 
-import * as $ from 'jquery';
+
 
 interface Video {
   name : string;
@@ -18,7 +17,7 @@ interface Video {
 }
 @Component({
   templateUrl: './webinar.component.html',
-  styleUrls: ['./webinar.component.css']
+  styleUrls: ['./webinar.component.scss']
 })
 export class WebinarComponent implements OnInit {
   course: Course;
@@ -27,16 +26,17 @@ export class WebinarComponent implements OnInit {
   user: User;
   url: string;
   off: any = {};
-  dialog = false; 
   rate = false ;
   model: any = {};
+  dialog : boolean; 
   
   constructor(private courseService: CourseService, private route: ActivatedRoute,
-     private toastr: ToastrService, private router: Router,
-     private authService: AuthService
-     , private paymentService: PaymentService, private offService: OffService) { }
-
-  ngOnInit(): void {
+    private toastr: ToastrService, private router: Router,
+    private authService: AuthService
+    , private paymentService: PaymentService, private offService: OffService) { }
+    
+    ngOnInit(): void {
+      this.dialog = false; 
     // this.route.data.subscribe(data => {
     //   this.course = data['course'];
     //   console.log(this.course);

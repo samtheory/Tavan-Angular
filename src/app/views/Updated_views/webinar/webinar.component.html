@@ -7,7 +7,7 @@
 <div *ngIf="course" class="bg-gray-100 pt-4 pb-14">
 
    <section class="section-body xl:p-0 lg:px-10 ">
-      <h1 class="text-gray-400 my-4">خانه > کارگاه های آنلاین</h1>
+      <h1 class="text-gray-400 my-4 pr-2 lg:pr-0">خانه > کارگاه های آنلاین</h1>
 
 
 
@@ -61,7 +61,8 @@
                <div class="flex py-2 items-start">
                   <i class="pi  pi-calendar text-orange-500 pl-1"></i>
                   <p class="font-bold ">مدت زمان آموزش :</p>
-                  <p class="px-2">{{course.hours}}</p>
+                  
+                  <p class="px-2">{{course.hours}} ساعت</p>
                </div>
                <div class="flex py-2 flex-wrap items-center ">
                   <div class="flex items-center ">
@@ -75,17 +76,33 @@
                </div>
                <div class="xl:hidden">
 
-                  <p class="text-xl">اساتید دوره</p>
+                  <div class="flex items-center my-4">
+
+                     <i class="fas fa-users text-orange-500 pl-1"></i>
+                     <p class="font-bold ">اساتید دوره</p>
+                  </div>
                   <div class="flex justify-evenly flex-wrap items-center">
                      <div *ngFor="let courseTeacher of course.courseTeachers"
                         class="flex justify-center items-center py-2">
-                        <img class="rounded-full w-14 sm:w-full" src="{{courseTeacher.teacher.image_path}}"
+                        <!-- ! old one  -->
+                        <!-- <img class="rounded-full w-14 sm:w-full" src="{{courseTeacher.teacher.image_path}}"
                            alt="teacher">
                            <div class="px-2 ">
                            <p class="font-bold px-1">{{courseTeacher.teacher.name}}</p>
-
                            <p class="text-sm px-1">{{courseTeacher.teacher.name}}</p>
-                        </div>
+                        </div> -->
+                           <!-- ! old one  -->
+                           <!-- ? new one  -->
+                           <a class="flex flex-col items-center" [routerLink]="['/teacher' , courseTeacher.teacher.id]">
+                              <div class="relative item-t flex items-center justify-center">
+                                 <img class="rounded-full" style="max-width: 120px; max-height: 120px;" src="{{courseTeacher.teacher.image_path}}" alt="" />
+                                 <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
+                                 </div>
+                                 <p class="text-white text-center absolute">مشاهده رزومه</p>
+                              </div>
+                              <h2 class="mt-4 font-bold">{{courseTeacher.teacher.name}}</h2>
+                           </a>
+                           <!-- ? new one  -->
                      </div>
                   </div>
                </div>
@@ -99,7 +116,7 @@
                            <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                         </div>
                         <div class="flex justify-between my-3">
-                           <p>{{course.title}}</p>
+                           <p class="font-bold">{{course.title}}</p>
                            <p *ngIf=" course.realCost !== 0 " class="text-blue-500">{{course.realCost}} تومان</p>
                            <p *ngIf=" course.realCost === 0 " class="text-blue-500">رایگان</p>
                         </div>
@@ -201,15 +218,29 @@
             <div class="bg-white flex flex-col py-5 px-4  rounded-md">
                <p class="font-bold text-lg py-6 text-center">مدرسین دوره</p>
                <div class="flex-col flex flex-wrap ">
-                  <div *ngFor="let courseteacher of course.courseTeachers"
+                  <div *ngFor="let courseTeacher of course.courseTeachers"
                      class="flex justify-center items-center py-3">
-                     <img class="rounded-full" src="{{courseteacher.teacher.image_path}}" alt="teacher"
+                     <!-- ! old one   -->
+                     <!-- <img class="rounded-full" src="{{courseteacher.teacher.image_path}}" alt="teacher"
                         style="width:120px">
                      <div class="px-2">
-
+                        
                         <p class="font-bold px-1">{{courseteacher.teacher.name}}</p>
                         <p class="text-sm px-1">{{courseteacher.teacher.name}}</p>
-                     </div>
+                     </div> -->
+                     <!-- ! old one   -->
+                     <!-- ? new one  -->
+                     <a class="flex flex-col items-center" [routerLink]="['/teacher' , courseTeacher.teacher.id]">
+                        <div class="relative item-t flex items-center justify-center">
+                           <img class="rounded-full" style="max-width: 120px; max-height: 120px;" src="{{courseTeacher.teacher.image_path}}"
+                           alt="" />
+                           <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
+                           </div>
+                           <p class="text-white text-center absolute">مشاهده رزومه</p>
+                        </div>
+                        <h2 class="mt-4 font-bold">{{courseTeacher.teacher.name}}</h2>
+                     </a>
+                     <!-- ? new one  -->
                   </div>
 
 
@@ -294,10 +325,10 @@
 
 <!-- #  Dialog Box  -->
 
-<div class="  duration-200  centered   " [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
+<div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white" [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
    style="z-index: 1000;max-width: 500px;">
 
-   <div style=" background: #fff ; ">
+   
       <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
       <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
          <div class="py-4 px-8">
@@ -326,7 +357,7 @@
                   </button>
                   <!-- <a (click)="openDialogNotLogin()" class="hover:text-blue-500 text-gray-500 my-4 text-sm cursor-pointer">رمز عبور
                خود را فراموش کردم</a> -->
-                  <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1" href="">
+                  <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1" routerLink="/register">
                      <span class="gray text-gray-500">حساب کاربری ندارید ؟</span>
                      <span class="blue text-blue-500 font-bold px-2">
                         عضویت در توان</span>
@@ -335,7 +366,7 @@
             </form>
          </div>
       </div>
-   </div>
+   
 </div>
 <!-- ### End Dialog box-->
 

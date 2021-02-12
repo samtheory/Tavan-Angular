@@ -14,16 +14,16 @@
    <div class="border border-gray-200 rounded-sm my-10 py-6 px-1 flex flex-wrap  items-center">
       <p class=" p-1">مرتب سازی بر اساس :</p>
      
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.popular()"  [ngClass]="{'bg-blue-500 text-white': userParams.popular === 1 , 'text-blue-500': userParams.popular !== 1  }"   >پرطرفدارترین ها</a>
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.new()"      [ngClass]="{'bg-blue-500 text-white': userParams.isNew === 1 , 'text-blue-500': userParams.isNew }"   >جدیدترین ها</a>
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.free()"    [ngClass]="{'bg-blue-500 text-white': userParams.isfree === true , 'text-blue-500': userParams.isfree === false}"    >رایگان</a>
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.suggest()"  [ngClass]="{'bg-blue-500 text-white': userParams.suggest === true , 'text-blue-500': userParams.suggest === false}"    >پیشنهاد ویژه توان</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.popular()"  [ngClass]="{'bg-blue-500 text-white': userParams.popular === 1 , 'text-blue-500': userParams.popular !== 1  }"   >پرطرفدارترین ها</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.new()"      [ngClass]="{'bg-blue-500 text-white': userParams.isNew === 1 , 'text-blue-500': userParams.isNew != 1 }"   >جدیدترین ها</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.free()"    [ngClass]="{'bg-blue-500 text-white': userParams.isfree === true , 'text-blue-500': userParams.isfree != true}">رایگان</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.suggest()"  [ngClass]="{'bg-blue-500 text-white': userParams.suggest === true , 'text-blue-500': userParams.suggest != true}">پیشنهاد ویژه توان</a>
    </div>
    <h1 class="text-gray-700  text-xl">طبقه بندی شده آموزش ببینید</h1>
    <div *ngIf="categories" class="border border-gray-200 rounded-sm my-10 py-6 px-1 flex flex-wrap  items-center">
       <p class="text-orange-500 pr-2 pl-4">دسته بندی ها : </p>
      
-      <div *ngFor="let category of categories" (click)="categoryId(category.id)" id="category.id" name="category.name" value="category.id" class="p-2 bg-gray-200 m-2 hover:bg-gray-300 hover:shadow-sm rounded-md duration-300"  [ngClass]="{'bg-blue-500 text-white': userParams.categoryId === category.id, 'text-blue-500': userParams.categoryId !== category.id  }">{{category.name}}</div>
+      <div *ngFor="let category of categories" (click)="categoryId(category.id)" id="category.id" name="category.name" value="category.id" class="p-2 bg-gray-200 m-2 hover:bg-gray-300 hover:shadow-sm rounded-md duration-300 cursor-pointer"  [ngClass]="{'bg-blue-500 text-white': userParams.categoryId === category.id, '': userParams.categoryId !== category.id  }">{{category.name}}</div>
    </div>
    <div class="flex justify-center  my-10  items-center flex-col ">
 

@@ -229,34 +229,34 @@
 
       <!-- :: /: title :/  -->
       <h1 class="text-xl my-6 ">ویرایش رمز عبور</h1>
-      <form action="">
+      <form #changePass="ngForm"  action="">
          <div class="w-full flex flex-wrap justify-center ">
             <div class="form-item  py-3 w-full px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور فعلی</label>
-               <input name="email"
+               <input name="oldPassword" [(ngModel)]="model.oldPassword"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="رمز عبور فعلی" value="" />
             </div>
             <div class="form-item  py-3 w-full px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور جدید</label>
-               <input name="email"
+               <input name="newPassword" [(ngModel)]="model.newPassword"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="رمز عبور جدید" value="" />
             </div>
             <div class="form-item  py-3 w-full px-2" style="width:350px;">
                <label class="block text-sm font-bold pb-2 pr-2 ">تکرار رمز عبور جدید</label>
-               <input name="email"
+               <input name="newPassword1" [(ngModel)]="model.newPassword1"
                   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
                   matInput placeholder="تکرار رمز عبور جدید" value="" />
             </div>
          </div>
          <div class="my-6 flex justify-center">
-            <a [routerLink]=""
+            <a (click)="changePassUser()"
                class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
                تغییر رمز عبور
             </a>
          </div>
-
+   
       </form>
 
    </div>

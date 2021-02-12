@@ -34,6 +34,7 @@ export class PAEditUserComponent implements OnInit {
   selected = 'option2';
   userForm: FormGroup;
   submitted = false;
+  model: any = {};
   user: User;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
     , private router: Router, private userService: AuthService, private route: ActivatedRoute) { }
@@ -128,6 +129,12 @@ export class PAEditUserComponent implements OnInit {
       }, error => {
           this.toastr.error(error);
       });
+  }
+
+  changePassUser(){
+    this.userService.changePassUserAdmin(this.model, this.route.snapshot.params['id']).subscribe(next => {
+      this.toastr.success("باموفقیت عوض شد");
+    });
   }
 
   onSubmit() {

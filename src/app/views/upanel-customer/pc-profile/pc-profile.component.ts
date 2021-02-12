@@ -33,6 +33,7 @@ title = 'test';
   userForm: FormGroup;
   submitted = false;
   user: User;
+  model: any ={};
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
     , private router: Router, private userService: AuthService, private route: ActivatedRoute) { }
 
@@ -124,6 +125,16 @@ title = 'test';
       }, error => {
           this.toastr.error(error);
       });
+  }
+
+  changePassUser(){
+    if(this.model.newPassword !== this.model.newPassword) {
+      this.toastr.error("رمز عبور و تکرار رمز عبور مطابقت ندارد");
+      return;
+    }
+    this.userService.changePassUser(this.model).subscribe(next => {
+      this.toastr.success("باموفقیت عوض شد");
+    });
   }
 
   onSubmit() {

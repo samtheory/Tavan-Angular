@@ -15,9 +15,9 @@
                دنبال هر آموزشی هستی همین جا همین الان سرچ کن
             </p>
             <div class=" m-auto w-10/12  xl:w-6/12 ">
-               <input name="name" [(ngModel)]="searchP.name"
+               <input name="name" [(ngModel)]="userParams.name"
                   class="   lg:py-4  px-2 py-2 rounded  rounded-tl-none rounded-bl-none w-10/12 outline-none border-1 border-white border-l-0 focus:border-swatch-lightBlue"
-                  placeholder="همین الان جستجو کن" type="text" /><button (click)="search()"
+                  placeholder="همین الان جستجو کن" type="text" /><button (click)="loadCourses()"
                   class="lg:py-4 lg:px-5 px-3 py-2 bg-blue-500 rounded rounded-tr-none rounded-br-none outline-none">
                   <i class="fas fa-search text-white"></i>
                </button>
@@ -25,9 +25,9 @@
          </div>
       </form>
    </div>
-   <i (click)="scrollToElement(main)"
+   <!-- <i (click)="scrollToElement(main)"
       class="fas fa-chevron-down text-4xl absolute centered text-gray-100 hover:text-blue-900 rounded-full px-2 py-1 duration-300"
-      style="top: 95%"></i>
+      style="top: 95%"></i> -->
 </section>
 <section class="section-body xl:p-0 px-10 bg-white">
    <h1 class="text-gray-400 my-4" *ngIf="userParams.name"> خانه > اساتید> نتیجه سرچ {{userParams.name}}</h1>

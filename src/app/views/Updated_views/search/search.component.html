@@ -14,10 +14,10 @@
    <div class="border border-gray-200 rounded-sm my-10 py-6 px-1 flex flex-wrap  items-center">
       <p class=" p-1">مرتب سازی بر اساس :</p>
      
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 my-3 " (click)="this.popular()"    >محبوب</a>
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 my-3 " (click)="this.new()"        >جدید</a>
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 my-3 " (click)="this.free()"       >رایگان</a>
-      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 my-3 " (click)="this.suggest()"    >پیشنهاد ویژه توان</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.popular()"  [ngClass]="{'bg-blue-500 text-white': userParams.popular === 1 , 'text-blue-500': userParams.popular != 1  }"   >محبوب</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.new()"      [ngClass]="{'bg-blue-500 text-white': userParams.new === 1 , 'text-blue-500': userParams.newUrl === null }"   >جدید</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.free()"    [ngClass]="{'bg-blue-500 text-white': userParams.free === 1true , 'text-blue-500': userParams.free === false}"    >رایگان</a>
+      <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 curoser-pointer" (click)="this.suggest()"  [ngClass]="{'bg-blue-500 text-white': userParams.suggest === true , 'text-blue-500': userParams.suggest === false}"    >پیشنهاد ویژه توان</a>
    </div>
    <h1 class="text-gray-700  text-xl">طبقه بندی شده آموزش ببینید</h1>
    <div *ngIf="categories" class="border border-gray-200 rounded-sm my-10 py-6 px-1 flex flex-wrap  items-center">

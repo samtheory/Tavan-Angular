@@ -4,8 +4,10 @@ import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/_models/category';
 import { Course } from 'src/app/_models/course';
 import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
+import { Photo } from 'src/app/_models/photo';
 import { CategoryService } from 'src/app/_services/category.service';
 import { CourseService } from 'src/app/_services/course.service';
+import { PhotoService } from 'src/app/_services/photo.service';
 
 @Component({
   templateUrl: './search.component.html',
@@ -33,14 +35,27 @@ export class SearchComponent implements OnInit {
 courses: Course[];
 categories: Category[];
 pag: Pagination;
+photos: Photo[];
 userParams: any = {};
 
   constructor(private courseService: CourseService, private toastr: ToastrService,
-     private route: ActivatedRoute, private categoryService: CategoryService) { }
+     private route: ActivatedRoute, private categoryService: CategoryService , private photoService: PhotoService) { }
 
   ngOnInit(): void {
     this.getfirstPage();
     this.getCategories();
+    this.getphotos();
+  }
+
+  getphotos(){
+    this.photoService.getPhotos().subscribe(photos => {
+      this.photos = photos;
+    });
+  }
+
+  scrollToElement($element): void {
+    // console.log($element);
+    $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   }
 
 

@@ -120,7 +120,7 @@ export class WebinarComponent implements OnInit {
       if(this.isActive === true) {
         this.courseService.addcourseToUser(id).subscribe(next => {
           this.toastr.success('با موفقیت ثبت نام شد');
-          this.router.navigate(['/Customer/dashboard']);
+          window.location.reload();
         });
       } else {
       

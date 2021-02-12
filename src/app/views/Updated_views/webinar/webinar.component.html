@@ -58,7 +58,7 @@
                <div class="flex py-2 items-center">
                   <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/calendar.png" alt="support">
                   <p class="font-bold">شروع وبینار :</p>
-                  <p class="px-2">{{course.started | date: 'y-M-d'}}</p>
+                  <p class="px-2">{{course.started | date: 'y/M/d'}}</p>
                </div>
                <div class="flex py-2 items-center">
             <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/time.png" alt="support">
@@ -137,8 +137,10 @@
                               <input name="code" [(ngModel)]="off.code"
                                  class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r  w-full"
                                  type="text" placeholder="کد تخفیف خود را وارد کنید">
-                              <a (click)="getOff()"
+                              <a *ngIf="!this.off.offPercent" (click)="getOff()"
                                  class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
+                              <a *ngIf="this.off.offPercent" 
+                                 class="rounded-l py-2 px-2 duration-100 bg-gray-100 hover:shadow-md cursor-pointer text-black ">اعمال</a>
                            </div>
                         </form>
                         <p *ngIf="this.off.offPercent" class="text-sm text-gray-400">مبلغ {{course.realCost *
@@ -273,8 +275,10 @@
                         <input name="code" [(ngModel)]="off.code"
                            class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r "
                            type="text" placeholder="کد تخفیف خود را وارد کنید">
-                        <a (click)="this.getOff()"
+                        <a *ngIf="this.off.offPercent" (click)="this.getOff()"
                            class="rounded-l py-2 px-2 duration-100 bg-blue-500 hover:shadow-md cursor-pointer text-white ">اعمال</a>
+                           <a *ngIf="this.off.offPercent"
+                              class="rounded-l py-2 px-2 duration-100 bg-gray-100 hover:shadow-md cursor-pointer text-black ">اعمال</a>
                      </div>
                   </form>
                   <p *ngIf="this.off.offPercent" class="text-sm text-gray-400">مبلغ {{course.realCost *

@@ -31,7 +31,7 @@ export class LoginUComponent implements OnInit {
       if(this.authService.decodeToken.role === 'admin'){
         this.router.navigate(['/admin/dashboard']);
       } else {
-        this.router.navigate(['/customer-panel']);
+        this.router.navigate(['/']);
       }
     });
   }

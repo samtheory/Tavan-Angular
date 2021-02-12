@@ -123,10 +123,10 @@
                            <p *ngIf=" course.realCost !== 0 " class="text-blue-500">{{course.realCost}} تومان</p>
                            <p *ngIf=" course.realCost === 0 " class="text-blue-500">رایگان</p>
                         </div>
-                        <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse()"
+                        <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                            ویدیو دوره </a>
-                        <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse()"
+                        <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                            دوره</a>
                         <a *ngIf="course.isfor && course.isActive"

@@ -48,8 +48,8 @@ userParams: any = {};
     if(this.route.snapshot.paramMap.get('isActive') !== null){
       this.userParams.isActive = this.route.snapshot.paramMap.get('isActive');
     }
-    if(this.route.snapshot.paramMap.get('suggest') !== null){
-      this.userParams.suggest = this.route.snapshot.paramMap.get('suggest');
+    if(this.route.snapshot.paramMap.get('isfree') !== null){
+      this.userParams.suggest = this.route.snapshot.paramMap.get('isfree');
     }
     if(this.route.snapshot.queryParamMap.get('name') !== null){
     this.userParams.name = this.route.snapshot.queryParamMap.get('name');

@@ -131,7 +131,7 @@ export class HomeUComponent implements OnInit {
   }
 
   getsfirstPage(){
-    this.usersParams.suggest = true;
+    this.usersParams.isfree = true;
     this.courseService.getsfCourses(1 , 9, this.usersParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.sCourses = res.result;
       this.pag = res.pag;

@@ -135,6 +135,14 @@ export class WebinarComponent implements OnInit {
     
 }
 
+sendRate(rate: number)
+{
+  console.log(rate);
+  this.courseService.sendRate(this.route.snapshot.params['id'] , rate).subscribe(next => {
+    this.toastr.success("امتیاز شما با موفقیت ثبت شد");
+  });
+}
+
 loginreal(){
   this.authService.login(this.model).subscribe(response =>{
     console.log(response);

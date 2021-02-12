@@ -121,9 +121,9 @@ gettheMainCourse(id: number): Observable<Course>{
    return this.http.post(this.baseUrl + 'create/', pro);
  }
 
- sendReate(id: number)
+ sendRate(id: number, rate: number)
  {
-   
+  return this.http.post(this.baseUrl + 'rate/' + id + '/' + rate , {});
  }
  addCourseToUserAdmin(uid: number, courseId: number){
    return this.http.post(this.baseUrl + 'addcourseToUser/' + uid + '/' + courseId , {});

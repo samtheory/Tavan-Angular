@@ -55,21 +55,20 @@
                   </span>
                </div>
 
-               <div class="flex py-2">
-                  <i class="pi  pi-calendar text-orange-500 pl-1"></i>
+               <div class="flex py-2 items-center">
+                  <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/calendar.png" alt="support">
                   <p class="font-bold">شروع وبینار :</p>
                   <p class="px-2">{{course.started | date: 'y-M-d'}}</p>
                </div>
-               <div class="flex py-2 items-start">
-                  <i class="pi  pi-calendar text-orange-500 pl-1"></i>
+               <div class="flex py-2 items-center">
+            <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/time.png" alt="support">
                   <p class="font-bold ">مدت زمان آموزش :</p>
 
                   <p class="px-2">{{course.hours}} ساعت</p>
                </div>
-               <div class="flex py-2 flex-wrap items-center ">
+               <div class="flex py-4 flex-wrap items-center ">
                   <div class="flex items-center ">
 
-                     <i class="pi  pi-calendar text-orange-500 pl-1  "></i>
 
                      <p class="font-bold  pl-3 ">تاریخ جلسات :</p>
                   </div>
@@ -81,10 +80,10 @@
 
                   <div class="flex items-center my-4">
 
-                     <i class="fas fa-users text-orange-500 pl-1"></i>
-                     <p class="font-bold ">اساتید دوره</p>
+                     
+                     <p class="font-bold ">مدرسین دوره</p>
                   </div>
-                  <div class="flex justify-evenly flex-wrap items-center">
+                  <div class="flex justify-around flex-wrap items-center">
                      <div *ngFor="let courseTeacher of course.courseTeachers"
                         class="flex justify-center items-center py-2">
                         <!-- ! old one  -->
@@ -127,7 +126,7 @@
                         <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse()"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                            ویدیو دوره </a>
-                        <a  *ngIf="course.isActive && !course.isfor" (click)="buyCourse()"
+                        <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse()"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                            دوره</a>
                         <a *ngIf="course.isfor && course.isActive"
@@ -174,8 +173,9 @@
                      </div>
                   </div>
                </div>
-               <div  class="flex justify-end items-center">
-                  <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="//{{course.media.pdfUrl}}">دانلود فایل پی دی اف
+               <div class="flex justify-end items-center">
+                  <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="//{{course.media.pdfUrl}}">دانلود
+                     فایل پی دی اف
                      <i class="pi pi-download px-2"></i>
                   </a>
                   <!-- <p-dropdown *ngIf="course.videos" class="bg-blue-100" [options]="course.videos" optionLabel="title"></p-dropdown> -->
@@ -329,7 +329,8 @@
 
 <!-- #  Dialog Box  PLEASE *-login-*   -->
 <div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white"
-   [ngClass]="{'hidden': dialogLogin == false, 'w-screen fixed': dialogLogin == true }" style="z-index: 1000;max-width: 500px;">
+   [ngClass]="{'hidden': dialogLogin == false, 'w-screen fixed': dialogLogin == true }"
+   style="z-index: 1000;max-width: 500px;">
 
 
    <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
@@ -376,20 +377,22 @@
 
 <!-- :: NOT ACTIVATED Dialog Box  -->
 <div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white"
-   [ngClass]="{'hidden': dialogNotActivated == false, 'w-screen fixed': dialogNotActivated == true }" style="z-index: 1000;max-width: 500px;">
+   [ngClass]="{'hidden': dialogNotActivated == false, 'w-screen fixed': dialogNotActivated == true }"
+   style="z-index: 1000;max-width: 500px;">
    <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>
    <div mat-dialog-content class="my-6 text-center flex  items-center justify-between flex-col">
       <div class="py-4 px-8">
 
-         <h1 class="text-right  py-2">متاسفانه اکانت شما هنوز فعال نیست. جهت فعال شدن اکانت لطفا پروفایل خود را تکمیل کنید و یا در صورت بروز مشکل با پشتیبانی توان هماهنگ کنید</h1>
+         <h1 class="text-right  py-2">متاسفانه اکانت شما هنوز فعال نیست. جهت فعال شدن اکانت لطفا پروفایل خود را تکمیل
+            کنید و یا در صورت بروز مشکل با پشتیبانی توان هماهنگ کنید</h1>
          <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
       </div>
       <div class="py-6 px-2 w-96">
 
          <a routerLink="/customer-panel/profile"
             class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit">
-           ورود به پروفایل کاربری
-      </a>
+            ورود به پروفایل کاربری
+         </a>
       </div>
    </div>
 

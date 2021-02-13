@@ -164,6 +164,7 @@ import { TeacherDetailResolver } from './_resolvers/teacher-detail.resolver';
 import { SearchSectionComponent } from './components/_Updated/search-section/search-section.component';
 import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { CustomerCardComponent } from './components/_Updated/customer-card/customer-card.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -261,7 +262,8 @@ export function tokenGeter() {
     SearchComponent,
     WebinarComponent,
     SearchSectionComponent,
-    PasswordUpdateComponent
+    PasswordUpdateComponent,
+    CustomerCardComponent
   ],
   imports: [
     PaginatorModule,

@@ -29,15 +29,17 @@
 
       <form #editForm="ngForm" (ngSubmit)="createVideo()">
         <div class="form-group mt-3">
-          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">ds
-            <small><sup>(EN)</sup></small></label>
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">
+            نام ویدیو
+        </label>
           <textarea name="title" rows="1"
             class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
             [(ngModel)]="model.title"></textarea>
         </div>
         <div class="form-group mt-3">
-          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">desc
-            <small><sup>(FA)</sup></small></label>
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">
+            توضیح ویدیو
+           </label>
           <textarea name="description" rows="1"
             class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
             [(ngModel)]="model.description"></textarea>
@@ -50,14 +52,14 @@
             [(ngModel)]="model.file_id"></textarea>
         </div>
         <div class="form-group mt-3">
-          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">convert mode
-            <small><sup>(FA)</sup></small></label>
-          <textarea name="convert_mode" rows="4"
+          <label class="block uppercase text-gray-700 text-xs font-bold mb-2 mt-2">convert mode 
+            <small><sup>(AUTO)</sup></small></label>
+          <input name="convert_mode" 
             class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
-            value="auto" [(ngModel)]="model.convert_mode"></textarea>
+            value="auto" [(ngModel)]="model.convert_mode" >
         </div>
         <button
-          class="bg-mesh-800 text-blue-100 hover:bg-white border-2 border-transparent hover:border-mesh-300  hover:text-mesh-700 hover:font-bold active:bg-teal-600  uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          class="bg-mesh-800 text-blue-100 my-2 hover:bg-white border-2 border-transparent hover:border-mesh-300  hover:text-mesh-700 hover:font-bold active:bg-teal-600  uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="submit">Save video</button>
       </form>
       <button

@@ -55,10 +55,16 @@ selected = 'option one';
     
     //  -- I N F O --    
     $('#info').click(function () {
-      // $('#info').removeClass('border-teal-300 bg-teal-200');
-      // $('#info').addClass('text-red-600 bg-white  border-blue-300 ');
-      // $('#video').removeClass('text-red-600 bg-white  border-blue-300');
-      // $('#video').addClass('bg-teal-200  border-teal-300');
+      $('#info').removeClass('bg-green-500 opacity-50');
+      $('#info').addClass('bg-green-900');
+
+      $('#video').addClass('bg-green-500 opacity-50');
+      $('#session').addClass('bg-green-500 opacity-50');
+      $('#category').addClass('bg-green-500 opacity-50');
+      $('#video').removeClass('bg-green-900');
+      $('#session').removeClass('bg-green-900');
+      $('#category').removeClass('bg-green-900');
+  
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.information-tab').removeClass(' hidden');
       $('.video-tab').addClass('  hidden');
@@ -67,10 +73,15 @@ selected = 'option one';
     });
     //  -- V I D E O --    
     $('#video').click(function () {
-      // $('#video').removeClass('border-teal-300 bg-teal-200');
-      // $('#video').addClass('text-red-600 bg-white  border-blue-300');
-      // $('#info').removeClass('text-red-600 bg-white  border-blue-300');
-      // $('#info').addClass('bg-teal-200  border-teal-300');
+      $('#video').addClass('bg-green-900');
+      $('#video').removeClass('bg-green-500 opacity-50');
+
+      $('#info').addClass('bg-green-500 opacity-50');
+      $('#info').removeClass('bg-green-900');
+      $('#session').addClass('bg-green-500 opacity-50');
+      $('#category').addClass('bg-green-500 opacity-50');
+      $('#session').removeClass('bg-green-900');
+      $('#category').removeClass('bg-green-900');
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.video-tab').removeClass('hidden');
       $('.information-tab').addClass('hidden');
@@ -80,10 +91,16 @@ selected = 'option one';
   
     //  -- CATEGORY --    
     $('#category').click(function () {
-      $('#video').removeClass('border-teal-300 bg-teal-200');
-      $('#video').addClass('text-red-600 bg-white  border-blue-300');
-      $('#info').removeClass('text-red-600 bg-white  border-blue-300');
-      $('#info').addClass('bg-teal-200  border-teal-300');
+      $('#category').addClass('bg-green-900');
+      $('#category').removeClass('bg-green-500 opacity-50');
+
+      
+      $('#video').addClass('bg-green-500 opacity-50');
+      $('#info').addClass('bg-green-500 opacity-50');
+      $('#session').addClass('bg-green-500 opacity-50');
+      $('#video').removeClass('bg-green-900');
+      $('#info').removeClass('bg-green-900');
+      $('#session').removeClass('bg-green-900');
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.category-tab').removeClass(' hidden');
       $('.video-tab').addClass('hidden');
@@ -93,10 +110,16 @@ selected = 'option one';
   
     //  -- SESSIONS --    
     $('#session').click(function () {
-      $('#video').removeClass('border-teal-300 bg-teal-200');
-      $('#video').addClass('text-red-600 bg-white  border-blue-300');
-      $('#info').removeClass('text-red-600 bg-white  border-blue-300');
-      $('#info').addClass('bg-teal-200  border-teal-300');
+      $('#session').removeClass('bg-green-500 opacity-50');
+      $('#session').addClass('bg-green-900');
+      
+      
+      $('#category').addClass('bg-green-500 opacity-50');
+      $('#video').addClass('bg-green-500 opacity-50');
+      $('#info').addClass('bg-green-500 opacity-50');
+      $('#category').removeClass('bg-green-900');
+      $('#video').removeClass('bg-green-900');
+      $('#info').removeClass('bg-green-900');
       // .   .   .   H   I   D   E   ||   S   H   o   W   .   .   .   .   .   .
       $('.session-tab').removeClass(' hidden');
       $('.video-tab').addClass('hidden');

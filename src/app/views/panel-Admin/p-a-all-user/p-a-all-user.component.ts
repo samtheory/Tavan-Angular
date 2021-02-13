@@ -40,7 +40,7 @@ userParams: any = {};
 
   addToCourseUser(id: number)
   {
-    this.courseService.addCourseToUserAdmin(id , this.info.id).subscribe(next => {
+    this.courseService.addCourseToUserAdmin(id , this.info[id]).subscribe(next => {
       this.toastr.success("با موفقیت اضافه شد");
     });
   }

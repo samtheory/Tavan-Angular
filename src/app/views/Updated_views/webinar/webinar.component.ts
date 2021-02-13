@@ -31,7 +31,9 @@ export class WebinarComponent implements OnInit {
   dialog =false; 
   dialogNotActivated =false;
   dialogLogin =false ;
-  
+  offIsOn = false ;
+  beforeOffPrice : number;
+  discount : number ;
   constructor(private courseService: CourseService, private route: ActivatedRoute,
     private toastr: ToastrService, private router: Router,
     private authService: AuthService
@@ -45,6 +47,7 @@ export class WebinarComponent implements OnInit {
     // });
     this.getCourse();
     this.isActiveUser();
+
   }
 
 
@@ -57,6 +60,8 @@ export class WebinarComponent implements OnInit {
 
       console.log(course);
     });
+
+
   }
   getUrl(event) {
     this.url = event.target.value;
@@ -64,12 +69,15 @@ export class WebinarComponent implements OnInit {
   }
 
   getOff(){
+    this.beforeOffPrice = this.course.realCost;
     this.offService.getOffCode(this.off.code).subscribe(off => {
-      this.course.realCost = this.course.realCost * (100 -off.offPercent)/100;
+      this.course.realCost = this.course.realCost * (100 - off.offPercent)/100;
+      this.discount = this.beforeOffPrice - this.course.realCost ;
       this.off.code = off.code;
     }, error => {
       this.toastr.error(error);
     });
+    this.offIsOn = true;
   }
 
   logedIn() {

@@ -17,13 +17,15 @@
 		<div [routerLink]="['/']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			{{DB_const.menu.home}}
 		</div>
-		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
+		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer"
+			(click)="showSideMenu = false">
 			{{DB_const.menu.online_workshop}}
 		</div>
-		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
+		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer"
+			(click)="showSideMenu = false">
 			{{DB_const.menu.videos}}
 		</div>
-		<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu" >
+		<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu">
 			{{DB_const.menu.category}}
 			<i class="fas fa-chevron-down text-xs inline text-blue-500"></i>
 		</div>
@@ -79,16 +81,18 @@
 <main class="flex flex-col justify-between">
 
 	<!-- # Text banner -->
-	<a *ngIf="photos" href="//{{photos[1].link}}" 	class="alert duration-100   flex-row flex justify-center items-center py-3 sticky top-0 z-50" [ngClass]="{'h-0 opacity-0': textBannerIsActive == false} " [ngStyle]="{'background-color':this.photos[0].color}">
-		
-			<p class="text-gray-500 text-xs sm:text-sm">
-				{{photos[1].name}}
-				<!-- <a href="//{{photos[1].link}}">
+	<a *ngIf="photos" href="//{{photos[1].link}}"
+		class="alert duration-100   flex-row flex justify-center items-center py-3 sticky top-0 z-50"
+		[ngClass]="{'h-0 opacity-0': textBannerIsActive == false} " [ngStyle]="{'background-color':this.photos[0].color}">
+
+		<p class="text-gray-500 text-xs sm:text-sm">
+			{{photos[1].name}}
+			<!-- <a href="//{{photos[1].link}}">
 					<span class="text-blue-500">اینجا</span>
 					را کلیک کنید
 				</a> -->
-			</p>
-			<!-- <button class=" md:mx-16  mx-4" (click)="textBannerIsActive = false"><i
+		</p>
+		<!-- <button class=" md:mx-16  mx-4" (click)="textBannerIsActive = false"><i
 				class="fas fa-times text-gray-500 text-sm"></i></button> -->
 
 	</a>
@@ -120,12 +124,26 @@
 
 					<!-- ::. USER IS NOT LOGED-IN -->
 					<div *ngIf="!loggedIn()" class="action flex items-center z-30">
-						<button-blue [Link]="DB_const.routeName.main.Login">
+
+						<a [routerLink]="DB_const.routeName.main.Login" routerLinkActive #login="routerLinkActive"
+							[ngClass]="
+              login.isActive
+                ? 'bg-blue-500 text-white'
+                : 'text-blue-500'
+            " class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white  duration-200  ">
 							{{DB_const.actionButton.signIn}}
-						</button-blue>
-						<button-blue [Link]="DB_const.routeName.main.Register">
-							{{DB_const.actionButton.register}}
-						</button-blue>
+
+						</a>
+						<a [routerLink]="DB_const.routeName.main.Register" routerLinkActive #register="routerLinkActive"
+							[ngClass]="
+              register.isActive
+                ? 'bg-blue-500 text-white'
+                : 'text-blue-500'
+            " class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white  duration-200  ">
+								{{DB_const.actionButton.register}}
+
+						</a>
+				
 					</div>
 					<!-- ::. ------------------------ -->
 
@@ -203,13 +221,16 @@
 
 <!-- :: support phone button -->
 <div *ngIf="goUpButtonScroll" class=" fixed bottom-6  " style="right:10px">
-	<a href="tel:021-28422712"  >
-		<img class=" text-lg  ml-4 text-white bg-orange-500 rounded-full shadow-lg hover:shadow-none duration-200 hover:bg-orange-900" style="padding:10px 12px ;width:46px" src="assets/img/_usefull/Vector.png" alt="support">
+	<a href="tel:021-28422712">
+		<img
+			class=" text-lg  ml-4 text-white bg-orange-500 rounded-full shadow-lg hover:shadow-none duration-200 hover:bg-orange-900"
+			style="padding:10px 12px ;width:46px" src="assets/img/_usefull/Vector.png" alt="support">
 	</a>
 </div>
 <div *ngIf="goUpButtonScroll" class=" fixed bottom-6   left-0">
 	<i (click)="scrollToElement(header)"
-		class="fas fa-chevron-up text-lg  ml-4 text-white bg-blue-500 rounded-full shadow-lg hover:shadow-none duration-200 hover:bg-blue-900" style="padding: 10px 15px"></i>
+		class="fas fa-chevron-up text-lg  ml-4 text-white bg-blue-500 rounded-full shadow-lg hover:shadow-none duration-200 hover:bg-blue-900"
+		style="padding: 10px 15px"></i>
 </div>
 
 <!-- ::: ENF of support phone button -->

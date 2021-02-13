@@ -105,7 +105,7 @@ export const contactUs = {
       title: "صمیمانه پاسخگوی پرسش ها، پیشنهادات و انتقادات شما هستیم"
       , filedLabel: {
          name: {
-            lable: "نام",
+            lable: "نام و نام خانوادگی",
             hintText: "نام خود را درج کنید"
          },
          email: {

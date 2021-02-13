@@ -93,7 +93,7 @@ changePassUser(model: any) {
 }
 
 changePassUserAdmin(model: any, id: number) {
-  return this.http.post(this.baseUrl + 'updatePasswordUser/' + id, model);
+  return this.http.post(this.baseUrl + 'updatePassword/' + id, model);
 }
 
 getUsers(page?: any , itemsPerPage?: any , userParams?: any): Observable<PaginatedResult<User[]>>{

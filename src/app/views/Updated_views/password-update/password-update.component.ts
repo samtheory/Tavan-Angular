@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./password-update.component.css']
 })
 export class PasswordUpdateComponent implements OnInit {
-model: any;
+model: any = {};
   constructor(private route: ActivatedRoute, private router: Router,private authService: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ model: any;
     }
     this.authService.resertPass(this.model , this.route.snapshot.params['username'] , this.route.snapshot.params['id'])
     .subscribe(next => {
-      this.toastr.success('رمز عبور بت موفقیت عوض شد');
+      this.toastr.success('رمز عبور با موفقیت عوض شد');
       this.router.navigate(['/login']);
     });
   }

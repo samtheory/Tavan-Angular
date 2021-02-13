@@ -25,7 +25,7 @@
               name="email"
                 class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                 matInput
-                placeholder="ایمیل خود را وارد کنید"
+                placeholder="ایمیل خود را درج کنید"
                 value=""
                 type="email"
               />
@@ -37,7 +37,7 @@
               name="password"
                 class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
                 matInput
-                placeholder="رمز خود را وارد کنید"
+                placeholder="رمز خود را درج کنید"
                 value=""
                 type="password"
               />
@@ -47,7 +47,7 @@
                 class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1"
                 type="submit"
               >
-                وارد شوید
+             ورود به توان
               </button>
               <a (click)="openDialogNotLogin()" class="hover:text-blue-500 text-gray-500 my-4 text-sm cursor-pointer"
                 >رمز عبور خود را فراموش کردم</a
@@ -80,7 +80,7 @@
       <div class="py-4 px-8">
 
         <h1 class="text-lg font-bold py-2">بازیابی رمز عبور</h1>
-        <!-- <p class="text-gray-400">لطفا ایمیل خود را وارد کنید</p> -->
+        <!-- <p class="text-gray-400">لطفا ایمیل خود را درج کنید</p> -->
       </div>
       <div class="py-6 px-2 w-96">
         <form #reserForm="ngForm" class="my-4" action="">
@@ -88,7 +88,7 @@
             <label class="block font-bold pb-1 text-right">ایمیل</label>
             <input [(ngModel)]="userEmail.email" name="email"
               class="rounded bg-white outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-              matInput placeholder="ایمیل خود را وارد کنید" type="email" />
+              matInput placeholder="ایمیل خود را درج کنید" type="email" />
           </div>
          
           <div class=" flex items-center flex-col justify-between mt-4">

@@ -128,9 +128,9 @@ export const contactUs = {
       title: "اطلاعات تماس",
       telephon: { title: "شماره شرکت ما:", value: "02128422712", },
       mobile: { title: "شماره واتس اپ ما:", value: "09056919286", },
-      email: { title: "پست الکترونیکی ما:", value: "tavangroupp@gmail.com", },
-      address: { title: "آدرس ما:", value: "", },
-      postCode: { title: "کد پستی ما:", value: "", },
+      email: { title: "پست الکترونیکی ما:", value: "Tavangroupp@gmail.com", },
+      address: { title: "آدرس ما:", value: "تهران، میدان رسالت، خیابان هنگام، خیابان دانشگاه، دانشگاه علم و صنعت، ساختمان نیترو", },
+      postCode: { title: "کد پستی ما:", value: "1684613114", },
 
 
 

@@ -42,7 +42,7 @@
             [routerLink]="['/webinar', course.id]"
                class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
                دوره</a>
-            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
+            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline offCross">
                {{course.cost}} تومان
             </div>
             <div class="price text-blue-500 font-bold hidden xl:inline">
@@ -50,8 +50,8 @@
             </div>
 
             <div class="Small-size-price xl:hidden flex flex-col justify-center items-center">
-               <div *ngIf="course.off !== 0" class="pre-price text-gray-300 text-xs line-through">
-                  <P>{{course.cost}} تومان</P>
+               <div *ngIf="course.off !== 0" class="pre-price text-gray-300 text-xs line-through offCross">
+                  <P class="line-through offCross">{{course.cost}} تومان</P>
                </div>
                <div class="price text-blue-500 font-bold">
                   <p>{{course.realCost}} تومان</p>
@@ -62,8 +62,8 @@
             <a [routerLink]="['/webinar', course.id]"
                class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
                دوره</a>
-            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
-               <span *ngIf="course.cost !== 0 ">
+            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline offCross ">
+               <span class="line-through offCross" *ngIf="course.cost !== 0 ">
 
                   {{course.cost}} تومان
                </span>
@@ -73,8 +73,8 @@
             </div>
 
             <div class="Small-size-price xl:hidden flex flex-col justify-center items-center">
-               <div *ngIf="course.off !== 0" class="pre-price text-gray-300 text-xs line-through">
-                  <P *ngIf="course.cost !== 0 ">{{course.cost}} تومان</P>
+               <div *ngIf="course.off !== 0" class="pre-price text-gray-300 text-xs line-through offCross">
+                  <P class='offCross line-through' *ngIf="course.cost !== 0 ">{{course.cost}} تومان</P>
                </div>
                <div class="price text-blue-500 font-bold">
                   <p>رایگان</p>

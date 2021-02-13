@@ -22,27 +22,20 @@
       <div *ngFor="let q of toggle ;let i = index" class="AKD bg-gray-100 px-5 py-7  w-full rounded-md my-4 ">
          <div class="flex justify-between items-center cursor-pointer " (click)='toggleFN(i)'>
 
-            <p>وتس رد هلجم و همانزور هکلب نوتم و اهرگپاچ ،تسا کیفارگ ناحارط زا هدافتسا اب و ،پاچ تعنص زا موهفمان یگداس
-               دیلوت اب یگتخاسنتم موسپیا مرول</p>
+            <p>{{q.question}}</p>
 
             <div class="pl-3 pr-16 relative">
 
                <i class="fas fa-minus text-blue-500  absolute"
-                  [ngClass]="{'AKD_anime_open block ': q == true, 'AKD_anime_close ': q == false }"></i>
+                  [ngClass]="{'AKD_anime_open block ': q.isOpen == true, 'AKD_anime_close ': q.isOpen == false }"></i>
                <i class="fas fa-plus text-blue-500"
-                  [ngClass]="{'AKD_anime_open': q == true, 'AKD_anime_close': q == false }">
+                  [ngClass]="{'AKD_anime_open': q.isOpen == true, 'AKD_anime_close': q.isOpen == false }">
                </i>
             </div>
          </div>
-         <div [ngClass]="{'AKD_anime_close h-0 pt-0': q == false, 'AKD_anime_open h-full pt-10 ': q == true }"
+         <div [ngClass]="{'AKD_anime_close h-0 pt-0': q.isOpen == false, 'AKD_anime_open h-full pt-10 ': q.isOpen == true }"
             class="pt-10 text-gray-400 answer duration-300">
-            <p>این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی
-               است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن
-               ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک
-               متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی
-               است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن
-               ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک
-               متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.این یک متن ساختگی است.
+            <p>{{q.answer}}
             </p>
          </div>
       </div>

@@ -16,7 +16,11 @@ import { TicketService } from 'src/app/_services/ticket.service';
 })
 export class FAQUComponent implements OnInit {
   DB_const = { faq };
-  toggle = [false, false, false, false, false, false, false];
+  toggle = [{
+    question: "",
+    answer : "",
+    isOpen : "false"
+  }];
   model: any = {};
   dialog = false;
   toggleFN(i: number) {

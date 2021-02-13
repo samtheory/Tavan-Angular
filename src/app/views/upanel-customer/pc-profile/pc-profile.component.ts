@@ -146,7 +146,7 @@ title = 'test';
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.userForm.value, null, 4));
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.userForm.value, null, 4));
 }
 
 onReset() {

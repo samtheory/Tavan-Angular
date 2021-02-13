@@ -6,7 +6,7 @@
 		<form [formGroup]="userForm" (ngSubmit)="onSubmit()" action="">
 			<!-- :: /: profile Image :/  -->
 			<div class="relative flex justify-center items-center ">
-			
+
 				<img class="m-auto mt-10  rounded" src="assets/img/_usefull/profile-customer.svg" alt="avatar">
 				<label
 					class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
@@ -15,7 +15,7 @@
 						<path
 							d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
 					</svg>
-			
+
 					<input formControlName="avatar" (change)="onFile2Change($event)" type="file" class="hidden" />
 				</label>
 			</div>
@@ -25,36 +25,31 @@
 			<div class="w-full flex flex-wrap justify-center ">
 				<div class="form-item  py-3 w-full px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">نام</label>
-					<input name="email"
-					formControlName="firstName"
+					<input name="email" formControlName="firstName"
 						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
 						matInput placeholder="نام خود را وارد کنید" value="" />
 				</div>
 				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">نام خانوادگی</label>
-					<input name="email"
-					formControlName="lastName"
+					<input name="email" formControlName="lastName"
 						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
 						matInput placeholder="نام خانوادگی خود را وارد کنید" value="" />
 				</div>
 				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">ایمیل</label>
-					<input name="email"
-					formControlName="email"
+					<input name="email" formControlName="email"
 						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
 						matInput placeholder="ایمیل خود را وارد کنید" value="" />
 				</div>
 				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">موبایل</label>
-					<input name="email"
-					formControlName="phoneNumber"
+					<input name="email" formControlName="phoneNumber"
 						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
 						matInput placeholder="موبایل خود را وارد کنید" value="" />
 				</div>
 				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">آدرس</label>
-					<input name="email"
-					formControlName="address"
+					<input name="email" formControlName="address"
 						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
 						matInput placeholder="آدرس خود را وارد کنید" value="" />
 				</div>
@@ -71,31 +66,32 @@
 				<div class="form-item  py-3 w-full  px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">دسترسی</label>
 					<select name="isActive" formControlName="isActive" id=""
-					   class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
-					   <option value="true">فعال</option>
-					   <option value="false">غیرفعال</option>
+						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md">
+						<option value="true">فعال</option>
+						<option value="false">غیرفعال</option>
 					</select>
-					</div>
+				</div>
 				<div class="form-item  py-3 w-full px-2" style="width:350px;">
 					<label class="block text-sm font-bold pb-2 pr-2 ">رمز عبور</label>
 					<input name="email" formControlName="password"
 						class="rounded-md bg-gray-100 outline-none focus:border-blue-100 border-transparent border p-2 w-full hover:shadow-md"
 						matInput placeholder="رمز عبور " value="" />
 				</div>
-			
 
-				 <div class="w-full lg:w-4/12 px-4 pt-4">
-               <div class="relative w-full mb-3">
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                     تاریخ تولد
-                  </label>
-                  <input #birthday formControlName="birthday" type="text"   name="birthday"  (input)="FinishDateChange($event.target.value); "
-                     class="px-3 py-3   placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                     value="" />
-                  <ng-persian-datepicker [timeMeridian]='true' [input]="birthday" [uiHideAfterSelectDate]="true">
-                  </ng-persian-datepicker>
-               </div>
-            </div>
+
+				<div class="w-full lg:w-4/12 px-4 pt-4">
+					<div class="relative w-full mb-3">
+						<label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+							تاریخ تولد
+						</label>
+						<input #birthday formControlName="birthday" type="text" name="birthday"
+							(input)="FinishDateChange($event.target.value); "
+							class="px-3 py-3   placeholder-gray-100 text-gray-700 bg-gray-100 rounded text-sm shadow outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+							value="" />
+						<ng-persian-datepicker [timeMeridian]='true' [input]="birthday" [uiHideAfterSelectDate]="true">
+						</ng-persian-datepicker>
+					</div>
+				</div>
 				<!-- <div class="form-item  py-3 w-full  px-2 bg-warning" style="height:10px ; min-width: 20px;"></div> -->
 
 
@@ -109,29 +105,31 @@
 						بارگذاری کارت ملی
 						<i class="pi pi-upload px-3"></i>
 					</label>
-							<div style="
+					<div style="
 															
 															                     width: 300px;
 															                     height: 300px;
 															                     align-self: flex-end;
 															                     margin: 0 0 15px 15px;
 															                     border-radius: 5px;
-															                     background-image: url(../../../../assets/img/_usefull/card-2.jpg);
+															                    display: flex;
+            justify-content: center;
+            align-items: center;
 															                     background-size: contain;
 															                     background-position: center;
 															                     position: relative;
-															                  ">
-								<label
-									class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-									style="top: 33%; right: 26%;">
-									<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-										<path
-											d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-									</svg>
-									<span class="mt-2 text-base leading-normal">Select a file</span>
-									<input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
-								</label>
-							</div>
+															                  "><i class="far fa-image " style="font-size:150px"></i>
+						<label
+							class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+							style="top: 0; right: 0;bottom: 0; left: 0;">
+							<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+								<path
+									d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+							</svg>
+							<span class="mt-2 text-base leading-normal">Select a file</span>
+							<input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
+						</label>
+					</div>
 				</div>
 				<div class="form-item  py-3 mx-4 px-2">
 					<label class="block text-sm font-bold pb-2 pr-2 ">
@@ -145,14 +143,16 @@
 								                     align-self: flex-end;
 								                     margin: 0 0 15px 15px;
 								                     border-radius: 5px;
-								                     background-image: url(../../../../assets/img/_usefull/card-2.jpg);
+								                    display: flex;
+            justify-content: center;
+            align-items: center;
 								                     background-size: contain;
 								                     background-position: center;
 								                     position: relative;
-								                  ">
+								                  "><i class="far fa-image " style="font-size:150px"></i>
 						<label
-							class="w-28 flex flex-col items-center px-4 py-2 bg-mesh-700 text-white rounded-lg shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-50 hover:opacity-100 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
-							style="top: 33%; right: 26%;">
+							class="  flex justify-center items-center  bg-mesh-700 text-white rounded shadow-lg tracking-wide uppercase cursor-pointer absolute opacity-10 hover:opacity-70 hover:text-mesh-200 hover:bg-mesh-800 duration-300"
+							style="top: 0; right: 0;bottom: 0; left: 0;">
 							<svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 								<path
 									d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
@@ -167,20 +167,19 @@
 			<!-- :: /: Action Button :/  -->
 			<div class="flex flex-wrap justify-center my-5">
 				<div class="px-2">
-					<button
-					(click)="createUser()"
-					class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
-					 ثبت تغییرات
+					<button (click)="createUser()"
+						class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
+						ثبت تغییرات
 					</button>
 
 				</div>
-				<div class="px-2">
+				<!-- <div class="px-2">
 					<a [routerLink]=""
 						class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200  ">
 						لغو
 					</a>
 
-				</div>
+				</div> -->
 			</div>
 			<!-- :: /: ---------------END----------- :/  -->
 		</form>

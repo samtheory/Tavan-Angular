@@ -8,7 +8,7 @@ import { MainTemplateComponent } from './layouts/_updated/main-template/main-tem
 
 // .::  Panel ADMIN ::.  --::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::-::
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
-import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
+
 import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
 import { PAAllUserComponent } from './views/panel-Admin/p-a-all-user/p-a-all-user.component';
 import { PANewUserComponent } from './views/panel-Admin/p-a-new-user/p-a-new-user.component';
@@ -105,7 +105,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: PADashboardComponent, resolve: { courses: CourseListAllResolver } },
       { path: 'addVideo', component: PAAddVideoComponent },
-      { path: 'allCourses', component: PAAllCoursesComponent },
+     
       { path: 'newCourse', component: PANewCourseComponent, resolve: { categories: CategoryListResolver, teachers: TeacherListResolver } },
       { path: 'ticket', component: PATicketComponent },
       { path: 'teacher', component: PATeachersComponent },

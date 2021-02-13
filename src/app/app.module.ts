@@ -24,8 +24,7 @@ import { UserDropdownComponent } from './components/dropdowns/user-dropdown/user
 
 import { PanelComponent } from './layouts/panel/panel.component';
 
-// panel views
-import { PAAllCoursesComponent } from './views/panel-Admin/p-a-AllCourses/p-a-AllCourses.component';
+
 import { PANewCourseComponent } from './views/panel-Admin/p-a-newCourse/p-a-newCourse.component';
 import { PAEditCourseComponent } from './views/panel-Admin/p-a-edit-course/p-a-edit-course.component';
 import { AllCourseTableComponent } from './components/myCard/Tables/all-course-table/all-course-table.component';
@@ -181,7 +180,7 @@ export function tokenGeter() {
     AdminComponent,
     AuthComponent,
     PanelComponent,
-    PAAllCoursesComponent,
+   
     PANewCourseComponent,
     PAEditCourseComponent,
     AllCourseTableComponent,

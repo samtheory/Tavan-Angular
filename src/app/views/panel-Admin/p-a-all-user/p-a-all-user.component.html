@@ -16,10 +16,10 @@
 				</button>
 			</div>
 		</div>
+		<form #seachForm="ngForm"  action="">
 		<div class="flex flex-wrap items-center py-2">
-			<form #seachForm="ngForm"  action="">
 				<div class="relative w-full px-4 max-w-full flex-grow flex-1">
-					<input placeholder="search" name="userName" [(ngModel)]="userParams.userName" type="text" class="rounded outline-none border border-gray-200">
+					<input placeholder="search" name="userName" [(ngModel)]="userParams.userName" type="text" class="rounded outline-none border border-gray-200" style="padding:10px;">
 				</div>
 				<div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: left;">
 					<button
@@ -30,8 +30,8 @@
 						جست و جو
 					</button>
 				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
 	<div class="block w-full overflow-x-auto">
 		<!-- Projects table -->
@@ -110,10 +110,10 @@
 										id="{{user.id}}"
 										type="submit"
 										(click)="addToCourseUser(user.id)"
-										class=" text-xs mx-1 py-1 flex items-center  px-1 uppercase rounded text-white bg-green-900 hover:shadow-md hover:opacity-80   last:mr-0 mr-1 cursor-pointer duration-300">Add</button>
+										class=" text-xs mx-1 py-1 inline  items-center  px-1 uppercase rounded text-white bg-green-900 hover:shadow-md hover:opacity-80   last:mr-0 mr-1 cursor-pointer duration-300">Add</button>
 							
 									
-											<select id="sel{{user.id}}" name="id" [(ngModel)]="info[user.id]" [(value)]="selected" class="border border-gray-200 ">
+											<select id="sel{{user.id}}" name="id" [(ngModel)]="info[user.id]" [(value)]="selected" class="border border-gray-200 inline">
 												<option value="">None</option>
 											
 												<option *ngFor="let course of this.courses" value="{{course.id}}">{{course.title}}1</option>

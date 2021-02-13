@@ -1,0 +1,45 @@
+.card-body {
+  transition: 300ms;
+  top: 0;
+}
+
+.card-body:hover {
+  top: -4px;
+}
+.course-card {
+  max-width: 400px;
+}
+@media (max-width: 380px) {
+ 
+  p{
+    font-size:12px;
+  }
+
+}
+
+.darken{
+  transition: 300ms;
+  opacity: 0;
+
+ 
+}
+.dec{
+  transition: 300ms;
+  opacity: 0;
+
+}
+.card-img{
+&:hover{
+
+
+  .darken{
+  opacity: .7;
+  
+}
+.dec{
+    
+    opacity: 1;
+  }
+}
+}
+

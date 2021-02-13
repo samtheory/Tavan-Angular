@@ -1,24 +1,26 @@
-<div  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
+<div class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
       <div class=" card-img w-full relative flex justify-center items-center">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
-         <div class="dec absolute text-white px-5"  [innerHTML]="course.description"> </div>
+         <div class="dec absolute text-white px-5" [innerHTML]="course.description"> </div>
       </div>
-      
+
       <div class="content  relative px-2">
-         <div *ngIf="course.off !== 0"  class="off-banner absolute bg-warning left-0 rounded-br-lg p-2 text-white text-sm">
-          {{course.off}}% تخفیف
-         </div>
+         <!-- <div *ngIf="course.off !== 0"
+            class="off-banner absolute bg-warning left-0 rounded-br-lg p-2 text-white text-sm">
+            {{course.off}}% تخفیف
+         </div> -->
          <h5 class="text-lg font-bold py-3">{{course.title}}</h5>
-         <div *ngIf="course.courseTeachers"> 
-         <p  class="py-3"><span class="font-bold">مدرس :
-               <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}
-               </p>
-            </span>
-         </p>
-        </div>
+         <div *ngIf="course.courseTeachers">
+            <p class="py-3"><span class="font-bold">مدرس :
+                  <p class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">
+                     {{courseTeacher.teacher.name}}
+                  </p>
+               </span>
+            </p>
+         </div>
          <p class="py-3">
             <span class="font-bold">مدت دوره :</span> {{course.hours}} ساعت
          </p>
@@ -33,16 +35,17 @@
             <span class=" p-1 mx-2 text-black"> {{course.started | date: 'y/M/d'}}
             </span>
          </p>
-         <p (click)="passVideo(course.media.videoUrl)" class="text-blue-500 py-3 hover:underline duration-300 cursor-pointer">نمونه تدریس</p>
+         <!-- <p (click)="passVideo(course.media.videoUrl)"
+            class="text-blue-500 py-3 hover:underline duration-300 cursor-pointer">نمونه تدریس</p> -->
          <hr class="rounded-full opacity-10 m-auto" />
          <div *ngIf="course.realCost !== 0" class="flex flex-row justify-between my-4 items-center">
 
 
-            <a 
-            [routerLink]="['/webinar', course.id]"
-               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
-               دوره</a>
-            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
+            <a [routerLink]="['/webinar', course.id]"
+               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">
+               مشاهده دوره
+            </a>
+            <!-- <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
                {{course.cost}} تومان
             </div>
             <div class="price text-blue-500 font-bold hidden xl:inline">
@@ -56,13 +59,14 @@
                <div class="price text-blue-500 font-bold">
                   <p>{{course.realCost}} تومان</p>
                </div>
-            </div>
+            </div> -->
          </div>
          <div *ngIf="course.realCost === 0" class="flex flex-row justify-between my-4 items-center">
             <a [routerLink]="['/webinar', course.id]"
-               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
-               دوره</a>
-            <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
+               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">
+               مشاهده دوره
+            </a>
+            <!-- <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
                <span *ngIf="course.cost !== 0 ">
 
                   {{course.cost}} تومان
@@ -79,7 +83,7 @@
                <div class="price text-blue-500 font-bold">
                   <p>رایگان</p>
                </div>
-            </div>
+            </div> -->
          </div>
       </div>
    </div>

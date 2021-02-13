@@ -2,8 +2,8 @@
    <!-- :: /: title :/  -->
    <h1 class="text-xl mb-20 ">کارگاه های آنلاین</h1>
    <!-- card  -->
-   <div class="flex flex-wrap justify-evenly">
-      <card-course *ngFor="let course of courses" [course]="course"></card-course>
+   <div class="flex flex-wrap ">
+      <app-customer-card  *ngFor="let course of courses" [course]="course"></app-customer-card>
    </div>
 
    <!-- pagination -->

@@ -14,23 +14,23 @@
 			</a>
 
 		</div>
-		<div [routerLink]="['/']" class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			{{DB_const.menu.home}}
 		</div>
-		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			{{DB_const.menu.online_workshop}}
 		</div>
-		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			{{DB_const.menu.videos}}
 		</div>
-		<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu">
+		<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu" (click)="showSideMenu = false">
 			{{DB_const.menu.category}}
 			<i class="fas fa-chevron-down text-xs inline text-blue-500"></i>
 		</div>
 		<div *ngIf="this.categories" [ngClass]="{'w-0 hidden': megaMenu == false, 'w-full block': megaMenu == true }"
 			class="category-collapse-item py-4 bg-gray-200 duration-200">
 			<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
-				<a [routerLink]="['/search', {categoryId: category.id}]">
+				<a [routerLink]="['/search', {categoryId: category.id}]" (click)="showSideMenu = false">
 
 					<i class="fas fa-circle inline text-blue-500 text-xs"></i>
 					{{category.name}}
@@ -39,13 +39,13 @@
 
 
 		</div>
-		<div [routerLink]="['/about']" class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/about']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			{{DB_const.menu.about_us}}
 		</div>
-		<div [routerLink]="['/contact']" class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/contact']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			تماس با ما
 		</div>
-		<div [routerLink]="['/faq']" class="item text-lg  pr-8 my-4 cursor-pointer">
+		<div [routerLink]="['/faq']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
 			{{DB_const.menu.faq}}
 		</div>
 		<div class="Tavan-num  border border-blue-500 rounded p-2 mx-4  cursor-pointer flex justify-center items-center">

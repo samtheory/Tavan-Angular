@@ -74,10 +74,11 @@ export class WebinarComponent implements OnInit {
       this.course.realCost = this.course.realCost * (100 - off.offPercent)/100;
       this.discount = this.beforeOffPrice - this.course.realCost ;
       this.off.code = off.code;
+      this.offIsOn = true;
     }, error => {
       this.toastr.error(error);
     });
-    this.offIsOn = true;
+   
   }
 
   logedIn() {

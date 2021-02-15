@@ -42,7 +42,7 @@ export class SuccessPurchaseUComponent implements OnInit {
       }, 30000);
       }, error => {
         this.Ok = -1;
-      })
+      });
 
     }
 }

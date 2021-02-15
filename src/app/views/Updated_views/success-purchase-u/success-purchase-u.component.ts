@@ -21,7 +21,7 @@ export class SuccessPurchaseUComponent implements OnInit {
 
   gotoProduct()
   {
-    this.router.navigate(['/webinar/order.productId']);
+    this.router.navigate(['/webinar/' , this.order.productId]);
   }
 
    getParams()

@@ -201,7 +201,7 @@ selected = 'option one';
 
 
     this.courseService.updateCourse(this.route.snapshot.params['id'] , formData).subscribe(() => {
-      this.toastr.success('success fully created');
+      this.toastr.success('successfully updated');
       this.router.navigate(['/admin/dashboard']);
 
     }, error => {

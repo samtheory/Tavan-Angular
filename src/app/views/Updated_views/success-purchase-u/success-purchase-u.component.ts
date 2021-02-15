@@ -10,7 +10,7 @@ import { PaymentService } from 'src/app/_services/payment.service';
 })
 export class SuccessPurchaseUComponent implements OnInit {
   payParams: any = {};
-  Ok: boolean;
+  Ok: number = 0;
   order: Order;
   constructor(private route: ActivatedRoute, private payService: PaymentService, private router: Router) { }
 
@@ -36,12 +36,12 @@ export class SuccessPurchaseUComponent implements OnInit {
 
       this.payService.verifyPayment(this.payParams , id).subscribe(next => {
         this.order = next;
-        this.Ok = true;
+        this.Ok = 1;
         setTimeout(() => {
           this.router.navigate(['customer-panel']);
-      }, 7000);
+      }, 30000);
       }, error => {
-        this.Ok = false;
+        this.Ok = -1;
       })
 
     }

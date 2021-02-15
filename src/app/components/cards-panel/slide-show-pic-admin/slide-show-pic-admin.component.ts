@@ -54,7 +54,7 @@ export class SlideShowPicAdminComponent implements OnInit {
 
       this.photoService.updatePhoto(id ,formData).subscribe(() => {
         this.toastr.success('success fully created');
-        this.router.navigate(['/admin/AllPhotos']);
+        this.router.navigate(['/admin/dashboard']);
 
       }, error => {
           this.toastr.error(error);

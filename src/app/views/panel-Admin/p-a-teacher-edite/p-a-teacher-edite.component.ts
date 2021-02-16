@@ -65,7 +65,7 @@ export class PATeacherEditeComponent implements OnInit {
 
  
 
-  createTeacher(){
+  updateTeacher(){
     console.log(this.teacherForm);
     const formData = new FormData();
     formData.append('file', this.teacherForm.get('fileSource').value);
@@ -75,8 +75,8 @@ export class PATeacherEditeComponent implements OnInit {
     
 
 
-      this.teacherService.updateTeacher(this.route.params['id'],formData).subscribe(() => {
-        this.toastr.success('success fully created');
+      this.teacherService.updateTeacher(this.route.snapshot.params['id'],formData).subscribe(() => {
+        this.toastr.success('success fully updated');
         this.router.navigate(['/admin/dashboard']);
 
       }, error => {

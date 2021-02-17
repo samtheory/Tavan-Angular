@@ -58,7 +58,8 @@
                <div class="flex py-2 items-center">
                   <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/calendar.png" alt="support">
                   <p class="font-bold">شروع وبینار :</p>
-                  <p class="px-2">{{course.started | date: 'y/M/d'}}</p>
+                 
+                  <p class="px-2">{{course.started | PersianDate}}</p>
                </div>
                <div class="flex py-2 items-center">
             <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/time.png" alt="support">
@@ -72,8 +73,7 @@
 
                      <p *ngIf="course.sessions" class="font-bold  pl-3 ">تاریخ جلسات :</p>
                   </div>
-                  <p  *ngFor="let session of course.sessions" class="px-4 text-lg  text-blue-500">{{session.time | date:
-                     'y/M/d'}}</p>
+                  <p  *ngFor="let session of course.sessions" class="px-4 text-lg  text-blue-500">{{session.time | PersianDate}}</p>
 
                </div>
                <div class="xl:hidden">

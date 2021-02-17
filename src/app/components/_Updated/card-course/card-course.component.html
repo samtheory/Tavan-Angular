@@ -30,7 +30,7 @@
          </p>
          <p class="py-3">
             <span class="font-bold"> تاریخ : </span>
-            <span class=" p-1 mx-2 text-black"> {{course.started | date: 'y/M/d'}}
+            <span class=" p-1 mx-2 text-black"> {{course.started | PersianDate}}
             </span>
          </p>
          <p (click)="passVideo(course.media.videoUrl)" class="text-blue-500 py-3 hover:underline duration-300 cursor-pointer">نمونه تدریس</p>

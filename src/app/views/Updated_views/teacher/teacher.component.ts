@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course';
 import { PaginatedResult } from 'src/app/_models/pagination';
 import { Teacher } from 'src/app/_models/teacher';
@@ -35,7 +35,7 @@ courses: Course[];
 userParams: any = {};
 
 
-  constructor(private teacherService: TeacherService, private route: ActivatedRoute, private courseService: CourseService) { }
+  constructor(private teacherService: TeacherService, private route: ActivatedRoute, private courseService: CourseService, private router: Router) { }
 
   ngOnInit(): void {
     this.getTeacher();
@@ -56,6 +56,10 @@ userParams: any = {};
     this.courseService.getsfCourses(1 , 9, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.courses = res.result;
     });
+  }
+
+  gotoostadpage(teacher: string){
+    this.router.navigate(['/search'], {queryParams: {name: teacher}});
   }
 
 }

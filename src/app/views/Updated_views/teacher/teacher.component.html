@@ -36,7 +36,7 @@
             همه</a>
       </div>
       <div style="direction: ltr">
-         <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3"  [circular]="true" [autoplayInterval]='3500' 
+         <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3"   [autoplayInterval]='12000' 
             [responsiveOptions]="responsiveOptions">
             <ng-template pTemplate="header">
    
@@ -44,10 +44,10 @@
             <ng-template let-product pTemplate="item">
                <div class="product-item">
                   <div class="product-item-content">
-                     <a [routerLink]="['webinar/',product.id]">
+                
    
                         <card-course style="direction: rtl;" [course]="product"></card-course>
-                     </a>
+                 
                   </div>
                </div>
             </ng-template>

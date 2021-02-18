@@ -1,0 +1,10 @@
+.search-ico{
+   width:56px
+}
+
+@media only screen and (max-width:680px){
+   .search-ico{
+
+      width: 48px;
+   }
+}

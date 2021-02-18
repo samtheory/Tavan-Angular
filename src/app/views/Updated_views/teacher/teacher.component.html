@@ -29,14 +29,14 @@
 
    <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10 ">
       <div class="head flex justify-between px-6 mb-4 items-center">
-         <h2 class="text-sm sm:text-base">دوره های درحال برگزاری</h2>
+         <h2 class="font-bold text-base">دوره های مدرس</h2>
          <!-- TODO: Link should be FIX    -->
          <a
             class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
             همه</a>
       </div>
       <div style="direction: ltr">
-         <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3"  [circular]="true" [autoplayInterval]='3500' 
+         <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3"   [autoplayInterval]='12000' 
             [responsiveOptions]="responsiveOptions">
             <ng-template pTemplate="header">
    
@@ -44,10 +44,10 @@
             <ng-template let-product pTemplate="item">
                <div class="product-item">
                   <div class="product-item-content">
-                     <a [routerLink]="['webinar/',product.id]">
+                
    
                         <card-course style="direction: rtl;" [course]="product"></card-course>
-                     </a>
+                 
                   </div>
                </div>
             </ng-template>

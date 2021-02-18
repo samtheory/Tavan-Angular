@@ -114,9 +114,8 @@
 							
 									
 											<select id="sel{{user.id}}" name="id" [(ngModel)]="info[user.id]" [(value)]="selected" class="border border-gray-200 inline">
-												<option value="">None</option>
-											
-												<option *ngFor="let course of this.courses" value="{{course.id}}">{{course.title}}1</option>
+										
+												<option *ngFor="let course of this.courses" value="{{course.id}}">{{course.title}}</option>
 											</select>
 											
 										</div>

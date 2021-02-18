@@ -1,7 +1,7 @@
 <div  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
-      <div class=" card-img w-full relative flex justify-center items-center">
+      <div [routerLink]="['/webinar', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
          <div class="dec absolute text-white px-5"  [innerHTML]="course.description"> </div>
@@ -11,7 +11,7 @@
          <div *ngIf="course.off !== 0"  class="off-banner absolute bg-warning left-0 rounded-br-lg p-2 text-white text-sm">
           {{course.off}}% تخفیف
          </div>
-         <h5 class="text-lg font-bold py-3">{{course.title}}</h5>
+         <h5 [routerLink]="['/webinar', course.id]" class="text-lg font-bold py-3 cursor-pointer">{{course.title}}</h5>
          <div *ngIf="course.courseTeachers"> 
          <p  class="py-3"><span class="font-bold">مدرس :
                <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}

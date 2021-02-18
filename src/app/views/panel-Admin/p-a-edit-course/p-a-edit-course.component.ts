@@ -274,9 +274,10 @@ deleteVideo(id: number) {
 }
 
 
-deleteCourse(id: number) {
-  this.courseService.deleteCourse(id).subscribe(next => {
+deleteCourse() {
+  this.courseService.deleteCourse(this.route.snapshot.params['id']).subscribe(next => {
     this.toastr.success('با موفقیت حذف شد');
+    this.router.navigate(['/admin/dashboard']);
   }, error => {
     this.toastr.error(error);
   });
@@ -296,13 +297,13 @@ deleteTeacher(id: number , teacherId: number) {
 
 addTeacher(id: number) {
   this.courseService.addTeacherToCourse(id , this.teacherToAdd.id).subscribe(next => {
-    this.toastr.success("با موفقیت حذف شد");
+    this.toastr.success("با موفقیت اضافه شد");
   });
 }
 
 addCategory(id: number) {
   this.courseService.addCategoryToCourse(id , this.categoryToAdd.id).subscribe(next => {
-    this.toastr.success("با موفقیت حذف شد");
+    this.toastr.success("با موفقیت اضافه شد");
   });
 }
 

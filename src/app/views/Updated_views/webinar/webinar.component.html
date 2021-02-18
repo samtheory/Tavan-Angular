@@ -187,12 +187,12 @@
                      <i class="pi pi-download px-2"></i>
                   </a>
                   <!-- <p-dropdown *ngIf="course.videos" class="bg-blue-100" [options]="course.videos" optionLabel="title"></p-dropdown> -->
-                  <select *ngIf="course.videos" (change)="getUrl($event)" style="width: 80px;">
+                  <select *ngIf="course.videos && course.videos[0]" (change)="getUrl($event)" style="width: 80px;">
                      <option *ngFor="let video of course.videos" value="{{video.url}}">{{video.title}}</option>
                   </select>
                </div>
                <div class="video rounded-2xl w-full  my-6">
-                  <div *ngIf="course.videos" class="r1_iframe_embed">
+                  <div *ngIf="course.videos && course.videos[0]" class="r1_iframe_embed">
                      <iframe [src]="this.url | arvan" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
@@ -215,7 +215,7 @@
                      <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                   </div>
                   <div class="video rounded-2xl w-full  my-8">
-                     <div *ngIf="course.media.videoUrl" class="r1_iframe_embed">
+                     <div *ngIf="course.media && course.media.videoUrl !== '' " class="r1_iframe_embed">
                         <iframe [src]="course.media.videoUrl | arvan" frameborder="0"
                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                            allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>

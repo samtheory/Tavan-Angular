@@ -113,7 +113,7 @@
 
                   <div class="flex  justify-evenly mb-8 mt-2 flex-wrap sm:flex-nowrap">
                      <div class=" w-full flex flex-col items-stretch px-3">
-                        <h1 class="text-xl font-bold">خرید دوره</h1>
+                        <h1 *ngIf="!course.isfor" class="text-xl font-bold">خرید دوره</h1>
                         <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
                            <hr class="border border-blue-100 rounded-full opacity-50" />
                            <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
@@ -259,7 +259,7 @@
                </div>
             </div>
             <div class="bg-white flex flex-col py-5 px-10 my-7 rounded-md">
-               <p class="font-bold text-lg py-6">خرید کارگاه آنلاین</p>
+               <p *ngIf="!course.isfor" class="font-bold text-lg py-6">خرید دوره</p>
                <div class=" w-full flex flex-col items-stretch px-3">
                   <div *ngIf="!course.isfor" class="flex justify-between my-3">
                      <p>{{course.title}}</p>

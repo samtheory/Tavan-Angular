@@ -124,7 +124,7 @@
                            <p *ngIf=" course.realCost === 0 " class="text-blue-500">رایگان</p>
                         </div>
                         <div *ngIf="course.isfor" class="flex justify-between my-3">
-                           <p class="font-bold text-gray-100">{{course.title}}</p>
+                           <p class="font-bold text-gray-300">{{course.title}}</p>
                            <p *ngIf=" course.realCost !== 0 " class="text-gray-500">{{course.realCost}} تومان</p>
                            <p *ngIf=" course.realCost === 0 " class="text-gray-500">رایگان</p>
                         </div>
@@ -267,9 +267,9 @@
                      <p *ngIf="course.realCost === 0 " class="text-blue-500">رایگان</p>
                   </div>
                   <div *ngIf="course.isfor" class="flex justify-between my-3">
-                     <p class="text-gray-100">{{course.title}}</p>
-                     <p *ngIf="course.realCost !== 0 " class="text-gray-100">{{course.realCost}} تومان</p>
-                     <p *ngIf="course.realCost === 0 " class="text-gray-100">رایگان</p>
+                     <p class="text-gray-300">{{course.title}}</p>
+                     <p *ngIf="course.realCost !== 0 " class="text-gray-300">{{course.realCost}} تومان</p>
+                     <p *ngIf="course.realCost === 0 " class="text-gray-300">رایگان</p>
                   </div>
                   <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه

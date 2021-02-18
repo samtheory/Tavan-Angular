@@ -1,8 +1,14 @@
+
+  <div class="flex items-center pb-6">
+
+     <img class="sm:hidden " src="assets/img/_usefull/profile-avt.svg" alt="">
+     <p  *ngIf="this.authService.decodeToken.nameid" class="sm:hidden  px-2 sm:text-base text-xs">{{this.authService.decodeToken.unique_name}}</p>
+  </div>
 <div *ngIf="!this.role()" class="z-30 flex  items-center" style="transform: translateY(-10px)">
-   <img src="assets/img/_usefull/profile-avt.svg" alt="">
-   <p *ngIf="this.authService.decodeToken.nameid" class="px-2">{{this.authService.decodeToken.unique_name}}</p>
-   <a class="text-blue-500 p-2 border-l border-r border-gray-100  hover:text-blue-900" [routerLink]="['/customer-panel']" routerLinkActive="router-link-active" >پنل کاربری</a>
-   <a class="px-2 hover:text-warning cursor-pointer" (click)="logout()">خروج</a>
+   <img class="hidden sm:inline" src="assets/img/_usefull/profile-avt.svg" alt="">
+   <p  *ngIf="this.authService.decodeToken.nameid" class="px-2 hidden sm:inline sm:text-base text-xs">{{this.authService.decodeToken.unique_name}}</p>
+   <a class="text-blue-500 sm:px-2 px-1 border-l border-r border-gray-100  hover:text-blue-900" [routerLink]="['/customer-panel']" routerLinkActive="router-link-active" >پنل کاربری</a>
+   <a class="sm:px-2 px-1 hover:text-warning cursor-pointer" (click)="logout()">خروج</a>
 </div>
 <div *ngIf="this.role()" class="z-30 flex  items-center" style="transform: translateY(-10px)">
    <img src="assets/img/_usefull/profile-avt.svg" alt="">

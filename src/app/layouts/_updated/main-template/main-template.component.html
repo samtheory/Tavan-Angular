@@ -64,9 +64,9 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 					fill="#F75714" />
 			</svg>
 
-			<a href="tel:021-28422712">
+			<a href="tel:09056919286">
 
-				<p class="inline text-xs pr-1">پشتیبانی توان : 021 28422712</p>
+				<p class="inline text-xs pr-1">پشتیبانی توان : <span >09056919286</span></p>
 			</a>
 		</div>
 	</div>
@@ -78,11 +78,11 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 <!-- ### End Slider menu -->
 
 <!-- # menu bars Icon  -->
-<div name="Mini-nav-btn" [ngClass]="{'translate-bar': textBannerIsActive == false }"
+<!-- <div name="Mini-nav-btn" [ngClass]="{'translate-bar': textBannerIsActive == false }"
 	class="rounded-md border-blue-500 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 lg:hidden block absolute"
-	style="top: 190px; right: 20px;" (click)="showSideMenu = true">
+	style="top: 205px; right: 20px;" (click)="showSideMenu = true">
 	<i class="fas fa-bars text-base py-2 px-3"></i>
-</div>
+</div> -->
 <!-- ### END menu bars -->
 
 <main class="flex flex-col justify-between">
@@ -117,7 +117,7 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 				<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 			</div>
 
-			<div class="action-status max-w-1400 flex m-auto my-1 lg:mb-0 mb-8">
+			<div class="action-status max-w-1400 flex m-auto my-1 lg:mb-0 mb-2">
 				<div class="flex flex-row justify-between w-full items-center mx-10">
 					<section class="logo lg:flex flex-col justify-items-center items-center hidden z-0 mb-4 mr-24">
 						<a routerLink="/">
@@ -127,7 +127,13 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 						<p class="title text-sm">{{DB_const.header.logo_description.line_one}}</p>
 						<p class="description text-xs text-gray-800">{{DB_const.header.logo_description.line_two}}</p>
 					</section>
-					<div></div>
+					<div>
+						<div name="Mini-nav-btn" [ngClass]="{'translate-bar': textBannerIsActive == false }"
+							class="rounded-md border-blue-500 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 lg:hidden block "
+	 (click)="showSideMenu = true">
+							<i class="fas fa-bars text-base py-2 px-3"></i>
+						</div>
+					</div>
 
 					<!-- ::. USER IS NOT LOGED-IN -->
 					<div *ngIf="!loggedIn()" class="action flex items-center z-30">
@@ -155,7 +161,10 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 					<!-- ::. ------------------------ -->
 
 					<!-- ::. USER IS LOGIN -->
-					<app-auth-status-bar class="pt-5" *ngIf="loggedIn()"></app-auth-status-bar>
+					
+
+						<app-auth-status-bar class="pt-5" *ngIf="loggedIn()"></app-auth-status-bar>
+				
 					<!-- ::. ------------------------ -->
 				</div>
 			</div>
@@ -228,7 +237,7 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 
 <!-- :: support phone button -->
 <div *ngIf="goUpButtonScroll" class=" fixed bottom-6  " style="right:10px">
-	<a href="tel:021-28422712">
+	<a href="tel:09056919286">
 		<img
 			class=" text-lg  ml-4 text-white bg-orange-500 rounded-full shadow-lg hover:shadow-none duration-200 hover:bg-orange-900"
 			style="padding:10px 12px ;width:46px" src="assets/img/_usefull/Vector.png" alt="support">

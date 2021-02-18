@@ -49,18 +49,18 @@
 <section #main name="body" class="bg-gray-100 rounded-t-3xl py-14">
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10">
     <div class="head flex justify-between items-center px-6 mb-4">
-      <h2 class="font-bold text-xl">دوره های درحال برگزاری</h2>
+      <h2 class="font-bold sm:text-xl text-lg">دوره های درحال برگزاری</h2>
 
       <!-- TODO: Link should be FIX    -->
       <a [routerLink]="['/search', {isActive: true}]"
-        class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
+        class="rounded-md text-sm sm:text-base border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
         همه</a>
 
     </div>
-    <div style="direction: ltr">
+    <div class="px-4 md:px-0" style="direction: ltr">
 
       <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="true"
-        [autoplayInterval]='5000' [responsiveOptions]="responsiveOptions">
+        [autoplayInterval]='10000' [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
 
         </ng-template>
@@ -79,14 +79,14 @@
   </div>
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10 ">
     <div class="head flex justify-between items-center px-6 mb-4">
-      <h2 class="font-bold text-xl">دوره های برگزار شده</h2>
+      <h2 class="font-bold sm:text-xl text-lg">دوره های برگزار شده</h2>
       <!-- TODO: Link should be FIX    -->
       <a [routerLink]="['/search', {isActive: false}]"
-        class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
+        class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 text-sm sm:text-base duration-200">مشاهده
         همه</a>
     </div>
-    <div style="direction: ltr">
-      <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="true"
+    <div class="px-4 md:px-0" style="direction: ltr; ">
+      <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]='11000'
         [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
 
@@ -111,13 +111,13 @@
 
       <!-- TODO: Link should be FIX    -->
       <a [routerLink]="['/search', {isfree: true}]"
-        class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 ">مشاهده
+        class="rounded-md text-sm sm:text-base border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 ">مشاهده
         همه</a>
     </div>
-    <div style="direction: ltr">
+    <div class="px-4 md:px-0" style="direction: ltr">
 
       <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="true"
-        [autoplayInterval]='5000' [responsiveOptions]="responsiveOptions">
+        [autoplayInterval]='12000' [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
 
         </ng-template>
@@ -197,10 +197,10 @@
         class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
         همه</a>
     </div>
-    <div style="direction: ltr">
+    <div class="px-4 md:px-0" style="direction: ltr">
 
       <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="4" [numScroll]="4" [circular]="true"
-        [autoplayInterval]='5000' [responsiveOptions]="teachersResponsiveOption">
+        [autoplayInterval]='12500' [responsiveOptions]="teachersResponsiveOption">
         <ng-template pTemplate="header">
 
         </ng-template>

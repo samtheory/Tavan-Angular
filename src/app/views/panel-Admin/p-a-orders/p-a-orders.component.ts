@@ -15,7 +15,7 @@ export class PAOrdersComponent implements OnInit {
   orders: Order[];
   courses: Coursenamelist[];
   pag: Pagination;
-  userParams: any;
+  userParams: any = {};
   constructor(private orderService: OrderService , private toastr: ToastrService, private courseService: CourseService) { }
 
   ngOnInit(): void {
@@ -47,7 +47,13 @@ export class PAOrdersComponent implements OnInit {
   }
 
   loadOrders(){
-    this.orderService.getOrders(this.pag.currentPage )
+    this.orderService.getOrders(this.pag.currentPage , this.pag.itemsPerPage, this.userParams)
+    .subscribe((res: PaginatedResult<Order[]>) => {
+      this.orders = res.result;
+      this.pag = res.pag;
+    }, error => {
+      this.toastr.error(error);
+    });
   }
 
   pageChanged(event: any): void{

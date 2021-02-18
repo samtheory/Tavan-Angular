@@ -133,10 +133,12 @@
                            ویدیو دوره </a>
                         <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید بیلیت دوره
-                     </a>
+                        </a>
+                        <p *ngIf="course.isfor && !course.isActive" class="font-bold text-red-300">شما قبلا در این دوره شرکت کرده اید</p>
                         <a *ngIf="course.isfor && course.isActive"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
-                           ورود به وبینار</a>
+                           ورود به وبینار
+                        </a>
                         <form *ngIf="!course.isfor" #offForm="ngForm" class="w-full">
                            <div class="flex items-center my-3 w-full">
                               <input name="code" [(ngModel)]="off.code"

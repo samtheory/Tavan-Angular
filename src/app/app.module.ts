@@ -164,6 +164,7 @@ import { SearchSectionComponent } from './components/_Updated/search-section/sea
 import { PasswordUpdateComponent } from './views/Updated_views/password-update/password-update.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { CustomerCardComponent } from './components/_Updated/customer-card/customer-card.component';
+import { PersianDatePipe } from './pipes/PersianDate.pipe';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -180,7 +181,7 @@ export function tokenGeter() {
     AdminComponent,
     AuthComponent,
     PanelComponent,
-   
+    PersianDatePipe,
     PANewCourseComponent,
     PAEditCourseComponent,
     AllCourseTableComponent,

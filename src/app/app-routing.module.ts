@@ -61,6 +61,8 @@ import { UPanelCustomerComponent } from './views/upanel-customer/upanel-customer
 import { PCProfileComponent } from './views/upanel-customer/pc-profile/pc-profile.component';
 import { PCWorkshopComponent } from './views/upanel-customer/pc-workshop/pc-workshop.component';
 import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.component';
+import { VideosUComponent } from './views/Updated_views/videos-u/videos-u.component';
+import { ActiveComponent } from './views/Updated_views/active/active.component';
 //un organized
 
 
@@ -79,6 +81,8 @@ const routes: Routes = [
       { path: 'teachers', component: AllTeachersComponent },
       { path: 'teacher/:id', component: TeacherComponent},
       { path: 'search', component: SearchComponent },
+      { path: 'videos', component: VideosUComponent },
+      { path: 'webinars', component: ActiveComponent },
       { path: 'webinar/:id', component: WebinarComponent },
       { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: '', component: HomeUComponent },

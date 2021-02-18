@@ -165,6 +165,8 @@ import { PasswordUpdateComponent } from './views/Updated_views/password-update/p
 import { PaginatorModule } from 'primeng/paginator';
 import { CustomerCardComponent } from './components/_Updated/customer-card/customer-card.component';
 import { PersianDatePipe } from './pipes/PersianDate.pipe';
+import { VideosUComponent } from './views/Updated_views/videos-u/videos-u.component';
+import { ActiveComponent } from './views/Updated_views/active/active.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -263,7 +265,9 @@ export function tokenGeter() {
     WebinarComponent,
     SearchSectionComponent,
     PasswordUpdateComponent,
-    CustomerCardComponent
+    CustomerCardComponent,
+    VideosUComponent,
+    ActiveComponent
   ],
   imports: [
     PaginatorModule,

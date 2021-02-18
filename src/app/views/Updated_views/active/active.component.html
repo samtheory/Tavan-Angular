@@ -1,0 +1,91 @@
+<style>
+    .section-body {
+       max-width: 1400px;
+       margin: auto;
+    }
+ </style>
+ <!-- <app-search-section photo="assets/img/_usefull/card-2.jpg"></app-search-section> -->
+ <section *ngIf="photos" class="slide-hero w-full relative flex justify-center items-center">
+    <img src="{{photos[0].url}}" alt="" />
+    <div class="w-full bg-black opacity-60 absolute top-0 bottom-0  "></div>
+    <div class="flex flex-col justify-between absolute z-20 w-full ">
+       <form #searchForm="ngForm">
+          <div class="input w-full m-auto">
+           
+             <div class=" m-auto w-10/12  xl:w-6/12  flex items-center justify-center ">
+                <input name="name" [(ngModel)]="userParams.name"
+                 class="  bg-gray-100 py-4  px-2  rounded-lg  rounded-tl-none rounded-bl-none w-10/12 outline-none border-1 border-white border-l-0 focus:border-swatch-lightBlue"
+                   placeholder=" دنبال هر آموزشی هستی همین جا همین الان سرچ کن" type="text" /><img (click)="loadCourses()"
+               class="py-3 px-3 bg-blue-500 rounded-lg  rounded-tr-none rounded-br-none   inline"
+                   src="assets/img/_usefull/Search.png" style="width:56px" alt="search">
+                   
+                
+             </div>
+          
+          </div>
+       </form>
+    </div>
+    <!-- <i (click)="scrollToElement(main)"
+       class="fas fa-chevron-down text-4xl absolute centered text-gray-100 hover:text-blue-900 rounded-full px-2 py-1 duration-300"
+       style="top: 95%"></i> -->
+ </section>
+ <section class="section-body xl:p-0 px-10 bg-white">
+    <h1 class="text-gray-400 my-4" *ngIf="userParams.name"> خانه > اساتید> نتیجه سرچ {{userParams.name}}</h1>
+    <!-- <div class="m-auto text-center pt-5 pb-14">
+       <h1 class="text-lg font-bold pb-2">مدرسین توان</h1>
+       <p>همراه همیشگی شما</p>
+    </div> -->  
+    <div class="border border-gray-200 rounded-sm my-10 py-6 px-1 flex flex-wrap  items-center">
+       <p class=" p-1">مرتب سازی بر اساس :</p>
+      
+       <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.popular()"  [ngClass]="{'bg-blue-500 text-white': userParams.popular === 1 , 'text-blue-500': userParams.popular !== 1  }"   >پرطرفدارترین ها</a>
+       <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.new()"      [ngClass]="{'bg-blue-500 text-white': userParams.isNew === 1 , 'text-blue-500': userParams.isNew != 1 }"   >جدیدترین ها</a>
+       <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.free()"    [ngClass]="{'bg-blue-500 text-white': userParams.isfree === true , 'text-blue-500': userParams.isfree != true}">رایگان</a>
+       <a  class="text-sm md:text-base px-4 py-2 rounded-md border-blue-500 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white duration-200 my-3 cursor-pointer text-blue-500" (click)="this.suggest()"  [ngClass]="{'bg-blue-500 text-white': userParams.suggest === true , 'text-blue-500': userParams.suggest != true}">پیشنهاد ویژه توان</a>
+    </div>
+    <h1 class="text-gray-700  text-xl">طبقه بندی شده آموزش ببینید</h1>
+    <div *ngIf="categories" class="border border-gray-200 rounded-sm my-10 py-6 px-1 flex flex-wrap  items-center">
+       <p class="text-orange-500 pr-2 pl-4">دسته بندی ها : </p>
+      
+       <div *ngFor="let category of categories" (click)="categoryId(category.id)" id="category.id" name="category.name" value="category.id" class="p-2 bg-gray-200 m-2 hover:bg-gray-300 hover:shadow-sm rounded-md duration-300 cursor-pointer"  [ngClass]="{'bg-blue-500 text-white': userParams.categoryId === category.id, '': userParams.categoryId !== category.id  }">{{category.name}}</div>
+    </div>
+    <div class="flex justify-center  my-10  items-center flex-col ">
+ 
+ 
+ 
+ 
+       <!-- card  -->
+       <div class="flex flex-wrap ">
+          <a  *ngFor="let course of courses" [routerLink]="['webinar/',course.id]">
+             <card-course [course]="course"></card-course>
+          </a>
+       </div>
+  
+       <!-- pagination -->
+       <div class="col-lg-12 col-md-12 flex justify-center ">
+          <!-- <mat-paginator
+          style="width: 100px;"
+          type="number"
+          *ngIf="courses"
+          name="paginator"
+          ngDefaultControl
+          style="direction: ltr;"
+          [length]="pag.totalItems"
+          [pageSize]="pag.itemsPerPage"
+          [(ngModel)]="pag.currentPage"
+          (page)="pageEvent = pageChanged($event)"
+       >
+       </mat-paginator> -->
+       
+       </div>
+       <div class="col-lg-12 col-md-12 flex justify-center " style="direction:ltr">
+         
+       <p-paginator ngDefaultControl [(ngModel)]="pag.currentPage" [rows]="pag.itemsPerPage" [totalRecords]="pag.totalItems"  (onPageChange)="pac=pageChanged($event)"></p-paginator>
+       </div>
+ 
+ 
+ 
+ 
+    </div>
+ 
+ </section>

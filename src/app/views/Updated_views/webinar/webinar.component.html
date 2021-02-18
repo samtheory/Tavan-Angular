@@ -57,7 +57,7 @@
 
                <div class="flex py-2 items-center">
                   <img style="padding-left:10px ;width:30px" src="assets/img/_usefull/calendar.png" alt="support">
-                  <p class="font-bold">شروع وبینار :</p>
+                  <p class="font-bold">شروع کارگاه آنلاین :</p>
                  
                   <p class="px-2">{{course.started | PersianDate}}</p>
                </div>
@@ -134,10 +134,10 @@
                         <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید بیلیت دوره
                         </a>
-                        <p *ngIf="course.isfor && !course.isActive" class="font-bold text-red-300">شما قبلا در این دوره شرکت کرده اید</p>
+                        <p *ngIf="course.isfor && !course.isActive" class="font-bold text-warning">شما قبلا در این دوره شرکت کرده اید</p>
                         <a *ngIf="course.isfor && course.isActive"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
-                           ورود به وبینار
+                           ورود به کارگاه آنلاین
                         </a>
                         <form *ngIf="!course.isfor" #offForm="ngForm" class="w-full">
                            <div class="flex items-center my-3 w-full">
@@ -198,7 +198,7 @@
                         allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
                   </div>
                </div>
-               <h1 class="text-xl font-bold">توضیحات وبینار</h1>
+               <h1 class="text-xl font-bold">توضیحات کارگاه آنلاین</h1>
                <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
                   <hr class="border border-blue-100 rounded-full opacity-50" />
                   <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
@@ -259,24 +259,30 @@
                </div>
             </div>
             <div class="bg-white flex flex-col py-5 px-10 my-7 rounded-md">
-               <p class="font-bold text-lg py-6">خرید وبینار</p>
+               <p class="font-bold text-lg py-6">خرید کارگاه آنلاین</p>
                <div class=" w-full flex flex-col items-stretch px-3">
-                  <div class="flex justify-between my-3">
+                  <div *ngIf="!course.isfor" class="flex justify-between my-3">
                      <p>{{course.title}}</p>
                      <p *ngIf="course.realCost !== 0 " class="text-blue-500">{{course.realCost}} تومان</p>
                      <p *ngIf="course.realCost === 0 " class="text-blue-500">رایگان</p>
+                  </div>
+                  <div *ngIf="course.isfor" class="flex justify-between my-3">
+                     <p class="text-gray-100">{{course.title}}</p>
+                     <p *ngIf="course.realCost !== 0 " class="text-gray-100">{{course.realCost}} تومان</p>
+                     <p *ngIf="course.realCost === 0 " class="text-gray-100">رایگان</p>
                   </div>
                   <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
                      ویدیو دوره</a>
                   <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید بیلیت دوره
-               </a>
+                  </a>
+                  <p *ngIf="course.isfor && !course.isActive" class="text-warning">شما قبلا در این دوره شرکت کرده اید</p>
                   <a *ngIf="course.isfor && course.isActive"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
-                     ورود به وبینار</a>
+                     ورود به کارگاه آنلاین</a>
 
-                  <form #offForm="ngForm">
+                  <form *ngIf="!course.isfor" #offForm="ngForm">
                      <div class="flex items-center my-3 w-full">
                         <input name="code" [(ngModel)]="off.code"
                            class="outline-none bg-gray-200 focus:bg-gray-100 duration-100 py-2 px-2 rounded-r "

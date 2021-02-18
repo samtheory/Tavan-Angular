@@ -4,7 +4,8 @@
       <div class=" card-img w-full relative flex justify-center items-center">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
-         <div class="dec absolute text-white px-5">لطفا نیم ساعت قبل از برگزاری از همین بخش وارد شوید</div>
+         <div *ngIf="course.isActive" class="dec absolute text-white px-5">لطفا نیم ساعت قبل از برگزاری از همین بخش وارد شوید</div>
+         <div *ngIf="!course.isActive" class="dec absolute text-white px-5">{{course.description}}</div>
       </div>
 
       <div class="content  relative px-2">
@@ -41,13 +42,18 @@
          <div *ngIf="course.realCost !== 0" class="flex flex-row justify-between my-4 items-center">
 
 
-            <a [routerLink]="['/webinar', course.id]"
+            <a *ngIf="course.isActive"
+               href="//{{course.url}}"
+               class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">
+               ورود به کارگاه آنلاین
+            </a>
+            <a *ngIf="!course.isActive" [routerLink]="['/webinar', course.id]"
                class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">
                مشاهده دوره
             </a>
-            <a [routerLink]="['/webinar', course.id]"
+            <a *ngIf="course.isActive" [routerLink]="['/webinar', course.id]"
                class="sm:px-4 px-2 py-1 sm:py-2   mx-2  text-blue-500 duration-200 hover:underline">
-               مشاهده جزییتان
+               مشاهده جزئیات
             </a>
             <!-- <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline">
                {{course.cost}} تومان

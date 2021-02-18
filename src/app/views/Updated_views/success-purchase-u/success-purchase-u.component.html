@@ -25,9 +25,9 @@
 
    <div *ngIf="this.Ok === -1" class="w-full  border  rounded shadow-md border-gray-100 flex flex-col items-center py-8 px-2">
    
-      <i class="fas fa-check p-8 bg-green-900 rounded-full text-white inline my-2"></i>
+      <i class="fas fa-check p-8 bg-warning rounded-full text-white inline my-2"></i>
   
-      <h1 class="text-green-900 text-lg font-bold my-1"> متاسفانه خرید شما با موفقیت انجام نشد </h1>
+      <h1 class="text-warning text-lg font-bold my-1"> متاسفانه خرید شما با موفقیت انجام نشد </h1>
       <p class="my-1">شناسه پرداخت : {{payParams.authority}}</p>
       <p class="my-1">مبلغ پرداخت:  <span class="text-warning">{{this.order.price}} تومان</span></p>
       <div class="flex flex-wrap justify-between my-1">

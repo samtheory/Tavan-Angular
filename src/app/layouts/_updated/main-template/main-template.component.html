@@ -15,39 +15,46 @@
 
 		</div>
 		<div [routerLink]="['/']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
+			<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 			{{DB_const.menu.home}}
 		</div>
 		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer"
-			(click)="showSideMenu = false">
-			{{DB_const.menu.online_workshop}}
-		</div>
-		<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer"
-			(click)="showSideMenu = false">
-			{{DB_const.menu.videos}}
-		</div>
-		<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu">
-			{{DB_const.menu.category}}
-			<i class="fas fa-chevron-down text-xs inline text-blue-500"></i>
-		</div>
-		<div *ngIf="this.categories" [ngClass]="{'w-0 hidden': megaMenu == false, 'w-full block': megaMenu == true }"
-			class="category-collapse-item py-4 bg-gray-200 duration-200">
-			<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
-				<a [routerLink]="['/search', {categoryId: category.id}]" (click)="showSideMenu = false">
-
-					<i class="fas fa-circle inline text-blue-500 text-xs"></i>
+		(click)="showSideMenu = false">
+		<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
+		{{DB_const.menu.online_workshop}}
+	</div>
+	<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer"
+	(click)="showSideMenu = false">
+	<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
+	{{DB_const.menu.videos}}
+</div>
+<div class="item text-lg  pr-8 my-4 cursor-pointer " (click)="megaMenu=!megaMenu">
+	<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
+	{{DB_const.menu.category}}
+	<i class="fas fa-chevron-down text-xs inline text-blue-500"></i>
+</div>
+<div *ngIf="this.categories" [ngClass]="{'w-0 hidden': megaMenu == false, 'w-full block': megaMenu == true }"
+class="category-collapse-item py-4 bg-gray-200 duration-200">
+<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
+	<a [routerLink]="['/search', {categoryId: category.id}]" (click)="showSideMenu = false">
+		
+					<i class="fas fa-circle inline text-blue-500 px-1" style="font-size: 8px;"></i>
 					{{category.name}}
 				</a>
 			</div>
-
-
+			
+			
 		</div>
 		<div [routerLink]="['/about']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
+			<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 			{{DB_const.menu.about_us}}
 		</div>
 		<div [routerLink]="['/contact']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
+			<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 			تماس با ما
 		</div>
 		<div [routerLink]="['/faq']" class="item text-lg  pr-8 my-4 cursor-pointer" (click)="showSideMenu = false">
+			<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 			{{DB_const.menu.faq}}
 		</div>
 		<div class="Tavan-num  border border-blue-500 rounded p-2 mx-4  cursor-pointer flex justify-center items-center">
@@ -73,7 +80,7 @@
 <!-- # menu bars Icon  -->
 <div name="Mini-nav-btn" [ngClass]="{'translate-bar': textBannerIsActive == false }"
 	class="rounded-md border-blue-500 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 lg:hidden block absolute"
-	style="top: 175px; right: 20px;" (click)="showSideMenu = true">
+	style="top: 190px; right: 20px;" (click)="showSideMenu = true">
 	<i class="fas fa-bars text-base py-2 px-3"></i>
 </div>
 <!-- ### END menu bars -->

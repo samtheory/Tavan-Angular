@@ -167,6 +167,7 @@ import { CustomerCardComponent } from './components/_Updated/customer-card/custo
 import { PersianDatePipe } from './pipes/PersianDate.pipe';
 import { VideosUComponent } from './views/Updated_views/videos-u/videos-u.component';
 import { ActiveComponent } from './views/Updated_views/active/active.component';
+import { SuccessPurchaseFreeComponent } from './views/Updated_views/success-purchase-free/success-purchase-free.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -267,7 +268,8 @@ export function tokenGeter() {
     PasswordUpdateComponent,
     CustomerCardComponent,
     VideosUComponent,
-    ActiveComponent
+    ActiveComponent,
+    SuccessPurchaseFreeComponent,
   ],
   imports: [
     PaginatorModule,

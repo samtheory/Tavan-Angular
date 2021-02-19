@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/_models/category';
 import { Course } from 'src/app/_models/course';
@@ -38,9 +38,11 @@ categories: Category[];
 pag: Pagination;
 photos: Photo[];
 userParams: any = {};
+searchP: any = {};
 
   constructor(private courseService: CourseService, private toastr: ToastrService,
-     private route: ActivatedRoute, private categoryService: CategoryService , private photoService: PhotoService) { }
+     private route: ActivatedRoute, private categoryService: CategoryService , private photoService: PhotoService, 
+     private router: Router) { }
 
   ngOnInit(): void {
     this.getfirstPage();
@@ -97,6 +99,10 @@ userParams: any = {};
     }, error => {
       this.toastr.error(error);
     });
+  }
+
+  search(){
+    this.router.navigate(['/search'], {queryParams: {name: this.searchP.name}});
   }
 
   new(){

@@ -25,10 +25,10 @@
 
                <input formControlName="avatar" (change)="onFile2Change($event)" type="file" class="hidden" />
             </label>
-            <p class="text-red-500" *ngIf="this.avatar">فایل عکس کاربر انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
          </div>
       </div>
-      <p class="pt-4 m-auto text-center mb-10">برای بارگذاری عکس روی تصویر کلیک کنید</p>
+      <p class="text-warning pt-4 m-auto text-center mb-10" *ngIf="this.avatar">فایل عکس کاربر انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
+      <p class="pt-4 m-auto text-center mb-10" *ngIf="!this.avatar">برای بارگذاری عکس روی تصویر کلیک کنید</p>
 
       <!-- .:: the Inputs section ---------------------------------------------- -->
       <div class="w-full flex flex-wrap justify-center ">
@@ -125,7 +125,10 @@
                   <span class="mt-2 text-base leading-normal"></span>
                   <input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
                </label>
-               <p class="text-red-500" *ngIf="this.meli">فایل عکس کارت ملی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
+            </div>
+            <div *ngIf="!user.userPhoto|| !user.userPhoto.meliUrl" >
+
+               <p class="text-warning" *ngIf="this.meli">فایل عکس کارت ملی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
             </div>
             <div *ngIf="user.userPhoto && user.userPhoto.meliUrl" style="
             width: 300px;
@@ -148,7 +151,10 @@
                   <span class="mt-2 text-base leading-normal"></span>
                   <input formControlName="meli" (change)="onFileChange($event)" type="file" class="hidden" />
                </label>
-               <p class="text-red-500" *ngIf="this.nezam">فایل عکس کارت ملی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
+            </div>
+            <div *ngIf="user.userPhoto && user.userPhoto.meliUrl">
+
+               <p class="text-warning" *ngIf="this.meli">فایل عکس کارت ملی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
             </div>
          </div>
          <div class="form-item  py-3 mx-4 px-2">
@@ -180,7 +186,10 @@
                   <span class="mt-2 text-base leading-normal">ppp</span>
                   <input formControlName="nezam" (change)="onFile1Change($event)" type="file" class="hidden" />
                </label>
-               <p class="text-red-500" *ngIf="this.nezam">فایل عکس کارت  پزشکی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
+            </div>
+            <div *ngIf="!user.userPhoto || !user.userPhoto.nezamUrl">
+
+               <p   class="text-warning" *ngIf="this.nezam">فایل عکس کارت  پزشکی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
             </div>
             <div *ngIf="user.userPhoto && user.userPhoto.nezamUrl" style="
 				width: 300px;
@@ -203,7 +212,10 @@
                   <span class="mt-2 text-base leading-normal"></span>
                   <input formControlName="nezam" (change)="onFile1Change($event)" type="file" class="hidden" />
                </label>
-               <p class="text-red-500" *ngIf="this.nezam">فایل عکس کارت  پزشکی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
+            </div>
+            <div *ngIf="user.userPhoto && user.userPhoto.nezamUrl">
+
+               <p class="text-warning" *ngIf="this.nezam">فایل عکس کارت  پزشکی انتخاب شده برای ذخیره ثبت تغییرات را بزنید</p>
             </div>
          </div>
       </div>

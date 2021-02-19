@@ -32,6 +32,10 @@ export class SuccessPurchaseUComponent implements OnInit {
        this.payParams.authority = params['Authority'];
       });
 
+      if(this.payParams.status === 'NOK'){
+        this.Ok = -1;
+      }
+
       console.log(this.payParams);
 
       this.payService.verifyPayment(this.payParams , id).subscribe(next => {

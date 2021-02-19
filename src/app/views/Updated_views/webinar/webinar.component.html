@@ -67,13 +67,14 @@
 
                   <p class="px-2">{{course.hours}} ساعت</p>
                </div>
-               <div class="flex py-4 flex-wrap items-center ">
-                  <div class="flex items-center ">
+               <div class="flex pt-4 pb-10 flex-wrap  ">
+                  <p *ngIf="course.sessions" class="font-bold  pl-3 inline">تاریخ جلسات :</p>
+                  <div class="flex items-center w-5/6  flex-wrap justify-center pr-20">
 
 
-                     <p *ngIf="course.sessions" class="font-bold  pl-3 ">تاریخ جلسات :</p>
+                     <p  *ngFor="let session of course.sessions" class="md:w-1/2 w-full px-4 text-base  text-blue-500">{{session.time | PersianDate}}</p>
                   </div>
-                  <p  *ngFor="let session of course.sessions" class="px-4 text-lg  text-blue-500">{{session.time | PersianDate}}</p>
+
 
                </div>
                <div class="xl:hidden">
@@ -114,6 +115,7 @@
                   <div class="flex  justify-evenly mb-8 mt-2 flex-wrap sm:flex-nowrap">
                      <div class=" w-full flex flex-col items-stretch px-3">
                         <h1 *ngIf="!course.isfor" class="text-xl font-bold">خرید دوره</h1>
+                        <h1 *ngIf="course.isfor" class="text-xl font-bold">دوره خریداری شده</h1>
                         <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
                            <hr class="border border-blue-100 rounded-full opacity-50" />
                            <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
@@ -182,17 +184,28 @@
                      </div>
                   </div>
                </div>
-               <div class="flex justify-end items-center">
-                  <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="{{course.media.pdfUrl}}">دانلود
-                     فایل پی دی اف
-                     <i class="pi pi-download px-2"></i>
-                  </a>
-                  <!-- <p-dropdown *ngIf="course.videos" class="bg-blue-100" [options]="course.videos" optionLabel="title"></p-dropdown> -->
-                  <select *ngIf="course.videos && course.videos[0]" (change)="getUrl($event)" style="width: 80px;">
-                     <option *ngFor="let video of course.videos" value="{{video.url}}">{{video.title}}</option>
-                  </select>
+               <div class="flex justify-between flex-wrap items-center">
+                  <div *ngIf="course.isfor" class="w-3/5">
+                     <h1  class="text-xl font-bold">ویدیو جلسات دوره</h1>
+                     <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
+                        <hr class="border border-blue-100 rounded-full opacity-50" />
+                        <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
+                     </div>
+                  </div>
+                  <div class="w-2/5">
+
+                     <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="{{course.media.pdfUrl}}">دانلود
+                        فایل پی دی اف
+                        <i class="pi pi-download px-2"></i>
+                     </a>
+                     <!-- <p-dropdown *ngIf="course.videos" class="bg-blue-100" [options]="course.videos" optionLabel="title"></p-dropdown> -->
+                     <select class="bg-blue-500 text-white rounded py-1 px-2 " *ngIf="course.videos && course.videos[0]" (change)="getUrl($event)" style="">
+                        <option  value="">جلسات</option>
+                        <option *ngFor="let video of course.videos" value="{{video.url}}">{{video.title}}</option>
+                     </select>
+                  </div>
                </div>
-               <div class="video rounded-2xl w-full  my-6">
+               <div class="video rounded-2xl w-full  mb-6 mt-2 ">
                   <div *ngIf="course.videos && course.videos[0]" class="r1_iframe_embed">
                      <iframe [src]="this.url | arvan" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

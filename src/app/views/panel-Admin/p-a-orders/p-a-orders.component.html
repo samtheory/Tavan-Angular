@@ -22,10 +22,10 @@
 
             <form *ngIf="courses" #courseForm="ngForm">
                <div class="flex   items-center ">
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4" htmlFor="grid-password">
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4 px-2" htmlFor="grid-password">
                      محصول
                   </label>
-              <select [(ngModel)]="userParams.productId" name="productId" id="">
+              <select class="border border-black border-solid rounded px-2 " [(ngModel)]="userParams.productId" name="productId" id="">
                  <option value=""></option>
                  <option *ngFor="let course of courses" value="{{course.id}}">{{course.title}}</option>
               </select>

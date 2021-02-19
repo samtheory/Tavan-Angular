@@ -14,17 +14,17 @@ export class AboutUsUComponent implements OnInit {
     {
       breakpoint: '1254px',
       numVisible: 3,
-      numScroll: 3
+      numScroll: 3,
     },
     {
       breakpoint: '1150px',
       numVisible: 2,
-      numScroll: 2
+      numScroll: 2,
     },
     {
       breakpoint: '880px',
       numVisible: 1,
-      numScroll: 1
+      numScroll: 1,
     }
   ];
   teachers = [
@@ -36,12 +36,12 @@ export class AboutUsUComponent implements OnInit {
     {
       name: "مینا جلالی",
       post: "مدیر محتوای آموزشی",
-      image: "assets/img/team/2.png",
+      image: "assets/img/team/2.jpg",
     },
     {
       name: "سهیل حجازی یکتا",
       post: "مدیر آکادمی کارشناسی ارشد",
-      image: "assets/img/team/3.png",
+      image: "assets/img/team/3.jpg",
     },
     {
       name: "تینا نحفی",
@@ -61,12 +61,12 @@ export class AboutUsUComponent implements OnInit {
     {
       name: "آریا عیسی نیا",
       post: "کارشناس پشتیبانی",
-      image: "assets/img/team/7.png",
+      image: "assets/img/team/7.jpg",
     },
     {
       name: "شینا عیسی نیا",
       post: "کارشناس عملیات",
-      image: "assets/img/team/8.jpeg",
+      image: "assets/img/team/8.jpg",
     },
     {
       name: "زهرا سمیع",
@@ -76,12 +76,12 @@ export class AboutUsUComponent implements OnInit {
     {
       name: "عطیه اکبری",
       post: "دیزاینر",
-      image: "assets/img/team/10.png",
+      image: "assets/img/team/10.jpg",
     },
     {
       name: "مجید محبی",
       post: "دیزاینر",
-      image: "assets/img/team/11.png",
+      image: "assets/img/team/11.jpg",
     },
     {
       name: "فائزه نورمندی",

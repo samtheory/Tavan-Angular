@@ -229,7 +229,7 @@
                      <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                   </div>
                   <div class="video rounded-2xl w-full  my-8">
-                     <div *ngIf="course.media && course.media.videoUrl !== '' " class="r1_iframe_embed">
+                     <div *ngIf="course.media.videoUrl !== '' && course.media.videoUrl !== 'null' " class="r1_iframe_embed">
                         <iframe [src]="course.media.videoUrl | arvan" frameborder="0"
                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                            allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>

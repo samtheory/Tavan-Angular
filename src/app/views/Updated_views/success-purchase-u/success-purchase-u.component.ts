@@ -45,4 +45,19 @@ export class SuccessPurchaseUComponent implements OnInit {
       });
 
     }
+
+    gotowebinar(id: number)
+    {
+      this.router.navigate(['webinar/' , id]);
+    }
+
+    gotoDashboard()
+    {
+      this.router.navigate(['customer-panel']);
+    }
+
+    gotoMain()
+    {
+      this.router.navigate(['']);
+    }
 }

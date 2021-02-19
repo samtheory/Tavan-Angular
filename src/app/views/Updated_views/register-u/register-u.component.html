@@ -15,12 +15,10 @@
       <div class="mx-auto">
 
         <h1 class="text-2xl font-bold">عضویت در توان</h1>
-        <!-- <p class="text-sm text-gray-500 pt-1 pb-8">
-          ما به حفظ اطلاعات شخصی شما متعهدیم
-        </p> -->
         <p class="text-sm text-gray-500 pt-1 pb-8">
-         ثبت نام در سایت به منزله پذیرش قوانین است
+          ما به حفظ اطلاعات شخصی شما متعهدیم
         </p>
+       
         <form #registeform="ngForm" (ngSubmit)="registerUser()" class="my-4 mx-auto" action="" style="max-width : 500px">
           
           <div class="md:w-5/6   form-item  py-2">
@@ -54,10 +52,18 @@
               matInput placeholder="رمز خود را درج کنید" value="" />
           </div>
           <div class="md:w-5/6    flex items-center flex-col justify-between mt-4">
+            <p class="text-sm text-gray-500 pt-1 pb-8 w-full">
+                <i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
+              ثبت نام در سایت به منزله پذیرش قوانین است
+            </p>
             <button class="submit-btn w-full rounded bg-blue-500 py-2 text-white text-center my-1" type="submit" style="max-width:500px">
    در توان عضو شوید
             </button>
-           
+            <a class="move-to-register w-full rounded border border-blue-500 text-center py-2  my-1" routerLink="/login">
+              <span class="gray text-gray-500">قبلا عضو شده اید؟</span>
+              <span class="blue text-blue-500 font-bold px-2">
+              ورود به توان</span>
+            </a>
             
           </div>
         </form>

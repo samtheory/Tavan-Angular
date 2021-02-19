@@ -59,8 +59,8 @@ export class MainTemplateComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getCategories().subscribe(categories => {
-      this.categories = categories;
-    })
+      this.categories = categories.slice(0 , 4);
+    });
   }
 
   getphotos(){

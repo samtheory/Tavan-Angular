@@ -200,7 +200,11 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 								<ul *ngIf="this.categories">
 
 									<li *ngFor="let category of this.categories" class="px-2 py-3 cursor-pointer"><a
-											[routerLink]="['/search', {categoryId: category.id}]">{{category.name}}</a></li>
+											[routerLink]="['/search', {categoryId: category.id}]">{{category.name}}</a>
+									</li>
+									<li class="px-2 py-3 cursor-pointer">
+									<a [routerLink]="['/search']" >مشاهده همه</a>	
+									</li>
 								</ul>
 							</div>
 						</li>

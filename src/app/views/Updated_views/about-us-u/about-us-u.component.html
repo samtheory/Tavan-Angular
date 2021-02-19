@@ -39,9 +39,18 @@
    </div>
    <div class="flex flex-wrap-reverse xl:justify-between justify-center items-center my-20">
       <div class="icons flex flex-wrap justify-center items-center p-8 xl:p-0">
-         <svg-wallet class="wallet xl:relative p-2"></svg-wallet>
-         <svg-skills class="skills xl:relative p-2"></svg-skills>
-         <svg-universality class="universal xl:relative p-2"></svg-universality>
+         <div class="flex flex-col justify-center items-center">
+            <svg-skills class=""></svg-skills>
+            <p class="font-bold">مهارت پروری</p>
+         </div>
+         <div class="flex flex-col justify-center items-center">
+            <svg-universality class=""></svg-universality>
+            <p class="font-bold">جامعیت</p>
+         </div>
+         <div class="flex flex-col justify-center items-center">
+            <svg-wallet class=""></svg-wallet>
+            <p  class="font-bold">مقرون به صرفه</p>
+         </div>
       </div>
       <div class="content">
 
@@ -49,22 +58,22 @@
          <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.goals.paragraph}}</p>
       </div>
    </div>
-   
+
 </section>
 <section name="teachers" class="bg-blue-50 py-10 relative">
    <div class="dots-pattern absolute -top-28 right-2 hidden 2xl:block z-0">
       <svg-dots></svg-dots>
    </div>
    <div class="body max-w-1200 px-5 m-auto">
-      <div class="flex justify-between items-center mb-7">
+      <div class="flex justify-center items-center mb-7">
          <div class="lg:inline hidden"></div>
-         <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">اساتید ما</h2>
-         <a
+         <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">معرفی اعضا</h2>
+         <!-- <a
             class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
-            همه</a>
+            همه</a> -->
       </div>
       <p-carousel [value]="teachers" [numVisible]="3" [numScroll]="3" [circular]="false" style="direction: ltr;"
-         [responsiveOptions]="responsiveOptions">
+         [autoplayInterval]='8000' [responsiveOptions]="responsiveOptions">
          <ng-template pTemplate="header">
 
          </ng-template>
@@ -73,15 +82,20 @@
                <div class="product-item-content">
 
 
-                  <a [routerLink]="['/teacher' , teacher.id]" routerLinkActive="router-link-active"  class="teacher-group flex flex-col items-center m-6">
+                  <div routerLinkActive="router-link-active" class="teacher-group flex flex-col items-center m-6">
                      <div class="relative item-t flex items-center justify-center">
-                       <img class="rounded-full"style="max-width: 120px; max-height: 120px;" src="{{teacher.image_path}}" alt="" />
-                       <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
+                        <img class="rounded-full" style="max-width: 150px; max-height: 150px;" src="{{teacher.image}}"
+                           alt="" />
+                        <!-- <div style="background-image: url({{teacher.image}}); width: 150px; height: 150px ; background-repeat:no-repeat ; background-size: contain; border-radius: 50%;" >
+
+                       </div> -->
+                        <!-- <div class="dark-b bg-gray-800  absolute top-0 left-0 right-0 bottom-0 rounded-full">
                        </div>
-                       <p class="text-white text-center absolute">مشاهده رزومه</p>
+                       <p class="text-white text-center absolute">مشاهده رزومه</p> -->
                      </div>
                      <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
-                   </a>
+                     <h2 class="mt-4 font-bold">{{teacher.post}}</h2>
+                  </div>
 
 
 

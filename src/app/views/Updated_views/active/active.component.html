@@ -4,31 +4,8 @@
        margin: auto;
     }
  </style>
- <!-- <app-search-section photo="assets/img/_usefull/card-2.jpg"></app-search-section> -->
- <section *ngIf="photos" class="slide-hero w-full relative flex justify-center items-center">
-    <img src="{{photos[0].url}}" alt="" />
-    <div class="w-full bg-black opacity-60 absolute top-0 bottom-0  "></div>
-    <div class="flex flex-col justify-between absolute z-20 w-full ">
-       <form #searchForm="ngForm">
-          <div class="input w-full m-auto">
-           
-             <div class=" m-auto w-10/12  xl:w-6/12  flex items-center justify-center ">
-                <input name="name" [(ngModel)]="userParams.name"
-                 class="  bg-gray-100 py-4  px-2  rounded-lg  rounded-tl-none rounded-bl-none w-10/12 outline-none border-1 border-white border-l-0 focus:border-swatch-lightBlue"
-                   placeholder=" دنبال هر آموزشی هستی همین جا همین الان سرچ کن" type="text" /><img (click)="loadCourses()"
-               class="py-3 px-3 bg-blue-500 rounded-lg  rounded-tr-none rounded-br-none   inline"
-                   src="assets/img/_usefull/Search.png" style="width:56px" alt="search">
-                   
-                
-             </div>
-          
-          </div>
-       </form>
-    </div>
-    <!-- <i (click)="scrollToElement(main)"
-       class="fas fa-chevron-down text-4xl absolute centered text-gray-100 hover:text-blue-900 rounded-full px-2 py-1 duration-300"
-       style="top: 95%"></i> -->
- </section>
+ <app-search-section photo="assets/img/_usefull/card-2.jpg"></app-search-section>
+
  <section class="section-body xl:p-0 px-10 bg-white">
     <h1 class="text-gray-400 my-4" *ngIf="userParams.name"> خانه > اساتید> نتیجه سرچ {{userParams.name}}</h1>
     <!-- <div class="m-auto text-center pt-5 pb-14">

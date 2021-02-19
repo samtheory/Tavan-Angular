@@ -34,6 +34,9 @@ title = 'test';
   submitted = false;
   user: User;
   model: any ={};
+  avatar: boolean;
+  nezam: boolean;
+  meli: boolean;
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService
     , private router: Router, private userService: AuthService, private route: ActivatedRoute) { }
 
@@ -74,6 +77,7 @@ title = 'test';
   onFileChange(event) {
   
     if (event.target.files.length > 0) {
+      this.meli = true;
       const meli = event.target.files[0];
       this.userForm.patchValue({
         meliSource: meli
@@ -84,6 +88,7 @@ title = 'test';
   onFile1Change(event) {
   
     if (event.target.files.length > 0) {
+      this.nezam = true;
       const nezam = event.target.files[0];
       this.userForm.patchValue({
         nezamSource: nezam
@@ -94,6 +99,7 @@ title = 'test';
   onFile2Change(event) {
   
     if (event.target.files.length > 0) {
+      this.avatar = true;
       const avatar = event.target.files[0];
       this.userForm.patchValue({
         avatarSource: avatar

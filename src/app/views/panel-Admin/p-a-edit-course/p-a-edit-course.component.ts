@@ -298,12 +298,14 @@ deleteTeacher(id: number , teacherId: number) {
 addTeacher(id: number) {
   this.courseService.addTeacherToCourse(id , this.teacherToAdd.id).subscribe(next => {
     this.toastr.success("با موفقیت اضافه شد");
+    window.location.reload();
   });
 }
 
 addCategory(id: number) {
   this.courseService.addCategoryToCourse(id , this.categoryToAdd.id).subscribe(next => {
     this.toastr.success("با موفقیت اضافه شد");
+    window.location.reload();
   });
 }
 

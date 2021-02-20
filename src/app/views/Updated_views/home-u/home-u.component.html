@@ -60,7 +60,7 @@
     <div class="px-4 md:px-0" style="direction: ltr">
 
       <p-carousel *ngIf="aCourses" [value]="aCourses" [numVisible]="3" [numScroll]="3" [circular]="true"
-        [autoplayInterval]='10000' [responsiveOptions]="responsiveOptions">
+        [autoplayInterval]='7500' [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
 
         </ng-template>
@@ -86,7 +86,7 @@
         همه</a>
     </div>
     <div class="px-4 md:px-0" style="direction: ltr; ">
-      <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]='11000'
+      <p-carousel *ngIf="dCourses" [value]="dCourses" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]='8000'
         [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
 
@@ -117,7 +117,7 @@
     <div class="px-4 md:px-0" style="direction: ltr">
 
       <p-carousel *ngIf="sCourses" [value]="sCourses" [numVisible]="3" [numScroll]="3" [circular]="true"
-        [autoplayInterval]='12000' [responsiveOptions]="responsiveOptions">
+        [autoplayInterval]='7000' [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
 
         </ng-template>
@@ -200,7 +200,7 @@
     <div class="px-4 md:px-0" style="direction: ltr">
 
       <p-carousel *ngIf="teachers" [value]="teachers" [numVisible]="4" [numScroll]="4" [circular]="true"
-        [autoplayInterval]='12500' [responsiveOptions]="teachersResponsiveOption">
+        [autoplayInterval]='6500' [responsiveOptions]="teachersResponsiveOption">
         <ng-template pTemplate="header">
 
         </ng-template>
@@ -218,7 +218,7 @@
                   </div>
                   <p class="text-white text-center absolute">مشاهده رزومه</p>
                 </div>
-                <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
+                <h2 class="mt-4 text-sm font-bold text-center">{{teacher.name}}</h2>
               </a>
 
 

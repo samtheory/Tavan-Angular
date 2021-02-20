@@ -268,6 +268,7 @@ selected = 'option one';
 deleteVideo(id: number) {
   this.videoService.deleteVideo(id).subscribe(next => {
     this.toastr.success('با موفقیت حذف شد');
+    window.location.reload();
   }, error => {
     this.toastr.error(error);
   });
@@ -286,6 +287,7 @@ deleteCourse() {
 deleteCategory(id: number , categoryId: number){
 this.courseService.removeCategoryofCourse(id , categoryId).subscribe(next => {
   this.toastr.success("با موفقیت حذف شد");
+  window.location.reload();
 });
 }
 
@@ -328,6 +330,7 @@ addSession(id: number){
 deleteSession(id: number){
   this.courseService.deleteSession(id).subscribe(next => {
     this.toastr.success("با موفقیت حذف شد");
+    window.location.reload();
   });
 }
 

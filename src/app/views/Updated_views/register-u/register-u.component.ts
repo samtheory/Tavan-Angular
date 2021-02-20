@@ -22,7 +22,7 @@ export class RegisterUComponent implements OnInit {
       if(this.authService.decodeToken.role === 'admin'){
         this.router.navigate(['/admin/dashboard']);
       } else {
-        this.router.navigate(['/customer-panel/profile']);
+        this.router.navigate(['/']);
       }
     },error => {
       this.toastr.error(error);

@@ -18,12 +18,12 @@
 			<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 			{{DB_const.menu.home}}
 		</div>
-		<div [routerLink]="['/search', {isActive: true}]" class="item text-lg  pr-8 my-4 cursor-pointer"
+		<div [routerLink]="['/webinars']" class="item text-lg  pr-8 my-4 cursor-pointer"
 		(click)="showSideMenu = false">
 		<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 		{{DB_const.menu.online_workshop}}
 	</div>
-	<div [routerLink]="['/search', {isActive: false}]" class="item text-lg  pr-8 my-4 cursor-pointer"
+	<div [routerLink]="['/videos']" class="item text-lg  pr-8 my-4 cursor-pointer"
 	(click)="showSideMenu = false">
 	<i class="fas fa-circle inline text-orange-500 px-1" style="font-size: 8px;"></i>
 	{{DB_const.menu.videos}}
@@ -35,13 +35,20 @@
 </div>
 <div *ngIf="this.categories" [ngClass]="{'w-0 hidden': megaMenu == false, 'w-full block': megaMenu == true }"
 class="category-collapse-item py-4 bg-gray-200 duration-200">
-<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
-	<a [routerLink]="['/search', {categoryId: category.id}]" (click)="showSideMenu = false">
-		
-					<i class="fas fa-circle inline text-blue-500 px-1" style="font-size: 8px;"></i>
-					{{category.name}}
-				</a>
-			</div>
+	<div *ngFor="let category of this.categories" class="item text-base   pr-8 my-4 cursor-pointer">
+		<a [routerLink]="['/search', {categoryId: category.id}]" (click)="showSideMenu = false">
+			
+						<i class="fas fa-circle inline text-blue-500 px-1" style="font-size: 8px;"></i>
+						{{category.name}}
+		</a>
+	</div>
+	<div  class="item text-base   pr-8 my-4 cursor-pointer">
+		<a [routerLink]="['/search']" (click)="showSideMenu = false">
+			
+			<i class="fas fa-circle inline text-blue-500 px-1" style="font-size: 8px;"></i>
+			مشاهده همه
+		</a>
+	</div>
 			
 			
 		</div>

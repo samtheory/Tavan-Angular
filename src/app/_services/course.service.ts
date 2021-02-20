@@ -148,7 +148,9 @@ gettheMainCourse(id: number): Observable<Course>{
  }
 
 
-
+buyfreeCourse(id: number, offParams: any){
+  return this.http.post(this.baseUrl + 'buyfree/' + id , offParams);
+}
  // teacher category
 
  addTeacherToCourse(id: number, teacherId: number){

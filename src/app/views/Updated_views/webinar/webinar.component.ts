@@ -127,7 +127,7 @@ export class WebinarComponent implements OnInit {
   addCourseToUser(id: number){
     if(this.logedIn()) {
       if(this.isActive === true) {
-        this.courseService.addcourseToUser(id).subscribe(next => {
+        this.courseService.buyfreeCourse(id , this.off).subscribe(next => {
           this.toastr.success('با موفقیت ثبت نام شد');
           this.router.navigate(['/success/', id]);
           // window.location.reload();

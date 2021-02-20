@@ -4,6 +4,20 @@
       margin: auto;
    }
 
+   .teacher-img {
+      width: 150px;
+      height: 150px;
+   }
+
+
+   @media only screen and (max-width: 450px) {
+      .teacher-img {
+         width: 120px;
+         height: 120px;
+
+      }
+   }
+
    @media only screen and (min-width : 1280px) {
       .icons .universal {
          top: -80px;
@@ -49,7 +63,7 @@
          </div>
          <div class="flex flex-col justify-center items-center">
             <svg-wallet class=""></svg-wallet>
-            <p  class="font-bold">مقرون به صرفه</p>
+            <p class="font-bold">مقرون به صرفه</p>
          </div>
       </div>
       <div class="content">
@@ -72,7 +86,7 @@
             class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
             همه</a> -->
       </div>
-      <p-carousel [value]="teachers" [numVisible]="5" [numScroll]="5" [circular]="false" style="direction: ltr;" 
+      <p-carousel [value]="teachers" [numVisible]="5" [numScroll]="5" [circular]="false" style="direction: ltr;"
          [autoplayInterval]='7000' [responsiveOptions]="responsiveOptions">
          <ng-template pTemplate="header">
 
@@ -84,7 +98,7 @@
 
                   <div routerLinkActive="router-link-active" class="teacher-group flex flex-col items-center m-6">
                      <div class="relative item-t flex items-center justify-center">
-                        <img class="rounded-full" style="max-width: 150px; max-height: 150px;" src="{{teacher.image}}"
+                        <img class="rounded-full teacher-img"  src="{{teacher.image}}"
                            alt="" />
                         <!-- <div style="background-image: url({{teacher.image}}); width: 150px; height: 150px ; background-repeat:no-repeat ; background-size: contain; border-radius: 50%;" >
 

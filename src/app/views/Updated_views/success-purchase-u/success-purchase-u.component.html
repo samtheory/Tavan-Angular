@@ -9,7 +9,7 @@
 
 <section class="success-card">
 
-   <div *ngIf="this.Ok === 1" class="w-full  border  rounded shadow-md border-gray-100 flex flex-col items-center py-8 px-2">
+   <div *ngIf="this.Ok === 1 && this.order" class="w-full  border  rounded shadow-md border-gray-100 flex flex-col items-center py-8 px-2">
    
       <i class="fas fa-check p-8 bg-green-900 rounded-full text-white inline my-2"></i>
   
@@ -17,9 +17,9 @@
       <p class="my-1">شناسه پرداخت : {{payParams.authority}}</p>
       <p class="my-1">مبلغ پرداخت:  <span class="text-warning">{{this.order.price}} تومان</span></p>
       <div class="flex flex-wrap justify-between my-1">
-         <a (click)="gotoMain()"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">صفحه اصلی</a>
-         <a (click)="gotoDashboard()" class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">پنل</a>
-         <a (click)="gotowebinar(this.order.productId)"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">وبینار</a>
+         <a [routerLink]="['/']"    class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">صفحه اصلی</a>
+         <a  [routerLink]="['/customer-panel']" routerLinkActive="router-link-active"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">پنل</a>
+         <a  [routerLink]="['/webinar' , this.order.productId]" routerLinkActive="router-link-active"   class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">وبینار</a>
       </div>
    </div>
 
@@ -31,8 +31,8 @@
       <p class="my-1">شناسه پرداخت : {{payParams.authority}}</p>
       <p class="my-1">مبلغ پرداخت:  <span class="text-warning">{{this.order.price}} تومان</span></p>
       <div class="flex flex-wrap justify-between my-1">
-         <a (click)="gotoMain()"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">صفحه اصلی</a>
-         <a (click)="gotoDashboard()" class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">پنل</a>
+         <a [routerLink]="['/']"    class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">صفحه اصلی</a>
+         <a  [routerLink]="['/customer-panel']" routerLinkActive="router-link-active"  class="rounded border p-2 mx-1 border-blue-500 text-blue-500 duration-200 hover:text-white hover:bg-blue-500">پنل</a>
       </div>
    </div>
 </section>

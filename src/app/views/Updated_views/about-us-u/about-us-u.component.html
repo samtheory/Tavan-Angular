@@ -33,11 +33,11 @@
       <div class="content">
 
          <h1 class="text-xl font-bold pb-4">{{DB_const.aboutUsPage.bio.title}}</h1>
-         <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.bio.paragraph}}</p>
+         <p class=" xl:max-w-lg" [innerHTML]="DB_const.aboutUsPage.bio.paragraph"></p>
       </div>
       <img class="pt-8 xl:p-0" src="assets/img/_usefull/card-2.jpg" alt="">
    </div>
-   <div class="flex flex-wrap-reverse xl:justify-between justify-center items-center my-20">
+   <div class="flex flex-wrap-reverse xl:justify-between justify-center items-center my-10">
       <div class="icons flex flex-wrap justify-center items-center p-8 xl:p-0">
          <div class="flex flex-col justify-center items-center">
             <svg-skills class=""></svg-skills>
@@ -54,26 +54,26 @@
       </div>
       <div class="content">
 
-         <h1 class="text-xl font-bold pb-4">{{DB_const.aboutUsPage.goals.title}}</h1>
-         <p class=" xl:max-w-lg">{{DB_const.aboutUsPage.goals.paragraph}}</p>
+         <h1 class="text-xl font-bold pb-4" [innerHTML]="DB_const.aboutUsPage.goals.title"></h1>
+         <p class=" xl:max-w-lg" [innerHTML]="DB_const.aboutUsPage.goals.paragraph"></p>
       </div>
    </div>
 
 </section>
-<section name="teachers" class="bg-blue-50 py-10 relative">
+<section name="teachers" class="teach bg-blue-50 py-10 relative">
    <div class="dots-pattern absolute -top-28 right-2 hidden 2xl:block z-0">
       <svg-dots></svg-dots>
    </div>
    <div class="body max-w-1200 px-5 m-auto">
       <div class="flex justify-center items-center mb-7">
          <div class="lg:inline hidden"></div>
-         <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">معرفی اعضا</h2>
+         <h2 class="font-bold text-2xl mb-8 flex mr-0 lg:mr-12">اعضای خانواده توان</h2>
          <!-- <a
             class="rounded-md border-blue-500 px-8 py-2 border-solid border-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
             همه</a> -->
       </div>
-      <p-carousel [value]="teachers" [numVisible]="5" [numScroll]="5" [circular]="false" style="direction: ltr;"
-         [autoplayInterval]='8000' [responsiveOptions]="responsiveOptions">
+      <p-carousel [value]="teachers" [numVisible]="5" [numScroll]="5" [circular]="false" style="direction: ltr;" 
+         [autoplayInterval]='7000' [responsiveOptions]="responsiveOptions">
          <ng-template pTemplate="header">
 
          </ng-template>
@@ -93,7 +93,7 @@
                        </div>
                        <p class="text-white text-center absolute">مشاهده رزومه</p> -->
                      </div>
-                     <h2 class="mt-4 font-bold">{{teacher.name}}</h2>
+                     <h2 class="mt-4 text-center font-bold">{{teacher.name}}</h2>
                      <h2 class="mt-4 text-center text-sm">{{teacher.post}}</h2>
                   </div>
 

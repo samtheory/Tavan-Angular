@@ -33,8 +33,8 @@ export class PersianDatePipe implements PipeTransform {
       sm = months[m -1];
       
       // Time
-      var hour : number = +value.slice(11, 13); 
-      var minutes : number = +value.slice(14, 16); 
+      var hour : string = value.slice(11, 13); 
+      var minutes : string = value.slice(14, 16); 
 
       return`${d} ${sm} ${y} - ساعت ${hour}:${minutes}` ;
    }

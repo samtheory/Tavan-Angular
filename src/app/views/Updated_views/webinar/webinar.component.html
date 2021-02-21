@@ -221,7 +221,7 @@
 
                   <p class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;" [innerHTML]="course.description"></p>
                </div>
-               <section id="intro">
+               <section *ngIf="course.media.videoUrl !== '' && course.media.videoUrl !== null "  id="intro">
 
                   <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
                   <div class="relative w-full flex flex-col justify-center pt-2 pb-8">

@@ -294,6 +294,7 @@ this.courseService.removeCategoryofCourse(id , categoryId).subscribe(next => {
 deleteTeacher(id: number , teacherId: number) {
   this.courseService.removeTeacherofCourse(id , teacherId).subscribe(next => {
     this.toastr.success("با موفقیت حذف شد");
+    window.location.reload();
   });
 }
 

@@ -5,7 +5,7 @@
    }
 </style>
 
-<section *ngIf="teacher" class="section-body xl:p-0 px-10 bg-white">
+<section *ngIf="teacher" class="section-body xl:p-0  px-10 bg-white">
    <h1 *ngIf="teacher" class="text-gray-400 my-4">خانه > اساتید> {{teacher.name}} </h1>
    <div class="m-auto text-center pt-5 pb-14">
       <h1 class="text-lg font-bold pb-2">مدرسین توان</h1>
@@ -13,9 +13,11 @@
    </div>
    <div class="flex flex-wrap  my-10  items-center">
       <div class="flex w-full items-center lg:flex-row flex-col-reverse justify-center lg:justify-start">
-         <img class="rounded-full md:w-1/5" style="max-width: 200px; max-height: 200px;" src="{{teacher.image_path}}" alt="" />
-         <div class="md:w-4/5 md:pr-14 w-full pb-6 md:pb-0 ">
-            <p class="text-xl font-bold pb-2 text-center md:text-right">{{teacher.name}} - {{teacher.title}}</p>
+         <img class="rounded-full lg:w-1/5" style="max-width: 200px; max-height: 200px;" src="{{teacher.image_path}}"
+            alt="" />
+         <div class="md:w-4/5 lg:pr-14 w-full pb-6 lg:pb-0 ">
+            <p class="text-xl font-bold pb-2 text-center md:text-right">{{teacher.name}} </p>
+            <p class="text-xl font-bold pb-2 text-center md:text-right">{{teacher.title}}</p>
             <hr class="bg-blue-100 border-blue-100 rounded-full" />
          </div>
       </div>
@@ -31,24 +33,23 @@
       <div class="head flex justify-between px-6 mb-4 items-center">
          <h2 class="font-bold text-base">دوره های مدرس</h2>
          <!-- TODO: Link should be FIX    -->
-         <a
-            (click)="gotoostadpage(this.teacher.name)"
+         <a (click)="gotoostadpage(this.teacher.name)"
             class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">مشاهده
             همه</a>
       </div>
       <div style="direction: ltr">
-         <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3"   [autoplayInterval]='7000' 
+         <p-carousel [value]="this.courses" [numVisible]="3" [numScroll]="3" [autoplayInterval]='7000'
             [responsiveOptions]="responsiveOptions">
             <ng-template pTemplate="header">
-   
+
             </ng-template>
             <ng-template let-product pTemplate="item">
                <div class="product-item">
                   <div class="product-item-content">
-                
-   
-                        <card-course style="direction: rtl;" [course]="product"></card-course>
-                 
+
+
+                     <card-course style="direction: rtl;" [course]="product"></card-course>
+
                   </div>
                </div>
             </ng-template>

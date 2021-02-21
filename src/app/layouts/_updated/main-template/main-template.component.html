@@ -206,7 +206,7 @@ class="category-collapse-item py-4 bg-gray-200 duration-200">
 								*ngIf="megaMenu">
 								<ul *ngIf="this.categories">
 
-									<li *ngFor="let category of this.categories" class="px-2 py-3 cursor-pointer"><a
+									<li *ngFor="let category of this.categories" class="px-2 py-1 cursor-pointer"><a
 											[routerLink]="['/search', {categoryId: category.id}]">{{category.name}}</a>
 									</li>
 									<li class="px-2 py-3 cursor-pointer">

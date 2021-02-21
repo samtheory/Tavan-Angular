@@ -1,17 +1,20 @@
 <div *ngIf="course"  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
-      <div  [routerLink]="['/webinar/', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer outline-none">
+      <a  [routerLink]="['/webinar/', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer outline-none">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
          <div class="dec absolute text-white px-5 text-xs sm:text-base"  [innerHTML]="course.description"> </div>
-      </div>
+      </a>
       
       <div class="content  relative px-2">
          <div *ngIf="course.off !== 0"  class="off-banner absolute bg-warning left-0 rounded-br-lg sm:p-2 p-1 text-white text-xs sm:text-sm">
           {{course.off}}% تخفیف
          </div>
-         <h5 *ngIf="course.id"  [routerLink]="['/webinar/', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
+         <a [routerLink]="['/webinar/', course.id]">
+
+            <h5 *ngIf="course.id"  [routerLink]="['/webinar/', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
+         </a>
          <div *ngIf="course.courseTeachers"> 
          <p  class="sm:py-3 py-1"><span class="font-bold">مدرس :
                <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}

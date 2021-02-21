@@ -1,4 +1,4 @@
-<div  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
+<div *ngIf="course"  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
       <div [routerLink]="['/webinar', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer">

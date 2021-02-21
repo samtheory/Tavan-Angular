@@ -1,7 +1,7 @@
 <div *ngIf="course"  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
-      <div  [routerLink]="['/webinar/', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer">
+      <div  [routerLink]="['/webinar/', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer outline-none">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
          <div class="dec absolute text-white px-5 text-xs sm:text-base"  [innerHTML]="course.description"> </div>

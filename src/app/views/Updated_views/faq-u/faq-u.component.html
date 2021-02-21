@@ -35,13 +35,13 @@
          </div>
          <div [ngClass]="{'AKD_anime_close h-0 pt-0': q.isOpen == false, 'AKD_anime_open h-full pt-10 ': q.isOpen == true }"
             class="pt-10 text-gray-400 answer duration-300">
-            <p>{{q.answer}}
+            <p [innerHTML]="q.answer">
             </p>
          </div>
       </div>
       <!-- ::__ END AKD  ################################################################## -->
 
-      <a href="" class="text-blue-500 text-center w-full hover:text-blue-900 my-8 duration-200">سوالات بیشتر</a>
+      <!-- <a href="" class="text-blue-500 text-center w-full hover:text-blue-900 my-8 duration-200">سوالات بیشتر</a> -->
 
       <!-- .:: ASK question section  ________________________   -->
       <form class="w-full" #ticketForm="ngForm" action="">

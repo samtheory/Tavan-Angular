@@ -12,6 +12,7 @@ export class SuccessPurchaseUComponent implements OnInit {
   payParams: any = {};
   Ok: number = 0;
   order: Order;
+  timer: any;
   constructor(private route: ActivatedRoute, private payService: PaymentService, private router: Router) { }
 
   ngOnInit(): void {
@@ -41,7 +42,7 @@ export class SuccessPurchaseUComponent implements OnInit {
       this.payService.verifyPayment(this.payParams , id).subscribe(next => {
         this.order = next;
         this.Ok = 1;
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
           this.router.navigate(['customer-panel']);
       }, 30000);
       }, error => {
@@ -52,16 +53,19 @@ export class SuccessPurchaseUComponent implements OnInit {
 
     gotowebinar(id: number)
     {
+      clearTimeout(this.timer);
       this.router.navigate(['webinar/' , id]);
     }
-
+  
     gotoDashboard()
     {
+      clearTimeout(this.timer);
       this.router.navigate(['customer-panel']);
     }
-
+  
     gotoMain()
     {
+      clearTimeout(this.timer);
       this.router.navigate(['']);
     }
 }

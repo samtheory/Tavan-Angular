@@ -69,7 +69,7 @@ userParams: any = {};
     if(this.route.snapshot.queryParamMap.get('name') !== null){
     this.userParams.name = this.route.snapshot.queryParamMap.get('name');
     }
-    this.courseService.getsfCourses(1 , 3, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
+    this.courseService.getsfCourses(1 , 6, this.userParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.courses = res.result;
       this.pag = res.pag;
     });

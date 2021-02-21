@@ -11,7 +11,7 @@
          <div *ngIf="course.off !== 0"  class="off-banner absolute bg-warning left-0 rounded-br-lg sm:p-2 p-1 text-white text-xs sm:text-sm">
           {{course.off}}% تخفیف
          </div>
-         <h5  [routerLink]="['/webinar/', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
+         <h5 *ngIf="course.id"  [routerLink]="['/webinar/', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
          <div *ngIf="course.courseTeachers"> 
          <p  class="sm:py-3 py-1"><span class="font-bold">مدرس :
                <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}

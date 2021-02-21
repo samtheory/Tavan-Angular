@@ -55,7 +55,7 @@
 
 
       <!-- card  -->
-      <div class="flex flex-wrap ">
+      <div *ngIf="courses" class="flex flex-wrap ">
          <a  *ngFor="let course of courses" [routerLink]="['webinar/',course.id]">
             <card-course [course]="course"></card-course>
          </a>

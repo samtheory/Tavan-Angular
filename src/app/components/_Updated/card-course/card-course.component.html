@@ -1,7 +1,7 @@
 <div *ngIf="course"  class="course-card rounded-lg flex flex-col px-5 relative py-2 m-auto">
    <div
       class="card-body relative rounded-lg flex flex-col bg-white  border border-gray-100 hover:shadow-md hover:border-gray-300">
-      <div [routerLink]="['/webinar', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer">
+      <div  [routerLink]="['/webinar/', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
          <div class="dec absolute text-white px-5 text-xs sm:text-base"  [innerHTML]="course.description"> </div>
@@ -11,7 +11,7 @@
          <div *ngIf="course.off !== 0"  class="off-banner absolute bg-warning left-0 rounded-br-lg sm:p-2 p-1 text-white text-xs sm:text-sm">
           {{course.off}}% تخفیف
          </div>
-         <h5 [routerLink]="['/webinar', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
+         <h5  [routerLink]="['/webinar/', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
          <div *ngIf="course.courseTeachers"> 
          <p  class="sm:py-3 py-1"><span class="font-bold">مدرس :
                <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}
@@ -39,7 +39,7 @@
 
 
             <a 
-            [routerLink]="['/webinar', course.id]"
+            [routerLink]="['/webinar/', course.id]"
                class="rounded-md border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 text-sm sm:text-base">خرید
                دوره</a>
             <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline offCross">
@@ -59,7 +59,7 @@
             </div>
          </div>
          <div *ngIf="course.realCost === 0" class="flex flex-row justify-between my-4 items-center">
-            <a [routerLink]="['/webinar', course.id]"
+            <a [routerLink]="['/webinar/', course.id]"
                class="rounded-md text-sm sm:text-base border-blue-500 sm:px-4 px-2 py-1 sm:py-2 border-solid border mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">خرید
                دوره</a>
             <div *ngIf="course.off !== 0" class="pre-price text-gray-300 line-through hidden xl:inline offCross ">

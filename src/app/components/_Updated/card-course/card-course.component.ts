@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from 'src/app/_models/course';
 
 @Component({
@@ -14,9 +15,12 @@ export class CardCourseComponent implements OnInit {
     this.video_url.emit(url);
 
   }
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+
+  
 
 }

@@ -168,6 +168,7 @@ import { PersianDatePipe } from './pipes/PersianDate.pipe';
 import { VideosUComponent } from './views/Updated_views/videos-u/videos-u.component';
 import { ActiveComponent } from './views/Updated_views/active/active.component';
 import { SuccessPurchaseFreeComponent } from './views/Updated_views/success-purchase-free/success-purchase-free.component';
+import { UploadComponent } from './views/panel-admin/upload/upload.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -270,6 +271,7 @@ export function tokenGeter() {
     VideosUComponent,
     ActiveComponent,
     SuccessPurchaseFreeComponent,
+    UploadComponent,
   ],
   imports: [
     PaginatorModule,

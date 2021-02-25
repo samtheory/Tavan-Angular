@@ -64,6 +64,7 @@ import { PCVideosComponent } from './views/upanel-customer/pc-videos/pc-videos.c
 import { VideosUComponent } from './views/Updated_views/videos-u/videos-u.component';
 import { ActiveComponent } from './views/Updated_views/active/active.component';
 import { SuccessPurchaseFreeComponent } from './views/Updated_views/success-purchase-free/success-purchase-free.component';
+import { UploadComponent } from './views/panel-admin/upload/upload.component';
 //un organized
 
 
@@ -128,6 +129,7 @@ const routes: Routes = [
       { path: 'discount', component: PADiscountComponent },
       { path: 'EditDiscount/:id', component: PADiscountEditComponent },
       { path: 'NewDiscount', component: PADiscountNewComponent },
+      { path: 'seedUsers', component: UploadComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },

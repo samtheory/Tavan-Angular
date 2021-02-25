@@ -44,7 +44,7 @@ export class AboutUsUComponent implements OnInit {
       image: "assets/img/team/3.jpg",
     },
     {
-      name: "تینا نحفی",
+      name: "تینا نجفی",
       post: "مدیر ارشد فروش، پشتیبانی و عملیات",
       image: "assets/img/team/4.jpg",
     },
@@ -54,7 +54,7 @@ export class AboutUsUComponent implements OnInit {
       image: "assets/img/team/5.jpg",
     },
     {
-      name: "پردیس حاجی طلب",
+      name: "پردیس حاجی طالب",
       post: "مدیر واحد ارتباط با مخاطبین",
       image: "assets/img/team/6.jpg",
     },

@@ -72,6 +72,10 @@ AdminRegister(user: FormData) {
   return this.http.post(this.baseUrl + 'adminregister', user);
 }
 
+SeedUserwithExcel(user: FormData) {
+  return this.http.post(this.baseUrl + 'seedUserFromExcel', user);
+}
+
 deleteUser(id: number) {
   return this.http.post(this.baseUrl + 'delete/' + id , {});
 }

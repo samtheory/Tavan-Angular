@@ -20,10 +20,10 @@
 
                <div class="flex justify-between py-4">
                   <p class="text-2xl font-bold">{{course.title}} </p>
-                  <span (click)="rate = !rate"
+                  <span  (click)="rate = !rate"
                      class="rounded relative border border-gray-100 border-solid p-1 mx-2 cursor-pointer hover:shadow-md  duration-300 hover:scale-110">
                      <i class="fas fa-star text-yellow-500 relative "></i>
-                     {{course.rate}} ثبت نظر
+                     {{course.rate}} <span>ثبت نظر</span>
                      <div class="absolute  border border-gray-100 border-solid p-1 mx-2 flex mt-2" style="left:-7px;"
                         [ngClass]="{'hidden': !rate , 'inline' : rate}">
                         <div (click)="this.sendRate(1)" class="flex px-2">

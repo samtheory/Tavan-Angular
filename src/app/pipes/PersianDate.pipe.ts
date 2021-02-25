@@ -24,7 +24,7 @@ var months =[
 ];
 @Pipe({ name: 'PersianDate' })
 export class PersianDatePipe implements PipeTransform {
-   transform(value: string): string {
+   transform(value: any): string {
       // Date 
       var y : number = + value.slice(0, 4); 
       var sm = value.slice(5, 7); 

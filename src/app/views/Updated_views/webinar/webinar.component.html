@@ -201,7 +201,7 @@
                      <!-- <p-dropdown *ngIf="course.videos" class="bg-blue-100" [options]="course.videos" optionLabel="title"></p-dropdown> -->
                      <select class="bg-blue-500 text-white rounded py-1 px-2 outline-none" *ngIf="course.videos && course.videos[0]" (change)="getUrl($event)" >
                         <option *ngFor="let video of course.videos" value="{{video.url}}">{{video.title}}</option>
-                        <option selected class="hidden"  value="{{course.videos[0].url}}">مشاهده همه ویدیو ها</option>
+                        <!-- <option selected class="hidden"  value="{{course.videos[0].url}}">مشاهده همه ویدیو ها</option> -->
                    
                      </select>
                   </div>

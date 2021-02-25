@@ -54,7 +54,10 @@ export class WebinarComponent implements OnInit {
   getCourse(){
     this.courseService.gettheMainCourse(this.route.snapshot.params['id']).subscribe(course => {
       this.course = course;
-
+        if(this.course.videos)
+        {
+          this.url = this.course.videos[0].url;
+        }
       console.log(course);
     });
 

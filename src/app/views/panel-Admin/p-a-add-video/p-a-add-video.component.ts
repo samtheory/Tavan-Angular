@@ -57,10 +57,10 @@ export class PAAddVideoComponent implements OnInit {
     // console.log('khar');
     this.model.convert = 'auto';
     this.model.parallel_convert = false;
-    return this.http.post('https://napi.arvancloud.com/vod/2.0/channels/c1914c18-3737-44be-90c5-3ab7d760136f/videos'
+    return this.http.post('https://napi.arvancloud.com/vod/2.0/channels/c1a6ace4-0a9d-4292-9834-ebd9f7978c48/videos'
       , this.model, {
         headers: {
-          Authorization: 'Apikey 1323c87b-dc78-4d8c-8dbd-4535d30c80df',
+          Authorization: 'Apikey 3d908b59-c28d-411a-9a44-4daa7e3ef9d4',
           'Accept-Language': 'en'
         }
     }).subscribe(response => {
@@ -80,7 +80,7 @@ export class PAAddVideoComponent implements OnInit {
     return this.http.get('https://napi.arvancloud.com/vod/2.0/videos/' + this.id
       , {
         headers: {
-          Authorization: 'Apikey 1323c87b-dc78-4d8c-8dbd-4535d30c80df',
+          Authorization: 'Apikey 3d908b59-c28d-411a-9a44-4daa7e3ef9d4',
           'Accept-Language': 'en'
         }
       }).subscribe(response => {
@@ -102,9 +102,9 @@ export class PAAddVideoComponent implements OnInit {
   }
 
     createfile(file: File) {
-        return this.http.post('https://napi.arvancloud.com/vod/2.0/channels/c1914c18-3737-44be-90c5-3ab7d760136f/files', {}, {
+        return this.http.post('https://napi.arvancloud.com/vod/2.0/channels/c1a6ace4-0a9d-4292-9834-ebd9f7978c48/files', {}, {
           headers: {
-            'Authorization': 'Apikey 1323c87b-dc78-4d8c-8dbd-4535d30c80df',
+            'Authorization': 'Apikey 3d908b59-c28d-411a-9a44-4daa7e3ef9d4',
             'Accept': 'application/json',
             'Accept-Language': 'en',
             'tus-resumable': '2.2.0',
@@ -145,7 +145,7 @@ export class PAAddVideoComponent implements OnInit {
       retryDelays: [0, 3000, 5000, 10000, 20000],
       chunkSize: 1048576,
       headers: {
-        Authorization: 'Apikey 1323c87b-dc78-4d8c-8dbd-4535d30c80df',
+        Authorization: 'Apikey 3d908b59-c28d-411a-9a44-4daa7e3ef9d4',
         'Accept-Language': 'en',
       },
       metadata: {

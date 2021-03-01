@@ -31,67 +31,62 @@ export class AboutUsUComponent implements OnInit {
     {
       name: "علیرضا عید",
       post: "موسس و مدیر عامل",
-      image: "assets/img/team/1.jpg",
+      image: "assets/img/team/1.png",
     },
     {
       name: "مینا جلالی",
       post: "مدیر محتوای آموزشی",
-      image: "assets/img/team/2.jpg",
+      image: "assets/img/team/2.png",
     },
     {
       name: "سهیل حجازی یکتا",
       post: "مدیر آکادمی کارشناسی ارشد",
-      image: "assets/img/team/3.jpg",
+      image: "assets/img/team/3.png",
     },
     {
       name: "تینا نجفی",
       post: "مدیر ارشد فروش، پشتیبانی و عملیات",
-      image: "assets/img/team/4.jpg",
+      image: "assets/img/team/4.png",
     },
     {
       name: "فاطمه موسوی",
       post: "مدیر واحد عملیات",
-      image: "assets/img/team/5.jpg",
+      image: "assets/img/team/5.png",
     },
     {
       name: "پردیس حاجی طالب",
       post: "مدیر واحد ارتباط با مخاطبین",
-      image: "assets/img/team/6.jpg",
+      image: "assets/img/team/6.png",
     },
     {
       name: "آریا عیسی نیا",
       post: "کارشناس پشتیبانی",
-      image: "assets/img/team/7.jpg",
+      image: "assets/img/team/7.png",
     },
     {
       name: "شینا عیسی نیا",
       post: "کارشناس عملیات",
-      image: "assets/img/team/8.jpg",
+      image: "assets/img/team/8.png",
     },
     {
       name: "زهرا سمیع",
       post: "دیزاینر",
-      image: "assets/img/team/9.jpg",
+      image: "assets/img/team/9.png",
     },
     {
       name: "عطیه اکبری",
       post: "دیزاینر",
-      image: "assets/img/team/10.jpg",
+      image: "assets/img/team/10.png",
     },
     {
       name: "مجید محبی",
       post: "دیزاینر",
-      image: "assets/img/team/11.jpg",
+      image: "assets/img/team/11.png",
     },
     {
       name: "فائزه نورمندی",
       post: "سوشال منیجر",
-      image: "assets/img/team/12.jpg",
-    },
-    {
-      name: "سحر کندری",
-      post: "مدیر ارشد مارکتینگ",
-      image: "assets/img/team/13.jpg",
+      image: "assets/img/team/12.png",
     },
   ]
 

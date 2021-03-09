@@ -130,20 +130,9 @@
 		<br>
 		<br>
 
-		<div class="col-lg-12 col-md-12 flex justify-center">
-			<mat-paginator
-				style="width: 100px;"
-				type="number"
-				*ngIf="users"
-				name="paginator"
-				 ngDefaultControl
-				style="direction: ltr;"
-				[length]="pag.totalItems"
-				[pageSize]="pag.itemsPerPage"
-				[(ngModel)]="pag.currentPage"
-				(page)="pageEvent = pageChanged($event)"
-			>
-			</mat-paginator>
+		<div class="col-lg-12 col-md-12 flex justify-center"  style="direction:ltr">
+			<p-paginator *ngIf="users" ngDefaultControl [(ngModel)]="pag.currentPage" [rows]="pag.itemsPerPage"
+			[totalRecords]="pag.totalItems" (onPageChange)="pac=pageChanged($event)"></p-paginator>
 	</div>
 </div>
 

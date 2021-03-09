@@ -45,7 +45,7 @@ export class PCVideosComponent implements OnInit {
   
   
     loadCourses(){
-      this.userParams.isActive = true;
+      this.userParams.isActive = false;
       this.courseService.getUserCourses(this.pag.currentPage , this.pag.itemsPerPage , this.userParams)
       .subscribe((res: PaginatedResult<Course[]>) => {
         this.courses = res.result;

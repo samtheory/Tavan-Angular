@@ -26,7 +26,7 @@ userParams: any = {};
   }
 
   gerUserFirstPage(){
-    this.authService.getUsers(1 , 10).subscribe((res: PaginatedResult<User[]>) => {
+    this.authService.getUsers(1 , 50).subscribe((res: PaginatedResult<User[]>) => {
       this.users = res.result;
       this.pag = res.pag;
     });
@@ -46,12 +46,12 @@ userParams: any = {};
   }
 
   pageChanged(event: any): void{
-    this.pag.currentPage = event.pageIndex + 1;
+    this.pag.currentPage = event.page + 1;
     this.loadUsers();
   }
 
   seaerch(){
-    this.authService.getUsers(1 , 10, this.userParams).subscribe((res: PaginatedResult<User[]>) => {
+    this.authService.getUsers(1 , 50, this.userParams).subscribe((res: PaginatedResult<User[]>) => {
       this.users = res.result;
       this.pag = res.pag;
     });

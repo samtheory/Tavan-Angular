@@ -34,7 +34,7 @@
   <div class="flex flex-wrap justify-evenly items-center sm:flex-row flex-col">
     <div class="flex items-center flex-col my-16">
       <svg-skills></svg-skills>
-      <p class="mt-8 text-lg font-bold">مهارت پروری</p>
+      <p class="mt-8 text-lg font-bold">مهارت‌پروری</p>
     </div>
     <div class="flex items-center flex-col my-16">
       <svg-universality></svg-universality>
@@ -49,11 +49,11 @@
 <section #main name="body" class="bg-gray-100 rounded-t-3xl py-14">
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10">
     <div class="head flex justify-between items-center px-6 mb-4">
-      <h2 class="font-bold sm:text-xl text-lg">دوره های درحال برگزاری</h2>
+      <h2 class="font-bold sm:text-xl text-lg">دوره‌های در حال برگزاری</h2>
 
       <!-- TODO: Link should be FIX    -->
       <a [routerLink]="['/search', {isActive: true}]"
-        class="rounded-md text-sm sm:text-base border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
+        class="w-160 rounded-md text-sm sm:text-base border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200">مشاهده
         همه</a>
 
     </div>
@@ -79,10 +79,10 @@
   </div>
   <div class="course-group flex flex-col mb-20 m-auto max-w-1400 lg:px-10 ">
     <div class="head flex justify-between items-center px-6 mb-4">
-      <h2 class="font-bold sm:text-xl text-lg">دوره های برگزار شده</h2>
+      <h2 class="font-bold sm:text-xl text-lg">دوره‌های برگزار شده</h2>
       <!-- TODO: Link should be FIX    -->
       <a [routerLink]="['/search', {isActive: false}]"
-        class="rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 text-sm sm:text-base duration-200">مشاهده
+        class="w-160 rounded-md border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 text-sm sm:text-base duration-200">مشاهده
         همه</a>
     </div>
     <div class="px-4 md:px-0" style="direction: ltr; ">
@@ -107,11 +107,11 @@
   </div>
   <div class="course-group flex flex-col mb-6 m-auto max-w-1400 lg:px-10">
     <div class="head flex justify-between px-6 mb-4 items-center">
-      <h2 class="font-bold text-lg sm:text-xl">دوره های رایگان</h2>
+      <h2 class="font-bold text-lg sm:text-xl">دوره‌های رایگان</h2>
 
       <!-- TODO: Link should be FIX    -->
       <a [routerLink]="['/search', {isfree: true}]"
-        class="rounded-md text-sm sm:text-base border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 ">مشاهده
+        class="w-160 rounded-md text-sm sm:text-base border-blue-500 px-4 py-1 md:px-8 md:py-2 border-solid border-2 mx-2 hover:bg-blue-500 hover:text-white text-blue-500 duration-200 ">مشاهده
         همه</a>
     </div>
     <div class="px-4 md:px-0" style="direction: ltr">
@@ -168,7 +168,7 @@
         </div>
         <div class="information px-4">
           <div class="number font-bold text-xl">{{localVar.totalUsers}}</div>
-          <div class="title">نفر ثبت نام دوره</div>
+          <div class="title">نفر ثبت‌نام کننده</div>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@
         </div>
         <div class="information px-4">
           <div class="number font-bold text-xl">{{localVar.totalTeachers}}</div>
-          <div class="title">استاد دوره آموزشی</div>
+          <div class="title">مدرس</div>
         </div>
       </div>
     </div>

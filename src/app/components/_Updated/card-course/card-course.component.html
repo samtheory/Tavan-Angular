@@ -16,23 +16,23 @@
             <h5 *ngIf="course.id"  [routerLink]="['/webinar/', course.id]" class="sm:text-lg text-base font-bold pt-7 sm:py-4 cursor-pointer focus:outline-none outline-none">{{course.title}}</h5>
          </a>
          <div *ngIf="course.courseTeachers"> 
-         <p  class="sm:py-3 py-1"><span class="font-bold">مدرس :
+         <p  class="sm:py-3 py-1"><span class="font-bold">مدرس:
                <p  class="inline p-2 " *ngFor="let courseTeacher of course.courseTeachers">{{courseTeacher.teacher.name}}
                </p>
             </span>
          </p>
         </div>
          <p class="py-1 sm:py-3">
-            <span class="font-bold">مدت دوره :</span> {{course.hours}} ساعت
+            <span class="font-bold">مدت دوره:</span> {{course.hours}} ساعت
          </p>
          <p class="py-1 sm:py-3">
-            <span class="font-bold"> میزان رضایت مندی : </span>
+            <span class="font-bold"> میزان رضایت مندی: </span>
              <span class=" py-2 sm:py-0"><i
                   class="fas fa-star text-yellow-500 rounded border border-gray-100 border-solid p-1 mx-2"><span class="px-1 text-black">{{course.rate}}</span></i>
             </span>
          </p>
          <p class="py-1 sm:py-3">
-            <span class="font-bold"> تاریخ : </span>
+            <span class="font-bold"> تاریخ: </span>
             <span class=" p-1 mx-2 text-black"> {{course.started | PersianDate}}
             </span>
          </p>

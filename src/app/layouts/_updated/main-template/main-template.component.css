@@ -18,3 +18,10 @@
 .translate-bar{
   transform: translateY(-24px);
 }
+
+.alert p , .alert button {
+  
+  -webkit-background-clip: text;
+    color: transparent;
+    -webkit-filter: invert() sepia();
+}

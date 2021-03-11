@@ -39,8 +39,8 @@ export class AboutUsUComponent implements OnInit {
       image: "assets/img/team/2.png",
     },
     {
-      name: "سهیل حجازی یکتا",
-      post: "مدیر آکادمی کارشناسی ارشد",
+      name: "سهیل حجازی‌یکتا",
+      post: "مدیر آکادمی کارشناسی‌ارشد",
       image: "assets/img/team/3.png",
     },
     {
@@ -54,17 +54,17 @@ export class AboutUsUComponent implements OnInit {
       image: "assets/img/team/5.png",
     },
     {
-      name: "پردیس حاجی طالب",
+      name: "پردیس حاجی‌طالب",
       post: "مدیر واحد ارتباط با مخاطبین",
       image: "assets/img/team/6.png",
     },
     {
-      name: "آریا عیسی نیا",
+      name: "آریا عیسی‌نیا",
       post: "کارشناس پشتیبانی",
       image: "assets/img/team/7.png",
     },
     {
-      name: "شینا عیسی نیا",
+      name: "شینا عیسی‌نیا",
       post: "کارشناس عملیات",
       image: "assets/img/team/8.png",
     },

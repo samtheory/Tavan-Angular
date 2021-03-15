@@ -21,6 +21,7 @@ export class PAOrdersComponent implements OnInit {
   ngOnInit(): void {
     this.gerUserFirstPage();
     this.getCourses();
+    this.userParams.productId = '';
   }
 
   gerUserFirstPage(){

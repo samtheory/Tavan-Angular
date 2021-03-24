@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Carousel } from 'primeng/carousel';
 import { Course } from 'src/app/_models/course';
 import { PaginatedResult } from 'src/app/_models/pagination';
 import { Teacher } from 'src/app/_models/teacher';
@@ -35,7 +36,9 @@ courses: Course[];
 userParams: any = {};
 
 
-  constructor(private teacherService: TeacherService, private route: ActivatedRoute, private courseService: CourseService, private router: Router) { }
+  constructor(private teacherService: TeacherService, private route: ActivatedRoute, private courseService: CourseService, private router: Router) { 
+    Carousel.prototype.onTouchMove = () => { };
+  }
 
   ngOnInit(): void {
     this.getTeacher();

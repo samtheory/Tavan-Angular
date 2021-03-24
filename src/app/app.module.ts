@@ -37,7 +37,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
+
 
 
 
@@ -193,7 +193,7 @@ export function tokenGeter() {
     UsersTableComponent,
     DiscountTableComponent,
     SlidShowComponent,
-    LandingLayoutComponent,
+  
     PASlideShowComponent,
     PADiscountComponent,
     PAAllUserComponent,

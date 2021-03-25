@@ -32,6 +32,10 @@ export class TeacherService {
     return this.http.put(this.baseUrl + 'update/' + id , teacher);
   }
 
+  createOrupdateTeacherSkyUser(id: number){
+    return this.http.post(this.baseUrl + 'cuskyteacher/' + id , {});
+  }
+
   deleteTeacher(id: number){
     return this.http.post(this.baseUrl + 'delete/' + id, {});
   }

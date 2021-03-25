@@ -7,6 +7,7 @@ import { Course } from '../_models/course';
 import { Coursenamelist } from '../_models/coursenamelist';
 import { PaginatedResult } from '../_models/pagination';
 import { Session } from '../_models/session';
+import { UserLoginResponse } from '../_models/UserLoginResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -108,6 +109,10 @@ export class CourseService {
   getCourse(id: number): Observable<Course>{
    return this.http.get<Course>(this.baseUrl + id);
  }
+
+  getLoginUrl(id: number): Observable<UserLoginResponse>{
+    return this.http.get<UserLoginResponse>(this.baseUrl + 'GetLoginUrl/' + id);
+  }
  getCoursesList(): Observable<Coursenamelist[]>{
   return this.http.get<Coursenamelist[]>(this.baseUrl);
 }

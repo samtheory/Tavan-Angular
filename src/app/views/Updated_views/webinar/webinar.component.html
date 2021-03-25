@@ -121,7 +121,7 @@
                      </div>
                      <div class="md:w-6/12 w-full">
                
-                        <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="{{course.media.pdfUrl}}">دانلود
+                        <a *ngIf="course.media.pdfUrl && course.media.pdfUrl !== 'null' && course.media.pdfUrl !== null " class="text-orange-500 px-3" href="{{course.media.pdfUrl}}">دانلود
                            فایل پی دی اف
                            <i class="pi pi-download px-2"></i>
                         </a>
@@ -200,7 +200,7 @@
                            <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                         </div>
 
-                        <div class="session" [innerHTML]="course.titres">
+                        <div *ngIf="course.titres !== 'null' && course.titres !== null   " class="session" [innerHTML]="course.titres">
 
                         </div>
                         <div class="py-4 flex flex-wrap items-center">
@@ -229,7 +229,7 @@
                      </div>
                      <div class="md:w-6/12 w-full">
    
-                        <a *ngIf="course.media.pdfUrl" class="text-orange-500 px-3" href="{{course.media.pdfUrl}}">دانلود
+                        <a *ngIf="course.media.pdfUrl && course.media.pdfUrl !== 'null' && course.media.pdfUrl !== null " class="text-orange-500 px-3" href="{{course.media.pdfUrl}}">دانلود
                            فایل پی دی اف
                            <i class="pi pi-download px-2"></i>
                         </a>
@@ -256,9 +256,9 @@
                </div>
                <div class="flex flex-wrap">
 
-                  <p class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;" [innerHTML]="course.description"></p>
+                  <p *ngIf="course.description !== 'null' && course.description !== null " class="pl-0 md:pl-10 mb-10 " style="max-width: 700px;" [innerHTML]="course.description"></p>
                </div>
-               <section *ngIf="course.media.videoUrl !== '' && course.media.videoUrl !== null "  id="intro">
+               <section *ngIf="course.media.videoUrl !== '' && course.media.videoUrl !== 'null' && course.media.videoUrl !== null "  id="intro">
 
                   <h1 class="text-xl font-bold">ویدیو معرفی دوره</h1>
                   <div class="relative w-full flex flex-col justify-center pt-2 pb-8">
@@ -266,7 +266,7 @@
                      <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                   </div>
                   <div class="video rounded-2xl w-full  my-8">
-                     <div *ngIf="course.media.videoUrl !== '' && course.media.videoUrl !== null " class="r1_iframe_embed">
+                     <div *ngIf="course.media.videoUrl !== '' && course.media.videoUrl !== 'null' && course.media.videoUrl !== null " class="r1_iframe_embed">
                         <iframe [src]="course.media.videoUrl | arvan" frameborder="0"
                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                            allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
@@ -363,7 +363,7 @@
                      <div class="bg-blue-500 w-20 h-2 rounded-full absolute"></div>
                   </div>
 
-                  <div class="session" [innerHTML]="course.titres">
+                  <div *ngIf="course.titres !== 'null' && course.titres!== null " class="session" [innerHTML]="course.titres">
 
                   </div>
                   <div class="py-4 flex flex-wrap items-center">

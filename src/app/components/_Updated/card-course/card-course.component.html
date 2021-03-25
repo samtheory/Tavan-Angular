@@ -4,7 +4,7 @@
       <a  [routerLink]="['/webinar/', course.id]" class=" card-img w-full relative flex justify-center items-center cursor-pointer outline-none">
          <img class=" rounded-t-lg" [src]="course.media.photoUrl" alt="" />
          <div class="darken w-full top-0 bottom-0 rounded-t-lg bg-black opacity-95 absolute"></div>
-         <div class="dec absolute text-white px-5 text-xs sm:text-base"  [innerHTML]="course.description"> </div>
+         <div *ngIf="course.description !== 'null' && course.description != null " class="dec absolute text-white px-5 text-xs sm:text-base"  [innerHTML]="course.description"> </div>
       </a>
       
       <div class="content  relative px-2">

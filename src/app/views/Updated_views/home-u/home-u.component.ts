@@ -114,7 +114,7 @@ export class HomeUComponent implements OnInit {
 
   getafirstPage(){
     this.useraParams.isActive = true;
-    this.courseService.getCourses(1 , 6, this.useraParams).subscribe((res: PaginatedResult<Course[]>) => {
+    this.courseService.getCourses(1 , 9, this.useraParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.aCourses = res.result;
       this.pag = res.pag;
       console.log(this.aCourses);
@@ -123,7 +123,7 @@ export class HomeUComponent implements OnInit {
 
   getdfirstPage(){
     this.userdParams.isActive = false;
-    this.courseService.getCourses(1 , 6, this.userdParams).subscribe((res: PaginatedResult<Course[]>) => {
+    this.courseService.getCourses(1 , 9, this.userdParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.dCourses = res.result;
       this.pag = res.pag;
       console.log(this.dCourses);
@@ -132,7 +132,7 @@ export class HomeUComponent implements OnInit {
 
   getsfirstPage(){
     this.usersParams.isfree = true;
-    this.courseService.getsfCourses(1 , 6, this.usersParams).subscribe((res: PaginatedResult<Course[]>) => {
+    this.courseService.getsfCourses(1 , 9, this.usersParams).subscribe((res: PaginatedResult<Course[]>) => {
       this.sCourses = res.result;
       this.pag = res.pag;
       console.log(this.sCourses);

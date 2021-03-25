@@ -60,7 +60,6 @@ export class WebinarComponent implements OnInit {
         {
           this.url = this.course.videos[0].url;
         }
-      console.log(course);
     });
 
 
@@ -97,9 +96,9 @@ export class WebinarComponent implements OnInit {
     this.courseService.getLoginUrl(this.course.id).subscribe(response => {
       this.responseUserlogin = response;
 
-      // this.router.navigate(['skyroom/' , response.result]);
+      this.router.navigate(['/skyroom/' , this.responseUserlogin.result]);
 
-      window.location.href = response.result;
+      // window.location.href = response.result;
     });
   }
 

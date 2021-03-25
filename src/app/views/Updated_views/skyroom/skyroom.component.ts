@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserLoginResponse } from 'src/app/_models/UserLoginResponse';
 
 @Component({
   selector: 'app-skyroom',
@@ -8,10 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SkyroomComponent implements OnInit {
   url: string;
-  constructor(private route: ActivatedRoute) { }
+
+  responseLoginUrl: UserLoginResponse;
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.url = this.route.snapshot.params['url'];
+    console.log(this.url);
   }
 
 

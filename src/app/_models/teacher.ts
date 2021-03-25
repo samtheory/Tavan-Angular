@@ -7,5 +7,6 @@ export interface Teacher {
     title: string;
     description: string;
     image_path: string;
+    sky_password: string;
     courseTeachers: CourseTeacher[];
 }

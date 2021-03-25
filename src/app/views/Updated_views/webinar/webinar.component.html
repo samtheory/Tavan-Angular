@@ -170,7 +170,7 @@
                         </a>
                         <p *ngIf="course.isfor && !course.isActive" class="font-bold text-warning">شما قبلا در این دوره شرکت کرده اید</p>
                         <a *ngIf="course.isfor && course.isActive"
-                        href="//{{course.url}}"
+                        (click)="getLoginUrl()"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
                            ورود به کارگاه آنلاین
                         </a>
@@ -331,7 +331,7 @@
                   </a>
                   <p *ngIf="course.isfor && !course.isActive" class="text-warning">شما قبلا در این دوره شرکت کرده اید</p>
                   <a *ngIf="course.isfor && course.isActive"
-                  href="//{{course.url}}"
+                  (click)="getLoginUrl()"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">
                      ورود به کارگاه آنلاین</a>
 

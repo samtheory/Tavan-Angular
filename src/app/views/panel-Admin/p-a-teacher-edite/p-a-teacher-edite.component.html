@@ -11,6 +11,12 @@
                      type="submit" (click)="updateTeacher()">
             ثبت تغییرات
                   </button>
+
+                  <button 
+                  class="hover:border-blue-900 hover:bg-transparent hover:text-blue-900 border-2 border-transparent bg-blue-900 text-white active:bg-red-700  uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                  type="button" (click)="updateSkyRoomTeacher()">
+         ثبت در اسکاری روم
+               </button>
                </div>
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
@@ -36,6 +42,15 @@
                         عنوان
                         </label>
                         <input name="title" [(ngModel)]="teacher.title" formControlName="title" type="text"
+                           class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
+                            />
+                     </div>
+                     <div class="relative w-full mb-3">
+                        <label class="mt-2 block uppercase text-gray-700 text-xs font-bold mb-2"
+                           htmlFor="grid-password">
+                        رمز عبور استاد
+                        </label>
+                        <input name="sky_password" [(ngModel)]="teacher.sky_password" formControlName="sky_password" type="text"
                            class="px-3 py-3 border-2 border-gray-700 placeholder-gray-400 text-gray-700 bg-gray-200 rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 focus:bg-white"
                             />
                      </div>

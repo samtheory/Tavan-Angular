@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { User } from 'src/app/_models/user';
+import { UserLoginResponse } from 'src/app/_models/UserLoginResponse';
 import { AuthService } from 'src/app/_services/auth.service';
 import { CourseService } from 'src/app/_services/course.service';
 import { OffService } from 'src/app/_services/off.service';
@@ -32,6 +33,7 @@ export class WebinarComponent implements OnInit {
   dialogNotActivated =false;
   dialogLogin =false ;
   offIsOn = false ;
+  responseUserlogin: UserLoginResponse; 
   beforeOffPrice : number;
   discount : number ;
   constructor(private courseService: CourseService, private route: ActivatedRoute,
@@ -65,7 +67,6 @@ export class WebinarComponent implements OnInit {
   }
   getUrl(event) {
     this.url = event.target.value;
-    console.log(this.url);
   }
 
   getOff(){
@@ -90,6 +91,16 @@ export class WebinarComponent implements OnInit {
     if(this.user.isActive === true) {
       this.isActive = true;
     }
+  }
+
+  getLoginUrl(){
+    this.courseService.getLoginUrl(this.course.id).subscribe(response => {
+      this.responseUserlogin = response;
+
+      // this.router.navigate(['skyroom/' , response.result]);
+
+      window.location.href = response.result;
+    });
   }
 
   buyCourse(id: number){

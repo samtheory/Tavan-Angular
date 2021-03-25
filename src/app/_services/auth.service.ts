@@ -67,6 +67,10 @@ updateUserAdmin(user: FormData, id: number) {
   return this.http.post(this.baseUrl + 'update/' + id, user);
 }
 
+activateUser(id: number){
+  return this.http.post(this.baseUrl + 'activateuser/' + id, {});
+}
+
 
 AdminRegister(user: FormData) {
   return this.http.post(this.baseUrl + 'adminregister', user);

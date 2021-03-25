@@ -39,6 +39,7 @@ export class PATeacherEditeComponent implements OnInit {
     this.teacherForm = this.formBuilder.group({
       title: ['', Validators.required],
       name: ['', Validators.required],
+      sky_password:  [''],
       description: [''],
       file: ['',Validators.required],
       fileSource: ['',Validators.required],
@@ -73,6 +74,7 @@ export class PATeacherEditeComponent implements OnInit {
     }
     formData.append('title', this.teacherForm.get('title').value);
     formData.append('name', this.teacherForm.get('name').value);
+    formData.append('sky_password', this.teacherForm.get('sky_password').value);
     formData.append('description', this.teacherForm.get('description').value);
     
 
@@ -85,6 +87,12 @@ export class PATeacherEditeComponent implements OnInit {
           this.toastr.error(error);
       })
       
+  }
+
+  updateSkyRoomTeacher(){
+    this.teacherService.createOrupdateTeacherSkyUser(this.teacher.id).subscribe(next => {
+      this.toastr.success("با موفقیت در اسکای رو اپدیت شد");
+    });
   }
 
   onSubmit() {

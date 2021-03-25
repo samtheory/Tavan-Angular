@@ -46,6 +46,11 @@
 					<th
 						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
 					>
+					نام  
+					</th>
+					<th
+						class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
+					>
 					نام خانوادگی 
 					</th>
 					<th
@@ -77,6 +82,11 @@
 					<td
 						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
 					>
+						{{user.firstName}}
+					</td>
+					<td
+						class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2 text-left"
+					>
 						{{user.lastName}}
 					</td>
 					<td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
@@ -91,6 +101,12 @@
 								class="text-xs inline-block py-1  px-2 uppercase rounded text-white bg-warning hover:opacity-80 hover:shadow-md  last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
 							>
 								<i (click)="deleteUser(user.id)" class="fas fa-trash text-base"></i>
+							</span>
+							<span
+							*ngIf="!user.isActive"
+								class="text-xs inline-block py-1  px-2 uppercase rounded text-white bg-blue-900 hover:opacity-80 hover:shadow-md  last:mr-0 mr-1 cursor-pointer duration-300 mx-3"
+							>
+								<i (click)="activateUser(user.id)" class="fas fa-check text-base"></i>
 							</span>
 
 							<a [routerLink]="['/admin/EditUser/', user.id]">

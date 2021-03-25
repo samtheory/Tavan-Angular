@@ -75,4 +75,11 @@ userParams: any = {};
     });
   }
 
+
+  activateUser(id: number){
+    this.authService.activateUser(id).subscribe(next => {
+      this.toastr.success("با موفقیت تایید شد");
+    })
+  }
+
 }

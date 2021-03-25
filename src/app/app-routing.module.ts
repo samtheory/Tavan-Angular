@@ -66,6 +66,7 @@ import { ActiveComponent } from './views/Updated_views/active/active.component';
 import { SuccessPurchaseFreeComponent } from './views/Updated_views/success-purchase-free/success-purchase-free.component';
 import { UploadComponent } from './views/panel-admin/upload/upload.component';
 import { TestComponent } from './views/test/test.component';
+import { SkyroomComponent } from './views/Updated_views/skyroom/skyroom.component';
 //un organized
 
 
@@ -89,6 +90,7 @@ const routes: Routes = [
       { path: 'webinar/:id', component: WebinarComponent },
       { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: 'success/:id', component: SuccessPurchaseFreeComponent },
+      { path: 'skyroom/:url', component: SkyroomComponent },
       { path: '', component: HomeUComponent },
       { path: 'pass/:username/:id', component: PasswordUpdateComponent },
       {

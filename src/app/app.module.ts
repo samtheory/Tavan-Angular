@@ -170,6 +170,7 @@ import { ActiveComponent } from './views/Updated_views/active/active.component';
 import { SuccessPurchaseFreeComponent } from './views/Updated_views/success-purchase-free/success-purchase-free.component';
 import { UploadComponent } from './views/panel-admin/upload/upload.component';
 import { TestComponent } from './views/test/test.component';
+import { SkyroomComponent } from './views/Updated_views/skyroom/skyroom.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -274,6 +275,7 @@ export function tokenGeter() {
     SuccessPurchaseFreeComponent,
     UploadComponent,
     TestComponent,
+    SkyroomComponent,
   ],
   imports: [
     PaginatorModule,

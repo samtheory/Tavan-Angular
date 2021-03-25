@@ -1,0 +1,70 @@
+.p {
+  z-index: 1000;
+  font-size: 100px;
+  text-align: center;
+  position: absolute;
+  width: 20%;
+  color: #fff;
+  padding-top: 100px;
+}
+
+.slider {
+  overflow: hidden;
+  height: 350px;
+
+  img {
+    background-color: #4343;
+  }
+  figure {
+    position: relative;
+   //  width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slidy infinite;
+    .slide {
+      width: 20%;
+      float: left;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+@keyframes slidy {
+  0% {
+    left: 0;
+  }
+  10% {
+    left: 0%;
+  }
+  12% {
+    left: -100%;
+  }
+  12% {
+    left: -100%;
+  }
+  24% {
+    left: -200%;
+  }
+  34% {
+    left: -200%;
+  }
+  36% {
+    left: -300%;
+  }
+  46% {
+    left: -300%;
+  }
+  48% {
+    left: -400%;
+  }
+  58% {
+    left: -400%;
+  }
+  60% {
+    left: -300%;
+  }
+  96% {
+    left: 0;
+  }
+}

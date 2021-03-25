@@ -16,7 +16,7 @@
 }
 
 .translate-bar{
-  transform: translateY(-24px);
+  /* transform: translateY(-24px); */
 }
 
 .alert p , .alert button {

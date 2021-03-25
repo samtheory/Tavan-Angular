@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Carousel } from 'primeng/carousel';
 import { aboutUsPage } from 'src/app/_Constant/data';
 import { TeacherToList } from 'src/app/_models/teacherToList';
 import { TeacherService } from 'src/app/_services/teacher.service';
@@ -90,7 +91,9 @@ export class AboutUsUComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() { 
+    Carousel.prototype.onTouchMove = () => { };
+  }
 
   ngOnInit(): void {
 

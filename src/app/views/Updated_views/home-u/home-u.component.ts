@@ -10,13 +10,14 @@ import { CourseService } from 'src/app/_services/course.service';
 import { PhotoService } from 'src/app/_services/photo.service';
 import { TeacherService } from 'src/app/_services/teacher.service';
 import { UserService } from 'src/app/_services/user.service';
-
+import { Carousel } from 'primeng/carousel';
 @Component({
   selector: 'app-home-u',
   templateUrl: './home-u.component.html',
   styleUrls: ['./home-u.component.scss']
 })
 export class HomeUComponent implements OnInit {
+  
   aCourses: Course[];
   dCourses: Course[];
   sCourses: Course[];
@@ -80,7 +81,10 @@ export class HomeUComponent implements OnInit {
 
 
   constructor(private courseService: CourseService, private toastr: ToastrService, private photoService: PhotoService,
-     private route: ActivatedRoute, private teacherService: TeacherService, private mainService: UserService, private router: Router) { }
+     private route: ActivatedRoute, private teacherService: TeacherService, private mainService: UserService, private router: Router) { 
+      Carousel.prototype.onTouchMove = () => { };
+    
+     }
   
   ngOnInit(): void {
    this.getafirstPage();

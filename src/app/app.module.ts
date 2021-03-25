@@ -37,7 +37,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
+
 
 
 
@@ -169,6 +169,7 @@ import { VideosUComponent } from './views/Updated_views/videos-u/videos-u.compon
 import { ActiveComponent } from './views/Updated_views/active/active.component';
 import { SuccessPurchaseFreeComponent } from './views/Updated_views/success-purchase-free/success-purchase-free.component';
 import { UploadComponent } from './views/panel-admin/upload/upload.component';
+import { TestComponent } from './views/test/test.component';
 export function tokenGeter() {
   return localStorage.getItem('token');
 }
@@ -192,7 +193,7 @@ export function tokenGeter() {
     UsersTableComponent,
     DiscountTableComponent,
     SlidShowComponent,
-    LandingLayoutComponent,
+  
     PASlideShowComponent,
     PADiscountComponent,
     PAAllUserComponent,
@@ -272,6 +273,7 @@ export function tokenGeter() {
     ActiveComponent,
     SuccessPurchaseFreeComponent,
     UploadComponent,
+    TestComponent,
   ],
   imports: [
     PaginatorModule,

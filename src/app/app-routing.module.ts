@@ -71,6 +71,7 @@ import { SkyroomComponent } from './views/Updated_views/skyroom/skyroom.componen
 
 
 const routes: Routes = [
+  { path: 'skyroom/:url', component: SkyroomComponent },
 
   //.:: Main Page Route ::.
   {
@@ -90,7 +91,6 @@ const routes: Routes = [
       { path: 'webinar/:id', component: WebinarComponent },
       { path: 'checkpayment/:id', component: SuccessPurchaseUComponent },
       { path: 'success/:id', component: SuccessPurchaseFreeComponent },
-      { path: 'skyroom/:url', component: SkyroomComponent },
       { path: '', component: HomeUComponent },
       { path: 'pass/:username/:id', component: PasswordUpdateComponent },
       {

@@ -6,6 +6,7 @@ export interface Order {
     productId: number;
     productName: string;
     userEmail: string;
+    isActive: boolean;
     created_at: Date;
 
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Course } from 'src/app/_models/course';
 import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
+import { UserLoginResponse } from 'src/app/_models/UserLoginResponse';
 import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
@@ -14,11 +15,12 @@ export class PCVideosComponent implements OnInit {
 
   // ! THIS IS FAKE INFORMATION    
 
-
+  
   courses: Course[];
   pag: Pagination;
   userParams: any = {};
-    constructor(private courseService: CourseService , private toastr: ToastrService, private route: ActivatedRoute) { }
+    constructor(private courseService: CourseService , private toastr: ToastrService, private route: ActivatedRoute, 
+      private router: Router) { }
   
     ngOnInit(): void {
       // this.route.data.subscribe(data => {
@@ -42,6 +44,8 @@ export class PCVideosComponent implements OnInit {
     this.pag.currentPage = event.page + 1;
     this.loadCourses();
   }
+
+  
   
   
     loadCourses(){

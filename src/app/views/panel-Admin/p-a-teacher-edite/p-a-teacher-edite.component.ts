@@ -39,6 +39,7 @@ export class PATeacherEditeComponent implements OnInit {
     this.teacherForm = this.formBuilder.group({
       title: ['', Validators.required],
       name: ['', Validators.required],
+      email: [''],
       sky_password:  [''],
       description: [''],
       file: ['',Validators.required],
@@ -74,6 +75,7 @@ export class PATeacherEditeComponent implements OnInit {
     }
     formData.append('title', this.teacherForm.get('title').value);
     formData.append('name', this.teacherForm.get('name').value);
+    formData.append('email', this.teacherForm.get('email').value);
     formData.append('sky_password', this.teacherForm.get('sky_password').value);
     formData.append('description', this.teacherForm.get('description').value);
     

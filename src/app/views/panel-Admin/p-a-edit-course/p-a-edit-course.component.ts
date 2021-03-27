@@ -137,6 +137,7 @@ selected = 'option one';
       videoUrl: [''],
       videoId: [''],
       isActive: [''],
+      maxUsers: [''],
       pdfUrl: [''],
       hours: [''],
       suggest: [''],
@@ -184,6 +185,10 @@ selected = 'option one';
     }
     if(this.courseForm.get('spfileSource').value){
       formData.append('spfile', this.courseForm.get('spfileSource').value);
+    }
+
+    if(this.courseForm.get('maxUsers').value){
+      formData.append('maxUsers', this.courseForm.get('maxUsers').value);
     }
     formData.append('title', this.courseForm.get('title').value);
     formData.append('cost', this.courseForm.get('cost').value);

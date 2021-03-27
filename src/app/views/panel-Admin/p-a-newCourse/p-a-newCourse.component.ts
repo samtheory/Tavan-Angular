@@ -55,6 +55,7 @@ export class PANewCourseComponent implements OnInit {
       isActive: [''],
       suggest: [''],
       hours: [''],
+      maxUsers: [''],
       pdfUrl: [''],
       titres: [''],
       description: [''],
@@ -116,6 +117,10 @@ export class PANewCourseComponent implements OnInit {
     });
     for (const teacherId of  this.courseForm.get('teachersId').value) {
       formData.append('teachersId[]', teacherId);
+    }
+
+    if(this.courseForm.get('maxUsers').value){
+      formData.append('maxUsers', this.courseForm.get('maxUsers').value);
     }
       formData.append('sessions', JSON.stringify(this.courseForm.get('sessions').value));
     

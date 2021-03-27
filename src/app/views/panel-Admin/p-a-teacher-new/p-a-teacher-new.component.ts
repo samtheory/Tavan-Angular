@@ -26,6 +26,7 @@ export class PATeacherNewComponent implements OnInit {
     this.teacherForm = this.formBuilder.group({
       title: ['', Validators.required],
       name: ['', Validators.required],
+      email: [''],
       sky_password: [''],
       description: [''],
       file: ['',Validators.required],
@@ -57,6 +58,7 @@ export class PATeacherNewComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', this.teacherForm.get('fileSource').value);
     formData.append('title', this.teacherForm.get('title').value);
+    formData.append('email', this.teacherForm.get('email').value);
     formData.append('sky_password', this.teacherForm.get('sky_password').value);
     formData.append('name', this.teacherForm.get('name').value);
     formData.append('description', this.teacherForm.get('description').value);

@@ -29,6 +29,11 @@
                  <option value="" selected>همه محصولات</option>
                  <option *ngFor="let course of courses" value="{{course.id}}">{{course.title}}</option>
               </select>
+              <select *ngIf="userParams" class="border border-black border-solid rounded px-2 " [(ngModel)]="userParams.isActive" name="isActive" id="isActive" >
+               <option value="" selected>همه محصولات</option>
+               <option  value="true">سفارشات در حال برگزاری</option>
+               <option  value="false">سفارشات برگزار شده</option>
+            </select>
                <!-- ! this is tricky  -->
                <div class=" text-white opacity-0">sdsdsd</div>   
                      <button
@@ -60,6 +65,10 @@
                        ایمیل کاربر
                      </th>
                      <th
+                     class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
+                     وضعیت دوره
+                     </th>
+                     <th
                         class="px-6 bg-teal-200 text-mesh-700 align-middle border border-solid border-mesh-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                        تاریخ خرید
                      </th>
@@ -87,6 +96,12 @@
                      </td>
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
                         {{order.userEmail}}
+                     </td>
+                     <td *ngIf="order.isActive" class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+                        در حال برگزاری
+                     </td>
+                     <td *ngIf="!order.isActive" class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
+                        برگزار شده
                      </td>
                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-no-wrap py-2">
                         {{order.created_at}}

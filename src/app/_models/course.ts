@@ -15,6 +15,7 @@ export interface Course {
     off: number;
     rate: number;
     isActive: boolean;
+    maxUsers: number;
     titres: string;
     started: Date;
     courseDays: string;

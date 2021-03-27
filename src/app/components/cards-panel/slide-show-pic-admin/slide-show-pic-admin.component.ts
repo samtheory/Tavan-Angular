@@ -28,6 +28,7 @@ export class SlideShowPicAdminComponent implements OnInit {
       name: ['', Validators.required],
       link: [null],
       color: [''],
+      nameColor: [''],
       file: ['',Validators.required],
       fileSource: ['',Validators.required],
     });
@@ -51,6 +52,7 @@ export class SlideShowPicAdminComponent implements OnInit {
     formData.append('file', this.PhotoForm.get('fileSource').value);
     formData.append('link', this.PhotoForm.get('link').value);
     formData.append('color', this.PhotoForm.get('color').value);
+    formData.append('nameColor', this.PhotoForm.get('nameColor').value);
 
       this.photoService.updatePhoto(id ,formData).subscribe(() => {
         this.toastr.success('success fully created');

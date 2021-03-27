@@ -24,6 +24,10 @@ export class OrderService {
      }
     if (userParams != null){
        params = params.append('productId', userParams.productId);
+       if(userParams.isActive != null)
+       {
+        params = params.append('isActive', userParams.isActive);
+       }
      }
     return this.http.get<Order[]>(this.baseUrl, {observe: 'response', params}).pipe(
       map(response => {

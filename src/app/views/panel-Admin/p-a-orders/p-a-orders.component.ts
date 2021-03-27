@@ -22,6 +22,7 @@ export class PAOrdersComponent implements OnInit {
     this.gerUserFirstPage();
     this.getCourses();
     this.userParams.productId = '';
+    this.userParams.isActive = '';
   }
 
   gerUserFirstPage(){

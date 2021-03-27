@@ -4,4 +4,5 @@ export interface Photo {
     url: string;
     link: string;
     color: string;
+    nameColor: string;
 }

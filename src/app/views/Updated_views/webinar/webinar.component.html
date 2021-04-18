@@ -163,8 +163,7 @@
                            <p *ngIf=" course.realCost === 0 " class="text-gray-500">رایگان</p>
                         </div>
                         <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse(course.id)"
-                           class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
-                           ویدیو دوره </a>
+                           class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید دوره و انتقال به درگاه پرداخت</a>
                         <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                            class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید بیلیت دوره
                         </a>
@@ -324,8 +323,7 @@
                      <p *ngIf="course.realCost === 0 " class="text-gray-300">رایگان</p>
                   </div>
                   <a *ngIf="!course.isActive && !course.isfor" (click)="buyCourse(course.id)"
-                     class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">تهیه
-                     ویدیو دوره</a>
+                     class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید دوره و انتقال به درگاه پرداخت</a>
                   <a *ngIf="course.isActive && !course.isfor" (click)="buyCourse(course.id)"
                      class="text-white bg-blue-500 rounded hover:bg-blue-900 hover:shadow duration-300 px-2 py-2 my-3 w-full text-center cursor-pointer">خرید بیلیت دوره
                   </a>

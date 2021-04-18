@@ -9,3 +9,7 @@ export class PaginatedResult<T> {
  result: T;
  pag: Pagination;
 }
+
+export class ExcelResult<T> {
+    result: T;
+}

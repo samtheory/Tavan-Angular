@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Coursenamelist } from 'src/app/_models/coursenamelist';
 import { Order } from 'src/app/_models/order';
-import { PaginatedResult, Pagination } from 'src/app/_models/pagination';
+import { ExcelResult, PaginatedResult, Pagination } from 'src/app/_models/pagination';
 import { CourseService } from 'src/app/_services/course.service';
 import { OrderService } from 'src/app/_services/order.service';
 
@@ -23,6 +23,7 @@ export class PAOrdersComponent implements OnInit {
     this.getCourses();
     this.userParams.productId = '';
     this.userParams.isActive = '';
+    this.userParams.saveUrl = '';
   }
 
   gerUserFirstPage(){
@@ -53,6 +54,15 @@ export class PAOrdersComponent implements OnInit {
     .subscribe((res: PaginatedResult<Order[]>) => {
       this.orders = res.result;
       this.pag = res.pag;
+    }, error => {
+      this.toastr.error(error);
+    });
+  }
+
+  getExcel(){
+    this.orderService.getExcelOrders(this.userParams)
+    .subscribe((res: ExcelResult<Order[]>) => {
+      this.orders = res.result;
     }, error => {
       this.toastr.error(error);
     });

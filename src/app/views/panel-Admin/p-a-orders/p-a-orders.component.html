@@ -45,6 +45,19 @@
                      </button>
                </div>
             </form>
+            <form #excelForm="ngForm">
+               <label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4 px-2" htmlFor="grid-password">
+                  آدرس ذخیره
+               </label>
+               <input type="text" name="saveUrl"  class="border border-black border-solid rounded px-2 " [(ngModel)]="userParams.saveUrl">
+               <button
+               (click)="getExcel()" 
+               class="bg-blue-500 hover:bg-blue-900 text-white hover:shadow-md duration-500 p-2 rounded-sm "
+               type="submit">
+               <i class="fa fa-plus-square"></i>
+               Get Excel
+            </button>
+            </form>
             <table *ngIf="orders" class="items-center w-full bg-transparent border-collapse">
                <thead>
                   <tr>

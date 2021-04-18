@@ -29,33 +29,33 @@
                  <option value="" selected>همه محصولات</option>
                  <option *ngFor="let course of courses" value="{{course.id}}">{{course.title}}</option>
               </select>
-              <select *ngIf="userParams" class="border border-black border-solid rounded px-2 " [(ngModel)]="userParams.isActive" name="isActive" id="isActive" >
+              <select *ngIf="userParams" class="border border-black border-solid rounded px-2 mx-3" [(ngModel)]="userParams.isActive" name="isActive" id="isActive" >
                <option value="" selected>همه محصولات</option>
-               <option  value="true">سفارشات در حال برگزاری</option>
+               <option  value="true " >سفارشات در حال برگزاری</option>
                <option  value="false">سفارشات برگزار شده</option>
             </select>
                <!-- ! this is tricky  -->
-               <div class=" text-white opacity-0">sdsdsd</div>   
+              
                      <button
                         (click)="loadOrders()" 
-                        class="bg-blue-500 hover:bg-blue-900 text-white hover:shadow-md duration-500 p-2 rounded-sm "
+                        class="bg-blue-500 hover:bg-blue-900 text-white hover:shadow-md duration-500 p-1 rounded "
                         type="submit">
-                        <i class="fa fa-plus-square"></i>
-                        Filter
+                        <!-- <i class="fa fa-plus-square"></i> -->
+                       فیلتر کن
                      </button>
                </div>
             </form>
-            <form #excelForm="ngForm">
-               <label class="block uppercase text-gray-700 text-xs font-bold mb-2 pr-4 px-2" htmlFor="grid-password">
+            <form #excelForm="ngForm" class="mt-7 mb-3">
+               <label class="inline uppercase text-gray-700 text-xs font-bold mb-2 pr-4 px-2" htmlFor="grid-password">
                   آدرس ذخیره
                </label>
-               <input type="text" name="saveUrl"  class="border border-black border-solid rounded px-2 " [(ngModel)]="userParams.saveUrl">
+               <input type="text" name="saveUrl"  class="border border-black border-solid rounded px-2  mx-3" [(ngModel)]="userParams.saveUrl" style="direction:ltr">
                <button
                (click)="getExcel()" 
-               class="bg-blue-500 hover:bg-blue-900 text-white hover:shadow-md duration-500 p-2 rounded-sm "
+               class="bg-blue-500 hover:bg-blue-900 text-white hover:shadow-md duration-500 p-1 rounded"
                type="submit">
-               <i class="fa fa-plus-square"></i>
                Get Excel
+               <i class="fa fa-plus-square px-1"></i>
             </button>
             </form>
             <table *ngIf="orders" class="items-center w-full bg-transparent border-collapse">

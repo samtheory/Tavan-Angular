@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -44,7 +44,7 @@ export class OrderService {
 
 
 
-  getExcelOrders( userParams?: any): Observable<ExcelResult<Order[]>>{
+  getExcelOrders( userParams?: any) {
     let params = new HttpParams();
     if (userParams != null){
        params = params.append('productId', userParams.productId);
@@ -54,11 +54,7 @@ export class OrderService {
         params = params.append('isActive', userParams.isActive);
        }
      }
-    return this.http.get<Order[]>(this.baseUrl + "getall", {observe: 'response', params}).pipe(
-      map(response => {
-        this.excelResult.result = response.body;
-        return this.excelResult;
-      })
-    );
+    return this.http.get(this.baseUrl + "getall",  {
+    responseType: 'arraybuffer',params: params});
   }
 }

@@ -33,7 +33,8 @@
                </i>
             </div>
          </div>
-         <div [ngClass]="{'AKD_anime_close h-0 pt-0': q.isOpen == false, 'AKD_anime_open h-full pt-10 ': q.isOpen == true }"
+         <div
+            [ngClass]="{'AKD_anime_close h-0 pt-0': q.isOpen == false, 'AKD_anime_open h-full pt-10 ': q.isOpen == true }"
             class="pt-10 text-gray-400 answer duration-300">
             <p [innerHTML]="q.answer">
             </p>
@@ -45,94 +46,122 @@
 
       <!-- .:: ASK question section  ________________________   -->
       <form class="w-full" #ticketForm="ngForm" action="">
-      <section id="ask_question "
-         class="w-full flex xl:flex-row flex-col items-center flex-wrap xl:justify-between my-10 px-4 md:px-0">
-         <div class=" xl:w-1/2 w-full m-auto flex xl:flex-col flex-col-reverse">
-            <p class="xl:mb-14 mb-2 xl:mt-2 mt-0 pl-5 text-center text-sm xl:text-base">
-               {{DB_const.faq.askQuestion.title}}</p>
+         <section id="ask_question "
+            class="w-full flex xl:flex-row flex-col items-center flex-wrap xl:justify-between my-10 px-4 md:px-0">
+            <div class=" xl:w-1/2 w-full m-auto flex xl:flex-col flex-col-reverse">
+               <p class="xl:mb-14 mb-2 xl:mt-2 mt-0 pl-5 text-center text-sm xl:text-base">
+                  {{DB_const.faq.askQuestion.title}}</p>
                <p class="xl:mb-14 mb-2 xl:mt-2 mt-0 pl-5 text-center text-sm xl:text-base">چطور سوالم را مطرح کنم؟</p>
-            <svg-faq class="xl:mb-0 mb-10"></svg-faq>
-         </div>
-         <div class="xl:w-1/2 w-full m-auto">
-            <div class="form-item  py-3 w-full">
-               <label class="block text-sm font-bold pb-1">نام و نام خانوادگی</label>
-               <input [(ngModel)]="ticket.name" name="name"
-                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                  matInput placeholder="نام خود را درج کنید" value="" />
+               <svg-faq class="xl:mb-0 mb-10"></svg-faq>
             </div>
-            <div class="form-item  py-3 w-full">
-               <label class="block text-sm font-bold pb-1">ایمیل</label>
-               <input [(ngModel)]="ticket.email" name="email"
-                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                  matInput placeholder="ایمیل خود را درج کنید" value="" />
+            <div class="xl:w-1/2 w-full m-auto">
+               <div class="form-item  py-3 w-full">
+                  <label class="block text-sm font-bold pb-1">نام و نام خانوادگی</label>
+                  <input [(ngModel)]="ticket.name" name="name"
+                     class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                     matInput placeholder="نام خود را درج کنید" value="" />
+               </div>
+               <div class="form-item  py-3 w-full">
+                  <label class="block text-sm font-bold pb-1">ایمیل</label>
+                  <input [(ngModel)]="ticket.email" name="email"
+                     class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                     matInput placeholder="ایمیل خود را درج کنید" value="" />
+               </div>
+               <div class="form-item  py-3 w-full">
+                  <label class="block text-sm font-bold pb-1">تلفن</label>
+                  <input [(ngModel)]="ticket.phoneNumber" name="phoneNumber"
+                     class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                     matInput placeholder="تلفن خود را درج کنید" value="" />
+               </div>
+               <div class="form-item  py-3 w-full">
+                  <label class="block text-sm font-bold pb-1">پیام شما</label>
+                  <textarea [(ngModel)]="ticket.meesage" name="message" rows="4"
+                     class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
+                     matInput placeholder="پیام خود را درج کنید" value=""></textarea>
+               </div>
+               <button (click)="sendTicket()"
+                  class="submit-btn w-full rounded border border-blue-500 bg-transparent duration-200 hover:bg-blue-500 py-2 text-blue-500 hover:text-white text-center my-1 "
+                  type="submit">
+                  ارسال پیام
+               </button>
             </div>
-            <div class="form-item  py-3 w-full">
-               <label class="block text-sm font-bold pb-1">تلفن</label>
-               <input [(ngModel)]="ticket.phoneNumber" name="phoneNumber"
-                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                  matInput placeholder="تلفن خود را درج کنید" value="" />
-            </div>
-            <div class="form-item  py-3 w-full">
-               <label class="block text-sm font-bold pb-1">پیام شما</label>
-               <textarea [(ngModel)]="ticket.meesage" name="message" rows="4"
-                  class="rounded bg-gray-100 outline-none focus:border-blue-100 border-gray-200 border p-3 w-full hover:shadow-md"
-                  matInput placeholder="پیام خود را درج کنید" value=""></textarea>
-            </div>
-            <button
-               (click)="sendTicket()"
-               class="submit-btn w-full rounded border border-blue-500 bg-transparent duration-200 hover:bg-blue-500 py-2 text-blue-500 hover:text-white text-center my-1 "
-               type="submit">
-               ارسال پیام
-            </button>
-         </div>
-      </section>
-   </form>
+         </section>
+      </form>
       <!-- .::__END ASK question section  ___________________   -->
 
       <!-- :: Video TUTORIAL  section ____________________________________ -->
       <section id="video" class="bg-gray-100 px-4 md:px-10">
          <div class="head mx-4">
 
-            <h1 class="text-2xl py-4" > {{DB_const.faq.video_tut.title}} </h1>
+            <h1 class="text-2xl py-4"> {{DB_const.faq.video_tut.title}} </h1>
             <p class="text-gray-500 text-sm py-4" [innerHTML]="DB_const.faq.video_tut.description"> </p>
          </div>
          <div class="flex flex-wrap xl:flex-row flex-col items-center justify-center xl:justify-start">
 
             <div class="vodeo w-full  m-auto  p-6 md:w-1/2">
                <div class="mx-auto">
-                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
-                  <p class="mx-auto ">عنوان این ویدیو</p>
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ;">
+                     <div class="r1_iframe_embed">
+                        <iframe
+                           [src]="'https://player.arvancloud.com/index.html?config=https://tavanwb.arvanvod.com/9avrx524W3/6Y5GOKGlaO/origin_config.json' | arvan"
+                           frameborder="0"
+                           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                           allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                     </div>
+                  </div>
+                  <p class=" pt-2" style="max-width:290px">راهنمای خرید دوره از وب‌سایت توان پلاس</p>
 
                </div>
             </div>
             <div class="vodeo w-full   p-6 md:w-1/2">
                <div class="mx-auto">
-                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
-                  <p class="mx-auto ">عنوان این ویدیو</p>
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; ">
+                     <div class="r1_iframe_embed">
+                        <iframe src="
+https://player.arvancloud.com/index.html?config=https://tavanwb.arvanvod.com/9avrx524W3/y4bDz7YXKz/origin_config.json
+" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                           allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                     </div>
+                  </div>
+                  <p class=" pt-2" style="max-width:290px">راهنمای دسترسی و مشاهده دوره های خریداری شده در وب‌سایت توان پلاس</p>
 
                </div>
             </div>
             <div class="vodeo w-full   p-6 md:w-1/2">
                <div class="mx-auto">
-                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
-                  <p class="mx-auto ">عنوان این ویدیو</p>
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; ">
+                     <div class="r1_iframe_embed">
+                        <iframe src="
+                 
+https://player.arvancloud.com/index.html?config=https://tavanwb.arvanvod.com/9avrx524W3/Q7J2N89XxB/origin_config.json
+
+                  " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                           allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                     </div>
+                  </div>
+                  <p class=" pt-2" style="max-width:290px">راهنمای تغییر رمز عبور و ویرایش پروفایل کاربری در وب‌سایت توان پلاس</p>
 
                </div>
             </div>
             <div class="vodeo w-full   p-6 md:w-1/2">
                <div class="mx-auto">
-                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
-                  <p class="mx-auto ">عنوان این ویدیو</p>
+
+                  <div class="  bg-gray-400 rounded-md" style="width:280px ; ">
+                     <div class="r1_iframe_embed">
+                        <iframe src="
+                 
+     
+https://player.arvancloud.com/index.html?config=https://tavanwb.arvanvod.com/9avrx524W3/2BAXzRXVML/origin_config.json
+      
+                  " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                           allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                     </div>
+                  </div>
+                  <p class=" pt-2" style="max-width:290px">راهنمای عضویت در وب‌سایت توان پلاس</p>
 
                </div>
             </div>
-            <div class="vodeo w-full    p-6 md:w-1/2">
-               <div class="mx-auto">
-                  <div class="  bg-gray-400 rounded-md" style="width:280px ; height:200px;"></div>
-                  <p class="mx-auto ">عنوان این ویدیو</p>
 
-               </div>
-            </div>
 
          </div>
       </section>
@@ -149,8 +178,7 @@
 
 <!-- #  Dialog Box  PLEASE *-login-*   -->
 <div class="  duration-200  centered  hidden p-4 rounded-md shadow bg-white"
-   [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }"
-   style="z-index: 1000;max-width: 500px;">
+   [ngClass]="{'hidden': dialog == false, 'w-screen fixed': dialog == true }" style="z-index: 1000;max-width: 500px;">
 
 
    <a class="text-left" mat-button mat-dialog-close (click)="hideDialog()"><i class="fas fa-times"></i></a>

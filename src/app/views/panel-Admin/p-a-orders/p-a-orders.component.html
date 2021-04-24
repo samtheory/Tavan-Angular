@@ -46,10 +46,6 @@
                </div>
             </form>
             <form #excelForm="ngForm" class="mt-7 mb-3">
-               <label class="inline uppercase text-gray-700 text-xs font-bold mb-2 pr-4 px-2" htmlFor="grid-password">
-                  آدرس ذخیره
-               </label>
-               <input type="text" name="saveUrl"  class="border border-black border-solid rounded px-2  mx-3" [(ngModel)]="userParams.saveUrl" style="direction:ltr">
                <button
                (click)="getExcel()" 
                class="bg-blue-500 hover:bg-blue-900 text-white hover:shadow-md duration-500 p-1 rounded"
